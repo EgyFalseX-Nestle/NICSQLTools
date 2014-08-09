@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="IC_DB" Class="dsLinqDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=IC_DB;Integrated Security=True" SettingsObjectName="NICSQLTools.Properties.Settings" SettingsPropertyName="IC_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[0-0 Final Data All]" Member="_0_0_Final_Data_Alls">
+    <Type Name="_0_0_Final_Data_All">
+      <Column Name="[Billing Document]" Member="Billing_Document" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Volume 14]" Member="Volume_14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Volume 13]" Member="Volume_13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Value 14]" Member="Value_14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Value 13]" Member="Value_13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Cases 14]" Member="Cases_14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[Cases 13]" Member="Cases_13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="[Material Name]" Member="Material_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Base Base Product]" Member="Base_Base_Product" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Brand" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Name 3 Ar]" Member="Name_3_Ar" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Customer Type 2]" Member="Customer_Type_2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Customer Type]" Member="Customer_Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Name 3 En]" Member="Name_3_En" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Brand Route]" Member="Brand_Route" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ASM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Day-Month]" Member="Day_Month" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Month" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="yeard" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Route &amp; Sold]" Member="Route___Sold" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Material Number]" Member="Material_Number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Billing date for bil]" Member="Billing_date_for_bil" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Sold-to party]" Member="Sold_to_party" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Distribution Channel]" Member="Distribution_Channel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Base-New]" Member="Base_New" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Level CCSD]" Member="Level_CCSD" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[FRZ brand]" Member="FRZ_brand" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AutoKey" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

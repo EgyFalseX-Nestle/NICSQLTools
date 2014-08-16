@@ -66,19 +66,23 @@
             // dockPanel1
             // 
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Float;
             this.dockPanel1.DockedAsTabbedDocument = true;
+            this.dockPanel1.FloatLocation = new System.Drawing.Point(743, 247);
             this.dockPanel1.ID = new System.Guid("15aff097-4dfd-4605-9303-ac04901852dc");
+            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(300, 300);
             this.dockPanel1.SavedIndex = 0;
             this.dockPanel1.SavedMdiDocument = true;
+            this.dockPanel1.Size = new System.Drawing.Size(200, 200);
             this.dockPanel1.Text = "dockPanel1";
             // 
             // dockPanel1_Container
             // 
-            this.dockPanel1_Container.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 22);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(532, 309);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 175);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // dockPanel2

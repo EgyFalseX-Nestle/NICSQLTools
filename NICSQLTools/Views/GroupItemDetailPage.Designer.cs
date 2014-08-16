@@ -59,7 +59,7 @@
             this.winLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.winLayoutControl1.Location = new System.Drawing.Point(0, 0);
             this.winLayoutControl1.Name = "winLayoutControl1";
-            this.winLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1004, 159, 450, 350);
+            this.winLayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(650, 159, 450, 350);
             this.winLayoutControl1.Root = this.layoutControlGroup1;
             this.winLayoutControl1.Size = new System.Drawing.Size(716, 178);
             this.winLayoutControl1.TabIndex = 0;

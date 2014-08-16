@@ -54,6 +54,9 @@
             this.bbiQrysp_DistributionV1 = new DevExpress.XtraBars.BarButtonItem();
             this.bbiQryDistribution = new DevExpress.XtraBars.BarSubItem();
             this.bbiQrysp_DistributionV2 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiQrysp_DistributionV3 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiQrysp_DistributionNPDV1 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiQrysp_DistributionNPDV2 = new DevExpress.XtraBars.BarButtonItem();
             this.bbiFinalDataMenu = new DevExpress.XtraBars.BarSubItem();
             this.bbiFinalDataPivot = new DevExpress.XtraBars.BarButtonItem();
             this.homeRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -77,7 +80,7 @@
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.TabManagerMain = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ofdAccess = new System.Windows.Forms.OpenFileDialog();
-            this.bbiQrysp_DistributionV3 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiQrysp_DistributionNPDV3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             this.backstageViewControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DockingMain)).BeginInit();
@@ -118,10 +121,13 @@
             this.bbiFinalDataMenu,
             this.bbiFinalDataPivot,
             this.bbiQrysp_DistributionV2,
-            this.bbiQrysp_DistributionV3});
+            this.bbiQrysp_DistributionV3,
+            this.bbiQrysp_DistributionNPDV1,
+            this.bbiQrysp_DistributionNPDV2,
+            this.bbiQrysp_DistributionNPDV3});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 5;
+            this.ribbonControl.MaxItemId = 8;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -379,7 +385,10 @@
             this.bbiQryDistribution.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiQrysp_DistributionV1),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiQrysp_DistributionV2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbiQrysp_DistributionV3)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiQrysp_DistributionV3),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiQrysp_DistributionNPDV1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiQrysp_DistributionNPDV2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiQrysp_DistributionNPDV3)});
             this.bbiQryDistribution.Name = "bbiQryDistribution";
             // 
             // bbiQrysp_DistributionV2
@@ -392,6 +401,38 @@
             this.bbiQrysp_DistributionV2.Name = "bbiQrysp_DistributionV2";
             this.bbiQrysp_DistributionV2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.bbiQrysp_DistributionV2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiQrysp_DistributionV2_ItemClick);
+            // 
+            // bbiQrysp_DistributionV3
+            // 
+            this.bbiQrysp_DistributionV3.Caption = "Distribution Over Egypt";
+            this.bbiQrysp_DistributionV3.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiQrysp_DistributionV3.Id = 4;
+            this.bbiQrysp_DistributionV3.ImageIndex = 10;
+            this.bbiQrysp_DistributionV3.LargeImageIndex = 10;
+            this.bbiQrysp_DistributionV3.Name = "bbiQrysp_DistributionV3";
+            this.bbiQrysp_DistributionV3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.bbiQrysp_DistributionV3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiQrysp_DistributionV3_ItemClick);
+            // 
+            // bbiQrysp_DistributionNPDV1
+            // 
+            this.bbiQrysp_DistributionNPDV1.Caption = "Distribution NPD Per Route";
+            this.bbiQrysp_DistributionNPDV1.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiQrysp_DistributionNPDV1.Id = 5;
+            this.bbiQrysp_DistributionNPDV1.ImageIndex = 10;
+            this.bbiQrysp_DistributionNPDV1.LargeImageIndex = 10;
+            this.bbiQrysp_DistributionNPDV1.Name = "bbiQrysp_DistributionNPDV1";
+            this.bbiQrysp_DistributionNPDV1.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.bbiQrysp_DistributionNPDV1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiQrysp_DistributionNPDV1_ItemClick);
+            // 
+            // bbiQrysp_DistributionNPDV2
+            // 
+            this.bbiQrysp_DistributionNPDV2.Caption = "Distribution NPD Per Sales District";
+            this.bbiQrysp_DistributionNPDV2.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiQrysp_DistributionNPDV2.Id = 6;
+            this.bbiQrysp_DistributionNPDV2.ImageIndex = 10;
+            this.bbiQrysp_DistributionNPDV2.LargeImageIndex = 10;
+            this.bbiQrysp_DistributionNPDV2.Name = "bbiQrysp_DistributionNPDV2";
+            this.bbiQrysp_DistributionNPDV2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiQrysp_DistributionNPDV2_ItemClick);
             // 
             // bbiFinalDataMenu
             // 
@@ -584,16 +625,15 @@
             this.ofdAccess.Filter = "Access File (*.mdb,*.accdb)|*.accdb;*.mdb|All Files (*.*)|*.*";
             this.ofdAccess.Title = "Select Access Database file";
             // 
-            // bbiQrysp_DistributionV3
+            // bbiQrysp_DistributionNPDV3
             // 
-            this.bbiQrysp_DistributionV3.Caption = "Distribution Over Egypt";
-            this.bbiQrysp_DistributionV3.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbiQrysp_DistributionV3.Id = 4;
-            this.bbiQrysp_DistributionV3.ImageIndex = 10;
-            this.bbiQrysp_DistributionV3.LargeImageIndex = 10;
-            this.bbiQrysp_DistributionV3.Name = "bbiQrysp_DistributionV3";
-            this.bbiQrysp_DistributionV3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.bbiQrysp_DistributionV3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiQrysp_DistributionV3_ItemClick);
+            this.bbiQrysp_DistributionNPDV3.Caption = "Distribution NPD Over Egypt";
+            this.bbiQrysp_DistributionNPDV3.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiQrysp_DistributionNPDV3.Id = 7;
+            this.bbiQrysp_DistributionNPDV3.ImageIndex = 10;
+            this.bbiQrysp_DistributionNPDV3.LargeImageIndex = 10;
+            this.bbiQrysp_DistributionNPDV3.Name = "bbiQrysp_DistributionNPDV3";
+            this.bbiQrysp_DistributionNPDV3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiQrysp_DistributionNPDV3_ItemClick);
             // 
             // MainFrm
             // 
@@ -684,6 +724,9 @@
         private DevExpress.XtraBars.BarButtonItem bbiFinalDataPivot;
         private DevExpress.XtraBars.BarButtonItem bbiQrysp_DistributionV2;
         private DevExpress.XtraBars.BarButtonItem bbiQrysp_DistributionV3;
+        private DevExpress.XtraBars.BarButtonItem bbiQrysp_DistributionNPDV1;
+        private DevExpress.XtraBars.BarButtonItem bbiQrysp_DistributionNPDV2;
+        private DevExpress.XtraBars.BarButtonItem bbiQrysp_DistributionNPDV3;
 
     }
 }

@@ -15,11 +15,74 @@ namespace NICSQLTools.Data.IC_DB
 {
     public static class SprocHelper
     {
+        public static DevExpress.Xpo.DB.SelectedData Execsp_DistributionNPDV1(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            return session.ExecuteSproc("sp_DistributionNPDV1", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+        }
+        static LoadDataMemberOrderItem[] sp_DistributionNPDV1OrderArray = { new LoadDataMemberOrderItem(0, "CustomGroup"), new LoadDataMemberOrderItem(3, "APOS14"), new LoadDataMemberOrderItem(4, "TAPOS14"), new LoadDataMemberOrderItem(5, "ASM"), new LoadDataMemberOrderItem(6, "Supervisor") };
+        public static System.Collections.Generic.ICollection<sp_DistributionNPDV1Result> Execsp_DistributionNPDV1IntoObjects(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            return session.GetObjectsFromSproc<sp_DistributionNPDV1Result>(sp_DistributionNPDV1OrderArray, "sp_DistributionNPDV1", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+        }
+        public static XPDataView Execsp_DistributionNPDV1IntoDataView(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionNPDV1", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_DistributionNPDV1Result)), sp_DistributionNPDV1OrderArray, sprocData);
+        }
+        public static void Execsp_DistributionNPDV1IntoDataView(XPDataView dataView, Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionNPDV1", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+            dataView.PopulatePropertiesOrdered(session.GetClassInfo(typeof(sp_DistributionNPDV1Result)), sp_DistributionNPDV1OrderArray);
+            dataView.LoadOrderedData(sp_DistributionNPDV1OrderArray, sprocData);
+        }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_DistributionNPDV2(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            return session.ExecuteSproc("sp_DistributionNPDV2", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+        }
+        static LoadDataMemberOrderItem[] sp_DistributionNPDV2OrderArray = { new LoadDataMemberOrderItem(1, "CustomGroup"), new LoadDataMemberOrderItem(2, "APOS14"), new LoadDataMemberOrderItem(3, "TAPOS14") };
+        public static System.Collections.Generic.ICollection<sp_DistributionNPDV2Result> Execsp_DistributionNPDV2IntoObjects(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            return session.GetObjectsFromSproc<sp_DistributionNPDV2Result>(sp_DistributionNPDV2OrderArray, "sp_DistributionNPDV2", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+        }
+        public static XPDataView Execsp_DistributionNPDV2IntoDataView(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionNPDV2", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_DistributionNPDV2Result)), sp_DistributionNPDV2OrderArray, sprocData);
+        }
+        public static void Execsp_DistributionNPDV2IntoDataView(XPDataView dataView, Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionNPDV2", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+            dataView.PopulatePropertiesOrdered(session.GetClassInfo(typeof(sp_DistributionNPDV2Result)), sp_DistributionNPDV2OrderArray);
+            dataView.LoadOrderedData(sp_DistributionNPDV2OrderArray, sprocData);
+        }
+        public static DevExpress.Xpo.DB.SelectedData Execsp_DistributionNPDV3(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            return session.ExecuteSproc("sp_DistributionNPDV3", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+        }
+        public static System.Collections.Generic.ICollection<sp_DistributionNPDV3Result> Execsp_DistributionNPDV3IntoObjects(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            return session.GetObjectsFromSproc<sp_DistributionNPDV3Result>("sp_DistributionNPDV3", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+        }
+        public static XPDataView Execsp_DistributionNPDV3IntoDataView(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionNPDV3", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+            return new XPDataView(session.Dictionary, session.GetClassInfo(typeof(sp_DistributionNPDV3Result)), sprocData);
+        }
+        public static void Execsp_DistributionNPDV3IntoDataView(XPDataView dataView, Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionNPDV3", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+            dataView.PopulateProperties(session.GetClassInfo(typeof(sp_DistributionNPDV3Result)));
+            dataView.LoadData(sprocData);
+        }
         public static DevExpress.Xpo.DB.SelectedData Execsp_DistributionV1(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
         {
             return session.ExecuteSproc("sp_DistributionV1", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
         }
         static LoadDataMemberOrderItem[] sp_DistributionV1OrderArray = { new LoadDataMemberOrderItem(3, "APOS14"), new LoadDataMemberOrderItem(4, "APOS13"), new LoadDataMemberOrderItem(5, "TAPOS14"), new LoadDataMemberOrderItem(6, "TAPOS13"), new LoadDataMemberOrderItem(7, "ASM"), new LoadDataMemberOrderItem(8, "Supervisor") };
+        public static System.Collections.Generic.ICollection<sp_DistributionV1Result> Execsp_DistributionV1IntoObjects(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
+        {
+            return session.GetObjectsFromSproc<sp_DistributionV1Result>(sp_DistributionV1OrderArray, "sp_DistributionV1", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
+        }
         public static XPDataView Execsp_DistributionV1IntoDataView(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
         {
             DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionV1", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
@@ -28,7 +91,8 @@ namespace NICSQLTools.Data.IC_DB
         public static void Execsp_DistributionV1IntoDataView(XPDataView dataView, Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
         {
             DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionV1", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
-            dataView.LoadData(sprocData);
+            dataView.PopulatePropertiesOrdered(session.GetClassInfo(typeof(sp_DistributionV1Result)), sp_DistributionV1OrderArray);
+            dataView.LoadOrderedData(sp_DistributionV1OrderArray, sprocData);
         }
         public static DevExpress.Xpo.DB.SelectedData Execsp_DistributionV2(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
         {
@@ -47,7 +111,8 @@ namespace NICSQLTools.Data.IC_DB
         public static void Execsp_DistributionV2IntoDataView(XPDataView dataView, Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
         {
             DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionV2", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
-            dataView.LoadData(sprocData);
+            dataView.PopulatePropertiesOrdered(session.GetClassInfo(typeof(sp_DistributionV2Result)), sp_DistributionV2OrderArray);
+            dataView.LoadOrderedData(sp_DistributionV2OrderArray, sprocData);
         }
         public static DevExpress.Xpo.DB.SelectedData Execsp_DistributionV3(Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
         {
@@ -66,7 +131,8 @@ namespace NICSQLTools.Data.IC_DB
         public static void Execsp_DistributionV3IntoDataView(XPDataView dataView, Session session, DateTime DateStart, DateTime DateEnd, string SalesDistrict2, string SalesDistrictName)
         {
             DevExpress.Xpo.DB.SelectedData sprocData = session.ExecuteSproc("sp_DistributionV3", new OperandValue(DateStart), new OperandValue(DateEnd), new OperandValue(SalesDistrict2), new OperandValue(SalesDistrictName));
-            dataView.LoadData(sprocData);
+            dataView.PopulatePropertiesOrdered(session.GetClassInfo(typeof(sp_DistributionV3Result)), sp_DistributionV3OrderArray);
+            dataView.LoadOrderedData(sp_DistributionV3OrderArray, sprocData);
         }
     }
 }

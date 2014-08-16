@@ -190,6 +190,22 @@ namespace NICSQLTools
             Qrysp_DistributionV3Frm frm = new Qrysp_DistributionV3Frm() { MdiParent = this };
             frm.Show();
         }
+        private void bbiQrysp_DistributionNPDV1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Qrysp_DistributionNPDV1Frm frm = new Qrysp_DistributionNPDV1Frm() { MdiParent = this };
+            frm.Show();
+        }
+        private void bbiQrysp_DistributionNPDV2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Qrysp_DistributionNPDV2Frm frm = new Qrysp_DistributionNPDV2Frm() { MdiParent = this };
+            frm.Show();
+        }
+        private void bbiQrysp_DistributionNPDV3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Qrysp_DistributionNPDV3Frm frm = new Qrysp_DistributionNPDV3Frm() { MdiParent = this };
+            frm.Show();
+        }
+        
 
     }
 }

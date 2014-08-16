@@ -124,7 +124,7 @@
     <value>163, 17</value>
   </metadata>
   <metadata name="salesDistrictNameBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>982, 17</value>
   </metadata>
   <metadata name="dsQry.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>500, 17</value>
@@ -133,10 +133,10 @@
     <value>584, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>93</value>
+    <value>119</value>
   </metadata>
   <metadata name="xpDataViewMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>467, 56</value>
+    <value>239, 56</value>
   </metadata>
   <metadata name="dxValidationProviderMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>308, 17</value>
@@ -145,9 +145,6 @@
     <value>786, 17</value>
   </metadata>
   <metadata name="salesDistrictNameTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>245, 56</value>
-  </metadata>
-  <metadata name="chartBarControllerMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>610, 56</value>
+    <value>17, 56</value>
   </metadata>
 </root>

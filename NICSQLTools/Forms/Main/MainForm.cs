@@ -14,32 +14,25 @@ namespace NICSQLTools
         {
             InitializeComponent();
             windowsUIView.AddTileWhenCreatingDocument = DevExpress.Utils.DefaultBoolean.False;
-            dataSource = new SampleDataSource();
-            groupsItemDetailPage = new Dictionary<SampleDataGroup, PageGroup>();
-            CreateLayout();
+            //dataSource = new SampleDataSource();
+            //groupsItemDetailPage = new Dictionary<SampleDataGroup, PageGroup>();
+            //CreateLayout();
+            windowsUIView.ActivateDocument(docLogin);
         }
         void CreateLayout()
         {
-            foreach (SampleDataGroup group in dataSource.Data.Groups)
+            foreach (BaseDocument doc in windowsUIView.Documents)
             {
-                tileContainer.Buttons.Add(new DevExpress.XtraBars.Docking2010.WindowsUIButton(group.Title, null, -1, DevExpress.XtraBars.Docking2010.ImageLocation.AboveText, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, null, true, -1, true, null, false, false, true, null, group, -1, false, false));
-                PageGroup pageGroup = new PageGroup();
-                pageGroup.Parent = tileContainer;
-                pageGroup.Caption = group.Title;
-                windowsUIView.ContentContainers.Add(pageGroup);
-                groupsItemDetailPage.Add(group, CreateGroupItemDetailPage(group, pageGroup));
-                foreach (SampleDataItem item in group.Items)
+                switch (doc.ControlName)
                 {
-                    ItemDetailPage itemDetailPage = new ItemDetailPage(item);
-                    itemDetailPage.Dock = System.Windows.Forms.DockStyle.Fill;
-                    BaseDocument document = windowsUIView.AddDocument(itemDetailPage);
-                    document.Caption = item.Title;
-                    pageGroup.Items.Add(document as Document);
-                    CreateTile(document as Document, item).ActivationTarget = pageGroup;
+                    case "docLogin":
+                        //doc.Control = new Views.Main.LoginUI();
+                        break;
+                    default:
+                        break;
                 }
             }
-            windowsUIView.ActivateContainer(tileContainer);
-            tileContainer.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(buttonClick);
+            
         }
         Tile CreateTile(Document document, SampleDataItem item)
         {
@@ -53,7 +46,7 @@ namespace NICSQLTools
             tile.Appearances.Selected.BorderColor = tile.Appearances.Hovered.BorderColor = tile.Appearances.Normal.BorderColor = Color.FromArgb(140, 140, 140);
             tile.Click += new TileClickEventHandler(tile_Click);
             windowsUIView.Tiles.Add(tile);
-            tileContainer.Items.Add(tile);
+            tileContainerLogin.Items.Add(tile);
             return tile;
         }
         TileItemElement CreateTileItemElement(string text, TileItemContentAlignment alignment, Point location, float fontSize)
@@ -71,7 +64,7 @@ namespace NICSQLTools
             PageGroup page = ((e.Tile as Tile).ActivationTarget as PageGroup);
             if (page != null)
             {
-                page.Parent = tileContainer;
+                page.Parent = tileContainerLogin;
                 page.SetSelected((e.Tile as Tile).Document);
             }
         }
@@ -80,7 +73,7 @@ namespace NICSQLTools
             GroupDetailPage page = new GroupDetailPage(group, child);
             PageGroup pageGroup = page.PageGroup;
             BaseDocument document = windowsUIView.AddDocument(page);
-            pageGroup.Parent = tileContainer;
+            pageGroup.Parent = tileContainerLogin;
             pageGroup.Items.Add(document as Document);
             windowsUIView.ContentContainers.Add(pageGroup);
             windowsUIView.ActivateContainer(pageGroup);
@@ -92,12 +85,20 @@ namespace NICSQLTools
             if (tileGroup != null)
             {
                 windowsUIView.ActivateContainer(groupsItemDetailPage[tileGroup]);
+
             }
         }
 
         private void windowsUIView_QueryControl(object sender, QueryControlEventArgs e)
         {
-
+            if (e.Control != null)
+                return;
+            if (e.Document == docLogin)
+            {
+                e.Control = new Views.Main.LoginUC();
+            }
+            
         }
+
     }
 }

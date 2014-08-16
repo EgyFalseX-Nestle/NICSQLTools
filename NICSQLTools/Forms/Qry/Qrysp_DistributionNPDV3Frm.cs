@@ -14,14 +14,14 @@ using DevExpress.XtraPivotGrid;
 
 namespace NICSQLTools.Forms.Qry
 {
-    public partial class Qrysp_DistributionV3Frm : DevExpress.XtraEditors.XtraForm
+    public partial class Qrysp_DistributionNPDV3Frm : DevExpress.XtraEditors.XtraForm
     {
 
         #region -   Variables   -
         private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(Qrysp_DistributionV1Frm));
         #endregion
         #region -   Functions   -
-        public Qrysp_DistributionV3Frm()
+        public Qrysp_DistributionNPDV3Frm()
         {
             InitializeComponent();
             DateTime now = DataManager.defaultInstance.ServerDateTime;
@@ -30,6 +30,8 @@ namespace NICSQLTools.Forms.Qry
         }
         void LoadData()
         {
+            //DataManager.SetAllCommandTimeouts(sp_DistributionV1TableAdapter, DataManager.ConnectionTimeout);
+            //sp_DistributionV1TableAdapter.Fill(dsQry.sp_DistributionV1, Convert.ToDateTime(bbiStartDate.EditValue), Convert.ToDateTime(bbiEndDate.EditValue), SalesDistrict2);
             string SalesDistrict2;
             string SalesDistrictName;
             if (bbiSalesDistrict2.EditValue != null)
@@ -41,7 +43,7 @@ namespace NICSQLTools.Forms.Qry
             else
                 SalesDistrictName = string.Empty;
             
-            DevExpress.Xpo.DB.SelectedData DataObj = NICSQLTools.Data.IC_DB.SprocHelper.Execsp_DistributionV3(DevExpress.Xpo.XpoDefault.Session, Convert.ToDateTime(bbiStartDate.EditValue),
+            DevExpress.Xpo.DB.SelectedData DataObj = NICSQLTools.Data.IC_DB.SprocHelper.Execsp_DistributionNPDV3(DevExpress.Xpo.XpoDefault.Session, Convert.ToDateTime(bbiStartDate.EditValue),
                 Convert.ToDateTime(bbiEndDate.EditValue), SalesDistrict2, SalesDistrictName);
             xpDataViewMain.LoadData(DataObj);
             pivotGridControlMain.BestFit();
@@ -107,7 +109,6 @@ namespace NICSQLTools.Forms.Qry
 
         #endregion
 
-        
 
     }
 }

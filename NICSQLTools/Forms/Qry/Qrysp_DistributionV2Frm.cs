@@ -42,9 +42,11 @@ namespace NICSQLTools.Forms.Qry
                 SalesDistrictName = bbiSalesDistrictName.EditValue.ToString();
             else
                 SalesDistrictName = string.Empty;
-            NICSQLTools.Data.IC_DB.SprocHelper.Execsp_DistributionV2IntoDataView(xpDataViewMain, DevExpress.Xpo.XpoDefault.Session, Convert.ToDateTime(bbiStartDate.EditValue),
+            
+            DevExpress.Xpo.DB.SelectedData DataObj = NICSQLTools.Data.IC_DB.SprocHelper.Execsp_DistributionV2(DevExpress.Xpo.XpoDefault.Session, Convert.ToDateTime(bbiStartDate.EditValue),
                 Convert.ToDateTime(bbiEndDate.EditValue), SalesDistrict2, SalesDistrictName);
-            //pivotGridControlMain.BestFit();
+            xpDataViewMain.LoadData(DataObj);
+            pivotGridControlMain.BestFit();
             
         }
         

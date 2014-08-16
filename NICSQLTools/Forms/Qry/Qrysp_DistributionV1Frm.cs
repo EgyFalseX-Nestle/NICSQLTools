@@ -27,6 +27,7 @@ namespace NICSQLTools.Forms.Qry
             DateTime now = DataManager.defaultInstance.ServerDateTime;
             bbiStartDate.EditValue = new DateTime(now.Year, now.Month, 1);
             bbiEndDate.EditValue = now.Date;
+
         }
         void LoadData()
         {
@@ -42,14 +43,27 @@ namespace NICSQLTools.Forms.Qry
                 SalesDistrictName = bbiSalesDistrictName.EditValue.ToString();
             else
                 SalesDistrictName = string.Empty;
-            NICSQLTools.Data.IC_DB.SprocHelper.Execsp_DistributionV1IntoDataView(xpDataViewMain, DevExpress.Xpo.XpoDefault.Session, Convert.ToDateTime(bbiStartDate.EditValue),
+            
+            DevExpress.Xpo.DB.SelectedData DataObj = NICSQLTools.Data.IC_DB.SprocHelper.Execsp_DistributionV1(DevExpress.Xpo.XpoDefault.Session, Convert.ToDateTime(bbiStartDate.EditValue),
                 Convert.ToDateTime(bbiEndDate.EditValue), SalesDistrict2, SalesDistrictName);
-            //pivotGridControlMain.BestFit();
+            xpDataViewMain.LoadData(DataObj);
+            pivotGridControlMain.BestFit();
+
+            chartControlMain.DataSource = pivotGridControlMain;
+
             
         }
         
         #endregion
         #region -   Event Handlers   -
+        private void Qrysp_DistributionV1Frm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dsQry.SalesDistrictName' table. You can move, or remove it, as needed.
+            this.salesDistrictNameTableAdapter.Fill(this.dsQry.SalesDistrictName);
+            // TODO: This line of code loads data into the 'dsQry.SalesDistrict2' table. You can move, or remove it, as needed.
+            this.salesDistrict2TableAdapter.Fill(this.dsQry.SalesDistrict2);
+
+        }
         private void bbiGetData_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (bbiStartDate.EditValue == null || bbiEndDate.EditValue == null)
@@ -99,14 +113,6 @@ namespace NICSQLTools.Forms.Qry
 
         #endregion
 
-        private void Qrysp_DistributionV1Frm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dsQry.SalesDistrictName' table. You can move, or remove it, as needed.
-            this.salesDistrictNameTableAdapter.Fill(this.dsQry.SalesDistrictName);
-            // TODO: This line of code loads data into the 'dsQry.SalesDistrict2' table. You can move, or remove it, as needed.
-            this.salesDistrict2TableAdapter.Fill(this.dsQry.SalesDistrict2);
-
-        }
 
     }
 }

@@ -236,6 +236,30 @@
     <Compile Include="Forms\Data\ProductEditorFrm.designer.cs">
       <DependentUpon>ProductEditorFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Data\CustomerEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\CustomerEditorUC.Designer.cs">
+      <DependentUpon>CustomerEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\ImportDaysUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\ImportDaysUC.Designer.cs">
+      <DependentUpon>ImportDaysUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\ProductEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\ProductEditorUC.Designer.cs">
+      <DependentUpon>ProductEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\RouteEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\RouteEditorUC.Designer.cs">
+      <DependentUpon>RouteEditorUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Main\LoginUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -323,11 +347,11 @@
     <Compile Include="Forms\ImportBillingDetailsFrm.designer.cs">
       <DependentUpon>ImportDaysFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main\MainForm.cs">
+    <Compile Include="Forms\Main\MainTilesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Main\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\Main\MainTilesFrm.Designer.cs">
+      <DependentUpon>MainTilesFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainFrm.cs">
       <SubType>Form</SubType>
@@ -383,6 +407,33 @@
     <Compile Include="Forms\WaitWindowFrm.designer.cs">
       <DependentUpon>WaitWindowFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Qry\FinalDataPivotUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\FinalDataPivotUC.Designer.cs">
+      <DependentUpon>FinalDataPivotUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\FinalDataGridUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\FinalDataGridUC.Designer.cs">
+      <DependentUpon>FinalDataGridUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\Qrysp_DistributionNPDV1UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\Qrysp_DistributionNPDV1UC.Designer.cs">
+      <DependentUpon>Qrysp_DistributionNPDV1UC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Qry\FinalDataPivotUC.resx">
+      <DependentUpon>FinalDataPivotUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\FinalDataGridUC.resx">
+      <DependentUpon>FinalDataGridUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\Qrysp_DistributionNPDV1UC.resx">
+      <DependentUpon>Qrysp_DistributionNPDV1UC.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Data\dsLinqData.dbml.layout">
       <DependentUpon>dsLinqData.dbml</DependentUpon>
     </None>
@@ -397,6 +448,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Data\ProductEditorFrm.resx">
       <DependentUpon>ProductEditorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\CustomerEditorUC.resx">
+      <DependentUpon>CustomerEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\ImportDaysUC.resx">
+      <DependentUpon>ImportDaysUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\ProductEditorUC.resx">
+      <DependentUpon>ProductEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\RouteEditorUC.resx">
+      <DependentUpon>RouteEditorUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Main\LoginUC.resx">
       <DependentUpon>LoginUC.cs</DependentUpon>
@@ -416,8 +479,8 @@
     <EmbeddedResource Include="Forms\ImportDaysFrm.resx">
       <DependentUpon>ImportDaysFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Main\MainTilesFrm.resx">
+      <DependentUpon>MainTilesFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainFrm.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
@@ -548,6 +611,25 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="NICAccessTools.ico" />
+    <None Include="Resources\ImportR3_128.png" />
+    <None Include="Resources\ImportR3_64.png" />
+    <None Include="Resources\NestleBanner.jpg" />
+    <None Include="Resources\LoginLogo32.png" />
+    <None Include="Resources\EditorsWallpaper.jpg" />
+    <None Include="Resources\Customers64.png" />
+    <None Include="Resources\Customers128.png" />
+    <None Include="Resources\Product128.png" />
+    <None Include="Resources\Product64.png" />
+    <None Include="Resources\Routes128.png" />
+    <None Include="Resources\Routes64.png" />
+    <None Include="Resources\Queries2_64.png" />
+    <None Include="Resources\Users64.png" />
+    <None Include="Resources\Roles64.png" />
+    <None Include="Resources\Roles128.png" />
+    <None Include="Resources\Queries128.png" />
+    <None Include="Resources\Queries64.png" />
+    <None Include="Resources\Editor128.png" />
+    <None Include="Resources\Editor64.png" />
     <None Include="Resources\Lock16.png" />
     <None Include="Resources\LoginLogo256.png" />
     <None Include="Resources\LoginTile64.png" />
@@ -650,6 +732,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

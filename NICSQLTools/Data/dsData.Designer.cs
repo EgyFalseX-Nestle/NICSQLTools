@@ -28,11 +28,11 @@ namespace NICSQLTools.Data {
         
         private _0_3__Route_DetailsDataTable _table0_3__Route_Details;
         
-        private _0_4__Product_DetailsDataTable _table0_4__Product_Details;
-        
         private QryBillDocDataTable tableQryBillDoc;
         
         private _0_6_Customer_HNDataTable _table0_6_Customer_HN;
+        
+        private _0_4__Product_DetailsDataTable _table0_4__Product_Details;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -68,14 +68,14 @@ namespace NICSQLTools.Data {
                 if ((ds.Tables["0-3  Route Details"] != null)) {
                     base.Tables.Add(new _0_3__Route_DetailsDataTable(ds.Tables["0-3  Route Details"]));
                 }
-                if ((ds.Tables["0-4  Product Details"] != null)) {
-                    base.Tables.Add(new _0_4__Product_DetailsDataTable(ds.Tables["0-4  Product Details"]));
-                }
                 if ((ds.Tables["QryBillDoc"] != null)) {
                     base.Tables.Add(new QryBillDocDataTable(ds.Tables["QryBillDoc"]));
                 }
                 if ((ds.Tables["0-6 Customer HN"] != null)) {
                     base.Tables.Add(new _0_6_Customer_HNDataTable(ds.Tables["0-6 Customer HN"]));
+                }
+                if ((ds.Tables["0-4  Product Details"] != null)) {
+                    base.Tables.Add(new _0_4__Product_DetailsDataTable(ds.Tables["0-4  Product Details"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -119,16 +119,6 @@ namespace NICSQLTools.Data {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public _0_4__Product_DetailsDataTable _0_4__Product_Details {
-            get {
-                return this._table0_4__Product_Details;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public QryBillDocDataTable QryBillDoc {
             get {
                 return this.tableQryBillDoc;
@@ -142,6 +132,16 @@ namespace NICSQLTools.Data {
         public _0_6_Customer_HNDataTable _0_6_Customer_HN {
             get {
                 return this._table0_6_Customer_HN;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public _0_4__Product_DetailsDataTable _0_4__Product_Details {
+            get {
+                return this._table0_4__Product_Details;
             }
         }
         
@@ -218,14 +218,14 @@ namespace NICSQLTools.Data {
                 if ((ds.Tables["0-3  Route Details"] != null)) {
                     base.Tables.Add(new _0_3__Route_DetailsDataTable(ds.Tables["0-3  Route Details"]));
                 }
-                if ((ds.Tables["0-4  Product Details"] != null)) {
-                    base.Tables.Add(new _0_4__Product_DetailsDataTable(ds.Tables["0-4  Product Details"]));
-                }
                 if ((ds.Tables["QryBillDoc"] != null)) {
                     base.Tables.Add(new QryBillDocDataTable(ds.Tables["QryBillDoc"]));
                 }
                 if ((ds.Tables["0-6 Customer HN"] != null)) {
                     base.Tables.Add(new _0_6_Customer_HNDataTable(ds.Tables["0-6 Customer HN"]));
+                }
+                if ((ds.Tables["0-4  Product Details"] != null)) {
+                    base.Tables.Add(new _0_4__Product_DetailsDataTable(ds.Tables["0-4  Product Details"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -272,12 +272,6 @@ namespace NICSQLTools.Data {
                     this._table0_3__Route_Details.InitVars();
                 }
             }
-            this._table0_4__Product_Details = ((_0_4__Product_DetailsDataTable)(base.Tables["0-4  Product Details"]));
-            if ((initTable == true)) {
-                if ((this._table0_4__Product_Details != null)) {
-                    this._table0_4__Product_Details.InitVars();
-                }
-            }
             this.tableQryBillDoc = ((QryBillDocDataTable)(base.Tables["QryBillDoc"]));
             if ((initTable == true)) {
                 if ((this.tableQryBillDoc != null)) {
@@ -288,6 +282,12 @@ namespace NICSQLTools.Data {
             if ((initTable == true)) {
                 if ((this._table0_6_Customer_HN != null)) {
                     this._table0_6_Customer_HN.InitVars();
+                }
+            }
+            this._table0_4__Product_Details = ((_0_4__Product_DetailsDataTable)(base.Tables["0-4  Product Details"]));
+            if ((initTable == true)) {
+                if ((this._table0_4__Product_Details != null)) {
+                    this._table0_4__Product_Details.InitVars();
                 }
             }
         }
@@ -304,12 +304,12 @@ namespace NICSQLTools.Data {
             base.Tables.Add(this._table0_1__Master_All);
             this._table0_3__Route_Details = new _0_3__Route_DetailsDataTable();
             base.Tables.Add(this._table0_3__Route_Details);
-            this._table0_4__Product_Details = new _0_4__Product_DetailsDataTable();
-            base.Tables.Add(this._table0_4__Product_Details);
             this.tableQryBillDoc = new QryBillDocDataTable();
             base.Tables.Add(this.tableQryBillDoc);
             this._table0_6_Customer_HN = new _0_6_Customer_HNDataTable();
             base.Tables.Add(this._table0_6_Customer_HN);
+            this._table0_4__Product_Details = new _0_4__Product_DetailsDataTable();
+            base.Tables.Add(this._table0_4__Product_Details);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -326,12 +326,6 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerialize_0_4__Product_Details() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeQryBillDoc() {
             return false;
         }
@@ -339,6 +333,12 @@ namespace NICSQLTools.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerialize_0_6_Customer_HN() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerialize_0_4__Product_Details() {
             return false;
         }
         
@@ -404,13 +404,13 @@ namespace NICSQLTools.Data {
         public delegate void _0_3__Route_DetailsRowChangeEventHandler(object sender, _0_3__Route_DetailsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void _0_4__Product_DetailsRowChangeEventHandler(object sender, _0_4__Product_DetailsRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void QryBillDocRowChangeEventHandler(object sender, QryBillDocRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void _0_6_Customer_HNRowChangeEventHandler(object sender, _0_6_Customer_HNRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void _0_4__Product_DetailsRowChangeEventHandler(object sender, _0_4__Product_DetailsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1364,6 +1364,8 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnSales_District_2;
             
+            private global::System.Data.DataColumn columnWarehouse;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public _0_3__Route_DetailsDataTable() {
@@ -1535,6 +1537,14 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn WarehouseColumn {
+                get {
+                    return this.columnWarehouse;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1587,7 +1597,8 @@ namespace NICSQLTools.Data {
                         string Brand_Route, 
                         string Brand_Route_Old, 
                         string SDN_Code, 
-                        string Sales_District_2) {
+                        string Sales_District_2, 
+                        string Warehouse) {
                 _0_3__Route_DetailsRow row_0_3__Route_DetailsRow = ((_0_3__Route_DetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Distribution_Channel,
@@ -1606,7 +1617,8 @@ namespace NICSQLTools.Data {
                         Brand_Route,
                         Brand_Route_Old,
                         SDN_Code,
-                        Sales_District_2};
+                        Sales_District_2,
+                        Warehouse};
                 row_0_3__Route_DetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_0_3__Route_DetailsRow);
                 return row_0_3__Route_DetailsRow;
@@ -1653,6 +1665,7 @@ namespace NICSQLTools.Data {
                 this.columnBrand_Route_Old = base.Columns["Brand Route Old"];
                 this.columnSDN_Code = base.Columns["SDN Code"];
                 this.columnSales_District_2 = base.Columns["Sales District 2"];
+                this.columnWarehouse = base.Columns["Warehouse"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1694,6 +1707,8 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnSDN_Code);
                 this.columnSales_District_2 = new global::System.Data.DataColumn("Sales District 2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSales_District_2);
+                this.columnWarehouse = new global::System.Data.DataColumn("Warehouse", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWarehouse);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnRoute_Number}, true));
                 this.columnDistribution_Channel.MaxLength = 255;
@@ -1715,6 +1730,7 @@ namespace NICSQLTools.Data {
                 this.columnBrand_Route_Old.MaxLength = 255;
                 this.columnSDN_Code.MaxLength = 255;
                 this.columnSales_District_2.MaxLength = 255;
+                this.columnWarehouse.MaxLength = 255;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_table0_3__Route_Details");
                 this.ExtendedProperties.Add("Generator_UserTableName", "0-3  Route Details");
             }
@@ -1803,778 +1819,6 @@ namespace NICSQLTools.Data {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "_0_3__Route_DetailsDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class _0_4__Product_DetailsDataTable : global::System.Data.TypedTableBase<_0_4__Product_DetailsRow> {
-            
-            private global::System.Data.DataColumn columnMaterial_Number;
-            
-            private global::System.Data.DataColumn columnMaterial_Name;
-            
-            private global::System.Data.DataColumn columnGroup_1;
-            
-            private global::System.Data.DataColumn columnGroup_2;
-            
-            private global::System.Data.DataColumn columnGroup_3;
-            
-            private global::System.Data.DataColumn columnBrand;
-            
-            private global::System.Data.DataColumn columnBase_Base_Product;
-            
-            private global::System.Data.DataColumn columnPrice_Point_rang;
-            
-            private global::System.Data.DataColumn columnPrice_Point;
-            
-            private global::System.Data.DataColumn columnMarket_rang;
-            
-            private global::System.Data.DataColumn columnBase_Base_ProductOld;
-            
-            private global::System.Data.DataColumn columnBase_Product;
-            
-            private global::System.Data.DataColumn columnQuin;
-            
-            private global::System.Data.DataColumn columnVolum_Pice;
-            
-            private global::System.Data.DataColumn columnVolum;
-            
-            private global::System.Data.DataColumn columnVol;
-            
-            private global::System.Data.DataColumn columnNew_Qu;
-            
-            private global::System.Data.DataColumn columnPrice_Increas;
-            
-            private global::System.Data.DataColumn _columnTrade_Price_Carton_Old;
-            
-            private global::System.Data.DataColumn _columnTrade_Price_Carton;
-            
-            private global::System.Data.DataColumn _columnTrade_Price_Piece;
-            
-            private global::System.Data.DataColumn _columnConsumer_price__Carton;
-            
-            private global::System.Data.DataColumn _columnConsumer_price__Piece;
-            
-            private global::System.Data.DataColumn columnPallet;
-            
-            private global::System.Data.DataColumn columnSplit;
-            
-            private global::System.Data.DataColumn columnMaterial_Type;
-            
-            private global::System.Data.DataColumn columnFlavor;
-            
-            private global::System.Data.DataColumn columnNPDS;
-            
-            private global::System.Data.DataColumn columnValid_Year;
-            
-            private global::System.Data.DataColumn columnValid_Month;
-            
-            private global::System.Data.DataColumn columnPrice_Point_2009;
-            
-            private global::System.Data.DataColumn columnPrice_Point_2010;
-            
-            private global::System.Data.DataColumn _columnML___L;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _0_4__Product_DetailsDataTable() {
-                this.TableName = "0-4  Product Details";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal _0_4__Product_DetailsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected _0_4__Product_DetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Material_NumberColumn {
-                get {
-                    return this.columnMaterial_Number;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Material_NameColumn {
-                get {
-                    return this.columnMaterial_Name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Group_1Column {
-                get {
-                    return this.columnGroup_1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Group_2Column {
-                get {
-                    return this.columnGroup_2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Group_3Column {
-                get {
-                    return this.columnGroup_3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BrandColumn {
-                get {
-                    return this.columnBrand;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Base_Base_ProductColumn {
-                get {
-                    return this.columnBase_Base_Product;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Price_Point_rangColumn {
-                get {
-                    return this.columnPrice_Point_rang;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Price_PointColumn {
-                get {
-                    return this.columnPrice_Point;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Market_rangColumn {
-                get {
-                    return this.columnMarket_rang;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Base_Base_ProductOldColumn {
-                get {
-                    return this.columnBase_Base_ProductOld;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Base_ProductColumn {
-                get {
-                    return this.columnBase_Product;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn QuinColumn {
-                get {
-                    return this.columnQuin;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Volum_PiceColumn {
-                get {
-                    return this.columnVolum_Pice;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VolumColumn {
-                get {
-                    return this.columnVolum;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VolColumn {
-                get {
-                    return this.columnVol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn New_QuColumn {
-                get {
-                    return this.columnNew_Qu;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Price_IncreasColumn {
-                get {
-                    return this.columnPrice_Increas;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Trade_Price_Carton_OldColumn {
-                get {
-                    return this._columnTrade_Price_Carton_Old;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Trade_Price_CartonColumn {
-                get {
-                    return this._columnTrade_Price_Carton;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Trade_Price_PieceColumn {
-                get {
-                    return this._columnTrade_Price_Piece;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Consumer_price__CartonColumn {
-                get {
-                    return this._columnConsumer_price__Carton;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Consumer_price__PieceColumn {
-                get {
-                    return this._columnConsumer_price__Piece;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PalletColumn {
-                get {
-                    return this.columnPallet;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SplitColumn {
-                get {
-                    return this.columnSplit;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Material_TypeColumn {
-                get {
-                    return this.columnMaterial_Type;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FlavorColumn {
-                get {
-                    return this.columnFlavor;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NPDSColumn {
-                get {
-                    return this.columnNPDS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Valid_YearColumn {
-                get {
-                    return this.columnValid_Year;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Valid_MonthColumn {
-                get {
-                    return this.columnValid_Month;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Price_Point_2009Column {
-                get {
-                    return this.columnPrice_Point_2009;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Price_Point_2010Column {
-                get {
-                    return this.columnPrice_Point_2010;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _ML___LColumn {
-                get {
-                    return this._columnML___L;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _0_4__Product_DetailsRow this[int index] {
-                get {
-                    return ((_0_4__Product_DetailsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event _0_4__Product_DetailsRowChangeEventHandler _0_4__Product_DetailsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event _0_4__Product_DetailsRowChangeEventHandler _0_4__Product_DetailsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event _0_4__Product_DetailsRowChangeEventHandler _0_4__Product_DetailsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event _0_4__Product_DetailsRowChangeEventHandler _0_4__Product_DetailsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Add_0_4__Product_DetailsRow(_0_4__Product_DetailsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _0_4__Product_DetailsRow Add_0_4__Product_DetailsRow(
-                        double Material_Number, 
-                        string Material_Name, 
-                        string Group_1, 
-                        string Group_2, 
-                        string Group_3, 
-                        string Brand, 
-                        string Base_Base_Product, 
-                        string Price_Point_rang, 
-                        double Price_Point, 
-                        string Market_rang, 
-                        string Base_Base_ProductOld, 
-                        string Base_Product, 
-                        double Quin, 
-                        double Volum_Pice, 
-                        double Volum, 
-                        double Vol, 
-                        double New_Qu, 
-                        string Price_Increas, 
-                        double _Trade_Price_Carton_Old, 
-                        double _Trade_Price_Carton, 
-                        double _Trade_Price_Piece, 
-                        double _Consumer_price__Carton, 
-                        double _Consumer_price__Piece, 
-                        double Pallet, 
-                        double Split, 
-                        string Material_Type, 
-                        string Flavor, 
-                        string NPDS, 
-                        string Valid_Year, 
-                        string Valid_Month, 
-                        string Price_Point_2009, 
-                        string Price_Point_2010, 
-                        string _ML___L) {
-                _0_4__Product_DetailsRow row_0_4__Product_DetailsRow = ((_0_4__Product_DetailsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Material_Number,
-                        Material_Name,
-                        Group_1,
-                        Group_2,
-                        Group_3,
-                        Brand,
-                        Base_Base_Product,
-                        Price_Point_rang,
-                        Price_Point,
-                        Market_rang,
-                        Base_Base_ProductOld,
-                        Base_Product,
-                        Quin,
-                        Volum_Pice,
-                        Volum,
-                        Vol,
-                        New_Qu,
-                        Price_Increas,
-                        _Trade_Price_Carton_Old,
-                        _Trade_Price_Carton,
-                        _Trade_Price_Piece,
-                        _Consumer_price__Carton,
-                        _Consumer_price__Piece,
-                        Pallet,
-                        Split,
-                        Material_Type,
-                        Flavor,
-                        NPDS,
-                        Valid_Year,
-                        Valid_Month,
-                        Price_Point_2009,
-                        Price_Point_2010,
-                        _ML___L};
-                row_0_4__Product_DetailsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(row_0_4__Product_DetailsRow);
-                return row_0_4__Product_DetailsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _0_4__Product_DetailsRow FindByMaterial_Number(double Material_Number) {
-                return ((_0_4__Product_DetailsRow)(this.Rows.Find(new object[] {
-                            Material_Number})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                _0_4__Product_DetailsDataTable cln = ((_0_4__Product_DetailsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new _0_4__Product_DetailsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnMaterial_Number = base.Columns["Material Number"];
-                this.columnMaterial_Name = base.Columns["Material Name"];
-                this.columnGroup_1 = base.Columns["Group 1"];
-                this.columnGroup_2 = base.Columns["Group 2"];
-                this.columnGroup_3 = base.Columns["Group 3"];
-                this.columnBrand = base.Columns["Brand"];
-                this.columnBase_Base_Product = base.Columns["Base Base Product"];
-                this.columnPrice_Point_rang = base.Columns["Price Point rang"];
-                this.columnPrice_Point = base.Columns["Price Point"];
-                this.columnMarket_rang = base.Columns["Market rang"];
-                this.columnBase_Base_ProductOld = base.Columns["Base Base ProductOld"];
-                this.columnBase_Product = base.Columns["Base Product"];
-                this.columnQuin = base.Columns["Quin"];
-                this.columnVolum_Pice = base.Columns["Volum Pice"];
-                this.columnVolum = base.Columns["Volum"];
-                this.columnVol = base.Columns["Vol"];
-                this.columnNew_Qu = base.Columns["New Qu"];
-                this.columnPrice_Increas = base.Columns["Price Increas"];
-                this._columnTrade_Price_Carton_Old = base.Columns["Trade Price/Carton Old"];
-                this._columnTrade_Price_Carton = base.Columns["Trade Price/Carton"];
-                this._columnTrade_Price_Piece = base.Columns["Trade Price/Piece"];
-                this._columnConsumer_price__Carton = base.Columns["Consumer price /Carton"];
-                this._columnConsumer_price__Piece = base.Columns["Consumer price /Piece"];
-                this.columnPallet = base.Columns["Pallet"];
-                this.columnSplit = base.Columns["Split"];
-                this.columnMaterial_Type = base.Columns["Material Type"];
-                this.columnFlavor = base.Columns["Flavor"];
-                this.columnNPDS = base.Columns["NPDS"];
-                this.columnValid_Year = base.Columns["Valid Year"];
-                this.columnValid_Month = base.Columns["Valid Month"];
-                this.columnPrice_Point_2009 = base.Columns["Price Point 2009"];
-                this.columnPrice_Point_2010 = base.Columns["Price Point 2010"];
-                this._columnML___L = base.Columns["ML / L"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnMaterial_Number = new global::System.Data.DataColumn("Material Number", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaterial_Number);
-                this.columnMaterial_Name = new global::System.Data.DataColumn("Material Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaterial_Name);
-                this.columnGroup_1 = new global::System.Data.DataColumn("Group 1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGroup_1);
-                this.columnGroup_2 = new global::System.Data.DataColumn("Group 2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGroup_2);
-                this.columnGroup_3 = new global::System.Data.DataColumn("Group 3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGroup_3);
-                this.columnBrand = new global::System.Data.DataColumn("Brand", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBrand);
-                this.columnBase_Base_Product = new global::System.Data.DataColumn("Base Base Product", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBase_Base_Product);
-                this.columnPrice_Point_rang = new global::System.Data.DataColumn("Price Point rang", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice_Point_rang);
-                this.columnPrice_Point = new global::System.Data.DataColumn("Price Point", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice_Point);
-                this.columnMarket_rang = new global::System.Data.DataColumn("Market rang", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMarket_rang);
-                this.columnBase_Base_ProductOld = new global::System.Data.DataColumn("Base Base ProductOld", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBase_Base_ProductOld);
-                this.columnBase_Product = new global::System.Data.DataColumn("Base Product", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBase_Product);
-                this.columnQuin = new global::System.Data.DataColumn("Quin", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuin);
-                this.columnVolum_Pice = new global::System.Data.DataColumn("Volum Pice", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVolum_Pice);
-                this.columnVolum = new global::System.Data.DataColumn("Volum", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVolum);
-                this.columnVol = new global::System.Data.DataColumn("Vol", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVol);
-                this.columnNew_Qu = new global::System.Data.DataColumn("New Qu", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNew_Qu);
-                this.columnPrice_Increas = new global::System.Data.DataColumn("Price Increas", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice_Increas);
-                this._columnTrade_Price_Carton_Old = new global::System.Data.DataColumn("Trade Price/Carton Old", typeof(double), null, global::System.Data.MappingType.Element);
-                this._columnTrade_Price_Carton_Old.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTrade_Price_Carton_Old");
-                this._columnTrade_Price_Carton_Old.ExtendedProperties.Add("Generator_UserColumnName", "Trade Price/Carton Old");
-                base.Columns.Add(this._columnTrade_Price_Carton_Old);
-                this._columnTrade_Price_Carton = new global::System.Data.DataColumn("Trade Price/Carton", typeof(double), null, global::System.Data.MappingType.Element);
-                this._columnTrade_Price_Carton.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTrade_Price_Carton");
-                this._columnTrade_Price_Carton.ExtendedProperties.Add("Generator_UserColumnName", "Trade Price/Carton");
-                base.Columns.Add(this._columnTrade_Price_Carton);
-                this._columnTrade_Price_Piece = new global::System.Data.DataColumn("Trade Price/Piece", typeof(double), null, global::System.Data.MappingType.Element);
-                this._columnTrade_Price_Piece.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTrade_Price_Piece");
-                this._columnTrade_Price_Piece.ExtendedProperties.Add("Generator_UserColumnName", "Trade Price/Piece");
-                base.Columns.Add(this._columnTrade_Price_Piece);
-                this._columnConsumer_price__Carton = new global::System.Data.DataColumn("Consumer price /Carton", typeof(double), null, global::System.Data.MappingType.Element);
-                this._columnConsumer_price__Carton.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnConsumer_price__Carton");
-                this._columnConsumer_price__Carton.ExtendedProperties.Add("Generator_UserColumnName", "Consumer price /Carton");
-                base.Columns.Add(this._columnConsumer_price__Carton);
-                this._columnConsumer_price__Piece = new global::System.Data.DataColumn("Consumer price /Piece", typeof(double), null, global::System.Data.MappingType.Element);
-                this._columnConsumer_price__Piece.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnConsumer_price__Piece");
-                this._columnConsumer_price__Piece.ExtendedProperties.Add("Generator_UserColumnName", "Consumer price /Piece");
-                base.Columns.Add(this._columnConsumer_price__Piece);
-                this.columnPallet = new global::System.Data.DataColumn("Pallet", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPallet);
-                this.columnSplit = new global::System.Data.DataColumn("Split", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSplit);
-                this.columnMaterial_Type = new global::System.Data.DataColumn("Material Type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMaterial_Type);
-                this.columnFlavor = new global::System.Data.DataColumn("Flavor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFlavor);
-                this.columnNPDS = new global::System.Data.DataColumn("NPDS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNPDS);
-                this.columnValid_Year = new global::System.Data.DataColumn("Valid Year", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValid_Year);
-                this.columnValid_Month = new global::System.Data.DataColumn("Valid Month", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValid_Month);
-                this.columnPrice_Point_2009 = new global::System.Data.DataColumn("Price Point 2009", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice_Point_2009);
-                this.columnPrice_Point_2010 = new global::System.Data.DataColumn("Price Point 2010", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice_Point_2010);
-                this._columnML___L = new global::System.Data.DataColumn("ML / L", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnML___L.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnML___L");
-                this._columnML___L.ExtendedProperties.Add("Generator_UserColumnName", "ML / L");
-                base.Columns.Add(this._columnML___L);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnMaterial_Number}, true));
-                this.columnMaterial_Number.AllowDBNull = false;
-                this.columnMaterial_Number.Unique = true;
-                this.columnMaterial_Name.MaxLength = 255;
-                this.columnGroup_1.MaxLength = 255;
-                this.columnGroup_2.MaxLength = 255;
-                this.columnGroup_3.MaxLength = 255;
-                this.columnBrand.MaxLength = 255;
-                this.columnBase_Base_Product.MaxLength = 255;
-                this.columnPrice_Point_rang.MaxLength = 255;
-                this.columnMarket_rang.MaxLength = 255;
-                this.columnBase_Base_ProductOld.MaxLength = 255;
-                this.columnBase_Product.MaxLength = 255;
-                this.columnPrice_Increas.MaxLength = 255;
-                this.columnMaterial_Type.MaxLength = 255;
-                this.columnFlavor.MaxLength = 255;
-                this.columnNPDS.MaxLength = 255;
-                this.columnValid_Year.MaxLength = 255;
-                this.columnValid_Month.MaxLength = 255;
-                this.columnPrice_Point_2009.MaxLength = 255;
-                this.columnPrice_Point_2010.MaxLength = 255;
-                this._columnML___L.MaxLength = 255;
-                this.ExtendedProperties.Add("Generator_TableVarName", "_table0_4__Product_Details");
-                this.ExtendedProperties.Add("Generator_UserTableName", "0-4  Product Details");
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _0_4__Product_DetailsRow New_0_4__Product_DetailsRow() {
-                return ((_0_4__Product_DetailsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new _0_4__Product_DetailsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(_0_4__Product_DetailsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this._0_4__Product_DetailsRowChanged != null)) {
-                    this._0_4__Product_DetailsRowChanged(this, new _0_4__Product_DetailsRowChangeEvent(((_0_4__Product_DetailsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this._0_4__Product_DetailsRowChanging != null)) {
-                    this._0_4__Product_DetailsRowChanging(this, new _0_4__Product_DetailsRowChangeEvent(((_0_4__Product_DetailsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this._0_4__Product_DetailsRowDeleted != null)) {
-                    this._0_4__Product_DetailsRowDeleted(this, new _0_4__Product_DetailsRowChangeEvent(((_0_4__Product_DetailsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this._0_4__Product_DetailsRowDeleting != null)) {
-                    this._0_4__Product_DetailsRowDeleting(this, new _0_4__Product_DetailsRowChangeEvent(((_0_4__Product_DetailsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Remove_0_4__Product_DetailsRow(_0_4__Product_DetailsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsData ds = new dsData();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "_0_4__Product_DetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3577,6 +2821,796 @@ namespace NICSQLTools.Data {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "_0_6_Customer_HNDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class _0_4__Product_DetailsDataTable : global::System.Data.TypedTableBase<_0_4__Product_DetailsRow> {
+            
+            private global::System.Data.DataColumn columnMaterial_Number;
+            
+            private global::System.Data.DataColumn columnMaterial_Name;
+            
+            private global::System.Data.DataColumn columnGroup_1;
+            
+            private global::System.Data.DataColumn columnGroup_2;
+            
+            private global::System.Data.DataColumn columnGroup_3;
+            
+            private global::System.Data.DataColumn columnBrand;
+            
+            private global::System.Data.DataColumn columnBase_Base_Product;
+            
+            private global::System.Data.DataColumn columnBase_Group;
+            
+            private global::System.Data.DataColumn columnPrice_Point_rang;
+            
+            private global::System.Data.DataColumn columnPrice_Point;
+            
+            private global::System.Data.DataColumn columnMarket_range;
+            
+            private global::System.Data.DataColumn columnBase_Base_ProductOld;
+            
+            private global::System.Data.DataColumn columnBase_Product;
+            
+            private global::System.Data.DataColumn columnQuin;
+            
+            private global::System.Data.DataColumn columnVolum_Pice;
+            
+            private global::System.Data.DataColumn columnVolum;
+            
+            private global::System.Data.DataColumn columnVol;
+            
+            private global::System.Data.DataColumn columnNew_Qu;
+            
+            private global::System.Data.DataColumn columnPrice_Increas;
+            
+            private global::System.Data.DataColumn _columnTrade_Price_Carton_Old;
+            
+            private global::System.Data.DataColumn _columnTrade_Price_Carton;
+            
+            private global::System.Data.DataColumn _columnTrade_Price_Piece;
+            
+            private global::System.Data.DataColumn _columnConsumer_price__Carton;
+            
+            private global::System.Data.DataColumn _columnConsumer_price__Piece;
+            
+            private global::System.Data.DataColumn columnPallet;
+            
+            private global::System.Data.DataColumn columnSplit;
+            
+            private global::System.Data.DataColumn columnMaterial_Type;
+            
+            private global::System.Data.DataColumn columnFlavor;
+            
+            private global::System.Data.DataColumn columnNPDS;
+            
+            private global::System.Data.DataColumn columnValid_Year;
+            
+            private global::System.Data.DataColumn columnValid_Month;
+            
+            private global::System.Data.DataColumn columnPrice_Point_2009;
+            
+            private global::System.Data.DataColumn columnPrice_Point_2010;
+            
+            private global::System.Data.DataColumn _columnML___L;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public _0_4__Product_DetailsDataTable() {
+                this.TableName = "0-4  Product Details";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal _0_4__Product_DetailsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected _0_4__Product_DetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Material_NumberColumn {
+                get {
+                    return this.columnMaterial_Number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Material_NameColumn {
+                get {
+                    return this.columnMaterial_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Group_1Column {
+                get {
+                    return this.columnGroup_1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Group_2Column {
+                get {
+                    return this.columnGroup_2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Group_3Column {
+                get {
+                    return this.columnGroup_3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BrandColumn {
+                get {
+                    return this.columnBrand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Base_Base_ProductColumn {
+                get {
+                    return this.columnBase_Base_Product;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Base_GroupColumn {
+                get {
+                    return this.columnBase_Group;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Price_Point_rangColumn {
+                get {
+                    return this.columnPrice_Point_rang;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Price_PointColumn {
+                get {
+                    return this.columnPrice_Point;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Market_rangeColumn {
+                get {
+                    return this.columnMarket_range;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Base_Base_ProductOldColumn {
+                get {
+                    return this.columnBase_Base_ProductOld;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Base_ProductColumn {
+                get {
+                    return this.columnBase_Product;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QuinColumn {
+                get {
+                    return this.columnQuin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Volum_PiceColumn {
+                get {
+                    return this.columnVolum_Pice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VolumColumn {
+                get {
+                    return this.columnVolum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VolColumn {
+                get {
+                    return this.columnVol;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn New_QuColumn {
+                get {
+                    return this.columnNew_Qu;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Price_IncreasColumn {
+                get {
+                    return this.columnPrice_Increas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Trade_Price_Carton_OldColumn {
+                get {
+                    return this._columnTrade_Price_Carton_Old;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Trade_Price_CartonColumn {
+                get {
+                    return this._columnTrade_Price_Carton;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Trade_Price_PieceColumn {
+                get {
+                    return this._columnTrade_Price_Piece;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Consumer_price__CartonColumn {
+                get {
+                    return this._columnConsumer_price__Carton;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _Consumer_price__PieceColumn {
+                get {
+                    return this._columnConsumer_price__Piece;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PalletColumn {
+                get {
+                    return this.columnPallet;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SplitColumn {
+                get {
+                    return this.columnSplit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Material_TypeColumn {
+                get {
+                    return this.columnMaterial_Type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FlavorColumn {
+                get {
+                    return this.columnFlavor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NPDSColumn {
+                get {
+                    return this.columnNPDS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Valid_YearColumn {
+                get {
+                    return this.columnValid_Year;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Valid_MonthColumn {
+                get {
+                    return this.columnValid_Month;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Price_Point_2009Column {
+                get {
+                    return this.columnPrice_Point_2009;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Price_Point_2010Column {
+                get {
+                    return this.columnPrice_Point_2010;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _ML___LColumn {
+                get {
+                    return this._columnML___L;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public _0_4__Product_DetailsRow this[int index] {
+                get {
+                    return ((_0_4__Product_DetailsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event _0_4__Product_DetailsRowChangeEventHandler _0_4__Product_DetailsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event _0_4__Product_DetailsRowChangeEventHandler _0_4__Product_DetailsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event _0_4__Product_DetailsRowChangeEventHandler _0_4__Product_DetailsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event _0_4__Product_DetailsRowChangeEventHandler _0_4__Product_DetailsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Add_0_4__Product_DetailsRow(_0_4__Product_DetailsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public _0_4__Product_DetailsRow Add_0_4__Product_DetailsRow(
+                        double Material_Number, 
+                        string Material_Name, 
+                        string Group_1, 
+                        string Group_2, 
+                        string Group_3, 
+                        string Brand, 
+                        string Base_Base_Product, 
+                        string Base_Group, 
+                        string Price_Point_rang, 
+                        double Price_Point, 
+                        string Market_range, 
+                        string Base_Base_ProductOld, 
+                        string Base_Product, 
+                        double Quin, 
+                        double Volum_Pice, 
+                        double Volum, 
+                        double Vol, 
+                        double New_Qu, 
+                        string Price_Increas, 
+                        string _Trade_Price_Carton_Old, 
+                        double _Trade_Price_Carton, 
+                        double _Trade_Price_Piece, 
+                        string _Consumer_price__Carton, 
+                        double _Consumer_price__Piece, 
+                        double Pallet, 
+                        double Split, 
+                        string Material_Type, 
+                        string Flavor, 
+                        string NPDS, 
+                        string Valid_Year, 
+                        string Valid_Month, 
+                        string Price_Point_2009, 
+                        string Price_Point_2010, 
+                        string _ML___L) {
+                _0_4__Product_DetailsRow row_0_4__Product_DetailsRow = ((_0_4__Product_DetailsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Material_Number,
+                        Material_Name,
+                        Group_1,
+                        Group_2,
+                        Group_3,
+                        Brand,
+                        Base_Base_Product,
+                        Base_Group,
+                        Price_Point_rang,
+                        Price_Point,
+                        Market_range,
+                        Base_Base_ProductOld,
+                        Base_Product,
+                        Quin,
+                        Volum_Pice,
+                        Volum,
+                        Vol,
+                        New_Qu,
+                        Price_Increas,
+                        _Trade_Price_Carton_Old,
+                        _Trade_Price_Carton,
+                        _Trade_Price_Piece,
+                        _Consumer_price__Carton,
+                        _Consumer_price__Piece,
+                        Pallet,
+                        Split,
+                        Material_Type,
+                        Flavor,
+                        NPDS,
+                        Valid_Year,
+                        Valid_Month,
+                        Price_Point_2009,
+                        Price_Point_2010,
+                        _ML___L};
+                row_0_4__Product_DetailsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(row_0_4__Product_DetailsRow);
+                return row_0_4__Product_DetailsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public _0_4__Product_DetailsRow FindByMaterial_Number(double Material_Number) {
+                return ((_0_4__Product_DetailsRow)(this.Rows.Find(new object[] {
+                            Material_Number})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                _0_4__Product_DetailsDataTable cln = ((_0_4__Product_DetailsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new _0_4__Product_DetailsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnMaterial_Number = base.Columns["Material Number"];
+                this.columnMaterial_Name = base.Columns["Material Name"];
+                this.columnGroup_1 = base.Columns["Group 1"];
+                this.columnGroup_2 = base.Columns["Group 2"];
+                this.columnGroup_3 = base.Columns["Group 3"];
+                this.columnBrand = base.Columns["Brand"];
+                this.columnBase_Base_Product = base.Columns["Base Base Product"];
+                this.columnBase_Group = base.Columns["Base Group"];
+                this.columnPrice_Point_rang = base.Columns["Price Point rang"];
+                this.columnPrice_Point = base.Columns["Price Point"];
+                this.columnMarket_range = base.Columns["Market range"];
+                this.columnBase_Base_ProductOld = base.Columns["Base Base ProductOld"];
+                this.columnBase_Product = base.Columns["Base Product"];
+                this.columnQuin = base.Columns["Quin"];
+                this.columnVolum_Pice = base.Columns["Volum Pice"];
+                this.columnVolum = base.Columns["Volum"];
+                this.columnVol = base.Columns["Vol"];
+                this.columnNew_Qu = base.Columns["New Qu"];
+                this.columnPrice_Increas = base.Columns["Price Increas"];
+                this._columnTrade_Price_Carton_Old = base.Columns["Trade Price/Carton Old"];
+                this._columnTrade_Price_Carton = base.Columns["Trade Price/Carton"];
+                this._columnTrade_Price_Piece = base.Columns["Trade Price/Piece"];
+                this._columnConsumer_price__Carton = base.Columns["Consumer price /Carton"];
+                this._columnConsumer_price__Piece = base.Columns["Consumer price /Piece"];
+                this.columnPallet = base.Columns["Pallet"];
+                this.columnSplit = base.Columns["Split"];
+                this.columnMaterial_Type = base.Columns["Material Type"];
+                this.columnFlavor = base.Columns["Flavor"];
+                this.columnNPDS = base.Columns["NPDS"];
+                this.columnValid_Year = base.Columns["Valid Year"];
+                this.columnValid_Month = base.Columns["Valid Month"];
+                this.columnPrice_Point_2009 = base.Columns["Price Point 2009"];
+                this.columnPrice_Point_2010 = base.Columns["Price Point 2010"];
+                this._columnML___L = base.Columns["ML / L"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnMaterial_Number = new global::System.Data.DataColumn("Material Number", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaterial_Number);
+                this.columnMaterial_Name = new global::System.Data.DataColumn("Material Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaterial_Name);
+                this.columnGroup_1 = new global::System.Data.DataColumn("Group 1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGroup_1);
+                this.columnGroup_2 = new global::System.Data.DataColumn("Group 2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGroup_2);
+                this.columnGroup_3 = new global::System.Data.DataColumn("Group 3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGroup_3);
+                this.columnBrand = new global::System.Data.DataColumn("Brand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBrand);
+                this.columnBase_Base_Product = new global::System.Data.DataColumn("Base Base Product", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBase_Base_Product);
+                this.columnBase_Group = new global::System.Data.DataColumn("Base Group", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBase_Group);
+                this.columnPrice_Point_rang = new global::System.Data.DataColumn("Price Point rang", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice_Point_rang);
+                this.columnPrice_Point = new global::System.Data.DataColumn("Price Point", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice_Point);
+                this.columnMarket_range = new global::System.Data.DataColumn("Market range", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMarket_range);
+                this.columnBase_Base_ProductOld = new global::System.Data.DataColumn("Base Base ProductOld", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBase_Base_ProductOld);
+                this.columnBase_Product = new global::System.Data.DataColumn("Base Product", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBase_Product);
+                this.columnQuin = new global::System.Data.DataColumn("Quin", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuin);
+                this.columnVolum_Pice = new global::System.Data.DataColumn("Volum Pice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVolum_Pice);
+                this.columnVolum = new global::System.Data.DataColumn("Volum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVolum);
+                this.columnVol = new global::System.Data.DataColumn("Vol", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVol);
+                this.columnNew_Qu = new global::System.Data.DataColumn("New Qu", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNew_Qu);
+                this.columnPrice_Increas = new global::System.Data.DataColumn("Price Increas", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice_Increas);
+                this._columnTrade_Price_Carton_Old = new global::System.Data.DataColumn("Trade Price/Carton Old", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnTrade_Price_Carton_Old.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTrade_Price_Carton_Old");
+                this._columnTrade_Price_Carton_Old.ExtendedProperties.Add("Generator_UserColumnName", "Trade Price/Carton Old");
+                base.Columns.Add(this._columnTrade_Price_Carton_Old);
+                this._columnTrade_Price_Carton = new global::System.Data.DataColumn("Trade Price/Carton", typeof(double), null, global::System.Data.MappingType.Element);
+                this._columnTrade_Price_Carton.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTrade_Price_Carton");
+                this._columnTrade_Price_Carton.ExtendedProperties.Add("Generator_UserColumnName", "Trade Price/Carton");
+                base.Columns.Add(this._columnTrade_Price_Carton);
+                this._columnTrade_Price_Piece = new global::System.Data.DataColumn("Trade Price/Piece", typeof(double), null, global::System.Data.MappingType.Element);
+                this._columnTrade_Price_Piece.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTrade_Price_Piece");
+                this._columnTrade_Price_Piece.ExtendedProperties.Add("Generator_UserColumnName", "Trade Price/Piece");
+                base.Columns.Add(this._columnTrade_Price_Piece);
+                this._columnConsumer_price__Carton = new global::System.Data.DataColumn("Consumer price /Carton", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnConsumer_price__Carton.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnConsumer_price__Carton");
+                this._columnConsumer_price__Carton.ExtendedProperties.Add("Generator_UserColumnName", "Consumer price /Carton");
+                base.Columns.Add(this._columnConsumer_price__Carton);
+                this._columnConsumer_price__Piece = new global::System.Data.DataColumn("Consumer price /Piece", typeof(double), null, global::System.Data.MappingType.Element);
+                this._columnConsumer_price__Piece.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnConsumer_price__Piece");
+                this._columnConsumer_price__Piece.ExtendedProperties.Add("Generator_UserColumnName", "Consumer price /Piece");
+                base.Columns.Add(this._columnConsumer_price__Piece);
+                this.columnPallet = new global::System.Data.DataColumn("Pallet", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPallet);
+                this.columnSplit = new global::System.Data.DataColumn("Split", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSplit);
+                this.columnMaterial_Type = new global::System.Data.DataColumn("Material Type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaterial_Type);
+                this.columnFlavor = new global::System.Data.DataColumn("Flavor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFlavor);
+                this.columnNPDS = new global::System.Data.DataColumn("NPDS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNPDS);
+                this.columnValid_Year = new global::System.Data.DataColumn("Valid Year", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValid_Year);
+                this.columnValid_Month = new global::System.Data.DataColumn("Valid Month", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValid_Month);
+                this.columnPrice_Point_2009 = new global::System.Data.DataColumn("Price Point 2009", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice_Point_2009);
+                this.columnPrice_Point_2010 = new global::System.Data.DataColumn("Price Point 2010", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice_Point_2010);
+                this._columnML___L = new global::System.Data.DataColumn("ML / L", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnML___L.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnML___L");
+                this._columnML___L.ExtendedProperties.Add("Generator_UserColumnName", "ML / L");
+                base.Columns.Add(this._columnML___L);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnMaterial_Number}, true));
+                this.columnMaterial_Number.AllowDBNull = false;
+                this.columnMaterial_Number.Unique = true;
+                this.columnMaterial_Name.MaxLength = 255;
+                this.columnGroup_1.MaxLength = 255;
+                this.columnGroup_2.MaxLength = 255;
+                this.columnGroup_3.MaxLength = 255;
+                this.columnBrand.MaxLength = 255;
+                this.columnBase_Base_Product.MaxLength = 255;
+                this.columnBase_Group.MaxLength = 255;
+                this.columnPrice_Point_rang.MaxLength = 255;
+                this.columnMarket_range.MaxLength = 255;
+                this.columnBase_Base_ProductOld.MaxLength = 255;
+                this.columnBase_Product.MaxLength = 255;
+                this.columnPrice_Increas.MaxLength = 255;
+                this._columnTrade_Price_Carton_Old.MaxLength = 255;
+                this._columnConsumer_price__Carton.MaxLength = 255;
+                this.columnMaterial_Type.MaxLength = 255;
+                this.columnFlavor.MaxLength = 255;
+                this.columnNPDS.MaxLength = 255;
+                this.columnValid_Year.MaxLength = 255;
+                this.columnValid_Month.MaxLength = 255;
+                this.columnPrice_Point_2009.MaxLength = 255;
+                this.columnPrice_Point_2010.MaxLength = 255;
+                this._columnML___L.MaxLength = 255;
+                this.ExtendedProperties.Add("Generator_TableVarName", "_table0_4__Product_Details");
+                this.ExtendedProperties.Add("Generator_UserTableName", "0-4  Product Details");
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public _0_4__Product_DetailsRow New_0_4__Product_DetailsRow() {
+                return ((_0_4__Product_DetailsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new _0_4__Product_DetailsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(_0_4__Product_DetailsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this._0_4__Product_DetailsRowChanged != null)) {
+                    this._0_4__Product_DetailsRowChanged(this, new _0_4__Product_DetailsRowChangeEvent(((_0_4__Product_DetailsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this._0_4__Product_DetailsRowChanging != null)) {
+                    this._0_4__Product_DetailsRowChanging(this, new _0_4__Product_DetailsRowChangeEvent(((_0_4__Product_DetailsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this._0_4__Product_DetailsRowDeleted != null)) {
+                    this._0_4__Product_DetailsRowDeleted(this, new _0_4__Product_DetailsRowChangeEvent(((_0_4__Product_DetailsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this._0_4__Product_DetailsRowDeleting != null)) {
+                    this._0_4__Product_DetailsRowDeleting(this, new _0_4__Product_DetailsRowChangeEvent(((_0_4__Product_DetailsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Remove_0_4__Product_DetailsRow(_0_4__Product_DetailsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsData ds = new dsData();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "_0_4__Product_DetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5101,6 +5135,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Warehouse {
+                get {
+                    try {
+                        return ((string)(this[this._table0_3__Route_Details.WarehouseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Warehouse\' in table \'0-3  Route Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_3__Route_Details.WarehouseColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDistribution_ChannelNull() {
                 return this.IsNull(this._table0_3__Route_Details.Distribution_ChannelColumn);
             }
@@ -5290,937 +5340,17 @@ namespace NICSQLTools.Data {
             public void SetSales_District_2Null() {
                 this[this._table0_3__Route_Details.Sales_District_2Column] = global::System.Convert.DBNull;
             }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class _0_4__Product_DetailsRow : global::System.Data.DataRow {
             
-            private _0_4__Product_DetailsDataTable _table0_4__Product_Details;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal _0_4__Product_DetailsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this._table0_4__Product_Details = ((_0_4__Product_DetailsDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Material_Number {
-                get {
-                    return ((double)(this[this._table0_4__Product_Details.Material_NumberColumn]));
-                }
-                set {
-                    this[this._table0_4__Product_Details.Material_NumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Material_Name {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Material_NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Material Name\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Material_NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Group_1 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Group_1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Group 1\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Group_1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Group_2 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Group_2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Group 2\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Group_2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Group_3 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Group_3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Group 3\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Group_3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Brand {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.BrandColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Brand\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.BrandColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Base_Base_Product {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Base_Base_ProductColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Base Base Product\' in table \'0-4  Product Details\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Base_Base_ProductColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Price_Point_rang {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Price_Point_rangColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point rang\' in table \'0-4  Product Details\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Price_Point_rangColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Price_Point {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details.Price_PointColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Price_PointColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Market_rang {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Market_rangColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Market rang\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Market_rangColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Base_Base_ProductOld {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Base_Base_ProductOldColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Base Base ProductOld\' in table \'0-4  Product Details\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Base_Base_ProductOldColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Base_Product {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Base_ProductColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Base Product\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Base_ProductColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Quin {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details.QuinColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quin\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.QuinColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Volum_Pice {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details.Volum_PiceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Volum Pice\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Volum_PiceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Volum {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details.VolumColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Volum\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.VolumColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Vol {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details.VolColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Vol\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.VolColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double New_Qu {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details.New_QuColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'New Qu\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.New_QuColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Price_Increas {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Price_IncreasColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price Increas\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Price_IncreasColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double _Trade_Price_Carton_Old {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details._Trade_Price_Carton_OldColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Trade Price/Carton Old\' in table \'0-4  Product Details\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details._Trade_Price_Carton_OldColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double _Trade_Price_Carton {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details._Trade_Price_CartonColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Trade Price/Carton\' in table \'0-4  Product Details\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details._Trade_Price_CartonColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double _Trade_Price_Piece {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details._Trade_Price_PieceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Trade Price/Piece\' in table \'0-4  Product Details\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details._Trade_Price_PieceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double _Consumer_price__Carton {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details._Consumer_price__CartonColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Consumer price /Carton\' in table \'0-4  Product Details\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details._Consumer_price__CartonColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double _Consumer_price__Piece {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details._Consumer_price__PieceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Consumer price /Piece\' in table \'0-4  Product Details\' is D" +
-                                "BNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details._Consumer_price__PieceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Pallet {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details.PalletColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Pallet\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.PalletColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Split {
-                get {
-                    try {
-                        return ((double)(this[this._table0_4__Product_Details.SplitColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Split\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.SplitColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Material_Type {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Material_TypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Material Type\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Material_TypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Flavor {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.FlavorColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Flavor\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.FlavorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NPDS {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.NPDSColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NPDS\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.NPDSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Valid_Year {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Valid_YearColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Valid Year\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Valid_YearColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Valid_Month {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Valid_MonthColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Valid Month\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Valid_MonthColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Price_Point_2009 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Price_Point_2009Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point 2009\' in table \'0-4  Product Details\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Price_Point_2009Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Price_Point_2010 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Price_Point_2010Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point 2010\' in table \'0-4  Product Details\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Price_Point_2010Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _ML___L {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details._ML___LColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ML / L\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details._ML___LColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMaterial_NameNull() {
-                return this.IsNull(this._table0_4__Product_Details.Material_NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMaterial_NameNull() {
-                this[this._table0_4__Product_Details.Material_NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGroup_1Null() {
-                return this.IsNull(this._table0_4__Product_Details.Group_1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGroup_1Null() {
-                this[this._table0_4__Product_Details.Group_1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGroup_2Null() {
-                return this.IsNull(this._table0_4__Product_Details.Group_2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGroup_2Null() {
-                this[this._table0_4__Product_Details.Group_2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGroup_3Null() {
-                return this.IsNull(this._table0_4__Product_Details.Group_3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGroup_3Null() {
-                this[this._table0_4__Product_Details.Group_3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBrandNull() {
-                return this.IsNull(this._table0_4__Product_Details.BrandColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBrandNull() {
-                this[this._table0_4__Product_Details.BrandColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBase_Base_ProductNull() {
-                return this.IsNull(this._table0_4__Product_Details.Base_Base_ProductColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBase_Base_ProductNull() {
-                this[this._table0_4__Product_Details.Base_Base_ProductColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrice_Point_rangNull() {
-                return this.IsNull(this._table0_4__Product_Details.Price_Point_rangColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrice_Point_rangNull() {
-                this[this._table0_4__Product_Details.Price_Point_rangColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrice_PointNull() {
-                return this.IsNull(this._table0_4__Product_Details.Price_PointColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrice_PointNull() {
-                this[this._table0_4__Product_Details.Price_PointColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMarket_rangNull() {
-                return this.IsNull(this._table0_4__Product_Details.Market_rangColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMarket_rangNull() {
-                this[this._table0_4__Product_Details.Market_rangColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBase_Base_ProductOldNull() {
-                return this.IsNull(this._table0_4__Product_Details.Base_Base_ProductOldColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBase_Base_ProductOldNull() {
-                this[this._table0_4__Product_Details.Base_Base_ProductOldColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBase_ProductNull() {
-                return this.IsNull(this._table0_4__Product_Details.Base_ProductColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBase_ProductNull() {
-                this[this._table0_4__Product_Details.Base_ProductColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsQuinNull() {
-                return this.IsNull(this._table0_4__Product_Details.QuinColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetQuinNull() {
-                this[this._table0_4__Product_Details.QuinColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsVolum_PiceNull() {
-                return this.IsNull(this._table0_4__Product_Details.Volum_PiceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetVolum_PiceNull() {
-                this[this._table0_4__Product_Details.Volum_PiceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsVolumNull() {
-                return this.IsNull(this._table0_4__Product_Details.VolumColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetVolumNull() {
-                this[this._table0_4__Product_Details.VolumColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsVolNull() {
-                return this.IsNull(this._table0_4__Product_Details.VolColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetVolNull() {
-                this[this._table0_4__Product_Details.VolColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNew_QuNull() {
-                return this.IsNull(this._table0_4__Product_Details.New_QuColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNew_QuNull() {
-                this[this._table0_4__Product_Details.New_QuColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrice_IncreasNull() {
-                return this.IsNull(this._table0_4__Product_Details.Price_IncreasColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrice_IncreasNull() {
-                this[this._table0_4__Product_Details.Price_IncreasColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_Trade_Price_Carton_OldNull() {
-                return this.IsNull(this._table0_4__Product_Details._Trade_Price_Carton_OldColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_Trade_Price_Carton_OldNull() {
-                this[this._table0_4__Product_Details._Trade_Price_Carton_OldColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_Trade_Price_CartonNull() {
-                return this.IsNull(this._table0_4__Product_Details._Trade_Price_CartonColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_Trade_Price_CartonNull() {
-                this[this._table0_4__Product_Details._Trade_Price_CartonColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_Trade_Price_PieceNull() {
-                return this.IsNull(this._table0_4__Product_Details._Trade_Price_PieceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_Trade_Price_PieceNull() {
-                this[this._table0_4__Product_Details._Trade_Price_PieceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_Consumer_price__CartonNull() {
-                return this.IsNull(this._table0_4__Product_Details._Consumer_price__CartonColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_Consumer_price__CartonNull() {
-                this[this._table0_4__Product_Details._Consumer_price__CartonColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_Consumer_price__PieceNull() {
-                return this.IsNull(this._table0_4__Product_Details._Consumer_price__PieceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_Consumer_price__PieceNull() {
-                this[this._table0_4__Product_Details._Consumer_price__PieceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPalletNull() {
-                return this.IsNull(this._table0_4__Product_Details.PalletColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPalletNull() {
-                this[this._table0_4__Product_Details.PalletColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSplitNull() {
-                return this.IsNull(this._table0_4__Product_Details.SplitColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSplitNull() {
-                this[this._table0_4__Product_Details.SplitColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMaterial_TypeNull() {
-                return this.IsNull(this._table0_4__Product_Details.Material_TypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMaterial_TypeNull() {
-                this[this._table0_4__Product_Details.Material_TypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFlavorNull() {
-                return this.IsNull(this._table0_4__Product_Details.FlavorColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFlavorNull() {
-                this[this._table0_4__Product_Details.FlavorColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNPDSNull() {
-                return this.IsNull(this._table0_4__Product_Details.NPDSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNPDSNull() {
-                this[this._table0_4__Product_Details.NPDSColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsValid_YearNull() {
-                return this.IsNull(this._table0_4__Product_Details.Valid_YearColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetValid_YearNull() {
-                this[this._table0_4__Product_Details.Valid_YearColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsValid_MonthNull() {
-                return this.IsNull(this._table0_4__Product_Details.Valid_MonthColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetValid_MonthNull() {
-                this[this._table0_4__Product_Details.Valid_MonthColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrice_Point_2009Null() {
-                return this.IsNull(this._table0_4__Product_Details.Price_Point_2009Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrice_Point_2009Null() {
-                this[this._table0_4__Product_Details.Price_Point_2009Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrice_Point_2010Null() {
-                return this.IsNull(this._table0_4__Product_Details.Price_Point_2010Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrice_Point_2010Null() {
-                this[this._table0_4__Product_Details.Price_Point_2010Column] = global::System.Convert.DBNull;
-            }
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_ML___LNull() {
-                return this.IsNull(this._table0_4__Product_Details._ML___LColumn);
+            public bool IsWarehouseNull() {
+                return this.IsNull(this._table0_3__Route_Details.WarehouseColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_ML___LNull() {
-                this[this._table0_4__Product_Details._ML___LColumn] = global::System.Convert.DBNull;
+            public void SetWarehouseNull() {
+                this[this._table0_3__Route_Details.WarehouseColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7118,6 +6248,966 @@ namespace NICSQLTools.Data {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class _0_4__Product_DetailsRow : global::System.Data.DataRow {
+            
+            private _0_4__Product_DetailsDataTable _table0_4__Product_Details;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal _0_4__Product_DetailsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this._table0_4__Product_Details = ((_0_4__Product_DetailsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Material_Number {
+                get {
+                    return ((double)(this[this._table0_4__Product_Details.Material_NumberColumn]));
+                }
+                set {
+                    this[this._table0_4__Product_Details.Material_NumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Material_Name {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Material_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Material Name\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Material_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Group_1 {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Group_1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Group 1\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Group_1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Group_2 {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Group_2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Group 2\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Group_2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Group_3 {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Group_3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Group 3\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Group_3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Brand {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.BrandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Brand\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.BrandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Base_Base_Product {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Base_Base_ProductColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Base Base Product\' in table \'0-4  Product Details\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Base_Base_ProductColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Base_Group {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Base_GroupColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Base Group\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Base_GroupColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Price_Point_rang {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Price_Point_rangColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point rang\' in table \'0-4  Product Details\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Price_Point_rangColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Price_Point {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details.Price_PointColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Price_PointColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Market_range {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Market_rangeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Market range\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Market_rangeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Base_Base_ProductOld {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Base_Base_ProductOldColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Base Base ProductOld\' in table \'0-4  Product Details\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Base_Base_ProductOldColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Base_Product {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Base_ProductColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Base Product\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Base_ProductColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Quin {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details.QuinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quin\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.QuinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Volum_Pice {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details.Volum_PiceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Volum Pice\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Volum_PiceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Volum {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details.VolumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Volum\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.VolumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Vol {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details.VolColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vol\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.VolColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double New_Qu {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details.New_QuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'New Qu\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.New_QuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Price_Increas {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Price_IncreasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price Increas\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Price_IncreasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Trade_Price_Carton_Old {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details._Trade_Price_Carton_OldColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Trade Price/Carton Old\' in table \'0-4  Product Details\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details._Trade_Price_Carton_OldColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double _Trade_Price_Carton {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details._Trade_Price_CartonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Trade Price/Carton\' in table \'0-4  Product Details\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details._Trade_Price_CartonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double _Trade_Price_Piece {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details._Trade_Price_PieceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Trade Price/Piece\' in table \'0-4  Product Details\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details._Trade_Price_PieceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Consumer_price__Carton {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details._Consumer_price__CartonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Consumer price /Carton\' in table \'0-4  Product Details\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details._Consumer_price__CartonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double _Consumer_price__Piece {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details._Consumer_price__PieceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Consumer price /Piece\' in table \'0-4  Product Details\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details._Consumer_price__PieceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Pallet {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details.PalletColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Pallet\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.PalletColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Split {
+                get {
+                    try {
+                        return ((double)(this[this._table0_4__Product_Details.SplitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Split\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.SplitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Material_Type {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Material_TypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Material Type\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Material_TypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Flavor {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.FlavorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Flavor\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.FlavorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NPDS {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.NPDSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NPDS\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.NPDSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Valid_Year {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Valid_YearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Valid Year\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Valid_YearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Valid_Month {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Valid_MonthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Valid Month\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Valid_MonthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Price_Point_2009 {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Price_Point_2009Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point 2009\' in table \'0-4  Product Details\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Price_Point_2009Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Price_Point_2010 {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Price_Point_2010Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point 2010\' in table \'0-4  Product Details\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Price_Point_2010Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _ML___L {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details._ML___LColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ML / L\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details._ML___LColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMaterial_NameNull() {
+                return this.IsNull(this._table0_4__Product_Details.Material_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMaterial_NameNull() {
+                this[this._table0_4__Product_Details.Material_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGroup_1Null() {
+                return this.IsNull(this._table0_4__Product_Details.Group_1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGroup_1Null() {
+                this[this._table0_4__Product_Details.Group_1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGroup_2Null() {
+                return this.IsNull(this._table0_4__Product_Details.Group_2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGroup_2Null() {
+                this[this._table0_4__Product_Details.Group_2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGroup_3Null() {
+                return this.IsNull(this._table0_4__Product_Details.Group_3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGroup_3Null() {
+                this[this._table0_4__Product_Details.Group_3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBrandNull() {
+                return this.IsNull(this._table0_4__Product_Details.BrandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBrandNull() {
+                this[this._table0_4__Product_Details.BrandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBase_Base_ProductNull() {
+                return this.IsNull(this._table0_4__Product_Details.Base_Base_ProductColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBase_Base_ProductNull() {
+                this[this._table0_4__Product_Details.Base_Base_ProductColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBase_GroupNull() {
+                return this.IsNull(this._table0_4__Product_Details.Base_GroupColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBase_GroupNull() {
+                this[this._table0_4__Product_Details.Base_GroupColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrice_Point_rangNull() {
+                return this.IsNull(this._table0_4__Product_Details.Price_Point_rangColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrice_Point_rangNull() {
+                this[this._table0_4__Product_Details.Price_Point_rangColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrice_PointNull() {
+                return this.IsNull(this._table0_4__Product_Details.Price_PointColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrice_PointNull() {
+                this[this._table0_4__Product_Details.Price_PointColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMarket_rangeNull() {
+                return this.IsNull(this._table0_4__Product_Details.Market_rangeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMarket_rangeNull() {
+                this[this._table0_4__Product_Details.Market_rangeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBase_Base_ProductOldNull() {
+                return this.IsNull(this._table0_4__Product_Details.Base_Base_ProductOldColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBase_Base_ProductOldNull() {
+                this[this._table0_4__Product_Details.Base_Base_ProductOldColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBase_ProductNull() {
+                return this.IsNull(this._table0_4__Product_Details.Base_ProductColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBase_ProductNull() {
+                this[this._table0_4__Product_Details.Base_ProductColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQuinNull() {
+                return this.IsNull(this._table0_4__Product_Details.QuinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQuinNull() {
+                this[this._table0_4__Product_Details.QuinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVolum_PiceNull() {
+                return this.IsNull(this._table0_4__Product_Details.Volum_PiceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVolum_PiceNull() {
+                this[this._table0_4__Product_Details.Volum_PiceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVolumNull() {
+                return this.IsNull(this._table0_4__Product_Details.VolumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVolumNull() {
+                this[this._table0_4__Product_Details.VolumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVolNull() {
+                return this.IsNull(this._table0_4__Product_Details.VolColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVolNull() {
+                this[this._table0_4__Product_Details.VolColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNew_QuNull() {
+                return this.IsNull(this._table0_4__Product_Details.New_QuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNew_QuNull() {
+                this[this._table0_4__Product_Details.New_QuColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrice_IncreasNull() {
+                return this.IsNull(this._table0_4__Product_Details.Price_IncreasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrice_IncreasNull() {
+                this[this._table0_4__Product_Details.Price_IncreasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Trade_Price_Carton_OldNull() {
+                return this.IsNull(this._table0_4__Product_Details._Trade_Price_Carton_OldColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Trade_Price_Carton_OldNull() {
+                this[this._table0_4__Product_Details._Trade_Price_Carton_OldColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Trade_Price_CartonNull() {
+                return this.IsNull(this._table0_4__Product_Details._Trade_Price_CartonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Trade_Price_CartonNull() {
+                this[this._table0_4__Product_Details._Trade_Price_CartonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Trade_Price_PieceNull() {
+                return this.IsNull(this._table0_4__Product_Details._Trade_Price_PieceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Trade_Price_PieceNull() {
+                this[this._table0_4__Product_Details._Trade_Price_PieceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Consumer_price__CartonNull() {
+                return this.IsNull(this._table0_4__Product_Details._Consumer_price__CartonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Consumer_price__CartonNull() {
+                this[this._table0_4__Product_Details._Consumer_price__CartonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_Consumer_price__PieceNull() {
+                return this.IsNull(this._table0_4__Product_Details._Consumer_price__PieceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_Consumer_price__PieceNull() {
+                this[this._table0_4__Product_Details._Consumer_price__PieceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPalletNull() {
+                return this.IsNull(this._table0_4__Product_Details.PalletColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPalletNull() {
+                this[this._table0_4__Product_Details.PalletColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSplitNull() {
+                return this.IsNull(this._table0_4__Product_Details.SplitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSplitNull() {
+                this[this._table0_4__Product_Details.SplitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMaterial_TypeNull() {
+                return this.IsNull(this._table0_4__Product_Details.Material_TypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMaterial_TypeNull() {
+                this[this._table0_4__Product_Details.Material_TypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFlavorNull() {
+                return this.IsNull(this._table0_4__Product_Details.FlavorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFlavorNull() {
+                this[this._table0_4__Product_Details.FlavorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNPDSNull() {
+                return this.IsNull(this._table0_4__Product_Details.NPDSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNPDSNull() {
+                this[this._table0_4__Product_Details.NPDSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsValid_YearNull() {
+                return this.IsNull(this._table0_4__Product_Details.Valid_YearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetValid_YearNull() {
+                this[this._table0_4__Product_Details.Valid_YearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsValid_MonthNull() {
+                return this.IsNull(this._table0_4__Product_Details.Valid_MonthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetValid_MonthNull() {
+                this[this._table0_4__Product_Details.Valid_MonthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrice_Point_2009Null() {
+                return this.IsNull(this._table0_4__Product_Details.Price_Point_2009Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrice_Point_2009Null() {
+                this[this._table0_4__Product_Details.Price_Point_2009Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrice_Point_2010Null() {
+                return this.IsNull(this._table0_4__Product_Details.Price_Point_2010Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrice_Point_2010Null() {
+                this[this._table0_4__Product_Details.Price_Point_2010Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_ML___LNull() {
+                return this.IsNull(this._table0_4__Product_Details._ML___LColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_ML___LNull() {
+                this[this._table0_4__Product_Details._ML___LColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -7189,40 +7279,6 @@ namespace NICSQLTools.Data {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class _0_4__Product_DetailsRowChangeEvent : global::System.EventArgs {
-            
-            private _0_4__Product_DetailsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _0_4__Product_DetailsRowChangeEvent(_0_4__Product_DetailsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _0_4__Product_DetailsRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class QryBillDocRowChangeEvent : global::System.EventArgs {
             
             private QryBillDocRow eventRow;
@@ -7273,6 +7329,40 @@ namespace NICSQLTools.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public _0_6_Customer_HNRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class _0_4__Product_DetailsRowChangeEvent : global::System.EventArgs {
+            
+            private _0_4__Product_DetailsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public _0_4__Product_DetailsRowChangeEvent(_0_4__Product_DetailsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public _0_4__Product_DetailsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8027,69 +8117,18 @@ namespace NICSQLTools.Data.dsDataTableAdapters {
             tableMapping.ColumnMappings.Add("Brand Route Old", "Brand Route Old");
             tableMapping.ColumnMappings.Add("SDN Code", "SDN Code");
             tableMapping.ColumnMappings.Add("Sales District 2", "Sales District 2");
+            tableMapping.ColumnMappings.Add("Warehouse", "Warehouse");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [0-3  Route Details] WHERE (((@IsNull_Distribution_Channel = 1 AND [D" +
-                "istribution Channel] IS NULL) OR ([Distribution Channel] = @Original_Distributio" +
-                "n_Channel)) AND ([Route Number] = @Original_Route_Number) AND ((@IsNull_Route_Nu" +
-                "mber__system = 1 AND [Route Number  system] IS NULL) OR ([Route Number  system] " +
-                "= @Original_Route_Number__system)) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR" +
-                " ([Type] = @Original_Type)) AND ((@IsNull_Route_Name = 1 AND [Route Name] IS NUL" +
-                "L) OR ([Route Name] = @Original_Route_Name)) AND ((@IsNull_Sales_District_# = 1 " +
-                "AND [Sales District #] IS NULL) OR ([Sales District #] = @Original_Sales_Distric" +
-                "t_#)) AND ((@IsNull_Region = 1 AND [Region] IS NULL) OR ([Region] = @Original_Re" +
-                "gion)) AND ((@IsNull_Plant = 1 AND [Plant] IS NULL) OR ([Plant] = @Original_Plan" +
-                "t)) AND ((@IsNull_Sales_District_Name = 1 AND [Sales District Name] IS NULL) OR " +
-                "([Sales District Name] = @Original_Sales_District_Name)) AND ((@IsNull_Sales_Dis" +
-                "trict = 1 AND [Sales District] IS NULL) OR ([Sales District] = @Original_Sales_D" +
-                "istrict)) AND ((@IsNull_RSM = 1 AND [RSM] IS NULL) OR ([RSM] = @Original_RSM)) A" +
-                "ND ((@IsNull_ASM = 1 AND [ASM] IS NULL) OR ([ASM] = @Original_ASM)) AND ((@IsNul" +
-                "l_Supervisor = 1 AND [Supervisor] IS NULL) OR ([Supervisor] = @Original_Supervis" +
-                "or)) AND ((@IsNull_Brand_Route = 1 AND [Brand Route] IS NULL) OR ([Brand Route] " +
-                "= @Original_Brand_Route)) AND ((@IsNull_Brand_Route_Old = 1 AND [Brand Route Old" +
-                "] IS NULL) OR ([Brand Route Old] = @Original_Brand_Route_Old)) AND ((@IsNull_SDN" +
-                "_Code = 1 AND [SDN Code] IS NULL) OR ([SDN Code] = @Original_SDN_Code)) AND ((@I" +
-                "sNull_Sales_District_2 = 1 AND [Sales District 2] IS NULL) OR ([Sales District 2" +
-                "] = @Original_Sales_District_2)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [0-3  Route Details] WHERE (([Route Number] = @Original_Route_Number)" +
+                ")";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Distribution_Channel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Route_Number__system", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number  system", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Number__system", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number  system", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Route_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sales_District_#", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District #", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sales_District_#", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District #", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Region", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Region", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Region", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Region", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plant", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plant", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plant", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plant", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sales_District_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sales_District_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sales_District", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sales_District", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RSM", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RSM", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RSM", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RSM", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ASM", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ASM", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ASM", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ASM", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Supervisor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Supervisor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Supervisor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Supervisor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Brand_Route", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand_Route", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Brand_Route_Old", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route Old", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand_Route_Old", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route Old", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SDN_Code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SDN Code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SDN_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SDN Code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sales_District_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District 2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sales_District_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District 2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [0-3  Route Details] ([Distribution Channel], [Route Number], [Route Number  system], [Type], [Route Name], [Sales District #], [Region], [Plant], [Sales District Name], [Sales District], [RSM], [ASM], [Supervisor], [Brand Route], [Brand Route Old], [SDN Code], [Sales District 2]) VALUES (@Distribution_Channel, @Route_Number, @Route_Number__system, @Type, @Route_Name, @Sales_District_#, @Region, @Plant, @Sales_District_Name, @Sales_District, @RSM, @ASM, @Supervisor, @Brand_Route, @Brand_Route_Old, @SDN_Code, @Sales_District_2);
-SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Route Name], [Sales District #], Region, Plant, [Sales District Name], [Sales District], RSM, ASM, Supervisor, [Brand Route], [Brand Route Old], [SDN Code], [Sales District 2] FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [0-3  Route Details] ([Distribution Channel], [Route Number], [Route Number  system], [Type], [Route Name], [Sales District #], [Region], [Plant], [Sales District Name], [Sales District], [RSM], [ASM], [Supervisor], [Brand Route], [Brand Route Old], [SDN Code], [Sales District 2], [Warehouse]) VALUES (@Distribution_Channel, @Route_Number, @Route_Number__system, @Type, @Route_Name, @Sales_District_#, @Region, @Plant, @Sales_District_Name, @Sales_District, @RSM, @ASM, @Supervisor, @Brand_Route, @Brand_Route_Old, @SDN_Code, @Sales_District_2, @Warehouse);
+SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Route Name], [Sales District #], Region, Plant, [Sales District Name], [Sales District], RSM, ASM, Supervisor, [Brand Route], [Brand Route Old], [SDN Code], [Sales District 2], Warehouse FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8108,40 +8147,11 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Route_Old", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SDN_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SDN Code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Warehouse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Warehouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [0-3  Route Details] SET [Distribution Channel] = @Distribution_Channel, [" +
-                "Route Number] = @Route_Number, [Route Number  system] = @Route_Number__system, [" +
-                "Type] = @Type, [Route Name] = @Route_Name, [Sales District #] = @Sales_District_" +
-                "#, [Region] = @Region, [Plant] = @Plant, [Sales District Name] = @Sales_District" +
-                "_Name, [Sales District] = @Sales_District, [RSM] = @RSM, [ASM] = @ASM, [Supervis" +
-                "or] = @Supervisor, [Brand Route] = @Brand_Route, [Brand Route Old] = @Brand_Rout" +
-                "e_Old, [SDN Code] = @SDN_Code, [Sales District 2] = @Sales_District_2 WHERE (((@" +
-                "IsNull_Distribution_Channel = 1 AND [Distribution Channel] IS NULL) OR ([Distrib" +
-                "ution Channel] = @Original_Distribution_Channel)) AND ([Route Number] = @Origina" +
-                "l_Route_Number) AND ((@IsNull_Route_Number__system = 1 AND [Route Number  system" +
-                "] IS NULL) OR ([Route Number  system] = @Original_Route_Number__system)) AND ((@" +
-                "IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_" +
-                "Route_Name = 1 AND [Route Name] IS NULL) OR ([Route Name] = @Original_Route_Name" +
-                ")) AND ((@IsNull_Sales_District_# = 1 AND [Sales District #] IS NULL) OR ([Sales" +
-                " District #] = @Original_Sales_District_#)) AND ((@IsNull_Region = 1 AND [Region" +
-                "] IS NULL) OR ([Region] = @Original_Region)) AND ((@IsNull_Plant = 1 AND [Plant]" +
-                " IS NULL) OR ([Plant] = @Original_Plant)) AND ((@IsNull_Sales_District_Name = 1 " +
-                "AND [Sales District Name] IS NULL) OR ([Sales District Name] = @Original_Sales_D" +
-                "istrict_Name)) AND ((@IsNull_Sales_District = 1 AND [Sales District] IS NULL) OR" +
-                " ([Sales District] = @Original_Sales_District)) AND ((@IsNull_RSM = 1 AND [RSM] " +
-                "IS NULL) OR ([RSM] = @Original_RSM)) AND ((@IsNull_ASM = 1 AND [ASM] IS NULL) OR" +
-                " ([ASM] = @Original_ASM)) AND ((@IsNull_Supervisor = 1 AND [Supervisor] IS NULL)" +
-                " OR ([Supervisor] = @Original_Supervisor)) AND ((@IsNull_Brand_Route = 1 AND [Br" +
-                "and Route] IS NULL) OR ([Brand Route] = @Original_Brand_Route)) AND ((@IsNull_Br" +
-                "and_Route_Old = 1 AND [Brand Route Old] IS NULL) OR ([Brand Route Old] = @Origin" +
-                "al_Brand_Route_Old)) AND ((@IsNull_SDN_Code = 1 AND [SDN Code] IS NULL) OR ([SDN" +
-                " Code] = @Original_SDN_Code)) AND ((@IsNull_Sales_District_2 = 1 AND [Sales Dist" +
-                "rict 2] IS NULL) OR ([Sales District 2] = @Original_Sales_District_2)));\r\nSELECT" +
-                " [Distribution Channel], [Route Number], [Route Number  system], Type, [Route Na" +
-                "me], [Sales District #], Region, Plant, [Sales District Name], [Sales District]," +
-                " RSM, ASM, Supervisor, [Brand Route], [Brand Route Old], [SDN Code], [Sales Dist" +
-                "rict 2] FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [0-3  Route Details] SET [Distribution Channel] = @Distribution_Channel, [Route Number] = @Route_Number, [Route Number  system] = @Route_Number__system, [Type] = @Type, [Route Name] = @Route_Name, [Sales District #] = @Sales_District_#, [Region] = @Region, [Plant] = @Plant, [Sales District Name] = @Sales_District_Name, [Sales District] = @Sales_District, [RSM] = @RSM, [ASM] = @ASM, [Supervisor] = @Supervisor, [Brand Route] = @Brand_Route, [Brand Route Old] = @Brand_Route_Old, [SDN Code] = @SDN_Code, [Sales District 2] = @Sales_District_2, [Warehouse] = @Warehouse WHERE (([Route Number] = @Original_Route_Number));
+SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Route Name], [Sales District #], Region, Plant, [Sales District Name], [Sales District], RSM, ASM, Supervisor, [Brand Route], [Brand Route Old], [SDN Code], [Sales District 2], Warehouse FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8160,39 +8170,8 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Route_Old", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SDN_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SDN Code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Distribution_Channel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Warehouse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Warehouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Route_Number__system", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number  system", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Number__system", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number  system", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Route_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sales_District_#", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District #", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sales_District_#", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District #", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Region", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Region", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Region", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Region", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Plant", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plant", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Plant", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plant", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sales_District_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sales_District_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sales_District", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sales_District", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RSM", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RSM", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RSM", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RSM", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ASM", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ASM", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ASM", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ASM", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Supervisor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Supervisor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Supervisor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Supervisor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Brand_Route", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand_Route", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Brand_Route_Old", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route Old", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand_Route_Old", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route Old", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SDN_Code", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SDN Code", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SDN_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SDN Code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Sales_District_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District 2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sales_District_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District 2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8209,12 +8188,13 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        [Distribution Channel], [Route Number], [Route Number  system], Type, [Route Name], [Sales District #], Region, Plant, [Sales District Name], [Sales District], RSM, ASM, Supervisor, [Brand Route], 
-                         [Brand Route Old], [SDN Code], [Sales District 2]
+                         [Brand Route Old], [SDN Code], [Sales District 2], Warehouse
 FROM            [0-3  Route Details]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT ASM, [Brand Route], [Brand Route Old], [Distribution Channel], Plant, RSM, Region, [Route Name], [Route Number], [Route Number  system], [SDN Code], [Sales District], [Sales District #], [Sales District 2], [Sales District Name], Supervisor, Type FROM [0-3  Route Details]";
+            this._commandCollection[1].CommandText = "SELECT        [Route Number], [Route Number  system]\r\nFROM            [0-3  Route" +
+                " Details]";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8299,157 +8279,12 @@ FROM            [0-3  Route Details]";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(
-                    string Original_Distribution_Channel, 
-                    string Original_Route_Number, 
-                    string Original_Route_Number__system, 
-                    string Original_Type, 
-                    string Original_Route_Name, 
-                    string _Original_Sales_District__, 
-                    string Original_Region, 
-                    string Original_Plant, 
-                    string Original_Sales_District_Name, 
-                    string Original_Sales_District, 
-                    string Original_RSM, 
-                    string Original_ASM, 
-                    string Original_Supervisor, 
-                    string Original_Brand_Route, 
-                    string Original_Brand_Route_Old, 
-                    string Original_SDN_Code, 
-                    string Original_Sales_District_2) {
-            if ((Original_Distribution_Channel == null)) {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Distribution_Channel));
-            }
+        public virtual int Delete(string Original_Route_Number) {
             if ((Original_Route_Number == null)) {
                 throw new global::System.ArgumentNullException("Original_Route_Number");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Route_Number));
-            }
-            if ((Original_Route_Number__system == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Route_Number__system));
-            }
-            if ((Original_Type == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Type));
-            }
-            if ((Original_Route_Name == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Route_Name));
-            }
-            if ((_Original_Sales_District__ == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(_Original_Sales_District__));
-            }
-            if ((Original_Region == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Region));
-            }
-            if ((Original_Plant == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Plant));
-            }
-            if ((Original_Sales_District_Name == null)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Sales_District_Name));
-            }
-            if ((Original_Sales_District == null)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Sales_District));
-            }
-            if ((Original_RSM == null)) {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_RSM));
-            }
-            if ((Original_ASM == null)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_ASM));
-            }
-            if ((Original_Supervisor == null)) {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_Supervisor));
-            }
-            if ((Original_Brand_Route == null)) {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((string)(Original_Brand_Route));
-            }
-            if ((Original_Brand_Route_Old == null)) {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((string)(Original_Brand_Route_Old));
-            }
-            if ((Original_SDN_Code == null)) {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_SDN_Code));
-            }
-            if ((Original_Sales_District_2 == null)) {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_Sales_District_2));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Route_Number));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8488,7 +8323,8 @@ FROM            [0-3  Route Details]";
                     string Brand_Route, 
                     string Brand_Route_Old, 
                     string SDN_Code, 
-                    string Sales_District_2) {
+                    string Sales_District_2, 
+                    string Warehouse) {
             if ((Distribution_Channel == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8591,6 +8427,12 @@ FROM            [0-3  Route Details]";
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Sales_District_2));
             }
+            if ((Warehouse == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Warehouse));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8629,23 +8471,8 @@ FROM            [0-3  Route Details]";
                     string Brand_Route_Old, 
                     string SDN_Code, 
                     string Sales_District_2, 
-                    string Original_Distribution_Channel, 
-                    string Original_Route_Number, 
-                    string Original_Route_Number__system, 
-                    string Original_Type, 
-                    string Original_Route_Name, 
-                    string _Original_Sales_District__, 
-                    string Original_Region, 
-                    string Original_Plant, 
-                    string Original_Sales_District_Name, 
-                    string Original_Sales_District, 
-                    string Original_RSM, 
-                    string Original_ASM, 
-                    string Original_Supervisor, 
-                    string Original_Brand_Route, 
-                    string Original_Brand_Route_Old, 
-                    string Original_SDN_Code, 
-                    string Original_Sales_District_2) {
+                    string Warehouse, 
+                    string Original_Route_Number) {
             if ((Distribution_Channel == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8748,139 +8575,17 @@ FROM            [0-3  Route Details]";
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Sales_District_2));
             }
-            if ((Original_Distribution_Channel == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            if ((Warehouse == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Distribution_Channel));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Warehouse));
             }
             if ((Original_Route_Number == null)) {
                 throw new global::System.ArgumentNullException("Original_Route_Number");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Route_Number));
-            }
-            if ((Original_Route_Number__system == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Route_Number__system));
-            }
-            if ((Original_Type == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Type));
-            }
-            if ((Original_Route_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Route_Name));
-            }
-            if ((_Original_Sales_District__ == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(_Original_Sales_District__));
-            }
-            if ((Original_Region == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Region));
-            }
-            if ((Original_Plant == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Plant));
-            }
-            if ((Original_Sales_District_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Sales_District_Name));
-            }
-            if ((Original_Sales_District == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_Sales_District));
-            }
-            if ((Original_RSM == null)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_RSM));
-            }
-            if ((Original_ASM == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_ASM));
-            }
-            if ((Original_Supervisor == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_Supervisor));
-            }
-            if ((Original_Brand_Route == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_Brand_Route));
-            }
-            if ((Original_Brand_Route_Old == null)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_Brand_Route_Old));
-            }
-            if ((Original_SDN_Code == null)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_SDN_Code));
-            }
-            if ((Original_Sales_District_2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_Sales_District_2));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Route_Number));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8919,1751 +8624,9 @@ FROM            [0-3  Route Details]";
                     string Brand_Route_Old, 
                     string SDN_Code, 
                     string Sales_District_2, 
-                    string Original_Distribution_Channel, 
-                    string Original_Route_Number, 
-                    string Original_Route_Number__system, 
-                    string Original_Type, 
-                    string Original_Route_Name, 
-                    string _Original_Sales_District__, 
-                    string Original_Region, 
-                    string Original_Plant, 
-                    string Original_Sales_District_Name, 
-                    string Original_Sales_District, 
-                    string Original_RSM, 
-                    string Original_ASM, 
-                    string Original_Supervisor, 
-                    string Original_Brand_Route, 
-                    string Original_Brand_Route_Old, 
-                    string Original_SDN_Code, 
-                    string Original_Sales_District_2) {
-            return this.Update(Distribution_Channel, Original_Route_Number, Route_Number__system, Type, Route_Name, _Sales_District__, Region, Plant, Sales_District_Name, Sales_District, RSM, ASM, Supervisor, Brand_Route, Brand_Route_Old, SDN_Code, Sales_District_2, Original_Distribution_Channel, Original_Route_Number, Original_Route_Number__system, Original_Type, Original_Route_Name, _Original_Sales_District__, Original_Region, Original_Plant, Original_Sales_District_Name, Original_Sales_District, Original_RSM, Original_ASM, Original_Supervisor, Original_Brand_Route, Original_Brand_Route_Old, Original_SDN_Code, Original_Sales_District_2);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class _0_4__Product_DetailsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public _0_4__Product_DetailsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "0-4  Product Details";
-            tableMapping.ColumnMappings.Add("Material Number", "Material Number");
-            tableMapping.ColumnMappings.Add("Material Name", "Material Name");
-            tableMapping.ColumnMappings.Add("Group 1", "Group 1");
-            tableMapping.ColumnMappings.Add("Group 2", "Group 2");
-            tableMapping.ColumnMappings.Add("Group 3", "Group 3");
-            tableMapping.ColumnMappings.Add("Brand", "Brand");
-            tableMapping.ColumnMappings.Add("Base Base Product", "Base Base Product");
-            tableMapping.ColumnMappings.Add("Price Point rang", "Price Point rang");
-            tableMapping.ColumnMappings.Add("Price Point", "Price Point");
-            tableMapping.ColumnMappings.Add("Market rang", "Market rang");
-            tableMapping.ColumnMappings.Add("Base Base ProductOld", "Base Base ProductOld");
-            tableMapping.ColumnMappings.Add("Base Product", "Base Product");
-            tableMapping.ColumnMappings.Add("Quin", "Quin");
-            tableMapping.ColumnMappings.Add("Volum Pice", "Volum Pice");
-            tableMapping.ColumnMappings.Add("Volum", "Volum");
-            tableMapping.ColumnMappings.Add("Vol", "Vol");
-            tableMapping.ColumnMappings.Add("New Qu", "New Qu");
-            tableMapping.ColumnMappings.Add("Price Increas", "Price Increas");
-            tableMapping.ColumnMappings.Add("Trade Price/Carton Old", "Trade Price/Carton Old");
-            tableMapping.ColumnMappings.Add("Trade Price/Carton", "Trade Price/Carton");
-            tableMapping.ColumnMappings.Add("Trade Price/Piece", "Trade Price/Piece");
-            tableMapping.ColumnMappings.Add("Consumer price /Carton", "Consumer price /Carton");
-            tableMapping.ColumnMappings.Add("Consumer price /Piece", "Consumer price /Piece");
-            tableMapping.ColumnMappings.Add("Pallet", "Pallet");
-            tableMapping.ColumnMappings.Add("Split", "Split");
-            tableMapping.ColumnMappings.Add("Material Type", "Material Type");
-            tableMapping.ColumnMappings.Add("Flavor", "Flavor");
-            tableMapping.ColumnMappings.Add("NPDS", "NPDS");
-            tableMapping.ColumnMappings.Add("Valid Year", "Valid Year");
-            tableMapping.ColumnMappings.Add("Valid Month", "Valid Month");
-            tableMapping.ColumnMappings.Add("Price Point 2009", "Price Point 2009");
-            tableMapping.ColumnMappings.Add("Price Point 2010", "Price Point 2010");
-            tableMapping.ColumnMappings.Add("ML / L", "ML / L");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [0-4  Product Details] WHERE (([Material Number] = @Original_Material" +
-                "_Number) AND ((@IsNull_Material_Name = 1 AND [Material Name] IS NULL) OR ([Mater" +
-                "ial Name] = @Original_Material_Name)) AND ((@IsNull_Group_1 = 1 AND [Group 1] IS" +
-                " NULL) OR ([Group 1] = @Original_Group_1)) AND ((@IsNull_Group_2 = 1 AND [Group " +
-                "2] IS NULL) OR ([Group 2] = @Original_Group_2)) AND ((@IsNull_Group_3 = 1 AND [G" +
-                "roup 3] IS NULL) OR ([Group 3] = @Original_Group_3)) AND ((@IsNull_Brand = 1 AND" +
-                " [Brand] IS NULL) OR ([Brand] = @Original_Brand)) AND ((@IsNull_Base_Base_Produc" +
-                "t = 1 AND [Base Base Product] IS NULL) OR ([Base Base Product] = @Original_Base_" +
-                "Base_Product)) AND ((@IsNull_Price_Point_rang = 1 AND [Price Point rang] IS NULL" +
-                ") OR ([Price Point rang] = @Original_Price_Point_rang)) AND ((@IsNull_Price_Poin" +
-                "t = 1 AND [Price Point] IS NULL) OR ([Price Point] = @Original_Price_Point)) AND" +
-                " ((@IsNull_Market_rang = 1 AND [Market rang] IS NULL) OR ([Market rang] = @Origi" +
-                "nal_Market_rang)) AND ((@IsNull_Base_Base_ProductOld = 1 AND [Base Base ProductO" +
-                "ld] IS NULL) OR ([Base Base ProductOld] = @Original_Base_Base_ProductOld)) AND (" +
-                "(@IsNull_Base_Product = 1 AND [Base Product] IS NULL) OR ([Base Product] = @Orig" +
-                "inal_Base_Product)) AND ((@IsNull_Quin = 1 AND [Quin] IS NULL) OR ([Quin] = @Ori" +
-                "ginal_Quin)) AND ((@IsNull_Volum_Pice = 1 AND [Volum Pice] IS NULL) OR ([Volum P" +
-                "ice] = @Original_Volum_Pice)) AND ((@IsNull_Volum = 1 AND [Volum] IS NULL) OR ([" +
-                "Volum] = @Original_Volum)) AND ((@IsNull_Vol = 1 AND [Vol] IS NULL) OR ([Vol] = " +
-                "@Original_Vol)) AND ((@IsNull_New_Qu = 1 AND [New Qu] IS NULL) OR ([New Qu] = @O" +
-                "riginal_New_Qu)) AND ((@IsNull_Price_Increas = 1 AND [Price Increas] IS NULL) OR" +
-                " ([Price Increas] = @Original_Price_Increas)) AND ((@p3 = 1 AND [Trade Price/Car" +
-                "ton Old] IS NULL) OR ([Trade Price/Carton Old] = @p2)) AND ((@p6 = 1 AND [Trade " +
-                "Price/Carton] IS NULL) OR ([Trade Price/Carton] = @p5)) AND ((@p9 = 1 AND [Trade" +
-                " Price/Piece] IS NULL) OR ([Trade Price/Piece] = @p8)) AND ((@p12 = 1 AND [Consu" +
-                "mer price /Carton] IS NULL) OR ([Consumer price /Carton] = @p11)) AND ((@p15 = 1" +
-                " AND [Consumer price /Piece] IS NULL) OR ([Consumer price /Piece] = @p14)) AND (" +
-                "(@IsNull_Pallet = 1 AND [Pallet] IS NULL) OR ([Pallet] = @Original_Pallet)) AND " +
-                "((@IsNull_Split = 1 AND [Split] IS NULL) OR ([Split] = @Original_Split)) AND ((@" +
-                "IsNull_Material_Type = 1 AND [Material Type] IS NULL) OR ([Material Type] = @Ori" +
-                "ginal_Material_Type)) AND ((@IsNull_Flavor = 1 AND [Flavor] IS NULL) OR ([Flavor" +
-                "] = @Original_Flavor)) AND ((@IsNull_NPDS = 1 AND [NPDS] IS NULL) OR ([NPDS] = @" +
-                "Original_NPDS)) AND ((@IsNull_Valid_Year = 1 AND [Valid Year] IS NULL) OR ([Vali" +
-                "d Year] = @Original_Valid_Year)) AND ((@IsNull_Valid_Month = 1 AND [Valid Month]" +
-                " IS NULL) OR ([Valid Month] = @Original_Valid_Month)) AND ((@IsNull_Price_Point_" +
-                "2009 = 1 AND [Price Point 2009] IS NULL) OR ([Price Point 2009] = @Original_Pric" +
-                "e_Point_2009)) AND ((@IsNull_Price_Point_2010 = 1 AND [Price Point 2010] IS NULL" +
-                ") OR ([Price Point 2010] = @Original_Price_Point_2010)) AND ((@p18 = 1 AND [ML /" +
-                " L] IS NULL) OR ([ML / L] = @p17)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Material_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group_3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Brand", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Base_Base_Product", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Base_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Point_rang", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Point_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Point", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Point", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Market_rang", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market rang", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Market_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market rang", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Base_Base_ProductOld", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Base_Base_ProductOld", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Base_Product", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quin", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Volum_Pice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Volum_Pice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Volum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Volum", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vol", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vol", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_New_Qu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_New_Qu", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Increas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Increas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p6", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p5", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p9", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p8", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p12", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p11", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p14", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pallet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pallet", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Split", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Split", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Material_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Flavor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Flavor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Flavor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Flavor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NPDS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NPDS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Valid_Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Valid_Year", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Valid_Month", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Valid_Month", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Point_2009", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Point_2009", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Point_2010", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Point_2010", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p18", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p17", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [0-4  Product Details] ([Material Number], [Material Name], [Group 1], [Group 2], [Group 3], [Brand], [Base Base Product], [Price Point rang], [Price Point], [Market rang], [Base Base ProductOld], [Base Product], [Quin], [Volum Pice], [Volum], [Vol], [New Qu], [Price Increas], [Trade Price/Carton Old], [Trade Price/Carton], [Trade Price/Piece], [Consumer price /Carton], [Consumer price /Piece], [Pallet], [Split], [Material Type], [Flavor], [NPDS], [Valid Year], [Valid Month], [Price Point 2009], [Price Point 2010], [ML / L]) VALUES (@Material_Number, @Material_Name, @Group_1, @Group_2, @Group_3, @Brand, @Base_Base_Product, @Price_Point_rang, @Price_Point, @Market_rang, @Base_Base_ProductOld, @Base_Product, @Quin, @Volum_Pice, @Volum, @Vol, @New_Qu, @Price_Increas, @p1, @p4, @p7, @p10, @p13, @Pallet, @Split, @Material_Type, @Flavor, @NPDS, @Valid_Year, @Valid_Month, @Price_Point_2009, @Price_Point_2010, @p16)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Market_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_ProductOld", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quin", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum_Pice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vol", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@New_Qu", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Increas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pallet", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Split", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Flavor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Flavor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NPDS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Year", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Month", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2009", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2010", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p16", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [0-4  Product Details] SET [Material Number] = @Material_Number, [Material" +
-                " Name] = @Material_Name, [Group 1] = @Group_1, [Group 2] = @Group_2, [Group 3] =" +
-                " @Group_3, [Brand] = @Brand, [Base Base Product] = @Base_Base_Product, [Price Po" +
-                "int rang] = @Price_Point_rang, [Price Point] = @Price_Point, [Market rang] = @Ma" +
-                "rket_rang, [Base Base ProductOld] = @Base_Base_ProductOld, [Base Product] = @Bas" +
-                "e_Product, [Quin] = @Quin, [Volum Pice] = @Volum_Pice, [Volum] = @Volum, [Vol] =" +
-                " @Vol, [New Qu] = @New_Qu, [Price Increas] = @Price_Increas, [Trade Price/Carton" +
-                " Old] = @p1, [Trade Price/Carton] = @p4, [Trade Price/Piece] = @p7, [Consumer pr" +
-                "ice /Carton] = @p10, [Consumer price /Piece] = @p13, [Pallet] = @Pallet, [Split]" +
-                " = @Split, [Material Type] = @Material_Type, [Flavor] = @Flavor, [NPDS] = @NPDS," +
-                " [Valid Year] = @Valid_Year, [Valid Month] = @Valid_Month, [Price Point 2009] = " +
-                "@Price_Point_2009, [Price Point 2010] = @Price_Point_2010, [ML / L] = @p16 WHERE" +
-                " (([Material Number] = @Original_Material_Number) AND ((@IsNull_Material_Name = " +
-                "1 AND [Material Name] IS NULL) OR ([Material Name] = @Original_Material_Name)) A" +
-                "ND ((@IsNull_Group_1 = 1 AND [Group 1] IS NULL) OR ([Group 1] = @Original_Group_" +
-                "1)) AND ((@IsNull_Group_2 = 1 AND [Group 2] IS NULL) OR ([Group 2] = @Original_G" +
-                "roup_2)) AND ((@IsNull_Group_3 = 1 AND [Group 3] IS NULL) OR ([Group 3] = @Origi" +
-                "nal_Group_3)) AND ((@IsNull_Brand = 1 AND [Brand] IS NULL) OR ([Brand] = @Origin" +
-                "al_Brand)) AND ((@IsNull_Base_Base_Product = 1 AND [Base Base Product] IS NULL) " +
-                "OR ([Base Base Product] = @Original_Base_Base_Product)) AND ((@IsNull_Price_Poin" +
-                "t_rang = 1 AND [Price Point rang] IS NULL) OR ([Price Point rang] = @Original_Pr" +
-                "ice_Point_rang)) AND ((@IsNull_Price_Point = 1 AND [Price Point] IS NULL) OR ([P" +
-                "rice Point] = @Original_Price_Point)) AND ((@IsNull_Market_rang = 1 AND [Market " +
-                "rang] IS NULL) OR ([Market rang] = @Original_Market_rang)) AND ((@IsNull_Base_Ba" +
-                "se_ProductOld = 1 AND [Base Base ProductOld] IS NULL) OR ([Base Base ProductOld]" +
-                " = @Original_Base_Base_ProductOld)) AND ((@IsNull_Base_Product = 1 AND [Base Pro" +
-                "duct] IS NULL) OR ([Base Product] = @Original_Base_Product)) AND ((@IsNull_Quin " +
-                "= 1 AND [Quin] IS NULL) OR ([Quin] = @Original_Quin)) AND ((@IsNull_Volum_Pice =" +
-                " 1 AND [Volum Pice] IS NULL) OR ([Volum Pice] = @Original_Volum_Pice)) AND ((@Is" +
-                "Null_Volum = 1 AND [Volum] IS NULL) OR ([Volum] = @Original_Volum)) AND ((@IsNul" +
-                "l_Vol = 1 AND [Vol] IS NULL) OR ([Vol] = @Original_Vol)) AND ((@IsNull_New_Qu = " +
-                "1 AND [New Qu] IS NULL) OR ([New Qu] = @Original_New_Qu)) AND ((@IsNull_Price_In" +
-                "creas = 1 AND [Price Increas] IS NULL) OR ([Price Increas] = @Original_Price_Inc" +
-                "reas)) AND ((@p3 = 1 AND [Trade Price/Carton Old] IS NULL) OR ([Trade Price/Cart" +
-                "on Old] = @p2)) AND ((@p6 = 1 AND [Trade Price/Carton] IS NULL) OR ([Trade Price" +
-                "/Carton] = @p5)) AND ((@p9 = 1 AND [Trade Price/Piece] IS NULL) OR ([Trade Price" +
-                "/Piece] = @p8)) AND ((@p12 = 1 AND [Consumer price /Carton] IS NULL) OR ([Consum" +
-                "er price /Carton] = @p11)) AND ((@p15 = 1 AND [Consumer price /Piece] IS NULL) O" +
-                "R ([Consumer price /Piece] = @p14)) AND ((@IsNull_Pallet = 1 AND [Pallet] IS NUL" +
-                "L) OR ([Pallet] = @Original_Pallet)) AND ((@IsNull_Split = 1 AND [Split] IS NULL" +
-                ") OR ([Split] = @Original_Split)) AND ((@IsNull_Material_Type = 1 AND [Material " +
-                "Type] IS NULL) OR ([Material Type] = @Original_Material_Type)) AND ((@IsNull_Fla" +
-                "vor = 1 AND [Flavor] IS NULL) OR ([Flavor] = @Original_Flavor)) AND ((@IsNull_NP" +
-                "DS = 1 AND [NPDS] IS NULL) OR ([NPDS] = @Original_NPDS)) AND ((@IsNull_Valid_Yea" +
-                "r = 1 AND [Valid Year] IS NULL) OR ([Valid Year] = @Original_Valid_Year)) AND ((" +
-                "@IsNull_Valid_Month = 1 AND [Valid Month] IS NULL) OR ([Valid Month] = @Original" +
-                "_Valid_Month)) AND ((@IsNull_Price_Point_2009 = 1 AND [Price Point 2009] IS NULL" +
-                ") OR ([Price Point 2009] = @Original_Price_Point_2009)) AND ((@IsNull_Price_Poin" +
-                "t_2010 = 1 AND [Price Point 2010] IS NULL) OR ([Price Point 2010] = @Original_Pr" +
-                "ice_Point_2010)) AND ((@p18 = 1 AND [ML / L] IS NULL) OR ([ML / L] = @p17)));\r\nS" +
-                "ELECT [Material Number], [Material Name], [Group 1], [Group 2], [Group 3], Brand" +
-                ", [Base Base Product], [Price Point rang], [Price Point], [Market rang], [Base B" +
-                "ase ProductOld], [Base Product], Quin, [Volum Pice], Volum, Vol, [New Qu], [Pric" +
-                "e Increas], [Trade Price/Carton Old], [Trade Price/Carton], [Trade Price/Piece]," +
-                " [Consumer price /Carton], [Consumer price /Piece], Pallet, Split, [Material Typ" +
-                "e], Flavor, NPDS, [Valid Year], [Valid Month], [Price Point 2009], [Price Point " +
-                "2010], [ML / L] FROM [0-4  Product Details] WHERE ([Material Number] = @Material" +
-                "_Number)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Market_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_ProductOld", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quin", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum_Pice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vol", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@New_Qu", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Increas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pallet", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Split", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Flavor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Flavor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NPDS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Year", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Month", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2009", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2010", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p16", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Material_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group_3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Brand", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Base_Base_Product", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Base_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Point_rang", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Point_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Point", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Point", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Market_rang", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market rang", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Market_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market rang", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Base_Base_ProductOld", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Base_Base_ProductOld", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Base_Product", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quin", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quin", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Volum_Pice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Volum_Pice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Volum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Volum", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vol", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vol", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_New_Qu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_New_Qu", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Increas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Increas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p6", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p5", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p9", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p8", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p12", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p11", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p14", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pallet", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pallet", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Split", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Split", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Material_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Flavor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Flavor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Flavor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Flavor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NPDS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NPDS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Valid_Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Valid_Year", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Valid_Month", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Valid_Month", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Point_2009", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Point_2009", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Price_Point_2010", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price_Point_2010", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p18", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p17", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT [Material Number], [Material Name], [Group 1], [Group 2], [Group 3], Brand, [Base Base Product], [Price Point rang], [Price Point], [Market rang], [Base Base ProductOld], [Base Product], Quin, [Volum Pice], Volum, Vol, [New Qu], [Price Increas], [Trade Price/Carton Old], [Trade Price/Carton], [Trade Price/Piece], [Consumer price /Carton], [Consumer price /Piece], Pallet, Split, [Material Type], Flavor, NPDS, [Valid Year], [Valid Month], [Price Point 2009], [Price Point 2010], [ML / L] FROM [0-4  Product Details]";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT [Material Number], Quin, [New Qu] FROM [0-4  Product Details]";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsData._0_4__Product_DetailsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsData._0_4__Product_DetailsDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsData._0_4__Product_DetailsDataTable dataTable = new dsData._0_4__Product_DetailsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillOnlyCode(dsData._0_4__Product_DetailsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsData._0_4__Product_DetailsDataTable GetDataOnlyCode() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            dsData._0_4__Product_DetailsDataTable dataTable = new dsData._0_4__Product_DetailsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData._0_4__Product_DetailsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData dataSet) {
-            return this.Adapter.Update(dataSet, "0-4  Product Details");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(
-                    double Original_Material_Number, 
-                    string Original_Material_Name, 
-                    string Original_Group_1, 
-                    string Original_Group_2, 
-                    string Original_Group_3, 
-                    string Original_Brand, 
-                    string Original_Base_Base_Product, 
-                    string Original_Price_Point_rang, 
-                    global::System.Nullable<double> Original_Price_Point, 
-                    string Original_Market_rang, 
-                    string Original_Base_Base_ProductOld, 
-                    string Original_Base_Product, 
-                    global::System.Nullable<double> Original_Quin, 
-                    global::System.Nullable<double> Original_Volum_Pice, 
-                    global::System.Nullable<double> Original_Volum, 
-                    global::System.Nullable<double> Original_Vol, 
-                    global::System.Nullable<double> Original_New_Qu, 
-                    string Original_Price_Increas, 
-                    global::System.Nullable<double> p2, 
-                    global::System.Nullable<double> p5, 
-                    global::System.Nullable<double> p8, 
-                    global::System.Nullable<double> p11, 
-                    global::System.Nullable<double> p14, 
-                    global::System.Nullable<double> Original_Pallet, 
-                    global::System.Nullable<double> Original_Split, 
-                    string Original_Material_Type, 
-                    string Original_Flavor, 
-                    string Original_NPDS, 
-                    string Original_Valid_Year, 
-                    string Original_Valid_Month, 
-                    string Original_Price_Point_2009, 
-                    string Original_Price_Point_2010, 
-                    string p17) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((double)(Original_Material_Number));
-            if ((Original_Material_Name == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Material_Name));
-            }
-            if ((Original_Group_1 == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Group_1));
-            }
-            if ((Original_Group_2 == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Group_2));
-            }
-            if ((Original_Group_3 == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Group_3));
-            }
-            if ((Original_Brand == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Brand));
-            }
-            if ((Original_Base_Base_Product == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Base_Base_Product));
-            }
-            if ((Original_Price_Point_rang == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Price_Point_rang));
-            }
-            if ((Original_Price_Point.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((double)(Original_Price_Point.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Market_rang == null)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Market_rang));
-            }
-            if ((Original_Base_Base_ProductOld == null)) {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_Base_Base_ProductOld));
-            }
-            if ((Original_Base_Product == null)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_Base_Product));
-            }
-            if ((Original_Quin.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((double)(Original_Quin.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Volum_Pice.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_Volum_Pice.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Volum.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((double)(Original_Volum.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Vol.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((double)(Original_Vol.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            if ((Original_New_Qu.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((double)(Original_New_Qu.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Price_Increas == null)) {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((string)(Original_Price_Increas));
-            }
-            if ((p2.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((double)(p2.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            if ((p5.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((double)(p5.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            if ((p8.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((double)(p8.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
-            }
-            if ((p11.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((double)(p11.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
-            }
-            if ((p14.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((double)(p14.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pallet.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((double)(Original_Pallet.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Split.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[48].Value = ((double)(Original_Split.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[48].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Material_Type == null)) {
-                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[50].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[50].Value = ((string)(Original_Material_Type));
-            }
-            if ((Original_Flavor == null)) {
-                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[52].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[52].Value = ((string)(Original_Flavor));
-            }
-            if ((Original_NPDS == null)) {
-                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[54].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[54].Value = ((string)(Original_NPDS));
-            }
-            if ((Original_Valid_Year == null)) {
-                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[56].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[56].Value = ((string)(Original_Valid_Year));
-            }
-            if ((Original_Valid_Month == null)) {
-                this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[58].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[58].Value = ((string)(Original_Valid_Month));
-            }
-            if ((Original_Price_Point_2009 == null)) {
-                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[60].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[60].Value = ((string)(Original_Price_Point_2009));
-            }
-            if ((Original_Price_Point_2010 == null)) {
-                this.Adapter.DeleteCommand.Parameters[61].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[62].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[62].Value = ((string)(Original_Price_Point_2010));
-            }
-            if ((p17 == null)) {
-                this.Adapter.DeleteCommand.Parameters[63].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[64].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[64].Value = ((string)(p17));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    double Material_Number, 
-                    string Material_Name, 
-                    string Group_1, 
-                    string Group_2, 
-                    string Group_3, 
-                    string Brand, 
-                    string Base_Base_Product, 
-                    string Price_Point_rang, 
-                    global::System.Nullable<double> Price_Point, 
-                    string Market_rang, 
-                    string Base_Base_ProductOld, 
-                    string Base_Product, 
-                    global::System.Nullable<double> Quin, 
-                    global::System.Nullable<double> Volum_Pice, 
-                    global::System.Nullable<double> Volum, 
-                    global::System.Nullable<double> Vol, 
-                    global::System.Nullable<double> New_Qu, 
-                    string Price_Increas, 
-                    global::System.Nullable<double> p1, 
-                    global::System.Nullable<double> p4, 
-                    global::System.Nullable<double> p7, 
-                    global::System.Nullable<double> p10, 
-                    global::System.Nullable<double> p13, 
-                    global::System.Nullable<double> Pallet, 
-                    global::System.Nullable<double> Split, 
-                    string Material_Type, 
-                    string Flavor, 
-                    string NPDS, 
-                    string Valid_Year, 
-                    string Valid_Month, 
-                    string Price_Point_2009, 
-                    string Price_Point_2010, 
-                    string p16) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((double)(Material_Number));
-            if ((Material_Name == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Material_Name));
-            }
-            if ((Group_1 == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Group_1));
-            }
-            if ((Group_2 == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Group_2));
-            }
-            if ((Group_3 == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Group_3));
-            }
-            if ((Brand == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Brand));
-            }
-            if ((Base_Base_Product == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Base_Base_Product));
-            }
-            if ((Price_Point_rang == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Price_Point_rang));
-            }
-            if ((Price_Point.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(Price_Point.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Market_rang == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Market_rang));
-            }
-            if ((Base_Base_ProductOld == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Base_Base_ProductOld));
-            }
-            if ((Base_Product == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Base_Product));
-            }
-            if ((Quin.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((double)(Quin.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Volum_Pice.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(Volum_Pice.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Volum.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(Volum.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Vol.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(Vol.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((New_Qu.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(New_Qu.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Price_Increas == null)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Price_Increas));
-            }
-            if ((p1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((double)(p1.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((p4.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((double)(p4.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((p7.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((double)(p7.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((p10.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((double)(p10.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((p13.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((double)(p13.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            if ((Pallet.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((double)(Pallet.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            if ((Split.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((double)(Split.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            if ((Material_Type == null)) {
-                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(Material_Type));
-            }
-            if ((Flavor == null)) {
-                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(Flavor));
-            }
-            if ((NPDS == null)) {
-                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(NPDS));
-            }
-            if ((Valid_Year == null)) {
-                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(Valid_Year));
-            }
-            if ((Valid_Month == null)) {
-                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(Valid_Month));
-            }
-            if ((Price_Point_2009 == null)) {
-                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(Price_Point_2009));
-            }
-            if ((Price_Point_2010 == null)) {
-                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(Price_Point_2010));
-            }
-            if ((p16 == null)) {
-                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[32].Value = ((string)(p16));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    double Material_Number, 
-                    string Material_Name, 
-                    string Group_1, 
-                    string Group_2, 
-                    string Group_3, 
-                    string Brand, 
-                    string Base_Base_Product, 
-                    string Price_Point_rang, 
-                    global::System.Nullable<double> Price_Point, 
-                    string Market_rang, 
-                    string Base_Base_ProductOld, 
-                    string Base_Product, 
-                    global::System.Nullable<double> Quin, 
-                    global::System.Nullable<double> Volum_Pice, 
-                    global::System.Nullable<double> Volum, 
-                    global::System.Nullable<double> Vol, 
-                    global::System.Nullable<double> New_Qu, 
-                    string Price_Increas, 
-                    global::System.Nullable<double> p1, 
-                    global::System.Nullable<double> p4, 
-                    global::System.Nullable<double> p7, 
-                    global::System.Nullable<double> p10, 
-                    global::System.Nullable<double> p13, 
-                    global::System.Nullable<double> Pallet, 
-                    global::System.Nullable<double> Split, 
-                    string Material_Type, 
-                    string Flavor, 
-                    string NPDS, 
-                    string Valid_Year, 
-                    string Valid_Month, 
-                    string Price_Point_2009, 
-                    string Price_Point_2010, 
-                    string p16, 
-                    double Original_Material_Number, 
-                    string Original_Material_Name, 
-                    string Original_Group_1, 
-                    string Original_Group_2, 
-                    string Original_Group_3, 
-                    string Original_Brand, 
-                    string Original_Base_Base_Product, 
-                    string Original_Price_Point_rang, 
-                    global::System.Nullable<double> Original_Price_Point, 
-                    string Original_Market_rang, 
-                    string Original_Base_Base_ProductOld, 
-                    string Original_Base_Product, 
-                    global::System.Nullable<double> Original_Quin, 
-                    global::System.Nullable<double> Original_Volum_Pice, 
-                    global::System.Nullable<double> Original_Volum, 
-                    global::System.Nullable<double> Original_Vol, 
-                    global::System.Nullable<double> Original_New_Qu, 
-                    string Original_Price_Increas, 
-                    global::System.Nullable<double> p2, 
-                    global::System.Nullable<double> p5, 
-                    global::System.Nullable<double> p8, 
-                    global::System.Nullable<double> p11, 
-                    global::System.Nullable<double> p14, 
-                    global::System.Nullable<double> Original_Pallet, 
-                    global::System.Nullable<double> Original_Split, 
-                    string Original_Material_Type, 
-                    string Original_Flavor, 
-                    string Original_NPDS, 
-                    string Original_Valid_Year, 
-                    string Original_Valid_Month, 
-                    string Original_Price_Point_2009, 
-                    string Original_Price_Point_2010, 
-                    string p17) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(Material_Number));
-            if ((Material_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Material_Name));
-            }
-            if ((Group_1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Group_1));
-            }
-            if ((Group_2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Group_2));
-            }
-            if ((Group_3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Group_3));
-            }
-            if ((Brand == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Brand));
-            }
-            if ((Base_Base_Product == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Base_Base_Product));
-            }
-            if ((Price_Point_rang == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Price_Point_rang));
-            }
-            if ((Price_Point.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(Price_Point.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Market_rang == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Market_rang));
-            }
-            if ((Base_Base_ProductOld == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Base_Base_ProductOld));
-            }
-            if ((Base_Product == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Base_Product));
-            }
-            if ((Quin.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Quin.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Volum_Pice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Volum_Pice.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Volum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Volum.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Vol.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Vol.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((New_Qu.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(New_Qu.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Price_Increas == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Price_Increas));
-            }
-            if ((p1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(p1.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((p4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(p4.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((p7.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(p7.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((p10.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(p10.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((p13.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(p13.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            if ((Pallet.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((double)(Pallet.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
-            if ((Split.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((double)(Split.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            if ((Material_Type == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Material_Type));
-            }
-            if ((Flavor == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Flavor));
-            }
-            if ((NPDS == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(NPDS));
-            }
-            if ((Valid_Year == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Valid_Year));
-            }
-            if ((Valid_Month == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Valid_Month));
-            }
-            if ((Price_Point_2009 == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Price_Point_2009));
-            }
-            if ((Price_Point_2010 == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Price_Point_2010));
-            }
-            if ((p16 == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(p16));
-            }
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((double)(Original_Material_Number));
-            if ((Original_Material_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_Material_Name));
-            }
-            if ((Original_Group_1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_Group_1));
-            }
-            if ((Original_Group_2 == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_Group_2));
-            }
-            if ((Original_Group_3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_Group_3));
-            }
-            if ((Original_Brand == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_Brand));
-            }
-            if ((Original_Base_Base_Product == null)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_Base_Base_Product));
-            }
-            if ((Original_Price_Point_rang == null)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_Price_Point_rang));
-            }
-            if ((Original_Price_Point.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((double)(Original_Price_Point.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Market_rang == null)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_Market_rang));
-            }
-            if ((Original_Base_Base_ProductOld == null)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_Base_Base_ProductOld));
-            }
-            if ((Original_Base_Product == null)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_Base_Product));
-            }
-            if ((Original_Quin.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((double)(Original_Quin.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Volum_Pice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((double)(Original_Volum_Pice.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Volum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((double)(Original_Volum.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Vol.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((double)(Original_Vol.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
-            }
-            if ((Original_New_Qu.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((double)(Original_New_Qu.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Price_Increas == null)) {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_Price_Increas));
-            }
-            if ((p2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((double)(p2.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
-            }
-            if ((p5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((double)(p5.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
-            }
-            if ((p8.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((double)(p8.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
-            }
-            if ((p11.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((double)(p11.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
-            }
-            if ((p14.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((double)(p14.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Pallet.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((double)(Original_Pallet.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Split.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((double)(Original_Split.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Material_Type == null)) {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((string)(Original_Material_Type));
-            }
-            if ((Original_Flavor == null)) {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((string)(Original_Flavor));
-            }
-            if ((Original_NPDS == null)) {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[87].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((string)(Original_NPDS));
-            }
-            if ((Original_Valid_Year == null)) {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[89].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((string)(Original_Valid_Year));
-            }
-            if ((Original_Valid_Month == null)) {
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[91].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((string)(Original_Valid_Month));
-            }
-            if ((Original_Price_Point_2009 == null)) {
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[93].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[93].Value = ((string)(Original_Price_Point_2009));
-            }
-            if ((Original_Price_Point_2010 == null)) {
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[95].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[95].Value = ((string)(Original_Price_Point_2010));
-            }
-            if ((p17 == null)) {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[97].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[97].Value = ((string)(p17));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Material_Name, 
-                    string Group_1, 
-                    string Group_2, 
-                    string Group_3, 
-                    string Brand, 
-                    string Base_Base_Product, 
-                    string Price_Point_rang, 
-                    global::System.Nullable<double> Price_Point, 
-                    string Market_rang, 
-                    string Base_Base_ProductOld, 
-                    string Base_Product, 
-                    global::System.Nullable<double> Quin, 
-                    global::System.Nullable<double> Volum_Pice, 
-                    global::System.Nullable<double> Volum, 
-                    global::System.Nullable<double> Vol, 
-                    global::System.Nullable<double> New_Qu, 
-                    string Price_Increas, 
-                    global::System.Nullable<double> p1, 
-                    global::System.Nullable<double> p4, 
-                    global::System.Nullable<double> p7, 
-                    global::System.Nullable<double> p10, 
-                    global::System.Nullable<double> p13, 
-                    global::System.Nullable<double> Pallet, 
-                    global::System.Nullable<double> Split, 
-                    string Material_Type, 
-                    string Flavor, 
-                    string NPDS, 
-                    string Valid_Year, 
-                    string Valid_Month, 
-                    string Price_Point_2009, 
-                    string Price_Point_2010, 
-                    string p16, 
-                    double Original_Material_Number, 
-                    string Original_Material_Name, 
-                    string Original_Group_1, 
-                    string Original_Group_2, 
-                    string Original_Group_3, 
-                    string Original_Brand, 
-                    string Original_Base_Base_Product, 
-                    string Original_Price_Point_rang, 
-                    global::System.Nullable<double> Original_Price_Point, 
-                    string Original_Market_rang, 
-                    string Original_Base_Base_ProductOld, 
-                    string Original_Base_Product, 
-                    global::System.Nullable<double> Original_Quin, 
-                    global::System.Nullable<double> Original_Volum_Pice, 
-                    global::System.Nullable<double> Original_Volum, 
-                    global::System.Nullable<double> Original_Vol, 
-                    global::System.Nullable<double> Original_New_Qu, 
-                    string Original_Price_Increas, 
-                    global::System.Nullable<double> p2, 
-                    global::System.Nullable<double> p5, 
-                    global::System.Nullable<double> p8, 
-                    global::System.Nullable<double> p11, 
-                    global::System.Nullable<double> p14, 
-                    global::System.Nullable<double> Original_Pallet, 
-                    global::System.Nullable<double> Original_Split, 
-                    string Original_Material_Type, 
-                    string Original_Flavor, 
-                    string Original_NPDS, 
-                    string Original_Valid_Year, 
-                    string Original_Valid_Month, 
-                    string Original_Price_Point_2009, 
-                    string Original_Price_Point_2010, 
-                    string p17) {
-            return this.Update(Original_Material_Number, Material_Name, Group_1, Group_2, Group_3, Brand, Base_Base_Product, Price_Point_rang, Price_Point, Market_rang, Base_Base_ProductOld, Base_Product, Quin, Volum_Pice, Volum, Vol, New_Qu, Price_Increas, p1, p4, p7, p10, p13, Pallet, Split, Material_Type, Flavor, NPDS, Valid_Year, Valid_Month, Price_Point_2009, Price_Point_2010, p16, Original_Material_Number, Original_Material_Name, Original_Group_1, Original_Group_2, Original_Group_3, Original_Brand, Original_Base_Base_Product, Original_Price_Point_rang, Original_Price_Point, Original_Market_rang, Original_Base_Base_ProductOld, Original_Base_Product, Original_Quin, Original_Volum_Pice, Original_Volum, Original_Vol, Original_New_Qu, Original_Price_Increas, p2, p5, p8, p11, p14, Original_Pallet, Original_Split, Original_Material_Type, Original_Flavor, Original_NPDS, Original_Valid_Year, Original_Valid_Month, Original_Price_Point_2009, Original_Price_Point_2010, p17);
+                    string Warehouse, 
+                    string Original_Route_Number) {
+            return this.Update(Distribution_Channel, Original_Route_Number, Route_Number__system, Type, Route_Name, _Sales_District__, Region, Plant, Sales_District_Name, Sales_District, RSM, ASM, Supervisor, Brand_Route, Brand_Route_Old, SDN_Code, Sales_District_2, Warehouse, Original_Route_Number);
         }
     }
     
@@ -11834,6 +9797,923 @@ FROM            [0-6 Customer HN]";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class _0_4__Product_DetailsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public _0_4__Product_DetailsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "0-4  Product Details";
+            tableMapping.ColumnMappings.Add("Material Number", "Material Number");
+            tableMapping.ColumnMappings.Add("Material Name", "Material Name");
+            tableMapping.ColumnMappings.Add("Group 1", "Group 1");
+            tableMapping.ColumnMappings.Add("Group 2", "Group 2");
+            tableMapping.ColumnMappings.Add("Group 3", "Group 3");
+            tableMapping.ColumnMappings.Add("Brand", "Brand");
+            tableMapping.ColumnMappings.Add("Base Base Product", "Base Base Product");
+            tableMapping.ColumnMappings.Add("Base Group", "Base Group");
+            tableMapping.ColumnMappings.Add("Price Point rang", "Price Point rang");
+            tableMapping.ColumnMappings.Add("Price Point", "Price Point");
+            tableMapping.ColumnMappings.Add("Market range", "Market range");
+            tableMapping.ColumnMappings.Add("Base Base ProductOld", "Base Base ProductOld");
+            tableMapping.ColumnMappings.Add("Base Product", "Base Product");
+            tableMapping.ColumnMappings.Add("Quin", "Quin");
+            tableMapping.ColumnMappings.Add("Volum Pice", "Volum Pice");
+            tableMapping.ColumnMappings.Add("Volum", "Volum");
+            tableMapping.ColumnMappings.Add("Vol", "Vol");
+            tableMapping.ColumnMappings.Add("New Qu", "New Qu");
+            tableMapping.ColumnMappings.Add("Price Increas", "Price Increas");
+            tableMapping.ColumnMappings.Add("Trade Price/Carton Old", "Trade Price/Carton Old");
+            tableMapping.ColumnMappings.Add("Trade Price/Carton", "Trade Price/Carton");
+            tableMapping.ColumnMappings.Add("Trade Price/Piece", "Trade Price/Piece");
+            tableMapping.ColumnMappings.Add("Consumer price /Carton", "Consumer price /Carton");
+            tableMapping.ColumnMappings.Add("Consumer price /Piece", "Consumer price /Piece");
+            tableMapping.ColumnMappings.Add("Pallet", "Pallet");
+            tableMapping.ColumnMappings.Add("Split", "Split");
+            tableMapping.ColumnMappings.Add("Material Type", "Material Type");
+            tableMapping.ColumnMappings.Add("Flavor", "Flavor");
+            tableMapping.ColumnMappings.Add("NPDS", "NPDS");
+            tableMapping.ColumnMappings.Add("Valid Year", "Valid Year");
+            tableMapping.ColumnMappings.Add("Valid Month", "Valid Month");
+            tableMapping.ColumnMappings.Add("Price Point 2009", "Price Point 2009");
+            tableMapping.ColumnMappings.Add("Price Point 2010", "Price Point 2010");
+            tableMapping.ColumnMappings.Add("ML / L", "ML / L");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [0-4  Product Details] WHERE (([Material Number] = @Original_Material" +
+                "_Number))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [0-4  Product Details] ([Material Number], [Material Name], [Group 1], [Group 2], [Group 3], [Brand], [Base Base Product], [Base Group], [Price Point rang], [Price Point], [Market range], [Base Base ProductOld], [Base Product], [Quin], [Volum Pice], [Volum], [Vol], [New Qu], [Price Increas], [Trade Price/Carton Old], [Trade Price/Carton], [Trade Price/Piece], [Consumer price /Carton], [Consumer price /Piece], [Pallet], [Split], [Material Type], [Flavor], [NPDS], [Valid Year], [Valid Month], [Price Point 2009], [Price Point 2010], [ML / L]) VALUES (@Material_Number, @Material_Name, @Group_1, @Group_2, @Group_3, @Brand, @Base_Base_Product, @Base_Group, @Price_Point_rang, @Price_Point, @Market_range, @Base_Base_ProductOld, @Base_Product, @Quin, @Volum_Pice, @Volum, @Vol, @New_Qu, @Price_Increas, @p1, @p4, @p7, @p10, @p13, @Pallet, @Split, @Material_Type, @Flavor, @NPDS, @Valid_Year, @Valid_Month, @Price_Point_2009, @Price_Point_2010, @p16)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Market_range", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market range", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_ProductOld", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quin", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum_Pice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vol", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@New_Qu", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Increas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pallet", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Split", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Flavor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Flavor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NPDS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Year", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Month", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2009", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2010", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p16", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [0-4  Product Details] SET [Material Number] = @Material_Number, [Material Name] = @Material_Name, [Group 1] = @Group_1, [Group 2] = @Group_2, [Group 3] = @Group_3, [Brand] = @Brand, [Base Base Product] = @Base_Base_Product, [Base Group] = @Base_Group, [Price Point rang] = @Price_Point_rang, [Price Point] = @Price_Point, [Market range] = @Market_range, [Base Base ProductOld] = @Base_Base_ProductOld, [Base Product] = @Base_Product, [Quin] = @Quin, [Volum Pice] = @Volum_Pice, [Volum] = @Volum, [Vol] = @Vol, [New Qu] = @New_Qu, [Price Increas] = @Price_Increas, [Trade Price/Carton Old] = @p1, [Trade Price/Carton] = @p4, [Trade Price/Piece] = @p7, [Consumer price /Carton] = @p10, [Consumer price /Piece] = @p13, [Pallet] = @Pallet, [Split] = @Split, [Material Type] = @Material_Type, [Flavor] = @Flavor, [NPDS] = @NPDS, [Valid Year] = @Valid_Year, [Valid Month] = @Valid_Month, [Price Point 2009] = @Price_Point_2009, [Price Point 2010] = @Price_Point_2010, [ML / L] = @p16 WHERE (([Material Number] = @Original_Material_Number))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Market_range", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market range", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_ProductOld", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quin", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum_Pice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vol", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@New_Qu", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Increas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pallet", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Split", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Flavor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Flavor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NPDS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Year", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Month", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2009", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2010", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p16", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        [Material Number], [Material Name], [Group 1], [Group 2], [Group 3], Brand, [Base Base Product], [Base Group], [Price Point rang], [Price Point], [Market range], [Base Base ProductOld], [Base Product], Quin, 
+                         [Volum Pice], Volum, Vol, [New Qu], [Price Increas], [Trade Price/Carton Old], [Trade Price/Carton], [Trade Price/Piece], [Consumer price /Carton], [Consumer price /Piece], Pallet, Split, [Material Type], Flavor, NPDS, 
+                         [Valid Year], [Valid Month], [Price Point 2009], [Price Point 2010], [ML / L]
+FROM            [0-4  Product Details]";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT [Material Name], [Material Number] FROM [0-4  Product Details]";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsData._0_4__Product_DetailsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsData._0_4__Product_DetailsDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsData._0_4__Product_DetailsDataTable dataTable = new dsData._0_4__Product_DetailsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillOnlyCode(dsData._0_4__Product_DetailsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsData._0_4__Product_DetailsDataTable GetDataOnlyCode() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            dsData._0_4__Product_DetailsDataTable dataTable = new dsData._0_4__Product_DetailsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsData._0_4__Product_DetailsDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsData dataSet) {
+            return this.Adapter.Update(dataSet, "0-4  Product Details");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(double Original_Material_Number) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((double)(Original_Material_Number));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    double Material_Number, 
+                    string Material_Name, 
+                    string Group_1, 
+                    string Group_2, 
+                    string Group_3, 
+                    string Brand, 
+                    string Base_Base_Product, 
+                    string Base_Group, 
+                    string Price_Point_rang, 
+                    global::System.Nullable<double> Price_Point, 
+                    string Market_range, 
+                    string Base_Base_ProductOld, 
+                    string Base_Product, 
+                    global::System.Nullable<double> Quin, 
+                    global::System.Nullable<double> Volum_Pice, 
+                    global::System.Nullable<double> Volum, 
+                    global::System.Nullable<double> Vol, 
+                    global::System.Nullable<double> New_Qu, 
+                    string Price_Increas, 
+                    string p1, 
+                    global::System.Nullable<double> p4, 
+                    global::System.Nullable<double> p7, 
+                    string p10, 
+                    global::System.Nullable<double> p13, 
+                    global::System.Nullable<double> Pallet, 
+                    global::System.Nullable<double> Split, 
+                    string Material_Type, 
+                    string Flavor, 
+                    string NPDS, 
+                    string Valid_Year, 
+                    string Valid_Month, 
+                    string Price_Point_2009, 
+                    string Price_Point_2010, 
+                    string p16) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((double)(Material_Number));
+            if ((Material_Name == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Material_Name));
+            }
+            if ((Group_1 == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Group_1));
+            }
+            if ((Group_2 == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Group_2));
+            }
+            if ((Group_3 == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Group_3));
+            }
+            if ((Brand == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Brand));
+            }
+            if ((Base_Base_Product == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Base_Base_Product));
+            }
+            if ((Base_Group == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Base_Group));
+            }
+            if ((Price_Point_rang == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Price_Point_rang));
+            }
+            if ((Price_Point.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(Price_Point.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Market_range == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Market_range));
+            }
+            if ((Base_Base_ProductOld == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Base_Base_ProductOld));
+            }
+            if ((Base_Product == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Base_Product));
+            }
+            if ((Quin.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(Quin.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Volum_Pice.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(Volum_Pice.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Volum.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(Volum.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Vol.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(Vol.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((New_Qu.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((double)(New_Qu.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Price_Increas == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Price_Increas));
+            }
+            if ((p1 == null)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(p1));
+            }
+            if ((p4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((double)(p4.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((p7.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((double)(p7.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((p10 == null)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(p10));
+            }
+            if ((p13.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((double)(p13.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((Pallet.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((double)(Pallet.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Split.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((double)(Split.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((Material_Type == null)) {
+                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(Material_Type));
+            }
+            if ((Flavor == null)) {
+                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(Flavor));
+            }
+            if ((NPDS == null)) {
+                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(NPDS));
+            }
+            if ((Valid_Year == null)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(Valid_Year));
+            }
+            if ((Valid_Month == null)) {
+                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(Valid_Month));
+            }
+            if ((Price_Point_2009 == null)) {
+                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(Price_Point_2009));
+            }
+            if ((Price_Point_2010 == null)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[32].Value = ((string)(Price_Point_2010));
+            }
+            if ((p16 == null)) {
+                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(p16));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    double Material_Number, 
+                    string Material_Name, 
+                    string Group_1, 
+                    string Group_2, 
+                    string Group_3, 
+                    string Brand, 
+                    string Base_Base_Product, 
+                    string Base_Group, 
+                    string Price_Point_rang, 
+                    global::System.Nullable<double> Price_Point, 
+                    string Market_range, 
+                    string Base_Base_ProductOld, 
+                    string Base_Product, 
+                    global::System.Nullable<double> Quin, 
+                    global::System.Nullable<double> Volum_Pice, 
+                    global::System.Nullable<double> Volum, 
+                    global::System.Nullable<double> Vol, 
+                    global::System.Nullable<double> New_Qu, 
+                    string Price_Increas, 
+                    string p1, 
+                    global::System.Nullable<double> p4, 
+                    global::System.Nullable<double> p7, 
+                    string p10, 
+                    global::System.Nullable<double> p13, 
+                    global::System.Nullable<double> Pallet, 
+                    global::System.Nullable<double> Split, 
+                    string Material_Type, 
+                    string Flavor, 
+                    string NPDS, 
+                    string Valid_Year, 
+                    string Valid_Month, 
+                    string Price_Point_2009, 
+                    string Price_Point_2010, 
+                    string p16, 
+                    double Original_Material_Number) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(Material_Number));
+            if ((Material_Name == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Material_Name));
+            }
+            if ((Group_1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Group_1));
+            }
+            if ((Group_2 == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Group_2));
+            }
+            if ((Group_3 == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Group_3));
+            }
+            if ((Brand == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Brand));
+            }
+            if ((Base_Base_Product == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Base_Base_Product));
+            }
+            if ((Base_Group == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Base_Group));
+            }
+            if ((Price_Point_rang == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Price_Point_rang));
+            }
+            if ((Price_Point.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Price_Point.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Market_range == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Market_range));
+            }
+            if ((Base_Base_ProductOld == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Base_Base_ProductOld));
+            }
+            if ((Base_Product == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Base_Product));
+            }
+            if ((Quin.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Quin.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Volum_Pice.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Volum_Pice.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Volum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Volum.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Vol.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Vol.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((New_Qu.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(New_Qu.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Price_Increas == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Price_Increas));
+            }
+            if ((p1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(p1));
+            }
+            if ((p4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(p4.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((p7.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(p7.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((p10 == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(p10));
+            }
+            if ((p13.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((double)(p13.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((Pallet.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((double)(Pallet.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Split.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(Split.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((Material_Type == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Material_Type));
+            }
+            if ((Flavor == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Flavor));
+            }
+            if ((NPDS == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(NPDS));
+            }
+            if ((Valid_Year == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Valid_Year));
+            }
+            if ((Valid_Month == null)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Valid_Month));
+            }
+            if ((Price_Point_2009 == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Price_Point_2009));
+            }
+            if ((Price_Point_2010 == null)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Price_Point_2010));
+            }
+            if ((p16 == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(p16));
+            }
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((double)(Original_Material_Number));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string Material_Name, 
+                    string Group_1, 
+                    string Group_2, 
+                    string Group_3, 
+                    string Brand, 
+                    string Base_Base_Product, 
+                    string Base_Group, 
+                    string Price_Point_rang, 
+                    global::System.Nullable<double> Price_Point, 
+                    string Market_range, 
+                    string Base_Base_ProductOld, 
+                    string Base_Product, 
+                    global::System.Nullable<double> Quin, 
+                    global::System.Nullable<double> Volum_Pice, 
+                    global::System.Nullable<double> Volum, 
+                    global::System.Nullable<double> Vol, 
+                    global::System.Nullable<double> New_Qu, 
+                    string Price_Increas, 
+                    string p1, 
+                    global::System.Nullable<double> p4, 
+                    global::System.Nullable<double> p7, 
+                    string p10, 
+                    global::System.Nullable<double> p13, 
+                    global::System.Nullable<double> Pallet, 
+                    global::System.Nullable<double> Split, 
+                    string Material_Type, 
+                    string Flavor, 
+                    string NPDS, 
+                    string Valid_Year, 
+                    string Valid_Month, 
+                    string Price_Point_2009, 
+                    string Price_Point_2010, 
+                    string p16, 
+                    double Original_Material_Number) {
+            return this.Update(Original_Material_Number, Material_Name, Group_1, Group_2, Group_3, Brand, Base_Base_Product, Base_Group, Price_Point_rang, Price_Point, Market_range, Base_Base_ProductOld, Base_Product, Quin, Volum_Pice, Volum, Vol, New_Qu, Price_Increas, p1, p4, p7, p10, p13, Pallet, Split, Material_Type, Flavor, NPDS, Valid_Year, Valid_Month, Price_Point_2009, Price_Point_2010, p16, Original_Material_Number);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.IDbCommand[] _commandCollection;
@@ -12010,11 +10890,11 @@ FROM            [0-6 Customer HN]";
         
         private _0_3__Route_DetailsTableAdapter @__0_3__Route_DetailsTableAdapter;
         
-        private _0_4__Product_DetailsTableAdapter @__0_4__Product_DetailsTableAdapter;
-        
         private QryBillDocTableAdapter _qryBillDocTableAdapter;
         
         private _0_6_Customer_HNTableAdapter @__0_6_Customer_HNTableAdapter;
+        
+        private _0_4__Product_DetailsTableAdapter @__0_4__Product_DetailsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -12064,20 +10944,6 @@ FROM            [0-6 Customer HN]";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public _0_4__Product_DetailsTableAdapter _0_4__Product_DetailsTableAdapter {
-            get {
-                return this.@__0_4__Product_DetailsTableAdapter;
-            }
-            set {
-                this.@__0_4__Product_DetailsTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public QryBillDocTableAdapter QryBillDocTableAdapter {
             get {
                 return this._qryBillDocTableAdapter;
@@ -12098,6 +10964,20 @@ FROM            [0-6 Customer HN]";
             }
             set {
                 this.@__0_6_Customer_HNTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public _0_4__Product_DetailsTableAdapter _0_4__Product_DetailsTableAdapter {
+            get {
+                return this.@__0_4__Product_DetailsTableAdapter;
+            }
+            set {
+                this.@__0_4__Product_DetailsTableAdapter = value;
             }
         }
         
@@ -12128,10 +11008,6 @@ FROM            [0-6 Customer HN]";
                             && (this.@__0_3__Route_DetailsTableAdapter.Connection != null))) {
                     return this.@__0_3__Route_DetailsTableAdapter.Connection;
                 }
-                if (((this.@__0_4__Product_DetailsTableAdapter != null) 
-                            && (this.@__0_4__Product_DetailsTableAdapter.Connection != null))) {
-                    return this.@__0_4__Product_DetailsTableAdapter.Connection;
-                }
                 if (((this._qryBillDocTableAdapter != null) 
                             && (this._qryBillDocTableAdapter.Connection != null))) {
                     return this._qryBillDocTableAdapter.Connection;
@@ -12139,6 +11015,10 @@ FROM            [0-6 Customer HN]";
                 if (((this.@__0_6_Customer_HNTableAdapter != null) 
                             && (this.@__0_6_Customer_HNTableAdapter.Connection != null))) {
                     return this.@__0_6_Customer_HNTableAdapter.Connection;
+                }
+                if (((this.@__0_4__Product_DetailsTableAdapter != null) 
+                            && (this.@__0_4__Product_DetailsTableAdapter.Connection != null))) {
+                    return this.@__0_4__Product_DetailsTableAdapter.Connection;
                 }
                 return null;
             }
@@ -12159,13 +11039,13 @@ FROM            [0-6 Customer HN]";
                 if ((this.@__0_3__Route_DetailsTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._qryBillDocTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this.@__0_6_Customer_HNTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -12197,15 +11077,6 @@ FROM            [0-6 Customer HN]";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet._0_4__Product_Details.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this.@__0_4__Product_DetailsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._qryBillDocTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.QryBillDoc.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -12221,6 +11092,15 @@ FROM            [0-6 Customer HN]";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this.@__0_6_Customer_HNTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet._0_4__Product_Details.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this.@__0_4__Product_DetailsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -12250,14 +11130,6 @@ FROM            [0-6 Customer HN]";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet._0_4__Product_Details.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this.@__0_4__Product_DetailsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._qryBillDocTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.QryBillDoc.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -12274,6 +11146,14 @@ FROM            [0-6 Customer HN]";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet._0_4__Product_Details.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this.@__0_4__Product_DetailsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -12284,6 +11164,14 @@ FROM            [0-6 Customer HN]";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(dsData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet._0_4__Product_Details.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this.@__0_4__Product_DetailsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this.@__0_6_Customer_HNTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet._0_6_Customer_HN.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -12297,14 +11185,6 @@ FROM            [0-6 Customer HN]";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._qryBillDocTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet._0_4__Product_Details.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this.@__0_4__Product_DetailsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -12373,11 +11253,6 @@ FROM            [0-6 Customer HN]";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this.@__0_4__Product_DetailsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this.@__0_4__Product_DetailsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._qryBillDocTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._qryBillDocTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -12385,6 +11260,11 @@ FROM            [0-6 Customer HN]";
             }
             if (((this.@__0_6_Customer_HNTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this.@__0_6_Customer_HNTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this.@__0_4__Product_DetailsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this.@__0_4__Product_DetailsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -12438,15 +11318,6 @@ FROM            [0-6 Customer HN]";
                         adaptersWithAcceptChangesDuringUpdate.Add(this.@__0_3__Route_DetailsTableAdapter.Adapter);
                     }
                 }
-                if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
-                    revertConnections.Add(this.@__0_4__Product_DetailsTableAdapter, this.@__0_4__Product_DetailsTableAdapter.Connection);
-                    this.@__0_4__Product_DetailsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this.@__0_4__Product_DetailsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this.@__0_4__Product_DetailsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this.@__0_4__Product_DetailsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this.@__0_4__Product_DetailsTableAdapter.Adapter);
-                    }
-                }
                 if ((this._qryBillDocTableAdapter != null)) {
                     revertConnections.Add(this._qryBillDocTableAdapter, this._qryBillDocTableAdapter.Connection);
                     this._qryBillDocTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -12463,6 +11334,15 @@ FROM            [0-6 Customer HN]";
                     if (this.@__0_6_Customer_HNTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this.@__0_6_Customer_HNTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this.@__0_6_Customer_HNTableAdapter.Adapter);
+                    }
+                }
+                if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
+                    revertConnections.Add(this.@__0_4__Product_DetailsTableAdapter, this.@__0_4__Product_DetailsTableAdapter.Connection);
+                    this.@__0_4__Product_DetailsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this.@__0_4__Product_DetailsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this.@__0_4__Product_DetailsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this.@__0_4__Product_DetailsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this.@__0_4__Product_DetailsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -12531,10 +11411,6 @@ FROM            [0-6 Customer HN]";
                     this.@__0_3__Route_DetailsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this.@__0_3__Route_DetailsTableAdapter]));
                     this.@__0_3__Route_DetailsTableAdapter.Transaction = null;
                 }
-                if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
-                    this.@__0_4__Product_DetailsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this.@__0_4__Product_DetailsTableAdapter]));
-                    this.@__0_4__Product_DetailsTableAdapter.Transaction = null;
-                }
                 if ((this._qryBillDocTableAdapter != null)) {
                     this._qryBillDocTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._qryBillDocTableAdapter]));
                     this._qryBillDocTableAdapter.Transaction = null;
@@ -12542,6 +11418,10 @@ FROM            [0-6 Customer HN]";
                 if ((this.@__0_6_Customer_HNTableAdapter != null)) {
                     this.@__0_6_Customer_HNTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this.@__0_6_Customer_HNTableAdapter]));
                     this.@__0_6_Customer_HNTableAdapter.Transaction = null;
+                }
+                if ((this.@__0_4__Product_DetailsTableAdapter != null)) {
+                    this.@__0_4__Product_DetailsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this.@__0_4__Product_DetailsTableAdapter]));
+                    this.@__0_4__Product_DetailsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

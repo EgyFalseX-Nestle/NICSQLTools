@@ -16,7 +16,6 @@ namespace NICSQLTools
             InitializeComponent();
             pageGroupCore = new PageGroup();
             pageGroupCore.Caption = dataGroup.Title;
-            imageControl.Image = DevExpress.Utils.ResourceImageHelper.CreateImageFromResources(dataGroup.ImagePath, typeof(MainForm).Assembly);
             labelSubtitle.Text = dataGroup.Subtitle;
             labelDescription.Text = dataGroup.Description;
             CreateLayout(dataGroup, child);

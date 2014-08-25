@@ -110,6 +110,7 @@
             this.repositoryItemDateEditCreationDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
+            this.colBaseGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
@@ -264,7 +265,8 @@
             this.colValidMonth,
             this.colPricePoint2009,
             this.colPricePoint2010,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.colBaseGroup});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new customer";
@@ -335,7 +337,7 @@
             this.colPricePointrang.FieldName = "Price Point rang";
             this.colPricePointrang.Name = "colPricePointrang";
             this.colPricePointrang.Visible = true;
-            this.colPricePointrang.VisibleIndex = 7;
+            this.colPricePointrang.VisibleIndex = 8;
             this.colPricePointrang.Width = 94;
             // 
             // colPricePoint
@@ -343,14 +345,14 @@
             this.colPricePoint.FieldName = "Price Point";
             this.colPricePoint.Name = "colPricePoint";
             this.colPricePoint.Visible = true;
-            this.colPricePoint.VisibleIndex = 8;
+            this.colPricePoint.VisibleIndex = 9;
             // 
             // colMarketrang
             // 
-            this.colMarketrang.FieldName = "Market rang";
+            this.colMarketrang.FieldName = "Market range";
             this.colMarketrang.Name = "colMarketrang";
             this.colMarketrang.Visible = true;
-            this.colMarketrang.VisibleIndex = 9;
+            this.colMarketrang.VisibleIndex = 10;
             this.colMarketrang.Width = 77;
             // 
             // colBaseBaseProductOld
@@ -358,7 +360,7 @@
             this.colBaseBaseProductOld.FieldName = "Base Base ProductOld";
             this.colBaseBaseProductOld.Name = "colBaseBaseProductOld";
             this.colBaseBaseProductOld.Visible = true;
-            this.colBaseBaseProductOld.VisibleIndex = 10;
+            this.colBaseBaseProductOld.VisibleIndex = 11;
             this.colBaseBaseProductOld.Width = 127;
             // 
             // colBaseProduct
@@ -366,7 +368,7 @@
             this.colBaseProduct.FieldName = "Base Product";
             this.colBaseProduct.Name = "colBaseProduct";
             this.colBaseProduct.Visible = true;
-            this.colBaseProduct.VisibleIndex = 11;
+            this.colBaseProduct.VisibleIndex = 12;
             this.colBaseProduct.Width = 82;
             // 
             // colQuin
@@ -374,42 +376,42 @@
             this.colQuin.FieldName = "Quin";
             this.colQuin.Name = "colQuin";
             this.colQuin.Visible = true;
-            this.colQuin.VisibleIndex = 12;
+            this.colQuin.VisibleIndex = 13;
             // 
             // colVolumPice
             // 
             this.colVolumPice.FieldName = "Volum Pice";
             this.colVolumPice.Name = "colVolumPice";
             this.colVolumPice.Visible = true;
-            this.colVolumPice.VisibleIndex = 13;
+            this.colVolumPice.VisibleIndex = 14;
             // 
             // colVolum
             // 
             this.colVolum.FieldName = "Volum";
             this.colVolum.Name = "colVolum";
             this.colVolum.Visible = true;
-            this.colVolum.VisibleIndex = 14;
+            this.colVolum.VisibleIndex = 15;
             // 
             // colVol
             // 
             this.colVol.FieldName = "Vol";
             this.colVol.Name = "colVol";
             this.colVol.Visible = true;
-            this.colVol.VisibleIndex = 15;
+            this.colVol.VisibleIndex = 16;
             // 
             // colNewQu
             // 
             this.colNewQu.FieldName = "New Qu";
             this.colNewQu.Name = "colNewQu";
             this.colNewQu.Visible = true;
-            this.colNewQu.VisibleIndex = 16;
+            this.colNewQu.VisibleIndex = 17;
             // 
             // colPriceIncreas
             // 
             this.colPriceIncreas.FieldName = "Price Increas";
             this.colPriceIncreas.Name = "colPriceIncreas";
             this.colPriceIncreas.Visible = true;
-            this.colPriceIncreas.VisibleIndex = 17;
+            this.colPriceIncreas.VisibleIndex = 18;
             this.colPriceIncreas.Width = 81;
             // 
             // gridColumn1
@@ -417,7 +419,7 @@
             this.gridColumn1.FieldName = "Trade Price/Carton Old";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 18;
+            this.gridColumn1.VisibleIndex = 19;
             this.gridColumn1.Width = 129;
             // 
             // gridColumn2
@@ -425,7 +427,7 @@
             this.gridColumn2.FieldName = "Trade Price/Carton";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 19;
+            this.gridColumn2.VisibleIndex = 20;
             this.gridColumn2.Width = 110;
             // 
             // gridColumn3
@@ -433,7 +435,7 @@
             this.gridColumn3.FieldName = "Trade Price/Piece";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 20;
+            this.gridColumn3.VisibleIndex = 21;
             this.gridColumn3.Width = 102;
             // 
             // gridColumn4
@@ -441,7 +443,7 @@
             this.gridColumn4.FieldName = "Consumer price /Carton";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 21;
+            this.gridColumn4.VisibleIndex = 22;
             this.gridColumn4.Width = 133;
             // 
             // gridColumn5
@@ -449,7 +451,7 @@
             this.gridColumn5.FieldName = "Consumer price /Piece";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 22;
+            this.gridColumn5.VisibleIndex = 23;
             this.gridColumn5.Width = 125;
             // 
             // colPallet
@@ -457,21 +459,21 @@
             this.colPallet.FieldName = "Pallet";
             this.colPallet.Name = "colPallet";
             this.colPallet.Visible = true;
-            this.colPallet.VisibleIndex = 23;
+            this.colPallet.VisibleIndex = 24;
             // 
             // colSplit
             // 
             this.colSplit.FieldName = "Split";
             this.colSplit.Name = "colSplit";
             this.colSplit.Visible = true;
-            this.colSplit.VisibleIndex = 24;
+            this.colSplit.VisibleIndex = 25;
             // 
             // colMaterialType
             // 
             this.colMaterialType.FieldName = "Material Type";
             this.colMaterialType.Name = "colMaterialType";
             this.colMaterialType.Visible = true;
-            this.colMaterialType.VisibleIndex = 25;
+            this.colMaterialType.VisibleIndex = 26;
             this.colMaterialType.Width = 84;
             // 
             // colFlavor
@@ -479,35 +481,35 @@
             this.colFlavor.FieldName = "Flavor";
             this.colFlavor.Name = "colFlavor";
             this.colFlavor.Visible = true;
-            this.colFlavor.VisibleIndex = 26;
+            this.colFlavor.VisibleIndex = 27;
             // 
             // colNPDS
             // 
             this.colNPDS.FieldName = "NPDS";
             this.colNPDS.Name = "colNPDS";
             this.colNPDS.Visible = true;
-            this.colNPDS.VisibleIndex = 27;
+            this.colNPDS.VisibleIndex = 28;
             // 
             // colValidYear
             // 
             this.colValidYear.FieldName = "Valid Year";
             this.colValidYear.Name = "colValidYear";
             this.colValidYear.Visible = true;
-            this.colValidYear.VisibleIndex = 28;
+            this.colValidYear.VisibleIndex = 29;
             // 
             // colValidMonth
             // 
             this.colValidMonth.FieldName = "Valid Month";
             this.colValidMonth.Name = "colValidMonth";
             this.colValidMonth.Visible = true;
-            this.colValidMonth.VisibleIndex = 29;
+            this.colValidMonth.VisibleIndex = 30;
             // 
             // colPricePoint2009
             // 
             this.colPricePoint2009.FieldName = "Price Point 2009";
             this.colPricePoint2009.Name = "colPricePoint2009";
             this.colPricePoint2009.Visible = true;
-            this.colPricePoint2009.VisibleIndex = 30;
+            this.colPricePoint2009.VisibleIndex = 31;
             this.colPricePoint2009.Width = 96;
             // 
             // colPricePoint2010
@@ -515,7 +517,7 @@
             this.colPricePoint2010.FieldName = "Price Point 2010";
             this.colPricePoint2010.Name = "colPricePoint2010";
             this.colPricePoint2010.Visible = true;
-            this.colPricePoint2010.VisibleIndex = 31;
+            this.colPricePoint2010.VisibleIndex = 32;
             this.colPricePoint2010.Width = 96;
             // 
             // gridColumn6
@@ -523,7 +525,7 @@
             this.gridColumn6.FieldName = "ML / L";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 32;
+            this.gridColumn6.VisibleIndex = 33;
             // 
             // repositoryItemGridLookUpEditCustHierLevel6Id
             // 
@@ -843,6 +845,14 @@
             this.UOW.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.UOW.TrackPropertiesModifications = false;
             // 
+            // colBaseGroup
+            // 
+            this.colBaseGroup.Caption = "Base Group";
+            this.colBaseGroup.FieldName = "Base Group";
+            this.colBaseGroup.Name = "colBaseGroup";
+            this.colBaseGroup.Visible = true;
+            this.colBaseGroup.VisibleIndex = 7;
+            // 
             // ProductEditorFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -964,5 +974,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPricePoint2009;
         private DevExpress.XtraGrid.Columns.GridColumn colPricePoint2010;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn colBaseGroup;
     }
 }

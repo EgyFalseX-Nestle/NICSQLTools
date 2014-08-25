@@ -182,6 +182,11 @@
             this.colCityEnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCityArName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditCreationDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.colCases_11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCases_12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBase_Group = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colValue_11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colValue_12 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
@@ -415,7 +420,12 @@
             this.colBrand_Rang,
             this.col_SDN_Type,
             this.colSales_District_2,
-            this.colAutoKey});
+            this.colAutoKey,
+            this.colCases_11,
+            this.colCases_12,
+            this.colBase_Group,
+            this.colValue_11,
+            this.colValue_12});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
@@ -480,7 +490,7 @@
             this.colCases_14.FieldName = "Cases_14";
             this.colCases_14.Name = "colCases_14";
             this.colCases_14.Visible = true;
-            this.colCases_14.VisibleIndex = 6;
+            this.colCases_14.VisibleIndex = 8;
             // 
             // colCases_13
             // 
@@ -488,7 +498,7 @@
             this.colCases_13.FieldName = "Cases_13";
             this.colCases_13.Name = "colCases_13";
             this.colCases_13.Visible = true;
-            this.colCases_13.VisibleIndex = 7;
+            this.colCases_13.VisibleIndex = 9;
             // 
             // colVolume
             // 
@@ -508,7 +518,7 @@
             this.colType.FieldName = "Type";
             this.colType.Name = "colType";
             this.colType.Visible = true;
-            this.colType.VisibleIndex = 8;
+            this.colType.VisibleIndex = 12;
             // 
             // colCases
             // 
@@ -676,7 +686,7 @@
             this.colMaterial_Name.FieldName = "Material_Name";
             this.colMaterial_Name.Name = "colMaterial_Name";
             this.colMaterial_Name.Visible = true;
-            this.colMaterial_Name.VisibleIndex = 10;
+            this.colMaterial_Name.VisibleIndex = 14;
             this.colMaterial_Name.Width = 90;
             // 
             // colBase_Product
@@ -692,7 +702,7 @@
             this.colBase_Base_Product.FieldName = "Base_Base_Product";
             this.colBase_Base_Product.Name = "colBase_Base_Product";
             this.colBase_Base_Product.Visible = true;
-            this.colBase_Base_Product.VisibleIndex = 11;
+            this.colBase_Base_Product.VisibleIndex = 15;
             this.colBase_Base_Product.Width = 114;
             // 
             // colBrand
@@ -701,7 +711,7 @@
             this.colBrand.FieldName = "Brand";
             this.colBrand.Name = "colBrand";
             this.colBrand.Visible = true;
-            this.colBrand.VisibleIndex = 12;
+            this.colBrand.VisibleIndex = 17;
             // 
             // colName_3_Ar
             // 
@@ -709,7 +719,7 @@
             this.colName_3_Ar.FieldName = "Name_3_Ar";
             this.colName_3_Ar.Name = "colName_3_Ar";
             this.colName_3_Ar.Visible = true;
-            this.colName_3_Ar.VisibleIndex = 17;
+            this.colName_3_Ar.VisibleIndex = 22;
             // 
             // colName_1_Ar
             // 
@@ -717,7 +727,7 @@
             this.colName_1_Ar.FieldName = "Name_1_Ar";
             this.colName_1_Ar.Name = "colName_1_Ar";
             this.colName_1_Ar.Visible = true;
-            this.colName_1_Ar.VisibleIndex = 16;
+            this.colName_1_Ar.VisibleIndex = 21;
             // 
             // colYear_C
             // 
@@ -731,7 +741,7 @@
             this.colCustomer_Type_2.FieldName = "Customer_Type_2";
             this.colCustomer_Type_2.Name = "colCustomer_Type_2";
             this.colCustomer_Type_2.Visible = true;
-            this.colCustomer_Type_2.VisibleIndex = 21;
+            this.colCustomer_Type_2.VisibleIndex = 26;
             this.colCustomer_Type_2.Width = 107;
             // 
             // colCustomer_Type
@@ -740,7 +750,7 @@
             this.colCustomer_Type.FieldName = "Customer_Type";
             this.colCustomer_Type.Name = "colCustomer_Type";
             this.colCustomer_Type.Visible = true;
-            this.colCustomer_Type.VisibleIndex = 22;
+            this.colCustomer_Type.VisibleIndex = 27;
             this.colCustomer_Type.Width = 95;
             // 
             // colCustomer_Group
@@ -749,7 +759,7 @@
             this.colCustomer_Group.FieldName = "Customer_Group";
             this.colCustomer_Group.Name = "colCustomer_Group";
             this.colCustomer_Group.Visible = true;
-            this.colCustomer_Group.VisibleIndex = 23;
+            this.colCustomer_Group.VisibleIndex = 28;
             this.colCustomer_Group.Width = 100;
             // 
             // colSubchannel
@@ -758,7 +768,7 @@
             this.colSubchannel.FieldName = "Subchannel";
             this.colSubchannel.Name = "colSubchannel";
             this.colSubchannel.Visible = true;
-            this.colSubchannel.VisibleIndex = 24;
+            this.colSubchannel.VisibleIndex = 29;
             // 
             // colL6_Code
             // 
@@ -818,7 +828,7 @@
             this.colName_3_En.FieldName = "Name_3_En";
             this.colName_3_En.Name = "colName_3_En";
             this.colName_3_En.Visible = true;
-            this.colName_3_En.VisibleIndex = 15;
+            this.colName_3_En.VisibleIndex = 20;
             this.colName_3_En.Width = 76;
             // 
             // colName_1_En
@@ -827,7 +837,7 @@
             this.colName_1_En.FieldName = "Name_1_En";
             this.colName_1_En.Name = "colName_1_En";
             this.colName_1_En.Visible = true;
-            this.colName_1_En.VisibleIndex = 14;
+            this.colName_1_En.VisibleIndex = 19;
             this.colName_1_En.Width = 76;
             // 
             // colBrand_Route
@@ -836,7 +846,7 @@
             this.colBrand_Route.FieldName = "Brand_Route";
             this.colBrand_Route.Name = "colBrand_Route";
             this.colBrand_Route.Visible = true;
-            this.colBrand_Route.VisibleIndex = 28;
+            this.colBrand_Route.VisibleIndex = 33;
             this.colBrand_Route.Width = 82;
             // 
             // colSupervisor
@@ -845,7 +855,7 @@
             this.colSupervisor.FieldName = "Supervisor";
             this.colSupervisor.Name = "colSupervisor";
             this.colSupervisor.Visible = true;
-            this.colSupervisor.VisibleIndex = 29;
+            this.colSupervisor.VisibleIndex = 34;
             // 
             // colASM
             // 
@@ -853,7 +863,7 @@
             this.colASM.FieldName = "ASM";
             this.colASM.Name = "colASM";
             this.colASM.Visible = true;
-            this.colASM.VisibleIndex = 30;
+            this.colASM.VisibleIndex = 35;
             // 
             // colRSM
             // 
@@ -861,7 +871,7 @@
             this.colRSM.FieldName = "RSM";
             this.colRSM.Name = "colRSM";
             this.colRSM.Visible = true;
-            this.colRSM.VisibleIndex = 31;
+            this.colRSM.VisibleIndex = 36;
             // 
             // colSales_District
             // 
@@ -869,7 +879,7 @@
             this.colSales_District.FieldName = "Sales_District";
             this.colSales_District.Name = "colSales_District";
             this.colSales_District.Visible = true;
-            this.colSales_District.VisibleIndex = 32;
+            this.colSales_District.VisibleIndex = 37;
             this.colSales_District.Width = 83;
             // 
             // colSales_District_Name
@@ -878,7 +888,7 @@
             this.colSales_District_Name.FieldName = "Sales_District_Name";
             this.colSales_District_Name.Name = "colSales_District_Name";
             this.colSales_District_Name.Visible = true;
-            this.colSales_District_Name.VisibleIndex = 33;
+            this.colSales_District_Name.VisibleIndex = 38;
             this.colSales_District_Name.Width = 116;
             // 
             // colRegion
@@ -893,7 +903,7 @@
             this.colRoute_Name.FieldName = "Route_Name";
             this.colRoute_Name.Name = "colRoute_Name";
             this.colRoute_Name.Visible = true;
-            this.colRoute_Name.VisibleIndex = 27;
+            this.colRoute_Name.VisibleIndex = 32;
             this.colRoute_Name.Width = 81;
             // 
             // colPeriod
@@ -908,7 +918,7 @@
             this.colDay_Month.FieldName = "Day_Month";
             this.colDay_Month.Name = "colDay_Month";
             this.colDay_Month.Visible = true;
-            this.colDay_Month.VisibleIndex = 37;
+            this.colDay_Month.VisibleIndex = 42;
             // 
             // colYear
             // 
@@ -922,7 +932,7 @@
             this.colDay.FieldName = "Day";
             this.colDay.Name = "colDay";
             this.colDay.Visible = true;
-            this.colDay.VisibleIndex = 38;
+            this.colDay.VisibleIndex = 43;
             // 
             // colWeek
             // 
@@ -930,7 +940,7 @@
             this.colWeek.FieldName = "Week";
             this.colWeek.Name = "colWeek";
             this.colWeek.Visible = true;
-            this.colWeek.VisibleIndex = 39;
+            this.colWeek.VisibleIndex = 44;
             // 
             // colSales_LD
             // 
@@ -944,7 +954,7 @@
             this.colMonth.FieldName = "Month";
             this.colMonth.Name = "colMonth";
             this.colMonth.Visible = true;
-            this.colMonth.VisibleIndex = 40;
+            this.colMonth.VisibleIndex = 45;
             // 
             // colUpdated
             // 
@@ -978,7 +988,7 @@
             this.colyeard.FieldName = "yeard";
             this.colyeard.Name = "colyeard";
             this.colyeard.Visible = true;
-            this.colyeard.VisibleIndex = 41;
+            this.colyeard.VisibleIndex = 46;
             // 
             // colRoute___Sold
             // 
@@ -986,7 +996,7 @@
             this.colRoute___Sold.FieldName = "Route___Sold";
             this.colRoute___Sold.Name = "colRoute___Sold";
             this.colRoute___Sold.Visible = true;
-            this.colRoute___Sold.VisibleIndex = 26;
+            this.colRoute___Sold.VisibleIndex = 31;
             this.colRoute___Sold.Width = 86;
             // 
             // colCondition_value
@@ -1030,7 +1040,7 @@
             this.colPlant.FieldName = "Plant";
             this.colPlant.Name = "colPlant";
             this.colPlant.Visible = true;
-            this.colPlant.VisibleIndex = 36;
+            this.colPlant.VisibleIndex = 41;
             // 
             // colBase_Unit_of_Measure
             // 
@@ -1090,7 +1100,7 @@
             this.colMaterial_Number.FieldName = "Material_Number";
             this.colMaterial_Number.Name = "colMaterial_Number";
             this.colMaterial_Number.Visible = true;
-            this.colMaterial_Number.VisibleIndex = 9;
+            this.colMaterial_Number.VisibleIndex = 13;
             this.colMaterial_Number.Width = 100;
             // 
             // colBilling_date_for_bil
@@ -1114,7 +1124,7 @@
             this.colSold_to_party.FieldName = "Sold_to_party";
             this.colSold_to_party.Name = "colSold_to_party";
             this.colSold_to_party.Visible = true;
-            this.colSold_to_party.VisibleIndex = 13;
+            this.colSold_to_party.VisibleIndex = 18;
             this.colSold_to_party.Width = 87;
             // 
             // colDistribution_Channel
@@ -1123,7 +1133,7 @@
             this.colDistribution_Channel.FieldName = "Distribution_Channel";
             this.colDistribution_Channel.Name = "colDistribution_Channel";
             this.colDistribution_Channel.Visible = true;
-            this.colDistribution_Channel.VisibleIndex = 25;
+            this.colDistribution_Channel.VisibleIndex = 30;
             this.colDistribution_Channel.Width = 118;
             // 
             // colTPP
@@ -1144,7 +1154,7 @@
             this.colBase_New.FieldName = "Base_New";
             this.colBase_New.Name = "colBase_New";
             this.colBase_New.Visible = true;
-            this.colBase_New.VisibleIndex = 18;
+            this.colBase_New.VisibleIndex = 23;
             // 
             // colLevel_CCSD
             // 
@@ -1152,7 +1162,7 @@
             this.colLevel_CCSD.FieldName = "Level_CCSD";
             this.colLevel_CCSD.Name = "colLevel_CCSD";
             this.colLevel_CCSD.Visible = true;
-            this.colLevel_CCSD.VisibleIndex = 19;
+            this.colLevel_CCSD.VisibleIndex = 24;
             this.colLevel_CCSD.Width = 77;
             // 
             // colFRZ_brand
@@ -1161,7 +1171,7 @@
             this.colFRZ_brand.FieldName = "FRZ_brand";
             this.colFRZ_brand.Name = "colFRZ_brand";
             this.colFRZ_brand.Visible = true;
-            this.colFRZ_brand.VisibleIndex = 20;
+            this.colFRZ_brand.VisibleIndex = 25;
             // 
             // colBrand_Rang
             // 
@@ -1176,7 +1186,7 @@
             this.col_SDN_Type.FieldName = "_SDN_Type";
             this.col_SDN_Type.Name = "col_SDN_Type";
             this.col_SDN_Type.Visible = true;
-            this.col_SDN_Type.VisibleIndex = 35;
+            this.col_SDN_Type.VisibleIndex = 40;
             // 
             // colSales_District_2
             // 
@@ -1184,7 +1194,7 @@
             this.colSales_District_2.FieldName = "Sales_District_2";
             this.colSales_District_2.Name = "colSales_District_2";
             this.colSales_District_2.Visible = true;
-            this.colSales_District_2.VisibleIndex = 34;
+            this.colSales_District_2.VisibleIndex = 39;
             this.colSales_District_2.Width = 95;
             // 
             // colAutoKey
@@ -1497,7 +1507,47 @@
             this.repositoryItemDateEditCreationDate.Mask.EditMask = "d/M/yyyy";
             this.repositoryItemDateEditCreationDate.Name = "repositoryItemDateEditCreationDate";
             // 
-            // FinalDataEditorFrm
+            // colCases_11
+            // 
+            this.colCases_11.Caption = "Cases 11";
+            this.colCases_11.FieldName = "Cases_11";
+            this.colCases_11.Name = "colCases_11";
+            this.colCases_11.Visible = true;
+            this.colCases_11.VisibleIndex = 11;
+            // 
+            // colCases_12
+            // 
+            this.colCases_12.Caption = "Cases 12";
+            this.colCases_12.FieldName = "Cases_12";
+            this.colCases_12.Name = "colCases_12";
+            this.colCases_12.Visible = true;
+            this.colCases_12.VisibleIndex = 10;
+            // 
+            // colBase_Group
+            // 
+            this.colBase_Group.Caption = "Base Group";
+            this.colBase_Group.FieldName = "Base_Group";
+            this.colBase_Group.Name = "colBase_Group";
+            this.colBase_Group.Visible = true;
+            this.colBase_Group.VisibleIndex = 16;
+            // 
+            // colValue_11
+            // 
+            this.colValue_11.Caption = "Value 11";
+            this.colValue_11.FieldName = "Value_11";
+            this.colValue_11.Name = "colValue_11";
+            this.colValue_11.Visible = true;
+            this.colValue_11.VisibleIndex = 7;
+            // 
+            // colValue_12
+            // 
+            this.colValue_12.Caption = "Value 12";
+            this.colValue_12.FieldName = "Value_12";
+            this.colValue_12.Name = "colValue_12";
+            this.colValue_12.Visible = true;
+            this.colValue_12.VisibleIndex = 6;
+            // 
+            // FinalDataGridFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1508,7 +1558,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FinalDataEditorFrm";
+            this.Name = "FinalDataGridFrm";
             this.Text = "Final Data";
             this.Load += new System.EventHandler(this.Frm_Load);
             this.Shown += new System.EventHandler(this.CustomerEditorFrm_Shown);
@@ -1689,5 +1739,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_SDN_Type;
         private DevExpress.XtraGrid.Columns.GridColumn colSales_District_2;
         private DevExpress.XtraGrid.Columns.GridColumn colAutoKey;
+        private DevExpress.XtraGrid.Columns.GridColumn colCases_11;
+        private DevExpress.XtraGrid.Columns.GridColumn colCases_12;
+        private DevExpress.XtraGrid.Columns.GridColumn colBase_Group;
+        private DevExpress.XtraGrid.Columns.GridColumn colValue_11;
+        private DevExpress.XtraGrid.Columns.GridColumn colValue_12;
     }
 }

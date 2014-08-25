@@ -19,7 +19,7 @@ namespace NICSQLTools
         {
             DataManager.PerformChangeExe();
             
-            UserLookAndFeel.Default.SkinName = "DevExpress Dark Style";
+            //UserLookAndFeel.Default.SkinName = "DevExpress Dark Style";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (FXFW.SqlDB.LoadSqlDBPath("IC_DB"))
@@ -30,7 +30,8 @@ namespace NICSQLTools
                 //Set User Info
                 DataManager.User.RealName = "Public Test"; DataManager.User.IsAdmin = true;
                 DataManager.PerformUpdate();
-                Application.Run(new MainForm());
+                //Application.Run(new NICSQLTools.MainFrm());
+                Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
             }
             
         }

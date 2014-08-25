@@ -4,13 +4,13 @@ using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 using DevExpress.XtraBars.Docking2010.Views;
 using System.Drawing;
 
-namespace NICSQLTools
+namespace NICSQLTools.Forms.Main
 {
-    public partial class MainForm : XtraForm
+    public partial class MainTilesFrm : XtraForm
     {
         SampleDataSource dataSource;
         Dictionary<SampleDataGroup, PageGroup> groupsItemDetailPage;
-        public MainForm()
+        public MainTilesFrm()
         {
             InitializeComponent();
             windowsUIView.AddTileWhenCreatingDocument = DevExpress.Utils.DefaultBoolean.False;
@@ -97,7 +97,34 @@ namespace NICSQLTools
             {
                 e.Control = new Views.Main.LoginUC();
             }
-            
+            else if (e.Document == docEditorsRoutes)
+            {
+                e.Control = new Views.Data.RouteEditorUC();
+            }
+            else if (e.Document == docEditorsProducts)
+            {
+                e.Control = new Views.Data.ProductEditorUC();
+            }
+            else if (e.Document == docEditorsCustomers)
+            {
+                e.Control = new Views.Data.CustomerEditorUC();
+            }
+            else if (e.Document == docEditorsImportDays)
+            {
+                e.Control = new Views.Data.ImportDaysUC();
+            }
+            else if (e.Document == docQueriesFinalDataGrid)
+            {
+                e.Control = new Views.Qry.FinalDataGridUC();
+            }
+            else if (e.Document == docQueriesFinalDataPivot)
+            {
+                e.Control = new Views.Qry.FinalDataPivotUC();
+            }
+            else if (e.Document == docQueriesQrysp_DistributionNPDV1)
+            {
+                e.Control = new Views.Qry.Qrysp_DistributionNPDV1UC();
+            }
         }
 
     }

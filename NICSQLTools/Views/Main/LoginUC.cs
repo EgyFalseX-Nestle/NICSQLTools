@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using NICSQLTools.Forms.Main;
 
 namespace NICSQLTools.Views.Main
 {
@@ -24,7 +25,7 @@ namespace NICSQLTools.Views.Main
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MainForm _parent = (MainForm)this.ParentForm;
+            MainTilesFrm _parent = (MainTilesFrm)this.ParentForm;
             _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);
 
         }

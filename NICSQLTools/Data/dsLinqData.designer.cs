@@ -77,6 +77,8 @@ namespace NICSQLTools.Data
 		
 		private string _Billing_Document;
 		
+		private System.Nullable<double> _Sales_Eh;
+		
 		private System.Nullable<double> _Volume_14;
 		
 		private System.Nullable<double> _Volume_13;
@@ -85,13 +87,77 @@ namespace NICSQLTools.Data
 		
 		private System.Nullable<double> _Value_13;
 		
+		private System.Nullable<double> _Value_12;
+		
+		private System.Nullable<double> _Value_11;
+		
 		private System.Nullable<double> _Cases_14;
 		
 		private System.Nullable<double> _Cases_13;
 		
+		private System.Nullable<double> _Cases_12;
+		
+		private System.Nullable<double> _Cases_11;
+		
+		private System.Nullable<double> _Volume;
+		
+		private System.Nullable<double> _New_Cases;
+		
 		private string _Type;
 		
+		private System.Nullable<double> _Cases;
+		
+		private System.Nullable<double> _Value;
+		
+		private System.Nullable<double> _Price_Point;
+		
+		private string _Material_Type;
+		
+		private System.Nullable<double> _Pallet;
+		
+		private System.Nullable<double> _Consumer_price__Piece;
+		
+		private string _Consumer_price__Carton;
+		
+		private string _Route_Number__system;
+		
+		private string _Group_3;
+		
+		private string _Group_2;
+		
+		private string _Group_1;
+		
+		private string _SDN_Code;
+		
+		private string _SDN__Custtype;
+		
+		private string _Address;
+		
+		private string _Customer_Type_STI;
+		
+		private System.Nullable<double> _Week_NCE;
+		
+		private System.Nullable<double> _Trade_Price_Piece;
+		
+		private System.Nullable<double> _Trade_Price_Carton;
+		
+		private string _Price_Point_rang;
+		
+		private string _Price_Increas;
+		
+		private System.Nullable<double> _New_Qu;
+		
+		private System.Nullable<double> _Volum_Pice;
+		
+		private System.Nullable<double> _Vol;
+		
+		private System.Nullable<double> _Volum;
+		
+		private System.Nullable<double> _Quin;
+		
 		private string _Material_Name;
+		
+		private string _Base_Product;
 		
 		private string _Base_Base_Product;
 		
@@ -99,11 +165,37 @@ namespace NICSQLTools.Data
 		
 		private string _Name_3_Ar;
 		
+		private string _Name_1_Ar;
+		
+		private string _Year_C;
+		
 		private string _Customer_Type_2;
 		
 		private string _Customer_Type;
 		
+		private string _Customer_Group;
+		
+		private string _Subchannel;
+		
+		private string _L6_Code;
+		
+		private string _CustHier_Level_6;
+		
+		private string _L5_Code;
+		
+		private string _CustHier_Level_5;
+		
+		private string _L4_Code;
+		
+		private string _CustHier_Level_4;
+		
+		private string _L3_Code;
+		
+		private string _CustHier_Level_3;
+		
 		private string _Name_3_En;
+		
+		private string _Name_1_En;
 		
 		private string _Brand_Route;
 		
@@ -111,25 +203,83 @@ namespace NICSQLTools.Data
 		
 		private string _ASM;
 		
+		private string _RSM;
+		
+		private string _Sales_District;
+		
 		private string _Sales_District_Name;
+		
+		private string _Region;
 		
 		private string _Route_Name;
 		
+		private string _Period;
+		
 		private string _Day_Month;
 		
+		private string _Year;
+		
+		private string _Day;
+		
+		private string _Week;
+		
+		private System.Nullable<int> _Sales_LD;
+		
 		private string _Month;
+		
+		private string _Updated;
+		
+		private System.Nullable<double> _Annex_rate;
+		
+		private string _Annex;
+		
+		private System.Nullable<int> _New_Quanteite;
 		
 		private string _yeard;
 		
 		private string _Route___Sold;
 		
+		private System.Nullable<double> _Condition_value;
+		
+		private System.Nullable<double> _Condition_base_value;
+		
+		private System.Nullable<double> _Actual_Invoiced_Quan;
+		
+		private string _G_L_Account_Number;
+		
+		private string _Condition_type;
+		
+		private string _Plant;
+		
+		private string _Base_Unit_of_Measure;
+		
+		private string _Sales_unit;
+		
+		private string _Billing_item;
+		
+		private string _Reference_Document_N;
+		
+		private string _Payer;
+		
+		private string _Company_Code;
+		
+		private string _Sales_Organization;
+		
+		private string _Billing_Type;
+		
 		private System.Nullable<int> _Material_Number;
 		
 		private System.Nullable<System.DateTime> _Billing_date_for_bil;
 		
+		private string _Route;
+		
 		private string _Sold_to_party;
 		
 		private string _Distribution_Channel;
+		
+		private System.Nullable<double> _TPP;
+		
+		private System.Nullable<double> _Sales;
 		
 		private string _Base_New;
 		
@@ -137,9 +287,15 @@ namespace NICSQLTools.Data
 		
 		private string _FRZ_brand;
 		
+		private string _Brand_Rang;
+		
+		private string @__SDN_Type;
+		
 		private string _Sales_District_2;
 		
 		private long _AutoKey;
+		
+		private string _Base_Group;
 		
 		public _0_0_Final_Data_All()
 		{
@@ -157,6 +313,22 @@ namespace NICSQLTools.Data
 				if ((this._Billing_Document != value))
 				{
 					this._Billing_Document = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales Eh]", Storage="_Sales_Eh", DbType="Float")]
+		public System.Nullable<double> Sales_Eh
+		{
+			get
+			{
+				return this._Sales_Eh;
+			}
+			set
+			{
+				if ((this._Sales_Eh != value))
+				{
+					this._Sales_Eh = value;
 				}
 			}
 		}
@@ -225,6 +397,38 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Value 12]", Storage="_Value_12", DbType="Float")]
+		public System.Nullable<double> Value_12
+		{
+			get
+			{
+				return this._Value_12;
+			}
+			set
+			{
+				if ((this._Value_12 != value))
+				{
+					this._Value_12 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Value 11]", Storage="_Value_11", DbType="Float")]
+		public System.Nullable<double> Value_11
+		{
+			get
+			{
+				return this._Value_11;
+			}
+			set
+			{
+				if ((this._Value_11 != value))
+				{
+					this._Value_11 = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Cases 14]", Storage="_Cases_14", DbType="Float")]
 		public System.Nullable<double> Cases_14
 		{
@@ -257,6 +461,70 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Cases 12]", Storage="_Cases_12", DbType="Float")]
+		public System.Nullable<double> Cases_12
+		{
+			get
+			{
+				return this._Cases_12;
+			}
+			set
+			{
+				if ((this._Cases_12 != value))
+				{
+					this._Cases_12 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Cases 11]", Storage="_Cases_11", DbType="Float")]
+		public System.Nullable<double> Cases_11
+		{
+			get
+			{
+				return this._Cases_11;
+			}
+			set
+			{
+				if ((this._Cases_11 != value))
+				{
+					this._Cases_11 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Volume", DbType="Float")]
+		public System.Nullable<double> Volume
+		{
+			get
+			{
+				return this._Volume;
+			}
+			set
+			{
+				if ((this._Volume != value))
+				{
+					this._Volume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[New Cases]", Storage="_New_Cases", DbType="Float")]
+		public System.Nullable<double> New_Cases
+		{
+			get
+			{
+				return this._New_Cases;
+			}
+			set
+			{
+				if ((this._New_Cases != value))
+				{
+					this._New_Cases = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
 		public string Type
 		{
@@ -273,6 +541,406 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cases", DbType="Float")]
+		public System.Nullable<double> Cases
+		{
+			get
+			{
+				return this._Cases;
+			}
+			set
+			{
+				if ((this._Cases != value))
+				{
+					this._Cases = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="Float")]
+		public System.Nullable<double> Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this._Value = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Price Point]", Storage="_Price_Point", DbType="Float")]
+		public System.Nullable<double> Price_Point
+		{
+			get
+			{
+				return this._Price_Point;
+			}
+			set
+			{
+				if ((this._Price_Point != value))
+				{
+					this._Price_Point = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Material Type]", Storage="_Material_Type", DbType="NVarChar(255)")]
+		public string Material_Type
+		{
+			get
+			{
+				return this._Material_Type;
+			}
+			set
+			{
+				if ((this._Material_Type != value))
+				{
+					this._Material_Type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pallet", DbType="Float")]
+		public System.Nullable<double> Pallet
+		{
+			get
+			{
+				return this._Pallet;
+			}
+			set
+			{
+				if ((this._Pallet != value))
+				{
+					this._Pallet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Consumer price /Piece]", Storage="_Consumer_price__Piece", DbType="Float")]
+		public System.Nullable<double> Consumer_price__Piece
+		{
+			get
+			{
+				return this._Consumer_price__Piece;
+			}
+			set
+			{
+				if ((this._Consumer_price__Piece != value))
+				{
+					this._Consumer_price__Piece = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Consumer price /Carton]", Storage="_Consumer_price__Carton", DbType="NVarChar(255)")]
+		public string Consumer_price__Carton
+		{
+			get
+			{
+				return this._Consumer_price__Carton;
+			}
+			set
+			{
+				if ((this._Consumer_price__Carton != value))
+				{
+					this._Consumer_price__Carton = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Number  system]", Storage="_Route_Number__system", DbType="NVarChar(255)")]
+		public string Route_Number__system
+		{
+			get
+			{
+				return this._Route_Number__system;
+			}
+			set
+			{
+				if ((this._Route_Number__system != value))
+				{
+					this._Route_Number__system = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Group 3]", Storage="_Group_3", DbType="NVarChar(255)")]
+		public string Group_3
+		{
+			get
+			{
+				return this._Group_3;
+			}
+			set
+			{
+				if ((this._Group_3 != value))
+				{
+					this._Group_3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Group 2]", Storage="_Group_2", DbType="NVarChar(255)")]
+		public string Group_2
+		{
+			get
+			{
+				return this._Group_2;
+			}
+			set
+			{
+				if ((this._Group_2 != value))
+				{
+					this._Group_2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Group 1]", Storage="_Group_1", DbType="NVarChar(255)")]
+		public string Group_1
+		{
+			get
+			{
+				return this._Group_1;
+			}
+			set
+			{
+				if ((this._Group_1 != value))
+				{
+					this._Group_1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[SDN Code]", Storage="_SDN_Code", DbType="NVarChar(255)")]
+		public string SDN_Code
+		{
+			get
+			{
+				return this._SDN_Code;
+			}
+			set
+			{
+				if ((this._SDN_Code != value))
+				{
+					this._SDN_Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[SDN &Custtype]", Storage="_SDN__Custtype", DbType="NVarChar(265)")]
+		public string SDN__Custtype
+		{
+			get
+			{
+				return this._SDN__Custtype;
+			}
+			set
+			{
+				if ((this._SDN__Custtype != value))
+				{
+					this._SDN__Custtype = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(100)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Customer Type_STI]", Storage="_Customer_Type_STI", DbType="NVarChar(255)")]
+		public string Customer_Type_STI
+		{
+			get
+			{
+				return this._Customer_Type_STI;
+			}
+			set
+			{
+				if ((this._Customer_Type_STI != value))
+				{
+					this._Customer_Type_STI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Week NCE]", Storage="_Week_NCE", DbType="Float")]
+		public System.Nullable<double> Week_NCE
+		{
+			get
+			{
+				return this._Week_NCE;
+			}
+			set
+			{
+				if ((this._Week_NCE != value))
+				{
+					this._Week_NCE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Trade Price/Piece]", Storage="_Trade_Price_Piece", DbType="Float")]
+		public System.Nullable<double> Trade_Price_Piece
+		{
+			get
+			{
+				return this._Trade_Price_Piece;
+			}
+			set
+			{
+				if ((this._Trade_Price_Piece != value))
+				{
+					this._Trade_Price_Piece = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Trade Price/Carton]", Storage="_Trade_Price_Carton", DbType="Float")]
+		public System.Nullable<double> Trade_Price_Carton
+		{
+			get
+			{
+				return this._Trade_Price_Carton;
+			}
+			set
+			{
+				if ((this._Trade_Price_Carton != value))
+				{
+					this._Trade_Price_Carton = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Price Point rang]", Storage="_Price_Point_rang", DbType="NVarChar(255)")]
+		public string Price_Point_rang
+		{
+			get
+			{
+				return this._Price_Point_rang;
+			}
+			set
+			{
+				if ((this._Price_Point_rang != value))
+				{
+					this._Price_Point_rang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Price Increas]", Storage="_Price_Increas", DbType="NVarChar(255)")]
+		public string Price_Increas
+		{
+			get
+			{
+				return this._Price_Increas;
+			}
+			set
+			{
+				if ((this._Price_Increas != value))
+				{
+					this._Price_Increas = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[New Qu]", Storage="_New_Qu", DbType="Float")]
+		public System.Nullable<double> New_Qu
+		{
+			get
+			{
+				return this._New_Qu;
+			}
+			set
+			{
+				if ((this._New_Qu != value))
+				{
+					this._New_Qu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Volum Pice]", Storage="_Volum_Pice", DbType="Float")]
+		public System.Nullable<double> Volum_Pice
+		{
+			get
+			{
+				return this._Volum_Pice;
+			}
+			set
+			{
+				if ((this._Volum_Pice != value))
+				{
+					this._Volum_Pice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vol", DbType="Float")]
+		public System.Nullable<double> Vol
+		{
+			get
+			{
+				return this._Vol;
+			}
+			set
+			{
+				if ((this._Vol != value))
+				{
+					this._Vol = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Volum", DbType="Float")]
+		public System.Nullable<double> Volum
+		{
+			get
+			{
+				return this._Volum;
+			}
+			set
+			{
+				if ((this._Volum != value))
+				{
+					this._Volum = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quin", DbType="Float")]
+		public System.Nullable<double> Quin
+		{
+			get
+			{
+				return this._Quin;
+			}
+			set
+			{
+				if ((this._Quin != value))
+				{
+					this._Quin = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Material Name]", Storage="_Material_Name", DbType="NVarChar(255)")]
 		public string Material_Name
 		{
@@ -285,6 +953,22 @@ namespace NICSQLTools.Data
 				if ((this._Material_Name != value))
 				{
 					this._Material_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Base Product]", Storage="_Base_Product", DbType="NVarChar(255)")]
+		public string Base_Product
+		{
+			get
+			{
+				return this._Base_Product;
+			}
+			set
+			{
+				if ((this._Base_Product != value))
+				{
+					this._Base_Product = value;
 				}
 			}
 		}
@@ -337,6 +1021,38 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Name 1 Ar]", Storage="_Name_1_Ar", DbType="NVarChar(255)")]
+		public string Name_1_Ar
+		{
+			get
+			{
+				return this._Name_1_Ar;
+			}
+			set
+			{
+				if ((this._Name_1_Ar != value))
+				{
+					this._Name_1_Ar = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Year C]", Storage="_Year_C", DbType="NVarChar(255)")]
+		public string Year_C
+		{
+			get
+			{
+				return this._Year_C;
+			}
+			set
+			{
+				if ((this._Year_C != value))
+				{
+					this._Year_C = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Customer Type 2]", Storage="_Customer_Type_2", DbType="NVarChar(255)")]
 		public string Customer_Type_2
 		{
@@ -369,6 +1085,166 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Customer Group]", Storage="_Customer_Group", DbType="NVarChar(255)")]
+		public string Customer_Group
+		{
+			get
+			{
+				return this._Customer_Group;
+			}
+			set
+			{
+				if ((this._Customer_Group != value))
+				{
+					this._Customer_Group = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subchannel", DbType="NVarChar(255)")]
+		public string Subchannel
+		{
+			get
+			{
+				return this._Subchannel;
+			}
+			set
+			{
+				if ((this._Subchannel != value))
+				{
+					this._Subchannel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[L6 Code]", Storage="_L6_Code", DbType="NVarChar(255)")]
+		public string L6_Code
+		{
+			get
+			{
+				return this._L6_Code;
+			}
+			set
+			{
+				if ((this._L6_Code != value))
+				{
+					this._L6_Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[CustHier Level 6]", Storage="_CustHier_Level_6", DbType="NVarChar(255)")]
+		public string CustHier_Level_6
+		{
+			get
+			{
+				return this._CustHier_Level_6;
+			}
+			set
+			{
+				if ((this._CustHier_Level_6 != value))
+				{
+					this._CustHier_Level_6 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[L5 Code]", Storage="_L5_Code", DbType="NVarChar(255)")]
+		public string L5_Code
+		{
+			get
+			{
+				return this._L5_Code;
+			}
+			set
+			{
+				if ((this._L5_Code != value))
+				{
+					this._L5_Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[CustHier Level 5]", Storage="_CustHier_Level_5", DbType="NVarChar(255)")]
+		public string CustHier_Level_5
+		{
+			get
+			{
+				return this._CustHier_Level_5;
+			}
+			set
+			{
+				if ((this._CustHier_Level_5 != value))
+				{
+					this._CustHier_Level_5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[L4 Code]", Storage="_L4_Code", DbType="NVarChar(255)")]
+		public string L4_Code
+		{
+			get
+			{
+				return this._L4_Code;
+			}
+			set
+			{
+				if ((this._L4_Code != value))
+				{
+					this._L4_Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[CustHier Level 4]", Storage="_CustHier_Level_4", DbType="NVarChar(255)")]
+		public string CustHier_Level_4
+		{
+			get
+			{
+				return this._CustHier_Level_4;
+			}
+			set
+			{
+				if ((this._CustHier_Level_4 != value))
+				{
+					this._CustHier_Level_4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[L3 Code]", Storage="_L3_Code", DbType="NVarChar(255)")]
+		public string L3_Code
+		{
+			get
+			{
+				return this._L3_Code;
+			}
+			set
+			{
+				if ((this._L3_Code != value))
+				{
+					this._L3_Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[CustHier Level 3]", Storage="_CustHier_Level_3", DbType="NVarChar(255)")]
+		public string CustHier_Level_3
+		{
+			get
+			{
+				return this._CustHier_Level_3;
+			}
+			set
+			{
+				if ((this._CustHier_Level_3 != value))
+				{
+					this._CustHier_Level_3 = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Name 3 En]", Storage="_Name_3_En", DbType="NVarChar(255)")]
 		public string Name_3_En
 		{
@@ -381,6 +1257,22 @@ namespace NICSQLTools.Data
 				if ((this._Name_3_En != value))
 				{
 					this._Name_3_En = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Name 1 En]", Storage="_Name_1_En", DbType="NVarChar(255)")]
+		public string Name_1_En
+		{
+			get
+			{
+				return this._Name_1_En;
+			}
+			set
+			{
+				if ((this._Name_1_En != value))
+				{
+					this._Name_1_En = value;
 				}
 			}
 		}
@@ -433,6 +1325,38 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RSM", DbType="NVarChar(255)")]
+		public string RSM
+		{
+			get
+			{
+				return this._RSM;
+			}
+			set
+			{
+				if ((this._RSM != value))
+				{
+					this._RSM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District]", Storage="_Sales_District", DbType="NVarChar(255)")]
+		public string Sales_District
+		{
+			get
+			{
+				return this._Sales_District;
+			}
+			set
+			{
+				if ((this._Sales_District != value))
+				{
+					this._Sales_District = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District Name]", Storage="_Sales_District_Name", DbType="NVarChar(255)")]
 		public string Sales_District_Name
 		{
@@ -445,6 +1369,22 @@ namespace NICSQLTools.Data
 				if ((this._Sales_District_Name != value))
 				{
 					this._Sales_District_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="NVarChar(255)")]
+		public string Region
+		{
+			get
+			{
+				return this._Region;
+			}
+			set
+			{
+				if ((this._Region != value))
+				{
+					this._Region = value;
 				}
 			}
 		}
@@ -465,6 +1405,22 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Period", DbType="NVarChar(255)")]
+		public string Period
+		{
+			get
+			{
+				return this._Period;
+			}
+			set
+			{
+				if ((this._Period != value))
+				{
+					this._Period = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Day-Month]", Storage="_Day_Month", DbType="NVarChar(255)")]
 		public string Day_Month
 		{
@@ -481,6 +1437,70 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Year", DbType="NVarChar(255)")]
+		public string Year
+		{
+			get
+			{
+				return this._Year;
+			}
+			set
+			{
+				if ((this._Year != value))
+				{
+					this._Year = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Day", DbType="NVarChar(255)")]
+		public string Day
+		{
+			get
+			{
+				return this._Day;
+			}
+			set
+			{
+				if ((this._Day != value))
+				{
+					this._Day = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Week", DbType="NVarChar(255)")]
+		public string Week
+		{
+			get
+			{
+				return this._Week;
+			}
+			set
+			{
+				if ((this._Week != value))
+				{
+					this._Week = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales LD]", Storage="_Sales_LD", DbType="Int")]
+		public System.Nullable<int> Sales_LD
+		{
+			get
+			{
+				return this._Sales_LD;
+			}
+			set
+			{
+				if ((this._Sales_LD != value))
+				{
+					this._Sales_LD = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Month", DbType="NVarChar(255)")]
 		public string Month
 		{
@@ -493,6 +1513,70 @@ namespace NICSQLTools.Data
 				if ((this._Month != value))
 				{
 					this._Month = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Updated", DbType="NVarChar(255)")]
+		public string Updated
+		{
+			get
+			{
+				return this._Updated;
+			}
+			set
+			{
+				if ((this._Updated != value))
+				{
+					this._Updated = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Annex rate]", Storage="_Annex_rate", DbType="Float")]
+		public System.Nullable<double> Annex_rate
+		{
+			get
+			{
+				return this._Annex_rate;
+			}
+			set
+			{
+				if ((this._Annex_rate != value))
+				{
+					this._Annex_rate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Annex", DbType="VarChar(5)")]
+		public string Annex
+		{
+			get
+			{
+				return this._Annex;
+			}
+			set
+			{
+				if ((this._Annex != value))
+				{
+					this._Annex = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[New Quanteite]", Storage="_New_Quanteite", DbType="Int")]
+		public System.Nullable<int> New_Quanteite
+		{
+			get
+			{
+				return this._New_Quanteite;
+			}
+			set
+			{
+				if ((this._New_Quanteite != value))
+				{
+					this._New_Quanteite = value;
 				}
 			}
 		}
@@ -529,6 +1613,230 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Condition value]", Storage="_Condition_value", DbType="Float")]
+		public System.Nullable<double> Condition_value
+		{
+			get
+			{
+				return this._Condition_value;
+			}
+			set
+			{
+				if ((this._Condition_value != value))
+				{
+					this._Condition_value = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Condition base value]", Storage="_Condition_base_value", DbType="Float")]
+		public System.Nullable<double> Condition_base_value
+		{
+			get
+			{
+				return this._Condition_base_value;
+			}
+			set
+			{
+				if ((this._Condition_base_value != value))
+				{
+					this._Condition_base_value = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Actual Invoiced Quan]", Storage="_Actual_Invoiced_Quan", DbType="Float")]
+		public System.Nullable<double> Actual_Invoiced_Quan
+		{
+			get
+			{
+				return this._Actual_Invoiced_Quan;
+			}
+			set
+			{
+				if ((this._Actual_Invoiced_Quan != value))
+				{
+					this._Actual_Invoiced_Quan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[G/L Account Number]", Storage="_G_L_Account_Number", DbType="NVarChar(255)")]
+		public string G_L_Account_Number
+		{
+			get
+			{
+				return this._G_L_Account_Number;
+			}
+			set
+			{
+				if ((this._G_L_Account_Number != value))
+				{
+					this._G_L_Account_Number = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Condition type]", Storage="_Condition_type", DbType="NVarChar(255)")]
+		public string Condition_type
+		{
+			get
+			{
+				return this._Condition_type;
+			}
+			set
+			{
+				if ((this._Condition_type != value))
+				{
+					this._Condition_type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Plant", DbType="NVarChar(255)")]
+		public string Plant
+		{
+			get
+			{
+				return this._Plant;
+			}
+			set
+			{
+				if ((this._Plant != value))
+				{
+					this._Plant = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Base Unit of Measure]", Storage="_Base_Unit_of_Measure", DbType="NVarChar(255)")]
+		public string Base_Unit_of_Measure
+		{
+			get
+			{
+				return this._Base_Unit_of_Measure;
+			}
+			set
+			{
+				if ((this._Base_Unit_of_Measure != value))
+				{
+					this._Base_Unit_of_Measure = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales unit]", Storage="_Sales_unit", DbType="NVarChar(255)")]
+		public string Sales_unit
+		{
+			get
+			{
+				return this._Sales_unit;
+			}
+			set
+			{
+				if ((this._Sales_unit != value))
+				{
+					this._Sales_unit = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Billing item]", Storage="_Billing_item", DbType="NVarChar(255)")]
+		public string Billing_item
+		{
+			get
+			{
+				return this._Billing_item;
+			}
+			set
+			{
+				if ((this._Billing_item != value))
+				{
+					this._Billing_item = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Reference Document N]", Storage="_Reference_Document_N", DbType="NVarChar(255)")]
+		public string Reference_Document_N
+		{
+			get
+			{
+				return this._Reference_Document_N;
+			}
+			set
+			{
+				if ((this._Reference_Document_N != value))
+				{
+					this._Reference_Document_N = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payer", DbType="NVarChar(255)")]
+		public string Payer
+		{
+			get
+			{
+				return this._Payer;
+			}
+			set
+			{
+				if ((this._Payer != value))
+				{
+					this._Payer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Company Code]", Storage="_Company_Code", DbType="NVarChar(255)")]
+		public string Company_Code
+		{
+			get
+			{
+				return this._Company_Code;
+			}
+			set
+			{
+				if ((this._Company_Code != value))
+				{
+					this._Company_Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales Organization]", Storage="_Sales_Organization", DbType="NVarChar(255)")]
+		public string Sales_Organization
+		{
+			get
+			{
+				return this._Sales_Organization;
+			}
+			set
+			{
+				if ((this._Sales_Organization != value))
+				{
+					this._Sales_Organization = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Billing Type]", Storage="_Billing_Type", DbType="NVarChar(255)")]
+		public string Billing_Type
+		{
+			get
+			{
+				return this._Billing_Type;
+			}
+			set
+			{
+				if ((this._Billing_Type != value))
+				{
+					this._Billing_Type = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Material Number]", Storage="_Material_Number", DbType="Int")]
 		public System.Nullable<int> Material_Number
 		{
@@ -561,6 +1869,22 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Route", DbType="NVarChar(50)")]
+		public string Route
+		{
+			get
+			{
+				return this._Route;
+			}
+			set
+			{
+				if ((this._Route != value))
+				{
+					this._Route = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sold-to party]", Storage="_Sold_to_party", DbType="NVarChar(255)")]
 		public string Sold_to_party
 		{
@@ -589,6 +1913,38 @@ namespace NICSQLTools.Data
 				if ((this._Distribution_Channel != value))
 				{
 					this._Distribution_Channel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TPP", DbType="Float")]
+		public System.Nullable<double> TPP
+		{
+			get
+			{
+				return this._TPP;
+			}
+			set
+			{
+				if ((this._TPP != value))
+				{
+					this._TPP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sales", DbType="Float")]
+		public System.Nullable<double> Sales
+		{
+			get
+			{
+				return this._Sales;
+			}
+			set
+			{
+				if ((this._Sales != value))
+				{
+					this._Sales = value;
 				}
 			}
 		}
@@ -641,6 +1997,38 @@ namespace NICSQLTools.Data
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Brand Rang]", Storage="_Brand_Rang", DbType="NVarChar(255)")]
+		public string Brand_Rang
+		{
+			get
+			{
+				return this._Brand_Rang;
+			}
+			set
+			{
+				if ((this._Brand_Rang != value))
+				{
+					this._Brand_Rang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[#SDN-Type]", Storage="__SDN_Type", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
+		public string _SDN_Type
+		{
+			get
+			{
+				return this.@__SDN_Type;
+			}
+			set
+			{
+				if ((this.@__SDN_Type != value))
+				{
+					this.@__SDN_Type = value;
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(255)")]
 		public string Sales_District_2
 		{
@@ -669,6 +2057,22 @@ namespace NICSQLTools.Data
 				if ((this._AutoKey != value))
 				{
 					this._AutoKey = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Base Group]", Storage="_Base_Group", DbType="NVarChar(255)")]
+		public string Base_Group
+		{
+			get
+			{
+				return this._Base_Group;
+			}
+			set
+			{
+				if ((this._Base_Group != value))
+				{
+					this._Base_Group = value;
 				}
 			}
 		}

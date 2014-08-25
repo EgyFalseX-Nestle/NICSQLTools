@@ -14,6 +14,7 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        [Customer Group]
 FROM            [0-6 Customer HN]
+WHERE [Customer Group] IS NOT NULL
 GROUP BY [Customer Group]</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -32,6 +33,7 @@ GROUP BY [Customer Group]</CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        [Customer Type]
 FROM            [0-6 Customer HN]
+WHERE  [Customer Type] IS NOT NULL
 GROUP BY [Customer Type]</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -50,6 +52,7 @@ GROUP BY [Customer Type]</CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        [Customer Type 2]
 FROM            [0-6 Customer HN]
+WHERE  [Customer Type 2] IS NOT NULL
 GROUP BY [Customer Type 2]</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -68,6 +71,7 @@ GROUP BY [Customer Type 2]</CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Subchannel
 FROM            [0-6 Customer HN]
+WHERE Subchannel IS NOT NULL
 GROUP BY Subchannel</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -86,6 +90,7 @@ GROUP BY Subchannel</CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        [Level CCSD]
 FROM            [0-6 Customer HN]
+WHERE  [Level CCSD] IS NOT NULL
 GROUP BY [Level CCSD]</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -104,6 +109,7 @@ GROUP BY [Level CCSD]</CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        [Distribution channel 2]
 FROM            [0-6 Customer HN]
+WHERE  [Distribution channel 2] IS NOT NULL
 GROUP BY [Distribution channel 2]</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -364,10 +370,10 @@ GROUP BY [Sales District Name]</CommandText>
   <xs:element name="dsQry" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsQry" msprop:Generator_UserDSName="dsQry">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="CustomerGroup" msprop:Generator_TableClassName="CustomerGroupDataTable" msprop:Generator_TableVarName="tableCustomerGroup" msprop:Generator_RowChangedName="CustomerGroupRowChanged" msprop:Generator_TablePropName="CustomerGroup" msprop:Generator_RowDeletingName="CustomerGroupRowDeleting" msprop:Generator_RowChangingName="CustomerGroupRowChanging" msprop:Generator_RowEvHandlerName="CustomerGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerGroupRowDeleted" msprop:Generator_RowClassName="CustomerGroupRow" msprop:Generator_UserTableName="CustomerGroup" msprop:Generator_RowEvArgName="CustomerGroupRowChangeEvent">
+        <xs:element name="CustomerGroup" msprop:Generator_TableClassName="CustomerGroupDataTable" msprop:Generator_TableVarName="tableCustomerGroup" msprop:Generator_TablePropName="CustomerGroup" msprop:Generator_RowDeletingName="CustomerGroupRowDeleting" msprop:Generator_RowChangingName="CustomerGroupRowChanging" msprop:Generator_RowEvHandlerName="CustomerGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerGroupRowDeleted" msprop:Generator_UserTableName="CustomerGroup" msprop:Generator_RowChangedName="CustomerGroupRowChanged" msprop:Generator_RowEvArgName="CustomerGroupRowChangeEvent" msprop:Generator_RowClassName="CustomerGroupRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Customer_x0020_Group" msprop:Generator_ColumnVarNameInTable="columnCustomer_Group" msprop:Generator_ColumnPropNameInRow="Customer_Group" msprop:Generator_ColumnPropNameInTable="Customer_GroupColumn" msprop:Generator_UserColumnName="Customer Group">
+              <xs:element name="Customer_x0020_Group" msprop:Generator_ColumnVarNameInTable="columnCustomer_Group" msprop:Generator_ColumnPropNameInRow="Customer_Group" msprop:Generator_ColumnPropNameInTable="Customer_GroupColumn" msprop:Generator_UserColumnName="Customer Group" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -377,7 +383,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CustomerType" msprop:Generator_TableClassName="CustomerTypeDataTable" msprop:Generator_TableVarName="tableCustomerType" msprop:Generator_RowChangedName="CustomerTypeRowChanged" msprop:Generator_TablePropName="CustomerType" msprop:Generator_RowDeletingName="CustomerTypeRowDeleting" msprop:Generator_RowChangingName="CustomerTypeRowChanging" msprop:Generator_RowEvHandlerName="CustomerTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerTypeRowDeleted" msprop:Generator_RowClassName="CustomerTypeRow" msprop:Generator_UserTableName="CustomerType" msprop:Generator_RowEvArgName="CustomerTypeRowChangeEvent">
+        <xs:element name="CustomerType" msprop:Generator_TableClassName="CustomerTypeDataTable" msprop:Generator_TableVarName="tableCustomerType" msprop:Generator_TablePropName="CustomerType" msprop:Generator_RowDeletingName="CustomerTypeRowDeleting" msprop:Generator_RowChangingName="CustomerTypeRowChanging" msprop:Generator_RowEvHandlerName="CustomerTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerTypeRowDeleted" msprop:Generator_UserTableName="CustomerType" msprop:Generator_RowChangedName="CustomerTypeRowChanged" msprop:Generator_RowEvArgName="CustomerTypeRowChangeEvent" msprop:Generator_RowClassName="CustomerTypeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Customer_x0020_Type" msprop:Generator_ColumnVarNameInTable="columnCustomer_Type" msprop:Generator_ColumnPropNameInRow="Customer_Type" msprop:Generator_ColumnPropNameInTable="Customer_TypeColumn" msprop:Generator_UserColumnName="Customer Type" minOccurs="0">
@@ -390,7 +396,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CustomerType2" msprop:Generator_TableClassName="CustomerType2DataTable" msprop:Generator_TableVarName="tableCustomerType2" msprop:Generator_RowChangedName="CustomerType2RowChanged" msprop:Generator_TablePropName="CustomerType2" msprop:Generator_RowDeletingName="CustomerType2RowDeleting" msprop:Generator_RowChangingName="CustomerType2RowChanging" msprop:Generator_RowEvHandlerName="CustomerType2RowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerType2RowDeleted" msprop:Generator_RowClassName="CustomerType2Row" msprop:Generator_UserTableName="CustomerType2" msprop:Generator_RowEvArgName="CustomerType2RowChangeEvent">
+        <xs:element name="CustomerType2" msprop:Generator_TableClassName="CustomerType2DataTable" msprop:Generator_TableVarName="tableCustomerType2" msprop:Generator_TablePropName="CustomerType2" msprop:Generator_RowDeletingName="CustomerType2RowDeleting" msprop:Generator_RowChangingName="CustomerType2RowChanging" msprop:Generator_RowEvHandlerName="CustomerType2RowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerType2RowDeleted" msprop:Generator_UserTableName="CustomerType2" msprop:Generator_RowChangedName="CustomerType2RowChanged" msprop:Generator_RowEvArgName="CustomerType2RowChangeEvent" msprop:Generator_RowClassName="CustomerType2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Customer_x0020_Type_x0020_2" msprop:Generator_ColumnVarNameInTable="columnCustomer_Type_2" msprop:Generator_ColumnPropNameInRow="Customer_Type_2" msprop:Generator_ColumnPropNameInTable="Customer_Type_2Column" msprop:Generator_UserColumnName="Customer Type 2" minOccurs="0">
@@ -403,7 +409,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Subchannel" msprop:Generator_TableClassName="SubchannelDataTable" msprop:Generator_TableVarName="tableSubchannel" msprop:Generator_RowChangedName="SubchannelRowChanged" msprop:Generator_TablePropName="Subchannel" msprop:Generator_RowDeletingName="SubchannelRowDeleting" msprop:Generator_RowChangingName="SubchannelRowChanging" msprop:Generator_RowEvHandlerName="SubchannelRowChangeEventHandler" msprop:Generator_RowDeletedName="SubchannelRowDeleted" msprop:Generator_RowClassName="SubchannelRow" msprop:Generator_UserTableName="Subchannel" msprop:Generator_RowEvArgName="SubchannelRowChangeEvent">
+        <xs:element name="Subchannel" msprop:Generator_TableClassName="SubchannelDataTable" msprop:Generator_TableVarName="tableSubchannel" msprop:Generator_TablePropName="Subchannel" msprop:Generator_RowDeletingName="SubchannelRowDeleting" msprop:Generator_RowChangingName="SubchannelRowChanging" msprop:Generator_RowEvHandlerName="SubchannelRowChangeEventHandler" msprop:Generator_RowDeletedName="SubchannelRowDeleted" msprop:Generator_UserTableName="Subchannel" msprop:Generator_RowChangedName="SubchannelRowChanged" msprop:Generator_RowEvArgName="SubchannelRowChangeEvent" msprop:Generator_RowClassName="SubchannelRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Subchannel" msprop:Generator_ColumnVarNameInTable="columnSubchannel" msprop:Generator_ColumnPropNameInRow="Subchannel" msprop:Generator_ColumnPropNameInTable="SubchannelColumn" msprop:Generator_UserColumnName="Subchannel" minOccurs="0">
@@ -416,7 +422,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LevelCCSD" msprop:Generator_TableClassName="LevelCCSDDataTable" msprop:Generator_TableVarName="tableLevelCCSD" msprop:Generator_RowChangedName="LevelCCSDRowChanged" msprop:Generator_TablePropName="LevelCCSD" msprop:Generator_RowDeletingName="LevelCCSDRowDeleting" msprop:Generator_RowChangingName="LevelCCSDRowChanging" msprop:Generator_RowEvHandlerName="LevelCCSDRowChangeEventHandler" msprop:Generator_RowDeletedName="LevelCCSDRowDeleted" msprop:Generator_RowClassName="LevelCCSDRow" msprop:Generator_UserTableName="LevelCCSD" msprop:Generator_RowEvArgName="LevelCCSDRowChangeEvent">
+        <xs:element name="LevelCCSD" msprop:Generator_TableClassName="LevelCCSDDataTable" msprop:Generator_TableVarName="tableLevelCCSD" msprop:Generator_TablePropName="LevelCCSD" msprop:Generator_RowDeletingName="LevelCCSDRowDeleting" msprop:Generator_RowChangingName="LevelCCSDRowChanging" msprop:Generator_RowEvHandlerName="LevelCCSDRowChangeEventHandler" msprop:Generator_RowDeletedName="LevelCCSDRowDeleted" msprop:Generator_UserTableName="LevelCCSD" msprop:Generator_RowChangedName="LevelCCSDRowChanged" msprop:Generator_RowEvArgName="LevelCCSDRowChangeEvent" msprop:Generator_RowClassName="LevelCCSDRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Level_x0020_CCSD" msprop:Generator_ColumnVarNameInTable="columnLevel_CCSD" msprop:Generator_ColumnPropNameInRow="Level_CCSD" msprop:Generator_ColumnPropNameInTable="Level_CCSDColumn" msprop:Generator_UserColumnName="Level CCSD" minOccurs="0">
@@ -429,7 +435,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DistributionChannel2" msprop:Generator_TableClassName="DistributionChannel2DataTable" msprop:Generator_TableVarName="tableDistributionChannel2" msprop:Generator_RowChangedName="DistributionChannel2RowChanged" msprop:Generator_TablePropName="DistributionChannel2" msprop:Generator_RowDeletingName="DistributionChannel2RowDeleting" msprop:Generator_RowChangingName="DistributionChannel2RowChanging" msprop:Generator_RowEvHandlerName="DistributionChannel2RowChangeEventHandler" msprop:Generator_RowDeletedName="DistributionChannel2RowDeleted" msprop:Generator_RowClassName="DistributionChannel2Row" msprop:Generator_UserTableName="DistributionChannel2" msprop:Generator_RowEvArgName="DistributionChannel2RowChangeEvent">
+        <xs:element name="DistributionChannel2" msprop:Generator_TableClassName="DistributionChannel2DataTable" msprop:Generator_TableVarName="tableDistributionChannel2" msprop:Generator_TablePropName="DistributionChannel2" msprop:Generator_RowDeletingName="DistributionChannel2RowDeleting" msprop:Generator_RowChangingName="DistributionChannel2RowChanging" msprop:Generator_RowEvHandlerName="DistributionChannel2RowChangeEventHandler" msprop:Generator_RowDeletedName="DistributionChannel2RowDeleted" msprop:Generator_UserTableName="DistributionChannel2" msprop:Generator_RowChangedName="DistributionChannel2RowChanged" msprop:Generator_RowEvArgName="DistributionChannel2RowChangeEvent" msprop:Generator_RowClassName="DistributionChannel2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Distribution_x0020_channel_x0020_2" msprop:Generator_ColumnVarNameInTable="columnDistribution_channel_2" msprop:Generator_ColumnPropNameInRow="Distribution_channel_2" msprop:Generator_ColumnPropNameInTable="Distribution_channel_2Column" msprop:Generator_UserColumnName="Distribution channel 2" minOccurs="0">
@@ -442,7 +448,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sp_DistributionV1" msprop:Generator_TableClassName="sp_DistributionV1DataTable" msprop:Generator_TableVarName="tablesp_DistributionV1" msprop:Generator_RowChangedName="sp_DistributionV1RowChanged" msprop:Generator_TablePropName="sp_DistributionV1" msprop:Generator_RowDeletingName="sp_DistributionV1RowDeleting" msprop:Generator_RowChangingName="sp_DistributionV1RowChanging" msprop:Generator_RowEvHandlerName="sp_DistributionV1RowChangeEventHandler" msprop:Generator_RowDeletedName="sp_DistributionV1RowDeleted" msprop:Generator_RowClassName="sp_DistributionV1Row" msprop:Generator_UserTableName="sp_DistributionV1" msprop:Generator_RowEvArgName="sp_DistributionV1RowChangeEvent">
+        <xs:element name="sp_DistributionV1" msprop:Generator_TableClassName="sp_DistributionV1DataTable" msprop:Generator_TableVarName="tablesp_DistributionV1" msprop:Generator_TablePropName="sp_DistributionV1" msprop:Generator_RowDeletingName="sp_DistributionV1RowDeleting" msprop:Generator_RowChangingName="sp_DistributionV1RowChanging" msprop:Generator_RowEvHandlerName="sp_DistributionV1RowChangeEventHandler" msprop:Generator_RowDeletedName="sp_DistributionV1RowDeleted" msprop:Generator_UserTableName="sp_DistributionV1" msprop:Generator_RowChangedName="sp_DistributionV1RowChanged" msprop:Generator_RowEvArgName="sp_DistributionV1RowChangeEvent" msprop:Generator_RowClassName="sp_DistributionV1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Base_x0020_Base_x0020_Product" msprop:Generator_ColumnVarNameInTable="columnBase_Base_Product" msprop:Generator_ColumnPropNameInRow="Base_Base_Product" msprop:Generator_ColumnPropNameInTable="Base_Base_ProductColumn" msprop:Generator_UserColumnName="Base Base Product" minOccurs="0">
@@ -501,7 +507,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sp_DistributionV3" msprop:Generator_TableClassName="sp_DistributionV3DataTable" msprop:Generator_TableVarName="tablesp_DistributionV3" msprop:Generator_RowChangedName="sp_DistributionV3RowChanged" msprop:Generator_TablePropName="sp_DistributionV3" msprop:Generator_RowDeletingName="sp_DistributionV3RowDeleting" msprop:Generator_RowChangingName="sp_DistributionV3RowChanging" msprop:Generator_RowEvHandlerName="sp_DistributionV3RowChangeEventHandler" msprop:Generator_RowDeletedName="sp_DistributionV3RowDeleted" msprop:Generator_RowClassName="sp_DistributionV3Row" msprop:Generator_UserTableName="sp_DistributionV3" msprop:Generator_RowEvArgName="sp_DistributionV3RowChangeEvent">
+        <xs:element name="sp_DistributionV3" msprop:Generator_TableClassName="sp_DistributionV3DataTable" msprop:Generator_TableVarName="tablesp_DistributionV3" msprop:Generator_TablePropName="sp_DistributionV3" msprop:Generator_RowDeletingName="sp_DistributionV3RowDeleting" msprop:Generator_RowChangingName="sp_DistributionV3RowChanging" msprop:Generator_RowEvHandlerName="sp_DistributionV3RowChangeEventHandler" msprop:Generator_RowDeletedName="sp_DistributionV3RowDeleted" msprop:Generator_UserTableName="sp_DistributionV3" msprop:Generator_RowChangedName="sp_DistributionV3RowChanged" msprop:Generator_RowEvArgName="sp_DistributionV3RowChangeEvent" msprop:Generator_RowClassName="sp_DistributionV3Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Base_x0020_Base_x0020_Product" msprop:Generator_ColumnVarNameInTable="columnBase_Base_Product" msprop:Generator_ColumnPropNameInRow="Base_Base_Product" msprop:Generator_ColumnPropNameInTable="Base_Base_ProductColumn" msprop:Generator_UserColumnName="Base Base Product">
@@ -518,7 +524,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sp_DistributionV2" msprop:Generator_TableClassName="sp_DistributionV2DataTable" msprop:Generator_TableVarName="tablesp_DistributionV2" msprop:Generator_RowChangedName="sp_DistributionV2RowChanged" msprop:Generator_TablePropName="sp_DistributionV2" msprop:Generator_RowDeletingName="sp_DistributionV2RowDeleting" msprop:Generator_RowChangingName="sp_DistributionV2RowChanging" msprop:Generator_RowEvHandlerName="sp_DistributionV2RowChangeEventHandler" msprop:Generator_RowDeletedName="sp_DistributionV2RowDeleted" msprop:Generator_RowClassName="sp_DistributionV2Row" msprop:Generator_UserTableName="sp_DistributionV2" msprop:Generator_RowEvArgName="sp_DistributionV2RowChangeEvent">
+        <xs:element name="sp_DistributionV2" msprop:Generator_TableClassName="sp_DistributionV2DataTable" msprop:Generator_TableVarName="tablesp_DistributionV2" msprop:Generator_TablePropName="sp_DistributionV2" msprop:Generator_RowDeletingName="sp_DistributionV2RowDeleting" msprop:Generator_RowChangingName="sp_DistributionV2RowChanging" msprop:Generator_RowEvHandlerName="sp_DistributionV2RowChangeEventHandler" msprop:Generator_RowDeletedName="sp_DistributionV2RowDeleted" msprop:Generator_UserTableName="sp_DistributionV2" msprop:Generator_RowChangedName="sp_DistributionV2RowChanged" msprop:Generator_RowEvArgName="sp_DistributionV2RowChangeEvent" msprop:Generator_RowClassName="sp_DistributionV2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Base_x0020_Base_x0020_Product" msprop:Generator_ColumnVarNameInTable="columnBase_Base_Product" msprop:Generator_ColumnPropNameInRow="Base_Base_Product" msprop:Generator_ColumnPropNameInTable="Base_Base_ProductColumn" msprop:Generator_UserColumnName="Base Base Product" minOccurs="0">
@@ -542,7 +548,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SalesDistrict2" msprop:Generator_TableClassName="SalesDistrict2DataTable" msprop:Generator_TableVarName="tableSalesDistrict2" msprop:Generator_RowChangedName="SalesDistrict2RowChanged" msprop:Generator_TablePropName="SalesDistrict2" msprop:Generator_RowDeletingName="SalesDistrict2RowDeleting" msprop:Generator_RowChangingName="SalesDistrict2RowChanging" msprop:Generator_RowEvHandlerName="SalesDistrict2RowChangeEventHandler" msprop:Generator_RowDeletedName="SalesDistrict2RowDeleted" msprop:Generator_RowClassName="SalesDistrict2Row" msprop:Generator_UserTableName="SalesDistrict2" msprop:Generator_RowEvArgName="SalesDistrict2RowChangeEvent">
+        <xs:element name="SalesDistrict2" msprop:Generator_TableClassName="SalesDistrict2DataTable" msprop:Generator_TableVarName="tableSalesDistrict2" msprop:Generator_TablePropName="SalesDistrict2" msprop:Generator_RowDeletingName="SalesDistrict2RowDeleting" msprop:Generator_RowChangingName="SalesDistrict2RowChanging" msprop:Generator_RowEvHandlerName="SalesDistrict2RowChangeEventHandler" msprop:Generator_RowDeletedName="SalesDistrict2RowDeleted" msprop:Generator_UserTableName="SalesDistrict2" msprop:Generator_RowChangedName="SalesDistrict2RowChanged" msprop:Generator_RowEvArgName="SalesDistrict2RowChangeEvent" msprop:Generator_RowClassName="SalesDistrict2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Sales_x0020_District_x0020_2" msprop:Generator_ColumnVarNameInTable="columnSales_District_2" msprop:Generator_ColumnPropNameInRow="Sales_District_2" msprop:Generator_ColumnPropNameInTable="Sales_District_2Column" msprop:Generator_UserColumnName="Sales District 2" minOccurs="0">
@@ -555,7 +561,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="_x0030_-0_x0020_Final_x0020_Data_x0020_All" msprop:Generator_TableClassName="_0_0_Final_Data_AllDataTable" msprop:Generator_TableVarName="_table0_0_Final_Data_All" msprop:Generator_RowChangedName="_0_0_Final_Data_AllRowChanged" msprop:Generator_TablePropName="_0_0_Final_Data_All" msprop:Generator_RowDeletingName="_0_0_Final_Data_AllRowDeleting" msprop:Generator_RowChangingName="_0_0_Final_Data_AllRowChanging" msprop:Generator_RowEvHandlerName="_0_0_Final_Data_AllRowChangeEventHandler" msprop:Generator_RowDeletedName="_0_0_Final_Data_AllRowDeleted" msprop:Generator_RowClassName="_0_0_Final_Data_AllRow" msprop:Generator_UserTableName="0-0 Final Data All" msprop:Generator_RowEvArgName="_0_0_Final_Data_AllRowChangeEvent">
+        <xs:element name="_x0030_-0_x0020_Final_x0020_Data_x0020_All" msprop:Generator_TableClassName="_0_0_Final_Data_AllDataTable" msprop:Generator_TableVarName="_table0_0_Final_Data_All" msprop:Generator_TablePropName="_0_0_Final_Data_All" msprop:Generator_RowDeletingName="_0_0_Final_Data_AllRowDeleting" msprop:Generator_RowChangingName="_0_0_Final_Data_AllRowChanging" msprop:Generator_RowEvHandlerName="_0_0_Final_Data_AllRowChangeEventHandler" msprop:Generator_RowDeletedName="_0_0_Final_Data_AllRowDeleted" msprop:Generator_UserTableName="0-0 Final Data All" msprop:Generator_RowChangedName="_0_0_Final_Data_AllRowChanged" msprop:Generator_RowEvArgName="_0_0_Final_Data_AllRowChangeEvent" msprop:Generator_RowClassName="_0_0_Final_Data_AllRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Billing_x0020_Document" msprop:Generator_ColumnVarNameInTable="columnBilling_Document" msprop:Generator_ColumnPropNameInRow="Billing_Document" msprop:Generator_ColumnPropNameInTable="Billing_DocumentColumn" msprop:Generator_UserColumnName="Billing Document" minOccurs="0">
@@ -1099,7 +1105,7 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SalesDistrictName" msprop:Generator_TableClassName="SalesDistrictNameDataTable" msprop:Generator_TableVarName="tableSalesDistrictName" msprop:Generator_TablePropName="SalesDistrictName" msprop:Generator_RowDeletingName="SalesDistrictNameRowDeleting" msprop:Generator_RowChangingName="SalesDistrictNameRowChanging" msprop:Generator_RowEvHandlerName="SalesDistrictNameRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesDistrictNameRowDeleted" msprop:Generator_UserTableName="SalesDistrictName" msprop:Generator_RowChangedName="SalesDistrictNameRowChanged" msprop:Generator_RowEvArgName="SalesDistrictNameRowChangeEvent" msprop:Generator_RowClassName="SalesDistrictNameRow">
+        <xs:element name="SalesDistrictName" msprop:Generator_TableClassName="SalesDistrictNameDataTable" msprop:Generator_TableVarName="tableSalesDistrictName" msprop:Generator_RowChangedName="SalesDistrictNameRowChanged" msprop:Generator_TablePropName="SalesDistrictName" msprop:Generator_RowDeletingName="SalesDistrictNameRowDeleting" msprop:Generator_RowChangingName="SalesDistrictNameRowChanging" msprop:Generator_RowEvHandlerName="SalesDistrictNameRowChangeEventHandler" msprop:Generator_RowDeletedName="SalesDistrictNameRowDeleted" msprop:Generator_RowClassName="SalesDistrictNameRow" msprop:Generator_UserTableName="SalesDistrictName" msprop:Generator_RowEvArgName="SalesDistrictNameRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Sales_x0020_District_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnSales_District_Name" msprop:Generator_ColumnPropNameInRow="Sales_District_Name" msprop:Generator_ColumnPropNameInTable="Sales_District_NameColumn" msprop:Generator_UserColumnName="Sales District Name" minOccurs="0">

@@ -10151,8 +10151,8 @@ namespace NICSQLTools.Data.dsQryTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        [Customer Group]\r\nFROM            [0-6 Customer HN]\r\nGROUP BY [Cust" +
-                "omer Group]";
+            this._commandCollection[0].CommandText = "SELECT        [Customer Group]\r\nFROM            [0-6 Customer HN]\r\nWHERE [Custome" +
+                "r Group] IS NOT NULL\r\nGROUP BY [Customer Group]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10319,8 +10319,8 @@ namespace NICSQLTools.Data.dsQryTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        [Customer Type]\r\nFROM            [0-6 Customer HN]\r\nGROUP BY [Custo" +
-                "mer Type]";
+            this._commandCollection[0].CommandText = "SELECT        [Customer Type]\r\nFROM            [0-6 Customer HN]\r\nWHERE  [Custome" +
+                "r Type] IS NOT NULL\r\nGROUP BY [Customer Type]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10487,8 +10487,8 @@ namespace NICSQLTools.Data.dsQryTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        [Customer Type 2]\r\nFROM            [0-6 Customer HN]\r\nGROUP BY [Cus" +
-                "tomer Type 2]";
+            this._commandCollection[0].CommandText = "SELECT        [Customer Type 2]\r\nFROM            [0-6 Customer HN]\r\nWHERE  [Custo" +
+                "mer Type 2] IS NOT NULL\r\nGROUP BY [Customer Type 2]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10655,7 +10655,8 @@ namespace NICSQLTools.Data.dsQryTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Subchannel\r\nFROM            [0-6 Customer HN]\r\nGROUP BY Subchannel";
+            this._commandCollection[0].CommandText = "SELECT        Subchannel\r\nFROM            [0-6 Customer HN]\r\nWHERE Subchannel IS " +
+                "NOT NULL\r\nGROUP BY Subchannel";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10822,8 +10823,8 @@ namespace NICSQLTools.Data.dsQryTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        [Level CCSD]\r\nFROM            [0-6 Customer HN]\r\nGROUP BY [Level CC" +
-                "SD]";
+            this._commandCollection[0].CommandText = "SELECT        [Level CCSD]\r\nFROM            [0-6 Customer HN]\r\nWHERE  [Level CCSD" +
+                "] IS NOT NULL\r\nGROUP BY [Level CCSD]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10990,8 +10991,8 @@ namespace NICSQLTools.Data.dsQryTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        [Distribution channel 2]\r\nFROM            [0-6 Customer HN]\r\nGROUP " +
-                "BY [Distribution channel 2]";
+            this._commandCollection[0].CommandText = "SELECT        [Distribution channel 2]\r\nFROM            [0-6 Customer HN]\r\nWHERE " +
+                " [Distribution channel 2] IS NOT NULL\r\nGROUP BY [Distribution channel 2]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -419,6 +419,24 @@
     <Compile Include="Views\Qry\FinalDataGridUC.Designer.cs">
       <DependentUpon>FinalDataGridUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Qry\Qrysp_DistributionV1UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\Qrysp_DistributionV1UC.Designer.cs">
+      <DependentUpon>Qrysp_DistributionV1UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\Qrysp_DistributionNPDV3UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\Qrysp_DistributionNPDV3UC.Designer.cs">
+      <DependentUpon>Qrysp_DistributionNPDV3UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\Qrysp_DistributionNPDV2UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\Qrysp_DistributionNPDV2UC.Designer.cs">
+      <DependentUpon>Qrysp_DistributionNPDV2UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Qry\Qrysp_DistributionNPDV1UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -430,6 +448,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\FinalDataGridUC.resx">
       <DependentUpon>FinalDataGridUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\Qrysp_DistributionV1UC.resx">
+      <DependentUpon>Qrysp_DistributionV1UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\Qrysp_DistributionNPDV3UC.resx">
+      <DependentUpon>Qrysp_DistributionNPDV3UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\Qrysp_DistributionNPDV2UC.resx">
+      <DependentUpon>Qrysp_DistributionNPDV2UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\Qrysp_DistributionNPDV1UC.resx">
       <DependentUpon>Qrysp_DistributionNPDV1UC.cs</DependentUpon>

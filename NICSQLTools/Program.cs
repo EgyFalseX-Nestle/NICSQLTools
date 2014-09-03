@@ -30,8 +30,9 @@ namespace NICSQLTools
                 //Set User Info
                 DataManager.User.RealName = "Public Test"; DataManager.User.IsAdmin = true;
                 DataManager.PerformUpdate();
-                //Application.Run(new NICSQLTools.MainFrm());
-                Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
+                //MessageBox.Show("Sometime system give null route we should fix it");
+                Application.Run(new NICSQLTools.MainFrm());
+                //Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
             }
             
         }

@@ -162,12 +162,13 @@ namespace NICSQLTools.Data.IC_DB
             get { return fConsumerprice_Piece; }
             set { SetPropertyValue<double>("Consumerprice_Piece", ref fConsumerprice_Piece, value); }
         }
-        double fConsumerprice_Carton;
+        string fConsumerprice_Carton;
+        [Size(255)]
         [Persistent(@"Consumer price /Carton")]
-        public double Consumerprice_Carton
+        public string Consumerprice_Carton
         {
             get { return fConsumerprice_Carton; }
-            set { SetPropertyValue<double>("Consumerprice_Carton", ref fConsumerprice_Carton, value); }
+            set { SetPropertyValue<string>("Consumerprice_Carton", ref fConsumerprice_Carton, value); }
         }
         string fRouteNumbersystem;
         [Size(255)]
@@ -828,6 +829,14 @@ namespace NICSQLTools.Data.IC_DB
         {
             get { return fAutoKey; }
             set { SetPropertyValue<long>("AutoKey", ref fAutoKey, value); }
+        }
+        string fBaseGroup;
+        [Size(255)]
+        [Persistent(@"Base Group")]
+        public string BaseGroup
+        {
+            get { return fBaseGroup; }
+            set { SetPropertyValue<string>("BaseGroup", ref fBaseGroup, value); }
         }
     }
 

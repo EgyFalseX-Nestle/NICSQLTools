@@ -52,6 +52,9 @@ _______________________________________________
             InitializeComponent();
             tbLog.Text = RequiredField;
 
+            DataManager.SetAllCommandTimeouts(_0_4__Product_DetailsTableAdapter, DataManager.ConnectionTimeout);
+            DataManager.SetAllCommandTimeouts(_0_3__Route_DetailsTableAdapter, DataManager.ConnectionTimeout);
+            DataManager.SetAllCommandTimeouts(_0_6_Customer_HNTableAdapter, DataManager.ConnectionTimeout);
         }
         private static bool FindBillDoc(Data.dsData.QryBillDocDataTable tbl, string BillDoc)
         {
@@ -76,6 +79,40 @@ _______________________________________________
             cmd.Dispose();
             con.Close(); con.Dispose();
         }
+        private void LoadProductCodes(ref Data.dsData ds)
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
+            SqlCommand cmd = new SqlCommand("SELECT [Material Number], Quin FROM [0-4  Product Details]", con);
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Data.dsData._0_4__Product_DetailsRow row = ds._0_4__Product_Details.New_0_4__Product_DetailsRow();
+                row.Material_Number = dr.GetDouble(0);
+                row.Quin = dr.GetDouble(1);
+                ds._0_4__Product_Details.Add_0_4__Product_DetailsRow(row);
+            }
+            dr.Close();
+            cmd.Dispose();
+            con.Close(); con.Dispose();
+        }
+        private void LoadRouteCodes(ref Data.dsData ds)
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
+            SqlCommand cmd = new SqlCommand("SELECT [Route Number] FROM [0-3  Route Details]", con);
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Data.dsData._0_3__Route_DetailsRow row = ds._0_3__Route_Details.New_0_3__Route_DetailsRow();
+                row.Route_Number = dr.GetValue(0).ToString();
+                ds._0_3__Route_Details.Add_0_3__Route_DetailsRow(row);
+            }
+            dr.Close();
+            cmd.Dispose();
+            con.Close(); con.Dispose();
+        }
+
         private bool ImportDaysFromExcel()
         {
             //return false;
@@ -96,20 +133,23 @@ _______________________________________________
                 {
                     if (File.Exists(lbcFilePath.Items[i].ToString()))
                     {
-                        SSM.SetWaitFormDescription("Loading Excel File [" + (i + 1) + "] Contains [1/4]");
+                        SSM.SetWaitFormDescription("Loading Excel File [" + (i + 1) + "] Contains [1/5]");
                         DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                             continue;
                         dtExcel.Merge(dtPart);
                     }
                 }
-                SSM.SetWaitFormDescription("Loading Customers Informations [2/4]");
+                SSM.SetWaitFormDescription("Loading Customers Informations [2/5]");
                 //_0_6_Customer_HNTableAdapter.FillOnlyCode(dsData._0_6_Customer_HN);
                 LoadCustomerCodes(ref dsData);
-                SSM.SetWaitFormDescription("Loading Routes Informations [3/4]");
-                _0_3__Route_DetailsTableAdapter.FillOnlyCode(dsData._0_3__Route_Details);
-                SSM.SetWaitFormDescription("Loading Products Informations [4/4]");
-                _0_4__Product_DetailsTableAdapter.FillOnlyCode(dsData._0_4__Product_Details);
+                SSM.SetWaitFormDescription("Loading Routes Informations [3/5]");
+                _0_3__Route_DetailsTableAdapter.Fill(dsData._0_3__Route_Details);
+                //LoadRouteCodes(ref dsData);
+                SSM.SetWaitFormDescription("Loading Products Informations [4/5]");
+                _0_4__Product_DetailsTableAdapter.Fill(dsData._0_4__Product_Details);
+                SSM.SetWaitFormDescription("Loading Plants Informations [5/5]");
+                plantsTableAdapter.Fill(dsQry.Plants);
             }));
             
             if (dtExcel.Rows.Count == 0)
@@ -163,6 +203,8 @@ _______________________________________________
                     }));
                 }
 
+                if (dsQry.Plants.FindByPlantId(row["Plant"].ToString()) == null)// Check if its Unknown Plants
+                    continue;
                 if (FindBillDoc(TblMaster, row["Billing Document"].ToString()))// Check Bill Doc Exists
                     continue;
 
@@ -189,14 +231,14 @@ _______________________________________________
 
                 //Set Route and Fix 999999 and 000001
                 SqlRow.Route = row["Route"].ToString();
-                if (SqlRow.Route == DataManager.Route999999)
+                if (SqlRow.Route == DataManager.Route999999 || SqlRow.Route == string.Empty)
                 {
                     if (SqlRow.Reference_Document_N.Trim().Substring(0, 2) == "CS")//try to get it from "Reference Document N"
                         SqlRow.Route = SqlRow.Reference_Document_N.Trim().Substring(2, 6);
                     else
                     {
                         //try to get it from last route for this "Sold to-party"
-                        cmd.CommandText = string.Format("SELECT top 1 Route FROM [0-1  Master All] WHERE [Sold-to party] = \"{0}\" AND [0-1  Master All].Route <> \"999999\" order by [Billing date for bil] DESC", SqlRow._Sold_to_party);
+                        cmd.CommandText = string.Format("SELECT top 1 Route FROM [0-1  Master All] WHERE [Sold-to party] = '{0}' AND [0-1  Master All].[Route] <> '999999' order by [Billing date for bil] DESC", SqlRow._Sold_to_party);
                         object obj = cmd.ExecuteScalar();
                         if (obj != null)
                             SqlRow.Route = obj.ToString();

@@ -125,6 +125,10 @@ namespace NICSQLTools.Forms.Main
             {
                 e.Control = new Views.Qry.Qrysp_DistributionNPDV1UC();
             }
+            else if (e.Document == docQueriesQrysp_DistributionV1)
+            {
+                e.Control = new Views.Qry.Qrysp_DistributionV1UC();
+            }
         }
 
     }

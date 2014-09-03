@@ -362,6 +362,23 @@ GROUP BY [Sales District Name]</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PlantsTableAdapter" GeneratorDataComponentClassName="PlantsTableAdapter" Name="Plants" UserDataComponentName="PlantsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.Plants" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT [PlantId]
+  FROM [dbo].[Plants]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PlantId" DataSetColumn="PlantId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -373,7 +390,7 @@ GROUP BY [Sales District Name]</CommandText>
         <xs:element name="CustomerGroup" msprop:Generator_TableClassName="CustomerGroupDataTable" msprop:Generator_TableVarName="tableCustomerGroup" msprop:Generator_TablePropName="CustomerGroup" msprop:Generator_RowDeletingName="CustomerGroupRowDeleting" msprop:Generator_RowChangingName="CustomerGroupRowChanging" msprop:Generator_RowEvHandlerName="CustomerGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerGroupRowDeleted" msprop:Generator_UserTableName="CustomerGroup" msprop:Generator_RowChangedName="CustomerGroupRowChanged" msprop:Generator_RowEvArgName="CustomerGroupRowChangeEvent" msprop:Generator_RowClassName="CustomerGroupRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Customer_x0020_Group" msprop:Generator_ColumnVarNameInTable="columnCustomer_Group" msprop:Generator_ColumnPropNameInRow="Customer_Group" msprop:Generator_ColumnPropNameInTable="Customer_GroupColumn" msprop:Generator_UserColumnName="Customer Group" minOccurs="0">
+              <xs:element name="Customer_x0020_Group" msprop:Generator_ColumnVarNameInTable="columnCustomer_Group" msprop:Generator_ColumnPropNameInRow="Customer_Group" msprop:Generator_ColumnPropNameInTable="Customer_GroupColumn" msprop:Generator_UserColumnName="Customer Group">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -1118,6 +1135,19 @@ GROUP BY [Sales District Name]</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Plants" msprop:Generator_TableClassName="PlantsDataTable" msprop:Generator_TableVarName="tablePlants" msprop:Generator_RowChangedName="PlantsRowChanged" msprop:Generator_TablePropName="Plants" msprop:Generator_RowDeletingName="PlantsRowDeleting" msprop:Generator_RowChangingName="PlantsRowChanging" msprop:Generator_RowEvHandlerName="PlantsRowChangeEventHandler" msprop:Generator_RowDeletedName="PlantsRowDeleted" msprop:Generator_RowClassName="PlantsRow" msprop:Generator_UserTableName="Plants" msprop:Generator_RowEvArgName="PlantsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PlantId" msprop:Generator_ColumnVarNameInTable="columnPlantId" msprop:Generator_ColumnPropNameInRow="PlantId" msprop:Generator_ColumnPropNameInTable="PlantIdColumn" msprop:Generator_UserColumnName="PlantId">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1141,6 +1171,10 @@ GROUP BY [Sales District Name]</CommandText>
     <xs:unique name="_x0030_-0_x0020_Final_x0020_Data_x0020_All_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:_x0030_-0_x0020_Final_x0020_Data_x0020_All" />
       <xs:field xpath="mstns:AutoKey" />
+    </xs:unique>
+    <xs:unique name="Plants_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Plants" />
+      <xs:field xpath="mstns:PlantId" />
     </xs:unique>
   </xs:element>
 </xs:schema>

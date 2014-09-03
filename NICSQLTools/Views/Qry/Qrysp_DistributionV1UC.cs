@@ -14,15 +14,19 @@ using DevExpress.XtraSplashScreen;
 
 namespace NICSQLTools.Views.Qry
 {
-    public partial class Qrysp_DistributionNPDV1UC : DevExpress.XtraEditors.XtraUserControl
+    public partial class Qrysp_DistributionV1UC : DevExpress.XtraEditors.XtraUserControl
     {
         #region -   Variables   -
         private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(Qrysp_DistributionNPDV1UC));
         #endregion
         #region -   Functions   -
-        public Qrysp_DistributionNPDV1UC()
+        public Qrysp_DistributionV1UC()
         {
             InitializeComponent();
+            DateTime now = DataManager.defaultInstance.ServerDateTime;
+            bbiStartDate.EditValue = new DateTime(now.Year, now.Month, 1);
+            bbiEndDate.EditValue = now.Date;
+
         }
         void LoadData()
         {
@@ -39,10 +43,13 @@ namespace NICSQLTools.Views.Qry
             else
                 SalesDistrictName = string.Empty;
             
-            DevExpress.Xpo.DB.SelectedData DataObj = NICSQLTools.Data.IC_DB.SprocHelper.Execsp_DistributionNPDV1(DevExpress.Xpo.XpoDefault.Session, Convert.ToDateTime(bbiStartDate.EditValue),
+            DevExpress.Xpo.DB.SelectedData DataObj = NICSQLTools.Data.IC_DB.SprocHelper.Execsp_DistributionV1(DevExpress.Xpo.XpoDefault.Session, Convert.ToDateTime(bbiStartDate.EditValue),
                 Convert.ToDateTime(bbiEndDate.EditValue), SalesDistrict2, SalesDistrictName);
             xpDataViewMain.LoadData(DataObj);
             pivotGridControlMain.BestFit();
+
+            chartControlMain.DataSource = pivotGridControlMain;
+
             
         }
         
@@ -103,6 +110,7 @@ namespace NICSQLTools.Views.Qry
         }
 
         #endregion
+
 
     }
 }

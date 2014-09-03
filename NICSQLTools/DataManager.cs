@@ -169,6 +169,21 @@ namespace NICSQLTools
                 string query = string.Format("SELECT {0} FROM [{1}]", ColumnsNames, sheetName);
                 OleDbDataAdapter adp = new OleDbDataAdapter(query, con);
                 adp.Fill(dt);
+                foreach (DataColumn col in dt.Columns)
+                {
+                    if (col.ColumnName == "Sold-to party")
+                    {
+                        DataColumn NewCol = new DataColumn("Sold-to party By FalseX", typeof(string));
+                        dt.Columns.Add(NewCol);
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            dt.Rows[i]["Sold-to party By FalseX"] = dt.Rows[i]["Sold-to party"].ToString();
+                        }
+                        dt.Columns.Remove("Sold-to party");
+                        dt.Columns["Sold-to party By FalseX"].ColumnName = "Sold-to party";
+                        break;
+                    }
+                }
             }
             catch (Exception ex)
             {

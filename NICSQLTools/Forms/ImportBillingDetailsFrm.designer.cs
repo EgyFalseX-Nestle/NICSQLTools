@@ -58,6 +58,8 @@
             this._0_1__Master_AllTableAdapter = new NICSQLTools.Data.dsDataTableAdapters._0_1__Master_AllTableAdapter();
             this.qryBillDocTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.QryBillDocTableAdapter();
             this.SSM = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NICSQLTools.WaitWindowFrm), true, true);
+            this.plantsTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.PlantsTableAdapter();
+            this.dsQry = new NICSQLTools.Data.dsQry();
             ((System.ComponentModel.ISupportInitialize)(this.ImportBillingDetailsFrmConvertedLayout)).BeginInit();
             this.ImportBillingDetailsFrmConvertedLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBarMain.Properties)).BeginInit();
@@ -75,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCount
@@ -362,6 +365,15 @@
             // 
             this.qryBillDocTableAdapter.ClearBeforeFill = true;
             // 
+            // plantsTableAdapter
+            // 
+            this.plantsTableAdapter.ClearBeforeFill = true;
+            // 
+            // dsQry
+            // 
+            this.dsQry.DataSetName = "dsQry";
+            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ImportDaysFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +400,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,6 +435,8 @@
         private Data.dsDataTableAdapters._0_4__Product_DetailsTableAdapter _0_4__Product_DetailsTableAdapter;
         private Data.dsDataTableAdapters._0_1__Master_AllTableAdapter _0_1__Master_AllTableAdapter;
         private Data.dsDataTableAdapters.QryBillDocTableAdapter qryBillDocTableAdapter;
+        private Data.dsQryTableAdapters.PlantsTableAdapter plantsTableAdapter;
+        private Data.dsQry dsQry;
         private DevExpress.XtraSplashScreen.SplashScreenManager SSM;
     }
 }

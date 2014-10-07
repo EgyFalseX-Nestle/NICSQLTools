@@ -13,7 +13,7 @@ using System.Data.SqlClient;
 
 namespace NICSQLTools.Views.Data
 {
-    public partial class ImportDaysUC : DevExpress.XtraEditors.XtraUserControl
+    public partial class ImportCustomerRouteUC : DevExpress.XtraEditors.XtraUserControl
     {
         
         #region -   Variables   -
@@ -44,7 +44,7 @@ _______________________________________________
      
         #endregion
         #region -   Functions   -
-        public ImportDaysUC()
+        public ImportCustomerRouteUC()
         {
             InitializeComponent();
             tbLog.Text = RequiredField;

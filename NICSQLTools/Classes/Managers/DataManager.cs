@@ -42,26 +42,22 @@ namespace NICSQLTools
         {
             get { return (DateTime)adpQry.GetServerDate(); }
         }
-
-
         public static Uti.Types.UserInfo User = new Uti.Types.UserInfo();
-
         #region -   Unknown Codes   -
         #endregion
-
-        
         #endregion
         #region -   Functions   -
         public static void Init()
         {
             defaultInstance = new DataManager();
+            SetAllCommandTimeouts(adpQry, ConnectionTimeout);
         }
         public static void SetAllCommandTimeouts(object adapter, int timeout)
         {
             var commands = adapter.GetType().InvokeMember("CommandCollection",
                     System.Reflection.BindingFlags.GetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
                     null, adapter, new object[0]);
-            var sqlCommand = (System.Data.SqlClient.SqlCommand[])commands;
+            var sqlCommand = (System.Data.IDbCommand[])commands;
             foreach (var cmd in sqlCommand)
             {
                 cmd.CommandTimeout = timeout;
@@ -89,6 +85,7 @@ namespace NICSQLTools
             int currentVersion = Convert.ToInt32(System.Windows.Forms.Application.ProductVersion.Replace(".", ""));
             int? serverVersion = adpQry.GetAppVersion();
 
+
             if (serverVersion == null)
             {
                 if (!User.IsAdmin)
@@ -110,7 +107,9 @@ namespace NICSQLTools
                     if (System.Windows.Forms.MsgDlg.Show("هذه الاصداره جديده عن الموجوده علي الخادم, هل ترغب في تحديث الخادم؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
                         return;
                     byte[] data = File.ReadAllBytes(System.Windows.Forms.Application.ExecutablePath);
-                    adpQry.SetAppData(data, currentVersion);
+                    //Compress File
+                    MemoryStream ms = CompressFile(data);
+                    adpQry.SetAppData(ms.ToArray(), currentVersion);
                 }
                 else
                 {
@@ -119,8 +118,12 @@ namespace NICSQLTools
                     //if (File.Exists(updatePath))
                     //    File.Delete(updatePath);
                     byte[] data = adpQry.GetAppData();
+                    //Decompress File
+                    MemoryStream ms = DecompressFile(data);
+                    //System.Windows.Forms.Application.Exit();
+                    //return;
                     FileStream fs = File.Create(Program.updatePath);
-                    fs.Write(data, 0, data.Length);
+                    fs.Write(ms.ToArray(), 0, Convert.ToInt32(ms.Length));
                     fs.Close();
                     System.Diagnostics.Process.Start(Program.updatePath);
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
@@ -159,6 +162,9 @@ namespace NICSQLTools
                     strConnectionString = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1\";", strFile);
                 else if (strFile.Trim().ToLower().EndsWith(".xls"))
                     strConnectionString = string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";", strFile);
+
+                //strConnectionString = string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1\";", strFile);
+
                 OleDbConnection con = new OleDbConnection(strConnectionString);
                 con.Open();
                 DataTable dtSchema = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
@@ -193,6 +199,30 @@ namespace NICSQLTools
             return dt;
         }
 
+        public static MemoryStream CompressFile(byte[] date)
+        {
+            using (Ionic.Zip.ZipFile zFile = new Ionic.Zip.ZipFile())
+            {
+                zFile.CompressionLevel = Ionic.Zlib.CompressionLevel.BestCompression;
+                zFile.Comment = String.Format("This zip archive was created by the CreateZip example application on machine '{0}'", System.Net.Dns.GetHostName());
+                zFile.AddEntry("zUpdateObject.exe", date);
+                MemoryStream ms = new MemoryStream();
+                zFile.Save(ms);
+                return ms;
+            }
+        }
+        public static MemoryStream DecompressFile(byte[] data)
+        {
+            MemoryStream ms = new MemoryStream();
+            using (Ionic.Zip.ZipFile zFile = Ionic.Zip.ZipFile.Read(new MemoryStream(data)))
+            {
+                foreach (Ionic.Zip.ZipEntry entry in zFile)
+                {
+                    entry.Extract(ms);
+                }
+            }
+            return ms;
+        }
         #endregion
     }
 }

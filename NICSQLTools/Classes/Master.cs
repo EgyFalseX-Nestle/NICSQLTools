@@ -28,15 +28,15 @@ namespace NICSQLTools
                 bulkCopy.ColumnMappings.Add("Billing Document", "Billing Document"); bulkCopy.ColumnMappings.Add("Distribution Channel", "Distribution Channel");
                 bulkCopy.ColumnMappings.Add("Sold-to party", "Sold-to party"); bulkCopy.ColumnMappings.Add("Route", "Route");
                 bulkCopy.ColumnMappings.Add("Billing date for bil", "Billing date for bil"); bulkCopy.ColumnMappings.Add("Material Number", "Material Number");
-                bulkCopy.ColumnMappings.Add("Billing Type", "Billing Type"); bulkCopy.ColumnMappings.Add("Sales Organization", "Sales Organization");
-                bulkCopy.ColumnMappings.Add("Sales district", "Sales district"); bulkCopy.ColumnMappings.Add("Company Code", "Company Code");
-                bulkCopy.ColumnMappings.Add("Payer", "Payer"); bulkCopy.ColumnMappings.Add("Reference Document N", "Reference Document N");
-                bulkCopy.ColumnMappings.Add("Sales unit", "Sales unit"); bulkCopy.ColumnMappings.Add("Base Unit of Measure", "Base Unit of Measure");
-                bulkCopy.ColumnMappings.Add("Plant", "Plant"); bulkCopy.ColumnMappings.Add("Condition type", "Condition type");
-                bulkCopy.ColumnMappings.Add("G/L Account Number", "G/L Account Number"); bulkCopy.ColumnMappings.Add("Actual Invoiced Quan", "Actual Invoiced Quan");
-                bulkCopy.ColumnMappings.Add("Condition base value", "Condition base value"); bulkCopy.ColumnMappings.Add("Condition value", "Condition value");
+                bulkCopy.ColumnMappings.Add("Billing Type", "Billing Type"); bulkCopy.ColumnMappings.Add("Reference Document N", "Reference Document N");
+                bulkCopy.ColumnMappings.Add("Sales unit", "Sales unit"); bulkCopy.ColumnMappings.Add("Condition type", "Condition type");
+                bulkCopy.ColumnMappings.Add("Actual Invoiced Quan", "Actual Invoiced Quan"); bulkCopy.ColumnMappings.Add("Condition value", "Condition value");
                 bulkCopy.ColumnMappings.Add("Route & Sold", "Route & Sold"); bulkCopy.ColumnMappings.Add("yeard", "yeard");
                 bulkCopy.ColumnMappings.Add("Month", "Month"); bulkCopy.ColumnMappings.Add("New Quanteite", "New Quanteite");
+                //bulkCopy.ColumnMappings.Add("Sales Organization", "Sales Organization");bulkCopy.ColumnMappings.Add("Plant", "Plant"); 
+                //bulkCopy.ColumnMappings.Add("Sales district", "Sales district"); bulkCopy.ColumnMappings.Add("Company Code", "Company Code");
+                //bulkCopy.ColumnMappings.Add("Payer", "Payer"); bulkCopy.ColumnMappings.Add("Base Unit of Measure", "Base Unit of Measure");
+                //bulkCopy.ColumnMappings.Add("G/L Account Number", "G/L Account Number"); bulkCopy.ColumnMappings.Add("Condition base value", "Condition base value");
 
                 bulkCopy.DestinationTableName = "[0-1  Master All]";
                 bulkCopy.BatchSize = BulkTable.Count;

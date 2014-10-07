@@ -9,7 +9,7 @@ namespace NICSQLTools
 {
     public static class Customer
     {
-        //private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(Customer));
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(Customer));
         public static string DefaultCustomerName
         {
             get { return "Auto Generate Customer"; }
@@ -69,8 +69,8 @@ namespace NICSQLTools
             DateTime dtStart = DateTime.Now;
             string BulkTableName = string.Format("Customers{0}{1}{2}{3}{4}{5}{6}", dtStart.Year, dtStart.Month, dtStart.Day, dtStart.Hour, dtStart.Minute, dtStart.Second, dtStart.Millisecond);
             cmd.CommandText = string.Format(@"SELECT * INTO {0} FROM Customer WHERE 1 = 0;", BulkTableName);
-            //Logger.InfoFormat("Creating Temp table '{0}' {1}", BulkTableName, cmd.ExecuteNonQuery());
-
+            //Logger.InfoFormat("Creating Temp table '{0}' {1}", BulkTableName, );
+            cmd.ExecuteNonQuery();
 
             try
             {

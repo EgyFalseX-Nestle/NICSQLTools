@@ -39,6 +39,22 @@ namespace NICSQLTools
         {
             get { return 9999; }
         }
+        public static string LegalCaseRouteBrand
+        {
+            get { return "Legal Case"; }
+        }
+        public static string MovenpickRouteBrand
+        {
+            get { return "Movenpick"; }
+        }
+        public static string NotActiveRouteBrand
+        {
+            get { return "Not Active"; }
+        }
+        public static string TransferRouteBrand
+        {
+            get { return "Transfer"; }
+        }
         public static void CreateDefaultRoute(ref Data.dsData._0_3__Route_DetailsRow row)
         {
             row.Route_Name = DefaultRouteName;

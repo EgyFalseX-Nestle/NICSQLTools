@@ -1,6 +1,6 @@
-﻿namespace NICSQLTools.Views.Data
+﻿namespace NICSQLTools.Views.Import
 {
-    partial class ImportDaysUC
+    partial class ImportCustomerInfoUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this._0_1__Master_AllTableAdapter = new NICSQLTools.Data.dsDataTableAdapters._0_1__Master_AllTableAdapter();
-            this._0_4__Product_DetailsTableAdapter = new NICSQLTools.Data.dsDataTableAdapters._0_4__Product_DetailsTableAdapter();
             this.dsData = new NICSQLTools.Data.dsData();
-            this._0_6_Customer_HNTableAdapter = new NICSQLTools.Data.dsDataTableAdapters._0_6_Customer_HNTableAdapter();
-            this._0_3__Route_DetailsTableAdapter = new NICSQLTools.Data.dsDataTableAdapters._0_3__Route_DetailsTableAdapter();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.emptySpaceItemSpace = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -56,10 +52,9 @@
             this.layoutControlGroupCommand = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemRemove = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemAdd = new DevExpress.XtraLayout.LayoutControlItem();
-            this.qryBillDocTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.QryBillDocTableAdapter();
             this.SSM = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NICSQLTools.WaitWindowFrm), true, true, DevExpress.XtraSplashScreen.ParentType.UserControl);
             this.dsQry = new NICSQLTools.Data.dsQry();
-            this.plantsTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.PlantsTableAdapter();
+            this.customerInfoTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.CustomerInfoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).BeginInit();
@@ -80,26 +75,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
             this.SuspendLayout();
             // 
-            // _0_1__Master_AllTableAdapter
-            // 
-            this._0_1__Master_AllTableAdapter.ClearBeforeFill = true;
-            // 
-            // _0_4__Product_DetailsTableAdapter
-            // 
-            this._0_4__Product_DetailsTableAdapter.ClearBeforeFill = true;
-            // 
             // dsData
             // 
             this.dsData.DataSetName = "dsData";
             this.dsData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // _0_6_Customer_HNTableAdapter
-            // 
-            this._0_6_Customer_HNTableAdapter.ClearBeforeFill = true;
-            // 
-            // _0_3__Route_DetailsTableAdapter
-            // 
-            this._0_3__Route_DetailsTableAdapter.ClearBeforeFill = true;
             // 
             // ofd
             // 
@@ -122,7 +101,7 @@
             this.layoutControlItemImport.CustomizationFormText = "Import";
             this.layoutControlItemImport.Location = new System.Drawing.Point(0, 42);
             this.layoutControlItemImport.MaxSize = new System.Drawing.Size(0, 42);
-            this.layoutControlItemImport.MinSize = new System.Drawing.Size(98, 42);
+            this.layoutControlItemImport.MinSize = new System.Drawing.Size(123, 42);
             this.layoutControlItemImport.Name = "layoutControlItemImport";
             this.layoutControlItemImport.Size = new System.Drawing.Size(205, 42);
             this.layoutControlItemImport.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
@@ -140,7 +119,7 @@
             this.btnImport.Size = new System.Drawing.Size(201, 38);
             this.btnImport.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
             this.btnImport.TabIndex = 3;
-            this.btnImport.Text = "Import R3";
+            this.btnImport.Text = "Start Importing";
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // ImportBillingDetailsFrmConvertedLayout
@@ -361,25 +340,21 @@
             this.layoutControlItemAdd.TextToControlDistance = 0;
             this.layoutControlItemAdd.TextVisible = false;
             // 
-            // qryBillDocTableAdapter
-            // 
-            this.qryBillDocTableAdapter.ClearBeforeFill = true;
-            // 
             // dsQry
             // 
             this.dsQry.DataSetName = "dsQry";
             this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // plantsTableAdapter
+            // customerInfoTableAdapter
             // 
-            this.plantsTableAdapter.ClearBeforeFill = true;
+            this.customerInfoTableAdapter.ClearBeforeFill = true;
             // 
-            // ImportDaysUC
+            // ImportCustomerInfoUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ImportBillingDetailsFrmConvertedLayout);
-            this.Name = "ImportDaysUC";
+            this.Name = "ImportCustomerInfoUC";
             this.Size = new System.Drawing.Size(903, 525);
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).EndInit();
@@ -405,11 +380,7 @@
 
         #endregion
 
-        private NICSQLTools.Data.dsDataTableAdapters._0_1__Master_AllTableAdapter _0_1__Master_AllTableAdapter;
-        private NICSQLTools.Data.dsDataTableAdapters._0_4__Product_DetailsTableAdapter _0_4__Product_DetailsTableAdapter;
         private NICSQLTools.Data.dsData dsData;
-        private NICSQLTools.Data.dsDataTableAdapters._0_6_Customer_HNTableAdapter _0_6_Customer_HNTableAdapter;
-        private NICSQLTools.Data.dsDataTableAdapters._0_3__Route_DetailsTableAdapter _0_3__Route_DetailsTableAdapter;
         private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
         private System.Windows.Forms.OpenFileDialog ofd;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItemSpace;
@@ -432,9 +403,8 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupCommand;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemRemove;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemAdd;
-        private NICSQLTools.Data.dsDataTableAdapters.QryBillDocTableAdapter qryBillDocTableAdapter;
         private NICSQLTools.Data.dsQry dsQry;
-        private NICSQLTools.Data.dsQryTableAdapters.PlantsTableAdapter plantsTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.CustomerInfoTableAdapter customerInfoTableAdapter;
         private DevExpress.XtraSplashScreen.SplashScreenManager SSM;
     }
 }

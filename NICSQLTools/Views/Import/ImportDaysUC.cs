@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DevExpress.XtraSplashScreen;
-using System.Data.SqlClient;
-using System.Data.OleDb;
 using System.IO;
+using System.Data.SqlClient;
 
-namespace NICSQLTools
+namespace NICSQLTools.Views.Import
 {
-
-    public partial class ImportDaysFrm : DevExpress.XtraEditors.XtraForm
+    public partial class ImportDaysUC : DevExpress.XtraEditors.XtraUserControl
     {
-
+        
         #region -   Variables   -
         //private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportDaysFrm));
         List<string> Dist = new List<string>();
@@ -47,7 +44,7 @@ _______________________________________________
      
         #endregion
         #region -   Functions   -
-        public ImportDaysFrm()
+        public ImportDaysUC()
         {
             InitializeComponent();
             tbLog.Text = RequiredField;
@@ -56,14 +53,14 @@ _______________________________________________
             DataManager.SetAllCommandTimeouts(_0_3__Route_DetailsTableAdapter, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(_0_6_Customer_HNTableAdapter, DataManager.ConnectionTimeout);
         }
-        private static bool FindBillDoc(Data.dsData.QryBillDocDataTable tbl, string BillDoc)
+        private static bool FindBillDoc(NICSQLTools.Data.dsData.QryBillDocDataTable tbl, string BillDoc)
         {
             if (tbl.FindByBilling_Document(BillDoc) != null)
                 return true;
             else
                 return false;
         }
-        private void LoadCustomerCodes(ref Data.dsData ds)
+        private void LoadCustomerCodes(ref NICSQLTools.Data.dsData ds)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT Customer_T FROM [0-6 Customer HN]", con);
@@ -71,7 +68,7 @@ _______________________________________________
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                Data.dsData._0_6_Customer_HNRow row = ds._0_6_Customer_HN.New_0_6_Customer_HNRow();
+                NICSQLTools.Data.dsData._0_6_Customer_HNRow row = ds._0_6_Customer_HN.New_0_6_Customer_HNRow();
                 row.Customer_T = dr.GetValue(0).ToString();
                 ds._0_6_Customer_HN.Add_0_6_Customer_HNRow(row);
             }
@@ -79,7 +76,7 @@ _______________________________________________
             cmd.Dispose();
             con.Close(); con.Dispose();
         }
-        private void LoadProductCodes(ref Data.dsData ds)
+        private void LoadProductCodes(ref NICSQLTools.Data.dsData ds)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT [Material Number], Quin FROM [0-4  Product Details]", con);
@@ -87,7 +84,7 @@ _______________________________________________
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                Data.dsData._0_4__Product_DetailsRow row = ds._0_4__Product_Details.New_0_4__Product_DetailsRow();
+                NICSQLTools.Data.dsData._0_4__Product_DetailsRow row = ds._0_4__Product_Details.New_0_4__Product_DetailsRow();
                 row.Material_Number = dr.GetDouble(0);
                 row.Quin = dr.GetDouble(1);
                 ds._0_4__Product_Details.Add_0_4__Product_DetailsRow(row);
@@ -96,7 +93,7 @@ _______________________________________________
             cmd.Dispose();
             con.Close(); con.Dispose();
         }
-        private void LoadRouteCodes(ref Data.dsData ds)
+        private void LoadRouteCodes(ref NICSQLTools.Data.dsData ds)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT [Route Number] FROM [0-3  Route Details]", con);
@@ -104,7 +101,7 @@ _______________________________________________
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                Data.dsData._0_3__Route_DetailsRow row = ds._0_3__Route_Details.New_0_3__Route_DetailsRow();
+                NICSQLTools.Data.dsData._0_3__Route_DetailsRow row = ds._0_3__Route_Details.New_0_3__Route_DetailsRow();
                 row.Route_Number = dr.GetValue(0).ToString();
                 ds._0_3__Route_Details.Add_0_3__Route_DetailsRow(row);
             }
@@ -112,7 +109,6 @@ _______________________________________________
             cmd.Dispose();
             con.Close(); con.Dispose();
         }
-
         private bool ImportDaysFromExcel()
         {
             //return false;
@@ -123,7 +119,7 @@ _______________________________________________
             int NewProductFounded = 0;
             AddLog("Start importing ...");
             DataTable dtExcel = new DataTable();
-            
+
             //if (SSM.IsSplashFormVisible)
             //    SSM.CloseWaitForm();
             SSM.ShowWaitForm();
@@ -136,7 +132,10 @@ _______________________________________________
                         SSM.SetWaitFormDescription("Loading Excel File [" + (i + 1) + "] Contains [1/5]");
                         DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
+                        {
+                            AddLog("File empty " + lbcFilePath.Items[i]);
                             continue;
+                        }
                         dtExcel.Merge(dtPart);
                     }
                 }
@@ -151,16 +150,22 @@ _______________________________________________
                 SSM.SetWaitFormDescription("Loading Plants Informations [5/5]");
                 plantsTableAdapter.Fill(dsQry.Plants);
             }));
-            
+
             if (dtExcel.Rows.Count == 0)
+            {
+                if (SSM.IsSplashFormVisible)
+                    SSM.CloseWaitForm();
+                AddLog("Importing Aborted");
+                MsgDlg.Show("No Data Found", MsgDlg.MessageType.Error);
                 return false;
+            }
 
             DateTime dtStart = DateTime.Now;
 
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
             SqlCommand cmd = new SqlCommand("", con);
             cmd.CommandTimeout = 0;
-            
+
             con.Open();
 
             int ProcessedCounter = 0;
@@ -172,7 +177,7 @@ _______________________________________________
             }));
 
             //Load All Bill Docs
-            Data.dsData.QryBillDocDataTable TblMaster = new Data.dsData.QryBillDocDataTable();
+            NICSQLTools.Data.dsData.QryBillDocDataTable TblMaster = new NICSQLTools.Data.dsData.QryBillDocDataTable();
 
             //deleting data before saving new 1
             var result = from row in dtExcel.AsEnumerable()
@@ -185,7 +190,7 @@ _______________________________________________
             qryBillDocTableAdapter.Fill(TblMaster, BillStartDate, BillEndDate);
 
             SSM.CloseWaitForm();
-            
+
             foreach (DataRow row in dtExcel.Rows)
             {
                 //Update UI
@@ -208,27 +213,30 @@ _______________________________________________
                 if (FindBillDoc(TblMaster, row["Billing Document"].ToString()))// Check Bill Doc Exists
                     continue;
 
-                Data.dsData._0_1__Master_AllRow SqlRow = dsData._0_1__Master_All.New_0_1__Master_AllRow();
+                NICSQLTools.Data.dsData._0_1__Master_AllRow SqlRow = dsData._0_1__Master_All.New_0_1__Master_AllRow();
                 SqlRow.Billing_Document = row["Billing Document"].ToString();
 
                 SqlRow.Billing_date_for_bil = Convert.ToDateTime(row["Billing date for bil"]);
                 SqlRow.yeard = SqlRow.Billing_date_for_bil.Year.ToString();
                 SqlRow.Month = SqlRow.Billing_date_for_bil.ToString("MMMM", System.Globalization.CultureInfo.InvariantCulture).ToString();
 
-                SqlRow.Billing_Type = row["Billing Type"].ToString();
+                
                 //SqlRow.Payer = row["Payer"].ToString();
+                //SqlRow.Condition_base_value = Convert.ToDouble(row["Condition base value"]);
+                //SqlRow._G_L_Account_Number = row["G/L Account Number"].ToString();
+                //SqlRow.Plant = row["Plant"].ToString();
+                //SqlRow.Sales_district = row["Sales district"].ToString();
+                //SqlRow.Company_Code = row["Company Code"].ToString();
+                //SqlRow.Base_Unit_of_Measure = row["Base Unit of Measure"].ToString();
+                //SqlRow.Sales_Organization = row["Sales Organization"].ToString();
+                SqlRow.Billing_Type = row["Billing Type"].ToString();
                 SqlRow._Sold_to_party = Convert.ToInt32(row["Sold-to party"]).ToString();
                 SqlRow.Actual_Invoiced_Quan = Convert.ToDouble(row["Actual Invoiced Quan"]);
-                //SqlRow.Condition_base_value = Convert.ToDouble(row["Condition base value"]);
                 SqlRow.Condition_type = row["Condition type"].ToString();
                 SqlRow.Condition_value = Convert.ToDouble(row["Condition value"]);
                 SqlRow.Distribution_Channel = row["Distribution Channel"].ToString();
-
-                //SqlRow._G_L_Account_Number = row["G/L Account Number"].ToString();
                 SqlRow.Material_Number = Convert.ToInt32(row["Material Number"]);
-                SqlRow.Plant = row["Plant"].ToString();
                 SqlRow.Reference_Document_N = row["Reference Document N"].ToString();
-
                 //Set Route and Fix 999999 and 000001
                 SqlRow.Route = row["Route"].ToString();
                 if (SqlRow.Route == DataManager.Route999999 || SqlRow.Route == string.Empty)
@@ -249,15 +257,11 @@ _______________________________________________
                     SqlRow._Route___Sold = SqlRow._Sold_to_party;
                 else
                     SqlRow._Route___Sold = SqlRow.Route;
-
-                //SqlRow.Sales_district = row["Sales district"].ToString();
+                
                 SqlRow.Sales_unit = row["Sales unit"].ToString();
-                //SqlRow.Company_Code = row["Company Code"].ToString();
-                //SqlRow.Base_Unit_of_Measure = row["Base Unit of Measure"].ToString();
-                //SqlRow.Sales_Organization = row["Sales Organization"].ToString();
 
                 //Customer Update
-                Data.dsData._0_6_Customer_HNRow CustomerRow = Customer.GetCustomerRow(SqlRow._Sold_to_party, dsData._0_6_Customer_HN);
+                NICSQLTools.Data.dsData._0_6_Customer_HNRow CustomerRow = Customer.GetCustomerRow(SqlRow._Sold_to_party, dsData._0_6_Customer_HN);
 
                 if (CustomerRow.RowState == DataRowState.Detached)
                 {
@@ -277,7 +281,7 @@ _______________________________________________
 
                 if (row["Route"].ToString().Trim() != DataManager.Route000001 && row["Route"].ToString().Trim() != DataManager.Route999999)
                 {
-                    Data.dsData._0_3__Route_DetailsRow RouteRow = Route.GetRouteNumber(row["Route"].ToString().Trim(), dsData._0_3__Route_Details);
+                    NICSQLTools.Data.dsData._0_3__Route_DetailsRow RouteRow = Route.GetRouteNumber(row["Route"].ToString().Trim(), dsData._0_3__Route_Details);
                     if (RouteRow.RowState == DataRowState.Detached)
                     {
                         RouteRow.Route_Number = SqlRow.Route;
@@ -289,8 +293,8 @@ _______________________________________________
                 }
 
                 //Product Update
-                Data.dsData._0_4__Product_DetailsRow ProductRow = Product.GetProductRow(SqlRow.Material_Number, dsData._0_4__Product_Details);
-                
+                NICSQLTools.Data.dsData._0_4__Product_DetailsRow ProductRow = Product.GetProductRow(SqlRow.Material_Number, dsData._0_4__Product_Details);
+
                 if (ProductRow.RowState == DataRowState.Detached)
                 {
                     ProductRow.Material_Number = SqlRow.Material_Number;
@@ -307,14 +311,14 @@ _______________________________________________
 
                 dsData._0_1__Master_All.Add_0_1__Master_AllRow(SqlRow);
                 SqlRow.EndEdit();
-               
+
             }
 
             SSM.ShowWaitForm(); Application.DoEvents();
             SSM.SetWaitFormDescription("Updating Billing Details ..."); Application.DoEvents();
             if (!Master.UpdateBulkMaster(cmd, dsData._0_1__Master_All))
                 MsgDlg.Show("Update Billing Details Failed", MsgDlg.MessageType.Error);
-                
+
             else
             {
                 AddLog("New Billing Details Saved " + dsData._0_1__Master_All.Count);
@@ -341,7 +345,7 @@ _______________________________________________
             dsData._0_1__Master_All.Dispose(); dsData._0_6_Customer_HN.Dispose();
             cmd.Dispose(); cmd = null; con.Close(); con.Dispose(); con = null;
             GC.Collect(); GC.WaitForPendingFinalizers();
-            
+
             return output;
         }
         private void AddLog(string strLog)
@@ -423,5 +427,6 @@ _______________________________________________
 
         #endregion
 
+        
     }
 }

@@ -111,7 +111,19 @@ namespace NICSQLTools.Forms.Main
             }
             else if (e.Document == docEditorsImportDays)
             {
-                e.Control = new Views.Data.ImportDaysUC();
+                e.Control = new Views.Import.ImportDaysUC();
+            }
+            else if (e.Document == docEditorsImportCustomerRoute)
+            {
+                e.Control = new Views.Import.ImportCustomerRouteUC();
+            }
+            else if (e.Document == docEditorsImportCustomerInfo)
+            {
+                e.Control = new Views.Import.ImportCustomerInfoUC();
+            }
+            else if (e.Document == docEditorsImportEquipment)
+            {
+                e.Control = new Views.Import.ImportEquipmentUC();
             }
             else if (e.Document == docQueriesFinalDataGrid)
             {

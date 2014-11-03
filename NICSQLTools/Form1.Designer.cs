@@ -29,141 +29,120 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.filterEditorControl1 = new DevExpress.XtraFilterEditor.FilterEditorControl();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
-            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            this.dockPanel1.SuspendLayout();
-            this.dockPanel2.SuspendLayout();
-            this.dockPanel2_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
+            this.progressPanel1 = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.Form1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            ((System.ComponentModel.ISupportInitialize)(this.Form1ConvertedLayout)).BeginInit();
+            this.Form1ConvertedLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dockManager1
+            // progressPanel1
             // 
-            this.dockManager1.Form = this;
-            this.dockManager1.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1});
-            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel2});
-            this.dockManager1.TopZIndexControls.AddRange(new string[] {
-            "DevExpress.XtraBars.BarDockControl",
-            "DevExpress.XtraBars.StandaloneBarDockControl",
-            "System.Windows.Forms.StatusBar",
-            "System.Windows.Forms.MenuStrip",
-            "System.Windows.Forms.StatusStrip",
-            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
-            "DevExpress.XtraBars.Ribbon.RibbonControl"});
+            this.progressPanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.progressPanel1.Appearance.Options.UseBackColor = true;
+            this.progressPanel1.AppearanceCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.progressPanel1.AppearanceCaption.Options.UseFont = true;
+            this.progressPanel1.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.progressPanel1.AppearanceDescription.Options.UseFont = true;
+            this.progressPanel1.Location = new System.Drawing.Point(12, 12);
+            this.progressPanel1.Name = "progressPanel1";
+            this.progressPanel1.Size = new System.Drawing.Size(714, 16);
+            this.progressPanel1.StyleController = this.Form1ConvertedLayout;
+            this.progressPanel1.TabIndex = 4;
+            this.progressPanel1.Text = "progressPanel1";
             // 
-            // dockPanel1
+            // simpleButton1
             // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Float;
-            this.dockPanel1.DockedAsTabbedDocument = true;
-            this.dockPanel1.FloatLocation = new System.Drawing.Point(743, 247);
-            this.dockPanel1.ID = new System.Guid("15aff097-4dfd-4605-9303-ac04901852dc");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(300, 300);
-            this.dockPanel1.SavedIndex = 0;
-            this.dockPanel1.SavedMdiDocument = true;
-            this.dockPanel1.Size = new System.Drawing.Size(200, 200);
-            this.dockPanel1.Text = "dockPanel1";
+            this.simpleButton1.Location = new System.Drawing.Point(12, 32);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(714, 22);
+            this.simpleButton1.StyleController = this.Form1ConvertedLayout;
+            this.simpleButton1.TabIndex = 5;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // dockPanel1_Container
+            // Form1ConvertedLayout
             // 
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 22);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 175);
-            this.dockPanel1_Container.TabIndex = 0;
+            this.Form1ConvertedLayout.Controls.Add(this.simpleButton1);
+            this.Form1ConvertedLayout.Controls.Add(this.progressPanel1);
+            this.Form1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Form1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
+            this.Form1ConvertedLayout.Name = "Form1ConvertedLayout";
+            this.Form1ConvertedLayout.Root = this.layoutControlGroup1;
+            this.Form1ConvertedLayout.Size = new System.Drawing.Size(738, 337);
+            this.Form1ConvertedLayout.TabIndex = 6;
             // 
-            // dockPanel2
+            // layoutControlGroup1
             // 
-            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
-            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
-            this.dockPanel2.ID = new System.Guid("6388e0e0-67a0-47e4-96e4-26364304703f");
-            this.dockPanel2.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanel2.Size = new System.Drawing.Size(200, 337);
-            this.dockPanel2.Text = "dockPanel2";
+            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(738, 337);
+            this.layoutControlGroup1.Text = "layoutControlGroup1";
+            this.layoutControlGroup1.TextVisible = false;
             // 
-            // dockPanel2_Container
+            // layoutControlItem1
             // 
-            this.dockPanel2_Container.Controls.Add(this.filterEditorControl1);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
-            this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(192, 310);
-            this.dockPanel2_Container.TabIndex = 0;
+            this.layoutControlItem1.Control = this.simpleButton1;
+            this.layoutControlItem1.CustomizationFormText = "simpleButton1item";
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 20);
+            this.layoutControlItem1.Name = "simpleButton1item";
+            this.layoutControlItem1.Size = new System.Drawing.Size(718, 297);
+            this.layoutControlItem1.Text = "simpleButton1item";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextToControlDistance = 0;
+            this.layoutControlItem1.TextVisible = false;
             // 
-            // filterEditorControl1
+            // layoutControlItem2
             // 
-            this.filterEditorControl1.AppearanceEmptyValueColor = System.Drawing.Color.Empty;
-            this.filterEditorControl1.AppearanceFieldNameColor = System.Drawing.Color.Empty;
-            this.filterEditorControl1.AppearanceGroupOperatorColor = System.Drawing.Color.Empty;
-            this.filterEditorControl1.AppearanceOperatorColor = System.Drawing.Color.Empty;
-            this.filterEditorControl1.AppearanceValueColor = System.Drawing.Color.Empty;
-            this.filterEditorControl1.Location = new System.Drawing.Point(3, 3);
-            this.filterEditorControl1.Name = "filterEditorControl1";
-            this.filterEditorControl1.Size = new System.Drawing.Size(186, 299);
-            this.filterEditorControl1.TabIndex = 0;
-            this.filterEditorControl1.Text = "filterEditorControl1";
-            this.filterEditorControl1.UseMenuForOperandsAndOperators = false;
-            // 
-            // documentManager1
-            // 
-            this.documentManager1.ContainerControl = this;
-            this.documentManager1.View = this.tabbedView1;
-            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
-            this.tabbedView1});
-            // 
-            // pivotGridControl1
-            // 
-            this.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pivotGridControl1.Location = new System.Drawing.Point(200, 0);
-            this.pivotGridControl1.Name = "pivotGridControl1";
-            this.pivotGridControl1.Size = new System.Drawing.Size(538, 337);
-            this.pivotGridControl1.TabIndex = 2;
+            this.layoutControlItem2.Control = this.progressPanel1;
+            this.layoutControlItem2.CustomizationFormText = "progressPanel1item";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "progressPanel1item";
+            this.layoutControlItem2.Size = new System.Drawing.Size(718, 20);
+            this.layoutControlItem2.Text = "progressPanel1item";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
+            this.layoutControlItem2.TextVisible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 337);
-            this.Controls.Add(this.pivotGridControl1);
-            this.Controls.Add(this.dockPanel2);
+            this.Controls.Add(this.Form1ConvertedLayout);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            this.dockPanel1.ResumeLayout(false);
-            this.dockPanel2.ResumeLayout(false);
-            this.dockPanel2_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Form1ConvertedLayout)).EndInit();
+            this.Form1ConvertedLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraBars.Docking.DockManager dockManager1;
-        private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
-        private DevExpress.XtraFilterEditor.FilterEditorControl filterEditorControl1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
-        private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
-        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraWaitForm.ProgressPanel progressPanel1;
+        private DevExpress.XtraLayout.LayoutControl Form1ConvertedLayout;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
 
 
     }

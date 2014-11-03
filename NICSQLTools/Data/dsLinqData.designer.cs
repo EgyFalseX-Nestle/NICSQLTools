@@ -233,7 +233,7 @@ namespace NICSQLTools.Data
 		
 		private string _Annex;
 		
-		private System.Nullable<int> _New_Quanteite;
+		private System.Nullable<double> _New_Quanteite;
 		
 		private string _yeard;
 		
@@ -296,6 +296,18 @@ namespace NICSQLTools.Data
 		private long _AutoKey;
 		
 		private string _Base_Group;
+		
+		private string _WOR_Period;
+		
+		private short _SalesDistrict1Id;
+		
+		private short _SalesDistrict2Id;
+		
+		private short _SalesDistrict3Id;
+		
+		private string _PriceCategory;
+		
+		private string _NCE_Project;
 		
 		public _0_0_Final_Data_All()
 		{
@@ -1341,7 +1353,7 @@ namespace NICSQLTools.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District]", Storage="_Sales_District", DbType="NVarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District]", Storage="_Sales_District", DbType="NVarChar(50)")]
 		public string Sales_District
 		{
 			get
@@ -1357,7 +1369,7 @@ namespace NICSQLTools.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District Name]", Storage="_Sales_District_Name", DbType="NVarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District Name]", Storage="_Sales_District_Name", DbType="NVarChar(50)")]
 		public string Sales_District_Name
 		{
 			get
@@ -1565,8 +1577,8 @@ namespace NICSQLTools.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[New Quanteite]", Storage="_New_Quanteite", DbType="Int")]
-		public System.Nullable<int> New_Quanteite
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[New Quanteite]", Storage="_New_Quanteite", DbType="Float")]
+		public System.Nullable<double> New_Quanteite
 		{
 			get
 			{
@@ -2029,7 +2041,7 @@ namespace NICSQLTools.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(50)")]
 		public string Sales_District_2
 		{
 			get
@@ -2073,6 +2085,102 @@ namespace NICSQLTools.Data
 				if ((this._Base_Group != value))
 				{
 					this._Base_Group = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WOR_Period", DbType="NVarChar(255)")]
+		public string WOR_Period
+		{
+			get
+			{
+				return this._WOR_Period;
+			}
+			set
+			{
+				if ((this._WOR_Period != value))
+				{
+					this._WOR_Period = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict1Id", DbType="SmallInt NOT NULL")]
+		public short SalesDistrict1Id
+		{
+			get
+			{
+				return this._SalesDistrict1Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict1Id != value))
+				{
+					this._SalesDistrict1Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict2Id", DbType="SmallInt NOT NULL")]
+		public short SalesDistrict2Id
+		{
+			get
+			{
+				return this._SalesDistrict2Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict2Id != value))
+				{
+					this._SalesDistrict2Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict3Id", DbType="SmallInt NOT NULL")]
+		public short SalesDistrict3Id
+		{
+			get
+			{
+				return this._SalesDistrict3Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict3Id != value))
+				{
+					this._SalesDistrict3Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceCategory", DbType="NVarChar(50)")]
+		public string PriceCategory
+		{
+			get
+			{
+				return this._PriceCategory;
+			}
+			set
+			{
+				if ((this._PriceCategory != value))
+				{
+					this._PriceCategory = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCE_Project", DbType="NVarChar(255)")]
+		public string NCE_Project
+		{
+			get
+			{
+				return this._NCE_Project;
+			}
+			set
+			{
+				if ((this._NCE_Project != value))
+				{
+					this._NCE_Project = value;
 				}
 			}
 		}

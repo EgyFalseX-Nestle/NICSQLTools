@@ -34,15 +34,15 @@ namespace NICSQLTools
                 DevExpress.Xpo.XpoDefault.ConnectionString = FXFW.SqlDB.SqlConStr;
                 Init();
                 //Set User Info
-                DataManager.User.RealName = "Public Test"; DataManager.User.IsAdmin = true;
+                DataManager.User.UserId = 1; DataManager.User.RealName = "Public Test"; DataManager.User.IsAdmin = true;
 
                 DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); DevExpress.XtraSplashScreen.SplashScreenManager.Default.SetWaitFormCaption("Updating .......");
                 DataManager.PerformUpdate();
-                DevExpress.XtraSplashScreen.SplashScreenManager.Default.CloseWaitForm();
-
+                DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm(false);
                 //MessageBox.Show("Sometime system give null route we should fix it");
                 //Application.Run(new NICSQLTools.MainFrm());
                 Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
+                //Application.Run(new Form1());
             }
             
         }

@@ -52,6 +52,7 @@ _______________________________________________
             DataManager.SetAllCommandTimeouts(_0_4__Product_DetailsTableAdapter, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(_0_3__Route_DetailsTableAdapter, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(_0_6_Customer_HNTableAdapter, DataManager.ConnectionTimeout);
+            DataManager.SetAllCommandTimeouts(qryBillDocTableAdapter, DataManager.ConnectionTimeout);
         }
         private static bool FindBillDoc(NICSQLTools.Data.dsData.QryBillDocDataTable tbl, string BillDoc)
         {
@@ -109,6 +110,19 @@ _______________________________________________
             cmd.Dispose();
             con.Close(); con.Dispose();
         }
+        private void ShowHideProgress(bool ShowHide)
+        {
+            if (ShowHide)
+                PnlProg.Invoke(new MethodInvoker(() => { PnlProg.Show(); layoutControlItemPnlProg.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always; }));
+            else
+                PnlProg.Invoke(new MethodInvoker(() => { PnlProg.Hide(); layoutControlItemPnlProg.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never; }));
+            Application.DoEvents();
+        }
+        private void ChangeProgressCaption(string Caption)
+        {
+            PnlProg.Invoke(new MethodInvoker(() => { PnlProg.Caption = Caption; }));
+            Application.DoEvents();
+        }
         private bool ImportDaysFromExcel()
         {
             //return false;
@@ -120,16 +134,14 @@ _______________________________________________
             AddLog("Start importing ...");
             DataTable dtExcel = new DataTable();
 
-            //if (SSM.IsSplashFormVisible)
-            //    SSM.CloseWaitForm();
-            SSM.ShowWaitForm();
+            ShowHideProgress(true);
             this.Invoke(new MethodInvoker(() =>
             {
                 for (int i = 0; i < lbcFilePath.ItemCount; i++)
                 {
                     if (File.Exists(lbcFilePath.Items[i].ToString()))
                     {
-                        SSM.SetWaitFormDescription("Loading Excel File [" + (i + 1) + "] Contains [1/5]");
+                        ChangeProgressCaption("Loading Excel File [" + (i + 1) + "] Contains [1/5]");
                         DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                         {
@@ -139,22 +151,21 @@ _______________________________________________
                         dtExcel.Merge(dtPart);
                     }
                 }
-                SSM.SetWaitFormDescription("Loading Customers Informations [2/5]");
+                ChangeProgressCaption("Loading Customers Informations [2/5]");
                 //_0_6_Customer_HNTableAdapter.FillOnlyCode(dsData._0_6_Customer_HN);
                 LoadCustomerCodes(ref dsData);
-                SSM.SetWaitFormDescription("Loading Routes Informations [3/5]");
+                ChangeProgressCaption("Loading Routes Informations [3/5]");
                 _0_3__Route_DetailsTableAdapter.Fill(dsData._0_3__Route_Details);
                 //LoadRouteCodes(ref dsData);
-                SSM.SetWaitFormDescription("Loading Products Informations [4/5]");
+                ChangeProgressCaption("Loading Products Informations [4/5]");
                 _0_4__Product_DetailsTableAdapter.Fill(dsData._0_4__Product_Details);
-                SSM.SetWaitFormDescription("Loading Plants Informations [5/5]");
+                ChangeProgressCaption("Loading Plants Informations [5/5]");
                 plantsTableAdapter.Fill(dsQry.Plants);
             }));
 
             if (dtExcel.Rows.Count == 0)
             {
-                if (SSM.IsSplashFormVisible)
-                    SSM.CloseWaitForm();
+                ShowHideProgress(false);
                 AddLog("Importing Aborted");
                 MsgDlg.Show("No Data Found", MsgDlg.MessageType.Error);
                 return false;
@@ -181,15 +192,16 @@ _______________________________________________
 
             //deleting data before saving new 1
             var result = from row in dtExcel.AsEnumerable()
+                         orderby row["Billing date for bil"]
                          group row by row["Billing date for bil"] into grp
                          select new { BillingDate = grp.Key };
-
+            
             DateTime BillStartDate = (DateTime)result.ElementAt(0).BillingDate;
             DateTime BillEndDate = (DateTime)result.ElementAt(result.Count() - 1).BillingDate;
 
             qryBillDocTableAdapter.Fill(TblMaster, BillStartDate, BillEndDate);
 
-            SSM.CloseWaitForm();
+            ShowHideProgress(false);
 
             foreach (DataRow row in dtExcel.Rows)
             {
@@ -313,9 +325,8 @@ _______________________________________________
                 SqlRow.EndEdit();
 
             }
-
-            SSM.ShowWaitForm(); Application.DoEvents();
-            SSM.SetWaitFormDescription("Updating Billing Details ..."); Application.DoEvents();
+            ShowHideProgress(true);
+            ChangeProgressCaption("Updating Billing Details ...");
             if (!Master.UpdateBulkMaster(cmd, dsData._0_1__Master_All))
                 MsgDlg.Show("Update Billing Details Failed", MsgDlg.MessageType.Error);
 
@@ -327,17 +338,16 @@ _______________________________________________
 
             //SSM.SetWaitFormDescription("Updating Customers ..."); Application.DoEvents();
             //_0_6_Customer_HNTableAdapter.Update(dsData._0_6_Customer_HN);
-            SSM.SetWaitFormDescription("Updating Routes ..."); Application.DoEvents();
+            ChangeProgressCaption("Updating Routes ..."); Application.DoEvents();
             _0_3__Route_DetailsTableAdapter.Update(dsData._0_3__Route_Details);
-            SSM.SetWaitFormDescription("Updating Products ..."); Application.DoEvents();
+            ChangeProgressCaption("Updating Products ..."); Application.DoEvents();
             _0_4__Product_DetailsTableAdapter.Update(dsData._0_4__Product_Details);
             dsData._0_1__Master_All.AcceptChanges();
-            SSM.CloseWaitForm();
+            ShowHideProgress(false);
 
             AddLog("New Customers Saved " + NewCustomerFounded);
             AddLog("New Routes Saved " + NewRouteFounded);
             AddLog("New Product Saved " + NewProductFounded);
-            AddLog("New R3 Data Saved " + dsData._0_1__Master_All.Count);
 
 
             dtExcel.Rows.Clear(); dtExcel.Dispose(); dtExcel = null;

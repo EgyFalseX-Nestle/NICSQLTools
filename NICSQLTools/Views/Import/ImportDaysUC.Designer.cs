@@ -57,9 +57,10 @@
             this.layoutControlItemRemove = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemAdd = new DevExpress.XtraLayout.LayoutControlItem();
             this.qryBillDocTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.QryBillDocTableAdapter();
-            this.SSM = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NICSQLTools.WaitWindowFrm), true, true, DevExpress.XtraSplashScreen.ParentType.UserControl);
             this.dsQry = new NICSQLTools.Data.dsQry();
             this.plantsTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.PlantsTableAdapter();
+            this.PnlProg = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.layoutControlItemPnlProg = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).BeginInit();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPnlProg)).BeginInit();
             this.SuspendLayout();
             // 
             // _0_1__Master_AllTableAdapter
@@ -110,9 +112,9 @@
             // 
             this.emptySpaceItemSpace.AllowHotTrack = false;
             this.emptySpaceItemSpace.CustomizationFormText = "Space";
-            this.emptySpaceItemSpace.Location = new System.Drawing.Point(0, 142);
+            this.emptySpaceItemSpace.Location = new System.Drawing.Point(0, 192);
             this.emptySpaceItemSpace.Name = "emptySpaceItemSpace";
-            this.emptySpaceItemSpace.Size = new System.Drawing.Size(229, 216);
+            this.emptySpaceItemSpace.Size = new System.Drawing.Size(229, 166);
             this.emptySpaceItemSpace.Text = "Space";
             this.emptySpaceItemSpace.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -122,7 +124,7 @@
             this.layoutControlItemImport.CustomizationFormText = "Import";
             this.layoutControlItemImport.Location = new System.Drawing.Point(0, 42);
             this.layoutControlItemImport.MaxSize = new System.Drawing.Size(0, 42);
-            this.layoutControlItemImport.MinSize = new System.Drawing.Size(98, 42);
+            this.layoutControlItemImport.MinSize = new System.Drawing.Size(123, 42);
             this.layoutControlItemImport.Name = "layoutControlItemImport";
             this.layoutControlItemImport.Size = new System.Drawing.Size(205, 42);
             this.layoutControlItemImport.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
@@ -145,6 +147,7 @@
             // 
             // ImportBillingDetailsFrmConvertedLayout
             // 
+            this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.PnlProg);
             this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.ProgressBarMain);
             this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.tbLog);
             this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.lblCount);
@@ -156,7 +159,7 @@
             this.ImportBillingDetailsFrmConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ImportBillingDetailsFrmConvertedLayout.Location = new System.Drawing.Point(0, 0);
             this.ImportBillingDetailsFrmConvertedLayout.Name = "ImportBillingDetailsFrmConvertedLayout";
-            this.ImportBillingDetailsFrmConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(987, 330, 315, 464);
+            this.ImportBillingDetailsFrmConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(509, 185, 315, 464);
             this.ImportBillingDetailsFrmConvertedLayout.OptionsView.UseDefaultDragAndDropRendering = false;
             this.ImportBillingDetailsFrmConvertedLayout.Root = this.layoutControlGroup1;
             this.ImportBillingDetailsFrmConvertedLayout.Size = new System.Drawing.Size(903, 525);
@@ -172,11 +175,11 @@
             // 
             // tbLog
             // 
-            this.tbLog.Location = new System.Drawing.Point(241, 154);
+            this.tbLog.Location = new System.Drawing.Point(241, 204);
             this.tbLog.Name = "tbLog";
             this.tbLog.Properties.ReadOnly = true;
             this.tbLog.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbLog.Size = new System.Drawing.Size(650, 320);
+            this.tbLog.Size = new System.Drawing.Size(650, 270);
             this.tbLog.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
             this.tbLog.TabIndex = 6;
             this.tbLog.UseOptimizedRendering = true;
@@ -244,7 +247,8 @@
             this.layoutControlItemCount,
             this.layoutControlItemProgress,
             this.layoutControlGroupCommand,
-            this.emptySpaceItemSpace});
+            this.emptySpaceItemSpace,
+            this.layoutControlItemPnlProg});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(903, 525);
@@ -270,9 +274,9 @@
             // 
             this.layoutControlItemLog.Control = this.tbLog;
             this.layoutControlItemLog.CustomizationFormText = "Log";
-            this.layoutControlItemLog.Location = new System.Drawing.Point(229, 142);
+            this.layoutControlItemLog.Location = new System.Drawing.Point(229, 192);
             this.layoutControlItemLog.Name = "layoutControlItemLog";
-            this.layoutControlItemLog.Size = new System.Drawing.Size(654, 324);
+            this.layoutControlItemLog.Size = new System.Drawing.Size(654, 274);
             this.layoutControlItemLog.Text = "Log";
             this.layoutControlItemLog.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemLog.TextToControlDistance = 0;
@@ -374,6 +378,37 @@
             // 
             this.plantsTableAdapter.ClearBeforeFill = true;
             // 
+            // PnlProg
+            // 
+            this.PnlProg.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.PnlProg.Appearance.Options.UseBackColor = true;
+            this.PnlProg.AppearanceCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.PnlProg.AppearanceCaption.Options.UseFont = true;
+            this.PnlProg.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.PnlProg.AppearanceDescription.Options.UseFont = true;
+            this.PnlProg.Location = new System.Drawing.Point(12, 154);
+            this.PnlProg.Name = "PnlProg";
+            this.PnlProg.Size = new System.Drawing.Size(879, 46);
+            this.PnlProg.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
+            this.PnlProg.TabIndex = 9;
+            this.PnlProg.Text = "Progress Status";
+            // 
+            // layoutControlItemPnlProg
+            // 
+            this.layoutControlItemPnlProg.Control = this.PnlProg;
+            this.layoutControlItemPnlProg.CustomizationFormText = "Progress Panal";
+            this.layoutControlItemPnlProg.Location = new System.Drawing.Point(0, 142);
+            this.layoutControlItemPnlProg.MaxSize = new System.Drawing.Size(0, 50);
+            this.layoutControlItemPnlProg.MinSize = new System.Drawing.Size(54, 50);
+            this.layoutControlItemPnlProg.Name = "layoutControlItemPnlProg";
+            this.layoutControlItemPnlProg.Size = new System.Drawing.Size(883, 50);
+            this.layoutControlItemPnlProg.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItemPnlProg.Text = "Progress Panal";
+            this.layoutControlItemPnlProg.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItemPnlProg.TextToControlDistance = 0;
+            this.layoutControlItemPnlProg.TextVisible = false;
+            this.layoutControlItemPnlProg.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
             // ImportDaysUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,6 +434,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPnlProg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,6 +471,7 @@
         private NICSQLTools.Data.dsDataTableAdapters.QryBillDocTableAdapter qryBillDocTableAdapter;
         private NICSQLTools.Data.dsQry dsQry;
         private NICSQLTools.Data.dsQryTableAdapters.PlantsTableAdapter plantsTableAdapter;
-        private DevExpress.XtraSplashScreen.SplashScreenManager SSM;
+        private DevExpress.XtraWaitForm.ProgressPanel PnlProg;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPnlProg;
     }
 }

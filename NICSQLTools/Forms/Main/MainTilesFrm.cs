@@ -88,7 +88,6 @@ namespace NICSQLTools.Forms.Main
 
             }
         }
-
         private void windowsUIView_QueryControl(object sender, QueryControlEventArgs e)
         {
             if (e.Control != null)
@@ -109,6 +108,14 @@ namespace NICSQLTools.Forms.Main
             {
                 e.Control = new Views.Data.CustomerEditorUC();
             }
+            else if (e.Document == docEditorsTargetKPI)
+            {
+                e.Control = new Views.Data.TargetKPIEditorUC();
+            }
+            else if (e.Document == docEditorsTargetNCE)
+            {
+                e.Control = new Views.Data.TargetNCEEditorUC();
+            }
             else if (e.Document == docEditorsImportDays)
             {
                 e.Control = new Views.Import.ImportDaysUC();
@@ -120,6 +127,18 @@ namespace NICSQLTools.Forms.Main
             else if (e.Document == docEditorsImportCustomerInfo)
             {
                 e.Control = new Views.Import.ImportCustomerInfoUC();
+            }
+            else if (e.Document == docEditorsImportCustomerSSInfo)
+            {
+                e.Control = new Views.Import.ImportCustomerSSInfoUC();
+            }
+            else if (e.Document == docEditorsImportDamageReason)
+            {
+                e.Control = new Views.Import.ImportDamageReasonUC();
+            }
+            else if (e.Document == docEditorsImportDamageMaster)
+            {
+                e.Control = new Views.Import.ImportDMG_MasterUC();
             }
             else if (e.Document == docEditorsImportEquipment)
             {

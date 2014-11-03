@@ -36,6 +36,8 @@
             this.layoutControlItemImport = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnImport = new DevExpress.XtraEditors.SimpleButton();
             this.ImportBillingDetailsFrmConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.tbMonth = new DevExpress.XtraEditors.SpinEdit();
+            this.tbYear = new DevExpress.XtraEditors.SpinEdit();
             this.ProgressBarMain = new DevExpress.XtraEditors.ProgressBarControl();
             this.tbLog = new DevExpress.XtraEditors.MemoEdit();
             this.lblCount = new DevExpress.XtraEditors.LabelControl();
@@ -52,18 +54,19 @@
             this.layoutControlGroupCommand = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemRemove = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemAdd = new DevExpress.XtraLayout.LayoutControlItem();
-            this.SSM = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::NICSQLTools.WaitWindowFrm), true, true, DevExpress.XtraSplashScreen.ParentType.UserControl);
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dsQry = new NICSQLTools.Data.dsQry();
             this.customerRouteTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.CustomerRouteTableAdapter();
-            this.tbYear = new DevExpress.XtraEditors.SpinEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tbMonth = new DevExpress.XtraEditors.SpinEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.PnlProg = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.layoutControlItemPnlProg = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImportBillingDetailsFrmConvertedLayout)).BeginInit();
             this.ImportBillingDetailsFrmConvertedLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbMonth.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbYear.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBarMain.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLog.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbcFilePath)).BeginInit();
@@ -76,11 +79,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCommand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAdd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbYear.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMonth.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPnlProg)).BeginInit();
             this.SuspendLayout();
             // 
             // dsData
@@ -97,9 +99,9 @@
             // 
             this.emptySpaceItemSpace.AllowHotTrack = false;
             this.emptySpaceItemSpace.CustomizationFormText = "Space";
-            this.emptySpaceItemSpace.Location = new System.Drawing.Point(0, 142);
+            this.emptySpaceItemSpace.Location = new System.Drawing.Point(0, 192);
             this.emptySpaceItemSpace.Name = "emptySpaceItemSpace";
-            this.emptySpaceItemSpace.Size = new System.Drawing.Size(229, 148);
+            this.emptySpaceItemSpace.Size = new System.Drawing.Size(229, 98);
             this.emptySpaceItemSpace.Text = "Space";
             this.emptySpaceItemSpace.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -132,6 +134,7 @@
             // 
             // ImportBillingDetailsFrmConvertedLayout
             // 
+            this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.PnlProg);
             this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.tbMonth);
             this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.tbYear);
             this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.ProgressBarMain);
@@ -145,11 +148,41 @@
             this.ImportBillingDetailsFrmConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ImportBillingDetailsFrmConvertedLayout.Location = new System.Drawing.Point(0, 0);
             this.ImportBillingDetailsFrmConvertedLayout.Name = "ImportBillingDetailsFrmConvertedLayout";
-            this.ImportBillingDetailsFrmConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(987, 330, 315, 464);
+            this.ImportBillingDetailsFrmConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(463, 330, 315, 464);
             this.ImportBillingDetailsFrmConvertedLayout.OptionsView.UseDefaultDragAndDropRendering = false;
             this.ImportBillingDetailsFrmConvertedLayout.Root = this.layoutControlGroup1;
             this.ImportBillingDetailsFrmConvertedLayout.Size = new System.Drawing.Size(903, 525);
             this.ImportBillingDetailsFrmConvertedLayout.TabIndex = 7;
+            // 
+            // tbMonth
+            // 
+            this.tbMonth.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.tbMonth.Location = new System.Drawing.Point(62, 307);
+            this.tbMonth.Name = "tbMonth";
+            this.tbMonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tbMonth.Size = new System.Drawing.Size(170, 20);
+            this.tbMonth.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
+            this.tbMonth.TabIndex = 0;
+            // 
+            // tbYear
+            // 
+            this.tbYear.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.tbYear.Location = new System.Drawing.Point(62, 341);
+            this.tbYear.Name = "tbYear";
+            this.tbYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tbYear.Size = new System.Drawing.Size(170, 20);
+            this.tbYear.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
+            this.tbYear.TabIndex = 1;
             // 
             // ProgressBarMain
             // 
@@ -161,11 +194,11 @@
             // 
             // tbLog
             // 
-            this.tbLog.Location = new System.Drawing.Point(241, 154);
+            this.tbLog.Location = new System.Drawing.Point(241, 204);
             this.tbLog.Name = "tbLog";
             this.tbLog.Properties.ReadOnly = true;
             this.tbLog.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbLog.Size = new System.Drawing.Size(650, 320);
+            this.tbLog.Size = new System.Drawing.Size(650, 270);
             this.tbLog.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
             this.tbLog.TabIndex = 6;
             this.tbLog.UseOptimizedRendering = true;
@@ -235,7 +268,8 @@
             this.layoutControlGroupCommand,
             this.emptySpaceItemSpace,
             this.layoutControlItem1,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.layoutControlItemPnlProg});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(903, 525);
@@ -261,9 +295,9 @@
             // 
             this.layoutControlItemLog.Control = this.tbLog;
             this.layoutControlItemLog.CustomizationFormText = "Log";
-            this.layoutControlItemLog.Location = new System.Drawing.Point(229, 142);
+            this.layoutControlItemLog.Location = new System.Drawing.Point(229, 192);
             this.layoutControlItemLog.Name = "layoutControlItemLog";
-            this.layoutControlItemLog.Size = new System.Drawing.Size(654, 324);
+            this.layoutControlItemLog.Size = new System.Drawing.Size(654, 274);
             this.layoutControlItemLog.Text = "Log";
             this.layoutControlItemLog.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemLog.TextToControlDistance = 0;
@@ -352,30 +386,6 @@
             this.layoutControlItemAdd.TextToControlDistance = 0;
             this.layoutControlItemAdd.TextVisible = false;
             // 
-            // dsQry
-            // 
-            this.dsQry.DataSetName = "dsQry";
-            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerRouteTableAdapter
-            // 
-            this.customerRouteTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbYear
-            // 
-            this.tbYear.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbYear.Location = new System.Drawing.Point(62, 341);
-            this.tbYear.Name = "tbYear";
-            this.tbYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tbYear.Size = new System.Drawing.Size(170, 20);
-            this.tbYear.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
-            this.tbYear.TabIndex = 1;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.tbYear;
@@ -387,21 +397,6 @@
             this.layoutControlItem1.Text = "Year";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(42, 13);
             // 
-            // tbMonth
-            // 
-            this.tbMonth.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.tbMonth.Location = new System.Drawing.Point(62, 307);
-            this.tbMonth.Name = "tbMonth";
-            this.tbMonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tbMonth.Size = new System.Drawing.Size(170, 20);
-            this.tbMonth.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
-            this.tbMonth.TabIndex = 0;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.tbMonth;
@@ -412,6 +407,47 @@
             this.layoutControlItem2.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.layoutControlItem2.Text = "Month";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(42, 13);
+            // 
+            // dsQry
+            // 
+            this.dsQry.DataSetName = "dsQry";
+            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customerRouteTableAdapter
+            // 
+            this.customerRouteTableAdapter.ClearBeforeFill = true;
+            // 
+            // PnlProg
+            // 
+            this.PnlProg.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.PnlProg.Appearance.Options.UseBackColor = true;
+            this.PnlProg.AppearanceCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.PnlProg.AppearanceCaption.Options.UseFont = true;
+            this.PnlProg.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.PnlProg.AppearanceDescription.Options.UseFont = true;
+            this.PnlProg.Location = new System.Drawing.Point(12, 154);
+            this.PnlProg.Name = "PnlProg";
+            this.PnlProg.Size = new System.Drawing.Size(879, 46);
+            this.PnlProg.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
+            this.PnlProg.TabIndex = 9;
+            this.PnlProg.Text = "Progress Status";
+            // 
+            // layoutControlItemPnlProg
+            // 
+            this.layoutControlItemPnlProg.Control = this.PnlProg;
+            this.layoutControlItemPnlProg.CustomizationFormText = "Progress Panal";
+            this.layoutControlItemPnlProg.Location = new System.Drawing.Point(0, 142);
+            this.layoutControlItemPnlProg.MaxSize = new System.Drawing.Size(0, 50);
+            this.layoutControlItemPnlProg.MinSize = new System.Drawing.Size(54, 50);
+            this.layoutControlItemPnlProg.Name = "layoutControlItemPnlProg";
+            this.layoutControlItemPnlProg.Size = new System.Drawing.Size(883, 50);
+            this.layoutControlItemPnlProg.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItemPnlProg.Text = "Progress Panal";
+            this.layoutControlItemPnlProg.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItemPnlProg.TextToControlDistance = 0;
+            this.layoutControlItemPnlProg.TextVisible = false;
+            this.layoutControlItemPnlProg.TrimClientAreaToControl = false;
+            this.layoutControlItemPnlProg.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // ImportCustomerRouteUC
             // 
@@ -425,6 +461,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImportBillingDetailsFrmConvertedLayout)).EndInit();
             this.ImportBillingDetailsFrmConvertedLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tbMonth.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbYear.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProgressBarMain.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbLog.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lbcFilePath)).EndInit();
@@ -437,11 +475,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCommand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbYear.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMonth.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPnlProg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,10 +510,11 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemAdd;
         private NICSQLTools.Data.dsQry dsQry;
         private NICSQLTools.Data.dsDataTableAdapters.CustomerRouteTableAdapter customerRouteTableAdapter;
-        private DevExpress.XtraSplashScreen.SplashScreenManager SSM;
         private DevExpress.XtraEditors.SpinEdit tbMonth;
         private DevExpress.XtraEditors.SpinEdit tbYear;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraWaitForm.ProgressPanel PnlProg;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPnlProg;
     }
 }

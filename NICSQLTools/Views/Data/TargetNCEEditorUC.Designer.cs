@@ -1,0 +1,433 @@
+﻿namespace NICSQLTools.Views.Data
+{
+    partial class TargetNCEEditorUC
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TargetNCEEditorUC));
+            this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
+            this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiExport = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRouteNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAposTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDSTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNPSTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAposDayTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvDayTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNPSDayTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDSDayTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAposWeekTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colInvWeekTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNPSWeekTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDSWeekTarget = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYearNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMonthNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
+            this.repositoryItemGridLookUpEditRouteNumber = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dsQry = new NICSQLTools.Data.dsQry();
+            this.routeInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.routeInfoTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.RouteInfoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRouteNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeInfoBindingSource)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // UOW
+            // 
+            this.UOW.IsObjectModifiedOnNonPersistentPropertyChange = null;
+            this.UOW.TrackPropertiesModifications = false;
+            this.UOW.BeforeCommitTransaction += new DevExpress.Xpo.SessionManipulationEventHandler(this.UOW_BeforeCommitTransaction);
+            // 
+            // popupMenuMain
+            // 
+            this.popupMenuMain.Manager = this.barManagerMain;
+            this.popupMenuMain.Name = "popupMenuMain";
+            // 
+            // barManagerMain
+            // 
+            this.barManagerMain.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1});
+            this.barManagerMain.DockControls.Add(this.barDockControlTop);
+            this.barManagerMain.DockControls.Add(this.barDockControlBottom);
+            this.barManagerMain.DockControls.Add(this.barDockControlLeft);
+            this.barManagerMain.DockControls.Add(this.barDockControlRight);
+            this.barManagerMain.Form = this;
+            this.barManagerMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.bbiSave,
+            this.bbiExport});
+            this.barManagerMain.MaxItemId = 2;
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Main";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiSave),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiExport)});
+            this.bar1.Text = "Custom 2";
+            // 
+            // bbiSave
+            // 
+            this.bbiSave.Caption = "Save";
+            this.bbiSave.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.Glyph")));
+            this.bbiSave.Id = 0;
+            this.bbiSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
+            this.bbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.LargeGlyph")));
+            this.bbiSave.Name = "bbiSave";
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
+            // 
+            // bbiExport
+            // 
+            this.bbiExport.Caption = "Export";
+            this.bbiExport.Glyph = global::NICSQLTools.Properties.Resources.Export;
+            this.bbiExport.Id = 1;
+            this.bbiExport.Name = "bbiExport";
+            this.bbiExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExport_ItemClick);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(652, 31);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 408);
+            this.barDockControlBottom.Size = new System.Drawing.Size(652, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 377);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(652, 31);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 377);
+            // 
+            // gridControlMain
+            // 
+            this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlMain.Location = new System.Drawing.Point(0, 31);
+            this.gridControlMain.MainView = this.gridViewMain;
+            this.gridControlMain.MenuManager = this.barManagerMain;
+            this.gridControlMain.Name = "gridControlMain";
+            this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemGridLookUpEditRouteNumber});
+            this.gridControlMain.Size = new System.Drawing.Size(652, 377);
+            this.gridControlMain.TabIndex = 5;
+            this.gridControlMain.UseEmbeddedNavigator = true;
+            this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewMain});
+            // 
+            // gridViewMain
+            // 
+            this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRouteNumber,
+            this.colAposTarget,
+            this.colInvTarget,
+            this.colDSTarget,
+            this.colNPSTarget,
+            this.colAposDayTarget,
+            this.colInvDayTarget,
+            this.colNPSDayTarget,
+            this.colDSDayTarget,
+            this.colAposWeekTarget,
+            this.colInvWeekTarget,
+            this.colNPSWeekTarget,
+            this.colDSWeekTarget,
+            this.colYearNum,
+            this.colMonthNum});
+            this.gridViewMain.GridControl = this.gridControlMain;
+            this.gridViewMain.Name = "gridViewMain";
+            this.gridViewMain.NewItemRowText = "Click here to add a new customer";
+            this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
+            this.gridViewMain.OptionsSelection.InvertSelection = true;
+            this.gridViewMain.OptionsSelection.MultiSelect = true;
+            this.gridViewMain.OptionsView.ColumnAutoWidth = false;
+            this.gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewMain.OptionsView.ShowDetailButtons = false;
+            this.gridViewMain.OptionsView.ShowFooter = true;
+            // 
+            // colRouteNumber
+            // 
+            this.colRouteNumber.Caption = "Route Number";
+            this.colRouteNumber.ColumnEdit = this.repositoryItemGridLookUpEditRouteNumber;
+            this.colRouteNumber.FieldName = "Route Number";
+            this.colRouteNumber.Name = "colRouteNumber";
+            this.colRouteNumber.Visible = true;
+            this.colRouteNumber.VisibleIndex = 0;
+            // 
+            // colAposTarget
+            // 
+            this.colAposTarget.Caption = "Apos Target";
+            this.colAposTarget.FieldName = "AposTarget";
+            this.colAposTarget.Name = "colAposTarget";
+            this.colAposTarget.Visible = true;
+            this.colAposTarget.VisibleIndex = 1;
+            // 
+            // colInvTarget
+            // 
+            this.colInvTarget.Caption = "Inv Target";
+            this.colInvTarget.FieldName = "InvTarget";
+            this.colInvTarget.Name = "colInvTarget";
+            this.colInvTarget.Visible = true;
+            this.colInvTarget.VisibleIndex = 2;
+            // 
+            // colDSTarget
+            // 
+            this.colDSTarget.Caption = "DS Target";
+            this.colDSTarget.FieldName = "DSTarget";
+            this.colDSTarget.Name = "colDSTarget";
+            this.colDSTarget.Visible = true;
+            this.colDSTarget.VisibleIndex = 3;
+            // 
+            // colNPSTarget
+            // 
+            this.colNPSTarget.Caption = "NPS Target";
+            this.colNPSTarget.FieldName = "NPSTarget";
+            this.colNPSTarget.Name = "colNPSTarget";
+            this.colNPSTarget.Visible = true;
+            this.colNPSTarget.VisibleIndex = 4;
+            // 
+            // colAposDayTarget
+            // 
+            this.colAposDayTarget.Caption = "Apos Day Target";
+            this.colAposDayTarget.FieldName = "AposDayTarget";
+            this.colAposDayTarget.Name = "colAposDayTarget";
+            this.colAposDayTarget.Visible = true;
+            this.colAposDayTarget.VisibleIndex = 5;
+            // 
+            // colInvDayTarget
+            // 
+            this.colInvDayTarget.Caption = "Inv Day Target";
+            this.colInvDayTarget.FieldName = "InvDayTarget";
+            this.colInvDayTarget.Name = "colInvDayTarget";
+            this.colInvDayTarget.Visible = true;
+            this.colInvDayTarget.VisibleIndex = 6;
+            // 
+            // colNPSDayTarget
+            // 
+            this.colNPSDayTarget.Caption = "NPS Day Target";
+            this.colNPSDayTarget.FieldName = "NPSDayTarget";
+            this.colNPSDayTarget.Name = "colNPSDayTarget";
+            this.colNPSDayTarget.Visible = true;
+            this.colNPSDayTarget.VisibleIndex = 7;
+            // 
+            // colDSDayTarget
+            // 
+            this.colDSDayTarget.Caption = "DS Day Target";
+            this.colDSDayTarget.FieldName = "DSDayTarget";
+            this.colDSDayTarget.Name = "colDSDayTarget";
+            this.colDSDayTarget.Visible = true;
+            this.colDSDayTarget.VisibleIndex = 8;
+            // 
+            // colAposWeekTarget
+            // 
+            this.colAposWeekTarget.Caption = "Apos Week Target";
+            this.colAposWeekTarget.FieldName = "AposWeekTarget";
+            this.colAposWeekTarget.Name = "colAposWeekTarget";
+            this.colAposWeekTarget.Visible = true;
+            this.colAposWeekTarget.VisibleIndex = 9;
+            // 
+            // colInvWeekTarget
+            // 
+            this.colInvWeekTarget.Caption = "Inv Week Target";
+            this.colInvWeekTarget.FieldName = "InvWeekTarget";
+            this.colInvWeekTarget.Name = "colInvWeekTarget";
+            this.colInvWeekTarget.Visible = true;
+            this.colInvWeekTarget.VisibleIndex = 10;
+            // 
+            // colNPSWeekTarget
+            // 
+            this.colNPSWeekTarget.Caption = "NPS Week Target";
+            this.colNPSWeekTarget.FieldName = "NPSWeekTarget";
+            this.colNPSWeekTarget.Name = "colNPSWeekTarget";
+            this.colNPSWeekTarget.Visible = true;
+            this.colNPSWeekTarget.VisibleIndex = 11;
+            // 
+            // colDSWeekTarget
+            // 
+            this.colDSWeekTarget.Caption = "DS Week Target";
+            this.colDSWeekTarget.FieldName = "DSWeekTarget";
+            this.colDSWeekTarget.Name = "colDSWeekTarget";
+            this.colDSWeekTarget.Visible = true;
+            this.colDSWeekTarget.VisibleIndex = 12;
+            // 
+            // colYearNum
+            // 
+            this.colYearNum.Caption = "Year Number";
+            this.colYearNum.FieldName = "YearNum";
+            this.colYearNum.Name = "colYearNum";
+            this.colYearNum.Visible = true;
+            this.colYearNum.VisibleIndex = 13;
+            // 
+            // colMonthNum
+            // 
+            this.colMonthNum.Caption = "Month Number";
+            this.colMonthNum.FieldName = "MonthNum";
+            this.colMonthNum.Name = "colMonthNum";
+            this.colMonthNum.Visible = true;
+            this.colMonthNum.VisibleIndex = 14;
+            // 
+            // XPSCS
+            // 
+            this.XPSCS.AllowEdit = true;
+            this.XPSCS.AllowNew = true;
+            this.XPSCS.AllowRemove = true;
+            this.XPSCS.DeleteObjectOnRemove = true;
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.TargetNCEDataTable);
+            this.XPSCS.Session = this.UOW;
+            // 
+            // repositoryItemGridLookUpEditRouteNumber
+            // 
+            this.repositoryItemGridLookUpEditRouteNumber.AutoHeight = false;
+            this.repositoryItemGridLookUpEditRouteNumber.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEditRouteNumber.DataSource = this.routeInfoBindingSource;
+            this.repositoryItemGridLookUpEditRouteNumber.DisplayMember = "Route Number";
+            this.repositoryItemGridLookUpEditRouteNumber.Name = "repositoryItemGridLookUpEditRouteNumber";
+            this.repositoryItemGridLookUpEditRouteNumber.NullText = "";
+            this.repositoryItemGridLookUpEditRouteNumber.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.repositoryItemGridLookUpEditRouteNumber.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemGridLookUpEditRouteNumber.ValueMember = "Route Number";
+            this.repositoryItemGridLookUpEditRouteNumber.View = this.gridView6;
+            // 
+            // gridView6
+            // 
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // dsQry
+            // 
+            this.dsQry.DataSetName = "dsQry";
+            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // routeInfoBindingSource
+            // 
+            this.routeInfoBindingSource.DataMember = "RouteInfo";
+            this.routeInfoBindingSource.DataSource = this.dsQry;
+            // 
+            // routeInfoTableAdapter
+            // 
+            this.routeInfoTableAdapter.ClearBeforeFill = true;
+            // 
+            // TargetNCEEditorUC
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gridControlMain);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.Name = "TargetNCEEditorUC";
+            this.Size = new System.Drawing.Size(652, 408);
+            this.Load += new System.EventHandler(this.RouteEditorUC_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRouteNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routeInfoBindingSource)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private DevExpress.Xpo.UnitOfWork UOW;
+        private DevExpress.XtraBars.PopupMenu popupMenuMain;
+        private DevExpress.XtraBars.BarManager barManagerMain;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarButtonItem bbiSave;
+        private DevExpress.XtraBars.BarButtonItem bbiExport;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraGrid.GridControl gridControlMain;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
+        private DevExpress.Xpo.XPServerCollectionSource XPSCS;
+        private DevExpress.XtraGrid.Columns.GridColumn colRouteNumber;
+        private DevExpress.XtraGrid.Columns.GridColumn colAposTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colDSTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colNPSTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colAposDayTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvDayTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colNPSDayTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colDSDayTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colAposWeekTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvWeekTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colNPSWeekTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colDSWeekTarget;
+        private DevExpress.XtraGrid.Columns.GridColumn colYearNum;
+        private DevExpress.XtraGrid.Columns.GridColumn colMonthNum;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditRouteNumber;
+        private System.Windows.Forms.BindingSource routeInfoBindingSource;
+        private NICSQLTools.Data.dsQry dsQry;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private NICSQLTools.Data.dsQryTableAdapters.RouteInfoTableAdapter routeInfoTableAdapter;
+    }
+}

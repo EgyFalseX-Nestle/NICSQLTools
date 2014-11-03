@@ -43,6 +43,19 @@ _______________________________________________
 
             DataManager.SetAllCommandTimeouts(customerInfoTableAdapter, DataManager.ConnectionTimeout);
         }
+        private void ShowHideProgress(bool ShowHide)
+        {
+            if (ShowHide)
+                PnlProg.Invoke(new MethodInvoker(() => { PnlProg.Show(); layoutControlItemPnlProg.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always; }));
+            else
+                PnlProg.Invoke(new MethodInvoker(() => { PnlProg.Hide(); layoutControlItemPnlProg.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never; }));
+            Application.DoEvents();
+        }
+        private void ChangeProgressCaption(string Caption)
+        {
+            PnlProg.Invoke(new MethodInvoker(() => { PnlProg.Caption = Caption; }));
+            Application.DoEvents();
+        }
         private bool ImportDaysFromExcel()
         {
             //return false;
@@ -53,14 +66,14 @@ _______________________________________________
 
             //if (SSM.IsSplashFormVisible)
             //    SSM.CloseWaitForm();
-            SSM.ShowWaitForm();
+            ShowHideProgress(true);
             this.Invoke(new MethodInvoker(() =>
             {
                 for (int i = 0; i < lbcFilePath.ItemCount; i++)
                 {
                     if (File.Exists(lbcFilePath.Items[i].ToString()))
                     {
-                        SSM.SetWaitFormDescription(String.Format("Loading Excel File [{0}] Contains[1 of 1]", (i + 1)));
+                        ChangeProgressCaption(String.Format("Loading Excel File [{0}] Contains[1 of 1]", (i + 1)));
                         DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                         {
@@ -74,8 +87,7 @@ _______________________________________________
 
             if (dtExcel.Rows.Count == 0)
             {
-                if (SSM.IsSplashFormVisible)
-                    SSM.CloseWaitForm();
+                ShowHideProgress(false);
                 AddLog("Importing Aborted");
                 MsgDlg.Show("No Data Found", MsgDlg.MessageType.Error);
                 return false;
@@ -96,7 +108,7 @@ _______________________________________________
                 ProgressBarMain.EditValue = ProcessedCounter;
             }));
 
-            SSM.CloseWaitForm();
+            ShowHideProgress(false);
             foreach (DataRow row in dtExcel.Rows)
             {
                 //Update UI
@@ -130,9 +142,8 @@ _______________________________________________
                 dsData.CustomerInfo.AddCustomerInfoRow(SqlRow);
                 SqlRow.EndEdit();
             }
-
-            SSM.ShowWaitForm(); Application.DoEvents();
-            SSM.SetWaitFormDescription("Updating CustomerInfo ..."); Application.DoEvents();
+            ShowHideProgress(true);
+            ChangeProgressCaption("Updating CustomerInfo ...");
             if (!CustomerInfo.UpdateBulkCustomerInfo(cmd, dsData.CustomerInfo))
                 MsgDlg.Show("Update Customer Info Failed", MsgDlg.MessageType.Error);
             else
@@ -141,9 +152,7 @@ _______________________________________________
                 output = true;
             }
             dsData.CustomerInfo.AcceptChanges();
-            SSM.CloseWaitForm();
-
-            AddLog("New Data Saved " + dsData.CustomerInfo.Count);
+            ShowHideProgress(false);
 
             dtExcel.Rows.Clear(); dtExcel.Dispose(); dtExcel = null;
             dsData.CustomerInfo.Clear(); dsData.CustomerInfo.Dispose();

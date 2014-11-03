@@ -67,8 +67,8 @@
       <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="ASM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="RSM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Sales District]" Member="Sales_District" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Sales District]" Member="Sales_District" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Period" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
@@ -81,7 +81,7 @@
       <Column Name="Updated" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[Annex rate]" Member="Annex_rate" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="Annex" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="[New Quanteite]" Member="New_Quanteite" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[New Quanteite]" Member="New_Quanteite" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="yeard" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="[Route &amp; Sold]" Member="Route___Sold" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="[Condition value]" Member="Condition_value" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -110,9 +110,15 @@
       <Column Name="[FRZ brand]" Member="FRZ_brand" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[Brand Rang]" Member="Brand_Rang" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[#SDN-Type]" Member="_SDN_Type" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="AutoKey" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="[Base Group]" Member="Base_Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WOR_Period" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SalesDistrict1Id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SalesDistrict2Id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SalesDistrict3Id" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PriceCategory" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NCE_Project" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

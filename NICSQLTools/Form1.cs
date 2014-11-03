@@ -16,5 +16,11 @@ namespace NICSQLTools
         {
             InitializeComponent();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            progressPanel1.Visible = !progressPanel1.Visible;
+            simpleButton1.Visible = !simpleButton1.Visible;
+        }
     }
 }

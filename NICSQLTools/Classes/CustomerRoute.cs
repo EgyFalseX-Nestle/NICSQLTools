@@ -50,12 +50,12 @@ namespace NICSQLTools
         {
             bool outPut = false;
             DateTime dtStart = DateTime.Now;
-            const string BulkTableName = "CustomerRoute";
+            const string BulkTableName = "dbo.CustomerRoute";
 
             try
             {
                 //Delete All Recored Before Inserting
-                cmd.CommandText = string.Format("DELETE FROM CustomerRoute WHERE YearNum = {0} AND MonthNum = {1}", YearNum, MonthNum);
+                cmd.CommandText = string.Format("DELETE FROM dbo.CustomerRoute WHERE YearNum = {0} AND MonthNum = {1}", YearNum, MonthNum);
                 cmd.ExecuteNonQuery();
 
                 SqlBulkCopy bulkCopy = new SqlBulkCopy(cmd.Connection);

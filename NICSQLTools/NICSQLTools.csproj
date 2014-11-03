@@ -51,7 +51,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>NICAccessTools.ico</ApplicationIcon>
+    <ApplicationIcon>NICSQLTools.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v13.2">
@@ -181,6 +181,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\UMD.cs" />
+    <Compile Include="Classes\CustomerSSInfo.cs" />
+    <Compile Include="Classes\DMG_Master.cs" />
+    <Compile Include="Classes\DMG_Reason.cs" />
     <Compile Include="Classes\Equipment.cs" />
     <Compile Include="Classes\CustomerInfo.cs" />
     <Compile Include="Classes\CustomerRoute.cs" />
@@ -252,6 +256,42 @@
     </Compile>
     <Compile Include="Views\Data\CustomerEditorUC.Designer.cs">
       <DependentUpon>CustomerEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TargetNCEEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TargetNCEEditorUC.Designer.cs">
+      <DependentUpon>TargetNCEEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TargetKPIEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TargetKPIEditorUC.Designer.cs">
+      <DependentUpon>TargetKPIEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportUMDUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportUMDUC.Designer.cs">
+      <DependentUpon>ImportUMDUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportCustomerSSInfoUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportCustomerSSInfoUC.Designer.cs">
+      <DependentUpon>ImportCustomerSSInfoUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportDMG_MasterUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportDMG_MasterUC.Designer.cs">
+      <DependentUpon>ImportDMG_MasterUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportDamageReasonUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportDamageReasonUC.Designer.cs">
+      <DependentUpon>ImportDamageReasonUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportEquipmentUC.cs">
       <SubType>UserControl</SubType>
@@ -472,6 +512,24 @@
     <Compile Include="Views\Qry\Qrysp_DistributionNPDV1UC.Designer.cs">
       <DependentUpon>Qrysp_DistributionNPDV1UC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Data\TargetNCEEditorUC.resx">
+      <DependentUpon>TargetNCEEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TargetKPIEditorUC.resx">
+      <DependentUpon>TargetKPIEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportUMDUC.resx">
+      <DependentUpon>ImportUMDUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportCustomerSSInfoUC.resx">
+      <DependentUpon>ImportCustomerSSInfoUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportDMG_MasterUC.resx">
+      <DependentUpon>ImportDMG_MasterUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportDamageReasonUC.resx">
+      <DependentUpon>ImportDamageReasonUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportEquipmentUC.resx">
       <DependentUpon>ImportEquipmentUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -679,7 +737,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
-    <Content Include="NICAccessTools.ico" />
+    <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\TargetNCE128.png" />
+    <None Include="Resources\TargetNCE64.png" />
+    <None Include="Resources\TargetKPI128.png" />
+    <None Include="Resources\TargetKPI64.png" />
+    <None Include="Resources\info_32x32.png" />
     <None Include="Resources\ImportR3_128.png" />
     <None Include="Resources\ImportR3_64.png" />
     <None Include="Resources\NestleBanner.jpg" />

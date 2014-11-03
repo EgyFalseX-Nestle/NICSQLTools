@@ -9,6 +9,7 @@ namespace NICSQLTools.Uti
     {
         public struct UserInfo
         {
+            public int UserId;
             public string UserName;
             public string RealName;
             public bool IsAdmin;

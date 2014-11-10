@@ -232,11 +232,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ChartControlFrm.cs">
+    <Compile Include="Views\Dashboard\MonthlyKPIFrm.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\ChartControlFrm.Designer.cs">
-      <DependentUpon>ChartControlFrm.cs</DependentUpon>
+    <Compile Include="Views\Dashboard\MonthlyKPIFrm.Designer.cs">
+      <DependentUpon>MonthlyKPIFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ChartControlUC.cs">
       <SubType>UserControl</SubType>
@@ -563,8 +563,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChartControlFrm.resx">
-      <DependentUpon>ChartControlFrm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Dashboard\MonthlyKPIFrm.resx">
+      <DependentUpon>MonthlyKPIFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChartControlUC.resx">
       <DependentUpon>ChartControlUC.cs</DependentUpon>

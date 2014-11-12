@@ -55,7 +55,7 @@ namespace NICSQLTools.Views.Data
         }
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
+            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
 
             DevExpress.Xpo.AsyncCommitCallback CommitCallBack = new DevExpress.Xpo.AsyncCommitCallback((o) =>
@@ -81,7 +81,19 @@ namespace NICSQLTools.Views.Data
             // Open the Preview window.
             gridControlMain.ShowRibbonPrintPreview();
         }
+        private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
+                return;
+            UOW.DropIdentityMap();
+            UOW.DropChanges();
+            XPSCS.Reload();
+            gridViewMain.RefreshData();
+
+        }
         #endregion
+
+        
 
     }
 }

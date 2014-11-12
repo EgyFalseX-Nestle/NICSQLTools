@@ -50,6 +50,7 @@
             this.colSalesDistrict21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBrandRoute = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditBrandRoute = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.brandRouteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMonthNum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYearNum = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,8 +62,8 @@
             this.colTPPBudget = new DevExpress.XtraGrid.Columns.GridColumn();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.salesDistrict2TableAdapter = new NICSQLTools.Data.dsQryTableAdapters.SalesDistrict2TableAdapter();
-            this.brandRouteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.brandRouteTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.BrandRouteTableAdapter();
+            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
@@ -73,9 +74,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditBrandRoute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brandRouteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brandRouteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // UOW
@@ -100,8 +101,9 @@
             this.barManagerMain.Form = this;
             this.barManagerMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbiSave,
-            this.bbiExport});
-            this.barManagerMain.MaxItemId = 2;
+            this.bbiExport,
+            this.bbiRefresh});
+            this.barManagerMain.MaxItemId = 3;
             // 
             // bar1
             // 
@@ -111,13 +113,14 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiSave),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiExport)});
             this.bar1.Text = "Custom 2";
             // 
             // bbiSave
             // 
             this.bbiSave.Caption = "Save";
-            this.bbiSave.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.Glyph")));
+            this.bbiSave.Glyph = global::NICSQLTools.Properties.Resources.saveall_16x16;
             this.bbiSave.Id = 0;
             this.bbiSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.bbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.LargeGlyph")));
@@ -275,6 +278,11 @@
             this.repositoryItemGridLookUpEditBrandRoute.ValueMember = "Brand Route";
             this.repositoryItemGridLookUpEditBrandRoute.View = this.repositoryItemGridLookUpEdit1View;
             // 
+            // brandRouteBindingSource
+            // 
+            this.brandRouteBindingSource.DataMember = "BrandRoute";
+            this.brandRouteBindingSource.DataSource = this.dsQry;
+            // 
             // repositoryItemGridLookUpEdit1View
             // 
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
@@ -362,14 +370,17 @@
             // 
             this.salesDistrict2TableAdapter.ClearBeforeFill = true;
             // 
-            // brandRouteBindingSource
-            // 
-            this.brandRouteBindingSource.DataMember = "BrandRoute";
-            this.brandRouteBindingSource.DataSource = this.dsQry;
-            // 
             // brandRouteTableAdapter
             // 
             this.brandRouteTableAdapter.ClearBeforeFill = true;
+            // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+            this.bbiRefresh.Id = 2;
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // TargetKPIEditorUC
             // 
@@ -393,9 +404,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditBrandRoute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brandRouteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brandRouteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,5 +446,6 @@
         private NICSQLTools.Data.dsQryTableAdapters.SalesDistrict2TableAdapter salesDistrict2TableAdapter;
         private System.Windows.Forms.BindingSource brandRouteBindingSource;
         private NICSQLTools.Data.dsQryTableAdapters.BrandRouteTableAdapter brandRouteTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
     }
 }

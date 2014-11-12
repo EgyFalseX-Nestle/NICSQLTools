@@ -160,7 +160,17 @@ namespace System.Windows.Forms
                 default:
                     break;
             }
-            Alert.Show(CallForm, info);
+            if (!CallForm.IsDisposed & CallForm.InvokeRequired)
+            {
+                CallForm.Invoke(new MethodInvoker(() => 
+                {
+                    Alert.Show(CallForm, info);
+                }));
+            }
+            else
+                Alert.Show(CallForm, info);
+
+            
             //Application.OpenForms[0]
         }
         private void msgDlg_Load(object sender, EventArgs e)

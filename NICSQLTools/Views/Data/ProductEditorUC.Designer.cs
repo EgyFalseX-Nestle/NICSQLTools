@@ -103,7 +103,6 @@
             this.colMaterialName2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaterialStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
@@ -112,7 +111,9 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerTypeId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
@@ -130,8 +131,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerGroupId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -787,15 +788,6 @@
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
-            // XPSCS
-            // 
-            this.XPSCS.AllowEdit = true;
-            this.XPSCS.AllowNew = true;
-            this.XPSCS.AllowRemove = true;
-            this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData._0_4__Product_DetailsDataTable);
-            this.XPSCS.Session = this.UOW;
-            // 
             // barManagerMain
             // 
             this.barManagerMain.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
@@ -807,8 +799,9 @@
             this.barManagerMain.Form = this;
             this.barManagerMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbiSave,
-            this.bbiExport});
-            this.barManagerMain.MaxItemId = 2;
+            this.bbiExport,
+            this.bbiRefresh});
+            this.barManagerMain.MaxItemId = 3;
             // 
             // bar1
             // 
@@ -818,13 +811,14 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiSave),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbiExport)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiExport),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiRefresh)});
             this.bar1.Text = "Custom 2";
             // 
             // bbiSave
             // 
             this.bbiSave.Caption = "Save";
-            this.bbiSave.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.Glyph")));
+            this.bbiSave.Glyph = global::NICSQLTools.Properties.Resources.saveall_16x16;
             this.bbiSave.Id = 0;
             this.bbiSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.bbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.LargeGlyph")));
@@ -867,10 +861,27 @@
             this.barDockControlRight.Location = new System.Drawing.Point(679, 31);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 360);
             // 
+            // XPSCS
+            // 
+            this.XPSCS.AllowEdit = true;
+            this.XPSCS.AllowNew = true;
+            this.XPSCS.AllowRemove = true;
+            this.XPSCS.DeleteObjectOnRemove = true;
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData._0_4__Product_DetailsDataTable);
+            this.XPSCS.Session = this.UOW;
+            // 
             // popupMenuMain
             // 
             this.popupMenuMain.Manager = this.barManagerMain;
             this.popupMenuMain.Name = "popupMenuMain";
+            // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+            this.bbiRefresh.Id = 2;
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // ProductEditorUC
             // 
@@ -901,8 +912,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerGroupId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
             this.ResumeLayout(false);
 
@@ -993,5 +1004,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBaseGroup;
         private DevExpress.XtraGrid.Columns.GridColumn colMaterialName2;
         private DevExpress.XtraGrid.Columns.GridColumn colMaterialStatus;
+        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
     }
 }

@@ -106,6 +106,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.levelCCSDTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.LevelCCSDTableAdapter();
+            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubchannel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subchannelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
@@ -710,8 +711,9 @@
             this.barManagerMain.Form = this;
             this.barManagerMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbiSave,
-            this.bbiExport});
-            this.barManagerMain.MaxItemId = 2;
+            this.bbiExport,
+            this.bbiRefresh});
+            this.barManagerMain.MaxItemId = 3;
             // 
             // bar1
             // 
@@ -721,13 +723,14 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiSave),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiExport)});
             this.bar1.Text = "Custom 2";
             // 
             // bbiSave
             // 
             this.bbiSave.Caption = "Save";
-            this.bbiSave.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.Glyph")));
+            this.bbiSave.Glyph = global::NICSQLTools.Properties.Resources.saveall_16x16;
             this.bbiSave.Id = 0;
             this.bbiSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.bbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.LargeGlyph")));
@@ -778,6 +781,14 @@
             // levelCCSDTableAdapter
             // 
             this.levelCCSDTableAdapter.ClearBeforeFill = true;
+            // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+            this.bbiRefresh.Id = 2;
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // CustomerEditorUC
             // 
@@ -900,5 +911,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.PopupMenu popupMenuMain;
         private NICSQLTools.Data.dsQryTableAdapters.LevelCCSDTableAdapter levelCCSDTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
     }
 }

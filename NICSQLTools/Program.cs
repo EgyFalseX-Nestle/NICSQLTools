@@ -25,6 +25,7 @@ namespace NICSQLTools
             //UserLookAndFeel.Default.SkinName = "DevExpress Dark Style";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
 
             Log4Net.L4N.Init();
             DataManager.PerformChangeExe(); 
@@ -39,10 +40,10 @@ namespace NICSQLTools
                 DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); DevExpress.XtraSplashScreen.SplashScreenManager.Default.SetWaitFormCaption("Updating .......");
                 DataManager.PerformUpdate();
                 DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm(false);
-                //MessageBox.Show("Sometime system give null route we should fix it");
-                //Application.Run(new NICSQLTools.MainFrm());
-                Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
+
+                
                 //Application.Run(new Form1());
+                Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
             }
             
         }

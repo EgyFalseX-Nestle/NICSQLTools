@@ -108,6 +108,22 @@ namespace NICSQLTools.Forms.Main
             {
                 e.Control = new Views.Data.CustomerEditorUC();
             }
+            else if (e.Document == docRuleUser)
+            {
+                e.Control = new Views.Permission.UserUC();
+            }
+            else if (e.Document == docRuleRule)
+            {
+                e.Control = new Views.Permission.RuleUC();
+            }
+            else if (e.Document == docRuleUserRule)
+            {
+                e.Control = new Views.Permission.UserRuleUC();
+            }
+            else if (e.Document == docRuleRuleDetails)
+            {
+                e.Control = new Views.Permission.RuleDetailsUC();
+            }
             else if (e.Document == docEditorsTargetKPI)
             {
                 e.Control = new Views.Data.TargetKPIEditorUC();

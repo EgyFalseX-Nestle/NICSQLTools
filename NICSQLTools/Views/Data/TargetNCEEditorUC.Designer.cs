@@ -43,6 +43,10 @@
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRouteNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemGridLookUpEditRouteNumber = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.routeInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsQry = new NICSQLTools.Data.dsQry();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAposTarget = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInvTarget = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDSTarget = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,21 +62,18 @@
             this.colYearNum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMonthNum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.repositoryItemGridLookUpEditRouteNumber = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dsQry = new NICSQLTools.Data.dsQry();
-            this.routeInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.routeInfoTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.RouteInfoTableAdapter();
+            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRouteNumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeInfoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             this.SuspendLayout();
             // 
             // UOW
@@ -97,8 +98,9 @@
             this.barManagerMain.Form = this;
             this.barManagerMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbiSave,
-            this.bbiExport});
-            this.barManagerMain.MaxItemId = 2;
+            this.bbiExport,
+            this.bbiRefresh});
+            this.barManagerMain.MaxItemId = 3;
             // 
             // bar1
             // 
@@ -108,13 +110,14 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiSave),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiRefresh),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiExport)});
             this.bar1.Text = "Custom 2";
             // 
             // bbiSave
             // 
             this.bbiSave.Caption = "Save";
-            this.bbiSave.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.Glyph")));
+            this.bbiSave.Glyph = global::NICSQLTools.Properties.Resources.saveall_16x16;
             this.bbiSave.Id = 0;
             this.bbiSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.bbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.LargeGlyph")));
@@ -211,6 +214,37 @@
             this.colRouteNumber.Name = "colRouteNumber";
             this.colRouteNumber.Visible = true;
             this.colRouteNumber.VisibleIndex = 0;
+            // 
+            // repositoryItemGridLookUpEditRouteNumber
+            // 
+            this.repositoryItemGridLookUpEditRouteNumber.AutoHeight = false;
+            this.repositoryItemGridLookUpEditRouteNumber.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEditRouteNumber.DataSource = this.routeInfoBindingSource;
+            this.repositoryItemGridLookUpEditRouteNumber.DisplayMember = "Route Number";
+            this.repositoryItemGridLookUpEditRouteNumber.Name = "repositoryItemGridLookUpEditRouteNumber";
+            this.repositoryItemGridLookUpEditRouteNumber.NullText = "";
+            this.repositoryItemGridLookUpEditRouteNumber.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.repositoryItemGridLookUpEditRouteNumber.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemGridLookUpEditRouteNumber.ValueMember = "Route Number";
+            this.repositoryItemGridLookUpEditRouteNumber.View = this.gridView6;
+            // 
+            // routeInfoBindingSource
+            // 
+            this.routeInfoBindingSource.DataMember = "RouteInfo";
+            this.routeInfoBindingSource.DataSource = this.dsQry;
+            // 
+            // dsQry
+            // 
+            this.dsQry.DataSetName = "dsQry";
+            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView6
+            // 
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
             // 
             // colAposTarget
             // 
@@ -333,40 +367,17 @@
             this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.TargetNCEDataTable);
             this.XPSCS.Session = this.UOW;
             // 
-            // repositoryItemGridLookUpEditRouteNumber
-            // 
-            this.repositoryItemGridLookUpEditRouteNumber.AutoHeight = false;
-            this.repositoryItemGridLookUpEditRouteNumber.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditRouteNumber.DataSource = this.routeInfoBindingSource;
-            this.repositoryItemGridLookUpEditRouteNumber.DisplayMember = "Route Number";
-            this.repositoryItemGridLookUpEditRouteNumber.Name = "repositoryItemGridLookUpEditRouteNumber";
-            this.repositoryItemGridLookUpEditRouteNumber.NullText = "";
-            this.repositoryItemGridLookUpEditRouteNumber.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
-            this.repositoryItemGridLookUpEditRouteNumber.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditRouteNumber.ValueMember = "Route Number";
-            this.repositoryItemGridLookUpEditRouteNumber.View = this.gridView6;
-            // 
-            // gridView6
-            // 
-            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView6.Name = "gridView6";
-            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView6.OptionsView.ShowGroupPanel = false;
-            // 
-            // dsQry
-            // 
-            this.dsQry.DataSetName = "dsQry";
-            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // routeInfoBindingSource
-            // 
-            this.routeInfoBindingSource.DataMember = "RouteInfo";
-            this.routeInfoBindingSource.DataSource = this.dsQry;
-            // 
             // routeInfoTableAdapter
             // 
             this.routeInfoTableAdapter.ClearBeforeFill = true;
+            // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+            this.bbiRefresh.Id = 2;
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // TargetNCEEditorUC
             // 
@@ -385,11 +396,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRouteNumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeInfoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,5 +440,6 @@
         private NICSQLTools.Data.dsQry dsQry;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
         private NICSQLTools.Data.dsQryTableAdapters.RouteInfoTableAdapter routeInfoTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
     }
 }

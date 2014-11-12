@@ -221,16 +221,36 @@
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\dsORMDataCode\StoredProcHelper.cs" />
+    <Compile Include="Data\dsQry.cs">
+      <DependentUpon>dsQry.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\dsQry.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsQry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsSP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSP.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardDesignerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardDesignerUC.Designer.cs">
+      <DependentUpon>DashboardDesignerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardViewerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardViewerUC.Designer.cs">
+      <DependentUpon>DashboardViewerUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\MonthlyKPIFrm.cs">
       <SubType>Component</SubType>
@@ -476,6 +496,30 @@
     <Compile Include="Forms\WaitWindowFrm.designer.cs">
       <DependentUpon>WaitWindowFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Permission\RuleUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Permission\RuleUC.Designer.cs">
+      <DependentUpon>RuleUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Permission\RuleDetailsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Permission\RuleDetailsUC.Designer.cs">
+      <DependentUpon>RuleDetailsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Permission\UserRuleUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Permission\UserRuleUC.Designer.cs">
+      <DependentUpon>UserRuleUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Permission\UserUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Permission\UserUC.Designer.cs">
+      <DependentUpon>UserUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Qry\FinalDataPivotUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -512,6 +556,12 @@
     <Compile Include="Views\Qry\Qrysp_DistributionNPDV1UC.Designer.cs">
       <DependentUpon>Qrysp_DistributionNPDV1UC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Dashboard\DashboardDesignerUC.resx">
+      <DependentUpon>DashboardDesignerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\DashboardViewerUC.resx">
+      <DependentUpon>DashboardViewerUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\TargetNCEEditorUC.resx">
       <DependentUpon>TargetNCEEditorUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -538,6 +588,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportCustomerRouteUC.resx">
       <DependentUpon>ImportCustomerRouteUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Permission\RuleUC.resx">
+      <DependentUpon>RuleUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Permission\RuleDetailsUC.resx">
+      <DependentUpon>RuleDetailsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Permission\UserRuleUC.resx">
+      <DependentUpon>UserRuleUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Permission\UserUC.resx">
+      <DependentUpon>UserUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\FinalDataPivotUC.resx">
       <DependentUpon>FinalDataPivotUC.cs</DependentUpon>
@@ -701,6 +763,17 @@
     <None Include="Data\dsQry.xss">
       <DependentUpon>dsQry.xsd</DependentUpon>
     </None>
+    <None Include="Data\dsSP.xsc">
+      <DependentUpon>dsSP.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsSP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\dsSP.xss">
+      <DependentUpon>dsSP.xsd</DependentUpon>
+    </None>
     <None Include="Log4Net\NICSQLToolsLog4Net.config">
       <SubType>Designer</SubType>
     </None>
@@ -738,6 +811,22 @@
     </Content>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\Dashboard128.png" />
+    <None Include="Resources\Reports128.png" />
+    <None Include="Resources\Dashboard64.png" />
+    <None Include="Resources\Reports64.png" />
+    <None Include="Resources\Rule128.png" />
+    <None Include="Resources\RuleDetails128.png" />
+    <None Include="Resources\User128.png" />
+    <None Include="Resources\UserRule128.png" />
+    <None Include="Resources\Rule64.png" />
+    <None Include="Resources\RuleDetails64.png" />
+    <None Include="Resources\User64.png" />
+    <None Include="Resources\UserRule64.png" />
+    <None Include="Resources\refresh2_32x32.png" />
+    <None Include="Resources\refresh2_16x16.png" />
+    <None Include="Resources\saveall_32x32.png" />
+    <None Include="Resources\saveall_16x16.png" />
     <None Include="Resources\TargetNCE128.png" />
     <None Include="Resources\TargetNCE64.png" />
     <None Include="Resources\TargetKPI128.png" />

@@ -16,7 +16,7 @@ namespace NICSQLTools.Forms.Data
     public partial class FinalDataPivotFrm : DevExpress.XtraEditors.XtraForm
     {
         #region - Var -
-        NICSQLTools.Data.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.dsLinqDataDataContext();
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         #endregion
         #region - Fun -
         public FinalDataPivotFrm()

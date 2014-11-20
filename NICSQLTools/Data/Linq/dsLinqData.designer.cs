@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NICSQLTools.Data
+namespace NICSQLTools.Data.Linq
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -30,6 +30,15 @@ namespace NICSQLTools.Data
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertAppDashboardD(AppDashboardD instance);
+    partial void UpdateAppDashboardD(AppDashboardD instance);
+    partial void DeleteAppDashboardD(AppDashboardD instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
+    partial void InsertAppDashboardSchema(AppDashboardSchema instance);
+    partial void UpdateAppDashboardSchema(AppDashboardSchema instance);
+    partial void DeleteAppDashboardSchema(AppDashboardSchema instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -67,6 +76,30 @@ namespace NICSQLTools.Data
 			get
 			{
 				return this.GetTable<_0_0_Final_Data_All>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AppDashboardD> AppDashboardDs
+		{
+			get
+			{
+				return this.GetTable<AppDashboardD>();
+			}
+		}
+		
+		public System.Data.Linq.Table<User> Users
+		{
+			get
+			{
+				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AppDashboardSchema> AppDashboardSchemas
+		{
+			get
+			{
+				return this.GetTable<AppDashboardSchema>();
 			}
 		}
 	}
@@ -2182,6 +2215,360 @@ namespace NICSQLTools.Data
 				{
 					this._NCE_Project = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDashboardDS")]
+	public partial class AppDashboardD : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DatasourceID;
+		
+		private string _DatasourceName;
+		
+		private string _DatasourceSPName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDatasourceIDChanging(int value);
+    partial void OnDatasourceIDChanged();
+    partial void OnDatasourceNameChanging(string value);
+    partial void OnDatasourceNameChanged();
+    partial void OnDatasourceSPNameChanging(string value);
+    partial void OnDatasourceSPNameChanged();
+    #endregion
+		
+		public AppDashboardD()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int DatasourceID
+		{
+			get
+			{
+				return this._DatasourceID;
+			}
+			set
+			{
+				if ((this._DatasourceID != value))
+				{
+					this.OnDatasourceIDChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceID = value;
+					this.SendPropertyChanged("DatasourceID");
+					this.OnDatasourceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceName", DbType="NVarChar(50)")]
+		public string DatasourceName
+		{
+			get
+			{
+				return this._DatasourceName;
+			}
+			set
+			{
+				if ((this._DatasourceName != value))
+				{
+					this.OnDatasourceNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceName = value;
+					this.SendPropertyChanged("DatasourceName");
+					this.OnDatasourceNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceSPName", DbType="NVarChar(50)")]
+		public string DatasourceSPName
+		{
+			get
+			{
+				return this._DatasourceSPName;
+			}
+			set
+			{
+				if ((this._DatasourceSPName != value))
+				{
+					this.OnDatasourceSPNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceSPName = value;
+					this.SendPropertyChanged("DatasourceSPName");
+					this.OnDatasourceSPNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserID;
+		
+		private string _UserName;
+		
+		private string _RealName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    #endregion
+		
+		public User()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDashboardSchema")]
+	public partial class AppDashboardSchema : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DashboardSchemaId;
+		
+		private string _DashboardSchemaName;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDashboardSchemaIdChanging(int value);
+    partial void OnDashboardSchemaIdChanged();
+    partial void OnDashboardSchemaNameChanging(string value);
+    partial void OnDashboardSchemaNameChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    #endregion
+		
+		public AppDashboardSchema()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DashboardSchemaId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int DashboardSchemaId
+		{
+			get
+			{
+				return this._DashboardSchemaId;
+			}
+			set
+			{
+				if ((this._DashboardSchemaId != value))
+				{
+					this.OnDashboardSchemaIdChanging(value);
+					this.SendPropertyChanging();
+					this._DashboardSchemaId = value;
+					this.SendPropertyChanged("DashboardSchemaId");
+					this.OnDashboardSchemaIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DashboardSchemaName", DbType="NVarChar(50)")]
+		public string DashboardSchemaName
+		{
+			get
+			{
+				return this._DashboardSchemaName;
+			}
+			set
+			{
+				if ((this._DashboardSchemaName != value))
+				{
+					this.OnDashboardSchemaNameChanging(value);
+					this.SendPropertyChanging();
+					this._DashboardSchemaName = value;
+					this.SendPropertyChanged("DashboardSchemaName");
+					this.OnDashboardSchemaNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

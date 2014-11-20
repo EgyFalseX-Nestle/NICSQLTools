@@ -15,7 +15,7 @@ namespace NICSQLTools.Views.Qry
     public partial class FinalDataPivotUC : DevExpress.XtraEditors.XtraUserControl
     {
         #region - Var -
-        NICSQLTools.Data.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.dsLinqDataDataContext();
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         #endregion
         #region - Fun -
         public FinalDataPivotUC()

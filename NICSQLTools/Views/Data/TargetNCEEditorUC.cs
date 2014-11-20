@@ -4,13 +4,14 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
+using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Data
 {
     public partial class TargetNCEEditorUC : XtraUserControl
     {
         #region - Var -
-        
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(RouteEditorUC));
         #endregion
         #region - Fun -
         public TargetNCEEditorUC()
@@ -46,9 +47,15 @@ namespace NICSQLTools.Views.Data
             {
                 SplashScreenManager.CloseForm();
                 if (o == null)
+                {
                     MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
+                    Logger.Info("Data Saved ...");
+                }
                 else
+                {
                     MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
+                    Logger.Error(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.InnerException.Message), o.InnerException);
+                }
             };
 
             SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");
@@ -71,7 +78,7 @@ namespace NICSQLTools.Views.Data
             DateTime DateIn = DataManager.defaultInstance.ServerDateTime;
             foreach (DevExpress.Xpo.Metadata.XPDataTableObject item in Rows)
             {
-                item.SetMemberValue("UserIn", DataManager.User.UserId);
+                item.SetMemberValue("UserIn", UserManager.defaultInstance.User.UserId);
                 item.SetMemberValue("DateIn", DateIn);
             }
         }

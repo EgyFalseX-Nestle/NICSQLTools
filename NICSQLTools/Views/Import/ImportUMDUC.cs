@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using System.IO;
 using System.Data.SqlClient;
 using log4net;
+using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Import
 {
@@ -138,7 +139,7 @@ _______________________________________________
                 SqlRow.Name3Ar = row["Name3Ar"].ToString();
                 SqlRow.CityEn = row["CityEn"].ToString();
                 SqlRow.CityAr = row["CityAr"].ToString();
-                SqlRow.UserIn = DataManager.User.UserId;
+                SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
 
                 dsData.UMD.AddUMDRow(SqlRow);
                 SqlRow.EndEdit();

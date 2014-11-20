@@ -160,6 +160,7 @@ namespace System.Windows.Forms
                 default:
                     break;
             }
+            Alert.AutoHeight = true;
             if (!CallForm.IsDisposed & CallForm.InvokeRequired)
             {
                 CallForm.Invoke(new MethodInvoker(() => 

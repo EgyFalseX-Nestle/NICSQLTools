@@ -181,6 +181,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Dashboard.cs" />
+    <Compile Include="Classes\Managers\UserManager.cs" />
     <Compile Include="Classes\UMD.cs" />
     <Compile Include="Classes\CustomerSSInfo.cs" />
     <Compile Include="Classes\DMG_Master.cs" />
@@ -188,11 +190,12 @@
     <Compile Include="Classes\Equipment.cs" />
     <Compile Include="Classes\CustomerInfo.cs" />
     <Compile Include="Classes\CustomerRoute.cs" />
-    <Compile Include="Data\dsData.cs">
+    <Compile Include="Data\dsData1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Data\dsLinqData.designer.cs">
+    <Compile Include="Data\Linq\dsLinqData.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsLinqData.dbml</DependentUpon>
@@ -240,11 +243,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard\AppDashboardDSParamUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\AppDashboardDSParamUC.Designer.cs">
+      <DependentUpon>AppDashboardDSParamUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard\DashboardDesignerUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Dashboard\DashboardDesignerUC.Designer.cs">
       <DependentUpon>DashboardDesignerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardOpenDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardOpenDlg.Designer.cs">
+      <DependentUpon>DashboardOpenDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardSaveNameDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardSaveNameDlg.Designer.cs">
+      <DependentUpon>DashboardSaveNameDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\DashboardViewerUC.cs">
       <SubType>UserControl</SubType>
@@ -271,11 +292,23 @@
       <DependentUpon>ProductEditorFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Log4Net\L4N.cs" />
+    <Compile Include="Views\Dashboard\DashboardSchemaLoadUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardSchemaLoadUC.Designer.cs">
+      <DependentUpon>DashboardSchemaLoadUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Data\CustomerEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Data\CustomerEditorUC.Designer.cs">
       <DependentUpon>CustomerEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\AppDashboardDSUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\AppDashboardDSUC.Designer.cs">
+      <DependentUpon>AppDashboardDSUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\TargetNCEEditorUC.cs">
       <SubType>UserControl</SubType>
@@ -424,11 +457,6 @@
     <Compile Include="Classes\Master.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Managers\DataManager.cs" />
-    <Compile Include="Data\dsData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsData.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Data\SampleData.cs" />
     <Compile Include="Forms\ImportDaysFrm.cs">
       <SubType>Form</SubType>
@@ -556,11 +584,26 @@
     <Compile Include="Views\Qry\Qrysp_DistributionNPDV1UC.Designer.cs">
       <DependentUpon>Qrysp_DistributionNPDV1UC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Dashboard\AppDashboardDSParamUC.resx">
+      <DependentUpon>AppDashboardDSParamUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\DashboardDesignerUC.resx">
       <DependentUpon>DashboardDesignerUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\DashboardOpenDlg.resx">
+      <DependentUpon>DashboardOpenDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\DashboardSaveNameDlg.resx">
+      <DependentUpon>DashboardSaveNameDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\DashboardViewerUC.resx">
       <DependentUpon>DashboardViewerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\AppDashboardDSUC.resx">
+      <DependentUpon>AppDashboardDSUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\DashboardSchemaLoadUC.resx">
+      <DependentUpon>DashboardSchemaLoadUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\TargetNCEEditorUC.resx">
       <DependentUpon>TargetNCEEditorUC.cs</DependentUpon>
@@ -619,7 +662,7 @@
     <EmbeddedResource Include="Views\Qry\Qrysp_DistributionNPDV1UC.resx">
       <DependentUpon>Qrysp_DistributionNPDV1UC.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Data\dsLinqData.dbml.layout">
+    <None Include="Data\Linq\dsLinqData.dbml.layout">
       <DependentUpon>dsLinqData.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Form1.resx">
@@ -738,12 +781,12 @@
     <None Include="Data\dsData.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsData.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsData1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
     </None>
-    <None Include="Data\dsLinqData.dbml">
+    <None Include="Data\Linq\dsLinqData.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>dsLinqData.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
@@ -811,6 +854,19 @@
     </Content>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\save_32x32.png" />
+    <None Include="Resources\open_32x32.png" />
+    <None Include="Resources\addnewdatasource_32x32.png" />
+    <None Include="Resources\addnewdatasource_16x16.png" />
+    <None Include="Resources\new_32x32.png" />
+    <None Include="Resources\refresh2_32x321.png" />
+    <None Include="Resources\AppDashboardDS128.png" />
+    <None Include="Resources\AppDashboardDS64.png" />
+    <None Include="Resources\DashboardDesigner128.png" />
+    <None Include="Resources\DashboardDesigner64.png" />
+    <None Include="Resources\DashboardViewer64.png" />
+    <None Include="Resources\DashboardViewer128.png" />
     <None Include="Resources\Dashboard128.png" />
     <None Include="Resources\Reports128.png" />
     <None Include="Resources\Dashboard64.png" />

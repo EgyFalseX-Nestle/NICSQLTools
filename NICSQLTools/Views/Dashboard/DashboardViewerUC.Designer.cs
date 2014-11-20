@@ -29,115 +29,433 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dashboardViewer1 = new DevExpress.DashboardWin.DashboardViewer(this.components);
-            this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.barMain = new DevExpress.XtraBars.Bar();
-            this.bar3 = new DevExpress.XtraBars.Bar();
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardViewer1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.dashboardViewerMain = new DevExpress.DashboardWin.DashboardViewer(this.components);
+            this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanelDashboard = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.layoutControlParamter = new DevExpress.XtraLayout.LayoutControl();
+            this.pbcRefresh = new DevExpress.XtraEditors.ProgressBarControl();
+            this.btnRefreshAll = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlDashboards = new DevExpress.XtraLayout.LayoutControl();
+            this.btnLoadDashboard = new DevExpress.XtraEditors.SimpleButton();
+            this.lueDashboard = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.LSMSSchema = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDashboardSchemaName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDateIn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUserIn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSTableAdapter();
+            this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSPramTableAdapter();
+            this.appDashboardSchemaTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter();
+            this.get_sp_PramTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
+            this.LSMSUser = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.ppWait = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciWait = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroupParamters = new DevExpress.XtraLayout.LayoutControlGroup();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardViewerMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).BeginInit();
+            this.dockPanelDashboard.SuspendLayout();
+            this.dockPanel2_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlParamter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcRefresh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlDashboards)).BeginInit();
+            this.layoutControlDashboards.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDashboard.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciWait)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupParamters)).BeginInit();
             this.SuspendLayout();
             // 
-            // dashboardViewer1
+            // repositoryItemDateEdit1
             // 
-            this.dashboardViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboardViewer1.Location = new System.Drawing.Point(0, 22);
-            this.dashboardViewer1.Name = "dashboardViewer1";
-            this.dashboardViewer1.Size = new System.Drawing.Size(757, 449);
-            this.dashboardViewer1.TabIndex = 0;
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.DisplayFormat.FormatString = "d/M/yyyy hh:mm:ss";
+            this.repositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.EditFormat.FormatString = "d/M/yyyy hh:mm:ss";
+            this.repositoryItemDateEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.repositoryItemDateEdit1.Mask.EditMask = "d/M/yyyy hh:mm:ss";
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
-            // barManagerMain
+            // dashboardViewerMain
             // 
-            this.barManagerMain.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.barMain,
-            this.bar3});
-            this.barManagerMain.DockControls.Add(this.barDockControlTop);
-            this.barManagerMain.DockControls.Add(this.barDockControlBottom);
-            this.barManagerMain.DockControls.Add(this.barDockControlLeft);
-            this.barManagerMain.DockControls.Add(this.barDockControlRight);
-            this.barManagerMain.Form = this;
-            this.barManagerMain.MainMenu = this.barMain;
-            this.barManagerMain.MaxItemId = 0;
-            this.barManagerMain.StatusBar = this.bar3;
+            this.dashboardViewerMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboardViewerMain.Location = new System.Drawing.Point(250, 0);
+            this.dashboardViewerMain.Name = "dashboardViewerMain";
+            this.dashboardViewerMain.Size = new System.Drawing.Size(507, 494);
+            this.dashboardViewerMain.TabIndex = 0;
             // 
-            // barDockControlTop
+            // dockManagerMain
             // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(757, 22);
+            this.dockManagerMain.Form = this;
+            this.dockManagerMain.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanelDashboard});
+            this.dockManagerMain.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.StatusBar",
+            "System.Windows.Forms.MenuStrip",
+            "System.Windows.Forms.StatusStrip",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl"});
             // 
-            // barDockControlBottom
+            // dockPanelDashboard
             // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 471);
-            this.barDockControlBottom.Size = new System.Drawing.Size(757, 23);
+            this.dockPanelDashboard.Controls.Add(this.dockPanel2_Container);
+            this.dockPanelDashboard.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dockPanelDashboard.ID = new System.Guid("2fa5a753-1d56-4b04-8069-bd742a7da53c");
+            this.dockPanelDashboard.Location = new System.Drawing.Point(0, 0);
+            this.dockPanelDashboard.Name = "dockPanelDashboard";
+            this.dockPanelDashboard.OriginalSize = new System.Drawing.Size(250, 200);
+            this.dockPanelDashboard.Size = new System.Drawing.Size(250, 494);
+            this.dockPanelDashboard.Text = "Dashborad";
             // 
-            // barDockControlLeft
+            // dockPanel2_Container
             // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 449);
+            this.dockPanel2_Container.Controls.Add(this.layoutControlParamter);
+            this.dockPanel2_Container.Controls.Add(this.layoutControlDashboards);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(242, 467);
+            this.dockPanel2_Container.TabIndex = 0;
             // 
-            // barDockControlRight
+            // layoutControlParamter
             // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(757, 22);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 449);
+            this.layoutControlParamter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControlParamter.Location = new System.Drawing.Point(0, 182);
+            this.layoutControlParamter.Name = "layoutControlParamter";
+            this.layoutControlParamter.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(726, 151, 250, 350);
+            this.layoutControlParamter.Root = this.layoutControlGroup2;
+            this.layoutControlParamter.Size = new System.Drawing.Size(242, 285);
+            this.layoutControlParamter.TabIndex = 1;
+            this.layoutControlParamter.Text = "layoutControl2";
             // 
-            // barMain
+            // pbcRefresh
             // 
-            this.barMain.BarName = "Main menu";
-            this.barMain.DockCol = 0;
-            this.barMain.DockRow = 0;
-            this.barMain.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.barMain.OptionsBar.MultiLine = true;
-            this.barMain.OptionsBar.UseWholeRow = true;
-            this.barMain.Text = "Main menu";
+            this.pbcRefresh.Location = new System.Drawing.Point(12, 120);
+            this.pbcRefresh.Name = "pbcRefresh";
+            this.pbcRefresh.Size = new System.Drawing.Size(218, 18);
+            this.pbcRefresh.StyleController = this.layoutControlDashboards;
+            this.pbcRefresh.TabIndex = 5;
             // 
-            // bar3
+            // btnRefreshAll
             // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
+            this.btnRefreshAll.Image = global::NICSQLTools.Properties.Resources.refresh2_32x32;
+            this.btnRefreshAll.Location = new System.Drawing.Point(12, 78);
+            this.btnRefreshAll.Name = "btnRefreshAll";
+            this.btnRefreshAll.Size = new System.Drawing.Size(218, 38);
+            this.btnRefreshAll.StyleController = this.layoutControlDashboards;
+            this.btnRefreshAll.TabIndex = 4;
+            this.btnRefreshAll.Text = "Refresh All";
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.CustomizationFormText = "Root";
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroupParamters});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "Root";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(242, 285);
+            this.layoutControlGroup2.Text = "Root";
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlDashboards
+            // 
+            this.layoutControlDashboards.Controls.Add(this.ppWait);
+            this.layoutControlDashboards.Controls.Add(this.btnLoadDashboard);
+            this.layoutControlDashboards.Controls.Add(this.lueDashboard);
+            this.layoutControlDashboards.Controls.Add(this.btnRefreshAll);
+            this.layoutControlDashboards.Controls.Add(this.pbcRefresh);
+            this.layoutControlDashboards.Dock = System.Windows.Forms.DockStyle.Top;
+            this.layoutControlDashboards.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlDashboards.Name = "layoutControlDashboards";
+            this.layoutControlDashboards.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(556, 127, 250, 350);
+            this.layoutControlDashboards.Root = this.layoutControlGroup1;
+            this.layoutControlDashboards.Size = new System.Drawing.Size(242, 182);
+            this.layoutControlDashboards.TabIndex = 0;
+            this.layoutControlDashboards.Text = "layoutControl1";
+            // 
+            // btnLoadDashboard
+            // 
+            this.btnLoadDashboard.Image = global::NICSQLTools.Properties.Resources.done;
+            this.btnLoadDashboard.Location = new System.Drawing.Point(12, 36);
+            this.btnLoadDashboard.Name = "btnLoadDashboard";
+            this.btnLoadDashboard.Size = new System.Drawing.Size(218, 38);
+            this.btnLoadDashboard.StyleController = this.layoutControlDashboards;
+            this.btnLoadDashboard.TabIndex = 1;
+            this.btnLoadDashboard.Text = "Load Dashboard";
+            this.btnLoadDashboard.Click += new System.EventHandler(this.btnLoadDashboard_Click);
+            // 
+            // lueDashboard
+            // 
+            this.lueDashboard.EditValue = "";
+            this.lueDashboard.Location = new System.Drawing.Point(67, 12);
+            this.lueDashboard.Name = "lueDashboard";
+            this.lueDashboard.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lueDashboard.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueDashboard.Properties.DataSource = this.LSMSSchema;
+            this.lueDashboard.Properties.DisplayMember = "DashboardSchemaName";
+            this.lueDashboard.Properties.NullText = "";
+            this.lueDashboard.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
+            this.lueDashboard.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueDashboard.Properties.ValueMember = "DashboardSchemaId";
+            this.lueDashboard.Properties.View = this.gridLookUpEdit1View;
+            this.lueDashboard.Size = new System.Drawing.Size(163, 20);
+            this.lueDashboard.StyleController = this.layoutControlDashboards;
+            this.lueDashboard.TabIndex = 0;
+            // 
+            // LSMSSchema
+            // 
+            this.LSMSSchema.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardSchema);
+            this.LSMSSchema.KeyExpression = "[DashboardSchemaId]";
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDashboardSchemaName,
+            this.colDateIn,
+            this.colUserIn});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colDashboardSchemaName
+            // 
+            this.colDashboardSchemaName.Caption = "Dashboard Schema Name";
+            this.colDashboardSchemaName.FieldName = "DashboardSchemaName";
+            this.colDashboardSchemaName.Name = "colDashboardSchemaName";
+            this.colDashboardSchemaName.Visible = true;
+            this.colDashboardSchemaName.VisibleIndex = 0;
+            // 
+            // colDateIn
+            // 
+            this.colDateIn.Caption = "Last Edit";
+            this.colDateIn.ColumnEdit = this.repositoryItemDateEdit1;
+            this.colDateIn.FieldName = "DateIn";
+            this.colDateIn.Name = "colDateIn";
+            this.colDateIn.Visible = true;
+            this.colDateIn.VisibleIndex = 1;
+            // 
+            // colUserIn
+            // 
+            this.colUserIn.Caption = "Owner";
+            this.colUserIn.FieldName = "UserIn";
+            this.colUserIn.Name = "colUserIn";
+            this.colUserIn.Visible = true;
+            this.colUserIn.VisibleIndex = 2;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.lciWait});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(242, 182);
+            this.layoutControlGroup1.Text = "layoutControlGroup1";
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.lueDashboard;
+            this.layoutControlItem1.CustomizationFormText = "Dashboard";
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(222, 24);
+            this.layoutControlItem1.Text = "Dashboard";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 13);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.btnLoadDashboard;
+            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(222, 42);
+            this.layoutControlItem2.Text = "layoutControlItem2";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextToControlDistance = 0;
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // appDashboardDSTableAdapter
+            // 
+            this.appDashboardDSTableAdapter.ClearBeforeFill = true;
+            // 
+            // appDashboardDSPramTableAdapter
+            // 
+            this.appDashboardDSPramTableAdapter.ClearBeforeFill = true;
+            // 
+            // appDashboardSchemaTableAdapter
+            // 
+            this.appDashboardSchemaTableAdapter.ClearBeforeFill = true;
+            // 
+            // get_sp_PramTableAdapter
+            // 
+            this.get_sp_PramTableAdapter.ClearBeforeFill = true;
+            // 
+            // LSMSUser
+            // 
+            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.User);
+            this.LSMSUser.KeyExpression = "[UserID]";
+            // 
+            // ppWait
+            // 
+            this.ppWait.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.ppWait.Appearance.Options.UseBackColor = true;
+            this.ppWait.AppearanceCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ppWait.AppearanceCaption.Options.UseFont = true;
+            this.ppWait.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.ppWait.AppearanceDescription.Options.UseFont = true;
+            this.ppWait.AutoHeight = true;
+            this.ppWait.AutoWidth = true;
+            this.ppWait.Location = new System.Drawing.Point(12, 142);
+            this.ppWait.Name = "ppWait";
+            this.ppWait.Size = new System.Drawing.Size(218, 16);
+            this.ppWait.StyleController = this.layoutControlDashboards;
+            this.ppWait.TabIndex = 2;
+            this.ppWait.Text = "Loading";
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.btnRefreshAll;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 66);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(222, 42);
+            this.layoutControlItem3.Text = "layoutControlItem3";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextToControlDistance = 0;
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.pbcRefresh;
+            this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 108);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(222, 22);
+            this.layoutControlItem4.Text = "layoutControlItem4";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextToControlDistance = 0;
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // lciWait
+            // 
+            this.lciWait.Control = this.ppWait;
+            this.lciWait.CustomizationFormText = "lciWait";
+            this.lciWait.Location = new System.Drawing.Point(0, 130);
+            this.lciWait.Name = "lciWait";
+            this.lciWait.Size = new System.Drawing.Size(222, 32);
+            this.lciWait.Text = "lciWait";
+            this.lciWait.TextSize = new System.Drawing.Size(0, 0);
+            this.lciWait.TextToControlDistance = 0;
+            this.lciWait.TextVisible = false;
+            this.lciWait.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
+            // layoutControlGroupParamters
+            // 
+            this.layoutControlGroupParamters.CustomizationFormText = "Paramters";
+            this.layoutControlGroupParamters.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroupParamters.Name = "layoutControlGroupParamters";
+            this.layoutControlGroupParamters.Size = new System.Drawing.Size(222, 265);
+            this.layoutControlGroupParamters.Text = "Paramters";
             // 
             // DashboardViewerUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dashboardViewer1);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.dashboardViewerMain);
+            this.Controls.Add(this.dockPanelDashboard);
             this.Name = "DashboardViewerUC";
             this.Size = new System.Drawing.Size(757, 494);
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardViewer1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
+            this.Load += new System.EventHandler(this.DashboardViewerUC_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardViewerMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).EndInit();
+            this.dockPanelDashboard.ResumeLayout(false);
+            this.dockPanel2_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlParamter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcRefresh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlDashboards)).EndInit();
+            this.layoutControlDashboards.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lueDashboard.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciWait)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupParamters)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.DashboardWin.DashboardViewer dashboardViewer1;
-        private DevExpress.XtraBars.BarManager barManagerMain;
-        private DevExpress.XtraBars.Bar barMain;
-        private DevExpress.XtraBars.Bar bar3;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.DashboardWin.DashboardViewer dashboardViewerMain;
+        private DevExpress.XtraBars.Docking.DockManager dockManagerMain;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanelDashboard;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
+        private DevExpress.XtraLayout.LayoutControl layoutControlDashboards;
+        private DevExpress.XtraEditors.GridLookUpEdit lueDashboard;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraEditors.SimpleButton btnLoadDashboard;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControl layoutControlParamter;
+        private DevExpress.XtraEditors.ProgressBarControl pbcRefresh;
+        private DevExpress.XtraEditors.SimpleButton btnRefreshAll;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSTableAdapter appDashboardDSTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSPramTableAdapter appDashboardDSPramTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter appDashboardSchemaTableAdapter;
+        private NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter get_sp_PramTableAdapter;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSSchema;
+        private DevExpress.XtraGrid.Columns.GridColumn colDashboardSchemaName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateIn;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserIn;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSUser;
+        private DevExpress.XtraWaitForm.ProgressPanel ppWait;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem lciWait;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupParamters;
     }
 }

@@ -124,6 +124,22 @@ namespace NICSQLTools.Forms.Main
             {
                 e.Control = new Views.Permission.RuleDetailsUC();
             }
+            else if (e.Document == docDashboardDesigner)
+            {
+                e.Control = new Views.Dashboard.DashboardDesignerUC();
+            }
+            else if (e.Document == docDashboardViewer)
+            {
+                e.Control = new Views.Dashboard.DashboardViewerUC();
+            }
+            else if (e.Document == docAppDashboardDS)
+            {
+                e.Control = new Views.Dashboard.AppDashboardDSUC();
+            }
+            else if (e.Document == docAppDashboardDSParam)
+            {
+                e.Control = new Views.Dashboard.AppDashboardDSParamUC();
+            }
             else if (e.Document == docEditorsTargetKPI)
             {
                 e.Control = new Views.Data.TargetKPIEditorUC();

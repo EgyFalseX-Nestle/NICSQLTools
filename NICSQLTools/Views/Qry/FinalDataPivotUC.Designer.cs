@@ -85,7 +85,7 @@
             // 
             // LSMS
             // 
-            this.LSMS.ElementType = typeof(NICSQLTools.Data._0_0_Final_Data_All);
+            this.LSMS.ElementType = typeof(NICSQLTools.Data.Linq._0_0_Final_Data_All);
             this.LSMS.KeyExpression = "AutoKey";
             // 
             // popupMenuMain

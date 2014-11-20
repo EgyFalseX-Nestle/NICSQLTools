@@ -47,9 +47,15 @@ namespace NICSQLTools.Views.Permission
             {
                 SplashScreenManager.CloseForm();
                 if (o == null)
+                {
                     MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
+                    Logger.Info("Data Saved ...");
+                }
                 else
+                {
                     MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
+                    Logger.Error(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.InnerException.Message), o.InnerException);
+                }
             };
 
             SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.LookAndFeel;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace NICSQLTools
 {
@@ -35,12 +37,6 @@ namespace NICSQLTools
                 DevExpress.Xpo.XpoDefault.ConnectionString = FXFW.SqlDB.SqlConStr;
                 Init();
                 //Set User Info
-                DataManager.User.UserId = 1; DataManager.User.RealName = "Public Test"; DataManager.User.IsAdmin = true;
-
-                DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); DevExpress.XtraSplashScreen.SplashScreenManager.Default.SetWaitFormCaption("Updating .......");
-                DataManager.PerformUpdate();
-                DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm(false);
-
                 
                 //Application.Run(new Form1());
                 Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
@@ -50,6 +46,8 @@ namespace NICSQLTools
         public static void Init()
         {
             DataManager.Init();
+            Classes.Managers.UserManager.Init();
+            Classes.Dashboard.Init();
         }
 
     }

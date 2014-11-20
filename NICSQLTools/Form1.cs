@@ -12,14 +12,17 @@ namespace NICSQLTools
 {
     public partial class Form1 : Form
     {
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new Data.Linq.dsLinqDataDataContext();
         public Form1()
         {
             InitializeComponent();
+            LoadData();
         }
-
-        private void dashboardViewer1_Load(object sender, EventArgs e)
+        private void LoadData()
         {
-
+            LSMSGeneral.QueryableSource = from q in dsLinq.AppDashboardSchemas select q;
+            LSMSSub.QueryableSource = from q in dsLinq.Users select q;
         }
+
     }
 }

@@ -42,7 +42,7 @@ namespace NICSQLTools
         {
             get { return (DateTime)adpQry.GetServerDate(); }
         }
-        public static Uti.Types.UserInfo User = new Uti.Types.UserInfo();
+        
         #region -   Unknown Codes   -
         #endregion
         #endregion
@@ -71,8 +71,8 @@ namespace NICSQLTools
         {
             if (Program.updatePath == System.Windows.Forms.Application.ExecutablePath)
             {
-                byte[] data = System.IO.File.ReadAllBytes(System.Windows.Forms.Application.ExecutablePath);
-                System.IO.FileStream fs = System.IO.File.Create(Program.AppPath);
+                byte[] data = File.ReadAllBytes(System.Windows.Forms.Application.ExecutablePath);
+                FileStream fs = File.Create(Program.AppPath);
                 fs.Write(data, 0, data.Length);
                 fs.Close();
                 System.Diagnostics.Process.Start(Program.AppPath);
@@ -85,49 +85,51 @@ namespace NICSQLTools
             int currentVersion = Convert.ToInt32(System.Windows.Forms.Application.ProductVersion.Replace(".", ""));
             int? serverVersion = adpQry.GetAppVersion();
 
-
-            if (serverVersion == null)
+            try
             {
-                if (!User.IsAdmin)
-                    return;
-                if (System.Windows.Forms.MsgDlg.Show("لا يوجد محتوي للبرنامج علي الخادم. هل ترغب في ارسال هذه النسخه للخادم؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
-                    return;
-                byte[] data = File.ReadAllBytes(System.Windows.Forms.Application.ExecutablePath);
-                adpQry.SetAppData(data, currentVersion);
-                
-            }
-            else
-            {
-                if (serverVersion == currentVersion)
-                    return;
-                else if (serverVersion < currentVersion)
+                if (serverVersion == null)
                 {
-                    if (!User.IsAdmin)
+                    if (!Classes.Managers.UserManager.defaultInstance.User.IsAdmin)
                         return;
-                    if (System.Windows.Forms.MsgDlg.Show("هذه الاصداره جديده عن الموجوده علي الخادم, هل ترغب في تحديث الخادم؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
+                    if (System.Windows.Forms.MsgDlg.Show("لا يوجد محتوي للبرنامج علي الخادم. هل ترغب في ارسال هذه النسخه للخادم؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
                         return;
                     byte[] data = File.ReadAllBytes(System.Windows.Forms.Application.ExecutablePath);
-                    //Compress File
-                    MemoryStream ms = CompressFile(data);
-                    adpQry.SetAppData(ms.ToArray(), currentVersion);
+                    adpQry.SetAppData(data, currentVersion);
+
                 }
                 else
                 {
-                    if (System.Windows.Forms.MsgDlg.Show("يوجد اصداره جديده من البرنامج علي الخادم, هل ترغب في التحديث؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
+                    if (serverVersion == currentVersion)
                         return;
-                    //if (File.Exists(updatePath))
-                    //    File.Delete(updatePath);
-                    byte[] data = adpQry.GetAppData();
-                    //Decompress File
-                    MemoryStream ms = DecompressFile(data);
-                    //System.Windows.Forms.Application.Exit();
-                    //return;
-                    FileStream fs = File.Create(Program.updatePath);
-                    fs.Write(ms.ToArray(), 0, Convert.ToInt32(ms.Length));
-                    fs.Close();
-                    System.Diagnostics.Process.Start(Program.updatePath);
-                    System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    else if (serverVersion < currentVersion)
+                    {
+                        if (!Classes.Managers.UserManager.defaultInstance.User.IsAdmin)
+                            return;
+                        if (System.Windows.Forms.MsgDlg.Show("هذه الاصداره جديده عن الموجوده علي الخادم, هل ترغب في تحديث الخادم؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
+                            return;
+                        byte[] data = File.ReadAllBytes(System.Windows.Forms.Application.ExecutablePath);
+                        //Compress File
+                        MemoryStream ms = CompressFile(data);
+                        adpQry.SetAppData(ms.ToArray(), currentVersion);
+                    }
+                    else
+                    {
+                        if (System.Windows.Forms.MsgDlg.Show("يوجد اصداره جديده من البرنامج علي الخادم, هل ترغب في التحديث؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
+                            return;
+                        byte[] data = adpQry.GetAppData();
+                        //Decompress File
+                        MemoryStream ms = DecompressFile(data);
+                        FileStream fs = File.Create(Program.updatePath);
+                        fs.Write(ms.ToArray(), 0, Convert.ToInt32(ms.Length));
+                        fs.Close();
+                        System.Diagnostics.Process.Start(Program.updatePath);
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex.Message, ex);
             }
         }
         public static DataTable LoadExcelFile(string strFile, string sheetName, string ColumnsNames)
@@ -147,8 +149,7 @@ namespace NICSQLTools
             }
             catch (Exception ex)
             {
-              //MsgDlg.Show("Load Excel File Failed - " + ex.Message, NestleICSales.Utilities.Types.MessageType.Error, ex);
-                System.Windows.Forms.MessageBox.Show("Load Excel File Failed - " + ex.Message);
+                System.Windows.Forms.MsgDlg.Show("Load Excel File Failed - " + ex.Message, System.Windows.Forms.MsgDlg.MessageType.Error, ex);
             }
             return dt;
         }
@@ -193,8 +194,7 @@ namespace NICSQLTools
             }
             catch (Exception ex)
             {
-                //MsgDlg.Show("Load Excel File Failed - " + ex.Message, NestleICSales.Utilities.Types.MessageType.Error, ex);
-                System.Windows.Forms.MessageBox.Show("Load Excel File Failed - " + ex.Message);
+                System.Windows.Forms.MsgDlg.Show("Load Excel File Failed - " + ex.Message, System.Windows.Forms.MsgDlg.MessageType.Error, ex);
             }
             return dt;
         }
@@ -223,6 +223,105 @@ namespace NICSQLTools
             }
             return ms;
         }
+
+        public static DataTable GetStoredProcedureSchema(string StoredProcedureName)
+        {
+            try
+            {
+                //Get Requered Paramters For Stored Procedure
+                Data.dsQryTableAdapters.Get_sp_PramTableAdapter adpPram = new Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
+                Data.dsQry.Get_sp_PramDataTable dtPram = adpPram.GetData(StoredProcedureName);
+
+                using (SqlDataAdapter adp = new SqlDataAdapter(StoredProcedureName, Properties.Settings.Default.IC_DBConnectionString))
+                {
+                    adp.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataSet ds = new DataSet();
+                    //Add Paramters To Adapter
+                    foreach (Data.dsQry.Get_sp_PramRow row in dtPram.Rows)
+                        adp.SelectCommand.Parameters.Add(new SqlParameter(row.name, DBNull.Value));
+                    //Try To Get Stored Procedure Schema
+                    adp.FillSchema(ds, SchemaType.Source);
+                    if (ds.Tables.Count > 0)
+                        return ds.Tables[0];
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.Error(ex.Message, ex);
+            }
+            return null;
+        }
+        public static List<DataTable> GetStoredProcedureSchema(Data.dsData.AppDashboardDSDataTable DashboardTbl)
+        {
+            List<DataTable> Tbls = new List<DataTable>();
+            foreach (Data.dsData.AppDashboardDSRow row in DashboardTbl.Rows)
+            {
+                DataTable dt = GetStoredProcedureSchema(row.DatasourceSPName);
+                if (dt != null)
+                {
+                    dt.TableName = row.DatasourceName;
+                    dt.Namespace = row.DatasourceID.ToString();
+                    Tbls.Add(dt);
+                }
+            }
+            return Tbls;
+        }
+        public static void RefreshDatasourceSchema(ref DevExpress.DashboardWin.DashboardDesigner dashboardDesigner)
+        {
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
+            SqlCommand cmd = new SqlCommand("SELECT DatasourceSPName FROM dbo.AppDashboardDS WHERE DatasourceID = @DatasourceID", con);
+            SqlParameter ParamID = new SqlParameter("@DatasourceID", SqlDbType.Int);
+            cmd.Parameters.Add(ParamID);
+            try
+            {
+                con.Open();
+                for (int i = 0; i < dashboardDesigner.Dashboard.DataSources.Count; i++)
+                {
+                    ParamID.Value = Convert.ToInt32(dashboardDesigner.Dashboard.DataSources[i].ComponentName.Replace("ID", ""));
+                    object obj = cmd.ExecuteScalar();
+                    if (obj != null)
+                    {
+                        DataTable dt = DataManager.GetStoredProcedureSchema(obj.ToString());
+                        dashboardDesigner.Dashboard.DataSources[i].ComponentName = "ID";
+                        dashboardDesigner.Dashboard.DataSources[i] = Classes.Dashboard.CreateDashboardDatasource(dt, dashboardDesigner.Dashboard.DataSources[i].Name, Convert.ToInt32(ParamID.Value));
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Logger.Error(ex.Message, ex);
+            }
+            con.Close();
+        }
+        public static DataTable ExeDataSource(string StoredProcedureName, Dictionary<string, object> Paramters, SqlCommand cmd, SqlInfoMessageEventHandler InfoMessageHnd = null, StatementCompletedEventHandler StatementCompleted = null)
+        {
+            DataTable dt = new DataTable();
+            SqlDataAdapter adp = new SqlDataAdapter("", Properties.Settings.Default.IC_DBConnectionString);
+            adp.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adp.SelectCommand.CommandText = StoredProcedureName;
+            if (InfoMessageHnd != null)
+                adp.SelectCommand.Connection.InfoMessage += InfoMessageHnd;
+            if (StatementCompleted != null)
+                adp.SelectCommand.StatementCompleted += StatementCompleted;
+            //Notifyer.AddItem(adp.SelectCommand);//Add Command to UpdateInfo[3] so you can cancel fill
+            cmd = adp.SelectCommand;
+            foreach (KeyValuePair<string, object> item in Paramters)
+                adp.SelectCommand.Parameters.Add(new SqlParameter(item.Key, item.Value));
+            try
+            {
+                adp.Fill(dt);
+                
+            }
+            catch (SqlException ex)
+            {
+                Logger.Error(ex.Message, ex);
+            }
+            return dt;
+        }
+
+        
+
         #endregion
+
     }
 }

@@ -49,10 +49,12 @@ namespace NICSQLTools.Views.Permission
                 {
                     userRuleTableAdapter.Update(dsData.UserRule);
                     MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
+                    Logger.Info("Data Saved ...");
                 }
                 catch (System.Data.SqlClient.SqlException ex)
                 {
                     MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, ex.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
+                    Logger.Error(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, ex.Message), ex);
                 }
                 SplashScreenManager.CloseForm();
             });

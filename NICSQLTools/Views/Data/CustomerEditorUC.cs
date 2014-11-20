@@ -15,7 +15,7 @@ namespace NICSQLTools.Views.Data
     public partial class CustomerEditorUC : DevExpress.XtraEditors.XtraUserControl
     {
         #region - Var -
-        
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(CustomerEditorUC));
         #endregion
         #region - Fun -
         public CustomerEditorUC()
@@ -58,14 +58,20 @@ namespace NICSQLTools.Views.Data
             if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
 
-            DevExpress.Xpo.AsyncCommitCallback CommitCallBack = new DevExpress.Xpo.AsyncCommitCallback((o) =>
+            DevExpress.Xpo.AsyncCommitCallback CommitCallBack = (o) =>
             {
                 SplashScreenManager.CloseForm();
                 if (o == null)
+                {
                     MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)this.Parent.Parent.Parent);
+                    Logger.Info("Data Saved ...");
+                }
                 else
-                    MsgDlg.ShowAlert("Saving Failed ..." + Environment.NewLine + o.Message, MsgDlg.MessageType.Error, (Form)this.Parent.Parent.Parent);
-            });
+                {
+                    MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)this.Parent.Parent.Parent);
+                    Logger.Error(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.InnerException.Message), o.InnerException);
+                }
+            };
 
             SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");
             UOW.CommitTransactionAsync(CommitCallBack);

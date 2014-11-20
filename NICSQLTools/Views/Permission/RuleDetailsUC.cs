@@ -23,11 +23,10 @@ namespace NICSQLTools.Views.Permission
         {
             rules_LUETableAdapter.Fill(dsQry.Rules_LUE);
         }
-        public static void LoadDefaultNodes(DevExpress.XtraTreeList.TreeList Tree)
+        public static void LoadDefaultNodes(DevExpress.XtraTreeList.TreeList Tree, NICSQLTools.Forms.Main.MainTilesFrm MainFrm)
         {
-
             Tree.Nodes.Clear();
-            NICSQLTools.Forms.Main.MainTilesFrm MainFrm = (NICSQLTools.Forms.Main.MainTilesFrm)Parent.Parent.Parent;
+            //NICSQLTools.Forms.Main.MainTilesFrm MainFrm = (NICSQLTools.Forms.Main.MainTilesFrm)Parent.Parent.Parent;
 
             Tree.BeginUnboundLoad();
 
@@ -127,7 +126,7 @@ namespace NICSQLTools.Views.Permission
             {
                 Invoke(new MethodInvoker(() =>
                 {
-                    LoadDefaultNodes(TLItems);
+                    LoadDefaultNodes(TLItems, (NICSQLTools.Forms.Main.MainTilesFrm)Parent.Parent.Parent);
                     LoadUserData(Convert.ToInt32(bbiRule.EditValue));
                 }));
                 SplashScreenManager.CloseForm();
@@ -149,10 +148,12 @@ namespace NICSQLTools.Views.Permission
                 {
                     SaveUserData(RuleID);
                     MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
+                    Logger.Info("Data Saved ...");
                 }
                 catch (System.Data.SqlClient.SqlException ex)
                 {
                     MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, ex.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
+                    Logger.Error(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, ex.Message), ex);
                 }
                 SplashScreenManager.CloseForm();
             });

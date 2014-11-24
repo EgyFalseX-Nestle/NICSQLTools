@@ -87,7 +87,6 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement30 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame22 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement31 = new DevExpress.XtraEditors.TileItemElement();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTilesFrm));
             DevExpress.XtraEditors.TileItemElement tileItemElement32 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame23 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement33 = new DevExpress.XtraEditors.TileItemElement();
@@ -179,6 +178,7 @@
             DevExpress.XtraEditors.TileItemFrame tileItemFrame60 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement88 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement89 = new DevExpress.XtraEditors.TileItemElement();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTilesFrm));
             this.documentManagerMain = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.windowsUIView = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView(this.components);
             this.tileContainerLogin = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
@@ -461,11 +461,11 @@
             tileItemFrame2.Image = global::NICSQLTools.Properties.Resources.LoginTile64;
             this.docLoginTile.Frames.Add(tileItemFrame1);
             this.docLoginTile.Frames.Add(tileItemFrame2);
-            this.docLoginTile.Group = "";
             this.tileContainerLogin.SetID(this.docLoginTile, 1);
             this.docLoginTile.Name = "docLoginTile";
             this.docLoginTile.Properties.AllowHtmlDraw = DevExpress.Utils.DefaultBoolean.True;
             this.docLoginTile.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.docLoginTile.Tag = true;
             // 
             // docLogin
             // 
@@ -514,6 +514,7 @@
             this.documentTileEditors.Group = "Editors";
             this.documentTileEditors.Name = "documentTileEditors";
             this.documentTileEditors.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.documentTileEditors.Tag = true;
             // 
             // tileContainerEditors
             // 
@@ -992,6 +993,7 @@
             this.tileContainerMain.SetID(this.documentTileQueries, 1);
             this.documentTileQueries.Name = "documentTileQueries";
             this.documentTileQueries.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.documentTileQueries.Tag = true;
             // 
             // tileContainerQueries
             // 
@@ -1040,6 +1042,7 @@
             this.tileContainerMain.SetID(this.documentTileRules, 2);
             this.documentTileRules.Name = "documentTileRules";
             this.documentTileRules.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.documentTileRules.Tag = true;
             // 
             // tileContainerRules
             // 
@@ -1078,7 +1081,6 @@
             tileItemFrame33.Image = global::NICSQLTools.Properties.Resources.info_32x32;
             this.documentTileRuleUser.Frames.Add(tileItemFrame32);
             this.documentTileRuleUser.Frames.Add(tileItemFrame33);
-            this.documentTileRuleUser.Group = "";
             this.documentTileRuleUser.Name = "documentTileRuleUser";
             this.documentTileRuleUser.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
@@ -1113,7 +1115,6 @@
             tileItemFrame35.Image = global::NICSQLTools.Properties.Resources.info_32x32;
             this.documentTileRuleRule.Frames.Add(tileItemFrame34);
             this.documentTileRuleRule.Frames.Add(tileItemFrame35);
-            this.documentTileRuleRule.Group = "";
             this.tileContainerRules.SetID(this.documentTileRuleRule, 1);
             this.documentTileRuleRule.Name = "documentTileRuleRule";
             this.documentTileRuleRule.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1149,7 +1150,6 @@
             tileItemFrame37.Image = global::NICSQLTools.Properties.Resources.info_32x32;
             this.documentTileRuleRuleDetails.Frames.Add(tileItemFrame36);
             this.documentTileRuleRuleDetails.Frames.Add(tileItemFrame37);
-            this.documentTileRuleRuleDetails.Group = "";
             this.tileContainerRules.SetID(this.documentTileRuleRuleDetails, 2);
             this.documentTileRuleRuleDetails.Name = "documentTileRuleRuleDetails";
             this.documentTileRuleRuleDetails.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1185,7 +1185,6 @@
             tileItemFrame39.Image = global::NICSQLTools.Properties.Resources.info_32x32;
             this.documentTileRuleUserRule.Frames.Add(tileItemFrame38);
             this.documentTileRuleUserRule.Frames.Add(tileItemFrame39);
-            this.documentTileRuleUserRule.Group = "";
             this.tileContainerRules.SetID(this.documentTileRuleUserRule, 3);
             this.documentTileRuleUserRule.Name = "documentTileRuleUserRule";
             this.documentTileRuleUserRule.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1232,6 +1231,7 @@
             this.tileContainerMain.SetID(this.documentTileReports, 3);
             this.documentTileReports.Name = "documentTileReports";
             this.documentTileReports.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.documentTileReports.Tag = true;
             // 
             // tileContainerReports
             // 
@@ -1276,6 +1276,7 @@
             this.tileContainerMain.SetID(this.documentTileDashboard, 4);
             this.documentTileDashboard.Name = "documentTileDashboard";
             this.documentTileDashboard.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.documentTileDashboard.Tag = true;
             // 
             // tileContainerDashboard
             // 
@@ -1314,7 +1315,6 @@
             tileItemFrame46.Image = global::NICSQLTools.Properties.Resources.info_32x32;
             this.documentTileDashboardDesigner.Frames.Add(tileItemFrame45);
             this.documentTileDashboardDesigner.Frames.Add(tileItemFrame46);
-            this.documentTileDashboardDesigner.Group = "";
             this.documentTileDashboardDesigner.Name = "documentTileDashboardDesigner";
             this.documentTileDashboardDesigner.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
@@ -1349,7 +1349,6 @@
             tileItemFrame48.Image = global::NICSQLTools.Properties.Resources.info_32x32;
             this.documentTileDashboardViewer.Frames.Add(tileItemFrame47);
             this.documentTileDashboardViewer.Frames.Add(tileItemFrame48);
-            this.documentTileDashboardViewer.Group = "";
             this.tileContainerDashboard.SetID(this.documentTileDashboardViewer, 1);
             this.documentTileDashboardViewer.Name = "documentTileDashboardViewer";
             this.documentTileDashboardViewer.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1385,7 +1384,6 @@
             tileItemFrame50.Image = global::NICSQLTools.Properties.Resources.info_32x32;
             this.documentTileAppDashboardDS.Frames.Add(tileItemFrame49);
             this.documentTileAppDashboardDS.Frames.Add(tileItemFrame50);
-            this.documentTileAppDashboardDS.Group = "";
             this.tileContainerDashboard.SetID(this.documentTileAppDashboardDS, 2);
             this.documentTileAppDashboardDS.Name = "documentTileAppDashboardDS";
             // 
@@ -1420,7 +1418,6 @@
             tileItemFrame52.Image = global::NICSQLTools.Properties.Resources.info_32x32;
             this.documentTileAppDashboardDSParam.Frames.Add(tileItemFrame51);
             this.documentTileAppDashboardDSParam.Frames.Add(tileItemFrame52);
-            this.documentTileAppDashboardDSParam.Group = "";
             this.tileContainerDashboard.SetID(this.documentTileAppDashboardDSParam, 3);
             this.documentTileAppDashboardDSParam.Name = "documentTileAppDashboardDSParam";
             // 
@@ -1542,7 +1539,6 @@
             tileItemFrame60.Elements.Add(tileItemElement88);
             tileItemFrame60.Elements.Add(tileItemElement89);
             this.documentTileEditorsQrysp_DistributionV1.Frames.Add(tileItemFrame60);
-            this.documentTileEditorsQrysp_DistributionV1.Group = "";
             this.documentTileEditorsQrysp_DistributionV1.Name = "documentTileEditorsQrysp_DistributionV1";
             // 
             // MainTilesFrm
@@ -1551,9 +1547,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 423);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "MainTilesFrm";
-            this.Text = "FalseX";
+            this.Text = "NIC SQL Tools";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIView)).EndInit();

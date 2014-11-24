@@ -10,6 +10,7 @@ namespace NICSQLTools.Forms.Main
     {
         SampleDataSource dataSource;
         Dictionary<SampleDataGroup, PageGroup> groupsItemDetailPage;
+        
         public MainTilesFrm()
         {
             InitializeComponent();
@@ -18,6 +19,29 @@ namespace NICSQLTools.Forms.Main
             //groupsItemDetailPage = new Dictionary<SampleDataGroup, PageGroup>();
             //CreateLayout();
             windowsUIView.ActivateDocument(docLogin);
+            
+        }
+        public void ActivateRules()
+        {
+            if (Classes.Managers.UserManager.defaultInstance.User.IsAdmin == true)
+                return;
+            
+            foreach (TileContainer item in windowsUIView.ContentContainers.ToArray())
+            {
+                if (item.Items == null)
+                    continue;
+                for (int InxContainers = 0; InxContainers < item.Items.Count; InxContainers++)
+                {
+                    for (int i = item.Items.Count - 1; i >= 0; i--)
+                    {
+                        NICSQLTools.Data.dsData.RuleDetailRow elementRule = Classes.Managers.UserManager.defaultInstance.RuleElementInformation(((Tile)item.Items[i]).Name);
+                        if (((Tile)item.Items[i]).Tag != null && (bool)((Tile)item.Items[i]).Tag)// Show Exception Tiles
+                            ((Tile)item.Items[i]).Visible = true;
+                        else
+                            ((Tile)item.Items[i]).Visible = elementRule.Selecting;
+                    }
+                }
+            }
         }
         void CreateLayout()
         {

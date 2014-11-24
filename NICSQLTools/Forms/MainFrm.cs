@@ -137,13 +137,13 @@ namespace NICSQLTools
         }
         private void bbiImportProcedures_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ProceduresFrm frm = new ProceduresFrm() { MdiParent = this };
-            frm.Show();
+            //ProceduresFrm frm = new ProceduresFrm() { MdiParent = this };
+            //frm.Show();
         }
         private void bbiImportQry_ItemClick(object sender, ItemClickEventArgs e)
         {
-            QryFrm frm = new QryFrm() { MdiParent = this };
-            frm.Show();
+            //QryFrm frm = new QryFrm() { MdiParent = this };
+            //frm.Show();
         }
         private void bbiImportExecute_ItemClick(object sender, ItemClickEventArgs e)
         {

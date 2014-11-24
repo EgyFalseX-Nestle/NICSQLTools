@@ -101,9 +101,13 @@
             // 
             // dashboardViewerMain
             // 
+            this.dashboardViewerMain.AllowPrintDashboardItems = true;
             this.dashboardViewerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardViewerMain.Location = new System.Drawing.Point(281, 0);
             this.dashboardViewerMain.Name = "dashboardViewerMain";
+            this.dashboardViewerMain.PrintingOptions.DocumentContentOptions.FilterState = DevExpress.DashboardWin.DashboardPrintingFilterState.SeparatePage;
+            this.dashboardViewerMain.PrintingOptions.FontInfo.GdiCharSet = ((byte)(0));
+            this.dashboardViewerMain.PrintingOptions.FontInfo.Name = null;
             this.dashboardViewerMain.Size = new System.Drawing.Size(476, 494);
             this.dashboardViewerMain.TabIndex = 0;
             // 
@@ -161,7 +165,7 @@
             this.layoutControlGroupParamters});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "Root";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(273, 285);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(273, 272);
             this.layoutControlGroup2.Text = "Root";
             this.layoutControlGroup2.TextVisible = false;
             // 
@@ -170,7 +174,7 @@
             this.layoutControlGroupParamters.CustomizationFormText = "Paramters";
             this.layoutControlGroupParamters.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroupParamters.Name = "layoutControlGroupParamters";
-            this.layoutControlGroupParamters.Size = new System.Drawing.Size(253, 265);
+            this.layoutControlGroupParamters.Size = new System.Drawing.Size(253, 252);
             this.layoutControlGroupParamters.Text = "Paramters";
             // 
             // layoutControlDashboards

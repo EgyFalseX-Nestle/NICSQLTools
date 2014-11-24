@@ -38,7 +38,7 @@ namespace NICSQLTools
                 Init();
                 //Set User Info
 
-                //Application.Run(new Form1());
+                //Application.Run(new TestFrm());
                 Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
             }
             

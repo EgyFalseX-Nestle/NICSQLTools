@@ -21,7 +21,18 @@ namespace NICSQLTools
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
+            List<string> aaa = new List<string>();
+            aaa.Add("aaa"); aaa.Add("bbb"); aaa.Add("ccc"); aaa.Add("ddd");
+            foreach (string item in aaa.ToList())
+            {
+                if (item == "bbb")
+                {
+                    aaa.Remove(item);    
+                }
+                
+            }
+
+
 
         }
 

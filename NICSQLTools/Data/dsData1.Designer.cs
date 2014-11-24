@@ -23021,7 +23021,7 @@ SELECT RuleID, ItemName, Selecting, Inserting, Updateing, Deleting FROM RuleDeta
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT RuleID, ItemName, Selecting, Inserting, Updateing, Deleting FROM dbo.RuleD" +
@@ -23038,6 +23038,16 @@ SELECT RuleID, ItemName, Selecting, Inserting, Updateing, Deleting FROM RuleDeta
                 "etail\r\nWhere RuleID = @RuleID";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RuleID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RuleID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        RuleDetail.RuleID, RuleDetail.ItemName, RuleDetail.Selecting, RuleDetail.Inserting, RuleDetail.Updateing, RuleDetail.Deleting
+FROM            RuleDetail INNER JOIN
+                         UserRule ON RuleDetail.RuleID = UserRule.RuleId INNER JOIN
+                         Users ON UserRule.UserId = Users.UserID
+WHERE        (Users.UserID = @UserID) AND (RuleDetail.Selecting = 1)
+GROUP BY RuleDetail.ItemName, RuleDetail.Selecting, RuleDetail.Inserting, RuleDetail.Updateing, RuleDetail.Deleting, RuleDetail.RuleID";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23085,6 +23095,32 @@ SELECT RuleID, ItemName, Selecting, Inserting, Updateing, Deleting FROM RuleDeta
         public virtual dsData.RuleDetailDataTable GetDataByRuleID(int RuleID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(RuleID));
+            dsData.RuleDetailDataTable dataTable = new dsData.RuleDetailDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUserID(dsData.RuleDetailDataTable dataTable, int UserID) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsData.RuleDetailDataTable GetDataByUserID(int UserID) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserID));
             dsData.RuleDetailDataTable dataTable = new dsData.RuleDetailDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

@@ -189,11 +189,11 @@ namespace NICSQLTools.Views.Dashboard
                 }
                 //Add Refresh button
                 DevExpress.XtraLayout.LayoutControlItem layItemBtnRefresh = LayGroup.AddItem();
-                layItemBtnRefresh.TextVisible = false;
+                layItemBtnRefresh.TextVisible = false; layItemBtnRefresh.Text = string.Empty;
                 layItemBtnRefresh.Control = ds.ExeButton;
                 //Add Cancel button
                 DevExpress.XtraLayout.LayoutControlItem layItemBtnCancel = LayGroup.AddItem();
-                layItemBtnCancel.TextVisible = false;
+                layItemBtnCancel.TextVisible = false; layItemBtnCancel.Text = string.Empty;
                 layItemBtnCancel.Control = ds.CancelButton;
             }
         }

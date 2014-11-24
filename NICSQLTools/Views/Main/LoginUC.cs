@@ -41,6 +41,7 @@ namespace NICSQLTools.Views.Main
                 SplashScreenManager.CloseForm(false);
 
                 _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);
+                _parent.ActivateRules();
             }
             else
             {

@@ -15,7 +15,6 @@ namespace NICSQLTools.Views.Dashboard
 {
     public partial class DashboardDesignerUC : DevExpress.XtraEditors.XtraUserControl
     {
-
         #region -   Variables   -
         private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(DashboardDesignerUC));
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
@@ -115,7 +114,30 @@ namespace NICSQLTools.Views.Dashboard
                 MsgDlg.Show("Dashboard Updated ...", MsgDlg.MessageType.Success);
             }
         }
-        #endregion
+        private void bbiSaveAs_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //Open Choose Name dialog
+            DashboardSaveNameDlg dlg = new DashboardSaveNameDlg();
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+
+            DashboardSchema.DashboardSchemaName = dlg.SavingName;
+            System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            dashboardDesignerMain.Dashboard.SaveToXml(ms);
+            DashboardSchema.DashboardSchemaData = ms.ToArray();
+
+            int? ID = Classes.Dashboard.InsertDashboard(DashboardSchema);
+            if (ID != null)
+            {
+                DashboardSchema = appDashboardSchemaTableAdapter.GetDataByDashboardSchemaId((int)ID)[0];
+                MsgDlg.Show("Dashboard Saved ...", MsgDlg.MessageType.Success);
+            }
+            else
+                MsgDlg.Show("Dashboard didn't saved", MsgDlg.MessageType.Error);
+
+        }
+        #endregion}
+
         
     }
 }

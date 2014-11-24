@@ -39,9 +39,9 @@ namespace NICSQLTools.Classes
             int? Id = null;
             try
             {
-                SqlParameter PramDashboardSchemaName = new SqlParameter("@DashboardSchemaName", System.Data.SqlDbType.NVarChar);
-                SqlParameter PramDashboardSchemaData = new SqlParameter("@DashboardSchemaData", System.Data.SqlDbType.Image);
-                SqlParameter PramUserIn = new SqlParameter("@UserIn", System.Data.SqlDbType.Int);
+                SqlParameter PramDashboardSchemaName = new SqlParameter("@DashboardSchemaName", SqlDbType.NVarChar);
+                SqlParameter PramDashboardSchemaData = new SqlParameter("@DashboardSchemaData", SqlDbType.Image);
+                SqlParameter PramUserIn = new SqlParameter("@UserIn", SqlDbType.Int);
 
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
                 SqlCommand cmd = new SqlCommand("", con)

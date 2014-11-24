@@ -37,7 +37,7 @@ namespace NICSQLTools
                 DevExpress.Xpo.XpoDefault.ConnectionString = FXFW.SqlDB.SqlConStr;
                 Init();
                 //Set User Info
-                
+
                 //Application.Run(new Form1());
                 Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
             }

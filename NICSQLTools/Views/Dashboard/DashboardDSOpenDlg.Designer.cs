@@ -1,6 +1,6 @@
 ﻿namespace NICSQLTools.Views.Dashboard
 {
-    partial class DashboardOpenDlg
+    partial class DashboardDSOpenDlg
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.LSMSDS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colDashboardSchemaId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnSelect = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colDashboardSchemaName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDatasourceName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDesc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoExEditDesc = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.colUserIn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditUserIn = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colDateIn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDateIn = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.gcDelete = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEditDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.LSMSDS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.LSMSUser = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.appDashboardSchemaTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUserIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +61,7 @@
             this.gridControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlMain.DataSource = this.LSMSDS;
             this.gridControlMain.Location = new System.Drawing.Point(12, 12);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
@@ -74,20 +69,25 @@
             this.repositoryItemLookUpEditUserIn,
             this.repositoryItemDateEditDateIn,
             this.repositoryItemButtonEditSelect,
-            this.repositoryItemButtonEditDelete});
+            this.repositoryItemMemoExEditDesc});
             this.gridControlMain.Size = new System.Drawing.Size(560, 297);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
+            // LSMSDS
+            // 
+            this.LSMSDS.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardD);
+            this.LSMSDS.KeyExpression = "[DatasourceID]";
+            // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colDashboardSchemaId,
-            this.colDashboardSchemaName,
+            this.gridColumnSelect,
+            this.colDatasourceName,
+            this.colDesc,
             this.colUserIn,
-            this.colDateIn,
-            this.gcDelete});
+            this.colDateIn});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.OptionsView.ColumnAutoWidth = false;
@@ -95,21 +95,19 @@
             this.gridViewMain.OptionsView.ShowGroupPanel = false;
             this.gridViewMain.OptionsView.ShowIndicator = false;
             // 
-            // colDashboardSchemaId
+            // gridColumnSelect
             // 
-            this.colDashboardSchemaId.AppearanceCell.Options.UseTextOptions = true;
-            this.colDashboardSchemaId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDashboardSchemaId.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDashboardSchemaId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDashboardSchemaId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDashboardSchemaId.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDashboardSchemaId.Caption = "Select";
-            this.colDashboardSchemaId.ColumnEdit = this.repositoryItemButtonEditSelect;
-            this.colDashboardSchemaId.FieldName = "DashboardSchemaId";
-            this.colDashboardSchemaId.Name = "colDashboardSchemaId";
-            this.colDashboardSchemaId.Visible = true;
-            this.colDashboardSchemaId.VisibleIndex = 0;
-            this.colDashboardSchemaId.Width = 102;
+            this.gridColumnSelect.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumnSelect.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnSelect.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumnSelect.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnSelect.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnSelect.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumnSelect.Caption = "Select";
+            this.gridColumnSelect.ColumnEdit = this.repositoryItemButtonEditSelect;
+            this.gridColumnSelect.Name = "gridColumnSelect";
+            this.gridColumnSelect.Visible = true;
+            this.gridColumnSelect.VisibleIndex = 0;
             // 
             // repositoryItemButtonEditSelect
             // 
@@ -120,19 +118,43 @@
             this.repositoryItemButtonEditSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditSelect_ButtonClick);
             // 
-            // colDashboardSchemaName
+            // colDatasourceName
             // 
-            this.colDashboardSchemaName.AppearanceCell.Options.UseTextOptions = true;
-            this.colDashboardSchemaName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDashboardSchemaName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDashboardSchemaName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colDashboardSchemaName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDashboardSchemaName.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colDashboardSchemaName.FieldName = "DashboardSchemaName";
-            this.colDashboardSchemaName.Name = "colDashboardSchemaName";
-            this.colDashboardSchemaName.Visible = true;
-            this.colDashboardSchemaName.VisibleIndex = 1;
-            this.colDashboardSchemaName.Width = 141;
+            this.colDatasourceName.AppearanceCell.Options.UseTextOptions = true;
+            this.colDatasourceName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDatasourceName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDatasourceName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDatasourceName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDatasourceName.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDatasourceName.Caption = "Data Source Name";
+            this.colDatasourceName.FieldName = "DatasourceName";
+            this.colDatasourceName.Name = "colDatasourceName";
+            this.colDatasourceName.Visible = true;
+            this.colDatasourceName.VisibleIndex = 1;
+            this.colDatasourceName.Width = 146;
+            // 
+            // colDesc
+            // 
+            this.colDesc.AppearanceCell.Options.UseTextOptions = true;
+            this.colDesc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDesc.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDesc.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDesc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDesc.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colDesc.Caption = "Description";
+            this.colDesc.ColumnEdit = this.repositoryItemMemoExEditDesc;
+            this.colDesc.FieldName = "Desc";
+            this.colDesc.Name = "colDesc";
+            this.colDesc.Visible = true;
+            this.colDesc.VisibleIndex = 2;
+            this.colDesc.Width = 81;
+            // 
+            // repositoryItemMemoExEditDesc
+            // 
+            this.repositoryItemMemoExEditDesc.AutoHeight = false;
+            this.repositoryItemMemoExEditDesc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEditDesc.Name = "repositoryItemMemoExEditDesc";
             // 
             // colUserIn
             // 
@@ -146,7 +168,7 @@
             this.colUserIn.FieldName = "UserIn";
             this.colUserIn.Name = "colUserIn";
             this.colUserIn.Visible = true;
-            this.colUserIn.VisibleIndex = 2;
+            this.colUserIn.VisibleIndex = 3;
             this.colUserIn.Width = 120;
             // 
             // repositoryItemLookUpEditUserIn
@@ -169,8 +191,8 @@
             this.colDateIn.FieldName = "DateIn";
             this.colDateIn.Name = "colDateIn";
             this.colDateIn.Visible = true;
-            this.colDateIn.VisibleIndex = 3;
-            this.colDateIn.Width = 115;
+            this.colDateIn.VisibleIndex = 4;
+            this.colDateIn.Width = 126;
             // 
             // repositoryItemDateEditDateIn
             // 
@@ -185,40 +207,6 @@
             this.repositoryItemDateEditDateIn.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.repositoryItemDateEditDateIn.Mask.EditMask = "d/M/yyyy HH:mm:ss";
             this.repositoryItemDateEditDateIn.Name = "repositoryItemDateEditDateIn";
-            // 
-            // gcDelete
-            // 
-            this.gcDelete.AppearanceCell.Options.UseTextOptions = true;
-            this.gcDelete.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcDelete.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gcDelete.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcDelete.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcDelete.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gcDelete.Caption = "Delete";
-            this.gcDelete.ColumnEdit = this.repositoryItemButtonEditDelete;
-            this.gcDelete.Name = "gcDelete";
-            this.gcDelete.Visible = true;
-            this.gcDelete.VisibleIndex = 4;
-            // 
-            // repositoryItemButtonEditDelete
-            // 
-            this.repositoryItemButtonEditDelete.AutoHeight = false;
-            this.repositoryItemButtonEditDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
-            this.repositoryItemButtonEditDelete.Name = "repositoryItemButtonEditDelete";
-            this.repositoryItemButtonEditDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDelete_ButtonClick);
-            // 
-            // XPSCS
-            // 
-            this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppDashboardSchemaDataTable);
-            this.XPSCS.Session = this.UOW;
-            // 
-            // UOW
-            // 
-            this.UOW.IsObjectModifiedOnNonPersistentPropertyChange = null;
-            this.UOW.TrackPropertiesModifications = false;
             // 
             // groupControl1
             // 
@@ -241,21 +229,12 @@
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // LSMSDS
-            // 
-            this.LSMSDS.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardD);
-            this.LSMSDS.KeyExpression = "[DatasourceID]";
-            // 
             // LSMSUser
             // 
             this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.User);
             this.LSMSUser.KeyExpression = "[UserID]";
             // 
-            // appDashboardSchemaTableAdapter
-            // 
-            this.appDashboardSchemaTableAdapter.ClearBeforeFill = true;
-            // 
-            // DashboardOpenDlg
+            // DashboardDSOpenDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -265,24 +244,22 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "DashboardOpenDlg";
+            this.Name = "DashboardDSOpenDlg";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Open Dashboard";
+            this.Text = "Open Data Sources";
             this.Load += new System.EventHandler(this.DashboardOpenDlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUserIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).EndInit();
             this.ResumeLayout(false);
 
@@ -294,19 +271,16 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnClose;
-        private DevExpress.Xpo.XPServerCollectionSource XPSCS;
-        private DevExpress.Xpo.UnitOfWork UOW;
-        private DevExpress.XtraGrid.Columns.GridColumn colDashboardSchemaName;
         private DevExpress.XtraGrid.Columns.GridColumn colUserIn;
         private DevExpress.XtraGrid.Columns.GridColumn colDateIn;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDS;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSUser;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditUserIn;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDateIn;
-        private DevExpress.XtraGrid.Columns.GridColumn colDashboardSchemaId;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditSelect;
-        private DevExpress.XtraGrid.Columns.GridColumn gcDelete;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDelete;
-        private NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter appDashboardSchemaTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnSelect;
+        private DevExpress.XtraGrid.Columns.GridColumn colDatasourceName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesc;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditDesc;
     }
 }

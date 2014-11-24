@@ -12,16 +12,17 @@ using DevExpress.XtraSplashScreen;
 
 namespace NICSQLTools.Views.Dashboard
 {
-    public partial class DashboardOpenDlg : DevExpress.XtraEditors.XtraForm
+    public partial class DashboardDSOpenDlg : DevExpress.XtraEditors.XtraForm
     {
 
         #region -   Variables   -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(DashboardOpenDlg));
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
-        public int DashboardSchemaId;
+        public NICSQLTools.Data.Linq.AppDashboardD DataSourceRow;
+
         #endregion
         #region -   Functions   -
-        public DashboardOpenDlg()
+        public DashboardDSOpenDlg()
         {
             InitializeComponent();
         }
@@ -34,20 +35,9 @@ namespace NICSQLTools.Views.Dashboard
                 {
                     LSMSDS.QueryableSource = from q in dsLinq.AppDashboardDs select q;
                     LSMSUser.QueryableSource = from q in dsLinq.Users select q;
-
-                    XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
-                    gridControlMain.DataSource = XPSCS;
-                    gridViewMain.BestFitColumns();
                 }));
                 SplashScreenManager.CloseForm();
             });
-        }
-        private void RefreshData()
-        {
-            UOW.DropIdentityMap();
-            UOW.DropChanges();
-            XPSCS.Reload();
-            gridViewMain.RefreshData();
         }
         #endregion
         #region -   EventWhnd   -
@@ -57,29 +47,21 @@ namespace NICSQLTools.Views.Dashboard
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
         private void repositoryItemButtonEditSelect_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DialogResult = System.Windows.Forms.DialogResult.OK;
 
-            DevExpress.Xpo.Metadata.XPDataTableObject obj = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
-            DashboardSchemaId = Convert.ToInt32(obj.GetMemberValue("DashboardSchemaId"));
+            //Get Selected Row
+            DataSourceRow = (NICSQLTools.Data.Linq.AppDashboardD)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
             Close();
+            
         }
-        private void repositoryItemButtonEditDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
-                return;
-            DevExpress.Xpo.Metadata.XPDataTableObject obj = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
-            appDashboardSchemaTableAdapter.Delete(Convert.ToInt32(obj.GetMemberValue("DashboardSchemaId")));
-            MsgDlg.Show("Schema Deleted ..", MsgDlg.MessageType.Success);
-            Logger.Info("Schema Deleted ..");
-            RefreshData();
-        }
-
+        
         #endregion
 
+        
 
 
     }

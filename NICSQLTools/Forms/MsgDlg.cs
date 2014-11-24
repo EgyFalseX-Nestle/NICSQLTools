@@ -171,7 +171,6 @@ namespace System.Windows.Forms
             else
                 Alert.Show(CallForm, info);
 
-            
             //Application.OpenForms[0]
         }
         private void msgDlg_Load(object sender, EventArgs e)
@@ -181,23 +180,30 @@ namespace System.Windows.Forms
         }
         void StartVisibility()
         {
-            this.Top += 15;
-            Timer tmr = new Timer();
-            tmr.Interval = 50;
-            tmr.Tick += (o, e) => 
+            try
             {
-                if (this.Opacity < 1)
+                this.Top += 15;
+                Timer tmr = new Timer();
+                tmr.Interval = 50;
+                tmr.Tick += (o, e) =>
                 {
-                    this.Opacity += 0.2;
-                    this.Top -= 5;
-                }
-                else
-                {
-                    this.Opacity = 1;
-                    tmr.Stop();
-                }
-            };
-            tmr.Start();
+                    if (this.Opacity < 1)
+                    {
+                        this.Opacity += 0.2;
+                        this.Top -= 5;
+                    }
+                    else
+                    {
+                        this.Opacity = 1;
+                        tmr.Stop();
+                    }
+                };
+                tmr.Start();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex.Message, ex);
+            }
         }
     
     }

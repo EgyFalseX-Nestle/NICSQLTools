@@ -5,16 +5,18 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using System.Data;
+using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Dashboard
 {
     public partial class AppDashboardDSUC : XtraUserControl
     {
-        #region - Var -
+
+        #region - Variables -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(AppDashboardDSUC));
         int? NewId = null;
         #endregion
-        #region - Fun -
+        #region - Functions -
         public AppDashboardDSUC()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace NICSQLTools.Views.Dashboard
             });
         }
         #endregion
-        #region -  EventWhnd - 
+        #region - EventWhnd -
         private void ProductEditorUC_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -75,7 +77,20 @@ namespace NICSQLTools.Views.Dashboard
             XPSCS.Reload();
             gridViewMain.RefreshData();
         }
+        private void UOW_BeforeCommitTransaction(object sender, DevExpress.Xpo.SessionManipulationEventArgs e)
+        {
+            DevExpress.Xpo.Helpers.ObjectSet Rows = (DevExpress.Xpo.Helpers.ObjectSet)e.Session.GetObjectsToSave();
+            DateTime DateIn = DataManager.defaultInstance.ServerDateTime;
+            foreach (DevExpress.Xpo.Metadata.XPDataTableObject item in Rows)
+            {
+                item.SetMemberValue("UserIn", UserManager.defaultInstance.User.UserId);
+                item.SetMemberValue("DateIn", DateIn);
+            }
+
+        }
+
         #endregion
 
+ 
     }
 }

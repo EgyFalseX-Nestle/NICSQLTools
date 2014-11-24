@@ -121,13 +121,6 @@
       <Column Name="NCE_Project" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.AppDashboardDS" Member="AppDashboardDs">
-    <Type Name="AppDashboardD">
-      <Column Name="DatasourceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Users" Member="Users">
     <Type Name="User">
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -141,6 +134,16 @@
       <Column Name="DashboardSchemaName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AppDashboardDS" Member="AppDashboardDs">
+    <Type Name="AppDashboardD">
+      <Column Name="DatasourceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

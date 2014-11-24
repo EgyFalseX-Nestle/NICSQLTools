@@ -237,11 +237,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSP.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="TestFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TestFrm.Designer.cs">
+      <DependentUpon>TestFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\AppDashboardDSParamUC.cs">
       <SubType>UserControl</SubType>
@@ -254,6 +254,12 @@
     </Compile>
     <Compile Include="Views\Dashboard\DashboardDesignerUC.Designer.cs">
       <DependentUpon>DashboardDesignerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardDSOpenDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardDSOpenDlg.Designer.cs">
+      <DependentUpon>DashboardDSOpenDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\DashboardOpenDlg.cs">
       <SubType>Form</SubType>
@@ -590,6 +596,9 @@
     <EmbeddedResource Include="Views\Dashboard\DashboardDesignerUC.resx">
       <DependentUpon>DashboardDesignerUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\DashboardDSOpenDlg.resx">
+      <DependentUpon>DashboardDSOpenDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\DashboardOpenDlg.resx">
       <DependentUpon>DashboardOpenDlg.cs</DependentUpon>
     </EmbeddedResource>
@@ -665,8 +674,8 @@
     <None Include="Data\Linq\dsLinqData.dbml.layout">
       <DependentUpon>dsLinqData.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="TestFrm.resx">
+      <DependentUpon>TestFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\MonthlyKPIFrm.resx">
       <DependentUpon>MonthlyKPIFrm.cs</DependentUpon>
@@ -854,6 +863,7 @@
     </Content>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\addnewdatasource_32x321.png" />
     <None Include="Resources\cancel_16x16.png" />
     <None Include="Resources\save_32x32.png" />
     <None Include="Resources\open_32x32.png" />

@@ -10,19 +10,26 @@ using System.Windows.Forms;
 
 namespace NICSQLTools
 {
-    public partial class Form1 : Form
+    public partial class TestFrm : Form
     {
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new Data.Linq.dsLinqDataDataContext();
-        public Form1()
+        public TestFrm()
         {
             InitializeComponent();
-            LoadData();
+            
         }
-        private void LoadData()
+
+        private void Form1_Load(object sender, EventArgs e)
         {
-            LSMSGeneral.QueryableSource = from q in dsLinq.AppDashboardSchemas select q;
-            LSMSSub.QueryableSource = from q in dsLinq.Users select q;
+          
+
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+        
 
     }
 }

@@ -8,12 +8,6 @@
         <elementListCompartment Id="3e800fb8-54dc-469c-9eda-f32377ed1dfa" absoluteBounds="4.2650000000000006, 2.21, 1.9700000000000002, 22.7486572265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fc076879-08df-4dd4-9e95-da2dc285a9be" absoluteBounds="1.375, 2.5, 2, 1.3862939453125">
-      <DataClassMoniker Name="/dsLinqDataDataContext/AppDashboardD" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6e5c22ff-6b0d-48e4-9e1d-ce39c0efe141" absoluteBounds="1.3900000000000001, 2.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="dae076a3-f140-4674-a82e-4455e3f8f219" absoluteBounds="1.625, 4, 2, 1.3862939453124996">
       <DataClassMoniker Name="/dsLinqDataDataContext/User" />
       <nestedChildShapes>
@@ -24,6 +18,12 @@
       <DataClassMoniker Name="/dsLinqDataDataContext/AppDashboardSchema" />
       <nestedChildShapes>
         <elementListCompartment Id="3283c125-ad0f-4d0f-a9a4-fa89ce5c69b7" absoluteBounds="1.64, 6.085, 2.3449999999999998, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39a257e2-77c0-400e-aae9-da700679b5cf" absoluteBounds="1.375, 1.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dsLinqDataDataContext/AppDashboardD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3306b603-a75b-4ad9-a88c-595a4715d2d0" absoluteBounds="1.3900000000000001, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

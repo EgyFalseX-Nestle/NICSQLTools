@@ -18,6 +18,10 @@ namespace NICSQLTools
         public static int ConnectionTimeout = 0;
         public static int SHRINKSIZE = 10;
         public static Data.dsDataTableAdapters.QueriesTableAdapter adpQry = new Data.dsDataTableAdapters.QueriesTableAdapter();
+        public enum ParamDataSource
+        {
+            @SalesDistrict2
+        }
 
         #endregion
         #region -   Properties   -
@@ -282,8 +286,9 @@ namespace NICSQLTools
                     if (obj != null)
                     {
                         DataTable dt = DataManager.GetStoredProcedureSchema(obj.ToString());
-                        dashboardDesigner.Dashboard.DataSources[i].ComponentName = "ID";
-                        dashboardDesigner.Dashboard.DataSources[i] = Classes.Dashboard.CreateDashboardDatasource(dt, dashboardDesigner.Dashboard.DataSources[i].Name, Convert.ToInt32(ParamID.Value));
+                        //dashboardDesigner.Dashboard.DataSources[i].ComponentName = "ID";
+                        //DevExpress.DashboardCommon.DataSource ds = Classes.Dashboard.CreateDashboardDatasource(dt, dashboardDesigner.Dashboard.DataSources[i].Name, Convert.ToInt32(ParamID.Value));
+                        dashboardDesigner.Dashboard.DataSources[i].Data = dt;
                     }
                 }
             }
@@ -299,18 +304,19 @@ namespace NICSQLTools
             SqlDataAdapter adp = new SqlDataAdapter("", Properties.Settings.Default.IC_DBConnectionString);
             adp.SelectCommand.CommandType = CommandType.StoredProcedure;
             adp.SelectCommand.CommandText = StoredProcedureName;
+
             if (InfoMessageHnd != null)
                 adp.SelectCommand.Connection.InfoMessage += InfoMessageHnd;
             if (StatementCompleted != null)
                 adp.SelectCommand.StatementCompleted += StatementCompleted;
-            //Notifyer.AddItem(adp.SelectCommand);//Add Command to UpdateInfo[3] so you can cancel fill
+
             cmd = adp.SelectCommand;
             foreach (KeyValuePair<string, object> item in Paramters)
                 adp.SelectCommand.Parameters.Add(new SqlParameter(item.Key, item.Value));
             try
             {
+                adp.SelectCommand.CommandTimeout = DataManager.ConnectionTimeout;
                 adp.Fill(dt);
-                
             }
             catch (SqlException ex)
             {
@@ -318,8 +324,6 @@ namespace NICSQLTools
             }
             return dt;
         }
-
-        
 
         #endregion
 

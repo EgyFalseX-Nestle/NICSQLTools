@@ -47,6 +47,7 @@
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup3 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup4 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem14 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup5 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup6 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup7 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
@@ -91,7 +92,7 @@
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
-            this.repositoryItemGridLookUpEditDataSources = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.LSMSDataSource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.dashboardDesignerMain = new DevExpress.DashboardWin.DashboardDesigner();
             this.ribbonControlMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.dashboardBackstageViewControl1 = new DevExpress.DashboardWin.Bars.DashboardBackstageViewControl();
@@ -229,12 +230,11 @@
             this.mapCanadaBarItem1 = new DevExpress.DashboardWin.Bars.MapCanadaBarItem();
             this.quickAccessUndoBarItem1 = new DevExpress.DashboardWin.Bars.QuickAccessUndoBarItem();
             this.quickAccessRedoBarItem1 = new DevExpress.DashboardWin.Bars.QuickAccessRedoBarItem();
-            this.barButtonItemRefrshDS = new DevExpress.XtraBars.BarButtonItem();
-            this.fileNewBarItem = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiDatasource = new DevExpress.XtraBars.BarEditItem();
+            this.bbiNew = new DevExpress.XtraBars.BarButtonItem();
             this.bbiOpen = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.bbiSaveAs = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiAddDatasource = new DevExpress.XtraBars.BarButtonItem();
             this.pivotToolsRibbonPageCategory1 = new DevExpress.DashboardWin.Bars.PivotToolsRibbonPageCategory();
             this.dataRibbonPage1 = new DevExpress.DashboardWin.Bars.DataRibbonPage();
             this.filteringRibbonPageGroup1 = new DevExpress.DashboardWin.Bars.FilteringRibbonPageGroup();
@@ -337,18 +337,16 @@
             this.dataSourceFilteringRibbonPageGroup1 = new DevExpress.DashboardWin.Bars.DataSourceFilteringRibbonPageGroup();
             this.viewRibbonPage1 = new DevExpress.DashboardWin.Bars.ViewRibbonPage();
             this.skinsRibbonPageGroup1 = new DevExpress.DashboardWin.Bars.SkinsRibbonPageGroup();
-            this.LSMSDataSource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.dashboardBarControllerMain = new DevExpress.DashboardWin.Bars.DashboardBarController();
             this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSTableAdapter();
             this.dsData = new NICSQLTools.Data.dsData();
             this.appDashboardSchemaTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDataSources)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             this.dashboardBackstageViewControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarAndDockingControllerMain)).BeginInit();
             this.backstageViewClientControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarControllerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             this.SuspendLayout();
@@ -372,21 +370,10 @@
             0});
             this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
-            // repositoryItemGridLookUpEditDataSources
+            // LSMSDataSource
             // 
-            this.repositoryItemGridLookUpEditDataSources.AutoHeight = false;
-            this.repositoryItemGridLookUpEditDataSources.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            this.repositoryItemGridLookUpEditDataSources.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
-            this.repositoryItemGridLookUpEditDataSources.DataSource = this.LSMSDataSource;
-            this.repositoryItemGridLookUpEditDataSources.DisplayMember = "DatasourceName";
-            this.repositoryItemGridLookUpEditDataSources.HideSelection = false;
-            this.repositoryItemGridLookUpEditDataSources.Name = "repositoryItemGridLookUpEditDataSources";
-            this.repositoryItemGridLookUpEditDataSources.NullText = "";
-            this.repositoryItemGridLookUpEditDataSources.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
-            this.repositoryItemGridLookUpEditDataSources.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditDataSources.ValueMember = "DatasourceID";
+            this.LSMSDataSource.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardD);
+            this.LSMSDataSource.KeyExpression = "[DatasourceID]";
             // 
             // dashboardDesignerMain
             // 
@@ -533,14 +520,13 @@
             this.mapCanadaBarItem1,
             this.quickAccessUndoBarItem1,
             this.quickAccessRedoBarItem1,
-            this.barButtonItemRefrshDS,
-            this.fileNewBarItem,
-            this.bbiDatasource,
+            this.bbiNew,
             this.bbiOpen,
             this.bbiSave,
-            this.bbiSaveAs});
+            this.bbiSaveAs,
+            this.bbiAddDatasource});
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControlMain.MaxItemId = 4;
+            this.ribbonControlMain.MaxItemId = 5;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.pivotToolsRibbonPageCategory1,
@@ -647,7 +633,7 @@
             this.fileNewBarItem1.Id = 1;
             this.fileNewBarItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("fileNewBarItem1.LargeGlyph")));
             this.fileNewBarItem1.Name = "fileNewBarItem1";
-            this.fileNewBarItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.fileNewBarItem1_ItemClick);
+            this.fileNewBarItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNew_ItemClick);
             // 
             // fileOpenBarItem1
             // 
@@ -880,7 +866,13 @@
             galleryItemGroup3.Caption = "Theme Skins";
             galleryItemGroup3.Visible = false;
             galleryItemGroup4.Caption = "Custom Skins";
-            galleryItemGroup4.Visible = false;
+            galleryItem14.Caption = "DevExpress Design";
+            galleryItem14.Hint = "DevExpress Design";
+            galleryItem14.HoverImage = ((System.Drawing.Image)(resources.GetObject("galleryItem14.HoverImage")));
+            galleryItem14.Image = ((System.Drawing.Image)(resources.GetObject("galleryItem14.Image")));
+            galleryItem14.Tag = "DevExpress Design";
+            galleryItemGroup4.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
+            galleryItem14});
             this.dashboardSkinsBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
             galleryItemGroup1,
             galleryItemGroup2,
@@ -1563,52 +1555,24 @@
             this.quickAccessRedoBarItem1.Id = 126;
             this.quickAccessRedoBarItem1.Name = "quickAccessRedoBarItem1";
             // 
-            // barButtonItemRefrshDS
+            // bbiNew
             // 
-            this.barButtonItemRefrshDS.Caption = "Refresh Data Sources";
-            this.barButtonItemRefrshDS.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.barButtonItemRefrshDS.Glyph = global::NICSQLTools.Properties.Resources.refresh2_32x32;
-            this.barButtonItemRefrshDS.Id = 1;
-            this.barButtonItemRefrshDS.Name = "barButtonItemRefrshDS";
-            this.barButtonItemRefrshDS.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItemRefrshDS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemRefrshDS_ItemClick);
-            // 
-            // fileNewBarItem
-            // 
-            this.fileNewBarItem.AllowDrawArrowInMenu = false;
-            this.fileNewBarItem.Caption = "New Dashboard";
-            this.fileNewBarItem.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.fileNewBarItem.Glyph = global::NICSQLTools.Properties.Resources.new_32x32;
-            this.fileNewBarItem.Id = 2;
-            this.fileNewBarItem.LargeGlyph = global::NICSQLTools.Properties.Resources.new_32x32;
-            this.fileNewBarItem.Name = "fileNewBarItem";
-            this.fileNewBarItem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.bbiNew.AllowDrawArrowInMenu = false;
+            this.bbiNew.Caption = "New Dashboard";
+            this.bbiNew.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiNew.Glyph = global::NICSQLTools.Properties.Resources.new_32x32;
+            this.bbiNew.Id = 2;
+            this.bbiNew.LargeGlyph = global::NICSQLTools.Properties.Resources.new_32x32;
+            this.bbiNew.Name = "bbiNew";
+            this.bbiNew.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             toolTipTitleItem1.Text = "New";
             toolTipItem1.LeftIndent = 6;
             toolTipItem1.Text = "Create a new dashboard";
             superToolTip1.Items.Add(toolTipTitleItem1);
             superToolTip1.Items.Add(toolTipItem1);
-            this.fileNewBarItem.SuperTip = superToolTip1;
-            this.fileNewBarItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.fileNewBarItem1_ItemClick);
-            // 
-            // bbiDatasource
-            // 
-            this.bbiDatasource.AllowRightClickInMenu = false;
-            this.bbiDatasource.Caption = "Data Sources";
-            this.bbiDatasource.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
-            this.bbiDatasource.Edit = this.repositoryItemGridLookUpEditDataSources;
-            this.bbiDatasource.Glyph = global::NICSQLTools.Properties.Resources.addnewdatasource_16x16;
-            this.bbiDatasource.Id = 3;
-            this.bbiDatasource.LargeGlyph = global::NICSQLTools.Properties.Resources.addnewdatasource_32x32;
-            this.bbiDatasource.Name = "bbiDatasource";
-            toolTipTitleItem2.Text = "Add";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Add New Data Sources to dashboard";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.bbiDatasource.SuperTip = superToolTip2;
-            this.bbiDatasource.Width = 150;
+            this.bbiNew.SuperTip = superToolTip1;
+            this.bbiNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiNew_ItemClick);
             // 
             // bbiOpen
             // 
@@ -1644,12 +1608,30 @@
             this.bbiSaveAs.Name = "bbiSaveAs";
             this.bbiSaveAs.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem3.Text = "Save As";
+            toolTipTitleItem2.Text = "Save As";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Copy current dashboard to new one";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            this.bbiSaveAs.SuperTip = superToolTip2;
+            // 
+            // bbiAddDatasource
+            // 
+            this.bbiAddDatasource.Caption = "Data Sources";
+            this.bbiAddDatasource.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.bbiAddDatasource.Glyph = global::NICSQLTools.Properties.Resources.addnewdatasource_32x32;
+            this.bbiAddDatasource.Id = 4;
+            this.bbiAddDatasource.LargeGlyph = global::NICSQLTools.Properties.Resources.addnewdatasource_32x32;
+            this.bbiAddDatasource.Name = "bbiAddDatasource";
+            this.bbiAddDatasource.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            toolTipTitleItem3.Text = "Add";
             toolTipItem3.LeftIndent = 6;
-            toolTipItem3.Text = "Copy current dashboard to new one";
+            toolTipItem3.Text = "Add New Data Sources to dashboard";
             superToolTip3.Items.Add(toolTipTitleItem3);
             superToolTip3.Items.Add(toolTipItem3);
-            this.bbiSaveAs.SuperTip = superToolTip3;
+            this.bbiAddDatasource.SuperTip = superToolTip3;
+            this.bbiAddDatasource.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiAddDatasource_ItemClick);
             // 
             // pivotToolsRibbonPageCategory1
             // 
@@ -2317,7 +2299,7 @@
             // 
             // fileRibbonPageGroup1
             // 
-            this.fileRibbonPageGroup1.ItemLinks.Add(this.fileNewBarItem);
+            this.fileRibbonPageGroup1.ItemLinks.Add(this.bbiNew);
             this.fileRibbonPageGroup1.ItemLinks.Add(this.bbiOpen);
             this.fileRibbonPageGroup1.ItemLinks.Add(this.bbiSave);
             this.fileRibbonPageGroup1.ItemLinks.Add(this.bbiSaveAs);
@@ -2374,9 +2356,7 @@
             // 
             // dataSourceRibbonPageGroup1
             // 
-            this.dataSourceRibbonPageGroup1.ItemLinks.Add(this.newDataSourceBarItem1);
-            this.dataSourceRibbonPageGroup1.ItemLinks.Add(this.bbiDatasource, true);
-            this.dataSourceRibbonPageGroup1.ItemLinks.Add(this.barButtonItemRefrshDS);
+            this.dataSourceRibbonPageGroup1.ItemLinks.Add(this.bbiAddDatasource);
             this.dataSourceRibbonPageGroup1.ItemLinks.Add(this.editDataSourceBarItem1);
             this.dataSourceRibbonPageGroup1.ItemLinks.Add(this.deleteDataSourceBarItem1);
             this.dataSourceRibbonPageGroup1.Name = "dataSourceRibbonPageGroup1";
@@ -2403,11 +2383,6 @@
             // 
             this.skinsRibbonPageGroup1.ItemLinks.Add(this.dashboardSkinsBarItem1);
             this.skinsRibbonPageGroup1.Name = "skinsRibbonPageGroup1";
-            // 
-            // LSMSDataSource
-            // 
-            this.LSMSDataSource.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardD);
-            this.LSMSDataSource.KeyExpression = "[DatasourceID]";
             // 
             // dashboardBarControllerMain
             // 
@@ -2563,12 +2538,11 @@
             this.Size = new System.Drawing.Size(1105, 453);
             this.Load += new System.EventHandler(this.DashboardDesignerUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDataSources)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDataSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).EndInit();
             this.dashboardBackstageViewControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarAndDockingControllerMain)).EndInit();
             this.backstageViewClientControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDataSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarControllerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             this.ResumeLayout(false);
@@ -2820,15 +2794,13 @@
         private DevExpress.DashboardWin.Bars.DashboardBarController dashboardBarControllerMain;
         private NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSTableAdapter appDashboardDSTableAdapter;
         private NICSQLTools.Data.dsData dsData;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemRefrshDS;
-        private DevExpress.XtraBars.BarButtonItem fileNewBarItem;
-        private DevExpress.XtraBars.BarEditItem bbiDatasource;
+        private DevExpress.XtraBars.BarButtonItem bbiNew;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDataSource;
         private DevExpress.XtraBars.BarButtonItem bbiOpen;
         private NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter appDashboardSchemaTableAdapter;
         private DevExpress.XtraBars.BarButtonItem bbiSave;
         private DevExpress.XtraBars.BarButtonItem bbiSaveAs;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditDataSources;
+        private DevExpress.XtraBars.BarButtonItem bbiAddDatasource;
     }
 }

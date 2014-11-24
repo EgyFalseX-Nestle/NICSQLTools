@@ -45,23 +45,17 @@ namespace NICSQLTools.Views.Dashboard
         }
         #endregion
         #region -   EventWhnd   -
-        
         private void DashboardDesignerUC_Load(object sender, EventArgs e)
         {
             LoadData();
             DashboardSchema = schemaTBL.NewAppDashboardSchemaRow();
         }
-        private void repositoryItemGridLookUpEditDataSources_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void bbiAddDatasource_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (e.Button.Kind != DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)
+            DashboardDSOpenDlg dlg = new DashboardDSOpenDlg();
+            if (dlg.ShowDialog() != DialogResult.OK)
                 return;
-            if (FXFW.SqlDB.IsNullOrEmpty(bbiDatasource.EditValue))
-                return;
-
-            //Get Selected Row
-            GridLookUpEdit editor = (GridLookUpEdit)sender;
-            NICSQLTools.Data.Linq.AppDashboardD dsRow = editor.Properties.GetRowByKeyValue(bbiDatasource.EditValue) as NICSQLTools.Data.Linq.AppDashboardD;
-
+            NICSQLTools.Data.Linq.AppDashboardD dsRow = dlg.DataSourceRow;
             //Check if this DS Already Added Before
             foreach (DevExpress.DashboardCommon.DataSource item in dashboardDesignerMain.Dashboard.DataSources)
             {
@@ -71,11 +65,6 @@ namespace NICSQLTools.Views.Dashboard
             DataTable DSTbl = DataManager.GetStoredProcedureSchema(dsRow.DatasourceSPName);//Get Stored Procedure Schema
             //Add Data Source To Dashboard Data Sources List
             dashboardDesignerMain.Dashboard.DataSources.Add(Classes.Dashboard.CreateDashboardDatasource(DSTbl, dsRow.DatasourceName, dsRow.DatasourceID));
-        }
-        
-        private void barButtonItemRefrshDS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            LoadData();
         }
         private void bbiOpen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -87,11 +76,12 @@ namespace NICSQLTools.Views.Dashboard
             
             DataManager.RefreshDatasourceSchema(ref dashboardDesignerMain);
         }
-        
-        private void fileNewBarItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void bbiNew_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadData();
             DashboardSchema = schemaTBL.NewAppDashboardSchemaRow();
+            DashboardSchema.DashboardSchemaName = "New Dashboard";
+            dashboardDesignerMain.Dashboard = new DevExpress.DashboardCommon.Dashboard();
         }
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -126,8 +116,6 @@ namespace NICSQLTools.Views.Dashboard
             }
         }
         #endregion
-
-
-
+        
     }
 }

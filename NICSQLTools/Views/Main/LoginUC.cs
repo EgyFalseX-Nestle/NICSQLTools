@@ -23,8 +23,7 @@ namespace NICSQLTools.Views.Main
         {
             tbUsername.Focus();
 
-            tbUsername.EditValue = "admin";
-            tbPassword.EditValue = "admin";
+            tbUsername.EditValue = "admin"; tbPassword.EditValue = "admin";
             btnLogin_Click(btnLogin, EventArgs.Empty);
 
         }
@@ -37,7 +36,16 @@ namespace NICSQLTools.Views.Main
             if (Classes.Managers.UserManager.defaultInstance.Login(tbUsername.EditValue.ToString(), tbPassword.EditValue.ToString()))
             {
                 SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormCaption("Updating .......");
-                DataManager.PerformUpdate();
+                DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());// Perform Update If Exists
+                if (Classes.Managers.UserManager.defaultInstance.User.UserId == 1)
+                {
+                    Dictionary<string, int> UploadFiles = DataManager.GetUploadDependanceies();
+                    if (UploadFiles.Count > 0)
+                    {
+                        if (MsgDlg.Show(String.Format("{0} New Files Found{1}Are You Sure You Wanna Update Server List?", UploadFiles.Count, Environment.NewLine), MsgDlg.MessageType.Question) == DialogResult.Yes)
+                            DataManager.PerformUpdaterUpload(UploadFiles);// Perform Download If Exists
+                    }
+                }
                 SplashScreenManager.CloseForm(false);
 
                 _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);

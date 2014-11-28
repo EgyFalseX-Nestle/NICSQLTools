@@ -14,6 +14,11 @@ namespace NICSQLTools.Uti
             public string RealName;
             public bool IsAdmin;
         }
+        public enum UpdaterArgsEnum
+        {
+            Upload = 1,
+            Download = 2
+        }
         public enum ServerOptions : int
         {
             FilesPath = 1,

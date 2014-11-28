@@ -7,13 +7,16 @@ using System.Data;
 using System.Data.OleDb;
 using System.IO;
 using log4net;
+using System.Collections;
+using System.IO.MemoryMappedFiles;
+using System.Threading;
 
 namespace NICSQLTools
 {
     public class DataManager
     {
         #region -   Variables   -
-        private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(DataManager));
+        private static readonly ILog Logger = LogManager.GetLogger(typeof(DataManager));
         public static DataManager defaultInstance;
         public static int ConnectionTimeout = 0;
         public static int SHRINKSIZE = 10;
@@ -136,6 +139,133 @@ namespace NICSQLTools
                 Logger.Error(ex.Message, ex);
             }
         }
+        public static void ZZPerformDependenciesClientUpdate(SplashScreenManager Splash)
+        {
+            Data.dsData.AppDependenceFileDataTable tbl = GetDownloadDependanceies();
+            //foreach (var item in collection)
+            //{
+                
+            //}
+        }
+        public static Dictionary<string, int> GetCurrentAssemblyFiles()
+        {
+            Dictionary<string, int> Asm = new Dictionary<string, int>();
+            int i = 0;
+            foreach (var assemblyName in System.Reflection.Assembly.GetExecutingAssembly().GetReferencedAssemblies())
+            {
+                if (Asm.TryGetValue(assemblyName.Name, out i))//Already Added
+                    continue;
+                if (assemblyName.Name.StartsWith("System"))//.Net Dll
+                    continue;
+                Asm.Add(assemblyName.Name.ToLower() + ".dll", Convert.ToInt32(assemblyName.Version.ToString().Replace(".", "")));
+            }
+            return Asm;
+        }
+        public static NICSQLTools.Data.dsData.AppDependenceFileDataTable GetDownloadDependanceies()
+        {
+            using (NICSQLTools.Data.dsDataTableAdapters.AppDependenceFileTableAdapter adpQry = new Data.dsDataTableAdapters.AppDependenceFileTableAdapter())
+            {
+                NICSQLTools.Data.dsData.AppDependenceFileDataTable RequiredFilesTbl = new Data.dsData.AppDependenceFileDataTable();
+                adpQry.FillByLiteData(RequiredFilesTbl);
+                Dictionary<string, int> ExistsFiles = GetCurrentAssemblyFiles();
+                for (int i = RequiredFilesTbl.Count - 1; i >= 0; i++)
+                {
+                    NICSQLTools.Data.dsData.AppDependenceFileRow row = (NICSQLTools.Data.dsData.AppDependenceFileRow)RequiredFilesTbl.Rows[i];
+                    int Version = 0;
+                    if (ExistsFiles.TryGetValue(row.FileName, out Version))
+                    {
+                        if (row.FileVersion <= Version)
+                            RequiredFilesTbl.Rows.RemoveAt(i);
+                    }
+                }
+                return RequiredFilesTbl;
+            }
+        }
+        public static Dictionary<string, int> GetUploadDependanceies()
+        {
+            Dictionary<string, int> output = new Dictionary<string,int>();
+            Dictionary<string, int> ExistsFiles = GetCurrentAssemblyFiles();
+            NICSQLTools.Data.dsDataTableAdapters.AppDependenceFileTableAdapter adpQry = new Data.dsDataTableAdapters.AppDependenceFileTableAdapter();
+            NICSQLTools.Data.dsData.AppDependenceFileDataTable RequiredFilesTbl = new Data.dsData.AppDependenceFileDataTable();
+            adpQry.FillByLiteData(RequiredFilesTbl);
+
+            foreach (KeyValuePair<string, int> item in ExistsFiles)
+            {
+                NICSQLTools.Data.dsData.AppDependenceFileRow row = RequiredFilesTbl.FindByFileName(item.Key);
+                if (row == null)// File Not Found On Server
+                    output.Add(row.FileName, row.FileVersion);
+                else
+                {
+                    if (item.Value > row.FileVersion)//Local File Is Newer
+                        output.Add(row.FileName, row.FileVersion);
+                }
+            }
+            return output;
+        }
+        public static void PerformUpdaterDownload(NICSQLTools.Data.dsData.AppDependenceFileDataTable tbl)
+        {
+            if (tbl.Count == 0)// No Update Found
+                return;
+            string Data = String.Format("{0}|{1}|", NICSQLTools.Uti.Types.UpdaterArgsEnum.Download, Properties.Settings.Default.IC_DBConnectionString);
+            for (int i = 0; i < tbl.Rows.Count; i++)
+            {
+                Data += ((NICSQLTools.Data.dsData.AppDependenceFileRow)tbl.Rows[i]).FileName;
+                if (i + 1 < tbl.Rows.Count)
+                    Data += "|";
+            }
+            //MemoryMappedFile mmf = MemoryMappedFile.CreateNew("NICSQLToolsUpdateMap", 1024);
+            //bool mutexCreated;
+            //Mutex mutex = new Mutex(true, "NICSQLToolsUpdateMapMutex", out mutexCreated);
+            //MemoryMappedViewStream stream = mmf.CreateViewStream();
+            //BinaryWriter writer = new BinaryWriter(stream);
+            //writer.Write(Data);// Write Data
+            //mutex.ReleaseMutex(); mutex.WaitOne();
+
+            Data = FXFW.EncDec.Encrypt(Data, "FalseX");// Encrypt Arg Data
+            using (System.Diagnostics.Process process = new System.Diagnostics.Process() { StartInfo = new System.Diagnostics.ProcessStartInfo(Program.updaterPath, Data) })
+            {
+                process.Start();
+            }
+
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+
+        }
+        public static void PerformUpdaterUpload(Dictionary<string, int> FilesList)
+        {
+            string Data = String.Format("{0}|{1}|", NICSQLTools.Uti.Types.UpdaterArgsEnum.Upload, Properties.Settings.Default.IC_DBConnectionString);
+            
+            foreach (KeyValuePair<string, int> item in FilesList)
+            {
+                Data += String.Format("{0}|{1}", item.Key, item.Value);
+            }
+            Data = Data.Substring(0, Data.Length - 2);
+
+
+            Data = FXFW.EncDec.Encrypt(Data, "FalseX");// Encrypt Arg Data
+            using (System.Diagnostics.Process process = new System.Diagnostics.Process() { StartInfo = new System.Diagnostics.ProcessStartInfo(Program.updaterPath, Data) })
+            {
+                process.Start();
+            }
+
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+        private static Dictionary<string, int> GetUploadDependanceies()
+        {
+            Dictionary<string, int> NeededFiles = new Dictionary<string, int>();
+            using (NICSQLTools.Data.dsDataTableAdapters.AppDependenceFileTableAdapter adpQry = new Data.dsDataTableAdapters.AppDependenceFileTableAdapter())
+            {
+                NICSQLTools.Data.dsData.AppDependenceFileDataTable RequiredFilesTbl = new Data.dsData.AppDependenceFileDataTable();
+                adpQry.Fill(RequiredFilesTbl);
+                Dictionary<string, int> AppFiles = GetCurrentAssemblyFiles();
+                foreach (KeyValuePair<string, int> item in AppFiles)
+                {
+                    if (RequiredFilesTbl.FindByFileName(item.Key) == null)
+                        NeededFiles.Add(item.Key, item.Value);
+                }
+            }
+            return NeededFiles;
+        }
+
         public static DataTable LoadExcelFile(string strFile, string sheetName, string ColumnsNames)
         {
             DataTable dt = new DataTable();

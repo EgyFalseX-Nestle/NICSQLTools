@@ -5,12 +5,14 @@ using System.Windows.Forms;
 using DevExpress.LookAndFeel;
 using System.Data.SqlClient;
 using System.Data;
+using System.Reflection;
 
 namespace NICSQLTools
 {
     static class Program
     {
         public static string updatePath = Application.StartupPath + @"\zUpdateObject.exe";
+        public static string updaterPath = Application.StartupPath + @"\Updater.exe";
         public static string AppPath = Application.StartupPath + @"\NICSQLTools.exe";
         public static string Log4NetFolder = Application.StartupPath + @"\Log4Net";
         public static string Log4NetConfigFile = Log4NetFolder + @"\NICSQLToolsLog4Net.config";
@@ -39,7 +41,24 @@ namespace NICSQLTools
                 //Set User Info
 
                 //Application.Run(new TestFrm());
-                Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
+
+                //Dictionary<string, int> asm = DataManager.GetCurrentAssemblyFiles();
+                //foreach (var item in asm)
+                //{
+                //    MessageBox.Show(String.Format("Name: {0}{1}Version: {2}", item.Key, Environment.NewLine, item.Value));
+                //}
+
+                //NICSQLTools.Data.dsData.AppDependenceFileDataTable tbl = new Data.dsData.AppDependenceFileDataTable();
+                //NICSQLTools.Data.dsData.AppDependenceFileRow row1 = tbl.NewAppDependenceFileRow();
+                //row1.FileName = "DevExpress.BonusSkins.v14.1.dll"; row1.FileVersion = 1000;
+                //tbl.Rows.Add(row1);
+
+                //NICSQLTools.Data.dsData.AppDependenceFileRow row2 = tbl.NewAppDependenceFileRow();
+                //row2.FileName = "DevExpress.Dashboard.v14.1.Core.dll"; row2.FileVersion = 1000;
+                //tbl.Rows.Add(row2);
+
+                DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());
+                //Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
             }
             
         }
@@ -49,6 +68,7 @@ namespace NICSQLTools
             Classes.Managers.UserManager.Init();
             Classes.Dashboard.Init();
         }
+        
 
     }
 }

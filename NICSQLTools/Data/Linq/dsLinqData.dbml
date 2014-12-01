@@ -121,13 +121,6 @@
       <Column Name="NCE_Project" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Users" Member="Users">
-    <Type Name="User">
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.AppDashboardSchema" Member="AppDashboardSchemas">
     <Type Name="AppDashboardSchema">
       <Column Name="DashboardSchemaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -136,14 +129,65 @@
       <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.AppDashboardDS" Member="AppDashboardDs">
-    <Type Name="AppDashboardD">
+  <Table Name="dbo.AppDatasource" Member="AppDatasources">
+    <Type Name="AppDatasource">
       <Column Name="DatasourceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AppDatasourceTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="AppDatasource_AppDatasourceLayout" Member="AppDatasourceLayouts" ThisKey="DatasourceID" OtherKey="DatasourceID" Type="AppDatasourceLayout" />
+      <Association Name="AppDatasourceType_AppDatasource" Member="AppDatasourceType" ThisKey="AppDatasourceTypeId" OtherKey="AppDatasourceTypeId" Type="AppDatasourceType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AppUsers" Member="AppUsers">
+    <Type Name="AppUser">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AppDatasourceType" Member="AppDatasourceTypes">
+    <Type Name="AppDatasourceType">
+      <Column Name="AppDatasourceTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="AppDatasourceType_AppDatasource" Member="AppDatasources" ThisKey="AppDatasourceTypeId" OtherKey="AppDatasourceTypeId" Type="AppDatasource" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AppDatasourceLayout" Member="AppDatasourceLayouts">
+    <Type Name="AppDatasourceLayout">
+      <Column Name="DatasourceLayoutId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DatasourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DatasourceLayoutName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="AppDatasource_AppDatasourceLayout" Member="AppDatasource" ThisKey="DatasourceID" OtherKey="DatasourceID" Type="AppDatasource" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SalesDistrict3" Member="SalesDistrict3s">
+    <Type Name="SalesDistrict3">
+      <Column Name="SalesDistrict3Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SalesDistrict2Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="SalesDistrict2_SalesDistrict3" Member="SalesDistrict2" ThisKey="SalesDistrict2Id" OtherKey="SalesDistrict2Id" Type="SalesDistrict2" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SalesDistrict2" Member="SalesDistrict2s">
+    <Type Name="SalesDistrict2">
+      <Column Name="SalesDistrict2Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Sales District]" Member="Sales_District" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SalesDistrict1Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="SalesDistrict2_SalesDistrict3" Member="SalesDistrict3s" ThisKey="SalesDistrict2Id" OtherKey="SalesDistrict2Id" Type="SalesDistrict3" />
+      <Association Name="SalesDistrict1_SalesDistrict2" Member="SalesDistrict1" ThisKey="SalesDistrict1Id" OtherKey="SalesDistrict1Id" Type="SalesDistrict1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SalesDistrict1" Member="SalesDistrict1s">
+    <Type Name="SalesDistrict1">
+      <Column Name="SalesDistrict1Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="SalesDistrict1_SalesDistrict2" Member="SalesDistrict2s" ThisKey="SalesDistrict1Id" OtherKey="SalesDistrict1Id" Type="SalesDistrict2" />
     </Type>
   </Table>
 </Database>

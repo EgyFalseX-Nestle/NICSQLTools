@@ -67,6 +67,7 @@
             this.gridControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlMain.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridControlMain.Location = new System.Drawing.Point(12, 12);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
@@ -154,8 +155,13 @@
             this.repositoryItemLookUpEditUserIn.AutoHeight = false;
             this.repositoryItemLookUpEditUserIn.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditUserIn.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("RealName", "Real Name", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditUserIn.DataSource = this.LSMSUser;
+            this.repositoryItemLookUpEditUserIn.DisplayMember = "RealName";
             this.repositoryItemLookUpEditUserIn.Name = "repositoryItemLookUpEditUserIn";
             this.repositoryItemLookUpEditUserIn.NullText = "";
+            this.repositoryItemLookUpEditUserIn.ValueMember = "UserID";
             // 
             // colDateIn
             // 
@@ -243,12 +249,12 @@
             // 
             // LSMSDS
             // 
-            this.LSMSDS.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardD);
+            this.LSMSDS.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasource);
             this.LSMSDS.KeyExpression = "[DatasourceID]";
             // 
             // LSMSUser
             // 
-            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.User);
+            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.AppUser);
             this.LSMSUser.KeyExpression = "[UserID]";
             // 
             // appDashboardSchemaTableAdapter

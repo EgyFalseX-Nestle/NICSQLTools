@@ -11,7 +11,7 @@ namespace NICSQLTools.Views.Permission
     public partial class UserRuleUC : XtraUserControl
     {
         #region - Var -
-        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(UserUC));
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(UserRuleUC));
         #endregion
         #region - Fun -
         public UserRuleUC()
@@ -24,7 +24,7 @@ namespace NICSQLTools.Views.Permission
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 Invoke(new MethodInvoker(() => {
-                    userRuleTableAdapter.Fill(dsData.UserRule);
+                    userRuleTableAdapter.Fill(dsData.AppUserRule);
                     users_LUETableAdapter.Fill(dsQry.Users_LUE); rules_LUETableAdapter.Fill(dsQry.Rules_LUE);
                     gridViewMain.BestFitColumns();
                 }));
@@ -47,7 +47,7 @@ namespace NICSQLTools.Views.Permission
             {
                 try
                 {
-                    userRuleTableAdapter.Update(dsData.UserRule);
+                    userRuleTableAdapter.Update(dsData.AppUserRule);
                     MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
                     Logger.Info("Data Saved ...");
                 }

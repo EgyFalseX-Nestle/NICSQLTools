@@ -33,11 +33,11 @@ namespace NICSQLTools.Views.Dashboard
             {
                 Invoke(new MethodInvoker(() =>
                 {
-                    LSMSDataSource.QueryableSource = from q in dsLinq.AppDashboardDs select q;
+                    LSMSDataSource.QueryableSource = from q in dsLinq.AppDatasources select q;
 
                     dashboardDesignerMain.Dashboard.DataSources.Clear();
                     //Load All Saved Data Sources
-                    appDashboardDSTableAdapter.Fill(dsData.AppDashboardDS);
+                    appDashboardDSTableAdapter.Fill(dsData.AppDatasource);
                 }));
                 SplashScreenManager.CloseForm();
             });
@@ -51,10 +51,10 @@ namespace NICSQLTools.Views.Dashboard
         }
         private void bbiAddDatasource_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DashboardDSOpenDlg dlg = new DashboardDSOpenDlg();
+            DatasourceOpenDlg dlg = new DatasourceOpenDlg(Uti.Types.AppDatasourceTypeIdEnum.Dashboard);
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
-            NICSQLTools.Data.Linq.AppDashboardD dsRow = dlg.DataSourceRow;
+            NICSQLTools.Data.Linq.AppDatasource dsRow = dlg.DataSourceRow;
             //Check if this DS Already Added Before
             foreach (DevExpress.DashboardCommon.DataSource item in dashboardDesignerMain.Dashboard.DataSources)
             {
@@ -85,11 +85,11 @@ namespace NICSQLTools.Views.Dashboard
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Open Choose Name dialog With Name If Existed
-            DashboardSaveNameDlg dlg = null;
+            NICSQLTools.Views.Main.ChooseSaveNameDlg dlg = null;
             if (DashboardSchema.DashboardSchemaId == -1)
-                dlg = new DashboardSaveNameDlg();
+                dlg = new NICSQLTools.Views.Main.ChooseSaveNameDlg();
             else
-                dlg = new DashboardSaveNameDlg(DashboardSchema.DashboardSchemaName);
+                dlg = new NICSQLTools.Views.Main.ChooseSaveNameDlg(DashboardSchema.DashboardSchemaName);
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
 
@@ -117,7 +117,7 @@ namespace NICSQLTools.Views.Dashboard
         private void bbiSaveAs_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //Open Choose Name dialog
-            DashboardSaveNameDlg dlg = new DashboardSaveNameDlg();
+            NICSQLTools.Views.Main.ChooseSaveNameDlg dlg = new NICSQLTools.Views.Main.ChooseSaveNameDlg();
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
 

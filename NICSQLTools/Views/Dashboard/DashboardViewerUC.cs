@@ -15,7 +15,7 @@ namespace NICSQLTools.Views.Dashboard
 {
     public partial class DashboardViewerUC : XtraUserControl
     {
-
+        
         #region -   Variables   -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(DashboardViewerUC));
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
@@ -37,7 +37,7 @@ namespace NICSQLTools.Views.Dashboard
                 Invoke(new MethodInvoker(() =>
                 {
                     LSMSSchema.QueryableSource = from q in dsLinq.AppDashboardSchemas select q;
-                    LSMSUser.QueryableSource = from q in dsLinq.Users select q;
+                    LSMSUser.QueryableSource = from q in dsLinq.AppUsers select q;
                 }));
                 SplashScreenManager.CloseForm();
             });
@@ -49,17 +49,17 @@ namespace NICSQLTools.Views.Dashboard
         /// <param name="ds">DatasourceStrc needed to get its information</param>
         private void CreateDatasource(int DatasourceID, ref Classes.Dashboard.DatasourceStrc ds)
         {
-            NICSQLTools.Data.dsData.AppDashboardDSRow DashboardDSRow = appDashboardDSTableAdapter.GetDataByDatasourceID(DatasourceID)[0];// Get information About DatasourceID
-            NICSQLTools.Data.dsData.AppDashboardDSPramDataTable dtParam = appDashboardDSPramTableAdapter.GetDataByDatasourceID(DatasourceID);// Get Paramters Information For DatasourceID
+            NICSQLTools.Data.dsData.AppDatasourceRow DashboardDSRow = appDashboardDSTableAdapter.GetDataByDatasourceID(DatasourceID)[0];// Get information About DatasourceID
+            NICSQLTools.Data.dsData.AppDatasourceParamDataTable dtParam = appDashboardDSPramTableAdapter.GetDataByDatasourceID(DatasourceID);// Get Paramters Information For DatasourceID
 
             ds.DashboadId = DatasourceID;
             ds.DatasourceName = DashboardDSRow.DatasourceName;
             ds.DatasourceSPName = DashboardDSRow.DatasourceSPName;
 
             //Create All Datasource Paramters
-            foreach (NICSQLTools.Data.dsData.AppDashboardDSPramRow ParamRow in dtParam.Rows)
+            foreach (NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow in dtParam.Rows)
             {
-                NICSQLTools.Data.dsQry.Get_sp_PramDataTable tblPramType = get_sp_PramTableAdapter.GetDataByParamName(ParamRow.PramName, DashboardDSRow.DatasourceSPName);//Get Paramter Information
+                NICSQLTools.Data.dsQry.Get_sp_PramDataTable tblPramType = get_sp_PramTableAdapter.GetDataByParamName(ParamRow.ParamName, DashboardDSRow.DatasourceSPName);//Get Paramter Information
                 string ParamType = string.Empty;
                 if (tblPramType.Rows.Count == 0)
                 {
@@ -72,7 +72,7 @@ namespace NICSQLTools.Views.Dashboard
                 //Create Control For Parameter
                 Control item = CreateDSElement(ParamRow, ParamType);
                 //Add Control to Datasource Controls List
-                ds.Controls.Add(ParamRow.PramName, item);
+                ds.Controls.Add(ParamRow.ParamName, item);
             }
             //Create Refresh Button For Datasource
             SimpleButton btnRefresh = new SimpleButton();
@@ -98,10 +98,10 @@ namespace NICSQLTools.Views.Dashboard
             ds.ExeButton = btnRefresh;
             ds.CancelButton = btnCancel;
         }
-        private Control CreateDSElement(NICSQLTools.Data.dsData.AppDashboardDSPramRow ParamRow, string ParamType)
+        private Control CreateDSElement(NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow, string ParamType)
         {
             object ctr = null;
-            switch (ParamRow.PramName)
+            switch (ParamRow.ParamName)
             {
                 case "@SalesDistrict2":
                     ctr = CreateLookupeditForSalesDistrict2();
@@ -111,7 +111,7 @@ namespace NICSQLTools.Views.Dashboard
                     {
                         case "nvarchar":
                             TextEdit txt1 = new TextEdit();
-                            txt1.Name = String.Format("ctr{0}{1}{2}", ParamRow.PramName, ParamRow.DatasourcePramID, ParamRow.DatasourceID);
+                            txt1.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
                             ctr = txt1;
                             break;
                         case "int":
@@ -119,7 +119,7 @@ namespace NICSQLTools.Views.Dashboard
                         case "bigint":
                             break;
                             TextEdit txt2 = new TextEdit();
-                            txt2.Name = String.Format("ctr{0}{1}{2}", ParamRow.PramName, ParamRow.DatasourcePramID, ParamRow.DatasourceID);
+                            txt2.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
                             txt2.Properties.DisplayFormat.FormatString = "n0";
                             txt2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
                             txt2.Properties.EditFormat.FormatString = "n0";
@@ -129,7 +129,7 @@ namespace NICSQLTools.Views.Dashboard
                             ctr = txt2;
                         case "float":
                             TextEdit txt3 = new TextEdit();
-                            txt3.Name = String.Format("ctr{0}{1}{2}", ParamRow.PramName, ParamRow.DatasourcePramID, ParamRow.DatasourceID);
+                            txt3.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
                             txt3.Properties.DisplayFormat.FormatString = "f2";
                             txt3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
                             txt3.Properties.EditFormat.FormatString = "f2";
@@ -141,7 +141,7 @@ namespace NICSQLTools.Views.Dashboard
                         case "datetime":
                             DateEdit de1 = new DateEdit();
                             de1.EditValue = null;
-                            de1.Name = String.Format("ctr{0}{1}{2}", ParamRow.PramName, ParamRow.DatasourcePramID, ParamRow.DatasourceID);
+                            de1.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
                             de1.Properties.DisplayFormat.FormatString = "d/M/yyyy";
                             de1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
                             de1.Properties.EditFormat.FormatString = "d/M/yyyy";
@@ -157,7 +157,7 @@ namespace NICSQLTools.Views.Dashboard
             }
 
 
-            ((TextEdit)ctr).Properties.NullValuePrompt = ParamRow.PramDisplayName;
+            ((TextEdit)ctr).Properties.NullValuePrompt = ParamRow.ParamDisplayName;
             return (Control)ctr;
         }
         private void DeleteLayoutConrols(ref List<Control> lst)
@@ -204,13 +204,12 @@ namespace NICSQLTools.Views.Dashboard
             ccbe.Name = "ccbe";
             ccbe.Properties.AllowMultiSelect = true;
             ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            ccbe.Properties.DataSource = adp.GetData();
+            ccbe.Properties.DataSource = Classes.Managers.UserManager.defaultInstance.UserRuleSalesDistrictTable;
             ccbe.Properties.DisplayMember = "Sales District 2";
             ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             ccbe.Properties.ValueMember = "Sales District 2";
             //ccbe.Size = new Size(100, 20);
             //ccbe.TabIndex = 2;
-
 
             return ccbe;
         }
@@ -277,10 +276,7 @@ namespace NICSQLTools.Views.Dashboard
         void btnRefresh_Click(object sender, EventArgs e)
         {
             SimpleButton btn = (SimpleButton)sender;
-            
             int dsID = Convert.ToInt32(btn.Tag);
-
-            AddToProgreeList(dsID.ToString());//Add To Working List
             int inx = -1;
             for (int i = 0; i < DataSourceList.Count; i++)
             {
@@ -295,6 +291,7 @@ namespace NICSQLTools.Views.Dashboard
                 MsgDlg.Show("Please Fill All Paramters For Data Source: " + DataSourceList[inx].DatasourceName, MsgDlg.MessageType.Info);
                 return;
             }
+            AddToProgreeList(dsID.ToString());//Add To Working List
             //Executing SP
             Dictionary<string, object> Paramters = new Dictionary<string, object>();
             foreach (KeyValuePair<string, Control> ctrItem in DataSourceList[inx].Controls)
@@ -365,6 +362,11 @@ namespace NICSQLTools.Views.Dashboard
         void SelectCommand_StatementCompleted(object sender, StatementCompletedEventArgs e)
         {
             MessageBox.Show("Select Command Complete Flag Fired: " + Environment.NewLine + "Recored Count: " + e.RecordCount);
+        }
+        private void lueDashboard_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)
+                LoadDefaultData();
         }
         #endregion
 

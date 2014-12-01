@@ -47,7 +47,7 @@
             this.colRuleName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRuleDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEditMemo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
-            this.rulesTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.RulesTableAdapter();
+            this.rulesTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRulesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
@@ -183,7 +183,7 @@
             this.XPSCS.AllowNew = true;
             this.XPSCS.AllowRemove = true;
             this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.RulesDataTable);
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppRulesDataTable);
             this.XPSCS.Session = this.UOW;
             // 
             // popupMenuMain
@@ -261,6 +261,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRuleName;
         private DevExpress.XtraGrid.Columns.GridColumn colRuleDesc;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditMemo;
-        private NICSQLTools.Data.dsDataTableAdapters.RulesTableAdapter rulesTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.AppRulesTableAdapter rulesTableAdapter;
     }
 }

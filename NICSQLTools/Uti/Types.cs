@@ -13,12 +13,36 @@ namespace NICSQLTools.Uti
             public string UserName;
             public string RealName;
             public bool IsAdmin;
+            public List<int> SalesDistrict2;
         }
         public enum UpdaterArgsEnum
         {
             Upload = 1,
             Download = 2
         }
+        public enum AppDatasourceTypeIdEnum
+        {
+            SPQry = 1,
+            Dashboard = 2
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public enum ServerOptions : int
         {
             FilesPath = 1,

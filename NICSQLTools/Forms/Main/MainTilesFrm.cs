@@ -34,7 +34,7 @@ namespace NICSQLTools.Forms.Main
                 {
                     for (int i = item.Items.Count - 1; i >= 0; i--)
                     {
-                        NICSQLTools.Data.dsData.RuleDetailRow elementRule = Classes.Managers.UserManager.defaultInstance.RuleElementInformation(((Tile)item.Items[i]).Name);
+                        NICSQLTools.Data.dsData.AppRuleDetailRow elementRule = Classes.Managers.UserManager.defaultInstance.RuleElementInformation(((Tile)item.Items[i]).Name);
                         if (((Tile)item.Items[i]).Tag != null && (bool)((Tile)item.Items[i]).Tag)// Show Exception Tiles
                             ((Tile)item.Items[i]).Visible = true;
                         else
@@ -132,7 +132,7 @@ namespace NICSQLTools.Forms.Main
             {
                 e.Control = new Views.Data.CustomerEditorUC();
             }
-            else if (e.Document == docRuleUser)
+            else if (e.Document == docRuleUser)//----------------------- Rules
             {
                 e.Control = new Views.Permission.UserUC();
             }
@@ -148,6 +148,14 @@ namespace NICSQLTools.Forms.Main
             {
                 e.Control = new Views.Permission.RuleDetailsUC();
             }
+            else if (e.Document == docRuleRuleSalesDisitrct3)
+            {
+                e.Control = new Views.Permission.RuleSalesDisitrct3UC();
+            }
+            else if (e.Document == docQueriesQryPivot)//----------------------- Queries
+            {
+                e.Control = new Views.Qry.QryPivotUC();
+            }
             else if (e.Document == docDashboardDesigner)
             {
                 e.Control = new Views.Dashboard.DashboardDesignerUC();
@@ -156,13 +164,13 @@ namespace NICSQLTools.Forms.Main
             {
                 e.Control = new Views.Dashboard.DashboardViewerUC();
             }
-            else if (e.Document == docAppDashboardDS)
+            else if (e.Document == docAppDatasource)
             {
-                e.Control = new Views.Dashboard.AppDashboardDSUC();
+                e.Control = new Views.Data.AppDatasourceUC();
             }
-            else if (e.Document == docAppDashboardDSParam)
+            else if (e.Document == docAppDatasourceParam)
             {
-                e.Control = new Views.Dashboard.AppDashboardDSParamUC();
+                e.Control = new Views.Data.AppDatasourceParamUC();
             }
             else if (e.Document == docEditorsTargetKPI)
             {

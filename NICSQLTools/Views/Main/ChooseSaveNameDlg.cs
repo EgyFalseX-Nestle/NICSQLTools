@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace NICSQLTools.Views.Dashboard
+namespace NICSQLTools.Views.Main
 {
-    public partial class DashboardSaveNameDlg : DevExpress.XtraEditors.XtraForm
+    public partial class ChooseSaveNameDlg : DevExpress.XtraEditors.XtraForm
     {
         public string SavingName = string.Empty;
-        public DashboardSaveNameDlg()
+        public ChooseSaveNameDlg()
         {
             InitializeComponent();
         }
-        public DashboardSaveNameDlg(string ExistingName)
+        public ChooseSaveNameDlg(string ExistingName)
         {
             InitializeComponent();
 

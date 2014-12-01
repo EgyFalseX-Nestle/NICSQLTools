@@ -49,7 +49,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.userRuleTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.UserRuleTableAdapter();
+            this.userRuleTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppUserRuleTableAdapter();
             this.dsQry = new NICSQLTools.Data.dsQry();
             this.usersLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.users_LUETableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Users_LUETableAdapter();
@@ -175,7 +175,7 @@
             // 
             // userRuleBindingSource
             // 
-            this.userRuleBindingSource.DataMember = "UserRule";
+            this.userRuleBindingSource.DataMember = "AppUserRule";
             this.userRuleBindingSource.DataSource = this.dsData;
             // 
             // dsData
@@ -370,7 +370,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.BindingSource userRuleBindingSource;
         private NICSQLTools.Data.dsData dsData;
-        private NICSQLTools.Data.dsDataTableAdapters.UserRuleTableAdapter userRuleTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.AppUserRuleTableAdapter userRuleTableAdapter;
         private System.Windows.Forms.BindingSource usersLUEBindingSource;
         private NICSQLTools.Data.dsQry dsQry;
         private DevExpress.XtraGrid.Columns.GridColumn colRealName;

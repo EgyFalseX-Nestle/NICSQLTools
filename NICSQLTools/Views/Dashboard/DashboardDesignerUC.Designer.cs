@@ -435,7 +435,7 @@
             this.viewRibbonPage1 = new DevExpress.DashboardWin.Bars.ViewRibbonPage();
             this.skinsRibbonPageGroup1 = new DevExpress.DashboardWin.Bars.SkinsRibbonPageGroup();
             this.dashboardBarControllerMain = new DevExpress.DashboardWin.Bars.DashboardBarController();
-            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSTableAdapter();
+            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
             this.dsData = new NICSQLTools.Data.dsData();
             this.appDashboardSchemaTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter();
             this.LSMSDataSource = new DevExpress.Data.Linq.LinqServerModeSource();
@@ -3293,7 +3293,7 @@
             // 
             // LSMSDataSource
             // 
-            this.LSMSDataSource.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardD);
+            this.LSMSDataSource.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasource);
             this.LSMSDataSource.KeyExpression = "[DatasourceID]";
             // 
             // DashboardDesignerUC
@@ -3620,7 +3620,7 @@
         private DevExpress.DashboardWin.Bars.ViewRibbonPage viewRibbonPage1;
         private DevExpress.DashboardWin.Bars.SkinsRibbonPageGroup skinsRibbonPageGroup1;
         private DevExpress.DashboardWin.Bars.DashboardBarController dashboardBarControllerMain;
-        private NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSTableAdapter appDashboardDSTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter appDashboardDSTableAdapter;
         private NICSQLTools.Data.dsData dsData;
         private NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter appDashboardSchemaTableAdapter;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDataSource;

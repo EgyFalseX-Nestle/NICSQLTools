@@ -14,20 +14,26 @@ namespace NICSQLTools.Classes.Managers
         #region -   Variables   -
         private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(UserManager));
         public static UserManager defaultInstance;
-        public static Data.dsDataTableAdapters.UsersTableAdapter adpUser;
-        public static Data.dsDataTableAdapters.RuleDetailTableAdapter adpUserRuleDetials;
+        public static Data.dsDataTableAdapters.AppUsersTableAdapter adpUser;
+        public static Data.dsDataTableAdapters.AppRuleDetailTableAdapter adpUserRuleDetials;
+        private static Data.dsQryTableAdapters.SalesDistrict2TableAdapter adpUserSalesDistrict2;
+        public static readonly int SuperAdminId = 1;
+        //public static Data.dsQry.sales
         #endregion
         #region -   Properties   -
         public Uti.Types.UserInfo User = new Uti.Types.UserInfo();
-        private NICSQLTools.Data.dsData.RuleDetailDataTable UserRuleDetialsTable = new Data.dsData.RuleDetailDataTable();
+        private NICSQLTools.Data.dsData.AppRuleDetailDataTable UserRuleDetialsTable = new Data.dsData.AppRuleDetailDataTable();
+        public NICSQLTools.Data.dsQry.SalesDistrict2DataTable UserRuleSalesDistrictTable = new Data.dsQry.SalesDistrict2DataTable();
         #endregion
         #region -   Functions   -
         public static void Init()
         {
-            adpUser = new Data.dsDataTableAdapters.UsersTableAdapter();
-            adpUserRuleDetials = new Data.dsDataTableAdapters.RuleDetailTableAdapter();
+            adpUser = new Data.dsDataTableAdapters.AppUsersTableAdapter();
+            adpUserRuleDetials = new Data.dsDataTableAdapters.AppRuleDetailTableAdapter();
+            adpUserSalesDistrict2 = new Data.dsQryTableAdapters.SalesDistrict2TableAdapter();
             DataManager.SetAllCommandTimeouts(adpUser, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(adpUserRuleDetials, DataManager.ConnectionTimeout);
+            DataManager.SetAllCommandTimeouts(adpUserSalesDistrict2, DataManager.ConnectionTimeout);
 
             defaultInstance = new UserManager();
 
@@ -37,10 +43,10 @@ namespace NICSQLTools.Classes.Managers
             bool ReturnMe = false;
             try
             {
-                Data.dsData.UsersDataTable UserTbl = adpUser.GetDataByNamePass(username, password);
+                Data.dsData.AppUsersDataTable UserTbl = adpUser.GetDataByNamePass(username, password);
                 if (UserTbl.Rows.Count > 0)
                 {
-                    Data.dsData.UsersRow row = (Data.dsData.UsersRow)UserTbl.Rows[0];
+                    Data.dsData.AppUsersRow row = (Data.dsData.AppUsersRow)UserTbl.Rows[0];
                     User.UserId = row.UserID;
                     User.UserName = row.UserName;
                     User.RealName = row.RealName;
@@ -49,7 +55,9 @@ namespace NICSQLTools.Classes.Managers
                     else
                         User.IsAdmin = false;
                     if (GetUserRules(User.UserId))
-                        ReturnMe = true;    
+                        ReturnMe = true;
+                    if (GetUserSalesDistrict(User.UserId))
+                        ReturnMe = true;
                     Logger.InfoFormat("User Name {0} UserId {1} Logon Time {2}", User.UserName, User.UserId, DataManager.adpQry.GetServerDate());
                 }
             }
@@ -65,12 +73,21 @@ namespace NICSQLTools.Classes.Managers
             adpUserRuleDetials.FillByUserID(UserRuleDetialsTable, UserId);
             return true;
         }
-        public NICSQLTools.Data.dsData.RuleDetailRow RuleElementInformation(string ElementName)
+        private bool GetUserSalesDistrict(int UserId)
         {
-            NICSQLTools.Data.dsData.RuleDetailRow output = UserRuleDetialsTable.NewRuleDetailRow();
+            if (UserId == SuperAdminId)
+                adpUserSalesDistrict2.Fill(UserRuleSalesDistrictTable);
+            else
+                adpUserSalesDistrict2.FillByUserId(UserRuleSalesDistrictTable, UserId);
+
+            return true;
+        }
+        public NICSQLTools.Data.dsData.AppRuleDetailRow RuleElementInformation(string ElementName)
+        {
+            NICSQLTools.Data.dsData.AppRuleDetailRow output = UserRuleDetialsTable.NewAppRuleDetailRow();
             output.Selecting = output.Inserting = output.Updateing = output.Deleting = false;
 
-            foreach (NICSQLTools.Data.dsData.RuleDetailRow  element in UserRuleDetialsTable)
+            foreach (NICSQLTools.Data.dsData.AppRuleDetailRow  element in UserRuleDetialsTable)
             {
                 if (element.ItemName == ElementName)
                 {

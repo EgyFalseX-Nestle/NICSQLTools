@@ -57,8 +57,10 @@ namespace NICSQLTools
                 //row2.FileName = "DevExpress.Dashboard.v14.1.Core.dll"; row2.FileVersion = 1000;
                 //tbl.Rows.Add(row2);
 
-                DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());
-                //Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
+                //DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());
+                
+                Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
+
             }
             
         }
@@ -67,6 +69,7 @@ namespace NICSQLTools
             DataManager.Init();
             Classes.Managers.UserManager.Init();
             Classes.Dashboard.Init();
+            Classes.QueryLayout.Init();
         }
         
 

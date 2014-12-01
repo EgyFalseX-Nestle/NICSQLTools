@@ -49,7 +49,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.usersTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.UsersTableAdapter();
+            this.usersTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppUsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditPass)).BeginInit();
@@ -236,7 +236,7 @@
             this.XPSCS.AllowNew = true;
             this.XPSCS.AllowRemove = true;
             this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.UsersDataTable);
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppUsersDataTable);
             this.XPSCS.Session = this.UOW;
             // 
             // popupMenuMain
@@ -293,7 +293,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRealName;
         private DevExpress.XtraGrid.Columns.GridColumn colIsActive;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private NICSQLTools.Data.dsDataTableAdapters.UsersTableAdapter usersTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.AppUsersTableAdapter usersTableAdapter;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
     }
 }

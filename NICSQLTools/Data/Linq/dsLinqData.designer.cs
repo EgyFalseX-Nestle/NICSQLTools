@@ -30,15 +30,30 @@ namespace NICSQLTools.Data.Linq
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
     partial void InsertAppDashboardSchema(AppDashboardSchema instance);
     partial void UpdateAppDashboardSchema(AppDashboardSchema instance);
     partial void DeleteAppDashboardSchema(AppDashboardSchema instance);
-    partial void InsertAppDashboardD(AppDashboardD instance);
-    partial void UpdateAppDashboardD(AppDashboardD instance);
-    partial void DeleteAppDashboardD(AppDashboardD instance);
+    partial void InsertAppDatasource(AppDatasource instance);
+    partial void UpdateAppDatasource(AppDatasource instance);
+    partial void DeleteAppDatasource(AppDatasource instance);
+    partial void InsertAppUser(AppUser instance);
+    partial void UpdateAppUser(AppUser instance);
+    partial void DeleteAppUser(AppUser instance);
+    partial void InsertAppDatasourceType(AppDatasourceType instance);
+    partial void UpdateAppDatasourceType(AppDatasourceType instance);
+    partial void DeleteAppDatasourceType(AppDatasourceType instance);
+    partial void InsertAppDatasourceLayout(AppDatasourceLayout instance);
+    partial void UpdateAppDatasourceLayout(AppDatasourceLayout instance);
+    partial void DeleteAppDatasourceLayout(AppDatasourceLayout instance);
+    partial void InsertSalesDistrict3(SalesDistrict3 instance);
+    partial void UpdateSalesDistrict3(SalesDistrict3 instance);
+    partial void DeleteSalesDistrict3(SalesDistrict3 instance);
+    partial void InsertSalesDistrict2(SalesDistrict2 instance);
+    partial void UpdateSalesDistrict2(SalesDistrict2 instance);
+    partial void DeleteSalesDistrict2(SalesDistrict2 instance);
+    partial void InsertSalesDistrict1(SalesDistrict1 instance);
+    partial void UpdateSalesDistrict1(SalesDistrict1 instance);
+    partial void DeleteSalesDistrict1(SalesDistrict1 instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -79,14 +94,6 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<User> Users
-		{
-			get
-			{
-				return this.GetTable<User>();
-			}
-		}
-		
 		public System.Data.Linq.Table<AppDashboardSchema> AppDashboardSchemas
 		{
 			get
@@ -95,11 +102,59 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<AppDashboardD> AppDashboardDs
+		public System.Data.Linq.Table<AppDatasource> AppDatasources
 		{
 			get
 			{
-				return this.GetTable<AppDashboardD>();
+				return this.GetTable<AppDatasource>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AppUser> AppUsers
+		{
+			get
+			{
+				return this.GetTable<AppUser>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AppDatasourceType> AppDatasourceTypes
+		{
+			get
+			{
+				return this.GetTable<AppDatasourceType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AppDatasourceLayout> AppDatasourceLayouts
+		{
+			get
+			{
+				return this.GetTable<AppDatasourceLayout>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SalesDistrict3> SalesDistrict3s
+		{
+			get
+			{
+				return this.GetTable<SalesDistrict3>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SalesDistrict2> SalesDistrict2s
+		{
+			get
+			{
+				return this.GetTable<SalesDistrict2>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SalesDistrict1> SalesDistrict1s
+		{
+			get
+			{
+				return this.GetTable<SalesDistrict1>();
 			}
 		}
 	}
@@ -2219,116 +2274,6 @@ namespace NICSQLTools.Data.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UserID;
-		
-		private string _UserName;
-		
-		private string _RealName;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnRealNameChanging(string value);
-    partial void OnRealNameChanged();
-    #endregion
-		
-		public User()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
-		public string RealName
-		{
-			get
-			{
-				return this._RealName;
-			}
-			set
-			{
-				if ((this._RealName != value))
-				{
-					this.OnRealNameChanging(value);
-					this.SendPropertyChanging();
-					this._RealName = value;
-					this.SendPropertyChanged("RealName");
-					this.OnRealNameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDashboardSchema")]
 	public partial class AppDashboardSchema : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2463,13 +2408,15 @@ namespace NICSQLTools.Data.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDashboardDS")]
-	public partial class AppDashboardD : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDatasource")]
+	public partial class AppDatasource : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _DatasourceID;
+		
+		private System.Nullable<int> _AppDatasourceTypeId;
 		
 		private string _DatasourceName;
 		
@@ -2481,12 +2428,18 @@ namespace NICSQLTools.Data.Linq
 		
 		private string _Desc;
 		
+		private EntitySet<AppDatasourceLayout> _AppDatasourceLayouts;
+		
+		private EntityRef<AppDatasourceType> _AppDatasourceType;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
     partial void OnDatasourceIDChanging(int value);
     partial void OnDatasourceIDChanged();
+    partial void OnAppDatasourceTypeIdChanging(System.Nullable<int> value);
+    partial void OnAppDatasourceTypeIdChanged();
     partial void OnDatasourceNameChanging(string value);
     partial void OnDatasourceNameChanged();
     partial void OnDatasourceSPNameChanging(string value);
@@ -2499,8 +2452,10 @@ namespace NICSQLTools.Data.Linq
     partial void OnDescChanged();
     #endregion
 		
-		public AppDashboardD()
+		public AppDatasource()
 		{
+			this._AppDatasourceLayouts = new EntitySet<AppDatasourceLayout>(new Action<AppDatasourceLayout>(this.attach_AppDatasourceLayouts), new Action<AppDatasourceLayout>(this.detach_AppDatasourceLayouts));
+			this._AppDatasourceType = default(EntityRef<AppDatasourceType>);
 			OnCreated();
 		}
 		
@@ -2520,6 +2475,30 @@ namespace NICSQLTools.Data.Linq
 					this._DatasourceID = value;
 					this.SendPropertyChanged("DatasourceID");
 					this.OnDatasourceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", DbType="Int")]
+		public System.Nullable<int> AppDatasourceTypeId
+		{
+			get
+			{
+				return this._AppDatasourceTypeId;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeId != value))
+				{
+					if (this._AppDatasourceType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAppDatasourceTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceTypeId = value;
+					this.SendPropertyChanged("AppDatasourceTypeId");
+					this.OnAppDatasourceTypeIdChanged();
 				}
 			}
 		}
@@ -2624,6 +2603,53 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AppDatasource_AppDatasourceLayout", Storage="_AppDatasourceLayouts", ThisKey="DatasourceID", OtherKey="DatasourceID")]
+		public EntitySet<AppDatasourceLayout> AppDatasourceLayouts
+		{
+			get
+			{
+				return this._AppDatasourceLayouts;
+			}
+			set
+			{
+				this._AppDatasourceLayouts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AppDatasourceType_AppDatasource", Storage="_AppDatasourceType", ThisKey="AppDatasourceTypeId", OtherKey="AppDatasourceTypeId", IsForeignKey=true)]
+		public AppDatasourceType AppDatasourceType
+		{
+			get
+			{
+				return this._AppDatasourceType.Entity;
+			}
+			set
+			{
+				AppDatasourceType previousValue = this._AppDatasourceType.Entity;
+				if (((previousValue != value) 
+							|| (this._AppDatasourceType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._AppDatasourceType.Entity = null;
+						previousValue.AppDatasources.Remove(this);
+					}
+					this._AppDatasourceType.Entity = value;
+					if ((value != null))
+					{
+						value.AppDatasources.Add(this);
+						this._AppDatasourceTypeId = value.AppDatasourceTypeId;
+					}
+					else
+					{
+						this._AppDatasourceTypeId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("AppDatasourceType");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2642,6 +2668,885 @@ namespace NICSQLTools.Data.Linq
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_AppDatasourceLayouts(AppDatasourceLayout entity)
+		{
+			this.SendPropertyChanging();
+			entity.AppDatasource = this;
+		}
+		
+		private void detach_AppDatasourceLayouts(AppDatasourceLayout entity)
+		{
+			this.SendPropertyChanging();
+			entity.AppDatasource = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppUsers")]
+	public partial class AppUser : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserID;
+		
+		private string _UserName;
+		
+		private string _RealName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    #endregion
+		
+		public AppUser()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDatasourceType")]
+	public partial class AppDatasourceType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _AppDatasourceTypeId;
+		
+		private string _AppDatasourceTypeName;
+		
+		private EntitySet<AppDatasource> _AppDatasources;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAppDatasourceTypeIdChanging(int value);
+    partial void OnAppDatasourceTypeIdChanged();
+    partial void OnAppDatasourceTypeNameChanging(string value);
+    partial void OnAppDatasourceTypeNameChanged();
+    #endregion
+		
+		public AppDatasourceType()
+		{
+			this._AppDatasources = new EntitySet<AppDatasource>(new Action<AppDatasource>(this.attach_AppDatasources), new Action<AppDatasource>(this.detach_AppDatasources));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int AppDatasourceTypeId
+		{
+			get
+			{
+				return this._AppDatasourceTypeId;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeId != value))
+				{
+					this.OnAppDatasourceTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceTypeId = value;
+					this.SendPropertyChanged("AppDatasourceTypeId");
+					this.OnAppDatasourceTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
+		public string AppDatasourceTypeName
+		{
+			get
+			{
+				return this._AppDatasourceTypeName;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeName != value))
+				{
+					this.OnAppDatasourceTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceTypeName = value;
+					this.SendPropertyChanged("AppDatasourceTypeName");
+					this.OnAppDatasourceTypeNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AppDatasourceType_AppDatasource", Storage="_AppDatasources", ThisKey="AppDatasourceTypeId", OtherKey="AppDatasourceTypeId")]
+		public EntitySet<AppDatasource> AppDatasources
+		{
+			get
+			{
+				return this._AppDatasources;
+			}
+			set
+			{
+				this._AppDatasources.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_AppDatasources(AppDatasource entity)
+		{
+			this.SendPropertyChanging();
+			entity.AppDatasourceType = this;
+		}
+		
+		private void detach_AppDatasources(AppDatasource entity)
+		{
+			this.SendPropertyChanging();
+			entity.AppDatasourceType = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDatasourceLayout")]
+	public partial class AppDatasourceLayout : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DatasourceLayoutId;
+		
+		private System.Nullable<int> _DatasourceID;
+		
+		private string _DatasourceLayoutName;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private EntityRef<AppDatasource> _AppDatasource;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDatasourceLayoutIdChanging(int value);
+    partial void OnDatasourceLayoutIdChanged();
+    partial void OnDatasourceIDChanging(System.Nullable<int> value);
+    partial void OnDatasourceIDChanged();
+    partial void OnDatasourceLayoutNameChanging(string value);
+    partial void OnDatasourceLayoutNameChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    #endregion
+		
+		public AppDatasourceLayout()
+		{
+			this._AppDatasource = default(EntityRef<AppDatasource>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceLayoutId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int DatasourceLayoutId
+		{
+			get
+			{
+				return this._DatasourceLayoutId;
+			}
+			set
+			{
+				if ((this._DatasourceLayoutId != value))
+				{
+					this.OnDatasourceLayoutIdChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceLayoutId = value;
+					this.SendPropertyChanged("DatasourceLayoutId");
+					this.OnDatasourceLayoutIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", DbType="Int")]
+		public System.Nullable<int> DatasourceID
+		{
+			get
+			{
+				return this._DatasourceID;
+			}
+			set
+			{
+				if ((this._DatasourceID != value))
+				{
+					if (this._AppDatasource.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnDatasourceIDChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceID = value;
+					this.SendPropertyChanged("DatasourceID");
+					this.OnDatasourceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceLayoutName", DbType="NVarChar(50)")]
+		public string DatasourceLayoutName
+		{
+			get
+			{
+				return this._DatasourceLayoutName;
+			}
+			set
+			{
+				if ((this._DatasourceLayoutName != value))
+				{
+					this.OnDatasourceLayoutNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceLayoutName = value;
+					this.SendPropertyChanged("DatasourceLayoutName");
+					this.OnDatasourceLayoutNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AppDatasource_AppDatasourceLayout", Storage="_AppDatasource", ThisKey="DatasourceID", OtherKey="DatasourceID", IsForeignKey=true)]
+		public AppDatasource AppDatasource
+		{
+			get
+			{
+				return this._AppDatasource.Entity;
+			}
+			set
+			{
+				AppDatasource previousValue = this._AppDatasource.Entity;
+				if (((previousValue != value) 
+							|| (this._AppDatasource.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._AppDatasource.Entity = null;
+						previousValue.AppDatasourceLayouts.Remove(this);
+					}
+					this._AppDatasource.Entity = value;
+					if ((value != null))
+					{
+						value.AppDatasourceLayouts.Add(this);
+						this._DatasourceID = value.DatasourceID;
+					}
+					else
+					{
+						this._DatasourceID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("AppDatasource");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SalesDistrict3")]
+	public partial class SalesDistrict3 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private short _SalesDistrict3Id;
+		
+		private string _Sales_District_2;
+		
+		private System.Nullable<short> _SalesDistrict2Id;
+		
+		private EntityRef<SalesDistrict2> _SalesDistrict2;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSalesDistrict3IdChanging(short value);
+    partial void OnSalesDistrict3IdChanged();
+    partial void OnSales_District_2Changing(string value);
+    partial void OnSales_District_2Changed();
+    partial void OnSalesDistrict2IdChanging(System.Nullable<short> value);
+    partial void OnSalesDistrict2IdChanged();
+    #endregion
+		
+		public SalesDistrict3()
+		{
+			this._SalesDistrict2 = default(EntityRef<SalesDistrict2>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict3Id", AutoSync=AutoSync.OnInsert, DbType="SmallInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public short SalesDistrict3Id
+		{
+			get
+			{
+				return this._SalesDistrict3Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict3Id != value))
+				{
+					this.OnSalesDistrict3IdChanging(value);
+					this.SendPropertyChanging();
+					this._SalesDistrict3Id = value;
+					this.SendPropertyChanged("SalesDistrict3Id");
+					this.OnSalesDistrict3IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(50)")]
+		public string Sales_District_2
+		{
+			get
+			{
+				return this._Sales_District_2;
+			}
+			set
+			{
+				if ((this._Sales_District_2 != value))
+				{
+					this.OnSales_District_2Changing(value);
+					this.SendPropertyChanging();
+					this._Sales_District_2 = value;
+					this.SendPropertyChanged("Sales_District_2");
+					this.OnSales_District_2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict2Id", DbType="SmallInt")]
+		public System.Nullable<short> SalesDistrict2Id
+		{
+			get
+			{
+				return this._SalesDistrict2Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict2Id != value))
+				{
+					if (this._SalesDistrict2.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSalesDistrict2IdChanging(value);
+					this.SendPropertyChanging();
+					this._SalesDistrict2Id = value;
+					this.SendPropertyChanged("SalesDistrict2Id");
+					this.OnSalesDistrict2IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SalesDistrict2_SalesDistrict3", Storage="_SalesDistrict2", ThisKey="SalesDistrict2Id", OtherKey="SalesDistrict2Id", IsForeignKey=true)]
+		public SalesDistrict2 SalesDistrict2
+		{
+			get
+			{
+				return this._SalesDistrict2.Entity;
+			}
+			set
+			{
+				SalesDistrict2 previousValue = this._SalesDistrict2.Entity;
+				if (((previousValue != value) 
+							|| (this._SalesDistrict2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SalesDistrict2.Entity = null;
+						previousValue.SalesDistrict3s.Remove(this);
+					}
+					this._SalesDistrict2.Entity = value;
+					if ((value != null))
+					{
+						value.SalesDistrict3s.Add(this);
+						this._SalesDistrict2Id = value.SalesDistrict2Id;
+					}
+					else
+					{
+						this._SalesDistrict2Id = default(Nullable<short>);
+					}
+					this.SendPropertyChanged("SalesDistrict2");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SalesDistrict2")]
+	public partial class SalesDistrict2 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private short _SalesDistrict2Id;
+		
+		private string _Sales_District;
+		
+		private System.Nullable<short> _SalesDistrict1Id;
+		
+		private EntitySet<SalesDistrict3> _SalesDistrict3s;
+		
+		private EntityRef<SalesDistrict1> _SalesDistrict1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSalesDistrict2IdChanging(short value);
+    partial void OnSalesDistrict2IdChanged();
+    partial void OnSales_DistrictChanging(string value);
+    partial void OnSales_DistrictChanged();
+    partial void OnSalesDistrict1IdChanging(System.Nullable<short> value);
+    partial void OnSalesDistrict1IdChanged();
+    #endregion
+		
+		public SalesDistrict2()
+		{
+			this._SalesDistrict3s = new EntitySet<SalesDistrict3>(new Action<SalesDistrict3>(this.attach_SalesDistrict3s), new Action<SalesDistrict3>(this.detach_SalesDistrict3s));
+			this._SalesDistrict1 = default(EntityRef<SalesDistrict1>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict2Id", AutoSync=AutoSync.OnInsert, DbType="SmallInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public short SalesDistrict2Id
+		{
+			get
+			{
+				return this._SalesDistrict2Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict2Id != value))
+				{
+					this.OnSalesDistrict2IdChanging(value);
+					this.SendPropertyChanging();
+					this._SalesDistrict2Id = value;
+					this.SendPropertyChanged("SalesDistrict2Id");
+					this.OnSalesDistrict2IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District]", Storage="_Sales_District", DbType="NVarChar(50)")]
+		public string Sales_District
+		{
+			get
+			{
+				return this._Sales_District;
+			}
+			set
+			{
+				if ((this._Sales_District != value))
+				{
+					this.OnSales_DistrictChanging(value);
+					this.SendPropertyChanging();
+					this._Sales_District = value;
+					this.SendPropertyChanged("Sales_District");
+					this.OnSales_DistrictChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict1Id", DbType="SmallInt")]
+		public System.Nullable<short> SalesDistrict1Id
+		{
+			get
+			{
+				return this._SalesDistrict1Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict1Id != value))
+				{
+					if (this._SalesDistrict1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSalesDistrict1IdChanging(value);
+					this.SendPropertyChanging();
+					this._SalesDistrict1Id = value;
+					this.SendPropertyChanged("SalesDistrict1Id");
+					this.OnSalesDistrict1IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SalesDistrict2_SalesDistrict3", Storage="_SalesDistrict3s", ThisKey="SalesDistrict2Id", OtherKey="SalesDistrict2Id")]
+		public EntitySet<SalesDistrict3> SalesDistrict3s
+		{
+			get
+			{
+				return this._SalesDistrict3s;
+			}
+			set
+			{
+				this._SalesDistrict3s.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SalesDistrict1_SalesDistrict2", Storage="_SalesDistrict1", ThisKey="SalesDistrict1Id", OtherKey="SalesDistrict1Id", IsForeignKey=true)]
+		public SalesDistrict1 SalesDistrict1
+		{
+			get
+			{
+				return this._SalesDistrict1.Entity;
+			}
+			set
+			{
+				SalesDistrict1 previousValue = this._SalesDistrict1.Entity;
+				if (((previousValue != value) 
+							|| (this._SalesDistrict1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SalesDistrict1.Entity = null;
+						previousValue.SalesDistrict2s.Remove(this);
+					}
+					this._SalesDistrict1.Entity = value;
+					if ((value != null))
+					{
+						value.SalesDistrict2s.Add(this);
+						this._SalesDistrict1Id = value.SalesDistrict1Id;
+					}
+					else
+					{
+						this._SalesDistrict1Id = default(Nullable<short>);
+					}
+					this.SendPropertyChanged("SalesDistrict1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_SalesDistrict3s(SalesDistrict3 entity)
+		{
+			this.SendPropertyChanging();
+			entity.SalesDistrict2 = this;
+		}
+		
+		private void detach_SalesDistrict3s(SalesDistrict3 entity)
+		{
+			this.SendPropertyChanging();
+			entity.SalesDistrict2 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SalesDistrict1")]
+	public partial class SalesDistrict1 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private short _SalesDistrict1Id;
+		
+		private string _Sales_District_Name;
+		
+		private EntitySet<SalesDistrict2> _SalesDistrict2s;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSalesDistrict1IdChanging(short value);
+    partial void OnSalesDistrict1IdChanged();
+    partial void OnSales_District_NameChanging(string value);
+    partial void OnSales_District_NameChanged();
+    #endregion
+		
+		public SalesDistrict1()
+		{
+			this._SalesDistrict2s = new EntitySet<SalesDistrict2>(new Action<SalesDistrict2>(this.attach_SalesDistrict2s), new Action<SalesDistrict2>(this.detach_SalesDistrict2s));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict1Id", AutoSync=AutoSync.OnInsert, DbType="SmallInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public short SalesDistrict1Id
+		{
+			get
+			{
+				return this._SalesDistrict1Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict1Id != value))
+				{
+					this.OnSalesDistrict1IdChanging(value);
+					this.SendPropertyChanging();
+					this._SalesDistrict1Id = value;
+					this.SendPropertyChanged("SalesDistrict1Id");
+					this.OnSalesDistrict1IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District Name]", Storage="_Sales_District_Name", DbType="NVarChar(50)")]
+		public string Sales_District_Name
+		{
+			get
+			{
+				return this._Sales_District_Name;
+			}
+			set
+			{
+				if ((this._Sales_District_Name != value))
+				{
+					this.OnSales_District_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Sales_District_Name = value;
+					this.SendPropertyChanged("Sales_District_Name");
+					this.OnSales_District_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SalesDistrict1_SalesDistrict2", Storage="_SalesDistrict2s", ThisKey="SalesDistrict1Id", OtherKey="SalesDistrict1Id")]
+		public EntitySet<SalesDistrict2> SalesDistrict2s
+		{
+			get
+			{
+				return this._SalesDistrict2s;
+			}
+			set
+			{
+				this._SalesDistrict2s.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_SalesDistrict2s(SalesDistrict2 entity)
+		{
+			this.SendPropertyChanging();
+			entity.SalesDistrict1 = this;
+		}
+		
+		private void detach_SalesDistrict2s(SalesDistrict2 entity)
+		{
+			this.SendPropertyChanging();
+			entity.SalesDistrict1 = null;
 		}
 	}
 }

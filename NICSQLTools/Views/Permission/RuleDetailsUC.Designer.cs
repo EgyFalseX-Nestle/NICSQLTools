@@ -52,7 +52,7 @@
             this.tlcInsert = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.tlcUpdate = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.tlcDelete = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ruleDetailTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.RuleDetailTableAdapter();
+            this.ruleDetailTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRuleDetailTableAdapter();
             this.tlcID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
@@ -332,7 +332,7 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlcUpdate;
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlcDelete;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private NICSQLTools.Data.dsDataTableAdapters.RuleDetailTableAdapter ruleDetailTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.AppRuleDetailTableAdapter ruleDetailTableAdapter;
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlcName;
         private DevExpress.XtraBars.BarEditItem bbiRule;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;

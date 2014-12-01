@@ -20,6 +20,8 @@ namespace NICSQLTools
         public static DataManager defaultInstance;
         public static int ConnectionTimeout = 0;
         public static int SHRINKSIZE = 10;
+        public static Char SplitChar = Convert.ToChar("|");
+        public static string DecryptPassword = "FalseX";
         public static Data.dsDataTableAdapters.QueriesTableAdapter adpQry = new Data.dsDataTableAdapters.QueriesTableAdapter();
         public enum ParamDataSource
         {
@@ -139,26 +141,61 @@ namespace NICSQLTools
                 Logger.Error(ex.Message, ex);
             }
         }
-        public static void ZZPerformDependenciesClientUpdate(SplashScreenManager Splash)
-        {
-            Data.dsData.AppDependenceFileDataTable tbl = GetDownloadDependanceies();
-            //foreach (var item in collection)
-            //{
-                
-            //}
-        }
         public static Dictionary<string, int> GetCurrentAssemblyFiles()
         {
             Dictionary<string, int> Asm = new Dictionary<string, int>();
-            int i = 0;
-            foreach (var assemblyName in System.Reflection.Assembly.GetExecutingAssembly().GetReferencedAssemblies())
-            {
-                if (Asm.TryGetValue(assemblyName.Name, out i))//Already Added
-                    continue;
-                if (assemblyName.Name.StartsWith("System"))//.Net Dll
-                    continue;
-                Asm.Add(assemblyName.Name.ToLower() + ".dll", Convert.ToInt32(assemblyName.Version.ToString().Replace(".", "")));
-            }
+            //int i = 0;
+            //object obj = System.Reflection.Assembly.GetExecutingAssembly().GetReferencedAssemblies();
+            //foreach (var assemblyName in System.Reflection.Assembly.GetExecutingAssembly().GetReferencedAssemblies())
+            //{
+            //    if (Asm.TryGetValue(assemblyName.Name + ".dll", out i))//Already Added
+            //        continue;
+            //    if (assemblyName.Name.StartsWith("System"))//.Net Dll
+            //        continue;
+            //    Asm.Add(assemblyName.Name.ToLower() + ".dll", Convert.ToInt32(assemblyName.Version.ToString().Replace(".", "")));
+            //}
+            //Asm.Add(System.Windows.Forms.Application.ProductName + ".exe", Convert.ToInt32(System.Windows.Forms.Application.ProductVersion.Replace(".", "")));
+            Asm.Add("DevExpress.BonusSkins.v14.1.dll", 14180);
+            Asm.Add("DevExpress.Charts.v14.1.Core.dll", 14180);
+            Asm.Add("DevExpress.Dashboard.v14.1.Core.dll", 14180);
+            Asm.Add("DevExpress.Dashboard.v14.1.Win.dll", 14180);
+            Asm.Add("DevExpress.Data.v14.1.dll", 14180);
+            Asm.Add("DevExpress.DataAccess.v14.1.dll", 14180);
+            Asm.Add("DevExpress.DataAccess.v14.1.UI.dll", 14180);
+            Asm.Add("DevExpress.Map.v14.1.Core.dll", 14180);
+            Asm.Add("DevExpress.Office.v14.1.Core.dll", 14180);
+            Asm.Add("DevExpress.PivotGrid.v14.1.Core.dll", 14180);
+            Asm.Add("DevExpress.Printing.v14.1.Core.dll", 14180);
+            Asm.Add("DevExpress.RichEdit.v14.1.Core.dll", 14180);
+            Asm.Add("DevExpress.Sparkline.v14.1.Core.dll", 14180);
+            Asm.Add("DevExpress.Utils.v14.1.dll", 14180);
+            Asm.Add("DevExpress.Utils.v14.1.UI.dll", 14180);
+            Asm.Add("DevExpress.Xpo.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraBars.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraCharts.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraCharts.v14.1.UI.dll", 14180);
+            Asm.Add("DevExpress.XtraCharts.v14.1.Wizard.dll", 14180);
+            Asm.Add("DevExpress.XtraEditors.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraGauges.v14.1.Core.dll", 14180);
+            Asm.Add("DevExpress.XtraGauges.v14.1.Win.dll", 14180);
+            Asm.Add("DevExpress.XtraGrid.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraLayout.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraMap.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraNavBar.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraPivotGrid.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraPrinting.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraRichEdit.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraRichEdit.v14.1.Extensions.dll", 14180);
+            Asm.Add("DevExpress.XtraTreeList.v14.1.dll", 14180);
+            Asm.Add("DevExpress.XtraVerticalGrid.v14.1.dll", 14180);
+            Asm.Add("FXFW.dll", 1001);
+            //Asm.Add("Interop.DAO.dll", 5000);
+            Asm.Add("Ionic.Zip.dll", 1918);
+            Asm.Add("log4net.dll", 12110);
+            //Asm.Add("Microsoft.Office.Interop.Access.dll", 15004515);
+            //Asm.Add("Microsoft.Office.interop.access.dao.dll", 15004410);
+            Asm.Add(System.Windows.Forms.Application.ProductName + ".exe", Convert.ToInt32(System.Windows.Forms.Application.ProductVersion.Replace(".", "")));
+            //Asm.Add("OFFICE.DLL", 15004610);
             return Asm;
         }
         public static NICSQLTools.Data.dsData.AppDependenceFileDataTable GetDownloadDependanceies()
@@ -168,7 +205,7 @@ namespace NICSQLTools
                 NICSQLTools.Data.dsData.AppDependenceFileDataTable RequiredFilesTbl = new Data.dsData.AppDependenceFileDataTable();
                 adpQry.FillByLiteData(RequiredFilesTbl);
                 Dictionary<string, int> ExistsFiles = GetCurrentAssemblyFiles();
-                for (int i = RequiredFilesTbl.Count - 1; i >= 0; i++)
+                for (int i = (RequiredFilesTbl.Count - 1); i >= 0; i--)
                 {
                     NICSQLTools.Data.dsData.AppDependenceFileRow row = (NICSQLTools.Data.dsData.AppDependenceFileRow)RequiredFilesTbl.Rows[i];
                     int Version = 0;
@@ -181,7 +218,7 @@ namespace NICSQLTools
                 return RequiredFilesTbl;
             }
         }
-        public static Dictionary<string, int> GetUploadDependanceies()
+        public static Dictionary<string, int> GetDownloadDependanceies11()
         {
             Dictionary<string, int> output = new Dictionary<string,int>();
             Dictionary<string, int> ExistsFiles = GetCurrentAssemblyFiles();
@@ -206,7 +243,7 @@ namespace NICSQLTools
         {
             if (tbl.Count == 0)// No Update Found
                 return;
-            string Data = String.Format("{0}|{1}|", NICSQLTools.Uti.Types.UpdaterArgsEnum.Download, Properties.Settings.Default.IC_DBConnectionString);
+            string Data = String.Format("{0}|{1}|", (int)NICSQLTools.Uti.Types.UpdaterArgsEnum.Download, Properties.Settings.Default.IC_DBConnectionString);
             for (int i = 0; i < tbl.Rows.Count; i++)
             {
                 Data += ((NICSQLTools.Data.dsData.AppDependenceFileRow)tbl.Rows[i]).FileName;
@@ -232,13 +269,13 @@ namespace NICSQLTools
         }
         public static void PerformUpdaterUpload(Dictionary<string, int> FilesList)
         {
-            string Data = String.Format("{0}|{1}|", NICSQLTools.Uti.Types.UpdaterArgsEnum.Upload, Properties.Settings.Default.IC_DBConnectionString);
+            string Data = String.Format("{0}{1}{2}{1}", (int)NICSQLTools.Uti.Types.UpdaterArgsEnum.Upload, SplitChar, Properties.Settings.Default.IC_DBConnectionString);
             
             foreach (KeyValuePair<string, int> item in FilesList)
             {
-                Data += String.Format("{0}|{1}", item.Key, item.Value);
+                Data += String.Format("{0}{1}{2}{1}", item.Key, SplitChar, item.Value);
             }
-            Data = Data.Substring(0, Data.Length - 2);
+            Data = Data.Substring(0, Data.Length - 1);
 
 
             Data = FXFW.EncDec.Encrypt(Data, "FalseX");// Encrypt Arg Data
@@ -249,7 +286,7 @@ namespace NICSQLTools
 
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
-        private static Dictionary<string, int> GetUploadDependanceies()
+        public static Dictionary<string, int> GetUploadDependanceies()
         {
             Dictionary<string, int> NeededFiles = new Dictionary<string, int>();
             using (NICSQLTools.Data.dsDataTableAdapters.AppDependenceFileTableAdapter adpQry = new Data.dsDataTableAdapters.AppDependenceFileTableAdapter())
@@ -259,8 +296,14 @@ namespace NICSQLTools
                 Dictionary<string, int> AppFiles = GetCurrentAssemblyFiles();
                 foreach (KeyValuePair<string, int> item in AppFiles)
                 {
-                    if (RequiredFilesTbl.FindByFileName(item.Key) == null)
+                    Data.dsData.AppDependenceFileRow row = RequiredFilesTbl.FindByFileName(item.Key);
+                    if (row == null)
                         NeededFiles.Add(item.Key, item.Value);
+                    else
+                    {
+                        if (row.FileVersion < item.Value)
+                            NeededFiles.Add(item.Key, item.Value);
+                    }
                 }
             }
             return NeededFiles;
@@ -385,10 +428,10 @@ namespace NICSQLTools
             }
             return null;
         }
-        public static List<DataTable> GetStoredProcedureSchema(Data.dsData.AppDashboardDSDataTable DashboardTbl)
+        public static List<DataTable> GetStoredProcedureSchema(Data.dsData.AppDatasourceDataTable DashboardTbl)
         {
             List<DataTable> Tbls = new List<DataTable>();
-            foreach (Data.dsData.AppDashboardDSRow row in DashboardTbl.Rows)
+            foreach (Data.dsData.AppDatasourceRow row in DashboardTbl.Rows)
             {
                 DataTable dt = GetStoredProcedureSchema(row.DatasourceSPName);
                 if (dt != null)
@@ -403,7 +446,7 @@ namespace NICSQLTools
         public static void RefreshDatasourceSchema(ref DevExpress.DashboardWin.DashboardDesigner dashboardDesigner)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT DatasourceSPName FROM dbo.AppDashboardDS WHERE DatasourceID = @DatasourceID", con);
+            SqlCommand cmd = new SqlCommand("SELECT DatasourceSPName FROM dbo.AppDatasource WHERE DatasourceID = @DatasourceID", con);
             SqlParameter ParamID = new SqlParameter("@DatasourceID", SqlDbType.Int);
             cmd.Parameters.Add(ParamID);
             try

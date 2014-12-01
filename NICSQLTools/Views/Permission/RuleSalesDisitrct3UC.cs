@@ -5,19 +5,17 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using System.Data;
-using NICSQLTools.Classes.Managers;
 
-namespace NICSQLTools.Views.Dashboard
+namespace NICSQLTools.Views.Permission
 {
-    public partial class AppDashboardDSUC : XtraUserControl
+    public partial class RuleSalesDisitrct3UC : XtraUserControl
     {
-
-        #region - Variables -
-        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(AppDashboardDSUC));
-        int? NewId = null;
+        #region - Var -
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(RuleSalesDisitrct3UC));
+        private NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         #endregion
-        #region - Functions -
-        public AppDashboardDSUC()
+        #region - Fun -
+        public RuleSalesDisitrct3UC()
         {
             InitializeComponent();
         }
@@ -27,15 +25,16 @@ namespace NICSQLTools.Views.Dashboard
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 Invoke(new MethodInvoker(() => {
-                    XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
-                    gridControlMain.DataSource = XPSCS;
+                    rules_LUETableAdapter.Fill(dsQry.Rules_LUE);
+                    appRuleSalesDistrict3TableAdapter.Fill(dsData.AppRuleSalesDistrict3);
+                    LSMSSalesDistrict3.QueryableSource = from q in dsLinq.SalesDistrict3s select q;
                     gridViewMain.BestFitColumns();
                 }));
                 SplashScreenManager.CloseForm();
             });
         }
         #endregion
-        #region - EventWhnd -
+        #region -  EventWhnd - 
         private void ProductEditorUC_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -45,17 +44,23 @@ namespace NICSQLTools.Views.Dashboard
             if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
 
-            DevExpress.Xpo.AsyncCommitCallback CommitCallBack = (o) =>
-            {
-                SplashScreenManager.CloseForm();
-                if (o == null)
-                    MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
-                else
-                    MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
-            };
-
             SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");
-            UOW.CommitTransactionAsync(CommitCallBack);
+            System.Threading.ThreadPool.QueueUserWorkItem((o) => 
+            {
+                try
+                {
+                    appRuleSalesDistrict3TableAdapter.Update(dsData.AppRuleSalesDistrict3);
+                    MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
+                    Logger.Info("Data Saved ...");
+                }
+                catch (System.Data.SqlClient.SqlException ex)
+                {
+                    MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, ex.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
+                    Logger.Error(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, ex.Message), ex);
+                }
+                SplashScreenManager.CloseForm();
+            });
+            
         }
         private void bbiExport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -72,25 +77,10 @@ namespace NICSQLTools.Views.Dashboard
         {
             if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
-            UOW.DropIdentityMap();
-            UOW.DropChanges();
-            XPSCS.Reload();
+            LoadData();
             gridViewMain.RefreshData();
         }
-        private void UOW_BeforeCommitTransaction(object sender, DevExpress.Xpo.SessionManipulationEventArgs e)
-        {
-            DevExpress.Xpo.Helpers.ObjectSet Rows = (DevExpress.Xpo.Helpers.ObjectSet)e.Session.GetObjectsToSave();
-            DateTime DateIn = DataManager.defaultInstance.ServerDateTime;
-            foreach (DevExpress.Xpo.Metadata.XPDataTableObject item in Rows)
-            {
-                item.SetMemberValue("UserIn", UserManager.defaultInstance.User.UserId);
-                item.SetMemberValue("DateIn", DateIn);
-            }
-
-        }
-
         #endregion
 
- 
     }
 }

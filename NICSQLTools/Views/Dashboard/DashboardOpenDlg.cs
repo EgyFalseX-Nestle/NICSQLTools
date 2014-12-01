@@ -32,8 +32,8 @@ namespace NICSQLTools.Views.Dashboard
             {
                 Invoke(new MethodInvoker(() =>
                 {
-                    LSMSDS.QueryableSource = from q in dsLinq.AppDashboardDs select q;
-                    LSMSUser.QueryableSource = from q in dsLinq.Users select q;
+                    LSMSDS.QueryableSource = from q in dsLinq.AppDatasources select q;
+                    LSMSUser.QueryableSource = from q in dsLinq.AppUsers select q;
 
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                     gridControlMain.DataSource = XPSCS;

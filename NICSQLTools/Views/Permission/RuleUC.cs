@@ -76,7 +76,7 @@ namespace NICSQLTools.Views.Permission
         {
             DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(e.RowHandle));
             if (NewId == null)
-                NewId = rulesTableAdapter.NewId();
+                NewId = Convert.ToInt32(rulesTableAdapter.NewId());
             else
                 NewId++;
             row.SetMemberValue("RuleID", NewId);

@@ -12,19 +12,21 @@ using DevExpress.XtraSplashScreen;
 
 namespace NICSQLTools.Views.Dashboard
 {
-    public partial class DashboardDSOpenDlg : DevExpress.XtraEditors.XtraForm
+    public partial class DatasourceOpenDlg : DevExpress.XtraEditors.XtraForm
     {
 
         #region -   Variables   -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(DashboardOpenDlg));
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
-        public NICSQLTools.Data.Linq.AppDashboardD DataSourceRow;
+        public NICSQLTools.Data.Linq.AppDatasource DataSourceRow;
+        private NICSQLTools.Uti.Types.AppDatasourceTypeIdEnum DatasourceType = Uti.Types.AppDatasourceTypeIdEnum.SPQry;
 
         #endregion
         #region -   Functions   -
-        public DashboardDSOpenDlg()
+        public DatasourceOpenDlg(NICSQLTools.Uti.Types.AppDatasourceTypeIdEnum Type)
         {
             InitializeComponent();
+            DatasourceType = Type;
         }
         void LoadData()
         {
@@ -33,8 +35,8 @@ namespace NICSQLTools.Views.Dashboard
             {
                 Invoke(new MethodInvoker(() =>
                 {
-                    LSMSDS.QueryableSource = from q in dsLinq.AppDashboardDs select q;
-                    LSMSUser.QueryableSource = from q in dsLinq.Users select q;
+                    LSMSDS.QueryableSource = from q in dsLinq.AppDatasources where q.AppDatasourceTypeId == (int)DatasourceType select q;
+                    LSMSUser.QueryableSource = from q in dsLinq.AppUsers select q;
                 }));
                 SplashScreenManager.CloseForm();
             });
@@ -54,15 +56,12 @@ namespace NICSQLTools.Views.Dashboard
             DialogResult = System.Windows.Forms.DialogResult.OK;
 
             //Get Selected Row
-            DataSourceRow = (NICSQLTools.Data.Linq.AppDashboardD)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
+            DataSourceRow = (NICSQLTools.Data.Linq.AppDatasource)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
             Close();
             
         }
         
         #endregion
-
-        
-
 
     }
 }

@@ -135,6 +135,8 @@
             | DevExpress.XtraPivotGrid.FilterPopupToolbarButtons.MultiSelection) 
             | DevExpress.XtraPivotGrid.FilterPopupToolbarButtons.RadioMode) 
             | DevExpress.XtraPivotGrid.FilterPopupToolbarButtons.InvertFilter)));
+            this.pivotGridControlMain.OptionsLayout.Columns.StoreAllOptions = true;
+            this.pivotGridControlMain.OptionsLayout.Columns.StoreAppearance = true;
             this.pivotGridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEditPer});
             this.pivotGridControlMain.Size = new System.Drawing.Size(964, 431);

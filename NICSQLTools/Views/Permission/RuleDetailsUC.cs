@@ -64,9 +64,9 @@ namespace NICSQLTools.Views.Permission
         }
         void LoadUserData(int RuleID)
         {
-            ruleDetailTableAdapter.FillByRuleID(dsData.RuleDetail, RuleID);
+            ruleDetailTableAdapter.FillByRuleID(dsData.AppRuleDetail, RuleID);
 
-            foreach (NICSQLTools.Data.dsData.RuleDetailRow row in dsData.RuleDetail)
+            foreach (NICSQLTools.Data.dsData.AppRuleDetailRow row in dsData.AppRuleDetail)
             {
                 TreeListNode node = (TreeListNode)TLItems.FindNodeByFieldValue("ID", row.ItemName);
                 if (node != null)
@@ -82,19 +82,19 @@ namespace NICSQLTools.Views.Permission
         {
             
             ruleDetailTableAdapter.DeleteByRuleID(RuleID);//Delete All Rule Contains To Add New
-            ruleDetailTableAdapter.FillByRuleID(dsData.RuleDetail, RuleID);//Empty RuleDetail Table
+            ruleDetailTableAdapter.FillByRuleID(dsData.AppRuleDetail, RuleID);//Empty RuleDetail Table
 
             List<TreeListNode> Nodes = GetAllItems(TLItems);
          
             foreach (TreeListNode node in Nodes)
             {
-                NICSQLTools.Data.dsData.RuleDetailRow row = dsData.RuleDetail.NewRuleDetailRow();
+                NICSQLTools.Data.dsData.AppRuleDetailRow row = dsData.AppRuleDetail.NewAppRuleDetailRow();
                 row.RuleID = RuleID; row.ItemName = node.GetValue(tlcID).ToString();
                 row.Selecting = Convert.ToBoolean(node.GetValue(tlcSelect)); row.Inserting = Convert.ToBoolean(node.GetValue(tlcInsert));
                 row.Updateing = Convert.ToBoolean(node.GetValue(tlcUpdate)); row.Deleting = Convert.ToBoolean(node.GetValue(tlcDelete));
-                dsData.RuleDetail.AddRuleDetailRow(row);
+                dsData.AppRuleDetail.AddAppRuleDetailRow(row);
             }
-            ruleDetailTableAdapter.Update(dsData.RuleDetail);
+            ruleDetailTableAdapter.Update(dsData.AppRuleDetail);
         }
         public static List<TreeListNode> GetAllItems(DevExpress.XtraTreeList.TreeList Tree)
         {

@@ -5,28 +5,30 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using System.Data;
+using NICSQLTools.Classes.Managers;
 
-namespace NICSQLTools.Views.Dashboard
+namespace NICSQLTools.Views.Data
 {
-    public partial class AppDashboardDSParamUC : XtraUserControl
+    public partial class AppDatasourceUC : XtraUserControl
     {
-        #region - Var -
-        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(AppDashboardDSParamUC));
+        #region - Variables -
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(AppDatasourceUC));
         private NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         int? NewId = null;
         #endregion
-        #region - Fun -
-        public AppDashboardDSParamUC()
+        #region - Functions -
+        public AppDatasourceUC()
         {
             InitializeComponent();
         }
+        
         void LoadData()
         {
             SplashScreenManager.ShowForm(typeof(WaitWindowFrm));
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 Invoke(new MethodInvoker(() => {
-                    LSMS.QueryableSource = from q in dsLinq.AppDashboardDs select q;
+                    LSMS.QueryableSource = from q in dsLinq.AppDatasourceTypes select q;
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                     gridControlMain.DataSource = XPSCS;
                     gridViewMain.BestFitColumns();
@@ -35,7 +37,7 @@ namespace NICSQLTools.Views.Dashboard
             });
         }
         #endregion
-        #region -  EventWhnd - 
+        #region - EventWhnd -
         private void ProductEditorUC_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -53,6 +55,7 @@ namespace NICSQLTools.Views.Dashboard
                 else
                     MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
             };
+
             SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");
             UOW.CommitTransactionAsync(CommitCallBack);
         }
@@ -76,6 +79,18 @@ namespace NICSQLTools.Views.Dashboard
             XPSCS.Reload();
             gridViewMain.RefreshData();
         }
+        private void UOW_BeforeCommitTransaction(object sender, DevExpress.Xpo.SessionManipulationEventArgs e)
+        {
+            DevExpress.Xpo.Helpers.ObjectSet Rows = (DevExpress.Xpo.Helpers.ObjectSet)e.Session.GetObjectsToSave();
+            DateTime DateIn = DataManager.defaultInstance.ServerDateTime;
+            foreach (DevExpress.Xpo.Metadata.XPDataTableObject item in Rows)
+            {
+                item.SetMemberValue("UserIn", UserManager.defaultInstance.User.UserId);
+                item.SetMemberValue("DateIn", DateIn);
+            }
+
+        }
+
         #endregion
 
     }

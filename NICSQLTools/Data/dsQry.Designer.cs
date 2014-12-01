@@ -14166,12 +14166,22 @@ namespace NICSQLTools.Data.dsQryTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        [Sales District 2]\r\nFROM            SalesDistrict3\r\nWHERE        ([" +
                 "Sales District 2] IS NOT NULL)\r\nGROUP BY [Sales District 2]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        SalesDistrict3.[Sales District 2]
+FROM            SalesDistrict3 INNER JOIN
+                         AppRuleSalesDistrict3 ON SalesDistrict3.SalesDistrict3Id = AppRuleSalesDistrict3.SalesDistrict3Id INNER JOIN
+                         AppUserRule ON AppRuleSalesDistrict3.RuleID = AppUserRule.RuleId
+WHERE        (SalesDistrict3.[Sales District 2] IS NOT NULL) AND (AppUserRule.UserId = @UserId)
+GROUP BY SalesDistrict3.[Sales District 2]";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14193,6 +14203,32 @@ namespace NICSQLTools.Data.dsQryTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsQry.SalesDistrict2DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsQry.SalesDistrict2DataTable dataTable = new dsQry.SalesDistrict2DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUserId(dsQry.SalesDistrict2DataTable dataTable, int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsQry.SalesDistrict2DataTable GetDataByUserId(int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
             dsQry.SalesDistrict2DataTable dataTable = new dsQry.SalesDistrict2DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -15480,8 +15516,8 @@ SELECT [Route Number], [Route Name] FROM [0-3  Route Details] WHERE ([Route Numb
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        UserID, UserName, RealName\r\nFROM            Users\r\nWHERE        (Is" +
-                "Active = \'True\')";
+            this._commandCollection[0].CommandText = "SELECT        UserID, UserName, RealName\r\nFROM            AppUsers\r\nWHERE        " +
+                "(IsActive = \'True\')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15650,7 +15686,7 @@ SELECT [Route Number], [Route Name] FROM [0-3  Route Details] WHERE ([Route Numb
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        RuleID, RuleName, RuleDesc\r\nFROM            Rules";
+            this._commandCollection[0].CommandText = "SELECT        RuleID, RuleName, RuleDesc\r\nFROM            AppRules";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

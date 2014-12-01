@@ -1,6 +1,6 @@
 ﻿namespace NICSQLTools.Views.Dashboard
 {
-    partial class DashboardDSOpenDlg
+    partial class DatasourceOpenDlg
     {
         /// <summary>
         /// Required designer variable.
@@ -77,7 +77,7 @@
             // 
             // LSMSDS
             // 
-            this.LSMSDS.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardD);
+            this.LSMSDS.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasource);
             this.LSMSDS.KeyExpression = "[DatasourceID]";
             // 
             // gridViewMain
@@ -231,7 +231,7 @@
             // 
             // LSMSUser
             // 
-            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.User);
+            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.AppUser);
             this.LSMSUser.KeyExpression = "[UserID]";
             // 
             // DashboardDSOpenDlg

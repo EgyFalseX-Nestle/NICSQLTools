@@ -1,6 +1,6 @@
-﻿namespace NICSQLTools.Views.Dashboard
+﻿namespace NICSQLTools.Views.Data
 {
-    partial class AppDashboardDSParamUC
+    partial class AppDatasourceUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppDashboardDSParamUC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppDatasourceUC));
             this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colDatasourceID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEditDatasourceID = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.LSMS = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDatasourceSPName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPramName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPramDisplayName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAppDatasourceTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditAppDatasourceTypeId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMS = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.colDesc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoExEditDesc = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
@@ -51,15 +50,17 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.repositoryItemMemoExEditMemo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDatasourceID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditAppDatasourceTypeId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,13 +68,15 @@
             // 
             this.UOW.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.UOW.TrackPropertiesModifications = false;
+            this.UOW.BeforeCommitTransaction += new DevExpress.Xpo.SessionManipulationEventHandler(this.UOW_BeforeCommitTransaction);
             // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colDatasourceID,
-            this.colPramName,
-            this.colPramDisplayName});
+            this.colDatasourceName,
+            this.colDatasourceSPName,
+            this.colAppDatasourceTypeId,
+            this.colDesc});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new customer";
@@ -87,87 +90,81 @@
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
             // 
-            // colDatasourceID
-            // 
-            this.colDatasourceID.Caption = "Data Source";
-            this.colDatasourceID.ColumnEdit = this.repositoryItemGridLookUpEditDatasourceID;
-            this.colDatasourceID.FieldName = "DatasourceID";
-            this.colDatasourceID.Name = "colDatasourceID";
-            this.colDatasourceID.Visible = true;
-            this.colDatasourceID.VisibleIndex = 0;
-            this.colDatasourceID.Width = 109;
-            // 
-            // repositoryItemGridLookUpEditDatasourceID
-            // 
-            this.repositoryItemGridLookUpEditDatasourceID.AutoHeight = false;
-            this.repositoryItemGridLookUpEditDatasourceID.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditDatasourceID.DataSource = this.LSMS;
-            this.repositoryItemGridLookUpEditDatasourceID.DisplayMember = "DatasourceName";
-            this.repositoryItemGridLookUpEditDatasourceID.Name = "repositoryItemGridLookUpEditDatasourceID";
-            this.repositoryItemGridLookUpEditDatasourceID.NullText = "";
-            this.repositoryItemGridLookUpEditDatasourceID.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditDatasourceID.ValueMember = "DatasourceID";
-            this.repositoryItemGridLookUpEditDatasourceID.View = this.repositoryItemGridLookUpEdit1View;
-            // 
-            // LSMS
-            // 
-            this.LSMS.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardD);
-            this.LSMS.KeyExpression = "DatasourceID";
-            // 
-            // repositoryItemGridLookUpEdit1View
-            // 
-            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colDatasourceName,
-            this.colDatasourceSPName});
-            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
-            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
             // colDatasourceName
             // 
-            this.colDatasourceName.Caption = "Data Source Display Name";
+            this.colDatasourceName.Caption = "Datasource Name";
             this.colDatasourceName.FieldName = "DatasourceName";
             this.colDatasourceName.Name = "colDatasourceName";
             this.colDatasourceName.Visible = true;
             this.colDatasourceName.VisibleIndex = 0;
+            this.colDatasourceName.Width = 208;
             // 
             // colDatasourceSPName
             // 
-            this.colDatasourceSPName.Caption = "Data Source SQL Name";
+            this.colDatasourceSPName.Caption = "Datasource Stored Procedure Name";
             this.colDatasourceSPName.FieldName = "DatasourceSPName";
             this.colDatasourceSPName.Name = "colDatasourceSPName";
             this.colDatasourceSPName.Visible = true;
             this.colDatasourceSPName.VisibleIndex = 1;
+            this.colDatasourceSPName.Width = 231;
             // 
-            // colPramName
+            // colAppDatasourceTypeId
             // 
-            this.colPramName.Caption = "Parameter Name";
-            this.colPramName.FieldName = "PramName";
-            this.colPramName.Name = "colPramName";
-            this.colPramName.Visible = true;
-            this.colPramName.VisibleIndex = 1;
-            this.colPramName.Width = 94;
+            this.colAppDatasourceTypeId.Caption = "Datasource Type";
+            this.colAppDatasourceTypeId.ColumnEdit = this.repositoryItemLookUpEditAppDatasourceTypeId;
+            this.colAppDatasourceTypeId.FieldName = "AppDatasourceTypeId";
+            this.colAppDatasourceTypeId.Name = "colAppDatasourceTypeId";
+            this.colAppDatasourceTypeId.Visible = true;
+            this.colAppDatasourceTypeId.VisibleIndex = 2;
+            this.colAppDatasourceTypeId.Width = 114;
             // 
-            // colPramDisplayName
+            // repositoryItemLookUpEditAppDatasourceTypeId
             // 
-            this.colPramDisplayName.Caption = "Parameter Display Name";
-            this.colPramDisplayName.FieldName = "PramDisplayName";
-            this.colPramDisplayName.Name = "colPramDisplayName";
-            this.colPramDisplayName.Visible = true;
-            this.colPramDisplayName.VisibleIndex = 2;
-            this.colPramDisplayName.Width = 136;
+            this.repositoryItemLookUpEditAppDatasourceTypeId.AutoHeight = false;
+            this.repositoryItemLookUpEditAppDatasourceTypeId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditAppDatasourceTypeId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("AppDatasourceTypeName", "Datasource Type", 144, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditAppDatasourceTypeId.DataSource = this.LSMS;
+            this.repositoryItemLookUpEditAppDatasourceTypeId.DisplayMember = "AppDatasourceTypeName";
+            this.repositoryItemLookUpEditAppDatasourceTypeId.Name = "repositoryItemLookUpEditAppDatasourceTypeId";
+            this.repositoryItemLookUpEditAppDatasourceTypeId.NullText = "";
+            this.repositoryItemLookUpEditAppDatasourceTypeId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditAppDatasourceTypeId.ValueMember = "AppDatasourceTypeId";
+            // 
+            // LSMS
+            // 
+            this.LSMS.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasourceType);
+            this.LSMS.KeyExpression = "[AppDatasourceTypeId]";
+            // 
+            // colDesc
+            // 
+            this.colDesc.Caption = "Description";
+            this.colDesc.ColumnEdit = this.repositoryItemMemoExEditDesc;
+            this.colDesc.FieldName = "Desc";
+            this.colDesc.Name = "colDesc";
+            this.colDesc.Visible = true;
+            this.colDesc.VisibleIndex = 3;
+            // 
+            // repositoryItemMemoExEditDesc
+            // 
+            this.repositoryItemMemoExEditDesc.AutoHeight = false;
+            this.repositoryItemMemoExEditDesc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEditDesc.Name = "repositoryItemMemoExEditDesc";
             // 
             // gridControlMain
             // 
+            this.gridControlMain.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.Location = new System.Drawing.Point(0, 31);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.MenuManager = this.barManagerMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemGridLookUpEditDatasourceID});
+            this.repositoryItemMemoExEditMemo,
+            this.repositoryItemMemoExEditDesc,
+            this.repositoryItemLookUpEditAppDatasourceTypeId});
             this.gridControlMain.Size = new System.Drawing.Size(679, 360);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -180,7 +177,7 @@
             this.XPSCS.AllowNew = true;
             this.XPSCS.AllowRemove = true;
             this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppDashboardDSPramDataTable);
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppDatasourceDataTable);
             this.XPSCS.Session = this.UOW;
             // 
             // barManagerMain
@@ -264,12 +261,19 @@
             this.barDockControlRight.Location = new System.Drawing.Point(679, 31);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 360);
             // 
+            // repositoryItemMemoExEditMemo
+            // 
+            this.repositoryItemMemoExEditMemo.AutoHeight = false;
+            this.repositoryItemMemoExEditMemo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEditMemo.Name = "repositoryItemMemoExEditMemo";
+            // 
             // popupMenuMain
             // 
             this.popupMenuMain.Manager = this.barManagerMain;
             this.popupMenuMain.Name = "popupMenuMain";
             // 
-            // AppDashboardDSParamUC
+            // AppDatasourceUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -278,17 +282,18 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "AppDashboardDSParamUC";
+            this.Name = "AppDatasourceUC";
             this.Size = new System.Drawing.Size(679, 391);
             this.Load += new System.EventHandler(this.ProductEditorUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDatasourceID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditAppDatasourceTypeId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
             this.ResumeLayout(false);
 
@@ -310,13 +315,13 @@
         private DevExpress.XtraBars.PopupMenu popupMenuMain;
         private DevExpress.Xpo.XPServerCollectionSource XPSCS;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
-        private DevExpress.XtraGrid.Columns.GridColumn colDatasourceID;
-        private DevExpress.XtraGrid.Columns.GridColumn colPramName;
-        private DevExpress.XtraGrid.Columns.GridColumn colPramDisplayName;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMS;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditDatasourceID;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditMemo;
         private DevExpress.XtraGrid.Columns.GridColumn colDatasourceName;
         private DevExpress.XtraGrid.Columns.GridColumn colDatasourceSPName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDesc;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditDesc;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMS;
+        private DevExpress.XtraGrid.Columns.GridColumn colAppDatasourceTypeId;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditAppDatasourceTypeId;
     }
 }

@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardViewerUC));
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dashboardViewerMain = new DevExpress.DashboardWin.DashboardViewer(this.components);
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
@@ -56,8 +61,8 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciWait = new DevExpress.XtraLayout.LayoutControlItem();
-            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSTableAdapter();
-            this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSPramTableAdapter();
+            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
+            this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
             this.appDashboardSchemaTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter();
             this.get_sp_PramTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -201,7 +206,7 @@
             this.ppWait.AppearanceCaption.Options.UseFont = true;
             this.ppWait.AppearanceDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.ppWait.AppearanceDescription.Options.UseFont = true;
-            this.ppWait.Location = new System.Drawing.Point(12, 128);
+            this.ppWait.Location = new System.Drawing.Point(12, 12);
             this.ppWait.Name = "ppWait";
             this.ppWait.Size = new System.Drawing.Size(249, 46);
             this.ppWait.StyleController = this.layoutControlDashboards;
@@ -211,7 +216,7 @@
             // btnLoadDashboard
             // 
             this.btnLoadDashboard.Image = global::NICSQLTools.Properties.Resources.done;
-            this.btnLoadDashboard.Location = new System.Drawing.Point(12, 36);
+            this.btnLoadDashboard.Location = new System.Drawing.Point(12, 88);
             this.btnLoadDashboard.Name = "btnLoadDashboard";
             this.btnLoadDashboard.Size = new System.Drawing.Size(249, 31);
             this.btnLoadDashboard.StyleController = this.layoutControlDashboards;
@@ -222,11 +227,20 @@
             // lueDashboard
             // 
             this.lueDashboard.EditValue = "";
-            this.lueDashboard.Location = new System.Drawing.Point(67, 12);
+            this.lueDashboard.Location = new System.Drawing.Point(67, 62);
             this.lueDashboard.Name = "lueDashboard";
             this.lueDashboard.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem1.Appearance.Options.UseImage = true;
+            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
+            toolTipTitleItem1.Text = "Refresh";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Reresh Dashboard";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
             this.lueDashboard.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true)});
             this.lueDashboard.Properties.DataSource = this.LSMSSchema;
             this.lueDashboard.Properties.DisplayMember = "DashboardSchemaName";
             this.lueDashboard.Properties.NullText = "";
@@ -236,7 +250,8 @@
             this.lueDashboard.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueDashboard.Properties.ValueMember = "DashboardSchemaId";
             this.lueDashboard.Properties.View = this.gridLookUpEdit1View;
-            this.lueDashboard.Size = new System.Drawing.Size(194, 20);
+            this.lueDashboard.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lueDashboard_Properties_ButtonClick);
+            this.lueDashboard.Size = new System.Drawing.Size(194, 22);
             this.lueDashboard.StyleController = this.layoutControlDashboards;
             this.lueDashboard.TabIndex = 0;
             // 
@@ -258,7 +273,7 @@
             // 
             // LSMSUser
             // 
-            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.User);
+            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.AppUser);
             this.LSMSUser.KeyExpression = "[UserID]";
             // 
             // gridLookUpEdit1View
@@ -304,7 +319,7 @@
             // btnRefreshAll
             // 
             this.btnRefreshAll.Image = global::NICSQLTools.Properties.Resources.refresh2_32x32;
-            this.btnRefreshAll.Location = new System.Drawing.Point(12, 71);
+            this.btnRefreshAll.Location = new System.Drawing.Point(12, 123);
             this.btnRefreshAll.Name = "btnRefreshAll";
             this.btnRefreshAll.Size = new System.Drawing.Size(249, 31);
             this.btnRefreshAll.StyleController = this.layoutControlDashboards;
@@ -313,7 +328,7 @@
             // 
             // pbcRefresh
             // 
-            this.pbcRefresh.Location = new System.Drawing.Point(12, 106);
+            this.pbcRefresh.Location = new System.Drawing.Point(12, 158);
             this.pbcRefresh.Name = "pbcRefresh";
             this.pbcRefresh.Size = new System.Drawing.Size(249, 18);
             this.pbcRefresh.StyleController = this.layoutControlDashboards;
@@ -340,9 +355,9 @@
             // 
             this.layoutControlItem1.Control = this.lueDashboard;
             this.layoutControlItem1.CustomizationFormText = "lueDashboard";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(253, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(253, 26);
             this.layoutControlItem1.Text = "Dashboard";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(52, 13);
             // 
@@ -350,7 +365,7 @@
             // 
             this.layoutControlItem2.Control = this.btnLoadDashboard;
             this.layoutControlItem2.CustomizationFormText = "btnLoad";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 76);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 35);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(128, 30);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -365,7 +380,7 @@
             // 
             this.layoutControlItem3.Control = this.btnRefreshAll;
             this.layoutControlItem3.CustomizationFormText = "btnRefeshAll";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 59);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 111);
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(0, 35);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(102, 35);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -381,9 +396,9 @@
             // 
             this.layoutControlItem4.Control = this.pbcRefresh;
             this.layoutControlItem4.CustomizationFormText = "pbProgressAll";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 94);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 146);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(253, 22);
+            this.layoutControlItem4.Size = new System.Drawing.Size(253, 29);
             this.layoutControlItem4.Text = "layoutControlItem4";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextToControlDistance = 0;
@@ -393,11 +408,11 @@
             // 
             this.lciWait.Control = this.ppWait;
             this.lciWait.CustomizationFormText = "lciWait";
-            this.lciWait.Location = new System.Drawing.Point(0, 116);
+            this.lciWait.Location = new System.Drawing.Point(0, 0);
             this.lciWait.MaxSize = new System.Drawing.Size(0, 50);
             this.lciWait.MinSize = new System.Drawing.Size(54, 50);
             this.lciWait.Name = "lciWait";
-            this.lciWait.Size = new System.Drawing.Size(253, 59);
+            this.lciWait.Size = new System.Drawing.Size(253, 50);
             this.lciWait.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.lciWait.Text = "lciWait";
             this.lciWait.TextSize = new System.Drawing.Size(0, 0);
@@ -474,8 +489,8 @@
         private DevExpress.XtraEditors.ProgressBarControl pbcRefresh;
         private DevExpress.XtraEditors.SimpleButton btnRefreshAll;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSTableAdapter appDashboardDSTableAdapter;
-        private NICSQLTools.Data.dsDataTableAdapters.AppDashboardDSPramTableAdapter appDashboardDSPramTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter appDashboardDSTableAdapter;
+        private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter appDashboardDSPramTableAdapter;
         private NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter appDashboardSchemaTableAdapter;
         private NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter get_sp_PramTableAdapter;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSSchema;

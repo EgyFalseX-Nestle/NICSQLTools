@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardViewerUC));
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dashboardViewerMain = new DevExpress.DashboardWin.DashboardViewer(this.components);
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
@@ -47,8 +47,6 @@
             this.btnLoadDashboard = new DevExpress.XtraEditors.SimpleButton();
             this.lueDashboard = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSSchema = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.repositoryItemLookUpEditUserIn = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.LSMSUser = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDashboardSchemaName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateIn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,8 +76,6 @@
             this.layoutControlDashboards.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueDashboard.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUserIn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcRefresh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -230,23 +226,21 @@
             this.lueDashboard.Location = new System.Drawing.Point(67, 62);
             this.lueDashboard.Name = "lueDashboard";
             this.lueDashboard.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipTitleItem1.Appearance.Options.UseImage = true;
-            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
-            toolTipTitleItem1.Text = "Refresh";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Reresh Dashboard";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
+            toolTipTitleItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem2.Appearance.Options.UseImage = true;
+            toolTipTitleItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem2.Image")));
+            toolTipTitleItem2.Text = "Refresh";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Reresh Dashboard";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
             this.lueDashboard.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, superToolTip2, true)});
             this.lueDashboard.Properties.DataSource = this.LSMSSchema;
             this.lueDashboard.Properties.DisplayMember = "DashboardSchemaName";
             this.lueDashboard.Properties.NullText = "";
             this.lueDashboard.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
-            this.lueDashboard.Properties.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEditUserIn});
             this.lueDashboard.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueDashboard.Properties.ValueMember = "DashboardSchemaId";
             this.lueDashboard.Properties.View = this.gridLookUpEdit1View;
@@ -257,24 +251,8 @@
             // 
             // LSMSSchema
             // 
-            this.LSMSSchema.ElementType = typeof(NICSQLTools.Data.Linq.AppDashboardSchema);
+            this.LSMSSchema.ElementType = typeof(NICSQLTools.Data.Linq.vAppDashboardSchema_LUE);
             this.LSMSSchema.KeyExpression = "[DashboardSchemaId]";
-            // 
-            // repositoryItemLookUpEditUserIn
-            // 
-            this.repositoryItemLookUpEditUserIn.AutoHeight = false;
-            this.repositoryItemLookUpEditUserIn.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditUserIn.DataSource = this.LSMSUser;
-            this.repositoryItemLookUpEditUserIn.DisplayMember = "RealName";
-            this.repositoryItemLookUpEditUserIn.Name = "repositoryItemLookUpEditUserIn";
-            this.repositoryItemLookUpEditUserIn.NullText = "";
-            this.repositoryItemLookUpEditUserIn.ValueMember = "UserID";
-            // 
-            // LSMSUser
-            // 
-            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.AppUser);
-            this.LSMSUser.KeyExpression = "[UserID]";
             // 
             // gridLookUpEdit1View
             // 
@@ -310,8 +288,7 @@
             // colUserIn
             // 
             this.colUserIn.Caption = "Owner";
-            this.colUserIn.ColumnEdit = this.repositoryItemLookUpEditUserIn;
-            this.colUserIn.FieldName = "UserIn";
+            this.colUserIn.FieldName = "RealName";
             this.colUserIn.Name = "colUserIn";
             this.colUserIn.Visible = true;
             this.colUserIn.VisibleIndex = 2;
@@ -458,8 +435,6 @@
             this.layoutControlDashboards.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueDashboard.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUserIn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcRefresh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -498,12 +473,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDateIn;
         private DevExpress.XtraGrid.Columns.GridColumn colUserIn;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSUser;
         private DevExpress.XtraWaitForm.ProgressPanel ppWait;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem lciWait;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupParamters;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditUserIn;
     }
 }

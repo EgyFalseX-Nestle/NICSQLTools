@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.LSMSDS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnSelect = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -37,23 +36,20 @@
             this.colDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEditDesc = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.colUserIn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEditUserIn = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colDateIn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEditDateIn = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.LSMSUser = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUserIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMain
@@ -61,12 +57,12 @@
             this.gridControlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControlMain.DataSource = this.LSMSDS;
+            this.gridControlMain.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gridControlMain.DataSource = this.LSMSDatasource;
             this.gridControlMain.Location = new System.Drawing.Point(12, 12);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEditUserIn,
             this.repositoryItemDateEditDateIn,
             this.repositoryItemButtonEditSelect,
             this.repositoryItemMemoExEditDesc});
@@ -74,11 +70,6 @@
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
-            // 
-            // LSMSDS
-            // 
-            this.LSMSDS.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasource);
-            this.LSMSDS.KeyExpression = "[DatasourceID]";
             // 
             // gridViewMain
             // 
@@ -105,6 +96,7 @@
             this.gridColumnSelect.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumnSelect.Caption = "Select";
             this.gridColumnSelect.ColumnEdit = this.repositoryItemButtonEditSelect;
+            this.gridColumnSelect.FieldName = "DatasourceID";
             this.gridColumnSelect.Name = "gridColumnSelect";
             this.gridColumnSelect.Visible = true;
             this.gridColumnSelect.VisibleIndex = 0;
@@ -164,20 +156,11 @@
             this.colUserIn.AppearanceHeader.Options.UseTextOptions = true;
             this.colUserIn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colUserIn.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colUserIn.ColumnEdit = this.repositoryItemLookUpEditUserIn;
-            this.colUserIn.FieldName = "UserIn";
+            this.colUserIn.FieldName = "RealName";
             this.colUserIn.Name = "colUserIn";
             this.colUserIn.Visible = true;
             this.colUserIn.VisibleIndex = 3;
             this.colUserIn.Width = 120;
-            // 
-            // repositoryItemLookUpEditUserIn
-            // 
-            this.repositoryItemLookUpEditUserIn.AutoHeight = false;
-            this.repositoryItemLookUpEditUserIn.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditUserIn.Name = "repositoryItemLookUpEditUserIn";
-            this.repositoryItemLookUpEditUserIn.NullText = "";
             // 
             // colDateIn
             // 
@@ -229,12 +212,12 @@
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // LSMSUser
+            // LSMSDatasource
             // 
-            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.AppUser);
-            this.LSMSUser.KeyExpression = "[UserID]";
+            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
+            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
             // 
-            // DashboardDSOpenDlg
+            // DatasourceOpenDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -244,23 +227,21 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "DashboardDSOpenDlg";
+            this.Name = "DatasourceOpenDlg";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open Data Sources";
             this.Load += new System.EventHandler(this.DashboardOpenDlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUserIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,14 +254,12 @@
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraGrid.Columns.GridColumn colUserIn;
         private DevExpress.XtraGrid.Columns.GridColumn colDateIn;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSDS;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSUser;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditUserIn;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDateIn;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditSelect;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnSelect;
         private DevExpress.XtraGrid.Columns.GridColumn colDatasourceName;
         private DevExpress.XtraGrid.Columns.GridColumn colDesc;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditDesc;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSDatasource;
     }
 }

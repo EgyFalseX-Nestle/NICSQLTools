@@ -195,7 +195,7 @@
       <DependentUpon>dsData.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Data\dsData1.Designer.cs">
+    <Compile Include="Data\dsData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -231,6 +231,7 @@
     <Compile Include="Data\dsORMDataCode\StoredProcHelper.cs" />
     <Compile Include="Data\dsQry.cs">
       <DependentUpon>dsQry.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Data\dsQry.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -386,6 +387,12 @@
     </Compile>
     <Compile Include="Views\Data\RouteEditorUC.Designer.cs">
       <DependentUpon>RouteEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\ChooseThemeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Main\ChooseThemeUC.Designer.cs">
+      <DependentUpon>ChooseThemeUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Main\LoginUC.cs">
       <SubType>UserControl</SubType>
@@ -632,6 +639,9 @@
     <EmbeddedResource Include="Views\Import\ImportCustomerRouteUC.resx">
       <DependentUpon>ImportCustomerRouteUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Main\ChooseThemeUC.resx">
+      <DependentUpon>ChooseThemeUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Permission\RuleUC.resx">
       <DependentUpon>RuleUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -770,7 +780,7 @@
     <None Include="Data\dsData.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsData1.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsData.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -839,6 +849,10 @@
   <ItemGroup>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\additem_16x16.png" />
+    <None Include="Resources\pivot_16x16.png" />
+    <None Include="Resources\properties_32x32.png" />
+    <None Include="Resources\pagesetup_32x32.png" />
     <None Include="Resources\Queries2128.png" />
     <None Include="Resources\SalesDistrict128.png" />
     <None Include="Resources\SalesDistrict64.png" />

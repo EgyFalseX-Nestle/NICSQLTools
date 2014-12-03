@@ -12,7 +12,8 @@ namespace NICSQLTools
 {
     public partial class TestFrm : Form
     {
-        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new Data.Linq.dsLinqDataDataContext();
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new Data.Linq.dsLinqDataDataContext(){ ObjectTrackingEnabled = false};
+        NICSQLTools.Data.dsQry ds = new Data.dsQry();
         public TestFrm()
         {
             InitializeComponent();
@@ -21,19 +22,14 @@ namespace NICSQLTools
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LSMSLayout.QueryableSource = from q in dsLinq.AppDatasources select q;
+            DevExpress.XtraBars.Helpers.SkinHelper.InitSkinGallery(galleryControl1, true);
+            //DevExpress.XtraBars.Helpers.SkinHelper.InitSkinPopupMenu(popupMenu1);
+
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            
-        }
+    
+      
 
-        private void simpleButton1_Click_1(object sender, EventArgs e)
-        {
-            object obj = (NICSQLTools.Data.Linq.AppDatasource)lue.GetSelectedDataRow();
-        }
-        
 
     }
 }

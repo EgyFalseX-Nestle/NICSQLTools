@@ -121,5 +121,15 @@ namespace NICSQLTools.Classes
             }
             
         }
+        public static DevExpress.Utils.Menu.DXMenuItem CreateMenuItem(string MenuCaption, System.Drawing.Bitmap MenuImage, EventHandler ClickEvent)
+        {
+            DevExpress.Utils.Menu.DXMenuItem MenuItem = new DevExpress.Utils.Menu.DXMenuItem(MenuCaption, DevExpress.Utils.Menu.DXMenuItemPriority.Normal)
+            {
+                Image = MenuImage
+            };
+            MenuItem.Click += ClickEvent;
+
+            return MenuItem;
+        }
     }
 }

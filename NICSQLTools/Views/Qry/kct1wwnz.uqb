@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.panelContainerMain = new DevExpress.XtraBars.Docking.DockPanel();
+            this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanelProperties = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.pgcProperties = new DevExpress.XtraVerticalGrid.PropertyGridControl();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItemPropertiesControl = new DevExpress.XtraLayout.LayoutControlItem();
             this.dockPanelDashboard = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControlParamter = new DevExpress.XtraLayout.LayoutControl();
@@ -45,6 +51,9 @@
             this.btnLoadLayout = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveLayout = new DevExpress.XtraEditors.SimpleButton();
             this.lueLayout = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.LSMSLayout = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.repositoryItemLookUpEditUserIn = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSUser = new DevExpress.Data.Linq.LinqServerModeSource();
             this.repositoryItemMemoExEditDesc = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceLayoutName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,6 +63,7 @@
             this.ppWait = new DevExpress.XtraWaitForm.ProgressPanel();
             this.btnLoadDashboard = new DevExpress.XtraEditors.SimpleButton();
             this.lueDatasource = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAppDatasourceTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,23 +79,23 @@
             this.layoutControlItemSaveAs = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemDelete = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemLoad = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dockPanelProperties = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.pgcProperties = new DevExpress.XtraVerticalGrid.PropertyGridControl();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItemPropertiesControl = new DevExpress.XtraLayout.LayoutControlItem();
             this.pivotGridControlMain = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.get_sp_PramTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
             this.appDatasourceLayoutTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceLayoutTableAdapter();
             this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
             this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
-            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.LSMSLayout = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).BeginInit();
-            this.panelContainerMain.SuspendLayout();
+            this.panelContainer1.SuspendLayout();
+            this.dockPanelProperties.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pgcProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).BeginInit();
             this.dockPanelDashboard.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlParamter)).BeginInit();
@@ -94,9 +104,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDatasource)).BeginInit();
             this.layoutControlDatasource.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUserIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDatasource.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -107,16 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemSaveAs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLoad)).BeginInit();
-            this.dockPanelProperties.SuspendLayout();
-            this.dockPanel1_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pgcProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemDateEdit1
@@ -137,7 +142,7 @@
             // 
             this.dockManagerMain.Form = this;
             this.dockManagerMain.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.panelContainerMain});
+            this.panelContainer1});
             this.dockManagerMain.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -147,19 +152,85 @@
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
             // 
-            // panelContainerMain
+            // panelContainer1
             // 
-            this.panelContainerMain.ActiveChild = this.dockPanelDashboard;
-            this.panelContainerMain.Controls.Add(this.dockPanelDashboard);
-            this.panelContainerMain.Controls.Add(this.dockPanelProperties);
-            this.panelContainerMain.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
-            this.panelContainerMain.ID = new System.Guid("b03cb66a-f343-43c5-9f00-cc38f1b88658");
-            this.panelContainerMain.Location = new System.Drawing.Point(0, 0);
-            this.panelContainerMain.Name = "panelContainerMain";
-            this.panelContainerMain.OriginalSize = new System.Drawing.Size(289, 200);
-            this.panelContainerMain.Size = new System.Drawing.Size(289, 416);
-            this.panelContainerMain.Tabbed = true;
-            this.panelContainerMain.Text = "panelContainer1";
+            this.panelContainer1.ActiveChild = this.dockPanelDashboard;
+            this.panelContainer1.Controls.Add(this.dockPanelDashboard);
+            this.panelContainer1.Controls.Add(this.dockPanelProperties);
+            this.panelContainer1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.panelContainer1.FloatVertical = true;
+            this.panelContainer1.ID = new System.Guid("bfe9ce18-dda8-4be0-816f-c98748af1c94");
+            this.panelContainer1.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer1.Name = "panelContainer1";
+            this.panelContainer1.OriginalSize = new System.Drawing.Size(289, 200);
+            this.panelContainer1.Size = new System.Drawing.Size(289, 416);
+            this.panelContainer1.Tabbed = true;
+            this.panelContainer1.Text = "panelContainer1";
+            // 
+            // dockPanelProperties
+            // 
+            this.dockPanelProperties.Controls.Add(this.dockPanel1_Container);
+            this.dockPanelProperties.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
+            this.dockPanelProperties.ID = new System.Guid("634f77b0-9bd0-4566-89ca-9c7d09a3bde3");
+            this.dockPanelProperties.Image = global::NICSQLTools.Properties.Resources.pagesetup_32x32;
+            this.dockPanelProperties.Location = new System.Drawing.Point(4, 23);
+            this.dockPanelProperties.Name = "dockPanelProperties";
+            this.dockPanelProperties.Options.ShowCloseButton = false;
+            this.dockPanelProperties.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanelProperties.Size = new System.Drawing.Size(281, 345);
+            this.dockPanelProperties.Text = "Properties";
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Controls.Add(this.layoutControl1);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(281, 345);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.pgcProperties);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(541, 139, 250, 350);
+            this.layoutControl1.Root = this.layoutControlGroup3;
+            this.layoutControl1.Size = new System.Drawing.Size(281, 345);
+            this.layoutControl1.TabIndex = 1;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // pgcProperties
+            // 
+            this.pgcProperties.Location = new System.Drawing.Point(12, 12);
+            this.pgcProperties.Name = "pgcProperties";
+            this.pgcProperties.Size = new System.Drawing.Size(257, 321);
+            this.pgcProperties.TabIndex = 0;
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.CustomizationFormText = "layoutControlGroup3";
+            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup3.GroupBordersVisible = false;
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItemPropertiesControl});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(281, 345);
+            this.layoutControlGroup3.Text = "layoutControlGroup3";
+            this.layoutControlGroup3.TextVisible = false;
+            // 
+            // layoutControlItemPropertiesControl
+            // 
+            this.layoutControlItemPropertiesControl.Control = this.pgcProperties;
+            this.layoutControlItemPropertiesControl.CustomizationFormText = "Properties Control";
+            this.layoutControlItemPropertiesControl.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItemPropertiesControl.Name = "layoutControlItemPropertiesControl";
+            this.layoutControlItemPropertiesControl.Size = new System.Drawing.Size(261, 325);
+            this.layoutControlItemPropertiesControl.Text = "Properties Control";
+            this.layoutControlItemPropertiesControl.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItemPropertiesControl.TextToControlDistance = 0;
+            this.layoutControlItemPropertiesControl.TextVisible = false;
             // 
             // dockPanelDashboard
             // 
@@ -287,11 +358,13 @@
             this.lueLayout.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            this.lueLayout.Properties.DataSource = this.LSMSLayout;
             this.lueLayout.Properties.DisplayMember = "DatasourceLayoutName";
             this.lueLayout.Properties.NullText = "";
             this.lueLayout.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
             this.lueLayout.Properties.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEditUserIn,
             this.repositoryItemMemoExEditDesc});
             this.lueLayout.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueLayout.Properties.ValueMember = "DatasourceLayoutId";
@@ -300,6 +373,27 @@
             this.lueLayout.Size = new System.Drawing.Size(195, 22);
             this.lueLayout.StyleController = this.layoutControlDatasource;
             this.lueLayout.TabIndex = 4;
+            // 
+            // LSMSLayout
+            // 
+            this.LSMSLayout.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasourceLayout);
+            this.LSMSLayout.KeyExpression = "[DatasourceLayoutId]";
+            // 
+            // repositoryItemLookUpEditUserIn
+            // 
+            this.repositoryItemLookUpEditUserIn.AutoHeight = false;
+            this.repositoryItemLookUpEditUserIn.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditUserIn.DataSource = this.LSMSUser;
+            this.repositoryItemLookUpEditUserIn.DisplayMember = "RealName";
+            this.repositoryItemLookUpEditUserIn.Name = "repositoryItemLookUpEditUserIn";
+            this.repositoryItemLookUpEditUserIn.NullText = "";
+            this.repositoryItemLookUpEditUserIn.ValueMember = "UserID";
+            // 
+            // LSMSUser
+            // 
+            this.LSMSUser.ElementType = typeof(NICSQLTools.Data.Linq.AppUser);
+            this.LSMSUser.KeyExpression = "[UserID]";
             // 
             // repositoryItemMemoExEditDesc
             // 
@@ -348,7 +442,8 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Edit User";
-            this.gridColumn5.FieldName = "RealName";
+            this.gridColumn5.ColumnEdit = this.repositoryItemLookUpEditUserIn;
+            this.gridColumn5.FieldName = "UserIn";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
@@ -356,7 +451,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Data Source";
-            this.gridColumn3.FieldName = "DatasourceName";
+            this.gridColumn3.FieldName = "AppDatasource.DatasourceName";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
@@ -395,12 +490,13 @@
             this.lueDatasource.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueDatasource.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.lueDatasource.Properties.DataSource = this.LSMSDatasource;
             this.lueDatasource.Properties.DisplayMember = "DatasourceName";
             this.lueDatasource.Properties.NullText = "";
             this.lueDatasource.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
             this.lueDatasource.Properties.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEditUserIn,
             this.repositoryItemMemoExEditDesc});
             this.lueDatasource.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueDatasource.Properties.ValueMember = "DatasourceID";
@@ -409,6 +505,11 @@
             this.lueDatasource.Size = new System.Drawing.Size(195, 22);
             this.lueDatasource.StyleController = this.layoutControlDatasource;
             this.lueDatasource.TabIndex = 0;
+            // 
+            // LSMSDatasource
+            // 
+            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasource);
+            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
             // 
             // gridLookUpEdit1View
             // 
@@ -430,7 +531,7 @@
             // 
             // colDatasourceName
             // 
-            this.colDatasourceName.Caption = "Dashboard Name";
+            this.colDatasourceName.Caption = "Dashboard Schema Name";
             this.colDatasourceName.FieldName = "DatasourceName";
             this.colDatasourceName.Name = "colDatasourceName";
             this.colDatasourceName.Visible = true;
@@ -440,7 +541,7 @@
             // colAppDatasourceTypeId
             // 
             this.colAppDatasourceTypeId.Caption = "Datasource Type";
-            this.colAppDatasourceTypeId.FieldName = "AppDatasourceTypeName";
+            this.colAppDatasourceTypeId.FieldName = "AppDatasourceTypeId.AppDatasourceTypeName";
             this.colAppDatasourceTypeId.Name = "colAppDatasourceTypeId";
             this.colAppDatasourceTypeId.Visible = true;
             this.colAppDatasourceTypeId.VisibleIndex = 1;
@@ -466,8 +567,9 @@
             // 
             // colUserIn
             // 
-            this.colUserIn.Caption = "Last Edit User";
-            this.colUserIn.FieldName = "RealName";
+            this.colUserIn.Caption = "Owner";
+            this.colUserIn.ColumnEdit = this.repositoryItemLookUpEditUserIn;
+            this.colUserIn.FieldName = "UserIn";
             this.colUserIn.Name = "colUserIn";
             this.colUserIn.Visible = true;
             this.colUserIn.VisibleIndex = 4;
@@ -591,72 +693,6 @@
             this.layoutControlItemLoad.TextToControlDistance = 0;
             this.layoutControlItemLoad.TextVisible = false;
             // 
-            // dockPanelProperties
-            // 
-            this.dockPanelProperties.Controls.Add(this.dockPanel1_Container);
-            this.dockPanelProperties.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
-            this.dockPanelProperties.ID = new System.Guid("634f77b0-9bd0-4566-89ca-9c7d09a3bde3");
-            this.dockPanelProperties.Image = global::NICSQLTools.Properties.Resources.pagesetup_32x32;
-            this.dockPanelProperties.Location = new System.Drawing.Point(4, 23);
-            this.dockPanelProperties.Name = "dockPanelProperties";
-            this.dockPanelProperties.Options.ShowCloseButton = false;
-            this.dockPanelProperties.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanelProperties.Size = new System.Drawing.Size(281, 345);
-            this.dockPanelProperties.Text = "Properties";
-            // 
-            // dockPanel1_Container
-            // 
-            this.dockPanel1_Container.Controls.Add(this.layoutControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(281, 345);
-            this.dockPanel1_Container.TabIndex = 0;
-            // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Controls.Add(this.pgcProperties);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(541, 139, 250, 350);
-            this.layoutControl1.Root = this.layoutControlGroup3;
-            this.layoutControl1.Size = new System.Drawing.Size(281, 345);
-            this.layoutControl1.TabIndex = 1;
-            this.layoutControl1.Text = "layoutControl1";
-            // 
-            // pgcProperties
-            // 
-            this.pgcProperties.AutoGenerateRows = true;
-            this.pgcProperties.Location = new System.Drawing.Point(12, 12);
-            this.pgcProperties.Name = "pgcProperties";
-            this.pgcProperties.Size = new System.Drawing.Size(257, 321);
-            this.pgcProperties.TabIndex = 0;
-            // 
-            // layoutControlGroup3
-            // 
-            this.layoutControlGroup3.CustomizationFormText = "layoutControlGroup3";
-            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup3.GroupBordersVisible = false;
-            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItemPropertiesControl});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(281, 345);
-            this.layoutControlGroup3.Text = "layoutControlGroup3";
-            this.layoutControlGroup3.TextVisible = false;
-            // 
-            // layoutControlItemPropertiesControl
-            // 
-            this.layoutControlItemPropertiesControl.Control = this.pgcProperties;
-            this.layoutControlItemPropertiesControl.CustomizationFormText = "Properties Control";
-            this.layoutControlItemPropertiesControl.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItemPropertiesControl.Name = "layoutControlItemPropertiesControl";
-            this.layoutControlItemPropertiesControl.Size = new System.Drawing.Size(261, 325);
-            this.layoutControlItemPropertiesControl.Text = "Properties Control";
-            this.layoutControlItemPropertiesControl.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemPropertiesControl.TextToControlDistance = 0;
-            this.layoutControlItemPropertiesControl.TextVisible = false;
-            // 
             // pivotGridControlMain
             // 
             this.pivotGridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -688,29 +724,37 @@
             // 
             this.appDashboardDSPramTableAdapter.ClearBeforeFill = true;
             // 
-            // LSMSDatasource
+            // simpleButton1
             // 
-            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
-            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
-            // 
-            // LSMSLayout
-            // 
-            this.LSMSLayout.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasourceLayout_LUE);
-            this.LSMSLayout.KeyExpression = "[DatasourceLayoutId]";
+            this.simpleButton1.Image = global::NICSQLTools.Properties.Resources.additem_16x16;
+            this.simpleButton1.Location = new System.Drawing.Point(638, 95);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // QryPivotUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.pivotGridControlMain);
-            this.Controls.Add(this.panelContainerMain);
+            this.Controls.Add(this.panelContainer1);
             this.Name = "QryPivotUC";
             this.Size = new System.Drawing.Size(757, 416);
             this.Load += new System.EventHandler(this.QryPivotUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).EndInit();
-            this.panelContainerMain.ResumeLayout(false);
+            this.panelContainer1.ResumeLayout(false);
+            this.dockPanelProperties.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pgcProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).EndInit();
             this.dockPanelDashboard.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlParamter)).EndInit();
@@ -719,9 +763,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDatasource)).EndInit();
             this.layoutControlDatasource.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditUserIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDatasource.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -732,16 +780,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemSaveAs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLoad)).EndInit();
-            this.dockPanelProperties.ResumeLayout(false);
-            this.dockPanel1_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pgcProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -760,13 +799,16 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControl layoutControlParamter;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSDatasource;
         private DevExpress.XtraGrid.Columns.GridColumn colDatasourceName;
         private DevExpress.XtraGrid.Columns.GridColumn colDateIn;
         private DevExpress.XtraGrid.Columns.GridColumn colUserIn;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSUser;
         private DevExpress.XtraWaitForm.ProgressPanel ppWait;
         private DevExpress.XtraLayout.LayoutControlItem lciWait;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupParamters;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditUserIn;
         private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControlMain;
         private NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter get_sp_PramTableAdapter;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditDesc;
@@ -788,16 +830,16 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemSaveAs;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemDelete;
         private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceLayoutTableAdapter appDatasourceLayoutTableAdapter;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSLayout;
         private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter appDashboardDSTableAdapter;
         private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter appDashboardDSPramTableAdapter;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraBars.Docking.DockPanel panelContainer1;
         private DevExpress.XtraBars.Docking.DockPanel dockPanelProperties;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraVerticalGrid.PropertyGridControl pgcProperties;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPropertiesControl;
-        private DevExpress.XtraBars.Docking.DockPanel panelContainerMain;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSDatasource;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSLayout;
     }
 }

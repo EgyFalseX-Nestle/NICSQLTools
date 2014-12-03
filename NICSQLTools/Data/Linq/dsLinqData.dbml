@@ -121,49 +121,11 @@
       <Column Name="NCE_Project" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.AppDashboardSchema" Member="AppDashboardSchemas">
-    <Type Name="AppDashboardSchema">
-      <Column Name="DashboardSchemaId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DashboardSchemaName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.AppDatasource" Member="AppDatasources">
-    <Type Name="AppDatasource">
-      <Column Name="DatasourceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AppDatasourceTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="AppDatasource_AppDatasourceLayout" Member="AppDatasourceLayouts" ThisKey="DatasourceID" OtherKey="DatasourceID" Type="AppDatasourceLayout" />
-      <Association Name="AppDatasourceType_AppDatasource" Member="AppDatasourceType" ThisKey="AppDatasourceTypeId" OtherKey="AppDatasourceTypeId" Type="AppDatasourceType" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.AppUsers" Member="AppUsers">
     <Type Name="AppUser">
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.AppDatasourceType" Member="AppDatasourceTypes">
-    <Type Name="AppDatasourceType">
-      <Column Name="AppDatasourceTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="AppDatasourceType_AppDatasource" Member="AppDatasources" ThisKey="AppDatasourceTypeId" OtherKey="AppDatasourceTypeId" Type="AppDatasource" />
-    </Type>
-  </Table>
-  <Table Name="dbo.AppDatasourceLayout" Member="AppDatasourceLayouts">
-    <Type Name="AppDatasourceLayout">
-      <Column Name="DatasourceLayoutId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DatasourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DatasourceLayoutName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="AppDatasource_AppDatasourceLayout" Member="AppDatasource" ThisKey="DatasourceID" OtherKey="DatasourceID" Type="AppDatasource" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SalesDistrict3" Member="SalesDistrict3s">
@@ -188,6 +150,63 @@
       <Column Name="SalesDistrict1Id" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="SalesDistrict1_SalesDistrict2" Member="SalesDistrict2s" ThisKey="SalesDistrict1Id" OtherKey="SalesDistrict1Id" Type="SalesDistrict2" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vAppDashboardSchema_LUE" Member="vAppDashboardSchema_LUEs">
+    <Type Name="vAppDashboardSchema_LUE">
+      <Column Name="DashboardSchemaId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DashboardSchemaName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vAppDatasourceParam_LUE" Member="vAppDatasourceParam_LUEs">
+    <Type Name="vAppDatasourceParam_LUE">
+      <Column Name="AppDatasourceParamID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DatasourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ParamName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ParamDisplayName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vAppDatasource_LUE" Member="vAppDatasource_LUEs">
+    <Type Name="vAppDatasource_LUE">
+      <Column Name="DatasourceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AppDatasourceTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vAppDatasourceLayout_LUE" Member="vAppDatasourceLayout_LUEs">
+    <Type Name="vAppDatasourceLayout_LUE">
+      <Column Name="DatasourceLayoutId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DatasourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DatasourceLayoutName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AppDatasourceType" Member="AppDatasourceType_LUEs">
+    <Type Name="AppDatasourceType_LUE">
+      <Column Name="AppDatasourceTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

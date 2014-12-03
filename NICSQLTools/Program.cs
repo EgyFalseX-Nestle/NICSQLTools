@@ -58,8 +58,9 @@ namespace NICSQLTools
                 //tbl.Rows.Add(row2);
 
                 //DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());
-                
-                Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
+
+                Application.Run(new TestFrm());
+                //Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
 
             }
             

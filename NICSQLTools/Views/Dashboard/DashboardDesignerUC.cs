@@ -33,8 +33,6 @@ namespace NICSQLTools.Views.Dashboard
             {
                 Invoke(new MethodInvoker(() =>
                 {
-                    LSMSDataSource.QueryableSource = from q in dsLinq.AppDatasources select q;
-
                     dashboardDesignerMain.Dashboard.DataSources.Clear();
                     //Load All Saved Data Sources
                     appDashboardDSTableAdapter.Fill(dsData.AppDatasource);
@@ -54,7 +52,7 @@ namespace NICSQLTools.Views.Dashboard
             DatasourceOpenDlg dlg = new DatasourceOpenDlg(Uti.Types.AppDatasourceTypeIdEnum.Dashboard);
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
-            NICSQLTools.Data.Linq.AppDatasource dsRow = dlg.DataSourceRow;
+            NICSQLTools.Data.Linq.vAppDatasource_LUE dsRow = dlg.DataSourceRow;
             //Check if this DS Already Added Before
             foreach (DevExpress.DashboardCommon.DataSource item in dashboardDesignerMain.Dashboard.DataSources)
             {

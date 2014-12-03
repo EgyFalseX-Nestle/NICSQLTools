@@ -64,7 +64,7 @@
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(427, 140);
+            this.tbUsername.Location = new System.Drawing.Point(437, 140);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.tbUsername.Properties.Appearance.Options.UseTextOptions = true;
@@ -84,7 +84,7 @@
             this.layoutControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControlMain.Location = new System.Drawing.Point(0, 0);
             this.layoutControlMain.Name = "layoutControlMain";
-            this.layoutControlMain.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(888, 222, 324, 459);
+            this.layoutControlMain.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(606, 114, 324, 459);
             this.layoutControlMain.Root = this.layoutControlGroup1;
             this.layoutControlMain.Size = new System.Drawing.Size(800, 400);
             this.layoutControlMain.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnLogin.Image = global::NICSQLTools.Properties.Resources.Lock16;
-            this.btnLogin.Location = new System.Drawing.Point(482, 213);
+            this.btnLogin.Location = new System.Drawing.Point(492, 213);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(137, 22);
             this.btnLogin.StyleController = this.layoutControlMain;
@@ -106,7 +106,7 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = global::NICSQLTools.Properties.Resources.LoginLogo256;
-            this.pictureEdit1.Location = new System.Drawing.Point(182, 140);
+            this.pictureEdit1.Location = new System.Drawing.Point(192, 140);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(190, 119);
@@ -115,7 +115,7 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(427, 164);
+            this.tbPassword.Location = new System.Drawing.Point(437, 164);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.tbPassword.Properties.Appearance.Options.UseTextOptions = true;
@@ -152,7 +152,7 @@
             // 
             this.layoutControlItemImg.Control = this.pictureEdit1;
             this.layoutControlItemImg.CustomizationFormText = "Image";
-            this.layoutControlItemImg.Location = new System.Drawing.Point(170, 128);
+            this.layoutControlItemImg.Location = new System.Drawing.Point(180, 128);
             this.layoutControlItemImg.MaxSize = new System.Drawing.Size(194, 123);
             this.layoutControlItemImg.MinSize = new System.Drawing.Size(194, 123);
             this.layoutControlItemImg.Name = "layoutControlItemImg";
@@ -168,7 +168,7 @@
             this.layoutControlItem3.Control = this.tbUsername;
             this.layoutControlItem3.CustomizationFormText = "Username";
             this.layoutControlItem3.FillControlToClientArea = false;
-            this.layoutControlItem3.Location = new System.Drawing.Point(364, 128);
+            this.layoutControlItem3.Location = new System.Drawing.Point(374, 128);
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(247, 24);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(247, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -182,7 +182,7 @@
             this.layoutControlItem2.Control = this.tbPassword;
             this.layoutControlItem2.CustomizationFormText = "Password";
             this.layoutControlItem2.FillControlToClientArea = false;
-            this.layoutControlItem2.Location = new System.Drawing.Point(364, 152);
+            this.layoutControlItem2.Location = new System.Drawing.Point(374, 152);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(247, 24);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(247, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -195,7 +195,7 @@
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(364, 176);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(374, 176);
             this.emptySpaceItem1.MaxSize = new System.Drawing.Size(106, 75);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(106, 75);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
@@ -208,7 +208,7 @@
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(470, 176);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(480, 176);
             this.emptySpaceItem2.MaxSize = new System.Drawing.Size(141, 25);
             this.emptySpaceItem2.MinSize = new System.Drawing.Size(141, 25);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
@@ -221,7 +221,7 @@
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.CustomizationFormText = "emptySpaceItem3";
-            this.emptySpaceItem3.Location = new System.Drawing.Point(170, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(180, 0);
             this.emptySpaceItem3.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(441, 128);
@@ -233,7 +233,7 @@
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.CustomizationFormText = "emptySpaceItem4";
-            this.emptySpaceItem4.Location = new System.Drawing.Point(170, 251);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(180, 251);
             this.emptySpaceItem4.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(441, 129);
@@ -245,10 +245,10 @@
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
             this.emptySpaceItem5.CustomizationFormText = "emptySpaceItem5";
-            this.emptySpaceItem5.Location = new System.Drawing.Point(611, 0);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(621, 0);
             this.emptySpaceItem5.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(169, 380);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(159, 380);
             this.emptySpaceItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem5.Text = "emptySpaceItem5";
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -260,7 +260,7 @@
             this.emptySpaceItem6.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem6.MinSize = new System.Drawing.Size(104, 24);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(170, 380);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(180, 380);
             this.emptySpaceItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem6.Text = "emptySpaceItem6";
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
@@ -270,7 +270,7 @@
             this.layoutControlItembtnLogin.Control = this.btnLogin;
             this.layoutControlItembtnLogin.CustomizationFormText = "Login Button";
             this.layoutControlItembtnLogin.FillControlToClientArea = false;
-            this.layoutControlItembtnLogin.Location = new System.Drawing.Point(470, 201);
+            this.layoutControlItembtnLogin.Location = new System.Drawing.Point(480, 201);
             this.layoutControlItembtnLogin.MaxSize = new System.Drawing.Size(141, 50);
             this.layoutControlItembtnLogin.MinSize = new System.Drawing.Size(141, 50);
             this.layoutControlItembtnLogin.Name = "layoutControlItembtnLogin";

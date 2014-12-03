@@ -30,21 +30,9 @@ namespace NICSQLTools.Data.Linq
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertAppDashboardSchema(AppDashboardSchema instance);
-    partial void UpdateAppDashboardSchema(AppDashboardSchema instance);
-    partial void DeleteAppDashboardSchema(AppDashboardSchema instance);
-    partial void InsertAppDatasource(AppDatasource instance);
-    partial void UpdateAppDatasource(AppDatasource instance);
-    partial void DeleteAppDatasource(AppDatasource instance);
     partial void InsertAppUser(AppUser instance);
     partial void UpdateAppUser(AppUser instance);
     partial void DeleteAppUser(AppUser instance);
-    partial void InsertAppDatasourceType(AppDatasourceType instance);
-    partial void UpdateAppDatasourceType(AppDatasourceType instance);
-    partial void DeleteAppDatasourceType(AppDatasourceType instance);
-    partial void InsertAppDatasourceLayout(AppDatasourceLayout instance);
-    partial void UpdateAppDatasourceLayout(AppDatasourceLayout instance);
-    partial void DeleteAppDatasourceLayout(AppDatasourceLayout instance);
     partial void InsertSalesDistrict3(SalesDistrict3 instance);
     partial void UpdateSalesDistrict3(SalesDistrict3 instance);
     partial void DeleteSalesDistrict3(SalesDistrict3 instance);
@@ -54,6 +42,21 @@ namespace NICSQLTools.Data.Linq
     partial void InsertSalesDistrict1(SalesDistrict1 instance);
     partial void UpdateSalesDistrict1(SalesDistrict1 instance);
     partial void DeleteSalesDistrict1(SalesDistrict1 instance);
+    partial void InsertvAppDashboardSchema_LUE(vAppDashboardSchema_LUE instance);
+    partial void UpdatevAppDashboardSchema_LUE(vAppDashboardSchema_LUE instance);
+    partial void DeletevAppDashboardSchema_LUE(vAppDashboardSchema_LUE instance);
+    partial void InsertvAppDatasourceParam_LUE(vAppDatasourceParam_LUE instance);
+    partial void UpdatevAppDatasourceParam_LUE(vAppDatasourceParam_LUE instance);
+    partial void DeletevAppDatasourceParam_LUE(vAppDatasourceParam_LUE instance);
+    partial void InsertvAppDatasource_LUE(vAppDatasource_LUE instance);
+    partial void UpdatevAppDatasource_LUE(vAppDatasource_LUE instance);
+    partial void DeletevAppDatasource_LUE(vAppDatasource_LUE instance);
+    partial void InsertvAppDatasourceLayout_LUE(vAppDatasourceLayout_LUE instance);
+    partial void UpdatevAppDatasourceLayout_LUE(vAppDatasourceLayout_LUE instance);
+    partial void DeletevAppDatasourceLayout_LUE(vAppDatasourceLayout_LUE instance);
+    partial void InsertAppDatasourceType_LUE(AppDatasourceType_LUE instance);
+    partial void UpdateAppDatasourceType_LUE(AppDatasourceType_LUE instance);
+    partial void DeleteAppDatasourceType_LUE(AppDatasourceType_LUE instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -94,43 +97,11 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<AppDashboardSchema> AppDashboardSchemas
-		{
-			get
-			{
-				return this.GetTable<AppDashboardSchema>();
-			}
-		}
-		
-		public System.Data.Linq.Table<AppDatasource> AppDatasources
-		{
-			get
-			{
-				return this.GetTable<AppDatasource>();
-			}
-		}
-		
 		public System.Data.Linq.Table<AppUser> AppUsers
 		{
 			get
 			{
 				return this.GetTable<AppUser>();
-			}
-		}
-		
-		public System.Data.Linq.Table<AppDatasourceType> AppDatasourceTypes
-		{
-			get
-			{
-				return this.GetTable<AppDatasourceType>();
-			}
-		}
-		
-		public System.Data.Linq.Table<AppDatasourceLayout> AppDatasourceLayouts
-		{
-			get
-			{
-				return this.GetTable<AppDatasourceLayout>();
 			}
 		}
 		
@@ -155,6 +126,46 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<SalesDistrict1>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vAppDashboardSchema_LUE> vAppDashboardSchema_LUEs
+		{
+			get
+			{
+				return this.GetTable<vAppDashboardSchema_LUE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vAppDatasourceParam_LUE> vAppDatasourceParam_LUEs
+		{
+			get
+			{
+				return this.GetTable<vAppDatasourceParam_LUE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vAppDatasource_LUE> vAppDatasource_LUEs
+		{
+			get
+			{
+				return this.GetTable<vAppDatasource_LUE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vAppDatasourceLayout_LUE> vAppDatasourceLayout_LUEs
+		{
+			get
+			{
+				return this.GetTable<vAppDatasourceLayout_LUE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AppDatasourceType_LUE> AppDatasourceType_LUEs
+		{
+			get
+			{
+				return this.GetTable<AppDatasourceType_LUE>();
 			}
 		}
 	}
@@ -2274,415 +2285,6 @@ namespace NICSQLTools.Data.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDashboardSchema")]
-	public partial class AppDashboardSchema : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _DashboardSchemaId;
-		
-		private string _DashboardSchemaName;
-		
-		private System.Nullable<int> _UserIn;
-		
-		private System.Nullable<System.DateTime> _DateIn;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDashboardSchemaIdChanging(int value);
-    partial void OnDashboardSchemaIdChanged();
-    partial void OnDashboardSchemaNameChanging(string value);
-    partial void OnDashboardSchemaNameChanged();
-    partial void OnUserInChanging(System.Nullable<int> value);
-    partial void OnUserInChanged();
-    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateInChanged();
-    #endregion
-		
-		public AppDashboardSchema()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DashboardSchemaId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int DashboardSchemaId
-		{
-			get
-			{
-				return this._DashboardSchemaId;
-			}
-			set
-			{
-				if ((this._DashboardSchemaId != value))
-				{
-					this.OnDashboardSchemaIdChanging(value);
-					this.SendPropertyChanging();
-					this._DashboardSchemaId = value;
-					this.SendPropertyChanged("DashboardSchemaId");
-					this.OnDashboardSchemaIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DashboardSchemaName", DbType="NVarChar(50)")]
-		public string DashboardSchemaName
-		{
-			get
-			{
-				return this._DashboardSchemaName;
-			}
-			set
-			{
-				if ((this._DashboardSchemaName != value))
-				{
-					this.OnDashboardSchemaNameChanging(value);
-					this.SendPropertyChanging();
-					this._DashboardSchemaName = value;
-					this.SendPropertyChanged("DashboardSchemaName");
-					this.OnDashboardSchemaNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
-		public System.Nullable<int> UserIn
-		{
-			get
-			{
-				return this._UserIn;
-			}
-			set
-			{
-				if ((this._UserIn != value))
-				{
-					this.OnUserInChanging(value);
-					this.SendPropertyChanging();
-					this._UserIn = value;
-					this.SendPropertyChanged("UserIn");
-					this.OnUserInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateIn
-		{
-			get
-			{
-				return this._DateIn;
-			}
-			set
-			{
-				if ((this._DateIn != value))
-				{
-					this.OnDateInChanging(value);
-					this.SendPropertyChanging();
-					this._DateIn = value;
-					this.SendPropertyChanged("DateIn");
-					this.OnDateInChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDatasource")]
-	public partial class AppDatasource : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _DatasourceID;
-		
-		private System.Nullable<int> _AppDatasourceTypeId;
-		
-		private string _DatasourceName;
-		
-		private string _DatasourceSPName;
-		
-		private System.Nullable<int> _UserIn;
-		
-		private System.Nullable<System.DateTime> _DateIn;
-		
-		private string _Desc;
-		
-		private EntitySet<AppDatasourceLayout> _AppDatasourceLayouts;
-		
-		private EntityRef<AppDatasourceType> _AppDatasourceType;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDatasourceIDChanging(int value);
-    partial void OnDatasourceIDChanged();
-    partial void OnAppDatasourceTypeIdChanging(System.Nullable<int> value);
-    partial void OnAppDatasourceTypeIdChanged();
-    partial void OnDatasourceNameChanging(string value);
-    partial void OnDatasourceNameChanged();
-    partial void OnDatasourceSPNameChanging(string value);
-    partial void OnDatasourceSPNameChanged();
-    partial void OnUserInChanging(System.Nullable<int> value);
-    partial void OnUserInChanged();
-    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateInChanged();
-    partial void OnDescChanging(string value);
-    partial void OnDescChanged();
-    #endregion
-		
-		public AppDatasource()
-		{
-			this._AppDatasourceLayouts = new EntitySet<AppDatasourceLayout>(new Action<AppDatasourceLayout>(this.attach_AppDatasourceLayouts), new Action<AppDatasourceLayout>(this.detach_AppDatasourceLayouts));
-			this._AppDatasourceType = default(EntityRef<AppDatasourceType>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int DatasourceID
-		{
-			get
-			{
-				return this._DatasourceID;
-			}
-			set
-			{
-				if ((this._DatasourceID != value))
-				{
-					this.OnDatasourceIDChanging(value);
-					this.SendPropertyChanging();
-					this._DatasourceID = value;
-					this.SendPropertyChanged("DatasourceID");
-					this.OnDatasourceIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", DbType="Int")]
-		public System.Nullable<int> AppDatasourceTypeId
-		{
-			get
-			{
-				return this._AppDatasourceTypeId;
-			}
-			set
-			{
-				if ((this._AppDatasourceTypeId != value))
-				{
-					if (this._AppDatasourceType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnAppDatasourceTypeIdChanging(value);
-					this.SendPropertyChanging();
-					this._AppDatasourceTypeId = value;
-					this.SendPropertyChanged("AppDatasourceTypeId");
-					this.OnAppDatasourceTypeIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceName", DbType="NVarChar(50)")]
-		public string DatasourceName
-		{
-			get
-			{
-				return this._DatasourceName;
-			}
-			set
-			{
-				if ((this._DatasourceName != value))
-				{
-					this.OnDatasourceNameChanging(value);
-					this.SendPropertyChanging();
-					this._DatasourceName = value;
-					this.SendPropertyChanged("DatasourceName");
-					this.OnDatasourceNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceSPName", DbType="NVarChar(50)")]
-		public string DatasourceSPName
-		{
-			get
-			{
-				return this._DatasourceSPName;
-			}
-			set
-			{
-				if ((this._DatasourceSPName != value))
-				{
-					this.OnDatasourceSPNameChanging(value);
-					this.SendPropertyChanging();
-					this._DatasourceSPName = value;
-					this.SendPropertyChanged("DatasourceSPName");
-					this.OnDatasourceSPNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
-		public System.Nullable<int> UserIn
-		{
-			get
-			{
-				return this._UserIn;
-			}
-			set
-			{
-				if ((this._UserIn != value))
-				{
-					this.OnUserInChanging(value);
-					this.SendPropertyChanging();
-					this._UserIn = value;
-					this.SendPropertyChanged("UserIn");
-					this.OnUserInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateIn
-		{
-			get
-			{
-				return this._DateIn;
-			}
-			set
-			{
-				if ((this._DateIn != value))
-				{
-					this.OnDateInChanging(value);
-					this.SendPropertyChanging();
-					this._DateIn = value;
-					this.SendPropertyChanged("DateIn");
-					this.OnDateInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(255)")]
-		public string Desc
-		{
-			get
-			{
-				return this._Desc;
-			}
-			set
-			{
-				if ((this._Desc != value))
-				{
-					this.OnDescChanging(value);
-					this.SendPropertyChanging();
-					this._Desc = value;
-					this.SendPropertyChanged("Desc");
-					this.OnDescChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AppDatasource_AppDatasourceLayout", Storage="_AppDatasourceLayouts", ThisKey="DatasourceID", OtherKey="DatasourceID")]
-		public EntitySet<AppDatasourceLayout> AppDatasourceLayouts
-		{
-			get
-			{
-				return this._AppDatasourceLayouts;
-			}
-			set
-			{
-				this._AppDatasourceLayouts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AppDatasourceType_AppDatasource", Storage="_AppDatasourceType", ThisKey="AppDatasourceTypeId", OtherKey="AppDatasourceTypeId", IsForeignKey=true)]
-		public AppDatasourceType AppDatasourceType
-		{
-			get
-			{
-				return this._AppDatasourceType.Entity;
-			}
-			set
-			{
-				AppDatasourceType previousValue = this._AppDatasourceType.Entity;
-				if (((previousValue != value) 
-							|| (this._AppDatasourceType.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._AppDatasourceType.Entity = null;
-						previousValue.AppDatasources.Remove(this);
-					}
-					this._AppDatasourceType.Entity = value;
-					if ((value != null))
-					{
-						value.AppDatasources.Add(this);
-						this._AppDatasourceTypeId = value.AppDatasourceTypeId;
-					}
-					else
-					{
-						this._AppDatasourceTypeId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("AppDatasourceType");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_AppDatasourceLayouts(AppDatasourceLayout entity)
-		{
-			this.SendPropertyChanging();
-			entity.AppDatasource = this;
-		}
-		
-		private void detach_AppDatasourceLayouts(AppDatasourceLayout entity)
-		{
-			this.SendPropertyChanging();
-			entity.AppDatasource = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppUsers")]
 	public partial class AppUser : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2768,319 +2370,6 @@ namespace NICSQLTools.Data.Linq
 					this._RealName = value;
 					this.SendPropertyChanged("RealName");
 					this.OnRealNameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDatasourceType")]
-	public partial class AppDatasourceType : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _AppDatasourceTypeId;
-		
-		private string _AppDatasourceTypeName;
-		
-		private EntitySet<AppDatasource> _AppDatasources;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnAppDatasourceTypeIdChanging(int value);
-    partial void OnAppDatasourceTypeIdChanged();
-    partial void OnAppDatasourceTypeNameChanging(string value);
-    partial void OnAppDatasourceTypeNameChanged();
-    #endregion
-		
-		public AppDatasourceType()
-		{
-			this._AppDatasources = new EntitySet<AppDatasource>(new Action<AppDatasource>(this.attach_AppDatasources), new Action<AppDatasource>(this.detach_AppDatasources));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int AppDatasourceTypeId
-		{
-			get
-			{
-				return this._AppDatasourceTypeId;
-			}
-			set
-			{
-				if ((this._AppDatasourceTypeId != value))
-				{
-					this.OnAppDatasourceTypeIdChanging(value);
-					this.SendPropertyChanging();
-					this._AppDatasourceTypeId = value;
-					this.SendPropertyChanged("AppDatasourceTypeId");
-					this.OnAppDatasourceTypeIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
-		public string AppDatasourceTypeName
-		{
-			get
-			{
-				return this._AppDatasourceTypeName;
-			}
-			set
-			{
-				if ((this._AppDatasourceTypeName != value))
-				{
-					this.OnAppDatasourceTypeNameChanging(value);
-					this.SendPropertyChanging();
-					this._AppDatasourceTypeName = value;
-					this.SendPropertyChanged("AppDatasourceTypeName");
-					this.OnAppDatasourceTypeNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AppDatasourceType_AppDatasource", Storage="_AppDatasources", ThisKey="AppDatasourceTypeId", OtherKey="AppDatasourceTypeId")]
-		public EntitySet<AppDatasource> AppDatasources
-		{
-			get
-			{
-				return this._AppDatasources;
-			}
-			set
-			{
-				this._AppDatasources.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_AppDatasources(AppDatasource entity)
-		{
-			this.SendPropertyChanging();
-			entity.AppDatasourceType = this;
-		}
-		
-		private void detach_AppDatasources(AppDatasource entity)
-		{
-			this.SendPropertyChanging();
-			entity.AppDatasourceType = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDatasourceLayout")]
-	public partial class AppDatasourceLayout : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _DatasourceLayoutId;
-		
-		private System.Nullable<int> _DatasourceID;
-		
-		private string _DatasourceLayoutName;
-		
-		private System.Nullable<int> _UserIn;
-		
-		private System.Nullable<System.DateTime> _DateIn;
-		
-		private EntityRef<AppDatasource> _AppDatasource;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDatasourceLayoutIdChanging(int value);
-    partial void OnDatasourceLayoutIdChanged();
-    partial void OnDatasourceIDChanging(System.Nullable<int> value);
-    partial void OnDatasourceIDChanged();
-    partial void OnDatasourceLayoutNameChanging(string value);
-    partial void OnDatasourceLayoutNameChanged();
-    partial void OnUserInChanging(System.Nullable<int> value);
-    partial void OnUserInChanged();
-    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateInChanged();
-    #endregion
-		
-		public AppDatasourceLayout()
-		{
-			this._AppDatasource = default(EntityRef<AppDatasource>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceLayoutId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int DatasourceLayoutId
-		{
-			get
-			{
-				return this._DatasourceLayoutId;
-			}
-			set
-			{
-				if ((this._DatasourceLayoutId != value))
-				{
-					this.OnDatasourceLayoutIdChanging(value);
-					this.SendPropertyChanging();
-					this._DatasourceLayoutId = value;
-					this.SendPropertyChanged("DatasourceLayoutId");
-					this.OnDatasourceLayoutIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", DbType="Int")]
-		public System.Nullable<int> DatasourceID
-		{
-			get
-			{
-				return this._DatasourceID;
-			}
-			set
-			{
-				if ((this._DatasourceID != value))
-				{
-					if (this._AppDatasource.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnDatasourceIDChanging(value);
-					this.SendPropertyChanging();
-					this._DatasourceID = value;
-					this.SendPropertyChanged("DatasourceID");
-					this.OnDatasourceIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceLayoutName", DbType="NVarChar(50)")]
-		public string DatasourceLayoutName
-		{
-			get
-			{
-				return this._DatasourceLayoutName;
-			}
-			set
-			{
-				if ((this._DatasourceLayoutName != value))
-				{
-					this.OnDatasourceLayoutNameChanging(value);
-					this.SendPropertyChanging();
-					this._DatasourceLayoutName = value;
-					this.SendPropertyChanged("DatasourceLayoutName");
-					this.OnDatasourceLayoutNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
-		public System.Nullable<int> UserIn
-		{
-			get
-			{
-				return this._UserIn;
-			}
-			set
-			{
-				if ((this._UserIn != value))
-				{
-					this.OnUserInChanging(value);
-					this.SendPropertyChanging();
-					this._UserIn = value;
-					this.SendPropertyChanged("UserIn");
-					this.OnUserInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateIn
-		{
-			get
-			{
-				return this._DateIn;
-			}
-			set
-			{
-				if ((this._DateIn != value))
-				{
-					this.OnDateInChanging(value);
-					this.SendPropertyChanging();
-					this._DateIn = value;
-					this.SendPropertyChanged("DateIn");
-					this.OnDateInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AppDatasource_AppDatasourceLayout", Storage="_AppDatasource", ThisKey="DatasourceID", OtherKey="DatasourceID", IsForeignKey=true)]
-		public AppDatasource AppDatasource
-		{
-			get
-			{
-				return this._AppDatasource.Entity;
-			}
-			set
-			{
-				AppDatasource previousValue = this._AppDatasource.Entity;
-				if (((previousValue != value) 
-							|| (this._AppDatasource.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._AppDatasource.Entity = null;
-						previousValue.AppDatasourceLayouts.Remove(this);
-					}
-					this._AppDatasource.Entity = value;
-					if ((value != null))
-					{
-						value.AppDatasourceLayouts.Add(this);
-						this._DatasourceID = value.DatasourceID;
-					}
-					else
-					{
-						this._DatasourceID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("AppDatasource");
 				}
 			}
 		}
@@ -3547,6 +2836,1084 @@ namespace NICSQLTools.Data.Linq
 		{
 			this.SendPropertyChanging();
 			entity.SalesDistrict1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDashboardSchema_LUE")]
+	public partial class vAppDashboardSchema_LUE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DashboardSchemaId;
+		
+		private string _DashboardSchemaName;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private string _RealName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDashboardSchemaIdChanging(int value);
+    partial void OnDashboardSchemaIdChanged();
+    partial void OnDashboardSchemaNameChanging(string value);
+    partial void OnDashboardSchemaNameChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    #endregion
+		
+		public vAppDashboardSchema_LUE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DashboardSchemaId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int DashboardSchemaId
+		{
+			get
+			{
+				return this._DashboardSchemaId;
+			}
+			set
+			{
+				if ((this._DashboardSchemaId != value))
+				{
+					this.OnDashboardSchemaIdChanging(value);
+					this.SendPropertyChanging();
+					this._DashboardSchemaId = value;
+					this.SendPropertyChanged("DashboardSchemaId");
+					this.OnDashboardSchemaIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DashboardSchemaName", DbType="NVarChar(50)")]
+		public string DashboardSchemaName
+		{
+			get
+			{
+				return this._DashboardSchemaName;
+			}
+			set
+			{
+				if ((this._DashboardSchemaName != value))
+				{
+					this.OnDashboardSchemaNameChanging(value);
+					this.SendPropertyChanging();
+					this._DashboardSchemaName = value;
+					this.SendPropertyChanged("DashboardSchemaName");
+					this.OnDashboardSchemaNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDatasourceParam_LUE")]
+	public partial class vAppDatasourceParam_LUE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _AppDatasourceParamID;
+		
+		private System.Nullable<int> _DatasourceID;
+		
+		private string _ParamName;
+		
+		private string _ParamDisplayName;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private string _RealName;
+		
+		private string _DatasourceName;
+		
+		private string _DatasourceSPName;
+		
+		private string _AppDatasourceTypeName;
+		
+		private string _Desc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAppDatasourceParamIDChanging(int value);
+    partial void OnAppDatasourceParamIDChanged();
+    partial void OnDatasourceIDChanging(System.Nullable<int> value);
+    partial void OnDatasourceIDChanged();
+    partial void OnParamNameChanging(string value);
+    partial void OnParamNameChanged();
+    partial void OnParamDisplayNameChanging(string value);
+    partial void OnParamDisplayNameChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnDatasourceNameChanging(string value);
+    partial void OnDatasourceNameChanged();
+    partial void OnDatasourceSPNameChanging(string value);
+    partial void OnDatasourceSPNameChanged();
+    partial void OnAppDatasourceTypeNameChanging(string value);
+    partial void OnAppDatasourceTypeNameChanged();
+    partial void OnDescChanging(string value);
+    partial void OnDescChanged();
+    #endregion
+		
+		public vAppDatasourceParam_LUE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceParamID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int AppDatasourceParamID
+		{
+			get
+			{
+				return this._AppDatasourceParamID;
+			}
+			set
+			{
+				if ((this._AppDatasourceParamID != value))
+				{
+					this.OnAppDatasourceParamIDChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceParamID = value;
+					this.SendPropertyChanged("AppDatasourceParamID");
+					this.OnAppDatasourceParamIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", DbType="Int")]
+		public System.Nullable<int> DatasourceID
+		{
+			get
+			{
+				return this._DatasourceID;
+			}
+			set
+			{
+				if ((this._DatasourceID != value))
+				{
+					this.OnDatasourceIDChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceID = value;
+					this.SendPropertyChanged("DatasourceID");
+					this.OnDatasourceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParamName", DbType="NVarChar(50)")]
+		public string ParamName
+		{
+			get
+			{
+				return this._ParamName;
+			}
+			set
+			{
+				if ((this._ParamName != value))
+				{
+					this.OnParamNameChanging(value);
+					this.SendPropertyChanging();
+					this._ParamName = value;
+					this.SendPropertyChanged("ParamName");
+					this.OnParamNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ParamDisplayName", DbType="NVarChar(50)")]
+		public string ParamDisplayName
+		{
+			get
+			{
+				return this._ParamDisplayName;
+			}
+			set
+			{
+				if ((this._ParamDisplayName != value))
+				{
+					this.OnParamDisplayNameChanging(value);
+					this.SendPropertyChanging();
+					this._ParamDisplayName = value;
+					this.SendPropertyChanged("ParamDisplayName");
+					this.OnParamDisplayNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceName", DbType="NVarChar(50)")]
+		public string DatasourceName
+		{
+			get
+			{
+				return this._DatasourceName;
+			}
+			set
+			{
+				if ((this._DatasourceName != value))
+				{
+					this.OnDatasourceNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceName = value;
+					this.SendPropertyChanged("DatasourceName");
+					this.OnDatasourceNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceSPName", DbType="NVarChar(50)")]
+		public string DatasourceSPName
+		{
+			get
+			{
+				return this._DatasourceSPName;
+			}
+			set
+			{
+				if ((this._DatasourceSPName != value))
+				{
+					this.OnDatasourceSPNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceSPName = value;
+					this.SendPropertyChanged("DatasourceSPName");
+					this.OnDatasourceSPNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
+		public string AppDatasourceTypeName
+		{
+			get
+			{
+				return this._AppDatasourceTypeName;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeName != value))
+				{
+					this.OnAppDatasourceTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceTypeName = value;
+					this.SendPropertyChanged("AppDatasourceTypeName");
+					this.OnAppDatasourceTypeNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(255)")]
+		public string Desc
+		{
+			get
+			{
+				return this._Desc;
+			}
+			set
+			{
+				if ((this._Desc != value))
+				{
+					this.OnDescChanging(value);
+					this.SendPropertyChanging();
+					this._Desc = value;
+					this.SendPropertyChanged("Desc");
+					this.OnDescChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDatasource_LUE")]
+	public partial class vAppDatasource_LUE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DatasourceID;
+		
+		private System.Nullable<int> _AppDatasourceTypeId;
+		
+		private string _DatasourceName;
+		
+		private string _DatasourceSPName;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private string _Desc;
+		
+		private string _RealName;
+		
+		private string _AppDatasourceTypeName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDatasourceIDChanging(int value);
+    partial void OnDatasourceIDChanged();
+    partial void OnAppDatasourceTypeIdChanging(System.Nullable<int> value);
+    partial void OnAppDatasourceTypeIdChanged();
+    partial void OnDatasourceNameChanging(string value);
+    partial void OnDatasourceNameChanged();
+    partial void OnDatasourceSPNameChanging(string value);
+    partial void OnDatasourceSPNameChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    partial void OnDescChanging(string value);
+    partial void OnDescChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnAppDatasourceTypeNameChanging(string value);
+    partial void OnAppDatasourceTypeNameChanged();
+    #endregion
+		
+		public vAppDatasource_LUE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int DatasourceID
+		{
+			get
+			{
+				return this._DatasourceID;
+			}
+			set
+			{
+				if ((this._DatasourceID != value))
+				{
+					this.OnDatasourceIDChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceID = value;
+					this.SendPropertyChanged("DatasourceID");
+					this.OnDatasourceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", DbType="Int")]
+		public System.Nullable<int> AppDatasourceTypeId
+		{
+			get
+			{
+				return this._AppDatasourceTypeId;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeId != value))
+				{
+					this.OnAppDatasourceTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceTypeId = value;
+					this.SendPropertyChanged("AppDatasourceTypeId");
+					this.OnAppDatasourceTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceName", DbType="NVarChar(50)")]
+		public string DatasourceName
+		{
+			get
+			{
+				return this._DatasourceName;
+			}
+			set
+			{
+				if ((this._DatasourceName != value))
+				{
+					this.OnDatasourceNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceName = value;
+					this.SendPropertyChanged("DatasourceName");
+					this.OnDatasourceNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceSPName", DbType="NVarChar(50)")]
+		public string DatasourceSPName
+		{
+			get
+			{
+				return this._DatasourceSPName;
+			}
+			set
+			{
+				if ((this._DatasourceSPName != value))
+				{
+					this.OnDatasourceSPNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceSPName = value;
+					this.SendPropertyChanged("DatasourceSPName");
+					this.OnDatasourceSPNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(255)")]
+		public string Desc
+		{
+			get
+			{
+				return this._Desc;
+			}
+			set
+			{
+				if ((this._Desc != value))
+				{
+					this.OnDescChanging(value);
+					this.SendPropertyChanging();
+					this._Desc = value;
+					this.SendPropertyChanged("Desc");
+					this.OnDescChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
+		public string AppDatasourceTypeName
+		{
+			get
+			{
+				return this._AppDatasourceTypeName;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeName != value))
+				{
+					this.OnAppDatasourceTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceTypeName = value;
+					this.SendPropertyChanged("AppDatasourceTypeName");
+					this.OnAppDatasourceTypeNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDatasourceLayout_LUE")]
+	public partial class vAppDatasourceLayout_LUE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DatasourceLayoutId;
+		
+		private System.Nullable<int> _DatasourceID;
+		
+		private string _DatasourceLayoutName;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private string _RealName;
+		
+		private string _DatasourceName;
+		
+		private string _DatasourceSPName;
+		
+		private string _AppDatasourceTypeName;
+		
+		private string _Desc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDatasourceLayoutIdChanging(int value);
+    partial void OnDatasourceLayoutIdChanged();
+    partial void OnDatasourceIDChanging(System.Nullable<int> value);
+    partial void OnDatasourceIDChanged();
+    partial void OnDatasourceLayoutNameChanging(string value);
+    partial void OnDatasourceLayoutNameChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnDatasourceNameChanging(string value);
+    partial void OnDatasourceNameChanged();
+    partial void OnDatasourceSPNameChanging(string value);
+    partial void OnDatasourceSPNameChanged();
+    partial void OnAppDatasourceTypeNameChanging(string value);
+    partial void OnAppDatasourceTypeNameChanged();
+    partial void OnDescChanging(string value);
+    partial void OnDescChanged();
+    #endregion
+		
+		public vAppDatasourceLayout_LUE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceLayoutId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int DatasourceLayoutId
+		{
+			get
+			{
+				return this._DatasourceLayoutId;
+			}
+			set
+			{
+				if ((this._DatasourceLayoutId != value))
+				{
+					this.OnDatasourceLayoutIdChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceLayoutId = value;
+					this.SendPropertyChanged("DatasourceLayoutId");
+					this.OnDatasourceLayoutIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", DbType="Int")]
+		public System.Nullable<int> DatasourceID
+		{
+			get
+			{
+				return this._DatasourceID;
+			}
+			set
+			{
+				if ((this._DatasourceID != value))
+				{
+					this.OnDatasourceIDChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceID = value;
+					this.SendPropertyChanged("DatasourceID");
+					this.OnDatasourceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceLayoutName", DbType="NVarChar(50)")]
+		public string DatasourceLayoutName
+		{
+			get
+			{
+				return this._DatasourceLayoutName;
+			}
+			set
+			{
+				if ((this._DatasourceLayoutName != value))
+				{
+					this.OnDatasourceLayoutNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceLayoutName = value;
+					this.SendPropertyChanged("DatasourceLayoutName");
+					this.OnDatasourceLayoutNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceName", DbType="NVarChar(50)")]
+		public string DatasourceName
+		{
+			get
+			{
+				return this._DatasourceName;
+			}
+			set
+			{
+				if ((this._DatasourceName != value))
+				{
+					this.OnDatasourceNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceName = value;
+					this.SendPropertyChanged("DatasourceName");
+					this.OnDatasourceNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceSPName", DbType="NVarChar(50)")]
+		public string DatasourceSPName
+		{
+			get
+			{
+				return this._DatasourceSPName;
+			}
+			set
+			{
+				if ((this._DatasourceSPName != value))
+				{
+					this.OnDatasourceSPNameChanging(value);
+					this.SendPropertyChanging();
+					this._DatasourceSPName = value;
+					this.SendPropertyChanged("DatasourceSPName");
+					this.OnDatasourceSPNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
+		public string AppDatasourceTypeName
+		{
+			get
+			{
+				return this._AppDatasourceTypeName;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeName != value))
+				{
+					this.OnAppDatasourceTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceTypeName = value;
+					this.SendPropertyChanged("AppDatasourceTypeName");
+					this.OnAppDatasourceTypeNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(255)")]
+		public string Desc
+		{
+			get
+			{
+				return this._Desc;
+			}
+			set
+			{
+				if ((this._Desc != value))
+				{
+					this.OnDescChanging(value);
+					this.SendPropertyChanging();
+					this._Desc = value;
+					this.SendPropertyChanged("Desc");
+					this.OnDescChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDatasourceType")]
+	public partial class AppDatasourceType_LUE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _AppDatasourceTypeId;
+		
+		private string _AppDatasourceTypeName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAppDatasourceTypeIdChanging(int value);
+    partial void OnAppDatasourceTypeIdChanged();
+    partial void OnAppDatasourceTypeNameChanging(string value);
+    partial void OnAppDatasourceTypeNameChanged();
+    #endregion
+		
+		public AppDatasourceType_LUE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int AppDatasourceTypeId
+		{
+			get
+			{
+				return this._AppDatasourceTypeId;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeId != value))
+				{
+					this.OnAppDatasourceTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceTypeId = value;
+					this.SendPropertyChanged("AppDatasourceTypeId");
+					this.OnAppDatasourceTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
+		public string AppDatasourceTypeName
+		{
+			get
+			{
+				return this._AppDatasourceTypeName;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeName != value))
+				{
+					this.OnAppDatasourceTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._AppDatasourceTypeName = value;
+					this.SendPropertyChanged("AppDatasourceTypeName");
+					this.OnAppDatasourceTypeNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

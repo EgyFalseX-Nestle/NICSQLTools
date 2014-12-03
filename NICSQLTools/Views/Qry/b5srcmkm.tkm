@@ -20,7 +20,7 @@ namespace NICSQLTools.Views.Qry
 
         #region -   Variables   -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(QryPivotUC));
-        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext() { ObjectTrackingEnabled = false };
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         Classes.QueryLayout.DatasourceStrc DataSourceList = new Classes.QueryLayout.DatasourceStrc();
         List<Control> LayoutControlList = new List<Control>();
         List<string> ProgressList = new List<string>();
@@ -37,8 +37,8 @@ namespace NICSQLTools.Views.Qry
             {
                 Invoke(new MethodInvoker(() =>
                 {
-                    LSMSDatasource.QueryableSource = from q in dsLinq.vAppDatasource_LUEs where q.AppDatasourceTypeId == (int)Uti.Types.AppDatasourceTypeIdEnum.SPQry select q;
-                    LSMSLayout.QueryableSource = from q in dsLinq.vAppDatasourceLayout_LUEs select q;
+                    appDatasource_LUETableAdapter.FillByAppDatasourceTypeId(dsQry.AppDatasource_LUE, (int)Uti.Types.AppDatasourceTypeIdEnum.SPQry);
+
                 }));
                 SplashScreenManager.CloseForm();
             });
@@ -191,7 +191,7 @@ namespace NICSQLTools.Views.Qry
         }
         private void LoadLayoutDatasource(int DatasourceId)
         {
-            LSMSLayout.Reload();
+            appDatasourceLayout_LUETableAdapter.FillByDatasourceID(dsQry.AppDatasourceLayout_LUE, DatasourceId);
         }
         private bool LoadLayout(int DatasourceLayoutId)
         {
@@ -375,7 +375,7 @@ namespace NICSQLTools.Views.Qry
             }
             else// Update
             {
-                NICSQLTools.Data.Linq.vAppDatasourceLayout_LUE row = (NICSQLTools.Data.Linq.vAppDatasourceLayout_LUE)lueLayout.GetSelectedDataRow();
+                NICSQLTools.Data.dsQry.AppDatasourceLayout_LUERow row = (NICSQLTools.Data.dsQry.AppDatasourceLayout_LUERow)((DataRowView)lueLayout.GetSelectedDataRow()).Row;
                 dlg = new Main.ChooseSaveNameDlg(row.DatasourceLayoutName);
                 if (dlg.ShowDialog() != DialogResult.OK)
                     return;

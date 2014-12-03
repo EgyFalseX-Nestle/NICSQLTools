@@ -12,7 +12,8 @@ namespace NICSQLTools.Views.Data
     {
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(AppDatasourceParamUC));
-        private NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
+        private NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext() { ObjectTrackingEnabled = false
+        };
         int? NewId = null;
         public Uti.Types.AppDatasourceTypeIdEnum DatasourceType = Uti.Types.AppDatasourceTypeIdEnum.SPQry;
         #endregion
@@ -27,7 +28,7 @@ namespace NICSQLTools.Views.Data
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 Invoke(new MethodInvoker(() => {
-                    LSMS.QueryableSource = from q in dsLinq.AppDatasources select q;
+                    LSMSDatasource.QueryableSource = from q in dsLinq.vAppDatasource_LUEs select q;
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                     gridControlMain.DataSource = XPSCS;
                     gridViewMain.BestFitColumns();
@@ -72,6 +73,7 @@ namespace NICSQLTools.Views.Data
         {
             if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
+            LSMSDatasource.Reload();
             UOW.DropIdentityMap();
             UOW.DropChanges();
             XPSCS.Reload();

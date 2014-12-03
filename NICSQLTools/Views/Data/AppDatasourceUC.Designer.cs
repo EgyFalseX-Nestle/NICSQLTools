@@ -36,11 +36,9 @@
             this.colDatasourceSPName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAppDatasourceTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditAppDatasourceTypeId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.LSMS = new DevExpress.Data.Linq.LinqServerModeSource();
             this.colDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEditDesc = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
@@ -51,17 +49,19 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemMemoExEditMemo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
+            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.LSMSAppDatasourceType = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditAppDatasourceTypeId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSAppDatasourceType)).BeginInit();
             this.SuspendLayout();
             // 
             // UOW
@@ -125,17 +125,12 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemLookUpEditAppDatasourceTypeId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("AppDatasourceTypeName", "Datasource Type", 144, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEditAppDatasourceTypeId.DataSource = this.LSMS;
+            this.repositoryItemLookUpEditAppDatasourceTypeId.DataSource = this.LSMSAppDatasourceType;
             this.repositoryItemLookUpEditAppDatasourceTypeId.DisplayMember = "AppDatasourceTypeName";
             this.repositoryItemLookUpEditAppDatasourceTypeId.Name = "repositoryItemLookUpEditAppDatasourceTypeId";
             this.repositoryItemLookUpEditAppDatasourceTypeId.NullText = "";
             this.repositoryItemLookUpEditAppDatasourceTypeId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemLookUpEditAppDatasourceTypeId.ValueMember = "AppDatasourceTypeId";
-            // 
-            // LSMS
-            // 
-            this.LSMS.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasourceType);
-            this.LSMS.KeyExpression = "[AppDatasourceTypeId]";
             // 
             // colDesc
             // 
@@ -170,15 +165,6 @@
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
-            // 
-            // XPSCS
-            // 
-            this.XPSCS.AllowEdit = true;
-            this.XPSCS.AllowNew = true;
-            this.XPSCS.AllowRemove = true;
-            this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppDatasourceDataTable);
-            this.XPSCS.Session = this.UOW;
             // 
             // barManagerMain
             // 
@@ -268,10 +254,24 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemMemoExEditMemo.Name = "repositoryItemMemoExEditMemo";
             // 
+            // XPSCS
+            // 
+            this.XPSCS.AllowEdit = true;
+            this.XPSCS.AllowNew = true;
+            this.XPSCS.AllowRemove = true;
+            this.XPSCS.DeleteObjectOnRemove = true;
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppDatasourceDataTable);
+            this.XPSCS.Session = this.UOW;
+            // 
             // popupMenuMain
             // 
             this.popupMenuMain.Manager = this.barManagerMain;
             this.popupMenuMain.Name = "popupMenuMain";
+            // 
+            // LSMSAppDatasourceType
+            // 
+            this.LSMSAppDatasourceType.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasourceType_LUE);
+            this.LSMSAppDatasourceType.KeyExpression = "[AppDatasourceTypeId]";
             // 
             // AppDatasourceUC
             // 
@@ -288,13 +288,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditAppDatasourceTypeId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSAppDatasourceType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,8 +320,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDatasourceSPName;
         private DevExpress.XtraGrid.Columns.GridColumn colDesc;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditDesc;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMS;
         private DevExpress.XtraGrid.Columns.GridColumn colAppDatasourceTypeId;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditAppDatasourceTypeId;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSAppDatasourceType;
     }
 }

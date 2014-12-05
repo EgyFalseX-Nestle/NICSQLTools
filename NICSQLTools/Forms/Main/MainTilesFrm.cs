@@ -15,11 +15,15 @@ namespace NICSQLTools.Forms.Main
         {
             InitializeComponent();
             windowsUIView.AddTileWhenCreatingDocument = DevExpress.Utils.DefaultBoolean.False;
+
+            
+
             //dataSource = new SampleDataSource();
             //groupsItemDetailPage = new Dictionary<SampleDataGroup, PageGroup>();
             //CreateLayout();
             windowsUIView.ActivateDocument(docLogin);
-            
+
+           
         }
         public void ActivateRules()
         {
@@ -224,6 +228,12 @@ namespace NICSQLTools.Forms.Main
             {
                 e.Control = new Views.Qry.Qrysp_DistributionV1UC();
             }
+        }
+
+        private void tileContainerMain_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            Views.Main.ChooseThemeFrm Frm = new Views.Main.ChooseThemeFrm();
+            Frm.ShowDialog();
         }
 
     }

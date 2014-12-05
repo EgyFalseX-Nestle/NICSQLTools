@@ -60,6 +60,38 @@ namespace NICSQLTools
         {
             defaultInstance = new DataManager();
             SetAllCommandTimeouts(adpQry, ConnectionTimeout);
+
+            //Set Theme
+            LoadTheme();
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.StyleChanged += Default_StyleChanged;
+        }
+
+        static void LoadTheme()
+        {
+            if (File.Exists(FXFW.SqlDB.StyleSettingsPath))
+            {
+                FXFW.UserSkinSettings us = null;
+                System.Runtime.Serialization.Formatters.Binary.BinaryFormatter binFormat = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                Stream fStream = new FileStream(FXFW.SqlDB.StyleSettingsPath, FileMode.Open);
+                try { us = binFormat.Deserialize(fStream) as FXFW.UserSkinSettings; }
+                finally { fStream.Close(); }
+
+                DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(us.SkinName);
+            }
+
+
+
+        }
+        static void Default_StyleChanged(object sender, EventArgs e)
+        {
+            FXFW.UserSkinSettings us = new FXFW.UserSkinSettings { SkinName = DevExpress.LookAndFeel.UserLookAndFeel.Default.ActiveSkinName };
+            //SaveSettings
+            System.Runtime.Serialization.Formatters.Binary.BinaryFormatter binFormat = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            using (Stream fStream = new FileStream(FXFW.SqlDB.StyleSettingsPath, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                binFormat.Serialize(fStream, us);
+                fStream.Close();
+            }
         }
         public static void SetAllCommandTimeouts(object adapter, int timeout)
         {
@@ -138,7 +170,7 @@ namespace NICSQLTools
             }
             catch (Exception ex)
             {
-                Logger.Error(ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
             }
         }
         public static Dictionary<string, int> GetCurrentAssemblyFiles()
@@ -424,7 +456,7 @@ namespace NICSQLTools
             }
             catch (SqlException ex)
             {
-                Logger.Error(ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
             }
             return null;
         }
@@ -467,7 +499,7 @@ namespace NICSQLTools
             }
             catch (SqlException ex)
             {
-                Logger.Error(ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
             }
             con.Close();
         }
@@ -493,7 +525,7 @@ namespace NICSQLTools
             }
             catch (SqlException ex)
             {
-                Logger.Error(ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
             }
             return dt;
         }

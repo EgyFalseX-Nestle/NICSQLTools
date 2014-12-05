@@ -49,7 +49,7 @@ namespace NICSQLTools
             }
             catch (SqlException ex)
             {
-                Logger.Error("Error while trying to save DMG_Reason Bulk - " + ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
             }
             return outPut;
         }

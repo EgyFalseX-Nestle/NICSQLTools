@@ -46,7 +46,7 @@ namespace NICSQLTools
             }
             catch (SqlException ex)
             {
-                Logger.Error("Error while trying to save Bulk - " + ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
                 System.Windows.Forms.MessageBox.Show("Error while trying to save Bulk - " + ex.Message);
             }
             return outPut;

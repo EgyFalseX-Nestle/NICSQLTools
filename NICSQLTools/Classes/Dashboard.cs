@@ -62,7 +62,7 @@ namespace NICSQLTools.Classes
             }
             catch (SqlException ex)
             {
-                Logger.Error(ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
             }
             return Id;
         }

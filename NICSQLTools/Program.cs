@@ -29,6 +29,7 @@ namespace NICSQLTools
             //UserLookAndFeel.Default.SkinName = "DevExpress Dark Style";
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            DevExpress.UserSkins.BonusSkins.Register();
             DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
 
             Log4Net.L4N.Init();
@@ -59,9 +60,9 @@ namespace NICSQLTools
 
                 //DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());
 
-                Application.Run(new TestFrm());
-                //Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
-
+                //Application.Run(new TestFrm());
+                Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
+                
             }
             
         }

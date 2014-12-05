@@ -9,7 +9,7 @@ namespace NICSQLTools
 {
     public static class Master
     {
-        //private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(Customer));
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(Master));
 
         public static bool UpdateBulkMaster(SqlCommand cmd, Data.dsData._0_1__Master_AllDataTable BulkTable)
         {
@@ -48,7 +48,7 @@ namespace NICSQLTools
             }
             catch (SqlException ex)
             {
-                //Logger.Error("Error while trying to save Customer Bulk - " + ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
                 System.Windows.Forms.MessageBox.Show("Error while trying to save Master Bulk - " + ex.Message);
             }
             return outPut;

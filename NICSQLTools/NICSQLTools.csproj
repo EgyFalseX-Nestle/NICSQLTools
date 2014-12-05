@@ -181,6 +181,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Core.cs" />
     <Compile Include="Classes\QueryLayout.cs" />
     <Compile Include="Classes\Dashboard.cs" />
     <Compile Include="Classes\Managers\UserManager.cs" />
@@ -388,11 +389,11 @@
     <Compile Include="Views\Data\RouteEditorUC.Designer.cs">
       <DependentUpon>RouteEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Main\ChooseThemeUC.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Views\Main\ChooseThemeFrm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Main\ChooseThemeUC.Designer.cs">
-      <DependentUpon>ChooseThemeUC.cs</DependentUpon>
+    <Compile Include="Views\Main\ChooseThemeFrm.Designer.cs">
+      <DependentUpon>ChooseThemeFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Main\LoginUC.cs">
       <SubType>UserControl</SubType>
@@ -639,8 +640,8 @@
     <EmbeddedResource Include="Views\Import\ImportCustomerRouteUC.resx">
       <DependentUpon>ImportCustomerRouteUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Main\ChooseThemeUC.resx">
-      <DependentUpon>ChooseThemeUC.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Main\ChooseThemeFrm.resx">
+      <DependentUpon>ChooseThemeFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Permission\RuleUC.resx">
       <DependentUpon>RuleUC.cs</DependentUpon>
@@ -849,6 +850,7 @@
   <ItemGroup>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\pictureshapefillcolor_32x32.png" />
     <None Include="Resources\additem_16x16.png" />
     <None Include="Resources\pivot_16x16.png" />
     <None Include="Resources\properties_32x32.png" />

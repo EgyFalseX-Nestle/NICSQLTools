@@ -202,7 +202,7 @@ namespace System.Windows.Forms
             }
             catch (Exception ex)
             {
-                Logger.Error(ex.Message, ex);
+                NICSQLTools.Classes.Core.LogException(Logger, ex, NICSQLTools.Classes.Core.ExceptionLevelEnum.General, NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId);
             }
         }
     

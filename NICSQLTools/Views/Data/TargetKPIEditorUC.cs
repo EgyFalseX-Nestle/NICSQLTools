@@ -55,7 +55,7 @@ namespace NICSQLTools.Views.Data
                 else
                 {
                     MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
-                    Logger.Error(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.InnerException.Message), o.InnerException);
+                    Classes.Core.LogException(Logger, o.InnerException, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
                 }
             };
 

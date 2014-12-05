@@ -267,7 +267,7 @@ namespace NICSQLTools.Views.Dashboard
             }
             catch (Exception ex)
             {
-                Logger.Error(ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
                 MsgDlg.Show(ex.Message, MsgDlg.MessageType.Error, ex);
             }
             
@@ -339,7 +339,7 @@ namespace NICSQLTools.Views.Dashboard
                 }
                 catch (SqlException ex)
                 {
-                    Logger.Error(ex.Message, ex);
+                    Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
                 }
 
             }

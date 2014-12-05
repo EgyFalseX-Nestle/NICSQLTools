@@ -10,7 +10,8 @@ namespace NICSQLTools
 {
     public static class Route
     {
-        //private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(Route));
+
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(Route));
         public static string DefaultRouteName
         {
             get { return "Auto Generate Route"; }
@@ -142,7 +143,7 @@ namespace NICSQLTools
                     PlantSalesDistrictId = 1;
                     break;
                 default:
-                    //Logger.Error("Error while try to get PlantSalesDistrictId from '" + SalesDistrict + "'");
+                    //Logger.Erro("Error while try to get PlantSalesDistrictId from '" + SalesDistrict + "'");
                     break;
             }
             return PlantSalesDistrictId;
@@ -217,7 +218,7 @@ namespace NICSQLTools
             }
             catch (SqlException ex)
             {
-                //Logger.Error("Error while trying to save Route Bulk - " + ex.Message, ex);
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
             }
             return outPut;
         }

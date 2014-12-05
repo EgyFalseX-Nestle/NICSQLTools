@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using System.Data.SqlClient;
+using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Dashboard
 {
     public partial class DashboardViewerUC : XtraUserControl
     {
-        
         #region -   Variables   -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(DashboardViewerUC));
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
@@ -116,7 +116,6 @@ namespace NICSQLTools.Views.Dashboard
                         case "int":
                         case "smallint":
                         case "bigint":
-                            break;
                             TextEdit txt2 = new TextEdit();
                             txt2.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
                             txt2.Properties.DisplayFormat.FormatString = "n0";
@@ -126,6 +125,7 @@ namespace NICSQLTools.Views.Dashboard
                             txt2.Properties.Mask.EditMask = "n0";
                             txt2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
                             ctr = txt2;
+                            break;
                         case "float":
                             TextEdit txt3 = new TextEdit();
                             txt3.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
@@ -188,12 +188,13 @@ namespace NICSQLTools.Views.Dashboard
                 }
                 //Add Refresh button
                 DevExpress.XtraLayout.LayoutControlItem layItemBtnRefresh = LayGroup.AddItem();
-                layItemBtnRefresh.TextVisible = false; layItemBtnRefresh.Text = string.Empty;
                 layItemBtnRefresh.Control = ds.ExeButton;
+                layItemBtnRefresh.TextVisible = false; layItemBtnRefresh.Text = string.Empty;
+                
                 //Add Cancel button
                 DevExpress.XtraLayout.LayoutControlItem layItemBtnCancel = LayGroup.AddItem();
-                layItemBtnCancel.TextVisible = false; layItemBtnCancel.Text = string.Empty;
                 layItemBtnCancel.Control = ds.CancelButton;
+                layItemBtnCancel.TextVisible = false; layItemBtnCancel.Text = string.Empty;
             }
         }
         private CheckedComboBoxEdit CreateLookupeditForSalesDistrict2()

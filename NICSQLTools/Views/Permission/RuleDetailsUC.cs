@@ -12,18 +12,20 @@ namespace NICSQLTools.Views.Permission
     public partial class RuleDetailsUC : XtraUserControl
     {
         #region - Var -
-        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(UserUC));
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(RuleDetailsUC));
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         #endregion
         #region - Fun -
-        public RuleDetailsUC()
+        public RuleDetailsUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
+            _elementRule = RuleElement;
         }
         void LoadRulesList()
         {
             rules_LUETableAdapter.Fill(dsQry.Rules_LUE);
         }
-        public static void LoadDefaultNodes(DevExpress.XtraTreeList.TreeList Tree, NICSQLTools.Forms.Main.MainTilesFrm MainFrm)
+        public static void LoadDefaultNodes(DevExpress.XtraTreeList.TreeList Tree, NICSQLTools.Views.Main.MainTilesFrm MainFrm)
         {
             Tree.Nodes.Clear();
             //NICSQLTools.Forms.Main.MainTilesFrm MainFrm = (NICSQLTools.Forms.Main.MainTilesFrm)Parent.Parent.Parent;
@@ -42,23 +44,23 @@ namespace NICSQLTools.Views.Permission
 
             foreach (DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tile in MainFrm.tileContainerEditors.Items)
             {
-                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Name }, RootEditorNode);
+                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Document.ControlName }, RootEditorNode);
             }
             foreach (DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tile in MainFrm.tileContainerQueries.Items)
             {
-                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Name }, RootQueriesNode);
+                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Document.ControlName }, RootQueriesNode);
             }
             foreach (DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tile in MainFrm.tileContainerRules.Items)
             {
-                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Name }, RootRulesNode);
+                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Document.ControlName }, RootRulesNode);
             }
             foreach (DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tile in MainFrm.tileContainerReports.Items)
             {
-                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Name }, RootReportsNode);
+                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Document.ControlName }, RootReportsNode);
             }
             foreach (DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile tile in MainFrm.tileContainerDashboard.Items)
             {
-                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Name }, RootDashBoardNode);
+                Tree.AppendNode(new object[] { tile.Document.Caption, false, false, false, false, tile.Document.ControlName }, RootDashBoardNode);
             }
             Tree.EndUnboundLoad();
         }
@@ -113,11 +115,18 @@ namespace NICSQLTools.Views.Permission
                     Nodes.Add(node);
             }
         }
+        public void ActivateRules()
+        {
+            if (!_elementRule.Updateing)
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            
+        }
         #endregion
         #region -  EventWhnd - 
         private void ProductEditorUC_Load(object sender, EventArgs e)
         {
             LoadRulesList();
+            ActivateRules();
         }
         private void bbiRule_EditValueChanged(object sender, EventArgs e)
         {
@@ -126,7 +135,7 @@ namespace NICSQLTools.Views.Permission
             {
                 Invoke(new MethodInvoker(() =>
                 {
-                    LoadDefaultNodes(TLItems, (NICSQLTools.Forms.Main.MainTilesFrm)Parent.Parent.Parent);
+                    LoadDefaultNodes(TLItems, (NICSQLTools.Views.Main.MainTilesFrm)Parent.Parent.Parent);
                     LoadUserData(Convert.ToInt32(bbiRule.EditValue));
                 }));
                 SplashScreenManager.CloseForm();

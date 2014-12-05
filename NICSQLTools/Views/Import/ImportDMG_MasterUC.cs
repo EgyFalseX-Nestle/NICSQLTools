@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using System.IO;
 using System.Data.SqlClient;
 using log4net;
+using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Import
 {
@@ -19,6 +20,7 @@ namespace NICSQLTools.Views.Import
 
         #region -   Variables   -
         private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportDMG_MasterUC));
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         private string RequiredField
         {
             get
@@ -43,10 +45,11 @@ _______________________________________________
      
         #endregion
         #region -   Functions   -
-        public ImportDMG_MasterUC()
+        public ImportDMG_MasterUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             tbLog.Text = RequiredField;
+            _elementRule = RuleElement;
         }
         private void ShowHideProgress(bool ShowHide)
         {
@@ -177,7 +180,10 @@ _______________________________________________
                 Logger.Info(strLog);
             }));
         }
-        
+        public void ActivateRules()
+        {
+            btnImport.Visible = _elementRule.Inserting;
+        }
         #endregion
         #region -   Event Handlers   -
         private void btnGetFileName_Click(object sender, EventArgs e)

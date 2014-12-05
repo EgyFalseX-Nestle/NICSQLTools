@@ -13,6 +13,7 @@ namespace NICSQLTools.Views.Main
 {
     public partial class ChooseSaveNameDlg : DevExpress.XtraEditors.XtraForm
     {
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(ChooseSaveNameDlg));
         public string SavingName = string.Empty;
         public ChooseSaveNameDlg()
         {

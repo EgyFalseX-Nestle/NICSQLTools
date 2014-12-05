@@ -19,11 +19,13 @@ namespace NICSQLTools.Views.Dashboard
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(DashboardOpenDlg));
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext() { ObjectTrackingEnabled = false };
         public int DashboardSchemaId;
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         #endregion
         #region -   Functions   -
-        public DashboardOpenDlg()
+        public DashboardOpenDlg(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
+            _elementRule = RuleElement;
         }
         void LoadData()
         {
@@ -42,11 +44,21 @@ namespace NICSQLTools.Views.Dashboard
         {
             LSMSSchema.Reload();
         }
+        public void ActivateRules()
+        {
+            if (!_elementRule.Deleting)
+            {
+                gridControlMain.EmbeddedNavigator.Buttons.Remove.Visible = false;
+                repositoryItemButtonEditDelete.Buttons.Clear();
+            }
+
+        }
         #endregion
         #region -   EventWhnd   -
         private void DashboardOpenDlg_Load(object sender, EventArgs e)
         {
             LoadData();
+            ActivateRules();
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

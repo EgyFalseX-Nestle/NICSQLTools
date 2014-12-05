@@ -22,14 +22,13 @@ namespace NICSQLTools
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DevExpress.XtraBars.Helpers.SkinHelper.InitSkinGallery(galleryControl1, true);
-            //DevExpress.XtraBars.Helpers.SkinHelper.InitSkinPopupMenu(popupMenu1);
-
+            
         }
 
-    
-      
 
+       
+
+    
 
     }
 }

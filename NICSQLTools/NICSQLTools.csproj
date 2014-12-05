@@ -206,30 +206,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsLinqData.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Data\dsORMDataCode\ConnectionHelper.cs" />
-    <Compile Include="Data\dsORMDataCode\P_0_0FinalDataAll.cs" />
-    <Compile Include="Data\dsORMDataCode\P_0_0FinalDataAll.Designer.cs">
-      <DependentUpon>P_0_0FinalDataAll.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\dsORMDataCode\sp_DistributionNPDV1Result.cs">
-      <DependentUpon>StoredProcHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\dsORMDataCode\sp_DistributionNPDV2Result.cs">
-      <DependentUpon>StoredProcHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\dsORMDataCode\sp_DistributionNPDV3Result.cs">
-      <DependentUpon>StoredProcHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\dsORMDataCode\sp_DistributionV1Result.cs">
-      <DependentUpon>StoredProcHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\dsORMDataCode\sp_DistributionV2Result.cs">
-      <DependentUpon>StoredProcHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\dsORMDataCode\sp_DistributionV3Result.cs">
-      <DependentUpon>StoredProcHelper.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data\dsORMDataCode\StoredProcHelper.cs" />
     <Compile Include="Data\dsQry.cs">
       <DependentUpon>dsQry.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -238,11 +214,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsQry.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Data\dsSP.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsSP.xsd</DependentUpon>
     </Compile>
     <Compile Include="TestFrm.cs">
       <SubType>Form</SubType>
@@ -285,24 +256,6 @@
     </Compile>
     <Compile Include="Views\Dashboard\DashboardViewerUC.Designer.cs">
       <DependentUpon>DashboardViewerUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Dashboard\MonthlyKPIFrm.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\Dashboard\MonthlyKPIFrm.Designer.cs">
-      <DependentUpon>MonthlyKPIFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ChartControlUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\ChartControlUC.Designer.cs">
-      <DependentUpon>ChartControlUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Data\ProductEditorFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Data\ProductEditorFrm.designer.cs">
-      <DependentUpon>ProductEditorFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Log4Net\L4N.cs" />
     <Compile Include="Views\Data\CustomerEditorUC.cs">
@@ -389,100 +342,21 @@
     <Compile Include="Views\Data\RouteEditorUC.Designer.cs">
       <DependentUpon>RouteEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Main\ChooseThemeFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Main\ChooseThemeFrm.Designer.cs">
-      <DependentUpon>ChooseThemeFrm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Main\LoginUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Main\LoginUC.Designer.cs">
       <DependentUpon>LoginUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Qry\FinalDataPivotFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Qry\FinalDataPivotFrm.designer.cs">
-      <DependentUpon>FinalDataPivotFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Qry\FinalDataGridFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Qry\FinalDataGridFrm.designer.cs">
-      <DependentUpon>FinalDataGridFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Data\RouteEditorFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Data\RouteEditorFrm.designer.cs">
-      <DependentUpon>RouteEditorFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Data\CustomerEditorFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Data\CustomerEditorFrm.designer.cs">
-      <DependentUpon>CustomerEditorFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionNPDV3Frm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionNPDV3Frm.designer.cs">
-      <DependentUpon>Qrysp_DistributionNPDV3Frm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionNPDV2Frm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionNPDV2Frm.designer.cs">
-      <DependentUpon>Qrysp_DistributionNPDV2Frm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionNPDV1Frm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionNPDV1Frm.designer.cs">
-      <DependentUpon>Qrysp_DistributionNPDV1Frm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionV3Frm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionV3Frm.designer.cs">
-      <DependentUpon>Qrysp_DistributionV3Frm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionV2Frm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionV2Frm.designer.cs">
-      <DependentUpon>Qrysp_DistributionV2Frm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionV1Frm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Qry\Qrysp_DistributionV1Frm.designer.cs">
-      <DependentUpon>Qrysp_DistributionV1Frm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Classes\Macro.cs" />
     <Compile Include="Classes\Master.cs" />
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Managers\DataManager.cs" />
-    <Compile Include="Data\SampleData.cs" />
-    <Compile Include="Forms\ImportDaysFrm.cs">
+    <Compile Include="Views\Main\MainTilesFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ImportBillingDetailsFrm.designer.cs">
-      <DependentUpon>ImportDaysFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Main\MainTilesFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Main\MainTilesFrm.Designer.cs">
+    <Compile Include="Views\Main\MainTilesFrm.Designer.cs">
       <DependentUpon>MainTilesFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MainFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainFrm.designer.cs">
-      <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MsgDlg.cs">
       <SubType>Form</SubType>
@@ -494,31 +368,19 @@
     <Compile Include="Classes\Route.cs" />
     <Compile Include="Classes\UpdateInfo.cs" />
     <Compile Include="Uti\Types.cs" />
-    <Compile Include="Views\GroupDetailPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\GroupDetailPage.Designer.cs">
-      <DependentUpon>GroupDetailPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ItemDetailPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ItemDetailPage.Designer.cs">
-      <DependentUpon>ItemDetailPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\GroupItemDetailPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\GroupItemDetailPage.Designer.cs">
-      <DependentUpon>GroupItemDetailPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\WaitWindowFrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\WaitWindowFrm.designer.cs">
       <DependentUpon>WaitWindowFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\UserSettingsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Main\UserSettingsUC.Designer.cs">
+      <DependentUpon>UserSettingsUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Permission\RuleUC.cs">
       <SubType>UserControl</SubType>
@@ -555,42 +417,6 @@
     </Compile>
     <Compile Include="Views\Qry\QryPivotUC.Designer.cs">
       <DependentUpon>QryPivotUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Qry\FinalDataPivotUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Qry\FinalDataPivotUC.Designer.cs">
-      <DependentUpon>FinalDataPivotUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Qry\FinalDataGridUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Qry\FinalDataGridUC.Designer.cs">
-      <DependentUpon>FinalDataGridUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Qry\Qrysp_DistributionV1UC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Qry\Qrysp_DistributionV1UC.Designer.cs">
-      <DependentUpon>Qrysp_DistributionV1UC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Qry\Qrysp_DistributionNPDV3UC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Qry\Qrysp_DistributionNPDV3UC.Designer.cs">
-      <DependentUpon>Qrysp_DistributionNPDV3UC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Qry\Qrysp_DistributionNPDV2UC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Qry\Qrysp_DistributionNPDV2UC.Designer.cs">
-      <DependentUpon>Qrysp_DistributionNPDV2UC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Qry\Qrysp_DistributionNPDV1UC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Qry\Qrysp_DistributionNPDV1UC.Designer.cs">
-      <DependentUpon>Qrysp_DistributionNPDV1UC.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\Data\AppDatasourceParamUC.resx">
       <DependentUpon>AppDatasourceParamUC.cs</DependentUpon>
@@ -640,8 +466,8 @@
     <EmbeddedResource Include="Views\Import\ImportCustomerRouteUC.resx">
       <DependentUpon>ImportCustomerRouteUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Main\ChooseThemeFrm.resx">
-      <DependentUpon>ChooseThemeFrm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Main\UserSettingsUC.resx">
+      <DependentUpon>UserSettingsUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Permission\RuleUC.resx">
       <DependentUpon>RuleUC.cs</DependentUpon>
@@ -661,38 +487,11 @@
     <EmbeddedResource Include="Views\Qry\QryPivotUC.resx">
       <DependentUpon>QryPivotUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Qry\FinalDataPivotUC.resx">
-      <DependentUpon>FinalDataPivotUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Qry\FinalDataGridUC.resx">
-      <DependentUpon>FinalDataGridUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Qry\Qrysp_DistributionV1UC.resx">
-      <DependentUpon>Qrysp_DistributionV1UC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Qry\Qrysp_DistributionNPDV3UC.resx">
-      <DependentUpon>Qrysp_DistributionNPDV3UC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Qry\Qrysp_DistributionNPDV2UC.resx">
-      <DependentUpon>Qrysp_DistributionNPDV2UC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Qry\Qrysp_DistributionNPDV1UC.resx">
-      <DependentUpon>Qrysp_DistributionNPDV1UC.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Data\Linq\dsLinqData.dbml.layout">
       <DependentUpon>dsLinqData.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="TestFrm.resx">
       <DependentUpon>TestFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Dashboard\MonthlyKPIFrm.resx">
-      <DependentUpon>MonthlyKPIFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChartControlUC.resx">
-      <DependentUpon>ChartControlUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Data\ProductEditorFrm.resx">
-      <DependentUpon>ProductEditorFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\CustomerEditorUC.resx">
       <DependentUpon>CustomerEditorUC.cs</DependentUpon>
@@ -709,55 +508,13 @@
     <EmbeddedResource Include="Views\Main\LoginUC.resx">
       <DependentUpon>LoginUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Qry\FinalDataPivotFrm.resx">
-      <DependentUpon>FinalDataPivotFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Qry\FinalDataGridFrm.resx">
-      <DependentUpon>FinalDataGridFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Data\RouteEditorFrm.resx">
-      <DependentUpon>RouteEditorFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Data\CustomerEditorFrm.resx">
-      <DependentUpon>CustomerEditorFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ImportDaysFrm.resx">
-      <DependentUpon>ImportDaysFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main\MainTilesFrm.resx">
+    <EmbeddedResource Include="Views\Main\MainTilesFrm.resx">
       <DependentUpon>MainTilesFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainFrm.resx">
-      <DependentUpon>MainFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MsgDlg.resx">
       <DependentUpon>MsgDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Qry\Qrysp_DistributionNPDV3Frm.resx">
-      <DependentUpon>Qrysp_DistributionNPDV3Frm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Qry\Qrysp_DistributionNPDV2Frm.resx">
-      <DependentUpon>Qrysp_DistributionNPDV2Frm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Qry\Qrysp_DistributionNPDV1Frm.resx">
-      <DependentUpon>Qrysp_DistributionNPDV1Frm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Qry\Qrysp_DistributionV3Frm.resx">
-      <DependentUpon>Qrysp_DistributionV3Frm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Qry\Qrysp_DistributionV2Frm.resx">
-      <DependentUpon>Qrysp_DistributionV2Frm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Qry\Qrysp_DistributionV1Frm.resx">
-      <DependentUpon>Qrysp_DistributionV1Frm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="Views\GroupDetailPage.resx">
-      <DependentUpon>GroupDetailPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ItemDetailPage.resx">
-      <DependentUpon>ItemDetailPage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -768,9 +525,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\GroupItemDetailPage.resx">
-      <DependentUpon>GroupItemDetailPage.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\WaitWindowFrm.resx">
       <DependentUpon>WaitWindowFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -791,10 +545,6 @@
       <LastGenOutput>dsLinqData.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Data\dsORMData.xpo" />
-    <None Include="Data\dsORMData.xpo.diagram">
-      <DependentUpon>dsORMData.xpo</DependentUpon>
-    </None>
     <None Include="Data\dsQry.xsc">
       <DependentUpon>dsQry.xsd</DependentUpon>
     </None>
@@ -805,17 +555,6 @@
     </None>
     <None Include="Data\dsQry.xss">
       <DependentUpon>dsQry.xsd</DependentUpon>
-    </None>
-    <None Include="Data\dsSP.xsc">
-      <DependentUpon>dsSP.xsd</DependentUpon>
-    </None>
-    <None Include="Data\dsSP.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsSP.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Data\dsSP.xss">
-      <DependentUpon>dsSP.xsd</DependentUpon>
     </None>
     <None Include="Log4Net\NICSQLToolsLog4Net.config">
       <SubType>Designer</SubType>
@@ -829,11 +568,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Assets\DarkGray.png" />
-    <EmbeddedResource Include="Assets\LightGray.png" />
-    <EmbeddedResource Include="Assets\MediumGray.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\apply_16x16.png" />
@@ -850,6 +584,7 @@
   <ItemGroup>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\ide_32x32.png" />
     <None Include="Resources\pictureshapefillcolor_32x32.png" />
     <None Include="Resources\additem_16x16.png" />
     <None Include="Resources\pivot_16x16.png" />

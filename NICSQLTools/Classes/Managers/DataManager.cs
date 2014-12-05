@@ -11,7 +11,7 @@ using System.Collections;
 using System.IO.MemoryMappedFiles;
 using System.Threading;
 
-namespace NICSQLTools
+namespace NICSQLTools.Classes.Managers
 {
     public class DataManager
     {

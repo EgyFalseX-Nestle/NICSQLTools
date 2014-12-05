@@ -12,9 +12,6 @@ using DevExpress.XtraSplashScreen;
 using System.Data.SqlClient;
 using DevExpress.XtraLayout;
 using DevExpress.XtraPivotGrid;
-using DevExpress.XtraGrid;
-using DevExpress.XtraGrid.Views.Grid;
-using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Qry
 {
@@ -27,20 +24,11 @@ namespace NICSQLTools.Views.Qry
         Classes.QueryLayout.DatasourceStrc DataSourceList = new Classes.QueryLayout.DatasourceStrc();
         List<Control> LayoutControlList = new List<Control>();
         List<string> ProgressList = new List<string>();
-        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         #endregion
         #region -   Functions   -
-        public QryPivotUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
+        public QryPivotUC()
         {
             InitializeComponent();
-            _elementRule = RuleElement;
-        }
-        public void ActivateRules()
-        {
-            btnSaveAsLayout.Visible = _elementRule.Inserting;
-            btnSaveLayout.Visible = _elementRule.Updateing;
-            btnDeleteLayout.Visible = _elementRule.Deleting;
-
         }
         private void LoadDefaultData()
         {
@@ -261,7 +249,8 @@ namespace NICSQLTools.Views.Qry
         private void QryPivotUC_Load(object sender, EventArgs e)
         {
             LoadDefaultData();
-            ActivateRules();
+
+            
         }
         private void btnLoadDatasource_Click(object sender, EventArgs e)
         {
@@ -503,26 +492,7 @@ namespace NICSQLTools.Views.Qry
             dockPanelProperties.ParentPanel.Show();
             dockPanelProperties.ParentPanel.ShowSliding();
         }
-        private void btnExportPivot_Click(object sender, EventArgs e)
-        {
-            // Check whether the GridControl can be previewed.
-            if (!pivotGridControlMain.IsPrintingAvailable)
-            {
-                MsgDlg.Show("The 'DevExpress.XtraPrinting' library is not found", MsgDlg.MessageType.Warn);
-                return;
-            }
-            // Open the Preview window.
-            pivotGridControlMain.ShowRibbonPrintPreview();
-        }
-        private void btnExportDatasource_Click(object sender, EventArgs e)
-        {
-            GridControl grid = new GridControl();
-            GridView view = new GridView(); view.OptionsView.ColumnAutoWidth = false;
-            grid.MainView = view; grid.Parent = this;
-            grid.DataSource = pivotGridControlMain.DataSource;
-            grid.ShowRibbonPrintPreview();
-        }
         #endregion
-
+        
     }
 }

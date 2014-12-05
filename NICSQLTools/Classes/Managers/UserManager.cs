@@ -85,6 +85,11 @@ namespace NICSQLTools.Classes.Managers
         public NICSQLTools.Data.dsData.AppRuleDetailRow RuleElementInformation(string ElementName)
         {
             NICSQLTools.Data.dsData.AppRuleDetailRow output = UserRuleDetialsTable.NewAppRuleDetailRow();
+            if (User.IsAdmin)
+            {
+                output.Selecting = output.Inserting = output.Updateing = output.Deleting = true;
+                return output;
+            }
             output.Selecting = output.Inserting = output.Updateing = output.Deleting = false;
 
             foreach (NICSQLTools.Data.dsData.AppRuleDetailRow  element in UserRuleDetialsTable)

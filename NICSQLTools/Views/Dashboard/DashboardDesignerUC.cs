@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using log4net;
 using DevExpress.XtraSplashScreen;
+using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Dashboard
 {
@@ -20,11 +21,13 @@ namespace NICSQLTools.Views.Dashboard
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         NICSQLTools.Data.dsData.AppDashboardSchemaDataTable schemaTBL = new NICSQLTools.Data.dsData.AppDashboardSchemaDataTable();
         NICSQLTools.Data.dsData.AppDashboardSchemaRow DashboardSchema = null;
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         #endregion
         #region -   Functions   -
-        public DashboardDesignerUC()
+        public DashboardDesignerUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
+            _elementRule = RuleElement;
         }
         void LoadData()
         {
@@ -40,12 +43,25 @@ namespace NICSQLTools.Views.Dashboard
                 SplashScreenManager.CloseForm();
             });
         }
+        public void ActivateRules()
+        {
+            
+            if (!_elementRule.Updateing)
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+            if (!_elementRule.Inserting)
+            {
+                bbiNew.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiSaveAs.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            }
+        }
         #endregion
         #region -   EventWhnd   -
         private void DashboardDesignerUC_Load(object sender, EventArgs e)
         {
             LoadData();
             DashboardSchema = schemaTBL.NewAppDashboardSchemaRow();
+            ActivateRules();
         }
         private void bbiAddDatasource_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -65,7 +81,7 @@ namespace NICSQLTools.Views.Dashboard
         }
         private void bbiOpen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DashboardOpenDlg dlg = new DashboardOpenDlg();
+            DashboardOpenDlg dlg = new DashboardOpenDlg(_elementRule);
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
             DashboardSchema  = appDashboardSchemaTableAdapter.GetDataByDashboardSchemaId(dlg.DashboardSchemaId)[0];

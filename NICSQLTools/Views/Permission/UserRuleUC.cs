@@ -12,11 +12,13 @@ namespace NICSQLTools.Views.Permission
     {
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(UserRuleUC));
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         #endregion
         #region - Fun -
-        public UserRuleUC()
+        public UserRuleUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
+            _elementRule = RuleElement;
         }
         void LoadData()
         {
@@ -31,11 +33,28 @@ namespace NICSQLTools.Views.Permission
                 SplashScreenManager.CloseForm();
             });
         }
+        public void ActivateRules()
+        {
+            if (!_elementRule.Updateing)
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+            if (!_elementRule.Inserting)
+            {
+                gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.None;
+                gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
+                userRuleBindingSource.AllowNew = _elementRule.Inserting;
+            }
+
+            if (!_elementRule.Deleting)
+                gridControlMain.EmbeddedNavigator.Buttons.Remove.Visible = false;
+
+        }
         #endregion
         #region -  EventWhnd - 
         private void ProductEditorUC_Load(object sender, EventArgs e)
         {
             LoadData();
+            ActivateRules();
         }
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

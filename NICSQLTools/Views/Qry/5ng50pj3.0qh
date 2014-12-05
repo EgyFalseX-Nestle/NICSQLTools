@@ -14,7 +14,6 @@ using DevExpress.XtraLayout;
 using DevExpress.XtraPivotGrid;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
-using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Qry
 {
@@ -27,20 +26,11 @@ namespace NICSQLTools.Views.Qry
         Classes.QueryLayout.DatasourceStrc DataSourceList = new Classes.QueryLayout.DatasourceStrc();
         List<Control> LayoutControlList = new List<Control>();
         List<string> ProgressList = new List<string>();
-        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         #endregion
         #region -   Functions   -
-        public QryPivotUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
+        public QryPivotUC()
         {
             InitializeComponent();
-            _elementRule = RuleElement;
-        }
-        public void ActivateRules()
-        {
-            btnSaveAsLayout.Visible = _elementRule.Inserting;
-            btnSaveLayout.Visible = _elementRule.Updateing;
-            btnDeleteLayout.Visible = _elementRule.Deleting;
-
         }
         private void LoadDefaultData()
         {
@@ -261,7 +251,6 @@ namespace NICSQLTools.Views.Qry
         private void QryPivotUC_Load(object sender, EventArgs e)
         {
             LoadDefaultData();
-            ActivateRules();
         }
         private void btnLoadDatasource_Click(object sender, EventArgs e)
         {
@@ -516,13 +505,23 @@ namespace NICSQLTools.Views.Qry
         }
         private void btnExportDatasource_Click(object sender, EventArgs e)
         {
-            GridControl grid = new GridControl();
-            GridView view = new GridView(); view.OptionsView.ColumnAutoWidth = false;
-            grid.MainView = view; grid.Parent = this;
-            grid.DataSource = pivotGridControlMain.DataSource;
-            grid.ShowRibbonPrintPreview();
+            DataTable dt = (DataTable)pivotGridControlMain.DataSource;
+            DevExpress.XtraPrinting.Export.XLS.XlsxExportProvider x;
+            GridControl gc = new GridControl(); GridView gv = new GridView();
+            gc.MainView = gv;
+            gc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gv });
+            gv.GridControl = gc;
+            gc.DataSource = pivotGridControlMain.DataSource;
+            gc.MainView.PopulateColumns();
+            gc.ShowRibbonPrintPreview();
+
+
         }
         #endregion
 
+        
+
+        
+        
     }
 }

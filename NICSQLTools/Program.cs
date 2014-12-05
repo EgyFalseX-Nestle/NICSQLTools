@@ -6,6 +6,7 @@ using DevExpress.LookAndFeel;
 using System.Data.SqlClient;
 using System.Data;
 using System.Reflection;
+using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools
 {
@@ -17,6 +18,7 @@ namespace NICSQLTools
         public static string Log4NetFolder = Application.StartupPath + @"\Log4Net";
         public static string Log4NetConfigFile = Log4NetFolder + @"\NICSQLToolsLog4Net.config";
         public static string Log4NetLogFile = Log4NetFolder + @"\NICSQLToolsLog4Net.txt";
+        public static string TilesLayoutFile = Application.StartupPath + @"\TilesLayoutFile";
 
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(Program));
 
@@ -61,7 +63,7 @@ namespace NICSQLTools
                 //DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());
 
                 //Application.Run(new TestFrm());
-                Application.Run(new NICSQLTools.Forms.Main.MainTilesFrm());
+                Application.Run(new NICSQLTools.Views.Main.MainTilesFrm());
                 
             }
             

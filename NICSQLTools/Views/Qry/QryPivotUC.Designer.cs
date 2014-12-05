@@ -45,6 +45,7 @@
             this.btnLoadLayout = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveLayout = new DevExpress.XtraEditors.SimpleButton();
             this.lueLayout = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.LSMSLayout = new DevExpress.Data.Linq.LinqServerModeSource();
             this.repositoryItemMemoExEditDesc = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceLayoutName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,6 +55,7 @@
             this.ppWait = new DevExpress.XtraWaitForm.ProgressPanel();
             this.btnLoadDashboard = new DevExpress.XtraEditors.SimpleButton();
             this.lueDatasource = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAppDatasourceTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,16 +74,18 @@
             this.dockPanelProperties = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnExportDatasource = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExportPivot = new DevExpress.XtraEditors.SimpleButton();
             this.pgcProperties = new DevExpress.XtraVerticalGrid.PropertyGridControl();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemPropertiesControl = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.pivotGridControlMain = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.get_sp_PramTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
             this.appDatasourceLayoutTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceLayoutTableAdapter();
             this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
             this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
-            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.LSMSLayout = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).BeginInit();
@@ -94,9 +98,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDatasource)).BeginInit();
             this.layoutControlDatasource.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDatasource.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -114,9 +120,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pgcProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemDateEdit1
@@ -288,6 +294,7 @@
             this.lueLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            this.lueLayout.Properties.DataSource = this.LSMSLayout;
             this.lueLayout.Properties.DisplayMember = "DatasourceLayoutName";
             this.lueLayout.Properties.NullText = "";
             this.lueLayout.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
@@ -300,6 +307,11 @@
             this.lueLayout.Size = new System.Drawing.Size(195, 22);
             this.lueLayout.StyleController = this.layoutControlDatasource;
             this.lueLayout.TabIndex = 4;
+            // 
+            // LSMSLayout
+            // 
+            this.LSMSLayout.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasourceLayout_LUE);
+            this.LSMSLayout.KeyExpression = "[DatasourceLayoutId]";
             // 
             // repositoryItemMemoExEditDesc
             // 
@@ -409,6 +421,11 @@
             this.lueDatasource.Size = new System.Drawing.Size(195, 22);
             this.lueDatasource.StyleController = this.layoutControlDatasource;
             this.lueDatasource.TabIndex = 0;
+            // 
+            // LSMSDatasource
+            // 
+            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
+            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
             // 
             // gridLookUpEdit1View
             // 
@@ -614,6 +631,8 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btnExportDatasource);
+            this.layoutControl1.Controls.Add(this.btnExportPivot);
             this.layoutControl1.Controls.Add(this.pgcProperties);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -624,12 +643,34 @@
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnExportDatasource
+            // 
+            this.btnExportDatasource.Image = global::NICSQLTools.Properties.Resources.Export;
+            this.btnExportDatasource.Location = new System.Drawing.Point(142, 12);
+            this.btnExportDatasource.Name = "btnExportDatasource";
+            this.btnExportDatasource.Size = new System.Drawing.Size(127, 22);
+            this.btnExportDatasource.StyleController = this.layoutControl1;
+            this.btnExportDatasource.TabIndex = 5;
+            this.btnExportDatasource.Text = "Export Datasource";
+            this.btnExportDatasource.Click += new System.EventHandler(this.btnExportDatasource_Click);
+            // 
+            // btnExportPivot
+            // 
+            this.btnExportPivot.Image = global::NICSQLTools.Properties.Resources.pivot_16x16;
+            this.btnExportPivot.Location = new System.Drawing.Point(12, 12);
+            this.btnExportPivot.Name = "btnExportPivot";
+            this.btnExportPivot.Size = new System.Drawing.Size(126, 22);
+            this.btnExportPivot.StyleController = this.layoutControl1;
+            this.btnExportPivot.TabIndex = 4;
+            this.btnExportPivot.Text = "Export Pivot";
+            this.btnExportPivot.Click += new System.EventHandler(this.btnExportPivot_Click);
+            // 
             // pgcProperties
             // 
             this.pgcProperties.AutoGenerateRows = true;
-            this.pgcProperties.Location = new System.Drawing.Point(12, 12);
+            this.pgcProperties.Location = new System.Drawing.Point(12, 38);
             this.pgcProperties.Name = "pgcProperties";
-            this.pgcProperties.Size = new System.Drawing.Size(257, 321);
+            this.pgcProperties.Size = new System.Drawing.Size(257, 295);
             this.pgcProperties.TabIndex = 0;
             // 
             // layoutControlGroup3
@@ -638,7 +679,9 @@
             this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup3.GroupBordersVisible = false;
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItemPropertiesControl});
+            this.layoutControlItemPropertiesControl,
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(281, 345);
@@ -649,16 +692,46 @@
             // 
             this.layoutControlItemPropertiesControl.Control = this.pgcProperties;
             this.layoutControlItemPropertiesControl.CustomizationFormText = "Properties Control";
-            this.layoutControlItemPropertiesControl.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItemPropertiesControl.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItemPropertiesControl.Name = "layoutControlItemPropertiesControl";
-            this.layoutControlItemPropertiesControl.Size = new System.Drawing.Size(261, 325);
+            this.layoutControlItemPropertiesControl.Size = new System.Drawing.Size(261, 299);
             this.layoutControlItemPropertiesControl.Text = "Properties Control";
             this.layoutControlItemPropertiesControl.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemPropertiesControl.TextToControlDistance = 0;
             this.layoutControlItemPropertiesControl.TextVisible = false;
             // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.btnExportPivot;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(130, 26);
+            this.layoutControlItem3.Text = "layoutControlItem3";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextToControlDistance = 0;
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btnExportDatasource;
+            this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
+            this.layoutControlItem4.Location = new System.Drawing.Point(130, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(131, 26);
+            this.layoutControlItem4.Text = "layoutControlItem4";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextToControlDistance = 0;
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // pivotGridControlMain
             // 
+            this.pivotGridControlMain.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.pivotGridControlMain.Appearance.Cell.Options.UseFont = true;
+            this.pivotGridControlMain.Appearance.FieldHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.pivotGridControlMain.Appearance.FieldHeader.Options.UseFont = true;
+            this.pivotGridControlMain.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.pivotGridControlMain.Appearance.FieldValue.Options.UseFont = true;
             this.pivotGridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pivotGridControlMain.Location = new System.Drawing.Point(289, 0);
             this.pivotGridControlMain.Name = "pivotGridControlMain";
@@ -688,16 +761,6 @@
             // 
             this.appDashboardDSPramTableAdapter.ClearBeforeFill = true;
             // 
-            // LSMSDatasource
-            // 
-            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
-            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
-            // 
-            // LSMSLayout
-            // 
-            this.LSMSLayout.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasourceLayout_LUE);
-            this.LSMSLayout.KeyExpression = "[DatasourceLayoutId]";
-            // 
             // QryPivotUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,9 +782,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDatasource)).EndInit();
             this.layoutControlDatasource.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueDatasource.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -739,9 +804,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pgcProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -799,5 +864,9 @@
         private DevExpress.XtraBars.Docking.DockPanel panelContainerMain;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDatasource;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSLayout;
+        private DevExpress.XtraEditors.SimpleButton btnExportDatasource;
+        private DevExpress.XtraEditors.SimpleButton btnExportPivot;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

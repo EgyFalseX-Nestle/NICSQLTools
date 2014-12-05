@@ -8,14 +8,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using NICSQLTools.Forms.Main;
+using NICSQLTools.Views.Main;
 using DevExpress.XtraSplashScreen;
 using System.IO;
+using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Main
 {
     public partial class LoginUC : DevExpress.XtraEditors.XtraUserControl
     {
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(LoginUC));
+        
         private string LoginInfoFileName = Application.StartupPath + "\\loginInfo";
         public LoginUC()
         {
@@ -62,8 +65,10 @@ namespace NICSQLTools.Views.Main
                 SplashScreenManager.CloseForm(false);
 
                 SaveLoginInfoToFile();// Save UserName Into File For Auto Load
-                _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);
                 _parent.ActivateRules();
+                _parent.LoadLayout();
+                _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);
+                
             }
             else
             {

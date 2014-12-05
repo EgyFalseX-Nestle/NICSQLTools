@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.IO;
 using System.Data.SqlClient;
+using NICSQLTools.Classes.Managers;
+
 
 namespace NICSQLTools.Views.Import
 {
@@ -19,6 +21,7 @@ namespace NICSQLTools.Views.Import
         #region -   Variables   -
         //private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportDaysFrm));
         List<string> Dist = new List<string>();
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         private string RequiredField
         {
             get
@@ -44,7 +47,7 @@ _______________________________________________
      
         #endregion
         #region -   Functions   -
-        public ImportDaysUC()
+        public ImportDaysUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             tbLog.Text = RequiredField;
@@ -53,6 +56,8 @@ _______________________________________________
             DataManager.SetAllCommandTimeouts(_0_3__Route_DetailsTableAdapter, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(_0_6_Customer_HNTableAdapter, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(qryBillDocTableAdapter, DataManager.ConnectionTimeout);
+
+            _elementRule = RuleElement;
         }
         private static bool FindBillDoc(NICSQLTools.Data.dsData.QryBillDocDataTable tbl, string BillDoc)
         {
@@ -365,6 +370,10 @@ _______________________________________________
                 tbLog.EditValue += string.Format("{0}{1}", strLog, Environment.NewLine);
                 //Logger.Info(strLog);
             }));
+        }
+        public void ActivateRules()
+        {
+            btnImport.Visible = _elementRule.Inserting;
         }
         
         #endregion

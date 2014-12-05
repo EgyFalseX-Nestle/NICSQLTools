@@ -16,11 +16,13 @@ namespace NICSQLTools.Views.Data
     {
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(CustomerEditorUC));
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         #endregion
         #region - Fun -
-        public CustomerEditorUC()
+        public CustomerEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
+            _elementRule = RuleElement;
         }
         void LoadData()
         {
@@ -34,6 +36,25 @@ namespace NICSQLTools.Views.Data
                 }));
                 SplashScreenManager.CloseForm();
             });
+        }
+        public void ActivateRules()
+        {
+            XPSCS.AllowNew = _elementRule.Inserting;
+            XPSCS.AllowRemove = _elementRule.Deleting;
+            XPSCS.AllowEdit = _elementRule.Updateing;
+
+            if (!_elementRule.Updateing)
+                bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+            if (!_elementRule.Inserting)
+            {
+                gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.None;
+                gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
+            }
+
+            if (!_elementRule.Deleting)
+                gridControlMain.EmbeddedNavigator.Buttons.Remove.Visible = false;
+
         }
         #endregion
         #region -  EventWhnd - 
@@ -52,6 +73,7 @@ namespace NICSQLTools.Views.Data
             // TODO: This line of code loads data into the 'dsQry.CustomerGroup' table. You can move, or remove it, as needed.
             this.customerGroupTableAdapter.Fill(this.dsQry.CustomerGroup);
             LoadData();
+            ActivateRules();
         }
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

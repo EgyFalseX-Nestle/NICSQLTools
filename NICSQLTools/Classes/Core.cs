@@ -24,6 +24,7 @@ namespace NICSQLTools.Classes
         public static void LogException(log4net.ILog Logger, Exception Ex, ExceptionLevelEnum ExceptionLevel, int UserIn)
         {
             aspException.Insert(DataManager.defaultInstance.ServerDateTime, Environment.UserName, Ex.Message, Ex.StackTrace, Logger.Logger.Name, ExceptionLevel.ToString(), UserIn);
+            Logger.Error(Ex.Message, Ex);
 
         }
     }

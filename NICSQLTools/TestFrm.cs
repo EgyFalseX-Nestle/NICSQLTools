@@ -3,32 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace NICSQLTools
 {
-    public partial class TestFrm : Form
+    public partial class TestFrm : DevExpress.XtraEditors.XtraForm
     {
-        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new Data.Linq.dsLinqDataDataContext(){ ObjectTrackingEnabled = false};
-        NICSQLTools.Data.dsQry ds = new Data.dsQry();
         public TestFrm()
         {
             InitializeComponent();
-            
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-
-       
-
-    
-
     }
 }

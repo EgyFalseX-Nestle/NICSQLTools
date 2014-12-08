@@ -34,38 +34,27 @@ namespace NICSQLTools
             DevExpress.UserSkins.BonusSkins.Register();
             DevExpress.Data.CurrencyDataController.DisableThreadingProblemsDetection = true;
 
-            Log4Net.L4N.Init();
-            DataManager.PerformChangeExe(); 
-            if (FXFW.SqlDB.LoadSqlDBPath("IC_DB"))
+            try
             {
-                Properties.Settings.Default["IC_DBConnectionString"] = FXFW.SqlDB.SqlConStr;
-                DevExpress.Xpo.XpoDefault.ConnectionString = FXFW.SqlDB.SqlConStr;
-                Init();
-                //Set User Info
+                Log4Net.L4N.Init();
+                DataManager.PerformChangeExe();
+                if (FXFW.SqlDB.LoadSqlDBPath("IC_DB"))
+                {
+                    Properties.Settings.Default["IC_DBConnectionString"] = FXFW.SqlDB.SqlConStr;
+                    DevExpress.Xpo.XpoDefault.ConnectionString = FXFW.SqlDB.SqlConStr;
+                    Init();
 
-                //Application.Run(new TestFrm());
-
-                //Dictionary<string, int> asm = DataManager.GetCurrentAssemblyFiles();
-                //foreach (var item in asm)
-                //{
-                //    MessageBox.Show(String.Format("Name: {0}{1}Version: {2}", item.Key, Environment.NewLine, item.Value));
-                //}
-
-                //NICSQLTools.Data.dsData.AppDependenceFileDataTable tbl = new Data.dsData.AppDependenceFileDataTable();
-                //NICSQLTools.Data.dsData.AppDependenceFileRow row1 = tbl.NewAppDependenceFileRow();
-                //row1.FileName = "DevExpress.BonusSkins.v14.1.dll"; row1.FileVersion = 1000;
-                //tbl.Rows.Add(row1);
-
-                //NICSQLTools.Data.dsData.AppDependenceFileRow row2 = tbl.NewAppDependenceFileRow();
-                //row2.FileName = "DevExpress.Dashboard.v14.1.Core.dll"; row2.FileVersion = 1000;
-                //tbl.Rows.Add(row2);
-
-                //DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());
-
-                //Application.Run(new TestFrm());
-                Application.Run(new NICSQLTools.Views.Main.MainTilesFrm());
-                
+                    //Application.Run(new TestFrm());
+                    Application.Run(new NICSQLTools.Views.Main.MainTilesFrm());
+                }
             }
+            catch (Exception ex)
+            {
+                NICSQLTools.Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId);
+                MsgDlg.Show(ex.Message, MsgDlg.MessageType.Fatal, ex);
+            }
+
+ 
             
         }
         public static void Init()

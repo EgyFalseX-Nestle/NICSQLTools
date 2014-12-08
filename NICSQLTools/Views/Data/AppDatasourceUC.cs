@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
-using System.Data;
 using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Data
@@ -30,6 +29,7 @@ namespace NICSQLTools.Views.Data
                 Invoke(new MethodInvoker(() => {
 
                     LSMSAppDatasourceType.QueryableSource = from q in dsLinq.AppDatasourceType_LUEs select q;
+                    LSMSAppDSCategory.QueryableSource = from q in dsLinq.vAppDSCategories select q;
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                     
                     gridControlMain.DataSource = XPSCS;
@@ -97,6 +97,7 @@ namespace NICSQLTools.Views.Data
             if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
             LSMSAppDatasourceType.Reload();
+            LSMSAppDSCategory.Reload();
             UOW.DropIdentityMap();
             UOW.DropChanges();
             XPSCS.Reload();

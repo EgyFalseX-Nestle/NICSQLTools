@@ -130,6 +130,9 @@
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="up_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AppDashboardDS128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AppDashboardDS128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,20 +148,23 @@
   <data name="Qry16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Qry16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AppDashboardDS64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppDashboardDS64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Reports128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reports128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EditorsWallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditorsWallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Queries128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Queries128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TargetNCE128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TargetNCE128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loadfrom_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loadfrom_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Queries128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Queries128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SalesDistrict64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SalesDistrict64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +181,8 @@
   <data name="MSG_Warnning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSG_Warnning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AppDashboardDS64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AppDashboardDS64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DashboardViewer64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DashboardViewer64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Roles64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Roles64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -189,6 +195,9 @@
   </data>
   <data name="Routes128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Routes128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="properties_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\properties_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addnewdatasource_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addnewdatasource_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,6 +250,9 @@
   <data name="ImportR3_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImportR3_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Queries2128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Queries2128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="additem_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\additem_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -259,9 +271,6 @@
   <data name="delete_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MSG_Information" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MSG_Information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="done" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -271,8 +280,11 @@
   <data name="Product64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Product64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DashboardViewer64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DashboardViewer64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Queries2_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Queries2_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MSG_Success" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSG_Success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,17 +298,23 @@
   <data name="refresh_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="up_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancel_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Question" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TargetNCE128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TargetNCE128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LoginLogo32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoginLogo32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TargetNCE64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TargetNCE64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ide_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ide_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TargetKPI128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TargetKPI128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,17 +325,11 @@
   <data name="Editor128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Editor128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LoginLogo32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoginLogo32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Product128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Product128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DashboardDesigner64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DashboardDesigner64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="properties_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\properties_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MSG_Information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MSG_Information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,14 +340,11 @@
   <data name="Reports64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reports64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Queries2128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Queries2128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DashboardDesigner64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DashboardDesigner64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Rule128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rule128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Roles128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roles128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,8 +361,8 @@
   <data name="refresh2_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh2_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Queries2_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Queries2_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Roles128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Roles128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Customers128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Customers128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -376,7 +385,10 @@
   <data name="importtodatabase_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\importtodatabase_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ide_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ide_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AppDSCategory64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppDSCategory64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AppDSCategory128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppDSCategory128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

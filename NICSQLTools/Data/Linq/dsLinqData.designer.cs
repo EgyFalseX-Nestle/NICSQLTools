@@ -48,15 +48,15 @@ namespace NICSQLTools.Data.Linq
     partial void InsertvAppDatasourceParam_LUE(vAppDatasourceParam_LUE instance);
     partial void UpdatevAppDatasourceParam_LUE(vAppDatasourceParam_LUE instance);
     partial void DeletevAppDatasourceParam_LUE(vAppDatasourceParam_LUE instance);
-    partial void InsertvAppDatasource_LUE(vAppDatasource_LUE instance);
-    partial void UpdatevAppDatasource_LUE(vAppDatasource_LUE instance);
-    partial void DeletevAppDatasource_LUE(vAppDatasource_LUE instance);
     partial void InsertvAppDatasourceLayout_LUE(vAppDatasourceLayout_LUE instance);
     partial void UpdatevAppDatasourceLayout_LUE(vAppDatasourceLayout_LUE instance);
     partial void DeletevAppDatasourceLayout_LUE(vAppDatasourceLayout_LUE instance);
     partial void InsertAppDatasourceType_LUE(AppDatasourceType_LUE instance);
     partial void UpdateAppDatasourceType_LUE(AppDatasourceType_LUE instance);
     partial void DeleteAppDatasourceType_LUE(AppDatasourceType_LUE instance);
+    partial void InsertvAppDSCategory(vAppDSCategory instance);
+    partial void UpdatevAppDSCategory(vAppDSCategory instance);
+    partial void DeletevAppDSCategory(vAppDSCategory instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -145,14 +145,6 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<vAppDatasource_LUE> vAppDatasource_LUEs
-		{
-			get
-			{
-				return this.GetTable<vAppDatasource_LUE>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vAppDatasourceLayout_LUE> vAppDatasourceLayout_LUEs
 		{
 			get
@@ -166,6 +158,22 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<AppDatasourceType_LUE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vAppDatasource_LUE> vAppDatasource_LUEs
+		{
+			get
+			{
+				return this.GetTable<vAppDatasource_LUE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vAppDSCategory> vAppDSCategories
+		{
+			get
+			{
+				return this.GetTable<vAppDSCategory>();
 			}
 		}
 	}
@@ -3299,260 +3307,6 @@ namespace NICSQLTools.Data.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDatasource_LUE")]
-	public partial class vAppDatasource_LUE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _DatasourceID;
-		
-		private System.Nullable<int> _AppDatasourceTypeId;
-		
-		private string _DatasourceName;
-		
-		private string _DatasourceSPName;
-		
-		private System.Nullable<int> _UserIn;
-		
-		private System.Nullable<System.DateTime> _DateIn;
-		
-		private string _Desc;
-		
-		private string _RealName;
-		
-		private string _AppDatasourceTypeName;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDatasourceIDChanging(int value);
-    partial void OnDatasourceIDChanged();
-    partial void OnAppDatasourceTypeIdChanging(System.Nullable<int> value);
-    partial void OnAppDatasourceTypeIdChanged();
-    partial void OnDatasourceNameChanging(string value);
-    partial void OnDatasourceNameChanged();
-    partial void OnDatasourceSPNameChanging(string value);
-    partial void OnDatasourceSPNameChanged();
-    partial void OnUserInChanging(System.Nullable<int> value);
-    partial void OnUserInChanged();
-    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateInChanged();
-    partial void OnDescChanging(string value);
-    partial void OnDescChanged();
-    partial void OnRealNameChanging(string value);
-    partial void OnRealNameChanged();
-    partial void OnAppDatasourceTypeNameChanging(string value);
-    partial void OnAppDatasourceTypeNameChanged();
-    #endregion
-		
-		public vAppDatasource_LUE()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int DatasourceID
-		{
-			get
-			{
-				return this._DatasourceID;
-			}
-			set
-			{
-				if ((this._DatasourceID != value))
-				{
-					this.OnDatasourceIDChanging(value);
-					this.SendPropertyChanging();
-					this._DatasourceID = value;
-					this.SendPropertyChanged("DatasourceID");
-					this.OnDatasourceIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", DbType="Int")]
-		public System.Nullable<int> AppDatasourceTypeId
-		{
-			get
-			{
-				return this._AppDatasourceTypeId;
-			}
-			set
-			{
-				if ((this._AppDatasourceTypeId != value))
-				{
-					this.OnAppDatasourceTypeIdChanging(value);
-					this.SendPropertyChanging();
-					this._AppDatasourceTypeId = value;
-					this.SendPropertyChanged("AppDatasourceTypeId");
-					this.OnAppDatasourceTypeIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceName", DbType="NVarChar(50)")]
-		public string DatasourceName
-		{
-			get
-			{
-				return this._DatasourceName;
-			}
-			set
-			{
-				if ((this._DatasourceName != value))
-				{
-					this.OnDatasourceNameChanging(value);
-					this.SendPropertyChanging();
-					this._DatasourceName = value;
-					this.SendPropertyChanged("DatasourceName");
-					this.OnDatasourceNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceSPName", DbType="NVarChar(50)")]
-		public string DatasourceSPName
-		{
-			get
-			{
-				return this._DatasourceSPName;
-			}
-			set
-			{
-				if ((this._DatasourceSPName != value))
-				{
-					this.OnDatasourceSPNameChanging(value);
-					this.SendPropertyChanging();
-					this._DatasourceSPName = value;
-					this.SendPropertyChanged("DatasourceSPName");
-					this.OnDatasourceSPNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
-		public System.Nullable<int> UserIn
-		{
-			get
-			{
-				return this._UserIn;
-			}
-			set
-			{
-				if ((this._UserIn != value))
-				{
-					this.OnUserInChanging(value);
-					this.SendPropertyChanging();
-					this._UserIn = value;
-					this.SendPropertyChanged("UserIn");
-					this.OnUserInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateIn
-		{
-			get
-			{
-				return this._DateIn;
-			}
-			set
-			{
-				if ((this._DateIn != value))
-				{
-					this.OnDateInChanging(value);
-					this.SendPropertyChanging();
-					this._DateIn = value;
-					this.SendPropertyChanged("DateIn");
-					this.OnDateInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(255)")]
-		public string Desc
-		{
-			get
-			{
-				return this._Desc;
-			}
-			set
-			{
-				if ((this._Desc != value))
-				{
-					this.OnDescChanging(value);
-					this.SendPropertyChanging();
-					this._Desc = value;
-					this.SendPropertyChanged("Desc");
-					this.OnDescChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
-		public string RealName
-		{
-			get
-			{
-				return this._RealName;
-			}
-			set
-			{
-				if ((this._RealName != value))
-				{
-					this.OnRealNameChanging(value);
-					this.SendPropertyChanging();
-					this._RealName = value;
-					this.SendPropertyChanged("RealName");
-					this.OnRealNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
-		public string AppDatasourceTypeName
-		{
-			get
-			{
-				return this._AppDatasourceTypeName;
-			}
-			set
-			{
-				if ((this._AppDatasourceTypeName != value))
-				{
-					this.OnAppDatasourceTypeNameChanging(value);
-					this.SendPropertyChanging();
-					this._AppDatasourceTypeName = value;
-					this.SendPropertyChanged("AppDatasourceTypeName");
-					this.OnAppDatasourceTypeNameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDatasourceLayout_LUE")]
 	public partial class vAppDatasourceLayout_LUE : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3892,6 +3646,389 @@ namespace NICSQLTools.Data.Linq
 					this._AppDatasourceTypeName = value;
 					this.SendPropertyChanged("AppDatasourceTypeName");
 					this.OnAppDatasourceTypeNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDatasource_LUE")]
+	public partial class vAppDatasource_LUE
+	{
+		
+		private int _DatasourceID;
+		
+		private System.Nullable<int> _AppDatasourceTypeId;
+		
+		private string _DatasourceName;
+		
+		private string _DatasourceSPName;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private string _Desc;
+		
+		private string _RealName;
+		
+		private string _AppDatasourceTypeName;
+		
+		private System.Nullable<int> _DSCategoryId;
+		
+		private string _DSCategoryName;
+		
+		private string _DSCategoryDesc;
+		
+		public vAppDatasource_LUE()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", DbType="Int NOT NULL")]
+		public int DatasourceID
+		{
+			get
+			{
+				return this._DatasourceID;
+			}
+			set
+			{
+				if ((this._DatasourceID != value))
+				{
+					this._DatasourceID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", DbType="Int")]
+		public System.Nullable<int> AppDatasourceTypeId
+		{
+			get
+			{
+				return this._AppDatasourceTypeId;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeId != value))
+				{
+					this._AppDatasourceTypeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceName", DbType="NVarChar(50)")]
+		public string DatasourceName
+		{
+			get
+			{
+				return this._DatasourceName;
+			}
+			set
+			{
+				if ((this._DatasourceName != value))
+				{
+					this._DatasourceName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceSPName", DbType="NVarChar(50)")]
+		public string DatasourceSPName
+		{
+			get
+			{
+				return this._DatasourceSPName;
+			}
+			set
+			{
+				if ((this._DatasourceSPName != value))
+				{
+					this._DatasourceSPName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this._UserIn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this._DateIn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(255)")]
+		public string Desc
+		{
+			get
+			{
+				return this._Desc;
+			}
+			set
+			{
+				if ((this._Desc != value))
+				{
+					this._Desc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this._RealName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
+		public string AppDatasourceTypeName
+		{
+			get
+			{
+				return this._AppDatasourceTypeName;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeName != value))
+				{
+					this._AppDatasourceTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryId", DbType="Int")]
+		public System.Nullable<int> DSCategoryId
+		{
+			get
+			{
+				return this._DSCategoryId;
+			}
+			set
+			{
+				if ((this._DSCategoryId != value))
+				{
+					this._DSCategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryName", DbType="NVarChar(50)")]
+		public string DSCategoryName
+		{
+			get
+			{
+				return this._DSCategoryName;
+			}
+			set
+			{
+				if ((this._DSCategoryName != value))
+				{
+					this._DSCategoryName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryDesc", DbType="NVarChar(255)")]
+		public string DSCategoryDesc
+		{
+			get
+			{
+				return this._DSCategoryDesc;
+			}
+			set
+			{
+				if ((this._DSCategoryDesc != value))
+				{
+					this._DSCategoryDesc = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDSCategory")]
+	public partial class vAppDSCategory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _DSCategoryId;
+		
+		private string _DSCategoryName;
+		
+		private string _DSCategoryDesc;
+		
+		private System.Nullable<int> _DSCategoryParent;
+		
+		private string _DSCategoryParentName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDSCategoryIdChanging(int value);
+    partial void OnDSCategoryIdChanged();
+    partial void OnDSCategoryNameChanging(string value);
+    partial void OnDSCategoryNameChanged();
+    partial void OnDSCategoryDescChanging(string value);
+    partial void OnDSCategoryDescChanged();
+    partial void OnDSCategoryParentChanging(System.Nullable<int> value);
+    partial void OnDSCategoryParentChanged();
+    partial void OnDSCategoryParentNameChanging(string value);
+    partial void OnDSCategoryParentNameChanged();
+    #endregion
+		
+		public vAppDSCategory()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int DSCategoryId
+		{
+			get
+			{
+				return this._DSCategoryId;
+			}
+			set
+			{
+				if ((this._DSCategoryId != value))
+				{
+					this.OnDSCategoryIdChanging(value);
+					this.SendPropertyChanging();
+					this._DSCategoryId = value;
+					this.SendPropertyChanged("DSCategoryId");
+					this.OnDSCategoryIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryName", DbType="NVarChar(50)")]
+		public string DSCategoryName
+		{
+			get
+			{
+				return this._DSCategoryName;
+			}
+			set
+			{
+				if ((this._DSCategoryName != value))
+				{
+					this.OnDSCategoryNameChanging(value);
+					this.SendPropertyChanging();
+					this._DSCategoryName = value;
+					this.SendPropertyChanged("DSCategoryName");
+					this.OnDSCategoryNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryDesc", DbType="NVarChar(255)")]
+		public string DSCategoryDesc
+		{
+			get
+			{
+				return this._DSCategoryDesc;
+			}
+			set
+			{
+				if ((this._DSCategoryDesc != value))
+				{
+					this.OnDSCategoryDescChanging(value);
+					this.SendPropertyChanging();
+					this._DSCategoryDesc = value;
+					this.SendPropertyChanged("DSCategoryDesc");
+					this.OnDSCategoryDescChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryParent", DbType="Int")]
+		public System.Nullable<int> DSCategoryParent
+		{
+			get
+			{
+				return this._DSCategoryParent;
+			}
+			set
+			{
+				if ((this._DSCategoryParent != value))
+				{
+					this.OnDSCategoryParentChanging(value);
+					this.SendPropertyChanging();
+					this._DSCategoryParent = value;
+					this.SendPropertyChanged("DSCategoryParent");
+					this.OnDSCategoryParentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryParentName", DbType="NVarChar(50)")]
+		public string DSCategoryParentName
+		{
+			get
+			{
+				return this._DSCategoryParentName;
+			}
+			set
+			{
+				if ((this._DSCategoryParentName != value))
+				{
+					this.OnDSCategoryParentNameChanging(value);
+					this.SendPropertyChanging();
+					this._DSCategoryParentName = value;
+					this.SendPropertyChanged("DSCategoryParentName");
+					this.OnDSCategoryParentNameChanged();
 				}
 			}
 		}

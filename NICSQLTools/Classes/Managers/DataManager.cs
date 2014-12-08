@@ -324,7 +324,7 @@ namespace NICSQLTools.Classes.Managers
             using (NICSQLTools.Data.dsDataTableAdapters.AppDependenceFileTableAdapter adpQry = new Data.dsDataTableAdapters.AppDependenceFileTableAdapter())
             {
                 NICSQLTools.Data.dsData.AppDependenceFileDataTable RequiredFilesTbl = new Data.dsData.AppDependenceFileDataTable();
-                adpQry.Fill(RequiredFilesTbl);
+                adpQry.FillByLiteData(RequiredFilesTbl);
                 Dictionary<string, int> AppFiles = GetCurrentAssemblyFiles();
                 foreach (KeyValuePair<string, int> item in AppFiles)
                 {

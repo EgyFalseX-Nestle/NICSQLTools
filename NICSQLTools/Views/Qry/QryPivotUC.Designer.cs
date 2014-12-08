@@ -86,6 +86,7 @@
             this.appDatasourceLayoutTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceLayoutTableAdapter();
             this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
             this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).BeginInit();
@@ -431,6 +432,7 @@
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDatasourceName,
+            this.gridColumn1,
             this.colAppDatasourceTypeId,
             this.colDesc,
             this.colDateIn,
@@ -460,7 +462,7 @@
             this.colAppDatasourceTypeId.FieldName = "AppDatasourceTypeName";
             this.colAppDatasourceTypeId.Name = "colAppDatasourceTypeId";
             this.colAppDatasourceTypeId.Visible = true;
-            this.colAppDatasourceTypeId.VisibleIndex = 1;
+            this.colAppDatasourceTypeId.VisibleIndex = 2;
             this.colAppDatasourceTypeId.Width = 92;
             // 
             // colDesc
@@ -470,7 +472,7 @@
             this.colDesc.FieldName = "Desc";
             this.colDesc.Name = "colDesc";
             this.colDesc.Visible = true;
-            this.colDesc.VisibleIndex = 2;
+            this.colDesc.VisibleIndex = 3;
             // 
             // colDateIn
             // 
@@ -479,7 +481,7 @@
             this.colDateIn.FieldName = "DateIn";
             this.colDateIn.Name = "colDateIn";
             this.colDateIn.Visible = true;
-            this.colDateIn.VisibleIndex = 3;
+            this.colDateIn.VisibleIndex = 4;
             // 
             // colUserIn
             // 
@@ -487,7 +489,7 @@
             this.colUserIn.FieldName = "RealName";
             this.colUserIn.Name = "colUserIn";
             this.colUserIn.Visible = true;
-            this.colUserIn.VisibleIndex = 4;
+            this.colUserIn.VisibleIndex = 5;
             // 
             // layoutControlGroup1
             // 
@@ -761,6 +763,15 @@
             // 
             this.appDashboardDSPramTableAdapter.ClearBeforeFill = true;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Category Name";
+            this.gridColumn1.FieldName = "DSCategoryName";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 105;
+            // 
             // QryPivotUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -868,5 +879,6 @@
         private DevExpress.XtraEditors.SimpleButton btnExportPivot;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

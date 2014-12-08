@@ -176,19 +176,6 @@
       <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vAppDatasource_LUE" Member="vAppDatasource_LUEs">
-    <Type Name="vAppDatasource_LUE">
-      <Column Name="DatasourceID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AppDatasourceTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.vAppDatasourceLayout_LUE" Member="vAppDatasourceLayout_LUEs">
     <Type Name="vAppDatasourceLayout_LUE">
       <Column Name="DatasourceLayoutId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -207,6 +194,31 @@
     <Type Name="AppDatasourceType_LUE">
       <Column Name="AppDatasourceTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vAppDatasource_LUE" Member="vAppDatasource_LUEs">
+    <Type Name="vAppDatasource_LUE">
+      <Column Name="DatasourceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AppDatasourceTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DSCategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSCategoryDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vAppDSCategory" Member="vAppDSCategories">
+    <Type Name="vAppDSCategory">
+      <Column Name="DSCategoryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DSCategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DSCategoryDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DSCategoryParent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DSCategoryParentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

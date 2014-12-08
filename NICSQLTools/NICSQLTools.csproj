@@ -245,6 +245,12 @@
     <Compile Include="Views\Dashboard\DashboardOpenDlg.Designer.cs">
       <DependentUpon>DashboardOpenDlg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Data\AppDSCategoryUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\AppDSCategoryUC.Designer.cs">
+      <DependentUpon>AppDSCategoryUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Main\ChooseSaveNameDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,6 +424,9 @@
     <Compile Include="Views\Qry\QryPivotUC.Designer.cs">
       <DependentUpon>QryPivotUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TestFrm.resx">
+      <DependentUpon>TestFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\AppDatasourceParamUC.resx">
       <DependentUpon>AppDatasourceParamUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\DashboardOpenDlg.resx">
       <DependentUpon>DashboardOpenDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\AppDSCategoryUC.resx">
+      <DependentUpon>AppDSCategoryUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Main\ChooseSaveNameDlg.resx">
       <DependentUpon>ChooseSaveNameDlg.cs</DependentUpon>
@@ -490,9 +502,6 @@
     <None Include="Data\Linq\dsLinqData.dbml.layout">
       <DependentUpon>dsLinqData.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="TestFrm.resx">
-      <DependentUpon>TestFrm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\CustomerEditorUC.resx">
       <DependentUpon>CustomerEditorUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -584,6 +593,10 @@
   <ItemGroup>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\AppDSCategory128.png" />
+    <None Include="Resources\AppDSCategory64.png" />
+    <None Include="Resources\up_32x32.png" />
+    <None Include="Resources\up_16x16.png" />
     <None Include="Resources\ide_32x32.png" />
     <None Include="Resources\pictureshapefillcolor_32x32.png" />
     <None Include="Resources\additem_16x16.png" />

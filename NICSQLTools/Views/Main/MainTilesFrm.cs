@@ -82,8 +82,8 @@ namespace NICSQLTools.Views.Main
         #region -   EventWhnd   -
         private void MainTilesFrm_Load(object sender, EventArgs e)
         {
+            //new TestFrm().ShowDialog();
             LoadLayout();
-
         }
         private void windowsUIView_QueryControl(object sender, QueryControlEventArgs e)
         {
@@ -92,23 +92,11 @@ namespace NICSQLTools.Views.Main
                 return;
             if (e.Document == docLogin)
             {
-                e.Control = new Views.Main.LoginUC();
+                e.Control = new LoginUC();
             }
             else if (e.Document == docUserSetting)
             {
-                e.Control = new Views.Main.UserSettingsUC();
-            }
-            else if (e.Document == docEditorsRoutes)
-            {
-                e.Control = new Views.Data.RouteEditorUC(Classes.Managers.UserManager.defaultInstance.RuleElementInformation(docDashboardDesigner.ControlName));
-            }
-            else if (e.Document == docEditorsProducts)
-            {
-                e.Control = new Views.Data.ProductEditorUC(RuleElemet);
-            }
-            else if (e.Document == docEditorsCustomers)
-            {
-                e.Control = new Views.Data.CustomerEditorUC(RuleElemet);
+                e.Control = new UserSettingsUC();
             }
 
             else if (e.Document == docRuleUser)//----------------------- Rules
@@ -146,7 +134,24 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Dashboard.DashboardViewerUC();
             }
-            else if (e.Document == docAppDatasource)//------------------------  Editors
+
+            else if (e.Document == docEditorsRoutes)//------------------------  Editors
+            {
+                e.Control = new Views.Data.RouteEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsProducts)
+            {
+                e.Control = new Views.Data.ProductEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsCustomers)
+            {
+                e.Control = new Views.Data.CustomerEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsAppDSCategory)
+            {
+                e.Control = new Views.Data.AppDSCategoryUC(RuleElemet);
+            }
+            else if (e.Document == docAppDatasource)
             {
                 e.Control = new Views.Data.AppDatasourceUC(RuleElemet);
             }

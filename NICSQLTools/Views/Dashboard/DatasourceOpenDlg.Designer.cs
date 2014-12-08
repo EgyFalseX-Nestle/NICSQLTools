@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnSelect = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -40,8 +41,9 @@
             this.repositoryItemDateEditDateIn = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
-            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.colDSCategoryName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
@@ -49,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMain
@@ -71,11 +72,17 @@
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
+            // LSMSDatasource
+            // 
+            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
+            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
+            // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumnSelect,
             this.colDatasourceName,
+            this.colDSCategoryName,
             this.colDesc,
             this.colUserIn,
             this.colDateIn});
@@ -138,7 +145,7 @@
             this.colDesc.FieldName = "Desc";
             this.colDesc.Name = "colDesc";
             this.colDesc.Visible = true;
-            this.colDesc.VisibleIndex = 2;
+            this.colDesc.VisibleIndex = 3;
             this.colDesc.Width = 81;
             // 
             // repositoryItemMemoExEditDesc
@@ -159,7 +166,7 @@
             this.colUserIn.FieldName = "RealName";
             this.colUserIn.Name = "colUserIn";
             this.colUserIn.Visible = true;
-            this.colUserIn.VisibleIndex = 3;
+            this.colUserIn.VisibleIndex = 4;
             this.colUserIn.Width = 120;
             // 
             // colDateIn
@@ -174,7 +181,7 @@
             this.colDateIn.FieldName = "DateIn";
             this.colDateIn.Name = "colDateIn";
             this.colDateIn.Visible = true;
-            this.colDateIn.VisibleIndex = 4;
+            this.colDateIn.VisibleIndex = 5;
             this.colDateIn.Width = 126;
             // 
             // repositoryItemDateEditDateIn
@@ -212,10 +219,17 @@
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // LSMSDatasource
+            // colDSCategoryName
             // 
-            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
-            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
+            this.colDSCategoryName.AppearanceCell.Options.UseTextOptions = true;
+            this.colDSCategoryName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDSCategoryName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDSCategoryName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDSCategoryName.FieldName = "DSCategoryName";
+            this.colDSCategoryName.Name = "colDSCategoryName";
+            this.colDSCategoryName.Visible = true;
+            this.colDSCategoryName.VisibleIndex = 2;
+            this.colDSCategoryName.Width = 121;
             // 
             // DatasourceOpenDlg
             // 
@@ -234,6 +248,7 @@
             this.Text = "Open Data Sources";
             this.Load += new System.EventHandler(this.DashboardOpenDlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
@@ -241,7 +256,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,5 +275,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDesc;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditDesc;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDatasource;
+        private DevExpress.XtraGrid.Columns.GridColumn colDSCategoryName;
     }
 }

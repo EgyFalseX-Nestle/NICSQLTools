@@ -15,11 +15,11 @@ using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Main
 {
-    public partial class LoginUC : DevExpress.XtraEditors.XtraUserControl
+    public partial class LoginUC : XtraUserControl
     {
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(LoginUC));
-        
-        private string LoginInfoFileName = Application.StartupPath + "\\loginInfo";
+
+        private readonly string LoginInfoFileName = Application.StartupPath + "\\loginInfo";
         public LoginUC()
         {
             InitializeComponent();
@@ -48,12 +48,12 @@ namespace NICSQLTools.Views.Main
             if (FXFW.SqlDB.IsNullOrEmpty(tbUsername.EditValue) || FXFW.SqlDB.IsNullOrEmpty(tbPassword.EditValue))
                 return;
 
-            MainTilesFrm _parent = (MainTilesFrm)this.ParentForm;
-            if (Classes.Managers.UserManager.defaultInstance.Login(tbUsername.EditValue.ToString(), tbPassword.EditValue.ToString()))
+            MainTilesFrm _parent = (MainTilesFrm)ParentForm;
+            if (UserManager.defaultInstance.Login(tbUsername.EditValue.ToString(), tbPassword.EditValue.ToString()))
             {
                 SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormCaption("Updating .......");
                 DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());// Perform Update Client If Exists
-                if (Classes.Managers.UserManager.defaultInstance.User.UserId == 1)
+                if (UserManager.defaultInstance.User.UserId == 1)
                 {
                     Dictionary<string, int> UploadFiles = DataManager.GetUploadDependanceies();
                     if (UploadFiles.Count > 0)
@@ -68,7 +68,7 @@ namespace NICSQLTools.Views.Main
                 _parent.ActivateRules();
                 _parent.LoadLayout();
                 _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);
-                
+
             }
             else
             {
@@ -77,8 +77,7 @@ namespace NICSQLTools.Views.Main
         }
         private void SaveLoginInfoToFile()
         {
-            FileStream fs;
-            fs = File.Open(LoginInfoFileName, FileMode.Create, FileAccess.Write);
+            FileStream fs = File.Open(LoginInfoFileName, FileMode.Create, FileAccess.Write);
             byte[] buff = Encoding.Default.GetBytes(tbUsername.EditValue.ToString());
 
             fs.Write(buff, 0, buff.Length);

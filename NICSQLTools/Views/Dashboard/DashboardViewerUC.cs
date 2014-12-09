@@ -105,6 +105,15 @@ namespace NICSQLTools.Views.Dashboard
                 case "@SalesDistrict2":
                     ctr = CreateLookupeditForSalesDistrict2();
                     break;
+                case "@Materials":
+                    ctr = CreateLookupeditForMaterial();
+                    break;
+                case "@Base_Product":
+                    ctr = CreateLookupeditForBaseProduct();
+                    break;
+                case "@Base_Group":
+                    ctr = CreateLookupeditForBaseGroup();
+                    break;
                 default:// if param have not datasource
                     switch (ParamType.ToLower())
                     {
@@ -210,6 +219,57 @@ namespace NICSQLTools.Views.Dashboard
             ccbe.Properties.ValueMember = "Sales District 2";
             //ccbe.Size = new Size(100, 20);
             //ccbe.TabIndex = 2;
+
+            return ccbe;
+        }
+        private CheckedComboBoxEdit CreateLookupeditForMaterial()
+        {
+            NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
+            DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
+            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Material_Number]";
+            lsms.QueryableSource = from q in ds.vAppProductDetails select q;
+
+            CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
+            ccbe.Properties.AllowMultiSelect = true;
+            ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            ccbe.Properties.DataSource = lsms;
+            ccbe.Properties.DisplayMember = "Material_Number";
+            ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            ccbe.Properties.ValueMember = "Material_Number";
+
+            return ccbe;
+        }
+        private CheckedComboBoxEdit CreateLookupeditForBaseProduct()
+        {
+            NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
+            DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
+            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Base_Base_Product]";
+            lsms.QueryableSource = from q in ds.vAppProductDetails group q by q.Base_Base_Product into g select new { Base_Base_Product = g.Key };
+
+            CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
+            ccbe.Properties.AllowMultiSelect = true;
+            ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            ccbe.Properties.DataSource = lsms;
+            ccbe.Properties.DisplayMember = "Base_Base_Product";
+            ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            ccbe.Properties.ValueMember = "Base_Base_Product";
+
+            return ccbe;
+        }
+        private CheckedComboBoxEdit CreateLookupeditForBaseGroup()
+        {
+            NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
+            DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
+            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Base_Group]";
+            lsms.QueryableSource = from q in ds.vAppProductDetails group q by q.Base_Group into g select new { Base_Group = g.Key };
+
+            CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
+            ccbe.Properties.AllowMultiSelect = true;
+            ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            ccbe.Properties.DataSource = lsms;
+            ccbe.Properties.DisplayMember = "Base_Group";
+            ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            ccbe.Properties.ValueMember = "Base_Group";
 
             return ccbe;
         }

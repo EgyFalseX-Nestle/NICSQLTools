@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NICSQLTools</RootNamespace>
     <AssemblyName>NICSQLTools</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -40,7 +41,7 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Releases\</OutputPath>
@@ -251,6 +252,12 @@
     <Compile Include="Views\Data\AppDSCategoryUC.Designer.cs">
       <DependentUpon>AppDSCategoryUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Data\AppDatasourceUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\AppDatasourceUC.Designer.cs">
+      <DependentUpon>AppDatasourceUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Main\ChooseSaveNameDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,12 +276,6 @@
     </Compile>
     <Compile Include="Views\Data\CustomerEditorUC.Designer.cs">
       <DependentUpon>CustomerEditorUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Data\AppDatasourceUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Data\AppDatasourceUC.Designer.cs">
-      <DependentUpon>AppDatasourceUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\TargetNCEEditorUC.cs">
       <SubType>UserControl</SubType>
@@ -442,14 +443,14 @@
     <EmbeddedResource Include="Views\Data\AppDSCategoryUC.resx">
       <DependentUpon>AppDSCategoryUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\AppDatasourceUC.resx">
+      <DependentUpon>AppDatasourceUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Main\ChooseSaveNameDlg.resx">
       <DependentUpon>ChooseSaveNameDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\DashboardViewerUC.resx">
       <DependentUpon>DashboardViewerUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\AppDatasourceUC.resx">
-      <DependentUpon>AppDatasourceUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\TargetNCEEditorUC.resx">
       <DependentUpon>TargetNCEEditorUC.cs</DependentUpon>
@@ -593,6 +594,9 @@
   <ItemGroup>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\next_32x32.png" />
+    <None Include="Resources\snaptocells_16x16.png" />
+    <None Include="Resources\publicfix_16x16.png" />
     <None Include="Resources\AppDSCategory128.png" />
     <None Include="Resources\AppDSCategory64.png" />
     <None Include="Resources\up_32x32.png" />

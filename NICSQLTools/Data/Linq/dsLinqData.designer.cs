@@ -57,6 +57,9 @@ namespace NICSQLTools.Data.Linq
     partial void InsertvAppDSCategory(vAppDSCategory instance);
     partial void UpdatevAppDSCategory(vAppDSCategory instance);
     partial void DeletevAppDSCategory(vAppDSCategory instance);
+    partial void InsertvAppProductDetail(vAppProductDetail instance);
+    partial void UpdatevAppProductDetail(vAppProductDetail instance);
+    partial void DeletevAppProductDetail(vAppProductDetail instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -174,6 +177,14 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<vAppDSCategory>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vAppProductDetail> vAppProductDetails
+		{
+			get
+			{
+				return this.GetTable<vAppProductDetail>();
 			}
 		}
 	}
@@ -4029,6 +4040,140 @@ namespace NICSQLTools.Data.Linq
 					this._DSCategoryParentName = value;
 					this.SendPropertyChanged("DSCategoryParentName");
 					this.OnDSCategoryParentNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppProductDetails")]
+	public partial class vAppProductDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private double _Material_Number;
+		
+		private string _Material_Name;
+		
+		private string _Base_Base_Product;
+		
+		private string _Base_Group;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaterial_NumberChanging(double value);
+    partial void OnMaterial_NumberChanged();
+    partial void OnMaterial_NameChanging(string value);
+    partial void OnMaterial_NameChanged();
+    partial void OnBase_Base_ProductChanging(string value);
+    partial void OnBase_Base_ProductChanged();
+    partial void OnBase_GroupChanging(string value);
+    partial void OnBase_GroupChanged();
+    #endregion
+		
+		public vAppProductDetail()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Material Number]", Storage="_Material_Number", DbType="Float NOT NULL", IsPrimaryKey=true)]
+		public double Material_Number
+		{
+			get
+			{
+				return this._Material_Number;
+			}
+			set
+			{
+				if ((this._Material_Number != value))
+				{
+					this.OnMaterial_NumberChanging(value);
+					this.SendPropertyChanging();
+					this._Material_Number = value;
+					this.SendPropertyChanged("Material_Number");
+					this.OnMaterial_NumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Material Name]", Storage="_Material_Name", DbType="NVarChar(255)")]
+		public string Material_Name
+		{
+			get
+			{
+				return this._Material_Name;
+			}
+			set
+			{
+				if ((this._Material_Name != value))
+				{
+					this.OnMaterial_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Material_Name = value;
+					this.SendPropertyChanged("Material_Name");
+					this.OnMaterial_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Base Base Product]", Storage="_Base_Base_Product", DbType="NVarChar(255)")]
+		public string Base_Base_Product
+		{
+			get
+			{
+				return this._Base_Base_Product;
+			}
+			set
+			{
+				if ((this._Base_Base_Product != value))
+				{
+					this.OnBase_Base_ProductChanging(value);
+					this.SendPropertyChanging();
+					this._Base_Base_Product = value;
+					this.SendPropertyChanged("Base_Base_Product");
+					this.OnBase_Base_ProductChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Base Group]", Storage="_Base_Group", DbType="NVarChar(255)")]
+		public string Base_Group
+		{
+			get
+			{
+				return this._Base_Group;
+			}
+			set
+			{
+				if ((this._Base_Group != value))
+				{
+					this.OnBase_GroupChanging(value);
+					this.SendPropertyChanging();
+					this._Base_Group = value;
+					this.SendPropertyChanged("Base_Group");
+					this.OnBase_GroupChanged();
 				}
 			}
 		}

@@ -84,19 +84,11 @@ namespace NICSQLTools.Data {
         
         private global::System.Data.DataRelation relationFK_UserRole_Users;
         
-        private global::System.Data.DataRelation relationAppDatasource_AppDatasourceParam;
-        
-        private global::System.Data.DataRelation relationAppUsers_AppDatasource;
-        
         private global::System.Data.DataRelation relationAppUsers_AppDashboardSchema;
         
         private global::System.Data.DataRelation relationAppUsers_AppDatasourceParam;
         
         private global::System.Data.DataRelation relationAppUsers_AppDatasourceLayout;
-        
-        private global::System.Data.DataRelation relationFK_AppDatasourceLayout_DatasourceID;
-        
-        private global::System.Data.DataRelation relationFK_AppDatasource_AppDatasourceTypeId;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -841,13 +833,9 @@ namespace NICSQLTools.Data {
             this.relationFK_AppRole_Roles = this.Relations["FK_AppRole_Roles"];
             this.relationFK_UserRole_Roles = this.Relations["FK_UserRole_Roles"];
             this.relationFK_UserRole_Users = this.Relations["FK_UserRole_Users"];
-            this.relationAppDatasource_AppDatasourceParam = this.Relations["AppDatasource_AppDatasourceParam"];
-            this.relationAppUsers_AppDatasource = this.Relations["AppUsers_AppDatasource"];
             this.relationAppUsers_AppDashboardSchema = this.Relations["AppUsers_AppDashboardSchema"];
             this.relationAppUsers_AppDatasourceParam = this.Relations["AppUsers_AppDatasourceParam"];
             this.relationAppUsers_AppDatasourceLayout = this.Relations["AppUsers_AppDatasourceLayout"];
-            this.relationFK_AppDatasourceLayout_DatasourceID = this.Relations["FK_AppDatasourceLayout_DatasourceID"];
-            this.relationFK_AppDatasource_AppDatasourceTypeId = this.Relations["FK_AppDatasource_AppDatasourceTypeId"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -924,14 +912,6 @@ namespace NICSQLTools.Data {
                         this.tableAppUsers.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableAppUserRule.UserIdColumn}, false);
             this.Relations.Add(this.relationFK_UserRole_Users);
-            this.relationAppDatasource_AppDatasourceParam = new global::System.Data.DataRelation("AppDatasource_AppDatasourceParam", new global::System.Data.DataColumn[] {
-                        this.tableAppDatasource.DatasourceIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAppDatasourceParam.DatasourceIDColumn}, false);
-            this.Relations.Add(this.relationAppDatasource_AppDatasourceParam);
-            this.relationAppUsers_AppDatasource = new global::System.Data.DataRelation("AppUsers_AppDatasource", new global::System.Data.DataColumn[] {
-                        this.tableAppUsers.UserIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAppDatasource.UserInColumn}, false);
-            this.Relations.Add(this.relationAppUsers_AppDatasource);
             this.relationAppUsers_AppDashboardSchema = new global::System.Data.DataRelation("AppUsers_AppDashboardSchema", new global::System.Data.DataColumn[] {
                         this.tableAppUsers.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableAppDashboardSchema.UserInColumn}, false);
@@ -944,14 +924,6 @@ namespace NICSQLTools.Data {
                         this.tableAppUsers.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableAppDatasourceLayout.UserInColumn}, false);
             this.Relations.Add(this.relationAppUsers_AppDatasourceLayout);
-            this.relationFK_AppDatasourceLayout_DatasourceID = new global::System.Data.DataRelation("FK_AppDatasourceLayout_DatasourceID", new global::System.Data.DataColumn[] {
-                        this.tableAppDatasource.DatasourceIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAppDatasourceLayout.DatasourceIDColumn}, false);
-            this.Relations.Add(this.relationFK_AppDatasourceLayout_DatasourceID);
-            this.relationFK_AppDatasource_AppDatasourceTypeId = new global::System.Data.DataRelation("FK_AppDatasource_AppDatasourceTypeId", new global::System.Data.DataColumn[] {
-                        this.tableAppDatasourceType.AppDatasourceTypeIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAppDatasource.AppDatasourceTypeIdColumn}, false);
-            this.Relations.Add(this.relationFK_AppDatasource_AppDatasourceTypeId);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9359,23 +9331,17 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceRow AddAppDatasourceRow(string DatasourceName, string DatasourceSPName, string Desc, AppUsersRow parentAppUsersRowByAppUsers_AppDatasource, System.DateTime DateIn, AppDatasourceTypeRow parentAppDatasourceTypeRowByFK_AppDatasource_AppDatasourceTypeId, int DSCategoryId) {
+            public AppDatasourceRow AddAppDatasourceRow(string DatasourceName, string DatasourceSPName, string Desc, int UserIn, System.DateTime DateIn, int AppDatasourceTypeId, int DSCategoryId) {
                 AppDatasourceRow rowAppDatasourceRow = ((AppDatasourceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         DatasourceName,
                         DatasourceSPName,
                         Desc,
-                        null,
+                        UserIn,
                         DateIn,
-                        null,
+                        AppDatasourceTypeId,
                         DSCategoryId};
-                if ((parentAppUsersRowByAppUsers_AppDatasource != null)) {
-                    columnValuesArray[4] = parentAppUsersRowByAppUsers_AppDatasource[0];
-                }
-                if ((parentAppDatasourceTypeRowByFK_AppDatasource_AppDatasourceTypeId != null)) {
-                    columnValuesArray[6] = parentAppDatasourceTypeRowByFK_AppDatasource_AppDatasourceTypeId[0];
-                }
                 rowAppDatasourceRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAppDatasourceRow);
                 return rowAppDatasourceRow;
@@ -10030,18 +9996,15 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceParamRow AddAppDatasourceParamRow(AppDatasourceRow parentAppDatasourceRowByAppDatasource_AppDatasourceParam, AppUsersRow parentAppUsersRowByAppUsers_AppDatasourceParam, System.DateTime DateIn, string ParamName, string ParamDisplayName) {
+            public AppDatasourceParamRow AddAppDatasourceParamRow(int DatasourceID, AppUsersRow parentAppUsersRowByAppUsers_AppDatasourceParam, System.DateTime DateIn, string ParamName, string ParamDisplayName) {
                 AppDatasourceParamRow rowAppDatasourceParamRow = ((AppDatasourceParamRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        DatasourceID,
                         null,
                         DateIn,
                         null,
                         ParamName,
                         ParamDisplayName};
-                if ((parentAppDatasourceRowByAppDatasource_AppDatasourceParam != null)) {
-                    columnValuesArray[0] = parentAppDatasourceRowByAppDatasource_AppDatasourceParam[0];
-                }
                 if ((parentAppUsersRowByAppUsers_AppDatasourceParam != null)) {
                     columnValuesArray[1] = parentAppUsersRowByAppUsers_AppDatasourceParam[0];
                 }
@@ -10934,18 +10897,15 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceLayoutRow AddAppDatasourceLayoutRow(AppDatasourceRow parentAppDatasourceRowByFK_AppDatasourceLayout_DatasourceID, string DatasourceLayoutName, byte[] DatasourceLayoutData, AppUsersRow parentAppUsersRowByAppUsers_AppDatasourceLayout, System.DateTime DateIn) {
+            public AppDatasourceLayoutRow AddAppDatasourceLayoutRow(int DatasourceID, string DatasourceLayoutName, byte[] DatasourceLayoutData, AppUsersRow parentAppUsersRowByAppUsers_AppDatasourceLayout, System.DateTime DateIn) {
                 AppDatasourceLayoutRow rowAppDatasourceLayoutRow = ((AppDatasourceLayoutRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null,
+                        DatasourceID,
                         DatasourceLayoutName,
                         DatasourceLayoutData,
                         null,
                         DateIn};
-                if ((parentAppDatasourceRowByFK_AppDatasourceLayout_DatasourceID != null)) {
-                    columnValuesArray[1] = parentAppDatasourceRowByFK_AppDatasourceLayout_DatasourceID[0];
-                }
                 if ((parentAppUsersRowByAppUsers_AppDatasourceLayout != null)) {
                     columnValuesArray[4] = parentAppUsersRowByAppUsers_AppDatasourceLayout[0];
                 }
@@ -18102,17 +18062,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceRow[] GetAppDatasourceRows() {
-                if ((this.Table.ChildRelations["AppUsers_AppDatasource"] == null)) {
-                    return new AppDatasourceRow[0];
-                }
-                else {
-                    return ((AppDatasourceRow[])(base.GetChildRows(this.Table.ChildRelations["AppUsers_AppDatasource"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AppDashboardSchemaRow[] GetAppDashboardSchemaRows() {
                 if ((this.Table.ChildRelations["AppUsers_AppDashboardSchema"] == null)) {
                     return new AppDashboardSchemaRow[0];
@@ -18343,28 +18292,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppUsersRow AppUsersRow {
-                get {
-                    return ((AppUsersRow)(this.GetParentRow(this.Table.ParentRelations["AppUsers_AppDatasource"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["AppUsers_AppDatasource"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceTypeRow AppDatasourceTypeRow {
-                get {
-                    return ((AppDatasourceTypeRow)(this.GetParentRow(this.Table.ParentRelations["FK_AppDatasource_AppDatasourceTypeId"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_AppDatasource_AppDatasourceTypeId"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDatasourceNameNull() {
                 return this.IsNull(this.tableAppDatasource.DatasourceNameColumn);
             }
@@ -18445,28 +18372,6 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDSCategoryIdNull() {
                 this[this.tableAppDatasource.DSCategoryIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceParamRow[] GetAppDatasourceParamRows() {
-                if ((this.Table.ChildRelations["AppDatasource_AppDatasourceParam"] == null)) {
-                    return new AppDatasourceParamRow[0];
-                }
-                else {
-                    return ((AppDatasourceParamRow[])(base.GetChildRows(this.Table.ChildRelations["AppDatasource_AppDatasourceParam"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceLayoutRow[] GetAppDatasourceLayoutRows() {
-                if ((this.Table.ChildRelations["FK_AppDatasourceLayout_DatasourceID"] == null)) {
-                    return new AppDatasourceLayoutRow[0];
-                }
-                else {
-                    return ((AppDatasourceLayoutRow[])(base.GetChildRows(this.Table.ChildRelations["FK_AppDatasourceLayout_DatasourceID"])));
-                }
             }
         }
         
@@ -18728,17 +18633,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceRow AppDatasourceRow {
-                get {
-                    return ((AppDatasourceRow)(this.GetParentRow(this.Table.ParentRelations["AppDatasource_AppDatasourceParam"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["AppDatasource_AppDatasourceParam"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AppUsersRow AppUsersRow {
                 get {
                     return ((AppUsersRow)(this.GetParentRow(this.Table.ParentRelations["AppUsers_AppDatasourceParam"])));
@@ -18944,17 +18838,6 @@ namespace NICSQLTools.Data {
             public void SetAppDatasourceTypeNameNull() {
                 this[this.tableAppDatasourceType.AppDatasourceTypeNameColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceRow[] GetAppDatasourceRows() {
-                if ((this.Table.ChildRelations["FK_AppDatasource_AppDatasourceTypeId"] == null)) {
-                    return new AppDatasourceRow[0];
-                }
-                else {
-                    return ((AppDatasourceRow[])(base.GetChildRows(this.Table.ChildRelations["FK_AppDatasource_AppDatasourceTypeId"])));
-                }
-            }
         }
         
         /// <summary>
@@ -19072,17 +18955,6 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["AppUsers_AppDatasourceLayout"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppDatasourceRow AppDatasourceRow {
-                get {
-                    return ((AppDatasourceRow)(this.GetParentRow(this.Table.ParentRelations["FK_AppDatasourceLayout_DatasourceID"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_AppDatasourceLayout_DatasourceID"]);
                 }
             }
             
@@ -30559,7 +30431,7 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[4];
+            this._commandCollection = new global::System.Data.IDbCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "SELECT        AppData\r\nFROM            AppOptions";
@@ -30579,6 +30451,21 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Connection = new global::System.Data.SqlClient.SqlConnection(global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandText = "SELECT        GETDATE() AS Expr1";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Connection = new global::System.Data.SqlClient.SqlConnection(global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandText = "UPDATE       AppUsers\r\nSET                UserName = @UserName, UserPass = @UserP" +
+                "ass\r\nWHERE        (UserID = @UserID)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserPass", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserPass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Connection = new global::System.Data.SqlClient.SqlConnection(global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandText = "SELECT        UserID\r\nFROM            AppUsers\r\nWHERE        (UserID = @UserID) A" +
+                "ND (UserPass = @UserPass)";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandType = global::System.Data.CommandType.Text;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserPass", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UserPass", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -30697,6 +30584,77 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
             }
             else {
                 return new global::System.Nullable<global::System.DateTime>(((global::System.DateTime)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int ChangeLoginInfo(string UserName, string UserPass, int UserID) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[4]));
+            if ((UserName == null)) {
+                throw new global::System.ArgumentNullException("UserName");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(UserName));
+            }
+            if ((UserPass == null)) {
+                throw new global::System.ArgumentNullException("UserPass");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(UserPass));
+            }
+            command.Parameters[2].Value = ((int)(UserID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> CheckCurrentPassword(int UserID, string UserPass) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[5]));
+            command.Parameters[0].Value = ((int)(UserID));
+            if ((UserPass == null)) {
+                throw new global::System.ArgumentNullException("UserPass");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(UserPass));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
             }
         }
     }
@@ -31231,30 +31189,12 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(dsData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._appDatasourceTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AppDatasourceType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._appDatasourceTypeTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._appUsersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.AppUsers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._appUsersTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._appDatasourceTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._appDatasourceTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -31285,6 +31225,15 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._appDatasourceTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AppDatasourceType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._appDatasourceTypeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._appDependenceFileTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.AppDependenceFile.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -31309,6 +31258,15 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._appDashboardSchemaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._appDatasourceTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._appDatasourceTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -31421,27 +31379,11 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(dsData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._appDatasourceTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AppDatasourceType.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._appDatasourceTypeTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._appUsersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.AppUsers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._appUsersTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._appDatasourceTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._appDatasourceTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -31469,6 +31411,14 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._appDatasourceTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AppDatasourceType.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._appDatasourceTypeTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._appDependenceFileTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.AppDependenceFile.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -31490,6 +31440,14 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._appDashboardSchemaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._appDatasourceTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._appDatasourceTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -31679,6 +31637,14 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._appDatasourceTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._appDatasourceTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._appDashboardSchemaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.AppDashboardSchema.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -31700,6 +31666,14 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._appDependenceFileTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._appDatasourceTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AppDatasourceType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._appDatasourceTypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -31727,27 +31701,11 @@ SELECT DSCategoryId, DSCategoryName, DSCategoryDesc, DSCategoryParent FROM AppDS
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._appDatasourceTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._appDatasourceTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._appUsersTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.AppUsers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._appUsersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._appDatasourceTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AppDatasourceType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._appDatasourceTypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

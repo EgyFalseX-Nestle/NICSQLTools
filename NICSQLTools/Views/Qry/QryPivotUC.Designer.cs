@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.panelContainerMain = new DevExpress.XtraBars.Docking.DockPanel();
@@ -58,6 +58,7 @@
             this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAppDatasourceTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateIn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,7 +87,6 @@
             this.appDatasourceLayoutTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceLayoutTableAdapter();
             this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
             this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).BeginInit();
@@ -294,7 +294,7 @@
             this.lueLayout.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
             this.lueLayout.Properties.DataSource = this.LSMSLayout;
             this.lueLayout.Properties.DisplayMember = "DatasourceLayoutName";
             this.lueLayout.Properties.NullText = "";
@@ -408,7 +408,7 @@
             this.lueDatasource.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueDatasource.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.lueDatasource.Properties.DataSource = this.LSMSDatasource;
             this.lueDatasource.Properties.DisplayMember = "DatasourceName";
             this.lueDatasource.Properties.NullText = "";
@@ -455,6 +455,15 @@
             this.colDatasourceName.Visible = true;
             this.colDatasourceName.VisibleIndex = 0;
             this.colDatasourceName.Width = 132;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Category Name";
+            this.gridColumn1.FieldName = "DSCategoryName";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 105;
             // 
             // colAppDatasourceTypeId
             // 
@@ -737,7 +746,9 @@
             this.pivotGridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pivotGridControlMain.Location = new System.Drawing.Point(289, 0);
             this.pivotGridControlMain.Name = "pivotGridControlMain";
+            this.pivotGridControlMain.OptionsData.DataFieldUnboundExpressionMode = DevExpress.XtraPivotGrid.DataFieldUnboundExpressionMode.UseSummaryValues;
             this.pivotGridControlMain.OptionsLayout.AddNewGroups = true;
+            this.pivotGridControlMain.OptionsLayout.Columns.RemoveOldColumns = false;
             this.pivotGridControlMain.OptionsLayout.Columns.StoreAllOptions = true;
             this.pivotGridControlMain.OptionsLayout.Columns.StoreAppearance = true;
             this.pivotGridControlMain.OptionsLayout.StoreAllOptions = true;
@@ -762,15 +773,6 @@
             // appDashboardDSPramTableAdapter
             // 
             this.appDashboardDSPramTableAdapter.ClearBeforeFill = true;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Category Name";
-            this.gridColumn1.FieldName = "DSCategoryName";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 105;
             // 
             // QryPivotUC
             // 

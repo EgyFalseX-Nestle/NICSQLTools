@@ -513,6 +513,16 @@ namespace NICSQLTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap next_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("next_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap open_16x16 {
             get {
                 object obj = ResourceManager.GetObject("open_16x16", resourceCulture);
@@ -586,6 +596,16 @@ namespace NICSQLTools.Properties {
         internal static System.Drawing.Bitmap properties_32x32 {
             get {
                 object obj = ResourceManager.GetObject("properties_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap publicfix_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("publicfix_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -836,6 +856,16 @@ namespace NICSQLTools.Properties {
         internal static System.Drawing.Bitmap saveall_32x32 {
             get {
                 object obj = ResourceManager.GetObject("saveall_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap snaptocells_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("snaptocells_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

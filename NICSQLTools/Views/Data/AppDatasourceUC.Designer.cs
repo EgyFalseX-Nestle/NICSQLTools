@@ -47,7 +47,6 @@
             this.colDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEditDesc = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
@@ -58,6 +57,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemMemoExEditMemo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
+            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
@@ -69,9 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSAppDatasourceType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,7 +191,7 @@
             // 
             this.colAppDatasourceTypeId.Caption = "Datasource Type";
             this.colAppDatasourceTypeId.ColumnEdit = this.repositoryItemLookUpEditAppDatasourceTypeId;
-            this.colAppDatasourceTypeId.FieldName = "AppDatasourceTypeId!Key";
+            this.colAppDatasourceTypeId.FieldName = "AppDatasourceTypeId";
             this.colAppDatasourceTypeId.Name = "colAppDatasourceTypeId";
             this.colAppDatasourceTypeId.Visible = true;
             this.colAppDatasourceTypeId.VisibleIndex = 3;
@@ -250,15 +250,6 @@
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
-            // 
-            // XPSCS
-            // 
-            this.XPSCS.AllowEdit = true;
-            this.XPSCS.AllowNew = true;
-            this.XPSCS.AllowRemove = true;
-            this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppDatasourceDataTable);
-            this.XPSCS.Session = this.UOW;
             // 
             // barManagerMain
             // 
@@ -348,6 +339,15 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemMemoExEditMemo.Name = "repositoryItemMemoExEditMemo";
             // 
+            // XPSCS
+            // 
+            this.XPSCS.AllowEdit = true;
+            this.XPSCS.AllowNew = true;
+            this.XPSCS.AllowRemove = true;
+            this.XPSCS.DeleteObjectOnRemove = true;
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppDatasourceDataTable);
+            this.XPSCS.Session = this.UOW;
+            // 
             // popupMenuMain
             // 
             this.popupMenuMain.Manager = this.barManagerMain;
@@ -375,9 +375,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSAppDatasourceType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
             this.ResumeLayout(false);
 

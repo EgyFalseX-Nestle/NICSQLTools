@@ -16,6 +16,21 @@ namespace NICSQLTools.Views.Main
         #region -   Functions   -
         private void AddGeneralButtions()
         {
+
+            //Minimize Button
+            DelegateAction btnMinimize = new DelegateAction(() => { return true; }, () =>
+            {
+                WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            });
+            btnMinimize.Type = ActionType.Navigation;
+            btnMinimize.Caption = "Minimize";
+            btnMinimize.Behavior = ActionBehavior.Default;
+            btnMinimize.Edge = ActionEdge.Default;
+            btnMinimize.Image = NICSQLTools.Properties.Resources.next_32x32;
+            windowsUIView.ContentContainerActions.Add(btnMinimize);
+        }
+        public void AddPrivateButtions()
+        {
             //User Setting Button
             DelegateAction btnUserSettings = new DelegateAction(() => { return true; }, () =>
             {
@@ -38,6 +53,8 @@ namespace NICSQLTools.Views.Main
             //groupsItemDetailPage = new Dictionary<SampleDataGroup, PageGroup>();
             //CreateLayout();
             AddGeneralButtions();
+
+            //new TestFrm().ShowDialog();
 
 
         }
@@ -82,7 +99,7 @@ namespace NICSQLTools.Views.Main
         #region -   EventWhnd   -
         private void MainTilesFrm_Load(object sender, EventArgs e)
         {
-            //new TestFrm().ShowDialog();
+            
             LoadLayout();
         }
         private void windowsUIView_QueryControl(object sender, QueryControlEventArgs e)

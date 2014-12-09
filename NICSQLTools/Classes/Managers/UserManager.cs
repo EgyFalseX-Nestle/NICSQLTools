@@ -108,6 +108,37 @@ namespace NICSQLTools.Classes.Managers
             }
             return output;
         }
+        
+        public bool CheckCurrentPassword(string CurrentPassword)
+        {
+            try
+            {
+                if (DataManager.adpQry.CheckCurrentPassword(User.UserId, CurrentPassword) == null)
+                    return false;
+                else
+                    return true;
+            }
+            catch (SqlException ex)
+            {
+                Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, User.UserId);
+            }
+            return false;
+        }
+        public bool ChangeLogininfo(string Username, string Password)
+        {
+            try
+            {
+                if (DataManager.adpQry.ChangeLoginInfo(Username, Password, User.UserId) > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, User.UserId);
+            }
+            return false;
+        }
         #endregion
 
     }

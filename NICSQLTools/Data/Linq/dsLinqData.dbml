@@ -221,4 +221,12 @@
       <Column Name="DSCategoryParentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.vAppProductDetails" Member="vAppProductDetails">
+    <Type Name="vAppProductDetail">
+      <Column Name="[Material Number]" Member="Material_Number" Type="System.Double" DbType="Float NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Material Name]" Member="Material_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Base Base Product]" Member="Base_Base_Product" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Base Group]" Member="Base_Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

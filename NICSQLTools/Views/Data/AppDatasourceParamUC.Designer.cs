@@ -34,6 +34,7 @@
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditDatasourceID = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAppDatasourceType = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,16 +53,15 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDatasourceID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             this.SuspendLayout();
             // 
             // UOW
@@ -92,7 +92,7 @@
             // 
             this.colDatasourceID.Caption = "Data Source";
             this.colDatasourceID.ColumnEdit = this.repositoryItemGridLookUpEditDatasourceID;
-            this.colDatasourceID.FieldName = "DatasourceID!Key";
+            this.colDatasourceID.FieldName = "DatasourceID";
             this.colDatasourceID.Name = "colDatasourceID";
             this.colDatasourceID.Visible = true;
             this.colDatasourceID.VisibleIndex = 0;
@@ -110,6 +110,11 @@
             this.repositoryItemGridLookUpEditDatasourceID.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditDatasourceID.ValueMember = "DatasourceID";
             this.repositoryItemGridLookUpEditDatasourceID.View = this.repositoryItemGridLookUpEdit1View;
+            // 
+            // LSMSDatasource
+            // 
+            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
+            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
             // 
             // repositoryItemGridLookUpEdit1View
             // 
@@ -275,11 +280,6 @@
             this.popupMenuMain.Manager = this.barManagerMain;
             this.popupMenuMain.Name = "popupMenuMain";
             // 
-            // LSMSDatasource
-            // 
-            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
-            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
-            // 
             // AppDatasourceParamUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,12 +295,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditDatasourceID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             this.ResumeLayout(false);
 
         }

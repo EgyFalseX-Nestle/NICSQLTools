@@ -82,5 +82,11 @@
         <elementListCompartment Id="808b8f04-2411-46d7-a01d-6e66cb4d36aa" absoluteBounds="8.64, 6.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="d14b8b9f-f5ec-48ee-bf3a-f9608a40d7f6" absoluteBounds="6.125, 8.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dsLinqDataDataContext/vAppProductDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ded1d3c-86a9-4bab-8158-7d9b649c186f" absoluteBounds="6.14, 9.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

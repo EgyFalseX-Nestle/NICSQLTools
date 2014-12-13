@@ -47,7 +47,6 @@
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup3 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup4 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItem galleryItem14 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup5 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup6 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup7 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
@@ -623,7 +622,7 @@
             this.ribbonControlMain.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControlMain.ShowFullScreenButton = DevExpress.Utils.DefaultBoolean.True;
             this.ribbonControlMain.Size = new System.Drawing.Size(982, 142);
-            this.ribbonControlMain.Toolbar.ItemLinks.Add(this.fileSaveBarItem1);
+            this.ribbonControlMain.Toolbar.ItemLinks.Add(this.bbiSave);
             this.ribbonControlMain.Toolbar.ItemLinks.Add(this.quickAccessUndoBarItem1);
             this.ribbonControlMain.Toolbar.ItemLinks.Add(this.quickAccessRedoBarItem1);
             this.ribbonControlMain.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Above;
@@ -1056,13 +1055,7 @@
             galleryItemGroup3.Caption = "Theme Skins";
             galleryItemGroup3.Visible = false;
             galleryItemGroup4.Caption = "Custom Skins";
-            galleryItem14.Caption = "DevExpress Design";
-            galleryItem14.Hint = "DevExpress Design";
-            galleryItem14.HoverImage = ((System.Drawing.Image)(resources.GetObject("galleryItem14.HoverImage")));
-            galleryItem14.Image = ((System.Drawing.Image)(resources.GetObject("galleryItem14.Image")));
-            galleryItem14.Tag = "DevExpress Design";
-            galleryItemGroup4.Items.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItem[] {
-            galleryItem14});
+            galleryItemGroup4.Visible = false;
             this.dashboardSkinsBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
             galleryItemGroup1,
             galleryItemGroup2,

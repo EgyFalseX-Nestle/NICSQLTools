@@ -64,12 +64,17 @@ namespace NICSQLTools.Views.Main
                 }
                 SplashScreenManager.CloseForm(false);
 
-                SaveLoginInfoToFile();// Save UserName Into File For Auto Load
-                _parent.ActivateRules();
-                _parent.LoadLayout();
-                _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);
-                _parent.AddPrivateButtions();//Add User Private Buttons
+                //string xx = FXFW.License.LicenseKeyGeneratorFrm.XXX();
+                //Classes.Authentication.ApproveAuthentication(2);
 
+                if (Classes.Authentication.RequestAuthentication())// Check Authentication
+                {
+                    SaveLoginInfoToFile();// Save UserName Into File For Auto Load
+                    _parent.ActivateRules();
+                    _parent.LoadLayout();
+                    _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);
+                    _parent.AddPrivateButtions();//Add User Private Buttons
+                }
             }
             else
             {

@@ -34,6 +34,12 @@ namespace NICSQLTools.Views.Qry
         {
             InitializeComponent();
             _elementRule = RuleElement;
+
+            layoutControlItemLoadLayout.Control.Enabled = false;
+            layoutControlItemSave.Control.Enabled = false;
+            layoutControlItemSaveAs.Control.Enabled = false;
+            layoutControlItemLoad.Control.Enabled = false;
+            layoutControlItemDelete.Control.Enabled = false;
         }
         public void ActivateRules()
         {
@@ -327,7 +333,7 @@ namespace NICSQLTools.Views.Qry
         {
             if (FXFW.SqlDB.IsNullOrEmpty(lueDatasource.EditValue))
                 return;
-
+            layoutControlGroupDatasource.Enabled = false;//Stop User Activity
             try
             {
                 int DatasourceID = Convert.ToInt32(lueDatasource.EditValue);
@@ -343,11 +349,18 @@ namespace NICSQLTools.Views.Qry
                 Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
                 MsgDlg.Show(ex.Message, MsgDlg.MessageType.Error, ex);
             }
-            
 
+            layoutControlGroupDatasource.Enabled = true;//Start User Activity
+
+            layoutControlItemLoadLayout.Control.Enabled = true;
+            layoutControlItemSave.Control.Enabled = true;
+            layoutControlItemSaveAs.Control.Enabled = true;
+            layoutControlItemLoad.Control.Enabled = true;
+            layoutControlItemDelete.Control.Enabled = true;
         }
         void btnRefresh_Click(object sender, EventArgs e)
         {
+
             SimpleButton btn = (SimpleButton)sender;
             int dsID = Convert.ToInt32(btn.Tag);
             if (Classes.QueryLayout.ChekForEmptyPram(DataSourceList))
@@ -363,10 +376,11 @@ namespace NICSQLTools.Views.Qry
 
             DataSourceList.ExeButton.Enabled = false;
             DataSourceList.CancelButton.Enabled = true;
+            layoutControlGroupDatasource.Enabled = false;//Stop User Activity
             System.Threading.ThreadPool.QueueUserWorkItem((o) =>
             {
                 
-                //pivotGridControlMain.ForceInitialize();
+                pivotGridControlMain.ForceInitialize();
                 pivotGridControlMain.DataSource = DataManager.ExeDataSource(DataSourceList.DatasourceSPName, Paramters, DataSourceList.Execommand, StoredProcedure_InfoMessage, SelectCommand_StatementCompleted);
                 pivotGridControlMain.RetrieveFields();
                 if (!FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
@@ -377,6 +391,7 @@ namespace NICSQLTools.Views.Qry
                     RemoveProgressList(dsID.ToString());// Remove From Working List
                     DataSourceList.ExeButton.Enabled = true;
                     DataSourceList.CancelButton.Enabled = false;
+                    layoutControlGroupDatasource.Enabled = true;//Stop User Activity
                 }));
             });
         }
@@ -388,6 +403,7 @@ namespace NICSQLTools.Views.Qry
             {
                 DataSourceList.ExeButton.Enabled = true;
                 DataSourceList.CancelButton.Enabled = false;
+                layoutControlGroupDatasource.Enabled = true;//Stop User Activity
                 RemoveProgressList(dsID.ToString());//Remove Working From List
                 if (DataSourceList.Execommand != null)
                     DataSourceList.Execommand.Cancel();
@@ -442,7 +458,8 @@ namespace NICSQLTools.Views.Qry
                     return;
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 pivotGridControlMain.SaveLayoutToStream(ms, DevExpress.Utils.OptionsLayoutBase.FullLayout);
-                Classes.QueryLayout.InsertLayout(Datasource, dlg.SavingName, ms.ToArray());
+                int NewLayoutId = (int)Classes.QueryLayout.InsertLayout(Datasource, dlg.SavingName, ms.ToArray());
+                LSMSLayout.Reload(); lueLayout.EditValue = NewLayoutId;
             }
             else// Update
             {
@@ -453,6 +470,7 @@ namespace NICSQLTools.Views.Qry
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 pivotGridControlMain.SaveLayoutToStream(ms, DevExpress.Utils.OptionsLayoutBase.FullLayout);
                 Classes.QueryLayout.UpdateDatasourceLayout(row.DatasourceLayoutId, Datasource, dlg.SavingName, ms.ToArray());
+                LSMSLayout.Reload();
             }
             
         }
@@ -495,13 +513,14 @@ namespace NICSQLTools.Views.Qry
             if (MsgDlg.Show("Are You Sure You Wanna Delete ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
 
-            int DatasourceLayoutId = Convert.ToInt32(lueDatasource.EditValue);
+            int DatasourceLayoutId = Convert.ToInt32(lueLayout.EditValue);
             if (Classes.QueryLayout.DeleteDatasourceLayout(DatasourceLayoutId))
             {
                 MsgDlg.Show("Layout Deleted ...", MsgDlg.MessageType.Success);
                 //Load Datasource Layout
                 if (!FXFW.SqlDB.IsNullOrEmpty(lueDatasource.EditValue))
                     LoadLayoutDatasource(Convert.ToInt32(lueDatasource.EditValue));
+                lueLayout.EditValue = null;
             }
             else
                 MsgDlg.Show("Can not Delete Layout ...", MsgDlg.MessageType.Error);
@@ -524,9 +543,16 @@ namespace NICSQLTools.Views.Qry
             if (field == null)
                 return; //this is Grand Total cell
 
+            // Add Field property Menu Item
             DevExpress.Utils.Menu.DXMenuItem FieldPropertyItem = Classes.QueryLayout.CreateMenuItem("Field Property", Properties.Resources.new_16x16, MenuItemFieldProperty_Click);
             FieldPropertyItem.Tag = field;
             e.Menu.Items.Add(FieldPropertyItem);
+
+            // Add Delete Field Menu Item
+            DevExpress.Utils.Menu.DXMenuItem DeleteFieldItem = Classes.QueryLayout.CreateMenuItem("Delete Field", Properties.Resources.cancel_16x16, MenuItemDeleteField_Click);
+            DeleteFieldItem.Tag = field;
+            e.Menu.Items.Add(DeleteFieldItem);
+
 
         }
         private void MenuItemAddNewField_Click(object sender, EventArgs e)
@@ -562,6 +588,11 @@ namespace NICSQLTools.Views.Qry
             dockPanelProperties.ParentPanel.ActiveControl = dockPanelProperties;
             dockPanelProperties.ParentPanel.Show();
             dockPanelProperties.ParentPanel.ShowSliding();
+        }
+        private void MenuItemDeleteField_Click(object sender, EventArgs e)
+        {
+            DevExpress.Utils.Menu.DXMenuItem item = (DevExpress.Utils.Menu.DXMenuItem)sender;
+            pivotGridControlMain.Fields.Remove((PivotGridField)item.Tag);
         }
         private void btnExportPivot_Click(object sender, EventArgs e)
         {

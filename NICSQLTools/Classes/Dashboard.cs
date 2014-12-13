@@ -47,6 +47,7 @@ namespace NICSQLTools.Classes
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
                 SqlCommand cmd = new SqlCommand("", con)
                 {
+                    //Should Make Id Not Auto Idnetity
                     CommandText = @"INSERT INTO AppDashboardSchema (DashboardSchemaName,
                     DashboardSchemaData, UserIn, DateIn) VALUES (@DashboardSchemaName, @DashboardSchemaData, @UserIn, GetDate()) SELECT SCOPE_IDENTITY()"
                 };

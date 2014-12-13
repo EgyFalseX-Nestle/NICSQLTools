@@ -110,6 +110,7 @@ namespace NICSQLTools.Views.Dashboard
             DashboardSchema.DashboardSchemaName = dlg.SavingName;
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
             dashboardDesignerMain.Dashboard.SaveToXml(ms);
+            
             DashboardSchema.DashboardSchemaData = ms.ToArray();
             if (DashboardSchema.DashboardSchemaId == -1)//Should Insert New Dashboard
             {

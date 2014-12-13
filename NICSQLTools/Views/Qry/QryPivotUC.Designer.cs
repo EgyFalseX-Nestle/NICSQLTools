@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.panelContainerMain = new DevExpress.XtraBars.Docking.DockPanel();
@@ -63,7 +63,7 @@
             this.colDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateIn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUserIn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroupDatasource = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemLoadLayout = new DevExpress.XtraLayout.LayoutControlItem();
@@ -105,7 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueDatasource.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLoadLayout)).BeginInit();
@@ -196,7 +196,7 @@
             this.layoutControlParamter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControlParamter.Location = new System.Drawing.Point(0, 185);
             this.layoutControlParamter.Name = "layoutControlParamter";
-            this.layoutControlParamter.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(726, 151, 434, 493);
+            this.layoutControlParamter.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(406, 100, 434, 493);
             this.layoutControlParamter.Root = this.layoutControlGroup2;
             this.layoutControlParamter.Size = new System.Drawing.Size(281, 160);
             this.layoutControlParamter.TabIndex = 1;
@@ -236,8 +236,8 @@
             this.layoutControlDatasource.Dock = System.Windows.Forms.DockStyle.Top;
             this.layoutControlDatasource.Location = new System.Drawing.Point(0, 0);
             this.layoutControlDatasource.Name = "layoutControlDatasource";
-            this.layoutControlDatasource.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(667, 154, 328, 452);
-            this.layoutControlDatasource.Root = this.layoutControlGroup1;
+            this.layoutControlDatasource.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(569, 119, 328, 452);
+            this.layoutControlDatasource.Root = this.layoutControlGroupDatasource;
             this.layoutControlDatasource.Size = new System.Drawing.Size(281, 185);
             this.layoutControlDatasource.TabIndex = 0;
             this.layoutControlDatasource.Text = "layoutControl1";
@@ -294,7 +294,7 @@
             this.lueLayout.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.lueLayout.Properties.DataSource = this.LSMSLayout;
             this.lueLayout.Properties.DisplayMember = "DatasourceLayoutName";
             this.lueLayout.Properties.NullText = "";
@@ -408,7 +408,7 @@
             this.lueDatasource.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueDatasource.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.lueDatasource.Properties.DataSource = this.LSMSDatasource;
             this.lueDatasource.Properties.DisplayMember = "DatasourceName";
             this.lueDatasource.Properties.NullText = "";
@@ -500,12 +500,12 @@
             this.colUserIn.Visible = true;
             this.colUserIn.VisibleIndex = 5;
             // 
-            // layoutControlGroup1
+            // layoutControlGroupDatasource
             // 
-            this.layoutControlGroup1.CustomizationFormText = "layoutControlGroup1";
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroupDatasource.CustomizationFormText = "layoutControlGroup Datasource";
+            this.layoutControlGroupDatasource.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroupDatasource.GroupBordersVisible = false;
+            this.layoutControlGroupDatasource.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItemLoadLayout,
@@ -514,11 +514,11 @@
             this.layoutControlItemSaveAs,
             this.layoutControlItemDelete,
             this.layoutControlItemLoad});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(281, 185);
-            this.layoutControlGroup1.Text = "layoutControlGroup1";
-            this.layoutControlGroup1.TextVisible = false;
+            this.layoutControlGroupDatasource.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroupDatasource.Name = "layoutControlGroupDatasource";
+            this.layoutControlGroupDatasource.Size = new System.Drawing.Size(281, 185);
+            this.layoutControlGroupDatasource.Text = "Datasource";
+            this.layoutControlGroupDatasource.TextVisible = false;
             // 
             // layoutControlItem1
             // 
@@ -801,7 +801,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueDatasource.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLoadLayout)).EndInit();
@@ -832,7 +832,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControlDatasource;
         private DevExpress.XtraEditors.GridLookUpEdit lueDatasource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupDatasource;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SimpleButton btnLoadDashboard;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;

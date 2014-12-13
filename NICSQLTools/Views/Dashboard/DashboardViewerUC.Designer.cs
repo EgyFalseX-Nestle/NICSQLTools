@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardViewerUC));
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dashboardViewerMain = new DevExpress.DashboardWin.DashboardViewer(this.components);
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
@@ -51,13 +51,11 @@
             this.colDashboardSchemaName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateIn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUserIn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnRefreshAll = new DevExpress.XtraEditors.SimpleButton();
-            this.pbcRefresh = new DevExpress.XtraEditors.ProgressBarControl();
+            this.btnEditDashboard = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciWait = new DevExpress.XtraLayout.LayoutControlItem();
             this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
             this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
@@ -77,12 +75,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueDashboard.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbcRefresh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciWait)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +99,7 @@
             // dashboardViewerMain
             // 
             this.dashboardViewerMain.AllowPrintDashboardItems = true;
+            this.dashboardViewerMain.AutoScroll = true;
             this.dashboardViewerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardViewerMain.Location = new System.Drawing.Point(281, 0);
             this.dashboardViewerMain.Name = "dashboardViewerMain";
@@ -183,8 +180,7 @@
             this.layoutControlDashboards.Controls.Add(this.ppWait);
             this.layoutControlDashboards.Controls.Add(this.btnLoadDashboard);
             this.layoutControlDashboards.Controls.Add(this.lueDashboard);
-            this.layoutControlDashboards.Controls.Add(this.btnRefreshAll);
-            this.layoutControlDashboards.Controls.Add(this.pbcRefresh);
+            this.layoutControlDashboards.Controls.Add(this.btnEditDashboard);
             this.layoutControlDashboards.Dock = System.Windows.Forms.DockStyle.Top;
             this.layoutControlDashboards.Location = new System.Drawing.Point(0, 0);
             this.layoutControlDashboards.Name = "layoutControlDashboards";
@@ -226,17 +222,17 @@
             this.lueDashboard.Location = new System.Drawing.Point(67, 62);
             this.lueDashboard.Name = "lueDashboard";
             this.lueDashboard.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            toolTipTitleItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipTitleItem2.Appearance.Options.UseImage = true;
-            toolTipTitleItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem2.Image")));
-            toolTipTitleItem2.Text = "Refresh";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Reresh Dashboard";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
+            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem1.Appearance.Options.UseImage = true;
+            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
+            toolTipTitleItem1.Text = "Refresh";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Reresh Dashboard";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
             this.lueDashboard.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, superToolTip2, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, superToolTip1, true)});
             this.lueDashboard.Properties.DataSource = this.LSMSSchema;
             this.lueDashboard.Properties.DisplayMember = "DashboardSchemaName";
             this.lueDashboard.Properties.NullText = "";
@@ -293,23 +289,16 @@
             this.colUserIn.Visible = true;
             this.colUserIn.VisibleIndex = 2;
             // 
-            // btnRefreshAll
+            // btnEditDashboard
             // 
-            this.btnRefreshAll.Image = global::NICSQLTools.Properties.Resources.refresh2_32x32;
-            this.btnRefreshAll.Location = new System.Drawing.Point(12, 123);
-            this.btnRefreshAll.Name = "btnRefreshAll";
-            this.btnRefreshAll.Size = new System.Drawing.Size(249, 31);
-            this.btnRefreshAll.StyleController = this.layoutControlDashboards;
-            this.btnRefreshAll.TabIndex = 4;
-            this.btnRefreshAll.Text = "Refresh All";
-            // 
-            // pbcRefresh
-            // 
-            this.pbcRefresh.Location = new System.Drawing.Point(12, 158);
-            this.pbcRefresh.Name = "pbcRefresh";
-            this.pbcRefresh.Size = new System.Drawing.Size(249, 18);
-            this.pbcRefresh.StyleController = this.layoutControlDashboards;
-            this.pbcRefresh.TabIndex = 5;
+            this.btnEditDashboard.Image = global::NICSQLTools.Properties.Resources.clip_16x16;
+            this.btnEditDashboard.Location = new System.Drawing.Point(12, 123);
+            this.btnEditDashboard.Name = "btnEditDashboard";
+            this.btnEditDashboard.Size = new System.Drawing.Size(249, 22);
+            this.btnEditDashboard.StyleController = this.layoutControlDashboards;
+            this.btnEditDashboard.TabIndex = 4;
+            this.btnEditDashboard.Text = "Edit Dashboard";
+            this.btnEditDashboard.Click += new System.EventHandler(this.btnEditDashboard_Click);
             // 
             // layoutControlGroup1
             // 
@@ -320,7 +309,6 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem4,
             this.lciWait});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
@@ -355,31 +343,16 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.btnRefreshAll;
-            this.layoutControlItem3.CustomizationFormText = "btnRefeshAll";
+            this.layoutControlItem3.Control = this.btnEditDashboard;
+            this.layoutControlItem3.CustomizationFormText = "Edit Dashboard";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 111);
-            this.layoutControlItem3.MaxSize = new System.Drawing.Size(0, 35);
-            this.layoutControlItem3.MinSize = new System.Drawing.Size(102, 35);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(253, 35);
-            this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem3.Text = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(253, 64);
+            this.layoutControlItem3.Text = "Edit Dashboard";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             this.layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.pbcRefresh;
-            this.layoutControlItem4.CustomizationFormText = "pbProgressAll";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 146);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(253, 29);
-            this.layoutControlItem4.Text = "layoutControlItem4";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextToControlDistance = 0;
-            this.layoutControlItem4.TextVisible = false;
             // 
             // lciWait
             // 
@@ -436,12 +409,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueDashboard.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbcRefresh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lciWait)).EndInit();
             this.ResumeLayout(false);
 
@@ -461,8 +432,7 @@
         private DevExpress.XtraEditors.SimpleButton btnLoadDashboard;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControl layoutControlParamter;
-        private DevExpress.XtraEditors.ProgressBarControl pbcRefresh;
-        private DevExpress.XtraEditors.SimpleButton btnRefreshAll;
+        private DevExpress.XtraEditors.SimpleButton btnEditDashboard;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter appDashboardDSTableAdapter;
         private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter appDashboardDSPramTableAdapter;
@@ -475,7 +445,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraWaitForm.ProgressPanel ppWait;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem lciWait;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupParamters;
     }

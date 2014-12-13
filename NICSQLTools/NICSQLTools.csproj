@@ -155,7 +155,8 @@
     <Reference Include="DevExpress.XtraVerticalGrid.v14.1, Version=14.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="FXFW">
+    <Reference Include="FXFW, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\FalseX\FXFW\Releases\FXFW.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip">
@@ -182,6 +183,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Authentication.cs" />
     <Compile Include="Classes\Core.cs" />
     <Compile Include="Classes\QueryLayout.cs" />
     <Compile Include="Classes\Dashboard.cs" />
@@ -221,6 +223,12 @@
     </Compile>
     <Compile Include="TestFrm.Designer.cs">
       <DependentUpon>TestFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardViewerEditorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\DashboardViewerEditorFrm.Designer.cs">
+      <DependentUpon>DashboardViewerEditorFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\AppDatasourceParamUC.cs">
       <SubType>UserControl</SubType>
@@ -407,6 +415,12 @@
     <Compile Include="Views\Permission\RuleSalesDisitrct3UC.Designer.cs">
       <DependentUpon>RuleSalesDisitrct3UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Permission\SuperAdministratorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Permission\SuperAdministratorUC.Designer.cs">
+      <DependentUpon>SuperAdministratorUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Permission\UserRuleUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -427,6 +441,9 @@
     </Compile>
     <EmbeddedResource Include="TestFrm.resx">
       <DependentUpon>TestFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\DashboardViewerEditorFrm.resx">
+      <DependentUpon>DashboardViewerEditorFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\AppDatasourceParamUC.resx">
       <DependentUpon>AppDatasourceParamUC.cs</DependentUpon>
@@ -490,6 +507,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Permission\RuleSalesDisitrct3UC.resx">
       <DependentUpon>RuleSalesDisitrct3UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Permission\SuperAdministratorUC.resx">
+      <DependentUpon>SuperAdministratorUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Permission\UserRuleUC.resx">
       <DependentUpon>UserRuleUC.cs</DependentUpon>
@@ -594,6 +614,7 @@
   <ItemGroup>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\clip_16x16.png" />
     <None Include="Resources\next_32x32.png" />
     <None Include="Resources\snaptocells_16x16.png" />
     <None Include="Resources\publicfix_16x16.png" />

@@ -112,8 +112,11 @@ namespace NICSQLTools.Classes
         {
             try
             {
-                adpAppDatasourceLayout.Delete(DatasourceLayoutId);
-                return true;
+                if (adpAppDatasourceLayout.Delete(DatasourceLayoutId) > 0)
+                    return true;
+                else
+                    return false;
+                
             }
             catch (SqlException ex)
             {

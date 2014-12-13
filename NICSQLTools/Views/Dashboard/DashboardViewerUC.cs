@@ -290,7 +290,7 @@ namespace NICSQLTools.Views.Dashboard
                 if (ProgressList.Count == 0)
                 {
                     lciWait.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
-                    pbcRefresh.Text = "Loading ...";
+                    //pbcRefresh.Text = "Loading ...";
                 }
             }
         }
@@ -331,6 +331,32 @@ namespace NICSQLTools.Views.Dashboard
                 Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
                 MsgDlg.Show(ex.Message, MsgDlg.MessageType.Error, ex);
             }
+            
+        }
+        private void btnEditDashboard_Click(object sender, EventArgs e)
+        {
+            if (dashboardViewerMain.Dashboard == null)
+                return;
+            DashboardViewerEditorFrm frm = new DashboardViewerEditorFrm(dashboardViewerMain.Dashboard);
+            frm.ShowDialog();
+
+            dashboardViewerMain.Dashboard.LayoutRoot = frm.dashboardDesignerMain.Dashboard.LayoutRoot;
+            dashboardViewerMain.Dashboard = frm.dashboardDesignerMain.Dashboard;
+
+            dashboardViewerMain.ResumeLayout(true);
+            dashboardViewerMain.Refresh();
+            dashboardViewerMain.Update();
+            dashboardViewerMain.ReloadData(true);
+
+
+            //System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            //frm.dashboardDesignerMain.Dashboard.SaveToXml(ms);
+            //dashboardViewerMain.Dashboard.LoadFromXml(ms);
+            
+            //dashboardViewerMain.LoadDashboard(ms);//Load Schema Into Viewer
+
+            
+
             
         }
         void btnRefresh_Click(object sender, EventArgs e)
@@ -429,6 +455,7 @@ namespace NICSQLTools.Views.Dashboard
                 LoadDefaultData();
         }
         #endregion
+
 
     }
 }

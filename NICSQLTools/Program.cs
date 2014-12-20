@@ -53,8 +53,6 @@ namespace NICSQLTools
                 NICSQLTools.Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId);
                 MsgDlg.Show(ex.Message, MsgDlg.MessageType.Fatal, ex);
             }
-
- 
             
         }
         public static void Init()

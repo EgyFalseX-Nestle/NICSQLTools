@@ -32,10 +32,16 @@
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colUserId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditUserID = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.usersLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsQry = new NICSQLTools.Data.dsQry();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRuleId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditRuleID = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.rulesLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRuleName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRuleDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.userRuleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsData = new NICSQLTools.Data.dsData();
@@ -50,27 +56,21 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.userRuleTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppUserRuleTableAdapter();
-            this.dsQry = new NICSQLTools.Data.dsQry();
-            this.usersLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.users_LUETableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Users_LUETableAdapter();
-            this.rulesLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rules_LUETableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Rules_LUETableAdapter();
-            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRuleName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRuleDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditUserID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersLUEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRuleID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userRuleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersLUEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridViewMain
@@ -80,7 +80,7 @@
             this.colRuleId});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
-            this.gridViewMain.NewItemRowText = "Click here to add a new customer";
+            this.gridViewMain.NewItemRowText = "Click here to add a new";
             this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewMain.OptionsSelection.InvertSelection = true;
@@ -114,6 +114,16 @@
             this.repositoryItemGridLookUpEditUserID.ValueMember = "UserID";
             this.repositoryItemGridLookUpEditUserID.View = this.repositoryItemGridLookUpEdit1View;
             // 
+            // usersLUEBindingSource
+            // 
+            this.usersLUEBindingSource.DataMember = "Users_LUE";
+            this.usersLUEBindingSource.DataSource = this.dsQry;
+            // 
+            // dsQry
+            // 
+            this.dsQry.DataSetName = "dsQry";
+            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // repositoryItemGridLookUpEdit1View
             // 
             this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -122,6 +132,13 @@
             this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
             this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colRealName
+            // 
+            this.colRealName.FieldName = "RealName";
+            this.colRealName.Name = "colRealName";
+            this.colRealName.Visible = true;
+            this.colRealName.VisibleIndex = 0;
             // 
             // colRuleId
             // 
@@ -146,6 +163,11 @@
             this.repositoryItemGridLookUpEditRuleID.ValueMember = "RuleID";
             this.repositoryItemGridLookUpEditRuleID.View = this.gridView1;
             // 
+            // rulesLUEBindingSource
+            // 
+            this.rulesLUEBindingSource.DataMember = "Rules_LUE";
+            this.rulesLUEBindingSource.DataSource = this.dsQry;
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -155,6 +177,21 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colRuleName
+            // 
+            this.colRuleName.FieldName = "RuleName";
+            this.colRuleName.Name = "colRuleName";
+            this.colRuleName.Visible = true;
+            this.colRuleName.VisibleIndex = 0;
+            // 
+            // colRuleDesc
+            // 
+            this.colRuleDesc.Caption = "Rule Description";
+            this.colRuleDesc.FieldName = "RuleDesc";
+            this.colRuleDesc.Name = "colRuleDesc";
+            this.colRuleDesc.Visible = true;
+            this.colRuleDesc.VisibleIndex = 1;
             // 
             // gridControlMain
             // 
@@ -274,50 +311,13 @@
             // 
             this.userRuleTableAdapter.ClearBeforeFill = true;
             // 
-            // dsQry
-            // 
-            this.dsQry.DataSetName = "dsQry";
-            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersLUEBindingSource
-            // 
-            this.usersLUEBindingSource.DataMember = "Users_LUE";
-            this.usersLUEBindingSource.DataSource = this.dsQry;
-            // 
             // users_LUETableAdapter
             // 
             this.users_LUETableAdapter.ClearBeforeFill = true;
             // 
-            // rulesLUEBindingSource
-            // 
-            this.rulesLUEBindingSource.DataMember = "Rules_LUE";
-            this.rulesLUEBindingSource.DataSource = this.dsQry;
-            // 
             // rules_LUETableAdapter
             // 
             this.rules_LUETableAdapter.ClearBeforeFill = true;
-            // 
-            // colRealName
-            // 
-            this.colRealName.FieldName = "RealName";
-            this.colRealName.Name = "colRealName";
-            this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 0;
-            // 
-            // colRuleName
-            // 
-            this.colRuleName.FieldName = "RuleName";
-            this.colRuleName.Name = "colRuleName";
-            this.colRuleName.Visible = true;
-            this.colRuleName.VisibleIndex = 0;
-            // 
-            // colRuleDesc
-            // 
-            this.colRuleDesc.Caption = "Rule Description";
-            this.colRuleDesc.FieldName = "RuleDesc";
-            this.colRuleDesc.Name = "colRuleDesc";
-            this.colRuleDesc.Visible = true;
-            this.colRuleDesc.VisibleIndex = 1;
             // 
             // UserRuleUC
             // 
@@ -333,17 +333,17 @@
             this.Load += new System.EventHandler(this.ProductEditorUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditUserID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersLUEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRuleID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userRuleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersLUEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

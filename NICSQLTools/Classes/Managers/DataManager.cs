@@ -220,13 +220,14 @@ namespace NICSQLTools.Classes.Managers
             Asm.Add("DevExpress.XtraRichEdit.v14.1.Extensions.dll", 14180);
             Asm.Add("DevExpress.XtraTreeList.v14.1.dll", 14180);
             Asm.Add("DevExpress.XtraVerticalGrid.v14.1.dll", 14180);
-            Asm.Add("FXFW.dll", 1001);
+            Asm.Add("FXFW.dll", 1002);
             //Asm.Add("Interop.DAO.dll", 5000);
             Asm.Add("Ionic.Zip.dll", 1918);
             Asm.Add("log4net.dll", 12110);
             //Asm.Add("Microsoft.Office.Interop.Access.dll", 15004515);
             //Asm.Add("Microsoft.Office.interop.access.dao.dll", 15004410);
             Asm.Add(System.Windows.Forms.Application.ProductName + ".exe", Convert.ToInt32(System.Windows.Forms.Application.ProductVersion.Replace(".", "")));
+            
             //Asm.Add("OFFICE.DLL", 15004610);
             return Asm;
         }
@@ -290,8 +291,9 @@ namespace NICSQLTools.Classes.Managers
             //writer.Write(Data);// Write Data
             //mutex.ReleaseMutex(); mutex.WaitOne();
 
-            Data = FXFW.EncDec.Encrypt(Data, "FalseX");// Encrypt Arg Data
-            using (System.Diagnostics.Process process = new System.Diagnostics.Process() { StartInfo = new System.Diagnostics.ProcessStartInfo(Program.updaterPath, Data) })
+            //Data = FXFW.EncDec.Encrypt(Data, "FalseX");// Encrypt Arg Data
+            Data = String.Format("\"{0}\"", Data);
+            using (System.Diagnostics.Process process = new System.Diagnostics.Process() { StartInfo = new System.Diagnostics.ProcessStartInfo(Program.updaterPath, Data ) })
             {
                 process.Start();
             }
@@ -310,8 +312,9 @@ namespace NICSQLTools.Classes.Managers
             Data = Data.Substring(0, Data.Length - 1);
 
 
-            Data = FXFW.EncDec.Encrypt(Data, "FalseX");// Encrypt Arg Data
-            using (System.Diagnostics.Process process = new System.Diagnostics.Process() { StartInfo = new System.Diagnostics.ProcessStartInfo(Program.updaterPath, Data) })
+            //Data = FXFW.EncDec.Encrypt(Data, "FalseX");// Encrypt Arg Data
+            Data = String.Format("\"{0}\"", Data);
+            using (System.Diagnostics.Process process = new System.Diagnostics.Process() { StartInfo = new System.Diagnostics.ProcessStartInfo(Program.updaterPath,  Data ) })
             {
                 process.Start();
             }

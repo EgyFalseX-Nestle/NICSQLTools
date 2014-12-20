@@ -244,7 +244,7 @@ namespace NICSQLTools.Views.Dashboard
             NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
             DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
             lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Base_Base_Product]";
-            lsms.QueryableSource = from q in ds.vAppProductDetails group q by q.Base_Base_Product into g select new { Base_Base_Product = g.Key };
+            lsms.QueryableSource = from q in ds.vAppProductDetails where q.Base_Base_Product != null group q by q.Base_Base_Product into g select new { Base_Base_Product = g.Key };
 
             CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
             ccbe.Properties.AllowMultiSelect = true;
@@ -261,7 +261,7 @@ namespace NICSQLTools.Views.Dashboard
             NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
             DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
             lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Base_Group]";
-            lsms.QueryableSource = from q in ds.vAppProductDetails group q by q.Base_Group into g select new { Base_Group = g.Key };
+            lsms.QueryableSource = from q in ds.vAppProductDetails where q.Base_Group != null group q by q.Base_Group into g select new { Base_Group = g.Key };
 
             CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
             ccbe.Properties.AllowMultiSelect = true;

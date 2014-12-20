@@ -266,6 +266,12 @@
     <Compile Include="Views\Data\AppDatasourceUC.Designer.cs">
       <DependentUpon>AppDatasourceUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Import\ImportDMG_MasterUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportDMG_MasterUC.Designer.cs">
+      <DependentUpon>ImportDMG_MasterUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Main\ChooseSaveNameDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,18 +314,6 @@
     </Compile>
     <Compile Include="Views\Import\ImportCustomerSSInfoUC.Designer.cs">
       <DependentUpon>ImportCustomerSSInfoUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Import\ImportDMG_MasterUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Import\ImportDMG_MasterUC.Designer.cs">
-      <DependentUpon>ImportDMG_MasterUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Import\ImportDamageReasonUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Import\ImportDamageReasonUC.Designer.cs">
-      <DependentUpon>ImportDamageReasonUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportEquipmentUC.cs">
       <SubType>UserControl</SubType>
@@ -463,6 +457,9 @@
     <EmbeddedResource Include="Views\Data\AppDatasourceUC.resx">
       <DependentUpon>AppDatasourceUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportDMG_MasterUC.resx">
+      <DependentUpon>ImportDMG_MasterUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Main\ChooseSaveNameDlg.resx">
       <DependentUpon>ChooseSaveNameDlg.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,12 +477,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportCustomerSSInfoUC.resx">
       <DependentUpon>ImportCustomerSSInfoUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Import\ImportDMG_MasterUC.resx">
-      <DependentUpon>ImportDMG_MasterUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Import\ImportDamageReasonUC.resx">
-      <DependentUpon>ImportDamageReasonUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportEquipmentUC.resx">
       <DependentUpon>ImportEquipmentUC.cs</DependentUpon>
@@ -581,7 +572,6 @@
     <None Include="Data\dsQry.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsQry.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsQry.xss">
       <DependentUpon>dsQry.xsd</DependentUpon>

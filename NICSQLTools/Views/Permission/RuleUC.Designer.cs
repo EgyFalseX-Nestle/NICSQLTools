@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RuleUC));
             this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRuleName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRuleDesc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoExEditMemo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -44,17 +47,14 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.colRuleName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRuleDesc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoExEditMemo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.rulesTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRulesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).BeginInit();
             this.SuspendLayout();
             // 
             // UOW
@@ -69,7 +69,7 @@
             this.colRuleDesc});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
-            this.gridViewMain.NewItemRowText = "Click here to add a new customer";
+            this.gridViewMain.NewItemRowText = "Click here to add a new";
             this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewMain.OptionsSelection.InvertSelection = true;
@@ -80,6 +80,30 @@
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
             this.gridViewMain.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridViewMain_InitNewRow);
+            // 
+            // colRuleName
+            // 
+            this.colRuleName.FieldName = "RuleName";
+            this.colRuleName.Name = "colRuleName";
+            this.colRuleName.Visible = true;
+            this.colRuleName.VisibleIndex = 0;
+            this.colRuleName.Width = 116;
+            // 
+            // colRuleDesc
+            // 
+            this.colRuleDesc.ColumnEdit = this.repositoryItemMemoExEditMemo;
+            this.colRuleDesc.FieldName = "RuleDesc";
+            this.colRuleDesc.Name = "colRuleDesc";
+            this.colRuleDesc.Visible = true;
+            this.colRuleDesc.VisibleIndex = 1;
+            this.colRuleDesc.Width = 87;
+            // 
+            // repositoryItemMemoExEditMemo
+            // 
+            this.repositoryItemMemoExEditMemo.AutoHeight = false;
+            this.repositoryItemMemoExEditMemo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEditMemo.Name = "repositoryItemMemoExEditMemo";
             // 
             // gridControlMain
             // 
@@ -191,30 +215,6 @@
             this.popupMenuMain.Manager = this.barManagerMain;
             this.popupMenuMain.Name = "popupMenuMain";
             // 
-            // colRuleName
-            // 
-            this.colRuleName.FieldName = "RuleName";
-            this.colRuleName.Name = "colRuleName";
-            this.colRuleName.Visible = true;
-            this.colRuleName.VisibleIndex = 0;
-            this.colRuleName.Width = 116;
-            // 
-            // colRuleDesc
-            // 
-            this.colRuleDesc.ColumnEdit = this.repositoryItemMemoExEditMemo;
-            this.colRuleDesc.FieldName = "RuleDesc";
-            this.colRuleDesc.Name = "colRuleDesc";
-            this.colRuleDesc.Visible = true;
-            this.colRuleDesc.VisibleIndex = 1;
-            this.colRuleDesc.Width = 87;
-            // 
-            // repositoryItemMemoExEditMemo
-            // 
-            this.repositoryItemMemoExEditMemo.AutoHeight = false;
-            this.repositoryItemMemoExEditMemo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemMemoExEditMemo.Name = "repositoryItemMemoExEditMemo";
-            // 
             // rulesTableAdapter
             // 
             this.rulesTableAdapter.ClearBeforeFill = true;
@@ -233,11 +233,11 @@
             this.Load += new System.EventHandler(this.ProductEditorUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).EndInit();
             this.ResumeLayout(false);
 
         }

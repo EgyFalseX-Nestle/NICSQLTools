@@ -26,18 +26,18 @@ namespace NICSQLTools.Views.Import
             get
             {
                 return string.Format(@"Required field for import{0}
-Route
-Assignment
-[Billing Date]
 [Billing Document]
-Item
-[Sales unit]
-[Order Quantity]
-Material
-[Document Date]
-[Sales Document]
-[Sold-to party]
+[Route]
+[Reference Document N]
 [Distribution Channel]
+[Billing date for bil]
+[Billing Type]
+[Sold-to party]
+[Material Number]
+[Sales unit]
+[Condition type]
+[Actual Invoiced Quan]
+[Condition value]
 _______________________________________________
 ", Environment.NewLine);
             }
@@ -114,6 +114,20 @@ _______________________________________________
                 ProgressBarMain.EditValue = ProcessedCounter;
             }));
 
+            DateTime UserIn = DataManager.defaultInstance.ServerDateTime;
+
+            //Load All Bill Docs
+            NICSQLTools.Data.dsQry.DMG_MasterDataTable TblMaster = new NICSQLTools.Data.dsQry.DMG_MasterDataTable();
+
+            //deleting data before saving new 1
+            var result = from q in dtExcel.AsEnumerable()
+                         orderby q["Billing date for bil"]
+                         group q by q["Billing date for bil"] into grp
+                         select new { BillingDate = grp.Key };
+            DateTime BillStartDate = (DateTime)result.ElementAt(0).BillingDate;
+            DateTime BillEndDate = (DateTime)result.ElementAt(result.Count() - 1).BillingDate;
+            dmG_MasterTableAdapter.Fill(TblMaster, BillStartDate, BillEndDate);
+
             ShowHideProgress(false);
             foreach (DataRow row in dtExcel.Rows)
             {
@@ -131,29 +145,42 @@ _______________________________________________
                     }));
                 }
 
+                if (TblMaster.FindByBilling_Document(row["Billing Document"].ToString()) != null)
+                    continue;
+
                 NICSQLTools.Data.dsData.DMG_MasterRow SqlRow = dsData.DMG_Master.NewDMG_MasterRow();
 
-
-                SqlRow.Route = row["Route"].ToString();
-                SqlRow.Assignment = row["Assignment"].ToString();
-                if (row["Billing Date"].ToString() != string.Empty)
-                    SqlRow.Billing_Date = Convert.ToDateTime(row["Billing Date"]);
                 SqlRow.Billing_Document = row["Billing Document"].ToString();
-                SqlRow.Item = row["Item"].ToString();
-                SqlRow.Sales_unit = row["Sales unit"].ToString();
-                if (row["Order Quantity"].ToString() != string.Empty)
-                    SqlRow.Order_Quantity = Convert.ToDouble(row["Order Quantity"]);    
-                SqlRow.Material = row["Material"].ToString();
-                if (row["Document Date"].ToString() != string.Empty)
-                    SqlRow.Document_Date = Convert.ToDateTime(row["Document Date"]);    
-                SqlRow.Sales_Document = row["Sales Document"].ToString();
-                SqlRow._Sold_to_party = row["Sold-to party"].ToString();
+                SqlRow.Route = row["Route"].ToString();
+                SqlRow.Reference_Document_N = row["Reference Document N"].ToString();
                 SqlRow.Distribution_Channel = row["Distribution Channel"].ToString();
+                if (row["Billing date for bil"].ToString() != string.Empty)
+                    SqlRow.Billing_date_for_bil = Convert.ToDateTime(row["Billing date for bil"]);
+                SqlRow.Billing_Type = row["Billing Type"].ToString();
+                SqlRow._Sold_to_party = row["Sold-to party"].ToString();
+                
+                if (row["Material Number"].ToString() != string.Empty)
+                    SqlRow.Material_Number = Convert.ToDouble(row["Material Number"]);
+                SqlRow.Sales_unit = row["Sales unit"].ToString();
+                SqlRow.Condition_type = row["Condition type"].ToString();
+                if (row["Actual Invoiced Quan"].ToString() != string.Empty)
+                    SqlRow.Actual_Invoiced_Quan = Convert.ToDouble(row["Actual Invoiced Quan"]);
+                if (row["Condition value"].ToString() != string.Empty)
+                    SqlRow.Actual_Invoiced_Quan = Convert.ToDouble(row["Condition value"]);
+                SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
+                SqlRow.DateIn = UserIn;
 
                 dsData.DMG_Master.AddDMG_MasterRow(SqlRow);
                 SqlRow.EndEdit();
             }
+            Invoke(new MethodInvoker(() =>//100 %
+            {
+                lblEstTime.Text = "0 sec";
+                ProgressBarMain.EditValue = ProcessedMax;
+                lblCount.Text = string.Format("{0}/{1}", ProcessedMax, ProcessedMax);
 
+                Application.DoEvents();
+            }));
             ShowHideProgress(true); ChangeProgressCaption("Updating Damage Master ...");
 
             if (!DMG_Master.UpdateBulkDMG_Master(cmd, dsData.DMG_Master))

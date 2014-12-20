@@ -200,10 +200,6 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Import.ImportCustomerSSInfoUC(RuleElemet);
             }
-            else if (e.Document == docEditorsImportDamageReason)
-            {
-                e.Control = new Views.Import.ImportDamageReasonUC(RuleElemet);
-            }
             else if (e.Document == docEditorsImportDamageMaster)
             {
                 e.Control = new Views.Import.ImportDMG_MasterUC(RuleElemet);

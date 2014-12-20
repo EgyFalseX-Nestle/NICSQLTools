@@ -35,7 +35,8 @@ namespace NICSQLTools.Views.Dashboard
             {
                 Invoke(new MethodInvoker(() =>
                 {
-                    LSMSDatasource.QueryableSource = from q in dsLinq.vAppDatasource_LUEs where q.AppDatasourceTypeId == (int)DatasourceType select q;
+                    LSMSCategory.QueryableSource = from q in dsLinq.vAppDSCategories select q;
+                    treeListMain.BestFitColumns();
                 }));
                 SplashScreenManager.CloseForm();
             });
@@ -53,14 +54,20 @@ namespace NICSQLTools.Views.Dashboard
         private void repositoryItemButtonEditSelect_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DialogResult = System.Windows.Forms.DialogResult.OK;
-
             //Get Selected Row
             DataSourceRow = (NICSQLTools.Data.Linq.vAppDatasource_LUE)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
             Close();
-            
         }
+        private void treeListMain_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
+        {
+            NICSQLTools.Data.Linq.vAppDSCategory ds = (NICSQLTools.Data.Linq.vAppDSCategory)treeListMain.GetDataRecordByNode(treeListMain.FocusedNode);
+            LSMSDatasource.QueryableSource = from q in dsLinq.vAppDatasource_LUEs where q.AppDatasourceTypeId == (int)DatasourceType && q.DSCategoryId == ds.DSCategoryId select q;
+            gridViewMain.BestFitColumns();
+        }
+
         
         #endregion
+
 
     }
 }

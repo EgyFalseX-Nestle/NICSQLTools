@@ -35,6 +35,7 @@
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExport = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -63,7 +64,6 @@
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.salesDistrict2TableAdapter = new NICSQLTools.Data.dsQryTableAdapters.SalesDistrict2TableAdapter();
             this.brandRouteTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.BrandRouteTableAdapter();
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
@@ -126,6 +126,14 @@
             this.bbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.LargeGlyph")));
             this.bbiSave.Name = "bbiSave";
             this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
+            // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+            this.bbiRefresh.Id = 2;
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // bbiExport
             // 
@@ -194,7 +202,7 @@
             this.colTPPBudget});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
-            this.gridViewMain.NewItemRowText = "Click here to add a new customer";
+            this.gridViewMain.NewItemRowText = "Click here to add a new";
             this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewMain.OptionsSelection.InvertSelection = true;
@@ -373,14 +381,6 @@
             // brandRouteTableAdapter
             // 
             this.brandRouteTableAdapter.ClearBeforeFill = true;
-            // 
-            // bbiRefresh
-            // 
-            this.bbiRefresh.Caption = "Refresh";
-            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
-            this.bbiRefresh.Id = 2;
-            this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // TargetKPIEditorUC
             // 

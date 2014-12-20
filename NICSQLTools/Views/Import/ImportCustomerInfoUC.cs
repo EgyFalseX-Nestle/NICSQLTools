@@ -60,7 +60,7 @@ _______________________________________________
             PnlProg.Invoke(new MethodInvoker(() => { PnlProg.Caption = Caption; }));
             Application.DoEvents();
         }
-        private bool ImportDaysFromExcel()
+        private bool ImportFromExcel()
         {
             //return false;
             bool output = false;
@@ -146,6 +146,14 @@ _______________________________________________
                 dsData.CustomerInfo.AddCustomerInfoRow(SqlRow);
                 SqlRow.EndEdit();
             }
+            Invoke(new MethodInvoker(() =>//100 %
+            {
+                lblEstTime.Text = "0 sec";
+                ProgressBarMain.EditValue = ProcessedMax;
+                lblCount.Text = string.Format("{0}/{1}", ProcessedMax, ProcessedMax);
+
+                Application.DoEvents();
+            }));
             ShowHideProgress(true);
             ChangeProgressCaption("Updating CustomerInfo ...");
             if (!CustomerInfo.UpdateBulkCustomerInfo(cmd, dsData.CustomerInfo))
@@ -222,7 +230,7 @@ _______________________________________________
         void ImportWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             DateTime dt = DateTime.Now;
-            if (ImportDaysFromExcel())
+            if (ImportFromExcel())
             {
                 e.Result = dt;
             }

@@ -107,13 +107,13 @@
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExport = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerTypeId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
@@ -575,7 +575,7 @@
             this.colMaterialStatus});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
-            this.gridViewMain.NewItemRowText = "Click here to add a new customer";
+            this.gridViewMain.NewItemRowText = "Click here to add a new";
             this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewMain.OptionsSelection.InvertSelection = true;
@@ -769,6 +769,7 @@
             // 
             // gridControlMain
             // 
+            this.gridControlMain.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.Location = new System.Drawing.Point(0, 31);
             this.gridControlMain.MainView = this.gridViewMain;
@@ -833,6 +834,14 @@
             this.bbiExport.Name = "bbiExport";
             this.bbiExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExport_ItemClick);
             // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+            this.bbiRefresh.Id = 2;
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -874,14 +883,6 @@
             // 
             this.popupMenuMain.Manager = this.barManagerMain;
             this.popupMenuMain.Name = "popupMenuMain";
-            // 
-            // bbiRefresh
-            // 
-            this.bbiRefresh.Caption = "Refresh";
-            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
-            this.bbiRefresh.Id = 2;
-            this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // ProductEditorUC
             // 

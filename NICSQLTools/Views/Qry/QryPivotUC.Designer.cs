@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.panelContainerMain = new DevExpress.XtraBars.Docking.DockPanel();
@@ -46,7 +45,6 @@
             this.btnSaveLayout = new DevExpress.XtraEditors.SimpleButton();
             this.lueLayout = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSLayout = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.repositoryItemMemoExEditDesc = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceLayoutName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,17 +52,8 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ppWait = new DevExpress.XtraWaitForm.ProgressPanel();
             this.btnLoadDashboard = new DevExpress.XtraEditors.SimpleButton();
-            this.lueDatasource = new DevExpress.XtraEditors.GridLookUpEdit();
             this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colDatasourceName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAppDatasourceTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDesc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDateIn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUserIn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroupDatasource = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemLoadLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemSave = new DevExpress.XtraLayout.LayoutControlItem();
@@ -100,13 +89,9 @@
             this.layoutControlDatasource.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDatasource.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDatasource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLoadLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemSave)).BeginInit();
@@ -232,7 +217,6 @@
             this.layoutControlDatasource.Controls.Add(this.lueLayout);
             this.layoutControlDatasource.Controls.Add(this.ppWait);
             this.layoutControlDatasource.Controls.Add(this.btnLoadDashboard);
-            this.layoutControlDatasource.Controls.Add(this.lueDatasource);
             this.layoutControlDatasource.Dock = System.Windows.Forms.DockStyle.Top;
             this.layoutControlDatasource.Location = new System.Drawing.Point(0, 0);
             this.layoutControlDatasource.Name = "layoutControlDatasource";
@@ -245,7 +229,7 @@
             // btnDeleteLayout
             // 
             this.btnDeleteLayout.Image = global::NICSQLTools.Properties.Resources.delete_16x16;
-            this.btnDeleteLayout.Location = new System.Drawing.Point(208, 149);
+            this.btnDeleteLayout.Location = new System.Drawing.Point(208, 123);
             this.btnDeleteLayout.Name = "btnDeleteLayout";
             this.btnDeleteLayout.Size = new System.Drawing.Size(61, 22);
             this.btnDeleteLayout.StyleController = this.layoutControlDatasource;
@@ -256,7 +240,7 @@
             // btnSaveAsLayout
             // 
             this.btnSaveAsLayout.Image = global::NICSQLTools.Properties.Resources.saveall_16x16;
-            this.btnSaveAsLayout.Location = new System.Drawing.Point(78, 149);
+            this.btnSaveAsLayout.Location = new System.Drawing.Point(78, 123);
             this.btnSaveAsLayout.Name = "btnSaveAsLayout";
             this.btnSaveAsLayout.Size = new System.Drawing.Size(69, 22);
             this.btnSaveAsLayout.StyleController = this.layoutControlDatasource;
@@ -267,7 +251,7 @@
             // btnLoadLayout
             // 
             this.btnLoadLayout.Image = global::NICSQLTools.Properties.Resources.loadfrom_16x16;
-            this.btnLoadLayout.Location = new System.Drawing.Point(151, 149);
+            this.btnLoadLayout.Location = new System.Drawing.Point(151, 123);
             this.btnLoadLayout.Name = "btnLoadLayout";
             this.btnLoadLayout.Size = new System.Drawing.Size(53, 22);
             this.btnLoadLayout.StyleController = this.layoutControlDatasource;
@@ -278,7 +262,7 @@
             // btnSaveLayout
             // 
             this.btnSaveLayout.Image = global::NICSQLTools.Properties.Resources.save_16x16;
-            this.btnSaveLayout.Location = new System.Drawing.Point(12, 149);
+            this.btnSaveLayout.Location = new System.Drawing.Point(12, 123);
             this.btnSaveLayout.Name = "btnSaveLayout";
             this.btnSaveLayout.Size = new System.Drawing.Size(62, 22);
             this.btnSaveLayout.StyleController = this.layoutControlDatasource;
@@ -289,7 +273,7 @@
             // lueLayout
             // 
             this.lueLayout.EditValue = "";
-            this.lueLayout.Location = new System.Drawing.Point(74, 123);
+            this.lueLayout.Location = new System.Drawing.Point(48, 97);
             this.lueLayout.Name = "lueLayout";
             this.lueLayout.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -299,13 +283,11 @@
             this.lueLayout.Properties.DisplayMember = "DatasourceLayoutName";
             this.lueLayout.Properties.NullText = "";
             this.lueLayout.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
-            this.lueLayout.Properties.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoExEditDesc});
             this.lueLayout.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueLayout.Properties.ValueMember = "DatasourceLayoutId";
             this.lueLayout.Properties.View = this.gridView2;
             this.lueLayout.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lueLayout_Properties_ButtonClick);
-            this.lueLayout.Size = new System.Drawing.Size(195, 22);
+            this.lueLayout.Size = new System.Drawing.Size(221, 22);
             this.lueLayout.StyleController = this.layoutControlDatasource;
             this.lueLayout.TabIndex = 4;
             // 
@@ -313,13 +295,6 @@
             // 
             this.LSMSLayout.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasourceLayout_LUE);
             this.LSMSLayout.KeyExpression = "[DatasourceLayoutId]";
-            // 
-            // repositoryItemMemoExEditDesc
-            // 
-            this.repositoryItemMemoExEditDesc.AutoHeight = false;
-            this.repositoryItemMemoExEditDesc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemMemoExEditDesc.Name = "repositoryItemMemoExEditDesc";
             // 
             // gridView2
             // 
@@ -392,7 +367,7 @@
             // btnLoadDashboard
             // 
             this.btnLoadDashboard.Image = global::NICSQLTools.Properties.Resources.done;
-            this.btnLoadDashboard.Location = new System.Drawing.Point(12, 88);
+            this.btnLoadDashboard.Location = new System.Drawing.Point(12, 62);
             this.btnLoadDashboard.Name = "btnLoadDashboard";
             this.btnLoadDashboard.Size = new System.Drawing.Size(257, 31);
             this.btnLoadDashboard.StyleController = this.layoutControlDatasource;
@@ -400,105 +375,10 @@
             this.btnLoadDashboard.Text = "Load Datasource";
             this.btnLoadDashboard.Click += new System.EventHandler(this.btnLoadDatasource_Click);
             // 
-            // lueDatasource
-            // 
-            this.lueDatasource.EditValue = "";
-            this.lueDatasource.Location = new System.Drawing.Point(74, 62);
-            this.lueDatasource.Name = "lueDatasource";
-            this.lueDatasource.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            this.lueDatasource.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
-            this.lueDatasource.Properties.DataSource = this.LSMSDatasource;
-            this.lueDatasource.Properties.DisplayMember = "DatasourceName";
-            this.lueDatasource.Properties.NullText = "";
-            this.lueDatasource.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
-            this.lueDatasource.Properties.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoExEditDesc});
-            this.lueDatasource.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueDatasource.Properties.ValueMember = "DatasourceID";
-            this.lueDatasource.Properties.View = this.gridLookUpEdit1View;
-            this.lueDatasource.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.lueDatasource_Properties_ButtonClick);
-            this.lueDatasource.Size = new System.Drawing.Size(195, 22);
-            this.lueDatasource.StyleController = this.layoutControlDatasource;
-            this.lueDatasource.TabIndex = 0;
-            // 
             // LSMSDatasource
             // 
             this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
             this.LSMSDatasource.KeyExpression = "[DatasourceID]";
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colDatasourceName,
-            this.gridColumn1,
-            this.colAppDatasourceTypeId,
-            this.colDesc,
-            this.colDateIn,
-            this.colUserIn});
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.AnimationType = DevExpress.XtraGrid.Views.Base.GridAnimationType.AnimateAllContent;
-            this.gridLookUpEdit1View.OptionsView.ColumnAutoWidth = false;
-            this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            this.gridLookUpEdit1View.OptionsView.ShowIndicator = false;
-            this.gridLookUpEdit1View.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Indicator;
-            // 
-            // colDatasourceName
-            // 
-            this.colDatasourceName.Caption = "Dashboard Name";
-            this.colDatasourceName.FieldName = "DatasourceName";
-            this.colDatasourceName.Name = "colDatasourceName";
-            this.colDatasourceName.Visible = true;
-            this.colDatasourceName.VisibleIndex = 0;
-            this.colDatasourceName.Width = 132;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Category Name";
-            this.gridColumn1.FieldName = "DSCategoryName";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 105;
-            // 
-            // colAppDatasourceTypeId
-            // 
-            this.colAppDatasourceTypeId.Caption = "Datasource Type";
-            this.colAppDatasourceTypeId.FieldName = "AppDatasourceTypeName";
-            this.colAppDatasourceTypeId.Name = "colAppDatasourceTypeId";
-            this.colAppDatasourceTypeId.Visible = true;
-            this.colAppDatasourceTypeId.VisibleIndex = 2;
-            this.colAppDatasourceTypeId.Width = 92;
-            // 
-            // colDesc
-            // 
-            this.colDesc.Caption = "Desc";
-            this.colDesc.ColumnEdit = this.repositoryItemMemoExEditDesc;
-            this.colDesc.FieldName = "Desc";
-            this.colDesc.Name = "colDesc";
-            this.colDesc.Visible = true;
-            this.colDesc.VisibleIndex = 3;
-            // 
-            // colDateIn
-            // 
-            this.colDateIn.Caption = "Last Edit";
-            this.colDateIn.ColumnEdit = this.repositoryItemDateEdit1;
-            this.colDateIn.FieldName = "DateIn";
-            this.colDateIn.Name = "colDateIn";
-            this.colDateIn.Visible = true;
-            this.colDateIn.VisibleIndex = 4;
-            // 
-            // colUserIn
-            // 
-            this.colUserIn.Caption = "Last Edit User";
-            this.colUserIn.FieldName = "RealName";
-            this.colUserIn.Name = "colUserIn";
-            this.colUserIn.Visible = true;
-            this.colUserIn.VisibleIndex = 5;
             // 
             // layoutControlGroupDatasource
             // 
@@ -506,7 +386,6 @@
             this.layoutControlGroupDatasource.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroupDatasource.GroupBordersVisible = false;
             this.layoutControlGroupDatasource.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItemLoadLayout,
             this.layoutControlItemSave,
@@ -520,21 +399,11 @@
             this.layoutControlGroupDatasource.Text = "Datasource";
             this.layoutControlGroupDatasource.TextVisible = false;
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.lueDatasource;
-            this.layoutControlItem1.CustomizationFormText = "lueDashboard";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 50);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(261, 26);
-            this.layoutControlItem1.Text = "Data Source";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(59, 13);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.btnLoadDashboard;
             this.layoutControlItem2.CustomizationFormText = "btnLoad";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 76);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 35);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(128, 30);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -549,19 +418,19 @@
             // 
             this.layoutControlItemLoadLayout.Control = this.lueLayout;
             this.layoutControlItemLoadLayout.CustomizationFormText = "Layout";
-            this.layoutControlItemLoadLayout.Location = new System.Drawing.Point(0, 111);
+            this.layoutControlItemLoadLayout.Location = new System.Drawing.Point(0, 85);
             this.layoutControlItemLoadLayout.Name = "layoutControlItemLoadLayout";
             this.layoutControlItemLoadLayout.Size = new System.Drawing.Size(261, 26);
             this.layoutControlItemLoadLayout.Text = "Layout";
-            this.layoutControlItemLoadLayout.TextSize = new System.Drawing.Size(59, 13);
+            this.layoutControlItemLoadLayout.TextSize = new System.Drawing.Size(33, 13);
             // 
             // layoutControlItemSave
             // 
             this.layoutControlItemSave.Control = this.btnSaveLayout;
             this.layoutControlItemSave.CustomizationFormText = "Save";
-            this.layoutControlItemSave.Location = new System.Drawing.Point(0, 137);
+            this.layoutControlItemSave.Location = new System.Drawing.Point(0, 111);
             this.layoutControlItemSave.Name = "layoutControlItemSave";
-            this.layoutControlItemSave.Size = new System.Drawing.Size(66, 28);
+            this.layoutControlItemSave.Size = new System.Drawing.Size(66, 54);
             this.layoutControlItemSave.Text = "layoutControlItemSave";
             this.layoutControlItemSave.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemSave.TextToControlDistance = 0;
@@ -587,9 +456,9 @@
             // 
             this.layoutControlItemSaveAs.Control = this.btnSaveAsLayout;
             this.layoutControlItemSaveAs.CustomizationFormText = "Save As";
-            this.layoutControlItemSaveAs.Location = new System.Drawing.Point(66, 137);
+            this.layoutControlItemSaveAs.Location = new System.Drawing.Point(66, 111);
             this.layoutControlItemSaveAs.Name = "layoutControlItemSaveAs";
-            this.layoutControlItemSaveAs.Size = new System.Drawing.Size(73, 28);
+            this.layoutControlItemSaveAs.Size = new System.Drawing.Size(73, 54);
             this.layoutControlItemSaveAs.Text = "layoutControlItemSaveAs";
             this.layoutControlItemSaveAs.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemSaveAs.TextToControlDistance = 0;
@@ -599,9 +468,9 @@
             // 
             this.layoutControlItemDelete.Control = this.btnDeleteLayout;
             this.layoutControlItemDelete.CustomizationFormText = "Delete";
-            this.layoutControlItemDelete.Location = new System.Drawing.Point(196, 137);
+            this.layoutControlItemDelete.Location = new System.Drawing.Point(196, 111);
             this.layoutControlItemDelete.Name = "layoutControlItemDelete";
-            this.layoutControlItemDelete.Size = new System.Drawing.Size(65, 28);
+            this.layoutControlItemDelete.Size = new System.Drawing.Size(65, 54);
             this.layoutControlItemDelete.Text = "layoutControlItemDelete";
             this.layoutControlItemDelete.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemDelete.TextToControlDistance = 0;
@@ -611,9 +480,9 @@
             // 
             this.layoutControlItemLoad.Control = this.btnLoadLayout;
             this.layoutControlItemLoad.CustomizationFormText = "Load";
-            this.layoutControlItemLoad.Location = new System.Drawing.Point(139, 137);
+            this.layoutControlItemLoad.Location = new System.Drawing.Point(139, 111);
             this.layoutControlItemLoad.Name = "layoutControlItemLoad";
-            this.layoutControlItemLoad.Size = new System.Drawing.Size(57, 28);
+            this.layoutControlItemLoad.Size = new System.Drawing.Size(57, 54);
             this.layoutControlItemLoad.Text = "layoutControlItemLoad";
             this.layoutControlItemLoad.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemLoad.TextToControlDistance = 0;
@@ -796,13 +665,9 @@
             this.layoutControlDatasource.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueDatasource.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDatasource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLoadLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemSave)).EndInit();
@@ -830,26 +695,17 @@
         private DevExpress.XtraBars.Docking.DockPanel dockPanelDashboard;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
         private DevExpress.XtraLayout.LayoutControl layoutControlDatasource;
-        private DevExpress.XtraEditors.GridLookUpEdit lueDatasource;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupDatasource;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SimpleButton btnLoadDashboard;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControl layoutControlParamter;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraGrid.Columns.GridColumn colDatasourceName;
-        private DevExpress.XtraGrid.Columns.GridColumn colDateIn;
-        private DevExpress.XtraGrid.Columns.GridColumn colUserIn;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraWaitForm.ProgressPanel ppWait;
         private DevExpress.XtraLayout.LayoutControlItem lciWait;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupParamters;
         private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControlMain;
         private NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter get_sp_PramTableAdapter;
-        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditDesc;
-        private DevExpress.XtraGrid.Columns.GridColumn colAppDatasourceTypeId;
-        private DevExpress.XtraGrid.Columns.GridColumn colDesc;
         private DevExpress.XtraEditors.GridLookUpEdit lueLayout;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colDatasourceLayoutName;
@@ -881,6 +737,5 @@
         private DevExpress.XtraEditors.SimpleButton btnExportPivot;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

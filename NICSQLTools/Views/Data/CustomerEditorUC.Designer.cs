@@ -99,6 +99,7 @@
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExport = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -106,7 +107,6 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.levelCCSDTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.LevelCCSDTableAdapter();
-            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubchannel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subchannelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
@@ -515,7 +515,7 @@
             this.colFRZbrand});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
-            this.gridViewMain.NewItemRowText = "Click here to add a new customer";
+            this.gridViewMain.NewItemRowText = "Click here to add a new";
             this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewMain.OptionsSelection.InvertSelection = true;
@@ -737,6 +737,14 @@
             this.bbiSave.Name = "bbiSave";
             this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+            this.bbiRefresh.Id = 2;
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
+            // 
             // bbiExport
             // 
             this.bbiExport.Caption = "Export";
@@ -781,14 +789,6 @@
             // levelCCSDTableAdapter
             // 
             this.levelCCSDTableAdapter.ClearBeforeFill = true;
-            // 
-            // bbiRefresh
-            // 
-            this.bbiRefresh.Caption = "Refresh";
-            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
-            this.bbiRefresh.Id = 2;
-            this.bbiRefresh.Name = "bbiRefresh";
-            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // CustomerEditorUC
             // 

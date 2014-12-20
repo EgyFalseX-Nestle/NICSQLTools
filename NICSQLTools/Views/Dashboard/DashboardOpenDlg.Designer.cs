@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.LSMSSchema = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDashboardSchemaId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -41,8 +43,8 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.appDashboardSchemaTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter();
-            this.LSMSSchema = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn)).BeginInit();
@@ -50,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMain
@@ -71,6 +72,11 @@
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
+            // 
+            // LSMSSchema
+            // 
+            this.LSMSSchema.ElementType = typeof(NICSQLTools.Data.Linq.vAppDashboardSchema_LUE);
+            this.LSMSSchema.KeyExpression = "[DashboardSchemaId]";
             // 
             // gridViewMain
             // 
@@ -107,7 +113,7 @@
             // 
             this.repositoryItemButtonEditSelect.AutoHeight = false;
             this.repositoryItemButtonEditSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Select", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.apply_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemButtonEditSelect.Name = "repositoryItemButtonEditSelect";
             this.repositoryItemButtonEditSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditSelect_ButtonClick);
@@ -220,11 +226,6 @@
             // 
             this.appDashboardSchemaTableAdapter.ClearBeforeFill = true;
             // 
-            // LSMSSchema
-            // 
-            this.LSMSSchema.ElementType = typeof(NICSQLTools.Data.Linq.vAppDashboardSchema_LUE);
-            this.LSMSSchema.KeyExpression = "[DashboardSchemaId]";
-            // 
             // DashboardOpenDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,6 +243,7 @@
             this.Text = "Open Dashboard";
             this.Load += new System.EventHandler(this.DashboardOpenDlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn.CalendarTimeProperties)).EndInit();
@@ -249,7 +251,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSchema)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 24.5" name="dsLinqData">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 24.5" name="dsLinqData">
   <DataContextMoniker Name="/dsLinqDataDataContext" />
   <nestedChildShapes>
     <classShape Id="81751340-4c25-483e-aba3-7214bdcb9086" absoluteBounds="3.5, 1, 2, 23.308657226562502">
@@ -76,10 +76,10 @@
         <elementListCompartment Id="f5c136d8-3daa-4632-bcac-ba3cb69bcde2" absoluteBounds="8.265, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="07905f39-44cb-472c-a85a-ec63ed8c20d6" absoluteBounds="8.625, 6.25, 2, 1.7708968098958331">
+    <classShape Id="07905f39-44cb-472c-a85a-ec63ed8c20d6" absoluteBounds="8.625, 6.625, 2, 1.7708968098958331">
       <DataClassMoniker Name="/dsLinqDataDataContext/vAppDSCategory" />
       <nestedChildShapes>
-        <elementListCompartment Id="808b8f04-2411-46d7-a01d-6e66cb4d36aa" absoluteBounds="8.64, 6.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="808b8f04-2411-46d7-a01d-6e66cb4d36aa" absoluteBounds="8.64, 7.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="d14b8b9f-f5ec-48ee-bf3a-f9608a40d7f6" absoluteBounds="6.125, 8.875, 2, 1.5785953776041666">
@@ -88,5 +88,12 @@
         <elementListCompartment Id="6ded1d3c-86a9-4bab-8158-7d9b649c186f" absoluteBounds="6.14, 9.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <associationConnector edgePoints="[(9.625 : 6.625); (9.625 : 6.27089680989583); (11 : 6.27089680989583); (11 : 2.55850341796875); (10.25 : 2.55850341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dsLinqDataDataContext/vAppDSCategory/vAppDSCategory_vAppDatasource_LUE" />
+      <nodes>
+        <classShapeMoniker Id="07905f39-44cb-472c-a85a-ec63ed8c20d6" />
+        <classShapeMoniker Id="7fc0ecf1-1b63-408b-8237-9f83cd351d1d" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

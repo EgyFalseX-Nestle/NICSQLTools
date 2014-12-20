@@ -28,6 +28,7 @@ namespace NICSQLTools.Views.Qry
         List<Control> LayoutControlList = new List<Control>();
         List<string> ProgressList = new List<string>();
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+        NICSQLTools.Data.Linq.vAppDatasource_LUE _selectedDatasource = null;
         #endregion
         #region -   Functions   -
         public QryPivotUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
@@ -59,6 +60,14 @@ namespace NICSQLTools.Views.Qry
                 }));
                 SplashScreenManager.CloseForm();
             });
+        }
+        private bool OpenDatasource()
+        {
+            NICSQLTools.Views.Dashboard.DatasourceOpenDlg dlg = new NICSQLTools.Views.Dashboard.DatasourceOpenDlg(Uti.Types.AppDatasourceTypeIdEnum.SPQry);
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return false;
+            _selectedDatasource = dlg.DataSourceRow;
+            return true;
         }
         /// <summary>
         /// Create Datasource And Its Controls And Add it to ref Param 'ds'
@@ -274,7 +283,7 @@ namespace NICSQLTools.Views.Qry
             NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
             DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
             lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Base_Base_Product]";
-            lsms.QueryableSource = from q in ds.vAppProductDetails group q by q.Base_Base_Product into g select new { Base_Base_Product = g.Key };
+            lsms.QueryableSource = from q in ds.vAppProductDetails where q.Base_Base_Product != null group q by q.Base_Base_Product into g select new { Base_Base_Product = g.Key };
 
             CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
             ccbe.Properties.AllowMultiSelect = true;
@@ -291,7 +300,7 @@ namespace NICSQLTools.Views.Qry
             NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
             DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
             lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Base_Group]";
-            lsms.QueryableSource = from q in ds.vAppProductDetails group q by q.Base_Group into g select new { Base_Group = g.Key };
+            lsms.QueryableSource = from q in ds.vAppProductDetails where q.Base_Group != null group q by q.Base_Group into g select new { Base_Group = g.Key };
 
             CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
             ccbe.Properties.AllowMultiSelect = true;
@@ -328,21 +337,25 @@ namespace NICSQLTools.Views.Qry
         {
             LoadDefaultData();
             ActivateRules();
+
         }
         private void btnLoadDatasource_Click(object sender, EventArgs e)
         {
-            if (FXFW.SqlDB.IsNullOrEmpty(lueDatasource.EditValue))
+            if (!OpenDatasource())
+                return;
+
+            if (_selectedDatasource == null)
                 return;
             layoutControlGroupDatasource.Enabled = false;//Stop User Activity
             try
             {
-                int DatasourceID = Convert.ToInt32(lueDatasource.EditValue);
+                int DatasourceID = _selectedDatasource.DatasourceID;
                 DataSourceList = new Classes.QueryLayout.DatasourceStrc(); DataSourceList.Controls = new Dictionary<string, Control>(); //Inti Datasource
                 CreateDatasource(DatasourceID, ref DataSourceList);
                 //Add Controls To Form
                 CreateLayout(DataSourceList, ref LayoutControlList);
                 //Load Datasource Layout
-                LoadLayoutDatasource(Convert.ToInt32(lueDatasource.EditValue));
+                LoadLayoutDatasource(DatasourceID);
             }
             catch (Exception ex)
             {
@@ -379,11 +392,11 @@ namespace NICSQLTools.Views.Qry
             layoutControlGroupDatasource.Enabled = false;//Stop User Activity
             System.Threading.ThreadPool.QueueUserWorkItem((o) =>
             {
-                
+                pivotGridControlMain.Fields.Clear();
                 pivotGridControlMain.ForceInitialize();
                 pivotGridControlMain.DataSource = DataManager.ExeDataSource(DataSourceList.DatasourceSPName, Paramters, DataSourceList.Execommand, StoredProcedure_InfoMessage, SelectCommand_StatementCompleted);
                 pivotGridControlMain.RetrieveFields();
-                if (!FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
+                if (lueLayout.EditValue != null && lueLayout.EditValue.ToString() != string.Empty)
                     LoadLayout(Convert.ToInt32(lueLayout.EditValue));
                
                 Invoke(new MethodInvoker(() =>
@@ -429,24 +442,18 @@ namespace NICSQLTools.Views.Qry
         }
         void SelectCommand_StatementCompleted(object sender, StatementCompletedEventArgs e)
         {
-            MessageBox.Show("Select Command Complete Flag Fired: " + Environment.NewLine + "Recored Count: " + e.RecordCount);
-        }
-        private void lueDatasource_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)
-                LoadDefaultData();
+            MessageBox.Show(String.Format("Select Command Complete Flag Fired: {0}Recored Count: {1}", Environment.NewLine, e.RecordCount));
         }
         private void lueLayout_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (!FXFW.SqlDB.IsNullOrEmpty(lueDatasource.EditValue))
+            if (_selectedDatasource != null)
                 LSMSLayout.Reload();
-            
         }
         private void btnSaveLayout_Click(object sender, EventArgs e)
         {
-            if (FXFW.SqlDB.IsNullOrEmpty(lueDatasource.EditValue))//|| FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue)
+            if (_selectedDatasource == null)//|| FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue)
                 return;
-            int Datasource = Convert.ToInt32(lueDatasource.EditValue);
+            int Datasource = _selectedDatasource.DatasourceID;
 
             //if (MsgDlg.Show("Are You Sure You Wanna Save Layout ?", MsgDlg.MessageType.Question) == DialogResult.No)
             //    return;
@@ -476,7 +483,7 @@ namespace NICSQLTools.Views.Qry
         }
         private void btnSaveAsLayout_Click(object sender, EventArgs e)
         {
-            if (FXFW.SqlDB.IsNullOrEmpty(lueDatasource.EditValue))
+            if (_selectedDatasource == null)
                 return;
 
             Views.Main.ChooseSaveNameDlg dlg = new Main.ChooseSaveNameDlg();
@@ -487,7 +494,7 @@ namespace NICSQLTools.Views.Qry
             {
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
                 pivotGridControlMain.SaveLayoutToStream(ms, DevExpress.Utils.OptionsLayoutBase.FullLayout);
-                int NewId = (int)Classes.QueryLayout.InsertLayout(Convert.ToInt32(lueDatasource.EditValue), dlg.SavingName, ms.ToArray());
+                int NewId = (int)Classes.QueryLayout.InsertLayout(_selectedDatasource.DatasourceID, dlg.SavingName, ms.ToArray());
                 lueLayout.EditValue = NewId;
             }
             catch (Exception ex)
@@ -499,7 +506,7 @@ namespace NICSQLTools.Views.Qry
         }
         private void btnLoadLayout_Click(object sender, EventArgs e)
         {
-            if (FXFW.SqlDB.IsNullOrEmpty(lueDatasource.EditValue) || FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
+            if (_selectedDatasource.DatasourceID == null || FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
                 return;
             if (MsgDlg.Show("Are You Sure You Wanna Load ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
@@ -508,7 +515,7 @@ namespace NICSQLTools.Views.Qry
         }
         private void btnDeleteLayout_Click(object sender, EventArgs e)
         {
-            if (FXFW.SqlDB.IsNullOrEmpty(lueDatasource.EditValue) || FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
+            if (_selectedDatasource.DatasourceID == null || FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
                 return;
             if (MsgDlg.Show("Are You Sure You Wanna Delete ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
@@ -518,8 +525,8 @@ namespace NICSQLTools.Views.Qry
             {
                 MsgDlg.Show("Layout Deleted ...", MsgDlg.MessageType.Success);
                 //Load Datasource Layout
-                if (!FXFW.SqlDB.IsNullOrEmpty(lueDatasource.EditValue))
-                    LoadLayoutDatasource(Convert.ToInt32(lueDatasource.EditValue));
+                if (_selectedDatasource.DatasourceID != null)
+                    LoadLayoutDatasource(_selectedDatasource.DatasourceID);
                 lueLayout.EditValue = null;
             }
             else

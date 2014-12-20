@@ -210,6 +210,7 @@
       <Column Name="DSCategoryId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DSCategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DSCategoryDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="vAppDSCategory_vAppDatasource_LUE" Member="vAppDSCategory" ThisKey="DSCategoryId" OtherKey="DSCategoryId" Type="vAppDSCategory" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.vAppDSCategory" Member="vAppDSCategories">
@@ -219,6 +220,7 @@
       <Column Name="DSCategoryDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="DSCategoryParent" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DSCategoryParentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="vAppDSCategory_vAppDatasource_LUE" Member="vAppDatasource_LUEs" ThisKey="DSCategoryId" OtherKey="DSCategoryId" Type="vAppDatasource_LUE" />
     </Type>
   </Table>
   <Table Name="dbo.vAppProductDetails" Member="vAppProductDetails">

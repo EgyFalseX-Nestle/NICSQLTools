@@ -55,6 +55,7 @@
             this.layoutControlItemAdd = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemPnlProg = new DevExpress.XtraLayout.LayoutControlItem();
             this.dsQry = new NICSQLTools.Data.dsQry();
+            this.dmG_MasterTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.DMG_MasterTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).BeginInit();
@@ -93,7 +94,7 @@
             this.emptySpaceItemSpace.CustomizationFormText = "Space";
             this.emptySpaceItemSpace.Location = new System.Drawing.Point(0, 192);
             this.emptySpaceItemSpace.Name = "emptySpaceItemSpace";
-            this.emptySpaceItemSpace.Size = new System.Drawing.Size(229, 166);
+            this.emptySpaceItemSpace.Size = new System.Drawing.Size(269, 166);
             this.emptySpaceItemSpace.Text = "Space";
             this.emptySpaceItemSpace.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -103,9 +104,9 @@
             this.layoutControlItemImport.CustomizationFormText = "Import";
             this.layoutControlItemImport.Location = new System.Drawing.Point(0, 42);
             this.layoutControlItemImport.MaxSize = new System.Drawing.Size(0, 42);
-            this.layoutControlItemImport.MinSize = new System.Drawing.Size(123, 42);
+            this.layoutControlItemImport.MinSize = new System.Drawing.Size(245, 42);
             this.layoutControlItemImport.Name = "layoutControlItemImport";
-            this.layoutControlItemImport.Size = new System.Drawing.Size(205, 42);
+            this.layoutControlItemImport.Size = new System.Drawing.Size(245, 42);
             this.layoutControlItemImport.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemImport.Text = "Import";
             this.layoutControlItemImport.TextSize = new System.Drawing.Size(0, 0);
@@ -118,7 +119,7 @@
             this.btnImport.Image = global::NICSQLTools.Properties.Resources.importtodatabase_32x32;
             this.btnImport.Location = new System.Drawing.Point(24, 424);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(201, 38);
+            this.btnImport.Size = new System.Drawing.Size(241, 38);
             this.btnImport.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
             this.btnImport.TabIndex = 3;
             this.btnImport.Text = "Start Importing";
@@ -169,14 +170,13 @@
             // 
             // tbLog
             // 
-            this.tbLog.Location = new System.Drawing.Point(241, 204);
+            this.tbLog.Location = new System.Drawing.Point(281, 204);
             this.tbLog.Name = "tbLog";
             this.tbLog.Properties.ReadOnly = true;
             this.tbLog.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbLog.Size = new System.Drawing.Size(650, 270);
+            this.tbLog.Size = new System.Drawing.Size(610, 270);
             this.tbLog.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
             this.tbLog.TabIndex = 6;
-            this.tbLog.UseOptimizedRendering = true;
             // 
             // lblCount
             // 
@@ -268,9 +268,9 @@
             // 
             this.layoutControlItemLog.Control = this.tbLog;
             this.layoutControlItemLog.CustomizationFormText = "Log";
-            this.layoutControlItemLog.Location = new System.Drawing.Point(229, 192);
+            this.layoutControlItemLog.Location = new System.Drawing.Point(269, 192);
             this.layoutControlItemLog.Name = "layoutControlItemLog";
-            this.layoutControlItemLog.Size = new System.Drawing.Size(654, 274);
+            this.layoutControlItemLog.Size = new System.Drawing.Size(614, 274);
             this.layoutControlItemLog.Text = "Log";
             this.layoutControlItemLog.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemLog.TextToControlDistance = 0;
@@ -325,7 +325,7 @@
             this.layoutControlItemImport});
             this.layoutControlGroupCommand.Location = new System.Drawing.Point(0, 358);
             this.layoutControlGroupCommand.Name = "layoutControlGroupCommand";
-            this.layoutControlGroupCommand.Size = new System.Drawing.Size(229, 108);
+            this.layoutControlGroupCommand.Size = new System.Drawing.Size(269, 108);
             this.layoutControlGroupCommand.Text = "Command";
             this.layoutControlGroupCommand.TextVisible = false;
             // 
@@ -337,7 +337,7 @@
             this.layoutControlItemRemove.MaxSize = new System.Drawing.Size(89, 42);
             this.layoutControlItemRemove.MinSize = new System.Drawing.Size(89, 42);
             this.layoutControlItemRemove.Name = "layoutControlItemRemove";
-            this.layoutControlItemRemove.Size = new System.Drawing.Size(89, 42);
+            this.layoutControlItemRemove.Size = new System.Drawing.Size(129, 42);
             this.layoutControlItemRemove.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemRemove.Text = "Remove";
             this.layoutControlItemRemove.TextSize = new System.Drawing.Size(0, 0);
@@ -379,6 +379,10 @@
             // 
             this.dsQry.DataSetName = "dsQry";
             this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dmG_MasterTableAdapter
+            // 
+            this.dmG_MasterTableAdapter.ClearBeforeFill = true;
             // 
             // ImportDMG_MasterUC
             // 
@@ -438,5 +442,6 @@
         private NICSQLTools.Data.dsQry dsQry;
         private DevExpress.XtraWaitForm.ProgressPanel PnlProg;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPnlProg;
+        private NICSQLTools.Data.dsQryTableAdapters.DMG_MasterTableAdapter dmG_MasterTableAdapter;
     }
 }

@@ -207,7 +207,7 @@
             // 
             // btnLoadDashboard
             // 
-            this.btnLoadDashboard.Image = global::NICSQLTools.Properties.Resources.done;
+            this.btnLoadDashboard.Image = global::NICSQLTools.Properties.Resources.open_32x32;
             this.btnLoadDashboard.Location = new System.Drawing.Point(12, 88);
             this.btnLoadDashboard.Name = "btnLoadDashboard";
             this.btnLoadDashboard.Size = new System.Drawing.Size(249, 31);

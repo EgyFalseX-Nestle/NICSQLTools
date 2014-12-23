@@ -41,14 +41,14 @@
             this.dashboardDesignerMain.PrintingOptions.DocumentContentOptions.FilterState = DevExpress.DashboardWin.DashboardPrintingFilterState.SeparatePage;
             this.dashboardDesignerMain.PrintingOptions.FontInfo.GdiCharSet = ((byte)(0));
             this.dashboardDesignerMain.PrintingOptions.FontInfo.Name = null;
-            this.dashboardDesignerMain.Size = new System.Drawing.Size(657, 385);
+            this.dashboardDesignerMain.Size = new System.Drawing.Size(903, 456);
             this.dashboardDesignerMain.TabIndex = 1;
             // 
             // DashboardViewerEditorFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 385);
+            this.ClientSize = new System.Drawing.Size(903, 456);
             this.Controls.Add(this.dashboardDesignerMain);
             this.Name = "DashboardViewerEditorFrm";
             this.Text = "Dashboard Editor";

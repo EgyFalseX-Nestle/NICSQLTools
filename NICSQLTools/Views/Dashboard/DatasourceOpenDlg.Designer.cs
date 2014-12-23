@@ -76,7 +76,7 @@
             this.groupControlMain.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControlMain.Location = new System.Drawing.Point(0, 315);
             this.groupControlMain.Name = "groupControlMain";
-            this.groupControlMain.Size = new System.Drawing.Size(716, 66);
+            this.groupControlMain.Size = new System.Drawing.Size(867, 66);
             this.groupControlMain.TabIndex = 1;
             // 
             // btnClose
@@ -84,7 +84,7 @@
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Image = global::NICSQLTools.Properties.Resources.Stop;
-            this.btnClose.Location = new System.Drawing.Point(599, 23);
+            this.btnClose.Location = new System.Drawing.Point(750, 23);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(105, 37);
             this.btnClose.TabIndex = 0;
@@ -111,7 +111,7 @@
             this.treeListMain.OptionsView.ShowAutoFilterRow = true;
             this.treeListMain.ParentFieldName = "DSCategoryParent";
             this.treeListMain.SelectImageList = this.imageCollectionNormal;
-            this.treeListMain.Size = new System.Drawing.Size(268, 315);
+            this.treeListMain.Size = new System.Drawing.Size(347, 315);
             this.treeListMain.TabIndex = 11;
             this.treeListMain.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeListMain_FocusedNodeChanged);
             // 
@@ -123,7 +123,7 @@
             this.treeListColumn1.Name = "treeListColumn1";
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
-            this.treeListColumn1.Width = 73;
+            this.treeListColumn1.Width = 98;
             // 
             // colDSCategoryDesc
             // 
@@ -154,8 +154,8 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControlMain);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(716, 315);
-            this.splitContainerControl1.SplitterPosition = 268;
+            this.splitContainerControl1.Size = new System.Drawing.Size(867, 315);
+            this.splitContainerControl1.SplitterPosition = 347;
             this.splitContainerControl1.TabIndex = 12;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -171,7 +171,7 @@
             this.repositoryItemDateEditDateIn,
             this.repositoryItemButtonEditSelect,
             this.repositoryItemButtonEditDelete});
-            this.gridControlMain.Size = new System.Drawing.Size(443, 315);
+            this.gridControlMain.Size = new System.Drawing.Size(515, 315);
             this.gridControlMain.TabIndex = 1;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
@@ -228,7 +228,7 @@
             this.colDashboardSchemaName.Name = "colDashboardSchemaName";
             this.colDashboardSchemaName.Visible = true;
             this.colDashboardSchemaName.VisibleIndex = 1;
-            this.colDashboardSchemaName.Width = 141;
+            this.colDashboardSchemaName.Width = 156;
             // 
             // colUserIn
             // 
@@ -243,7 +243,7 @@
             this.colUserIn.Name = "colUserIn";
             this.colUserIn.Visible = true;
             this.colUserIn.VisibleIndex = 2;
-            this.colUserIn.Width = 120;
+            this.colUserIn.Width = 132;
             // 
             // colDateIn
             // 
@@ -288,7 +288,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(716, 381);
+            this.ClientSize = new System.Drawing.Size(867, 381);
             this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.groupControlMain);
             this.Name = "DatasourceOpenDlg";

@@ -32,7 +32,8 @@ namespace NICSQLTools
                 bulkCopy.ColumnMappings.Add("Sales unit", "Sales unit"); bulkCopy.ColumnMappings.Add("Condition type", "Condition type");
                 bulkCopy.ColumnMappings.Add("Actual Invoiced Quan", "Actual Invoiced Quan"); bulkCopy.ColumnMappings.Add("Condition value", "Condition value");
                 bulkCopy.ColumnMappings.Add("Route & Sold", "Route & Sold"); bulkCopy.ColumnMappings.Add("yeard", "yeard");
-                bulkCopy.ColumnMappings.Add("Month", "Month"); bulkCopy.ColumnMappings.Add("New Quanteite", "New Quanteite");
+                bulkCopy.ColumnMappings.Add("New Quanteite", "New Quanteite");
+                //bulkCopy.ColumnMappings.Add("Month", "Month");
                 //bulkCopy.ColumnMappings.Add("Sales Organization", "Sales Organization");bulkCopy.ColumnMappings.Add("Plant", "Plant"); 
                 //bulkCopy.ColumnMappings.Add("Sales district", "Sales district"); bulkCopy.ColumnMappings.Add("Company Code", "Company Code");
                 //bulkCopy.ColumnMappings.Add("Payer", "Payer"); bulkCopy.ColumnMappings.Add("Base Unit of Measure", "Base Unit of Measure");

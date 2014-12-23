@@ -742,6 +742,7 @@
             // 
             // renameDataSourceBarItem1
             // 
+            this.renameDataSourceBarItem1.Enabled = false;
             this.renameDataSourceBarItem1.Id = 9;
             this.renameDataSourceBarItem1.Name = "renameDataSourceBarItem1";
             // 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.panelContainerMain = new DevExpress.XtraBars.Docking.DockPanel();
@@ -52,7 +52,6 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ppWait = new DevExpress.XtraWaitForm.ProgressPanel();
             this.btnLoadDashboard = new DevExpress.XtraEditors.SimpleButton();
-            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.layoutControlGroupDatasource = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemLoadLayout = new DevExpress.XtraLayout.LayoutControlItem();
@@ -71,6 +70,7 @@
             this.layoutControlItemPropertiesControl = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.pivotGridControlMain = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.get_sp_PramTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
             this.appDatasourceLayoutTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceLayoutTableAdapter();
@@ -90,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLoadLayout)).BeginInit();
@@ -108,6 +107,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -278,7 +278,7 @@
             this.lueLayout.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.lueLayout.Properties.DataSource = this.LSMSLayout;
             this.lueLayout.Properties.DisplayMember = "DatasourceLayoutName";
             this.lueLayout.Properties.NullText = "";
@@ -366,7 +366,7 @@
             // 
             // btnLoadDashboard
             // 
-            this.btnLoadDashboard.Image = global::NICSQLTools.Properties.Resources.done;
+            this.btnLoadDashboard.Image = global::NICSQLTools.Properties.Resources.open_32x32;
             this.btnLoadDashboard.Location = new System.Drawing.Point(12, 62);
             this.btnLoadDashboard.Name = "btnLoadDashboard";
             this.btnLoadDashboard.Size = new System.Drawing.Size(257, 31);
@@ -374,11 +374,6 @@
             this.btnLoadDashboard.TabIndex = 1;
             this.btnLoadDashboard.Text = "Load Datasource";
             this.btnLoadDashboard.Click += new System.EventHandler(this.btnLoadDatasource_Click);
-            // 
-            // LSMSDatasource
-            // 
-            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
-            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
             // 
             // layoutControlGroupDatasource
             // 
@@ -604,6 +599,11 @@
             this.layoutControlItem4.TextToControlDistance = 0;
             this.layoutControlItem4.TextVisible = false;
             // 
+            // LSMSDatasource
+            // 
+            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
+            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
+            // 
             // pivotGridControlMain
             // 
             this.pivotGridControlMain.Appearance.Cell.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -666,7 +666,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLoadLayout)).EndInit();
@@ -684,6 +683,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).EndInit();
             this.ResumeLayout(false);
 

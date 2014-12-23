@@ -235,9 +235,7 @@ _______________________________________________
 
                 SqlRow.Billing_date_for_bil = Convert.ToDateTime(row["Billing date for bil"]);
                 SqlRow.yeard = SqlRow.Billing_date_for_bil.Year.ToString();
-                SqlRow.Month = SqlRow.Billing_date_for_bil.ToString("MMMM", System.Globalization.CultureInfo.InvariantCulture).ToString();
-
-                
+                //SqlRow.Month = SqlRow.Billing_date_for_bil.ToString("MMMM", System.Globalization.CultureInfo.InvariantCulture).ToString();
                 //SqlRow.Payer = row["Payer"].ToString();
                 //SqlRow.Condition_base_value = Convert.ToDouble(row["Condition base value"]);
                 //SqlRow._G_L_Account_Number = row["G/L Account Number"].ToString();

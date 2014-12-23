@@ -233,8 +233,10 @@ namespace NICSQLTools.Views.Qry
         {
             try
             {
+
                 byte[] data = Classes.QueryLayout.LoadDatasourceLayoutData(DatasourceLayoutId);
                 System.IO.MemoryStream ms = new System.IO.MemoryStream(data);
+                pivotGridControlMain.Fields.Clear();
                 pivotGridControlMain.RestoreLayoutFromStream(ms);
                 //MsgDlg.Show("Layout Loaded ...", MsgDlg.MessageType.Success);
                 return true;
@@ -396,8 +398,8 @@ namespace NICSQLTools.Views.Qry
                 pivotGridControlMain.ForceInitialize();
                 pivotGridControlMain.DataSource = DataManager.ExeDataSource(DataSourceList.DatasourceSPName, Paramters, DataSourceList.Execommand, StoredProcedure_InfoMessage, SelectCommand_StatementCompleted);
                 pivotGridControlMain.RetrieveFields();
-                if (lueLayout.EditValue != null && lueLayout.EditValue.ToString() != string.Empty)
-                    LoadLayout(Convert.ToInt32(lueLayout.EditValue));
+                //if (lueLayout.EditValue != null && lueLayout.EditValue.ToString() != string.Empty)
+                //    LoadLayout(Convert.ToInt32(lueLayout.EditValue));
                
                 Invoke(new MethodInvoker(() =>
                 {

@@ -195,11 +195,14 @@ _______________________________________________
             //Load All Bill Docs
             NICSQLTools.Data.dsData.QryBillDocDataTable TblMaster = new NICSQLTools.Data.dsData.QryBillDocDataTable();
 
+            
             //deleting data before saving new 1
             var result = from row in dtExcel.AsEnumerable()
+                         where row["Billing date for bil"] != null & row["Billing date for bil"].ToString() != string.Empty
                          orderby row["Billing date for bil"]
                          group row by row["Billing date for bil"] into grp
                          select new { BillingDate = grp.Key };
+
             
             DateTime BillStartDate = (DateTime)result.ElementAt(0).BillingDate;
             DateTime BillEndDate = (DateTime)result.ElementAt(result.Count() - 1).BillingDate;
@@ -431,8 +434,6 @@ _______________________________________________
         }
         void ImportWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            
-
             if (e.Result != null)
             {
                 DateTime dt = (DateTime)e.Result;
@@ -444,6 +445,5 @@ _______________________________________________
 
         #endregion
 
-        
     }
 }

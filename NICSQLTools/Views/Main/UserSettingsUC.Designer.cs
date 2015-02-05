@@ -101,7 +101,6 @@
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(349, 9, 645, 680);
             this.layoutControl1.OptionsView.UseDefaultDragAndDropRendering = false;
             this.layoutControl1.Root = this.layoutControlGroupSettings;
-            this.layoutControl1.ShowTemplates = true;
             this.layoutControl1.Size = new System.Drawing.Size(751, 526);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";

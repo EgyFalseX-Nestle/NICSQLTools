@@ -133,7 +133,8 @@ _______________________________________________
                         Application.DoEvents();
                     }));
                 }
-
+                if (row["Functional Loc#"].ToString() == string.Empty)
+                    continue;
                 row["Functional Loc#"] = Convert.ToInt32(row["Functional Loc#"].ToString());
 
                 ////remove duplicated

@@ -60,6 +60,9 @@ namespace NICSQLTools.Data.Linq
     partial void InsertvAppProductDetail(vAppProductDetail instance);
     partial void UpdatevAppProductDetail(vAppProductDetail instance);
     partial void DeletevAppProductDetail(vAppProductDetail instance);
+    partial void InsertPRD_BaseProduct(PRD_BaseProduct instance);
+    partial void UpdatePRD_BaseProduct(PRD_BaseProduct instance);
+    partial void DeletePRD_BaseProduct(PRD_BaseProduct instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -185,6 +188,14 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<vAppProductDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PRD_BaseProduct> PRD_BaseProducts
+		{
+			get
+			{
+				return this.GetTable<PRD_BaseProduct>();
 			}
 		}
 	}
@@ -4174,6 +4185,212 @@ namespace NICSQLTools.Data.Linq
 					this._Base_Group = value;
 					this.SendPropertyChanged("Base_Group");
 					this.OnBase_GroupChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PRD_BaseProduct")]
+	public partial class PRD_BaseProduct : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private short _BaseProductId;
+		
+		private string _BaseProduct;
+		
+		private System.Nullable<short> _BaseProductLevel;
+		
+		private System.Nullable<short> _BaseGroupId;
+		
+		private string _Group1;
+		
+		private string _Group2;
+		
+		private string _Group3;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnBaseProductIdChanging(short value);
+    partial void OnBaseProductIdChanged();
+    partial void OnBaseProductChanging(string value);
+    partial void OnBaseProductChanged();
+    partial void OnBaseProductLevelChanging(System.Nullable<short> value);
+    partial void OnBaseProductLevelChanged();
+    partial void OnBaseGroupIdChanging(System.Nullable<short> value);
+    partial void OnBaseGroupIdChanged();
+    partial void OnGroup1Changing(string value);
+    partial void OnGroup1Changed();
+    partial void OnGroup2Changing(string value);
+    partial void OnGroup2Changed();
+    partial void OnGroup3Changing(string value);
+    partial void OnGroup3Changed();
+    #endregion
+		
+		public PRD_BaseProduct()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseProductId", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
+		public short BaseProductId
+		{
+			get
+			{
+				return this._BaseProductId;
+			}
+			set
+			{
+				if ((this._BaseProductId != value))
+				{
+					this.OnBaseProductIdChanging(value);
+					this.SendPropertyChanging();
+					this._BaseProductId = value;
+					this.SendPropertyChanged("BaseProductId");
+					this.OnBaseProductIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseProduct", DbType="NVarChar(50)")]
+		public string BaseProduct
+		{
+			get
+			{
+				return this._BaseProduct;
+			}
+			set
+			{
+				if ((this._BaseProduct != value))
+				{
+					this.OnBaseProductChanging(value);
+					this.SendPropertyChanging();
+					this._BaseProduct = value;
+					this.SendPropertyChanged("BaseProduct");
+					this.OnBaseProductChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseProductLevel", DbType="SmallInt")]
+		public System.Nullable<short> BaseProductLevel
+		{
+			get
+			{
+				return this._BaseProductLevel;
+			}
+			set
+			{
+				if ((this._BaseProductLevel != value))
+				{
+					this.OnBaseProductLevelChanging(value);
+					this.SendPropertyChanging();
+					this._BaseProductLevel = value;
+					this.SendPropertyChanged("BaseProductLevel");
+					this.OnBaseProductLevelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseGroupId", DbType="SmallInt")]
+		public System.Nullable<short> BaseGroupId
+		{
+			get
+			{
+				return this._BaseGroupId;
+			}
+			set
+			{
+				if ((this._BaseGroupId != value))
+				{
+					this.OnBaseGroupIdChanging(value);
+					this.SendPropertyChanging();
+					this._BaseGroupId = value;
+					this.SendPropertyChanged("BaseGroupId");
+					this.OnBaseGroupIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group1", DbType="NVarChar(50)")]
+		public string Group1
+		{
+			get
+			{
+				return this._Group1;
+			}
+			set
+			{
+				if ((this._Group1 != value))
+				{
+					this.OnGroup1Changing(value);
+					this.SendPropertyChanging();
+					this._Group1 = value;
+					this.SendPropertyChanged("Group1");
+					this.OnGroup1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group2", DbType="NVarChar(50)")]
+		public string Group2
+		{
+			get
+			{
+				return this._Group2;
+			}
+			set
+			{
+				if ((this._Group2 != value))
+				{
+					this.OnGroup2Changing(value);
+					this.SendPropertyChanging();
+					this._Group2 = value;
+					this.SendPropertyChanged("Group2");
+					this.OnGroup2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group3", DbType="NVarChar(50)")]
+		public string Group3
+		{
+			get
+			{
+				return this._Group3;
+			}
+			set
+			{
+				if ((this._Group3 != value))
+				{
+					this.OnGroup3Changing(value);
+					this.SendPropertyChanging();
+					this._Group3 = value;
+					this.SendPropertyChanged("Group3");
+					this.OnGroup3Changed();
 				}
 			}
 		}

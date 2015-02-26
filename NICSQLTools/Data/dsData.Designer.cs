@@ -2761,21 +2761,11 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnRoute_Number__system;
             
-            private global::System.Data.DataColumn columnType;
-            
             private global::System.Data.DataColumn columnRoute_Name;
-            
-            private global::System.Data.DataColumn _columnSales_District__;
             
             private global::System.Data.DataColumn columnRegion;
             
             private global::System.Data.DataColumn columnPlant;
-            
-            private global::System.Data.DataColumn columnSales_District_Name;
-            
-            private global::System.Data.DataColumn columnSales_District;
-            
-            private global::System.Data.DataColumn columnSales_District_2;
             
             private global::System.Data.DataColumn columnRSM;
             
@@ -2785,15 +2775,11 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnBrand_Route;
             
-            private global::System.Data.DataColumn columnBrand_Route_Old;
-            
-            private global::System.Data.DataColumn columnField16;
-            
-            private global::System.Data.DataColumn columnSDN_Code;
-            
             private global::System.Data.DataColumn columnWarehouse;
             
             private global::System.Data.DataColumn columnSalesDistrict3Id;
+            
+            private global::System.Data.DataColumn columnNCE_Project;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2854,25 +2840,9 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TypeColumn {
-                get {
-                    return this.columnType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn Route_NameColumn {
                 get {
                     return this.columnRoute_Name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Sales_District__Column {
-                get {
-                    return this._columnSales_District__;
                 }
             }
             
@@ -2889,30 +2859,6 @@ namespace NICSQLTools.Data {
             public global::System.Data.DataColumn PlantColumn {
                 get {
                     return this.columnPlant;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Sales_District_NameColumn {
-                get {
-                    return this.columnSales_District_Name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Sales_DistrictColumn {
-                get {
-                    return this.columnSales_District;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Sales_District_2Column {
-                get {
-                    return this.columnSales_District_2;
                 }
             }
             
@@ -2950,30 +2896,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Brand_Route_OldColumn {
-                get {
-                    return this.columnBrand_Route_Old;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Field16Column {
-                get {
-                    return this.columnField16;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SDN_CodeColumn {
-                get {
-                    return this.columnSDN_Code;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn WarehouseColumn {
                 get {
                     return this.columnWarehouse;
@@ -2985,6 +2907,14 @@ namespace NICSQLTools.Data {
             public global::System.Data.DataColumn SalesDistrict3IdColumn {
                 get {
                     return this.columnSalesDistrict3Id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NCE_ProjectColumn {
+                get {
+                    return this.columnNCE_Project;
                 }
             }
             
@@ -3025,49 +2955,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _0_3__Route_DetailsRow Add_0_3__Route_DetailsRow(
-                        string Distribution_Channel, 
-                        string Route_Number, 
-                        string Route_Number__system, 
-                        string Type, 
-                        string Route_Name, 
-                        string _Sales_District__, 
-                        string Region, 
-                        string Plant, 
-                        string Sales_District_Name, 
-                        string Sales_District, 
-                        string Sales_District_2, 
-                        string RSM, 
-                        string ASM, 
-                        string Supervisor, 
-                        string Brand_Route, 
-                        string Brand_Route_Old, 
-                        string Field16, 
-                        string SDN_Code, 
-                        string Warehouse, 
-                        short SalesDistrict3Id) {
+            public _0_3__Route_DetailsRow Add_0_3__Route_DetailsRow(string Distribution_Channel, string Route_Number, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, short SalesDistrict3Id, string NCE_Project) {
                 _0_3__Route_DetailsRow row_0_3__Route_DetailsRow = ((_0_3__Route_DetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Distribution_Channel,
                         Route_Number,
                         Route_Number__system,
-                        Type,
                         Route_Name,
-                        _Sales_District__,
                         Region,
                         Plant,
-                        Sales_District_Name,
-                        Sales_District,
-                        Sales_District_2,
                         RSM,
                         ASM,
                         Supervisor,
                         Brand_Route,
-                        Brand_Route_Old,
-                        Field16,
-                        SDN_Code,
                         Warehouse,
-                        SalesDistrict3Id};
+                        SalesDistrict3Id,
+                        NCE_Project};
                 row_0_3__Route_DetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_0_3__Route_DetailsRow);
                 return row_0_3__Route_DetailsRow;
@@ -3100,23 +3003,16 @@ namespace NICSQLTools.Data {
                 this.columnDistribution_Channel = base.Columns["Distribution Channel"];
                 this.columnRoute_Number = base.Columns["Route Number"];
                 this.columnRoute_Number__system = base.Columns["Route Number  system"];
-                this.columnType = base.Columns["Type"];
                 this.columnRoute_Name = base.Columns["Route Name"];
-                this._columnSales_District__ = base.Columns["Sales District #"];
                 this.columnRegion = base.Columns["Region"];
                 this.columnPlant = base.Columns["Plant"];
-                this.columnSales_District_Name = base.Columns["Sales District Name"];
-                this.columnSales_District = base.Columns["Sales District"];
-                this.columnSales_District_2 = base.Columns["Sales District 2"];
                 this.columnRSM = base.Columns["RSM"];
                 this.columnASM = base.Columns["ASM"];
                 this.columnSupervisor = base.Columns["Supervisor"];
                 this.columnBrand_Route = base.Columns["Brand Route"];
-                this.columnBrand_Route_Old = base.Columns["Brand Route Old"];
-                this.columnField16 = base.Columns["Field16"];
-                this.columnSDN_Code = base.Columns["SDN Code"];
                 this.columnWarehouse = base.Columns["Warehouse"];
                 this.columnSalesDistrict3Id = base.Columns["SalesDistrict3Id"];
+                this.columnNCE_Project = base.Columns["NCE_Project"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3128,24 +3024,12 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnRoute_Number);
                 this.columnRoute_Number__system = new global::System.Data.DataColumn("Route Number  system", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRoute_Number__system);
-                this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnType);
                 this.columnRoute_Name = new global::System.Data.DataColumn("Route Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRoute_Name);
-                this._columnSales_District__ = new global::System.Data.DataColumn("Sales District #", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnSales_District__.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnSales_District__");
-                this._columnSales_District__.ExtendedProperties.Add("Generator_UserColumnName", "Sales District #");
-                base.Columns.Add(this._columnSales_District__);
                 this.columnRegion = new global::System.Data.DataColumn("Region", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRegion);
                 this.columnPlant = new global::System.Data.DataColumn("Plant", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlant);
-                this.columnSales_District_Name = new global::System.Data.DataColumn("Sales District Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSales_District_Name);
-                this.columnSales_District = new global::System.Data.DataColumn("Sales District", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSales_District);
-                this.columnSales_District_2 = new global::System.Data.DataColumn("Sales District 2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSales_District_2);
                 this.columnRSM = new global::System.Data.DataColumn("RSM", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRSM);
                 this.columnASM = new global::System.Data.DataColumn("ASM", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3154,16 +3038,12 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnSupervisor);
                 this.columnBrand_Route = new global::System.Data.DataColumn("Brand Route", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBrand_Route);
-                this.columnBrand_Route_Old = new global::System.Data.DataColumn("Brand Route Old", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBrand_Route_Old);
-                this.columnField16 = new global::System.Data.DataColumn("Field16", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnField16);
-                this.columnSDN_Code = new global::System.Data.DataColumn("SDN Code", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSDN_Code);
                 this.columnWarehouse = new global::System.Data.DataColumn("Warehouse", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWarehouse);
                 this.columnSalesDistrict3Id = new global::System.Data.DataColumn("SalesDistrict3Id", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalesDistrict3Id);
+                this.columnNCE_Project = new global::System.Data.DataColumn("NCE_Project", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNCE_Project);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnRoute_Number}, true));
                 this.columnDistribution_Channel.MaxLength = 255;
@@ -3171,22 +3051,15 @@ namespace NICSQLTools.Data {
                 this.columnRoute_Number.Unique = true;
                 this.columnRoute_Number.MaxLength = 255;
                 this.columnRoute_Number__system.MaxLength = 255;
-                this.columnType.MaxLength = 255;
                 this.columnRoute_Name.MaxLength = 255;
-                this._columnSales_District__.MaxLength = 255;
                 this.columnRegion.MaxLength = 255;
                 this.columnPlant.MaxLength = 255;
-                this.columnSales_District_Name.MaxLength = 255;
-                this.columnSales_District.MaxLength = 255;
-                this.columnSales_District_2.MaxLength = 255;
                 this.columnRSM.MaxLength = 255;
                 this.columnASM.MaxLength = 255;
                 this.columnSupervisor.MaxLength = 255;
                 this.columnBrand_Route.MaxLength = 255;
-                this.columnBrand_Route_Old.MaxLength = 255;
-                this.columnField16.MaxLength = 255;
-                this.columnSDN_Code.MaxLength = 255;
                 this.columnWarehouse.MaxLength = 255;
+                this.columnNCE_Project.MaxLength = 255;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_table0_3__Route_Details");
                 this.ExtendedProperties.Add("Generator_UserTableName", "0-3  Route Details");
             }
@@ -3328,27 +3201,13 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnMaterial_Name_2;
             
-            private global::System.Data.DataColumn columnGroup_1;
-            
-            private global::System.Data.DataColumn columnGroup_2;
-            
-            private global::System.Data.DataColumn columnGroup_3;
-            
             private global::System.Data.DataColumn columnBrand;
-            
-            private global::System.Data.DataColumn columnBase_Base_Product;
-            
-            private global::System.Data.DataColumn columnBase_Group;
             
             private global::System.Data.DataColumn columnPrice_Point_rang;
             
             private global::System.Data.DataColumn columnPrice_Point;
             
             private global::System.Data.DataColumn columnMarket_range;
-            
-            private global::System.Data.DataColumn columnBase_Base_ProductOld;
-            
-            private global::System.Data.DataColumn columnBase_Product;
             
             private global::System.Data.DataColumn columnQuin;
             
@@ -3361,8 +3220,6 @@ namespace NICSQLTools.Data {
             private global::System.Data.DataColumn columnNew_Qu;
             
             private global::System.Data.DataColumn columnPrice_Increas;
-            
-            private global::System.Data.DataColumn _columnTrade_Price_Carton_Old;
             
             private global::System.Data.DataColumn _columnTrade_Price_Carton;
             
@@ -3386,15 +3243,13 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnValid_Month;
             
-            private global::System.Data.DataColumn columnPrice_Point_2009;
-            
-            private global::System.Data.DataColumn columnPrice_Point_2010;
-            
-            private global::System.Data.DataColumn _columnML___L;
-            
             private global::System.Data.DataColumn columnMaterialStatus;
             
             private global::System.Data.DataColumn _columnProduct__Active__Cancel;
+            
+            private global::System.Data.DataColumn columnBaseProductId;
+            
+            private global::System.Data.DataColumn columnBrand_Rang;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3455,49 +3310,9 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Group_1Column {
-                get {
-                    return this.columnGroup_1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Group_2Column {
-                get {
-                    return this.columnGroup_2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Group_3Column {
-                get {
-                    return this.columnGroup_3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn BrandColumn {
                 get {
                     return this.columnBrand;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Base_Base_ProductColumn {
-                get {
-                    return this.columnBase_Base_Product;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Base_GroupColumn {
-                get {
-                    return this.columnBase_Group;
                 }
             }
             
@@ -3522,22 +3337,6 @@ namespace NICSQLTools.Data {
             public global::System.Data.DataColumn Market_rangeColumn {
                 get {
                     return this.columnMarket_range;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Base_Base_ProductOldColumn {
-                get {
-                    return this.columnBase_Base_ProductOld;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Base_ProductColumn {
-                get {
-                    return this.columnBase_Product;
                 }
             }
             
@@ -3586,14 +3385,6 @@ namespace NICSQLTools.Data {
             public global::System.Data.DataColumn Price_IncreasColumn {
                 get {
                     return this.columnPrice_Increas;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _Trade_Price_Carton_OldColumn {
-                get {
-                    return this._columnTrade_Price_Carton_Old;
                 }
             }
             
@@ -3687,30 +3478,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Price_Point_2009Column {
-                get {
-                    return this.columnPrice_Point_2009;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Price_Point_2010Column {
-                get {
-                    return this.columnPrice_Point_2010;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn _ML___LColumn {
-                get {
-                    return this._columnML___L;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn MaterialStatusColumn {
                 get {
                     return this.columnMaterialStatus;
@@ -3722,6 +3489,22 @@ namespace NICSQLTools.Data {
             public global::System.Data.DataColumn _Product__Active__CancelColumn {
                 get {
                     return this._columnProduct__Active__Cancel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BaseProductIdColumn {
+                get {
+                    return this.columnBaseProductId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Brand_RangColumn {
+                get {
+                    return this.columnBrand_Rang;
                 }
             }
             
@@ -3766,24 +3549,16 @@ namespace NICSQLTools.Data {
                         double Material_Number, 
                         string Material_Name, 
                         string Material_Name_2, 
-                        string Group_1, 
-                        string Group_2, 
-                        string Group_3, 
                         string Brand, 
-                        string Base_Base_Product, 
-                        string Base_Group, 
                         string Price_Point_rang, 
                         double Price_Point, 
                         string Market_range, 
-                        string Base_Base_ProductOld, 
-                        string Base_Product, 
                         double Quin, 
                         double Volum_Pice, 
                         double Volum, 
                         double Vol, 
                         double New_Qu, 
                         string Price_Increas, 
-                        string _Trade_Price_Carton_Old, 
                         double _Trade_Price_Carton, 
                         double _Trade_Price_Piece, 
                         string _Consumer_price__Carton, 
@@ -3795,34 +3570,25 @@ namespace NICSQLTools.Data {
                         string NPDS, 
                         string Valid_Year, 
                         string Valid_Month, 
-                        string Price_Point_2009, 
-                        string Price_Point_2010, 
-                        string _ML___L, 
                         string MaterialStatus, 
-                        string _Product__Active__Cancel) {
+                        string _Product__Active__Cancel, 
+                        short BaseProductId, 
+                        string Brand_Rang) {
                 _0_4__Product_DetailsRow row_0_4__Product_DetailsRow = ((_0_4__Product_DetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Material_Number,
                         Material_Name,
                         Material_Name_2,
-                        Group_1,
-                        Group_2,
-                        Group_3,
                         Brand,
-                        Base_Base_Product,
-                        Base_Group,
                         Price_Point_rang,
                         Price_Point,
                         Market_range,
-                        Base_Base_ProductOld,
-                        Base_Product,
                         Quin,
                         Volum_Pice,
                         Volum,
                         Vol,
                         New_Qu,
                         Price_Increas,
-                        _Trade_Price_Carton_Old,
                         _Trade_Price_Carton,
                         _Trade_Price_Piece,
                         _Consumer_price__Carton,
@@ -3834,11 +3600,10 @@ namespace NICSQLTools.Data {
                         NPDS,
                         Valid_Year,
                         Valid_Month,
-                        Price_Point_2009,
-                        Price_Point_2010,
-                        _ML___L,
                         MaterialStatus,
-                        _Product__Active__Cancel};
+                        _Product__Active__Cancel,
+                        BaseProductId,
+                        Brand_Rang};
                 row_0_4__Product_DetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_0_4__Product_DetailsRow);
                 return row_0_4__Product_DetailsRow;
@@ -3871,24 +3636,16 @@ namespace NICSQLTools.Data {
                 this.columnMaterial_Number = base.Columns["Material Number"];
                 this.columnMaterial_Name = base.Columns["Material Name"];
                 this.columnMaterial_Name_2 = base.Columns["Material Name 2"];
-                this.columnGroup_1 = base.Columns["Group 1"];
-                this.columnGroup_2 = base.Columns["Group 2"];
-                this.columnGroup_3 = base.Columns["Group 3"];
                 this.columnBrand = base.Columns["Brand"];
-                this.columnBase_Base_Product = base.Columns["Base Base Product"];
-                this.columnBase_Group = base.Columns["Base Group"];
                 this.columnPrice_Point_rang = base.Columns["Price Point rang"];
                 this.columnPrice_Point = base.Columns["Price Point"];
                 this.columnMarket_range = base.Columns["Market range"];
-                this.columnBase_Base_ProductOld = base.Columns["Base Base ProductOld"];
-                this.columnBase_Product = base.Columns["Base Product"];
                 this.columnQuin = base.Columns["Quin"];
                 this.columnVolum_Pice = base.Columns["Volum Pice"];
                 this.columnVolum = base.Columns["Volum"];
                 this.columnVol = base.Columns["Vol"];
                 this.columnNew_Qu = base.Columns["New Qu"];
                 this.columnPrice_Increas = base.Columns["Price Increas"];
-                this._columnTrade_Price_Carton_Old = base.Columns["Trade Price/Carton Old"];
                 this._columnTrade_Price_Carton = base.Columns["Trade Price/Carton"];
                 this._columnTrade_Price_Piece = base.Columns["Trade Price/Piece"];
                 this._columnConsumer_price__Carton = base.Columns["Consumer price /Carton"];
@@ -3900,11 +3657,10 @@ namespace NICSQLTools.Data {
                 this.columnNPDS = base.Columns["NPDS"];
                 this.columnValid_Year = base.Columns["Valid Year"];
                 this.columnValid_Month = base.Columns["Valid Month"];
-                this.columnPrice_Point_2009 = base.Columns["Price Point 2009"];
-                this.columnPrice_Point_2010 = base.Columns["Price Point 2010"];
-                this._columnML___L = base.Columns["ML / L"];
                 this.columnMaterialStatus = base.Columns["MaterialStatus"];
                 this._columnProduct__Active__Cancel = base.Columns["Product/ Active- Cancel"];
+                this.columnBaseProductId = base.Columns["BaseProductId"];
+                this.columnBrand_Rang = base.Columns["Brand Rang"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3916,28 +3672,14 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnMaterial_Name);
                 this.columnMaterial_Name_2 = new global::System.Data.DataColumn("Material Name 2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaterial_Name_2);
-                this.columnGroup_1 = new global::System.Data.DataColumn("Group 1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGroup_1);
-                this.columnGroup_2 = new global::System.Data.DataColumn("Group 2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGroup_2);
-                this.columnGroup_3 = new global::System.Data.DataColumn("Group 3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGroup_3);
                 this.columnBrand = new global::System.Data.DataColumn("Brand", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBrand);
-                this.columnBase_Base_Product = new global::System.Data.DataColumn("Base Base Product", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBase_Base_Product);
-                this.columnBase_Group = new global::System.Data.DataColumn("Base Group", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBase_Group);
                 this.columnPrice_Point_rang = new global::System.Data.DataColumn("Price Point rang", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrice_Point_rang);
                 this.columnPrice_Point = new global::System.Data.DataColumn("Price Point", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrice_Point);
                 this.columnMarket_range = new global::System.Data.DataColumn("Market range", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMarket_range);
-                this.columnBase_Base_ProductOld = new global::System.Data.DataColumn("Base Base ProductOld", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBase_Base_ProductOld);
-                this.columnBase_Product = new global::System.Data.DataColumn("Base Product", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBase_Product);
                 this.columnQuin = new global::System.Data.DataColumn("Quin", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuin);
                 this.columnVolum_Pice = new global::System.Data.DataColumn("Volum Pice", typeof(double), null, global::System.Data.MappingType.Element);
@@ -3950,10 +3692,6 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnNew_Qu);
                 this.columnPrice_Increas = new global::System.Data.DataColumn("Price Increas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrice_Increas);
-                this._columnTrade_Price_Carton_Old = new global::System.Data.DataColumn("Trade Price/Carton Old", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnTrade_Price_Carton_Old.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTrade_Price_Carton_Old");
-                this._columnTrade_Price_Carton_Old.ExtendedProperties.Add("Generator_UserColumnName", "Trade Price/Carton Old");
-                base.Columns.Add(this._columnTrade_Price_Carton_Old);
                 this._columnTrade_Price_Carton = new global::System.Data.DataColumn("Trade Price/Carton", typeof(double), null, global::System.Data.MappingType.Element);
                 this._columnTrade_Price_Carton.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnTrade_Price_Carton");
                 this._columnTrade_Price_Carton.ExtendedProperties.Add("Generator_UserColumnName", "Trade Price/Carton");
@@ -3984,49 +3722,35 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnValid_Year);
                 this.columnValid_Month = new global::System.Data.DataColumn("Valid Month", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValid_Month);
-                this.columnPrice_Point_2009 = new global::System.Data.DataColumn("Price Point 2009", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice_Point_2009);
-                this.columnPrice_Point_2010 = new global::System.Data.DataColumn("Price Point 2010", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice_Point_2010);
-                this._columnML___L = new global::System.Data.DataColumn("ML / L", typeof(string), null, global::System.Data.MappingType.Element);
-                this._columnML___L.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnML___L");
-                this._columnML___L.ExtendedProperties.Add("Generator_UserColumnName", "ML / L");
-                base.Columns.Add(this._columnML___L);
                 this.columnMaterialStatus = new global::System.Data.DataColumn("MaterialStatus", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaterialStatus);
                 this._columnProduct__Active__Cancel = new global::System.Data.DataColumn("Product/ Active- Cancel", typeof(string), null, global::System.Data.MappingType.Element);
                 this._columnProduct__Active__Cancel.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnProduct__Active__Cancel");
                 this._columnProduct__Active__Cancel.ExtendedProperties.Add("Generator_UserColumnName", "Product/ Active- Cancel");
                 base.Columns.Add(this._columnProduct__Active__Cancel);
+                this.columnBaseProductId = new global::System.Data.DataColumn("BaseProductId", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBaseProductId);
+                this.columnBrand_Rang = new global::System.Data.DataColumn("Brand Rang", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBrand_Rang);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMaterial_Number}, true));
                 this.columnMaterial_Number.AllowDBNull = false;
                 this.columnMaterial_Number.Unique = true;
                 this.columnMaterial_Name.MaxLength = 255;
                 this.columnMaterial_Name_2.MaxLength = 255;
-                this.columnGroup_1.MaxLength = 255;
-                this.columnGroup_2.MaxLength = 255;
-                this.columnGroup_3.MaxLength = 255;
                 this.columnBrand.MaxLength = 255;
-                this.columnBase_Base_Product.MaxLength = 255;
-                this.columnBase_Group.MaxLength = 255;
                 this.columnPrice_Point_rang.MaxLength = 255;
                 this.columnMarket_range.MaxLength = 255;
-                this.columnBase_Base_ProductOld.MaxLength = 255;
-                this.columnBase_Product.MaxLength = 255;
                 this.columnPrice_Increas.MaxLength = 255;
-                this._columnTrade_Price_Carton_Old.MaxLength = 255;
                 this._columnConsumer_price__Carton.MaxLength = 255;
                 this.columnMaterial_Type.MaxLength = 255;
                 this.columnFlavor.MaxLength = 255;
                 this.columnNPDS.MaxLength = 255;
                 this.columnValid_Year.MaxLength = 255;
                 this.columnValid_Month.MaxLength = 255;
-                this.columnPrice_Point_2009.MaxLength = 255;
-                this.columnPrice_Point_2010.MaxLength = 255;
-                this._columnML___L.MaxLength = 255;
                 this.columnMaterialStatus.MaxLength = 50;
                 this._columnProduct__Active__Cancel.MaxLength = 50;
+                this.columnBrand_Rang.MaxLength = 50;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_table0_4__Product_Details");
                 this.ExtendedProperties.Add("Generator_UserTableName", "0-4  Product Details");
             }
@@ -13350,22 +13074,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Type {
-                get {
-                    try {
-                        return ((string)(this[this._table0_3__Route_Details.TypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Type\' in table \'0-3  Route Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_3__Route_Details.TypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Route_Name {
                 get {
                     try {
@@ -13377,22 +13085,6 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this[this._table0_3__Route_Details.Route_NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _Sales_District__ {
-                get {
-                    try {
-                        return ((string)(this[this._table0_3__Route_Details._Sales_District__Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sales District #\' in table \'0-3  Route Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_3__Route_Details._Sales_District__Column] = value;
                 }
             }
             
@@ -13425,55 +13117,6 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this[this._table0_3__Route_Details.PlantColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Sales_District_Name {
-                get {
-                    try {
-                        return ((string)(this[this._table0_3__Route_Details.Sales_District_NameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sales District Name\' in table \'0-3  Route Details\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this._table0_3__Route_Details.Sales_District_NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Sales_District {
-                get {
-                    try {
-                        return ((string)(this[this._table0_3__Route_Details.Sales_DistrictColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sales District\' in table \'0-3  Route Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_3__Route_Details.Sales_DistrictColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Sales_District_2 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_3__Route_Details.Sales_District_2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sales District 2\' in table \'0-3  Route Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_3__Route_Details.Sales_District_2Column] = value;
                 }
             }
             
@@ -13543,54 +13186,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Brand_Route_Old {
-                get {
-                    try {
-                        return ((string)(this[this._table0_3__Route_Details.Brand_Route_OldColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Brand Route Old\' in table \'0-3  Route Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_3__Route_Details.Brand_Route_OldColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Field16 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_3__Route_Details.Field16Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Field16\' in table \'0-3  Route Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_3__Route_Details.Field16Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SDN_Code {
-                get {
-                    try {
-                        return ((string)(this[this._table0_3__Route_Details.SDN_CodeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SDN Code\' in table \'0-3  Route Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_3__Route_Details.SDN_CodeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Warehouse {
                 get {
                     try {
@@ -13623,6 +13218,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NCE_Project {
+                get {
+                    try {
+                        return ((string)(this[this._table0_3__Route_Details.NCE_ProjectColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NCE_Project\' in table \'0-3  Route Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_3__Route_Details.NCE_ProjectColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDistribution_ChannelNull() {
                 return this.IsNull(this._table0_3__Route_Details.Distribution_ChannelColumn);
             }
@@ -13647,18 +13258,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTypeNull() {
-                return this.IsNull(this._table0_3__Route_Details.TypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTypeNull() {
-                this[this._table0_3__Route_Details.TypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsRoute_NameNull() {
                 return this.IsNull(this._table0_3__Route_Details.Route_NameColumn);
             }
@@ -13667,18 +13266,6 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetRoute_NameNull() {
                 this[this._table0_3__Route_Details.Route_NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_Sales_District__Null() {
-                return this.IsNull(this._table0_3__Route_Details._Sales_District__Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_Sales_District__Null() {
-                this[this._table0_3__Route_Details._Sales_District__Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13703,42 +13290,6 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPlantNull() {
                 this[this._table0_3__Route_Details.PlantColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSales_District_NameNull() {
-                return this.IsNull(this._table0_3__Route_Details.Sales_District_NameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSales_District_NameNull() {
-                this[this._table0_3__Route_Details.Sales_District_NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSales_DistrictNull() {
-                return this.IsNull(this._table0_3__Route_Details.Sales_DistrictColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSales_DistrictNull() {
-                this[this._table0_3__Route_Details.Sales_DistrictColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSales_District_2Null() {
-                return this.IsNull(this._table0_3__Route_Details.Sales_District_2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSales_District_2Null() {
-                this[this._table0_3__Route_Details.Sales_District_2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13791,42 +13342,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBrand_Route_OldNull() {
-                return this.IsNull(this._table0_3__Route_Details.Brand_Route_OldColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBrand_Route_OldNull() {
-                this[this._table0_3__Route_Details.Brand_Route_OldColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsField16Null() {
-                return this.IsNull(this._table0_3__Route_Details.Field16Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetField16Null() {
-                this[this._table0_3__Route_Details.Field16Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSDN_CodeNull() {
-                return this.IsNull(this._table0_3__Route_Details.SDN_CodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSDN_CodeNull() {
-                this[this._table0_3__Route_Details.SDN_CodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsWarehouseNull() {
                 return this.IsNull(this._table0_3__Route_Details.WarehouseColumn);
             }
@@ -13847,6 +13362,18 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSalesDistrict3IdNull() {
                 this[this._table0_3__Route_Details.SalesDistrict3IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNCE_ProjectNull() {
+                return this.IsNull(this._table0_3__Route_Details.NCE_ProjectColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNCE_ProjectNull() {
+                this[this._table0_3__Route_Details.NCE_ProjectColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13910,54 +13437,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Group_1 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Group_1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Group 1\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Group_1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Group_2 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Group_2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Group 2\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Group_2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Group_3 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Group_3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Group 3\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Group_3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Brand {
                 get {
                     try {
@@ -13969,39 +13448,6 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this[this._table0_4__Product_Details.BrandColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Base_Base_Product {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Base_Base_ProductColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Base Base Product\' in table \'0-4  Product Details\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Base_Base_ProductColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Base_Group {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Base_GroupColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Base Group\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Base_GroupColumn] = value;
                 }
             }
             
@@ -14051,39 +13497,6 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this[this._table0_4__Product_Details.Market_rangeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Base_Base_ProductOld {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Base_Base_ProductOldColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Base Base ProductOld\' in table \'0-4  Product Details\' is DB" +
-                                "Null.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Base_Base_ProductOldColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Base_Product {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Base_ProductColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Base Product\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Base_ProductColumn] = value;
                 }
             }
             
@@ -14180,23 +13593,6 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this[this._table0_4__Product_Details.Price_IncreasColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _Trade_Price_Carton_Old {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details._Trade_Price_Carton_OldColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Trade Price/Carton Old\' in table \'0-4  Product Details\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details._Trade_Price_Carton_OldColumn] = value;
                 }
             }
             
@@ -14382,56 +13778,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Price_Point_2009 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Price_Point_2009Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point 2009\' in table \'0-4  Product Details\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Price_Point_2009Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Price_Point_2010 {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details.Price_Point_2010Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Price Point 2010\' in table \'0-4  Product Details\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details.Price_Point_2010Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string _ML___L {
-                get {
-                    try {
-                        return ((string)(this[this._table0_4__Product_Details._ML___LColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ML / L\' in table \'0-4  Product Details\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_4__Product_Details._ML___LColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MaterialStatus {
                 get {
                     try {
@@ -14465,6 +13811,38 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short BaseProductId {
+                get {
+                    try {
+                        return ((short)(this[this._table0_4__Product_Details.BaseProductIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BaseProductId\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.BaseProductIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Brand_Rang {
+                get {
+                    try {
+                        return ((string)(this[this._table0_4__Product_Details.Brand_RangColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Brand Rang\' in table \'0-4  Product Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_4__Product_Details.Brand_RangColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMaterial_NameNull() {
                 return this.IsNull(this._table0_4__Product_Details.Material_NameColumn);
             }
@@ -14489,42 +13867,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGroup_1Null() {
-                return this.IsNull(this._table0_4__Product_Details.Group_1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGroup_1Null() {
-                this[this._table0_4__Product_Details.Group_1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGroup_2Null() {
-                return this.IsNull(this._table0_4__Product_Details.Group_2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGroup_2Null() {
-                this[this._table0_4__Product_Details.Group_2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGroup_3Null() {
-                return this.IsNull(this._table0_4__Product_Details.Group_3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGroup_3Null() {
-                this[this._table0_4__Product_Details.Group_3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBrandNull() {
                 return this.IsNull(this._table0_4__Product_Details.BrandColumn);
             }
@@ -14533,30 +13875,6 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBrandNull() {
                 this[this._table0_4__Product_Details.BrandColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBase_Base_ProductNull() {
-                return this.IsNull(this._table0_4__Product_Details.Base_Base_ProductColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBase_Base_ProductNull() {
-                this[this._table0_4__Product_Details.Base_Base_ProductColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBase_GroupNull() {
-                return this.IsNull(this._table0_4__Product_Details.Base_GroupColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBase_GroupNull() {
-                this[this._table0_4__Product_Details.Base_GroupColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14593,30 +13911,6 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMarket_rangeNull() {
                 this[this._table0_4__Product_Details.Market_rangeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBase_Base_ProductOldNull() {
-                return this.IsNull(this._table0_4__Product_Details.Base_Base_ProductOldColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBase_Base_ProductOldNull() {
-                this[this._table0_4__Product_Details.Base_Base_ProductOldColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBase_ProductNull() {
-                return this.IsNull(this._table0_4__Product_Details.Base_ProductColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBase_ProductNull() {
-                this[this._table0_4__Product_Details.Base_ProductColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14689,18 +13983,6 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPrice_IncreasNull() {
                 this[this._table0_4__Product_Details.Price_IncreasColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_Trade_Price_Carton_OldNull() {
-                return this.IsNull(this._table0_4__Product_Details._Trade_Price_Carton_OldColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_Trade_Price_Carton_OldNull() {
-                this[this._table0_4__Product_Details._Trade_Price_Carton_OldColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14837,42 +14119,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrice_Point_2009Null() {
-                return this.IsNull(this._table0_4__Product_Details.Price_Point_2009Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrice_Point_2009Null() {
-                this[this._table0_4__Product_Details.Price_Point_2009Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrice_Point_2010Null() {
-                return this.IsNull(this._table0_4__Product_Details.Price_Point_2010Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrice_Point_2010Null() {
-                this[this._table0_4__Product_Details.Price_Point_2010Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Is_ML___LNull() {
-                return this.IsNull(this._table0_4__Product_Details._ML___LColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Set_ML___LNull() {
-                this[this._table0_4__Product_Details._ML___LColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMaterialStatusNull() {
                 return this.IsNull(this._table0_4__Product_Details.MaterialStatusColumn);
             }
@@ -14893,6 +14139,30 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Set_Product__Active__CancelNull() {
                 this[this._table0_4__Product_Details._Product__Active__CancelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBaseProductIdNull() {
+                return this.IsNull(this._table0_4__Product_Details.BaseProductIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBaseProductIdNull() {
+                this[this._table0_4__Product_Details.BaseProductIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBrand_RangNull() {
+                return this.IsNull(this._table0_4__Product_Details.Brand_RangColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBrand_RangNull() {
+                this[this._table0_4__Product_Details.Brand_RangColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -21361,80 +20631,59 @@ FROM            [0-6 Customer HN]";
             tableMapping.ColumnMappings.Add("Distribution Channel", "Distribution Channel");
             tableMapping.ColumnMappings.Add("Route Number", "Route Number");
             tableMapping.ColumnMappings.Add("Route Number  system", "Route Number  system");
-            tableMapping.ColumnMappings.Add("Type", "Type");
             tableMapping.ColumnMappings.Add("Route Name", "Route Name");
-            tableMapping.ColumnMappings.Add("Sales District #", "Sales District #");
             tableMapping.ColumnMappings.Add("Region", "Region");
             tableMapping.ColumnMappings.Add("Plant", "Plant");
-            tableMapping.ColumnMappings.Add("Sales District Name", "Sales District Name");
-            tableMapping.ColumnMappings.Add("Sales District", "Sales District");
-            tableMapping.ColumnMappings.Add("Sales District 2", "Sales District 2");
             tableMapping.ColumnMappings.Add("RSM", "RSM");
             tableMapping.ColumnMappings.Add("ASM", "ASM");
             tableMapping.ColumnMappings.Add("Supervisor", "Supervisor");
             tableMapping.ColumnMappings.Add("Brand Route", "Brand Route");
-            tableMapping.ColumnMappings.Add("Brand Route Old", "Brand Route Old");
-            tableMapping.ColumnMappings.Add("Field16", "Field16");
-            tableMapping.ColumnMappings.Add("SDN Code", "SDN Code");
             tableMapping.ColumnMappings.Add("Warehouse", "Warehouse");
             tableMapping.ColumnMappings.Add("SalesDistrict3Id", "SalesDistrict3Id");
+            tableMapping.ColumnMappings.Add("NCE_Project", "NCE_Project");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[0-3  Route Details] WHERE (([Route Number] = @Original_Route_N" +
-                "umber))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [0-3  Route Details] WHERE (([Route Number] = @Original_Route_Number)" +
+                ")";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[0-3  Route Details] ([Distribution Channel], [Route Number], [Route Number  system], [Type], [Route Name], [Sales District #], [Region], [Plant], [Sales District Name], [Sales District], [Sales District 2], [RSM], [ASM], [Supervisor], [Brand Route], [Brand Route Old], [Field16], [SDN Code], [Warehouse], [SalesDistrict3Id]) VALUES (@Distribution_Channel, @Route_Number, @Route_Number__system, @Type, @Route_Name, @Sales_District_#, @Region, @Plant, @Sales_District_Name, @Sales_District, @Sales_District_2, @RSM, @ASM, @Supervisor, @Brand_Route, @Brand_Route_Old, @Field16, @SDN_Code, @Warehouse, @SalesDistrict3Id);
-SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Route Name], [Sales District #], Region, Plant, [Sales District Name], [Sales District], [Sales District 2], RSM, ASM, Supervisor, [Brand Route], [Brand Route Old], Field16, [SDN Code], Warehouse, SalesDistrict3Id FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [0-3  Route Details] ([Distribution Channel], [Route Number], [Route Number  system], [Route Name], [Region], [Plant], [RSM], [ASM], [Supervisor], [Brand Route], [Warehouse], [SalesDistrict3Id], [NCE_Project]) VALUES (@Distribution_Channel, @Route_Number, @Route_Number__system, @Route_Name, @Region, @Plant, @RSM, @ASM, @Supervisor, @Brand_Route, @Warehouse, @SalesDistrict3Id, @NCE_Project);
+SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Name], Region, Plant, RSM, ASM, Supervisor, [Brand Route], Warehouse, SalesDistrict3Id, NCE_Project FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Number__system", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number  system", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District_#", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District #", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Region", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Region", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plant", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plant", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RSM", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RSM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ASM", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ASM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Supervisor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Supervisor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Route", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Route_Old", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Field16", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Field16", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SDN_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SDN Code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Warehouse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Warehouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDistrict3Id", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDistrict3Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NCE_Project", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NCE_Project", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[0-3  Route Details] SET [Distribution Channel] = @Distribution_Channel, [Route Number] = @Route_Number, [Route Number  system] = @Route_Number__system, [Type] = @Type, [Route Name] = @Route_Name, [Sales District #] = @Sales_District_#, [Region] = @Region, [Plant] = @Plant, [Sales District Name] = @Sales_District_Name, [Sales District] = @Sales_District, [Sales District 2] = @Sales_District_2, [RSM] = @RSM, [ASM] = @ASM, [Supervisor] = @Supervisor, [Brand Route] = @Brand_Route, [Brand Route Old] = @Brand_Route_Old, [Field16] = @Field16, [SDN Code] = @SDN_Code, [Warehouse] = @Warehouse, [SalesDistrict3Id] = @SalesDistrict3Id WHERE (([Route Number] = @Original_Route_Number));
-SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Route Name], [Sales District #], Region, Plant, [Sales District Name], [Sales District], [Sales District 2], RSM, ASM, Supervisor, [Brand Route], [Brand Route Old], Field16, [SDN Code], Warehouse, SalesDistrict3Id FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [0-3  Route Details] SET [Distribution Channel] = @Distribution_Channel, [Route Number] = @Route_Number, [Route Number  system] = @Route_Number__system, [Route Name] = @Route_Name, [Region] = @Region, [Plant] = @Plant, [RSM] = @RSM, [ASM] = @ASM, [Supervisor] = @Supervisor, [Brand Route] = @Brand_Route, [Warehouse] = @Warehouse, [SalesDistrict3Id] = @SalesDistrict3Id, [NCE_Project] = @NCE_Project WHERE (([Route Number] = @Original_Route_Number));
+SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Name], Region, Plant, RSM, ASM, Supervisor, [Brand Route], Warehouse, SalesDistrict3Id, NCE_Project FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Number__system", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number  system", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District_#", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District #", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Region", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Region", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plant", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plant", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sales_District_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sales District 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RSM", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RSM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ASM", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ASM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Supervisor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Supervisor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Route", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Route_Old", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Field16", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Field16", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SDN_Code", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SDN Code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Warehouse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Warehouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDistrict3Id", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDistrict3Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NCE_Project", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NCE_Project", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -21451,7 +20700,9 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Route Name], [Sales District #], Region, Plant, [Sales District Name], [Sales District], [Sales District 2], RSM, ASM, Supervisor, [Brand Route], [Brand Route Old], Field16, [SDN Code], Warehouse, SalesDistrict3Id FROM dbo.[0-3  Route Details]";
+            this._commandCollection[0].CommandText = "SELECT        [Distribution Channel], [Route Number], [Route Number  system], [Ro" +
+                "ute Name], Region, Plant, RSM, ASM, Supervisor, [Brand Route], Warehouse, SalesD" +
+                "istrict3Id, NCE_Project\r\nFROM            [0-3  Route Details]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -21539,27 +20790,7 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    string Distribution_Channel, 
-                    string Route_Number, 
-                    string Route_Number__system, 
-                    string Type, 
-                    string Route_Name, 
-                    string _Sales_District__, 
-                    string Region, 
-                    string Plant, 
-                    string Sales_District_Name, 
-                    string Sales_District, 
-                    string Sales_District_2, 
-                    string RSM, 
-                    string ASM, 
-                    string Supervisor, 
-                    string Brand_Route, 
-                    string Brand_Route_Old, 
-                    string Field16, 
-                    string SDN_Code, 
-                    string Warehouse, 
-                    global::System.Nullable<short> SalesDistrict3Id) {
+        public virtual int Insert(string Distribution_Channel, string Route_Number, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, global::System.Nullable<short> SalesDistrict3Id, string NCE_Project) {
             if ((Distribution_Channel == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21578,107 +20809,65 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Route_Number__system));
             }
-            if ((Type == null)) {
+            if ((Route_Name == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Type));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Route_Name));
             }
-            if ((Route_Name == null)) {
+            if ((Region == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Route_Name));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Region));
             }
-            if ((_Sales_District__ == null)) {
+            if ((Plant == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(_Sales_District__));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Plant));
             }
-            if ((Region == null)) {
+            if ((RSM == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Region));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(RSM));
             }
-            if ((Plant == null)) {
+            if ((ASM == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Plant));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(ASM));
             }
-            if ((Sales_District_Name == null)) {
+            if ((Supervisor == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Sales_District_Name));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Supervisor));
             }
-            if ((Sales_District == null)) {
+            if ((Brand_Route == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Sales_District));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Brand_Route));
             }
-            if ((Sales_District_2 == null)) {
+            if ((Warehouse == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Sales_District_2));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Warehouse));
             }
-            if ((RSM == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((SalesDistrict3Id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((short)(SalesDistrict3Id.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(RSM));
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((ASM == null)) {
+            if ((NCE_Project == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(ASM));
-            }
-            if ((Supervisor == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Supervisor));
-            }
-            if ((Brand_Route == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(Brand_Route));
-            }
-            if ((Brand_Route_Old == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Brand_Route_Old));
-            }
-            if ((Field16 == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Field16));
-            }
-            if ((SDN_Code == null)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(SDN_Code));
-            }
-            if ((Warehouse == null)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Warehouse));
-            }
-            if ((SalesDistrict3Id.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((short)(SalesDistrict3Id.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(NCE_Project));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -21700,28 +20889,7 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Distribution_Channel, 
-                    string Route_Number, 
-                    string Route_Number__system, 
-                    string Type, 
-                    string Route_Name, 
-                    string _Sales_District__, 
-                    string Region, 
-                    string Plant, 
-                    string Sales_District_Name, 
-                    string Sales_District, 
-                    string Sales_District_2, 
-                    string RSM, 
-                    string ASM, 
-                    string Supervisor, 
-                    string Brand_Route, 
-                    string Brand_Route_Old, 
-                    string Field16, 
-                    string SDN_Code, 
-                    string Warehouse, 
-                    global::System.Nullable<short> SalesDistrict3Id, 
-                    string Original_Route_Number) {
+        public virtual int Update(string Distribution_Channel, string Route_Number, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, global::System.Nullable<short> SalesDistrict3Id, string NCE_Project, string Original_Route_Number) {
             if ((Distribution_Channel == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -21740,113 +20908,71 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Route_Number__system));
             }
-            if ((Type == null)) {
+            if ((Route_Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Type));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Route_Name));
             }
-            if ((Route_Name == null)) {
+            if ((Region == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Route_Name));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Region));
             }
-            if ((_Sales_District__ == null)) {
+            if ((Plant == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(_Sales_District__));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Plant));
             }
-            if ((Region == null)) {
+            if ((RSM == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Region));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(RSM));
             }
-            if ((Plant == null)) {
+            if ((ASM == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Plant));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(ASM));
             }
-            if ((Sales_District_Name == null)) {
+            if ((Supervisor == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Sales_District_Name));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Supervisor));
             }
-            if ((Sales_District == null)) {
+            if ((Brand_Route == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Sales_District));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Brand_Route));
             }
-            if ((Sales_District_2 == null)) {
+            if ((Warehouse == null)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Sales_District_2));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Warehouse));
             }
-            if ((RSM == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((SalesDistrict3Id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((short)(SalesDistrict3Id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(RSM));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((ASM == null)) {
+            if ((NCE_Project == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(ASM));
-            }
-            if ((Supervisor == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Supervisor));
-            }
-            if ((Brand_Route == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Brand_Route));
-            }
-            if ((Brand_Route_Old == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Brand_Route_Old));
-            }
-            if ((Field16 == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Field16));
-            }
-            if ((SDN_Code == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(SDN_Code));
-            }
-            if ((Warehouse == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Warehouse));
-            }
-            if ((SalesDistrict3Id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((short)(SalesDistrict3Id.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(NCE_Project));
             }
             if ((Original_Route_Number == null)) {
                 throw new global::System.ArgumentNullException("Original_Route_Number");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Route_Number));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Route_Number));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -21868,28 +20994,8 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Distribution_Channel, 
-                    string Route_Number__system, 
-                    string Type, 
-                    string Route_Name, 
-                    string _Sales_District__, 
-                    string Region, 
-                    string Plant, 
-                    string Sales_District_Name, 
-                    string Sales_District, 
-                    string Sales_District_2, 
-                    string RSM, 
-                    string ASM, 
-                    string Supervisor, 
-                    string Brand_Route, 
-                    string Brand_Route_Old, 
-                    string Field16, 
-                    string SDN_Code, 
-                    string Warehouse, 
-                    global::System.Nullable<short> SalesDistrict3Id, 
-                    string Original_Route_Number) {
-            return this.Update(Distribution_Channel, Original_Route_Number, Route_Number__system, Type, Route_Name, _Sales_District__, Region, Plant, Sales_District_Name, Sales_District, Sales_District_2, RSM, ASM, Supervisor, Brand_Route, Brand_Route_Old, Field16, SDN_Code, Warehouse, SalesDistrict3Id, Original_Route_Number);
+        public virtual int Update(string Distribution_Channel, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, global::System.Nullable<short> SalesDistrict3Id, string NCE_Project, string Original_Route_Number) {
+            return this.Update(Distribution_Channel, Original_Route_Number, Route_Number__system, Route_Name, Region, Plant, RSM, ASM, Supervisor, Brand_Route, Warehouse, SalesDistrict3Id, NCE_Project, Original_Route_Number);
         }
     }
     
@@ -22017,24 +21123,16 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             tableMapping.ColumnMappings.Add("Material Number", "Material Number");
             tableMapping.ColumnMappings.Add("Material Name", "Material Name");
             tableMapping.ColumnMappings.Add("Material Name 2", "Material Name 2");
-            tableMapping.ColumnMappings.Add("Group 1", "Group 1");
-            tableMapping.ColumnMappings.Add("Group 2", "Group 2");
-            tableMapping.ColumnMappings.Add("Group 3", "Group 3");
             tableMapping.ColumnMappings.Add("Brand", "Brand");
-            tableMapping.ColumnMappings.Add("Base Base Product", "Base Base Product");
-            tableMapping.ColumnMappings.Add("Base Group", "Base Group");
             tableMapping.ColumnMappings.Add("Price Point rang", "Price Point rang");
             tableMapping.ColumnMappings.Add("Price Point", "Price Point");
             tableMapping.ColumnMappings.Add("Market range", "Market range");
-            tableMapping.ColumnMappings.Add("Base Base ProductOld", "Base Base ProductOld");
-            tableMapping.ColumnMappings.Add("Base Product", "Base Product");
             tableMapping.ColumnMappings.Add("Quin", "Quin");
             tableMapping.ColumnMappings.Add("Volum Pice", "Volum Pice");
             tableMapping.ColumnMappings.Add("Volum", "Volum");
             tableMapping.ColumnMappings.Add("Vol", "Vol");
             tableMapping.ColumnMappings.Add("New Qu", "New Qu");
             tableMapping.ColumnMappings.Add("Price Increas", "Price Increas");
-            tableMapping.ColumnMappings.Add("Trade Price/Carton Old", "Trade Price/Carton Old");
             tableMapping.ColumnMappings.Add("Trade Price/Carton", "Trade Price/Carton");
             tableMapping.ColumnMappings.Add("Trade Price/Piece", "Trade Price/Piece");
             tableMapping.ColumnMappings.Add("Consumer price /Carton", "Consumer price /Carton");
@@ -22046,11 +21144,10 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             tableMapping.ColumnMappings.Add("NPDS", "NPDS");
             tableMapping.ColumnMappings.Add("Valid Year", "Valid Year");
             tableMapping.ColumnMappings.Add("Valid Month", "Valid Month");
-            tableMapping.ColumnMappings.Add("Price Point 2009", "Price Point 2009");
-            tableMapping.ColumnMappings.Add("Price Point 2010", "Price Point 2010");
-            tableMapping.ColumnMappings.Add("ML / L", "ML / L");
             tableMapping.ColumnMappings.Add("MaterialStatus", "MaterialStatus");
             tableMapping.ColumnMappings.Add("Product/ Active- Cancel", "Product/ Active- Cancel");
+            tableMapping.ColumnMappings.Add("BaseProductId", "BaseProductId");
+            tableMapping.ColumnMappings.Add("Brand Rang", "Brand Rang");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -22060,33 +21157,25 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [0-4  Product Details] ([Material Number], [Material Name], [Material Name 2], [Group 1], [Group 2], [Group 3], [Brand], [Base Base Product], [Base Group], [Price Point rang], [Price Point], [Market range], [Base Base ProductOld], [Base Product], [Quin], [Volum Pice], [Volum], [Vol], [New Qu], [Price Increas], [Trade Price/Carton Old], [Trade Price/Carton], [Trade Price/Piece], [Consumer price /Carton], [Consumer price /Piece], [Pallet], [Split], [Material Type], [Flavor], [NPDS], [Valid Year], [Valid Month], [Price Point 2009], [Price Point 2010], [ML / L], [MaterialStatus], [Product/ Active- Cancel]) VALUES (@Material_Number, @Material_Name, @Material_Name_2, @Group_1, @Group_2, @Group_3, @Brand, @Base_Base_Product, @Base_Group, @Price_Point_rang, @Price_Point, @Market_range, @Base_Base_ProductOld, @Base_Product, @Quin, @Volum_Pice, @Volum, @Vol, @New_Qu, @Price_Increas, @p1, @p4, @p7, @p10, @p13, @Pallet, @Split, @Material_Type, @Flavor, @NPDS, @Valid_Year, @Valid_Month, @Price_Point_2009, @Price_Point_2010, @p16, @MaterialStatus, @p19)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [0-4  Product Details] ([Material Number], [Material Name], [Material Name 2], [Brand], [Price Point rang], [Price Point], [Market range], [Quin], [Volum Pice], [Volum], [Vol], [New Qu], [Price Increas], [Trade Price/Carton], [Trade Price/Piece], [Consumer price /Carton], [Consumer price /Piece], [Pallet], [Split], [Material Type], [Flavor], [NPDS], [Valid Year], [Valid Month], [MaterialStatus], [Product/ Active- Cancel], [BaseProductId], [Brand Rang]) VALUES (@Material_Number, @Material_Name, @Material_Name_2, @Brand, @Price_Point_rang, @Price_Point, @Market_range, @Quin, @Volum_Pice, @Volum, @Vol, @New_Qu, @Price_Increas, @p1, @p4, @p7, @p10, @Pallet, @Split, @Material_Type, @Flavor, @NPDS, @Valid_Year, @Valid_Month, @MaterialStatus, @p13, @BaseProductId, @Brand_Rang)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Name_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Market_range", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market range", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_ProductOld", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quin", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum_Pice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vol", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@New_Qu", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Increas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pallet", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Split", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22094,40 +21183,31 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NPDS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Year", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Month", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2009", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2010", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p16", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaterialStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaterialStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p19", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product/ Active- Cancel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product/ Active- Cancel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BaseProductId", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BaseProductId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [0-4  Product Details] SET [Material Number] = @Material_Number, [Material Name] = @Material_Name, [Material Name 2] = @Material_Name_2, [Group 1] = @Group_1, [Group 2] = @Group_2, [Group 3] = @Group_3, [Brand] = @Brand, [Base Base Product] = @Base_Base_Product, [Base Group] = @Base_Group, [Price Point rang] = @Price_Point_rang, [Price Point] = @Price_Point, [Market range] = @Market_range, [Base Base ProductOld] = @Base_Base_ProductOld, [Base Product] = @Base_Product, [Quin] = @Quin, [Volum Pice] = @Volum_Pice, [Volum] = @Volum, [Vol] = @Vol, [New Qu] = @New_Qu, [Price Increas] = @Price_Increas, [Trade Price/Carton Old] = @p1, [Trade Price/Carton] = @p4, [Trade Price/Piece] = @p7, [Consumer price /Carton] = @p10, [Consumer price /Piece] = @p13, [Pallet] = @Pallet, [Split] = @Split, [Material Type] = @Material_Type, [Flavor] = @Flavor, [NPDS] = @NPDS, [Valid Year] = @Valid_Year, [Valid Month] = @Valid_Month, [Price Point 2009] = @Price_Point_2009, [Price Point 2010] = @Price_Point_2010, [ML / L] = @p16, [MaterialStatus] = @MaterialStatus, [Product/ Active- Cancel] = @p19 WHERE (([Material Number] = @Original_Material_Number))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [0-4  Product Details] SET [Material Number] = @Material_Number, [Material Name] = @Material_Name, [Material Name 2] = @Material_Name_2, [Brand] = @Brand, [Price Point rang] = @Price_Point_rang, [Price Point] = @Price_Point, [Market range] = @Market_range, [Quin] = @Quin, [Volum Pice] = @Volum_Pice, [Volum] = @Volum, [Vol] = @Vol, [New Qu] = @New_Qu, [Price Increas] = @Price_Increas, [Trade Price/Carton] = @p1, [Trade Price/Piece] = @p4, [Consumer price /Carton] = @p7, [Consumer price /Piece] = @p10, [Pallet] = @Pallet, [Split] = @Split, [Material Type] = @Material_Type, [Flavor] = @Flavor, [NPDS] = @NPDS, [Valid Year] = @Valid_Year, [Valid Month] = @Valid_Month, [MaterialStatus] = @MaterialStatus, [Product/ Active- Cancel] = @p13, [BaseProductId] = @BaseProductId, [Brand Rang] = @Brand_Rang WHERE (([Material Number] = @Original_Material_Number))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Name_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Name 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group 3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Group", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Market_range", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Market range", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Base_ProductOld", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Base ProductOld", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Base_Product", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Base Product", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quin", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum_Pice", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum Pice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Volum", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Volum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vol", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@New_Qu", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "New Qu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Increas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Increas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton Old", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Trade Price/Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Carton", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Consumer price /Piece", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pallet", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pallet", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Split", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Split", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Material_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22135,11 +21215,10 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NPDS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NPDS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Year", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valid_Month", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valid Month", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2009", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2009", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price_Point_2010", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price Point 2010", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p16", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ML / L", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MaterialStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MaterialStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p19", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product/ Active- Cancel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product/ Active- Cancel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BaseProductId", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BaseProductId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Rang", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Rang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Material_Number", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Material Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -22156,9 +21235,8 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], Type, [Ro
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        [Material Number], [Material Name], [Material Name 2], [Group 1], [Group 2], [Group 3], Brand, [Base Base Product], [Base Group], [Price Point rang], [Price Point], [Market range], [Base Base ProductOld], 
-                         [Base Product], Quin, [Volum Pice], Volum, Vol, [New Qu], [Price Increas], [Trade Price/Carton Old], [Trade Price/Carton], [Trade Price/Piece], [Consumer price /Carton], [Consumer price /Piece], Pallet, Split, 
-                         [Material Type], Flavor, NPDS, [Valid Year], [Valid Month], [Price Point 2009], [Price Point 2010], [ML / L], MaterialStatus, [Product/ Active- Cancel]
+            this._commandCollection[0].CommandText = @"SELECT        [Material Number], [Material Name], [Material Name 2], Brand, [Price Point rang], [Price Point], [Market range], Quin, [Volum Pice], Volum, Vol, [New Qu], [Price Increas], [Trade Price/Carton], [Trade Price/Piece], 
+                         [Consumer price /Carton], [Consumer price /Piece], Pallet, Split, [Material Type], Flavor, NPDS, [Valid Year], [Valid Month], MaterialStatus, [Product/ Active- Cancel], BaseProductId, [Brand Rang]
 FROM            [0-4  Product Details]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -22246,28 +21324,20 @@ FROM            [0-4  Product Details]";
                     double Material_Number, 
                     string Material_Name, 
                     string Material_Name_2, 
-                    string Group_1, 
-                    string Group_2, 
-                    string Group_3, 
                     string Brand, 
-                    string Base_Base_Product, 
-                    string Base_Group, 
                     string Price_Point_rang, 
                     global::System.Nullable<double> Price_Point, 
                     string Market_range, 
-                    string Base_Base_ProductOld, 
-                    string Base_Product, 
                     global::System.Nullable<double> Quin, 
                     global::System.Nullable<double> Volum_Pice, 
                     global::System.Nullable<double> Volum, 
                     global::System.Nullable<double> Vol, 
                     global::System.Nullable<double> New_Qu, 
                     string Price_Increas, 
-                    string p1, 
+                    global::System.Nullable<double> p1, 
                     global::System.Nullable<double> p4, 
-                    global::System.Nullable<double> p7, 
-                    string p10, 
-                    global::System.Nullable<double> p13, 
+                    string p7, 
+                    global::System.Nullable<double> p10, 
                     global::System.Nullable<double> Pallet, 
                     global::System.Nullable<double> Split, 
                     string Material_Type, 
@@ -22275,11 +21345,10 @@ FROM            [0-4  Product Details]";
                     string NPDS, 
                     string Valid_Year, 
                     string Valid_Month, 
-                    string Price_Point_2009, 
-                    string Price_Point_2010, 
-                    string p16, 
                     string MaterialStatus, 
-                    string p19) {
+                    string p13, 
+                    global::System.Nullable<short> BaseProductId, 
+                    string Brand_Rang) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((double)(Material_Number));
             if ((Material_Name == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -22293,209 +21362,155 @@ FROM            [0-4  Product Details]";
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Material_Name_2));
             }
-            if ((Group_1 == null)) {
+            if ((Brand == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Group_1));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Brand));
             }
-            if ((Group_2 == null)) {
+            if ((Price_Point_rang == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Group_2));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Price_Point_rang));
             }
-            if ((Group_3 == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((Price_Point.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(Price_Point.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Group_3));
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Brand == null)) {
+            if ((Market_range == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Brand));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Market_range));
             }
-            if ((Base_Base_Product == null)) {
+            if ((Quin.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(Quin.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Base_Base_Product));
+            if ((Volum_Pice.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(Volum_Pice.Value));
             }
-            if ((Base_Group == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Base_Group));
+            if ((Volum.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(Volum.Value));
             }
-            if ((Price_Point_rang == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Price_Point_rang));
-            }
-            if ((Price_Point.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((double)(Price_Point.Value));
+            if ((Vol.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((double)(Vol.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Market_range == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((New_Qu.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((double)(New_Qu.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Market_range));
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Base_Base_ProductOld == null)) {
+            if ((Price_Increas == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Base_Base_ProductOld));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Price_Increas));
             }
-            if ((Base_Product == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            if ((p1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(p1.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Base_Product));
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Quin.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(Quin.Value));
+            if ((p4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(p4.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Volum_Pice.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(Volum_Pice.Value));
-            }
-            else {
+            if ((p7 == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Volum.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(Volum.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(p7));
+            }
+            if ((p10.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((double)(p10.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Vol.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((double)(Vol.Value));
+            if ((Pallet.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((double)(Pallet.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((New_Qu.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((double)(New_Qu.Value));
+            if ((Split.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((double)(Split.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Price_Increas == null)) {
+            if ((Material_Type == null)) {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Price_Increas));
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Material_Type));
             }
-            if ((p1 == null)) {
+            if ((Flavor == null)) {
                 this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(p1));
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(Flavor));
             }
-            if ((p4.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((double)(p4.Value));
-            }
-            else {
+            if ((NPDS == null)) {
                 this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((p7.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((double)(p7.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(NPDS));
+            }
+            if ((Valid_Year == null)) {
                 this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((p10 == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(Valid_Year));
+            }
+            if ((Valid_Month == null)) {
                 this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(p10));
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(Valid_Month));
             }
-            if ((p13.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((double)(p13.Value));
-            }
-            else {
+            if ((MaterialStatus == null)) {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((Pallet.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((double)(Pallet.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(MaterialStatus));
+            }
+            if ((p13 == null)) {
                 this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            if ((Split.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((double)(Split.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(p13));
+            }
+            if ((BaseProductId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((short)(BaseProductId.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Material_Type == null)) {
+            if ((Brand_Rang == null)) {
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(Material_Type));
-            }
-            if ((Flavor == null)) {
-                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(Flavor));
-            }
-            if ((NPDS == null)) {
-                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(NPDS));
-            }
-            if ((Valid_Year == null)) {
-                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(Valid_Year));
-            }
-            if ((Valid_Month == null)) {
-                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(Valid_Month));
-            }
-            if ((Price_Point_2009 == null)) {
-                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[32].Value = ((string)(Price_Point_2009));
-            }
-            if ((Price_Point_2010 == null)) {
-                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(Price_Point_2010));
-            }
-            if ((p16 == null)) {
-                this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(p16));
-            }
-            if ((MaterialStatus == null)) {
-                this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[35].Value = ((string)(MaterialStatus));
-            }
-            if ((p19 == null)) {
-                this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[36].Value = ((string)(p19));
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(Brand_Rang));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -22521,28 +21536,20 @@ FROM            [0-4  Product Details]";
                     double Material_Number, 
                     string Material_Name, 
                     string Material_Name_2, 
-                    string Group_1, 
-                    string Group_2, 
-                    string Group_3, 
                     string Brand, 
-                    string Base_Base_Product, 
-                    string Base_Group, 
                     string Price_Point_rang, 
                     global::System.Nullable<double> Price_Point, 
                     string Market_range, 
-                    string Base_Base_ProductOld, 
-                    string Base_Product, 
                     global::System.Nullable<double> Quin, 
                     global::System.Nullable<double> Volum_Pice, 
                     global::System.Nullable<double> Volum, 
                     global::System.Nullable<double> Vol, 
                     global::System.Nullable<double> New_Qu, 
                     string Price_Increas, 
-                    string p1, 
+                    global::System.Nullable<double> p1, 
                     global::System.Nullable<double> p4, 
-                    global::System.Nullable<double> p7, 
-                    string p10, 
-                    global::System.Nullable<double> p13, 
+                    string p7, 
+                    global::System.Nullable<double> p10, 
                     global::System.Nullable<double> Pallet, 
                     global::System.Nullable<double> Split, 
                     string Material_Type, 
@@ -22550,11 +21557,10 @@ FROM            [0-4  Product Details]";
                     string NPDS, 
                     string Valid_Year, 
                     string Valid_Month, 
-                    string Price_Point_2009, 
-                    string Price_Point_2010, 
-                    string p16, 
                     string MaterialStatus, 
-                    string p19, 
+                    string p13, 
+                    global::System.Nullable<short> BaseProductId, 
+                    string Brand_Rang, 
                     double Original_Material_Number) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(Material_Number));
             if ((Material_Name == null)) {
@@ -22569,211 +21575,157 @@ FROM            [0-4  Product Details]";
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Material_Name_2));
             }
-            if ((Group_1 == null)) {
+            if ((Brand == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Group_1));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Brand));
             }
-            if ((Group_2 == null)) {
+            if ((Price_Point_rang == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Group_2));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Price_Point_rang));
             }
-            if ((Group_3 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((Price_Point.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Price_Point.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Group_3));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Brand == null)) {
+            if ((Market_range == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Brand));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Market_range));
             }
-            if ((Base_Base_Product == null)) {
+            if ((Quin.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(Quin.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Base_Base_Product));
+            if ((Volum_Pice.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(Volum_Pice.Value));
             }
-            if ((Base_Group == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Base_Group));
+            if ((Volum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Volum.Value));
             }
-            if ((Price_Point_rang == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Price_Point_rang));
-            }
-            if ((Price_Point.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Price_Point.Value));
+            if ((Vol.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Vol.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Market_range == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((New_Qu.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(New_Qu.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Market_range));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Base_Base_ProductOld == null)) {
+            if ((Price_Increas == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Base_Base_ProductOld));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Price_Increas));
             }
-            if ((Base_Product == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            if ((p1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(p1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Base_Product));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Quin.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Quin.Value));
+            if ((p4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(p4.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Volum_Pice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Volum_Pice.Value));
-            }
-            else {
+            if ((p7 == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((Volum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Volum.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(p7));
+            }
+            if ((p10.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(p10.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Vol.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Vol.Value));
+            if ((Pallet.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Pallet.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((New_Qu.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(New_Qu.Value));
+            if ((Split.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(Split.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Price_Increas == null)) {
+            if ((Material_Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Price_Increas));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Material_Type));
             }
-            if ((p1 == null)) {
+            if ((Flavor == null)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(p1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Flavor));
             }
-            if ((p4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(p4.Value));
-            }
-            else {
+            if ((NPDS == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((p7.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(p7.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(NPDS));
+            }
+            if ((Valid_Year == null)) {
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((p10 == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Valid_Year));
+            }
+            if ((Valid_Month == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(p10));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Valid_Month));
             }
-            if ((p13.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((double)(p13.Value));
-            }
-            else {
+            if ((MaterialStatus == null)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((Pallet.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(Pallet.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(MaterialStatus));
+            }
+            if ((p13 == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            if ((Split.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((double)(Split.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(p13));
+            }
+            if ((BaseProductId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((short)(BaseProductId.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Material_Type == null)) {
+            if ((Brand_Rang == null)) {
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Material_Type));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Brand_Rang));
             }
-            if ((Flavor == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Flavor));
-            }
-            if ((NPDS == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(NPDS));
-            }
-            if ((Valid_Year == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Valid_Year));
-            }
-            if ((Valid_Month == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Valid_Month));
-            }
-            if ((Price_Point_2009 == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Price_Point_2009));
-            }
-            if ((Price_Point_2010 == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Price_Point_2010));
-            }
-            if ((p16 == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(p16));
-            }
-            if ((MaterialStatus == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(MaterialStatus));
-            }
-            if ((p19 == null)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(p19));
-            }
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((double)(Original_Material_Number));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((double)(Original_Material_Number));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -22797,28 +21749,20 @@ FROM            [0-4  Product Details]";
         public virtual int Update(
                     string Material_Name, 
                     string Material_Name_2, 
-                    string Group_1, 
-                    string Group_2, 
-                    string Group_3, 
                     string Brand, 
-                    string Base_Base_Product, 
-                    string Base_Group, 
                     string Price_Point_rang, 
                     global::System.Nullable<double> Price_Point, 
                     string Market_range, 
-                    string Base_Base_ProductOld, 
-                    string Base_Product, 
                     global::System.Nullable<double> Quin, 
                     global::System.Nullable<double> Volum_Pice, 
                     global::System.Nullable<double> Volum, 
                     global::System.Nullable<double> Vol, 
                     global::System.Nullable<double> New_Qu, 
                     string Price_Increas, 
-                    string p1, 
+                    global::System.Nullable<double> p1, 
                     global::System.Nullable<double> p4, 
-                    global::System.Nullable<double> p7, 
-                    string p10, 
-                    global::System.Nullable<double> p13, 
+                    string p7, 
+                    global::System.Nullable<double> p10, 
                     global::System.Nullable<double> Pallet, 
                     global::System.Nullable<double> Split, 
                     string Material_Type, 
@@ -22826,13 +21770,12 @@ FROM            [0-4  Product Details]";
                     string NPDS, 
                     string Valid_Year, 
                     string Valid_Month, 
-                    string Price_Point_2009, 
-                    string Price_Point_2010, 
-                    string p16, 
                     string MaterialStatus, 
-                    string p19, 
+                    string p13, 
+                    global::System.Nullable<short> BaseProductId, 
+                    string Brand_Rang, 
                     double Original_Material_Number) {
-            return this.Update(Original_Material_Number, Material_Name, Material_Name_2, Group_1, Group_2, Group_3, Brand, Base_Base_Product, Base_Group, Price_Point_rang, Price_Point, Market_range, Base_Base_ProductOld, Base_Product, Quin, Volum_Pice, Volum, Vol, New_Qu, Price_Increas, p1, p4, p7, p10, p13, Pallet, Split, Material_Type, Flavor, NPDS, Valid_Year, Valid_Month, Price_Point_2009, Price_Point_2010, p16, MaterialStatus, p19, Original_Material_Number);
+            return this.Update(Original_Material_Number, Material_Name, Material_Name_2, Brand, Price_Point_rang, Price_Point, Market_range, Quin, Volum_Pice, Volum, Vol, New_Qu, Price_Increas, p1, p4, p7, p10, Pallet, Split, Material_Type, Flavor, NPDS, Valid_Year, Valid_Month, MaterialStatus, p13, BaseProductId, Brand_Rang, Original_Material_Number);
         }
     }
     

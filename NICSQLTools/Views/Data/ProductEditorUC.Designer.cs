@@ -30,66 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductEditorUC));
-            this.colPricePoint2009 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCustomerTypeId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomerType1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEditCustomerTypeId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.colDistributionChannel = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDistributionChannelId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustHierLevel3Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustHierLevel3Id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustHierLevel4Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustHierLevel4Id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustHierLevel5Id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustHierLevel6Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustHierLevel6Id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCustHierLevel5Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEditCustHierLevel6Id = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPricePoint2010 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValidMonth = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.repositoryItemDateEditCreationDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.colCityArName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCityEnName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCityId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositoryItemGridLookUpEditCityId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.colSubchannelName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEditCustomerType2Id = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCustomerType2Id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomerType21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubchannelId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEditSubchannelId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCustomerGroup1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustomerGroupId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositoryItemGridLookUpEditCustomerGroupId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.colValidYear = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPricePointrang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBrand = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGroup3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGroup2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGroup1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaterialName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaterialNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colBaseBaseProduct = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPricePoint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMarketrang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBaseBaseProductOld = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBaseProduct = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVolumPice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVolum = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colVol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNewQu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPriceIncreas = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -99,10 +55,13 @@
             this.colMaterialType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFlavor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNPDS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBaseGroup = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaterialName2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaterialStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBrandRang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBaseProductId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
@@ -112,411 +71,59 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerTypeId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustHierLevel6Id)).BeginInit();
+            this.LSMSBaseProduct = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.repositoryItemGridLookUpEditBaseProductId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colsubBaseProductId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditCreationDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditCreationDate.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCityId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerType2Id)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubchannelId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerGroupId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSBaseProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditBaseProductId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             this.SuspendLayout();
-            // 
-            // colPricePoint2009
-            // 
-            this.colPricePoint2009.FieldName = "Price Point 2009";
-            this.colPricePoint2009.Name = "colPricePoint2009";
-            this.colPricePoint2009.Visible = true;
-            this.colPricePoint2009.VisibleIndex = 32;
-            this.colPricePoint2009.Width = 96;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCustomerTypeId,
-            this.colCustomerType1});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // colCustomerTypeId
-            // 
-            this.colCustomerTypeId.FieldName = "CustomerTypeId";
-            this.colCustomerTypeId.Name = "colCustomerTypeId";
-            this.colCustomerTypeId.Visible = true;
-            this.colCustomerTypeId.VisibleIndex = 0;
-            // 
-            // colCustomerType1
-            // 
-            this.colCustomerType1.FieldName = "CustomerType1";
-            this.colCustomerType1.Name = "colCustomerType1";
-            this.colCustomerType1.Visible = true;
-            this.colCustomerType1.VisibleIndex = 1;
-            // 
-            // repositoryItemGridLookUpEditCustomerTypeId
-            // 
-            this.repositoryItemGridLookUpEditCustomerTypeId.AutoHeight = false;
-            this.repositoryItemGridLookUpEditCustomerTypeId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditCustomerTypeId.DisplayMember = "CustomerType1";
-            this.repositoryItemGridLookUpEditCustomerTypeId.Name = "repositoryItemGridLookUpEditCustomerTypeId";
-            this.repositoryItemGridLookUpEditCustomerTypeId.NullText = "";
-            this.repositoryItemGridLookUpEditCustomerTypeId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditCustomerTypeId.ValueMember = "CustomerTypeId";
-            this.repositoryItemGridLookUpEditCustomerTypeId.View = this.gridView1;
-            // 
-            // colDistributionChannel
-            // 
-            this.colDistributionChannel.FieldName = "DistributionChannel";
-            this.colDistributionChannel.Name = "colDistributionChannel";
-            this.colDistributionChannel.Visible = true;
-            this.colDistributionChannel.VisibleIndex = 9;
-            // 
-            // colDistributionChannelId
-            // 
-            this.colDistributionChannelId.FieldName = "DistributionChannelId";
-            this.colDistributionChannelId.Name = "colDistributionChannelId";
-            this.colDistributionChannelId.Visible = true;
-            this.colDistributionChannelId.VisibleIndex = 8;
-            // 
-            // colCustHierLevel3Name
-            // 
-            this.colCustHierLevel3Name.FieldName = "CustHierLevel3Name";
-            this.colCustHierLevel3Name.Name = "colCustHierLevel3Name";
-            this.colCustHierLevel3Name.Visible = true;
-            this.colCustHierLevel3Name.VisibleIndex = 7;
-            // 
-            // colCustHierLevel3Id
-            // 
-            this.colCustHierLevel3Id.FieldName = "CustHierLevel3Id";
-            this.colCustHierLevel3Id.Name = "colCustHierLevel3Id";
-            this.colCustHierLevel3Id.Visible = true;
-            this.colCustHierLevel3Id.VisibleIndex = 6;
-            // 
-            // colCustHierLevel4Name
-            // 
-            this.colCustHierLevel4Name.FieldName = "CustHierLevel4Name";
-            this.colCustHierLevel4Name.Name = "colCustHierLevel4Name";
-            this.colCustHierLevel4Name.Visible = true;
-            this.colCustHierLevel4Name.VisibleIndex = 5;
-            // 
-            // colCustHierLevel4Id
-            // 
-            this.colCustHierLevel4Id.FieldName = "CustHierLevel4Id";
-            this.colCustHierLevel4Id.Name = "colCustHierLevel4Id";
-            this.colCustHierLevel4Id.Visible = true;
-            this.colCustHierLevel4Id.VisibleIndex = 4;
-            // 
-            // colCustHierLevel5Id
-            // 
-            this.colCustHierLevel5Id.FieldName = "CustHierLevel5Id";
-            this.colCustHierLevel5Id.Name = "colCustHierLevel5Id";
-            this.colCustHierLevel5Id.Visible = true;
-            this.colCustHierLevel5Id.VisibleIndex = 2;
-            // 
-            // colCustHierLevel6Name
-            // 
-            this.colCustHierLevel6Name.FieldName = "CustHierLevel6Name";
-            this.colCustHierLevel6Name.Name = "colCustHierLevel6Name";
-            this.colCustHierLevel6Name.Visible = true;
-            this.colCustHierLevel6Name.VisibleIndex = 1;
-            // 
-            // colCustHierLevel6Id
-            // 
-            this.colCustHierLevel6Id.FieldName = "CustHierLevel6Id";
-            this.colCustHierLevel6Id.Name = "colCustHierLevel6Id";
-            this.colCustHierLevel6Id.Visible = true;
-            this.colCustHierLevel6Id.VisibleIndex = 0;
-            // 
-            // repositoryItemGridLookUpEdit1View
-            // 
-            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCustHierLevel6Id,
-            this.colCustHierLevel6Name,
-            this.colCustHierLevel5Id,
-            this.colCustHierLevel5Name,
-            this.colCustHierLevel4Id,
-            this.colCustHierLevel4Name,
-            this.colCustHierLevel3Id,
-            this.colCustHierLevel3Name,
-            this.colDistributionChannelId,
-            this.colDistributionChannel});
-            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
-            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
-            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colCustHierLevel5Name
-            // 
-            this.colCustHierLevel5Name.FieldName = "CustHierLevel5Name";
-            this.colCustHierLevel5Name.Name = "colCustHierLevel5Name";
-            this.colCustHierLevel5Name.Visible = true;
-            this.colCustHierLevel5Name.VisibleIndex = 3;
-            // 
-            // repositoryItemGridLookUpEditCustHierLevel6Id
-            // 
-            this.repositoryItemGridLookUpEditCustHierLevel6Id.AutoHeight = false;
-            this.repositoryItemGridLookUpEditCustHierLevel6Id.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            this.repositoryItemGridLookUpEditCustHierLevel6Id.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditCustHierLevel6Id.DisplayMember = "CustHierLevel6Name";
-            this.repositoryItemGridLookUpEditCustHierLevel6Id.Name = "repositoryItemGridLookUpEditCustHierLevel6Id";
-            this.repositoryItemGridLookUpEditCustHierLevel6Id.NullText = "";
-            this.repositoryItemGridLookUpEditCustHierLevel6Id.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditCustHierLevel6Id.ValueMember = "CustHierLevel6Id";
-            this.repositoryItemGridLookUpEditCustHierLevel6Id.View = this.repositoryItemGridLookUpEdit1View;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.FieldName = "ML / L";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 34;
-            // 
-            // colPricePoint2010
-            // 
-            this.colPricePoint2010.FieldName = "Price Point 2010";
-            this.colPricePoint2010.Name = "colPricePoint2010";
-            this.colPricePoint2010.Visible = true;
-            this.colPricePoint2010.VisibleIndex = 33;
-            this.colPricePoint2010.Width = 96;
             // 
             // colValidMonth
             // 
             this.colValidMonth.FieldName = "Valid Month";
             this.colValidMonth.Name = "colValidMonth";
             this.colValidMonth.Visible = true;
-            this.colValidMonth.VisibleIndex = 31;
+            this.colValidMonth.VisibleIndex = 24;
             // 
             // UOW
             // 
             this.UOW.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.UOW.TrackPropertiesModifications = false;
             // 
-            // repositoryItemDateEditCreationDate
-            // 
-            this.repositoryItemDateEditCreationDate.AutoHeight = false;
-            this.repositoryItemDateEditCreationDate.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEditCreationDate.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEditCreationDate.DisplayFormat.FormatString = "d/M/yyyy";
-            this.repositoryItemDateEditCreationDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEditCreationDate.EditFormat.FormatString = "d/M/yyyy";
-            this.repositoryItemDateEditCreationDate.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.repositoryItemDateEditCreationDate.Mask.EditMask = "d/M/yyyy";
-            this.repositoryItemDateEditCreationDate.Name = "repositoryItemDateEditCreationDate";
-            // 
-            // colCityArName
-            // 
-            this.colCityArName.FieldName = "CityArName";
-            this.colCityArName.Name = "colCityArName";
-            this.colCityArName.Visible = true;
-            this.colCityArName.VisibleIndex = 2;
-            // 
-            // colCityEnName
-            // 
-            this.colCityEnName.FieldName = "CityEnName";
-            this.colCityEnName.Name = "colCityEnName";
-            this.colCityEnName.Visible = true;
-            this.colCityEnName.VisibleIndex = 1;
-            // 
-            // colCityId
-            // 
-            this.colCityId.FieldName = "CityId";
-            this.colCityId.Name = "colCityId";
-            this.colCityId.Visible = true;
-            this.colCityId.VisibleIndex = 0;
-            // 
-            // gridView5
-            // 
-            this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCityId,
-            this.colCityEnName,
-            this.colCityArName});
-            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView5.Name = "gridView5";
-            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView5.OptionsView.ShowGroupPanel = false;
-            // 
-            // repositoryItemGridLookUpEditCityId
-            // 
-            this.repositoryItemGridLookUpEditCityId.AutoHeight = false;
-            this.repositoryItemGridLookUpEditCityId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditCityId.DisplayMember = "CityEnName";
-            this.repositoryItemGridLookUpEditCityId.Name = "repositoryItemGridLookUpEditCityId";
-            this.repositoryItemGridLookUpEditCityId.NullText = "";
-            this.repositoryItemGridLookUpEditCityId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditCityId.ValueMember = "CityId";
-            this.repositoryItemGridLookUpEditCityId.View = this.gridView5;
-            // 
-            // colSubchannelName
-            // 
-            this.colSubchannelName.FieldName = "SubchannelName";
-            this.colSubchannelName.Name = "colSubchannelName";
-            this.colSubchannelName.Visible = true;
-            this.colSubchannelName.VisibleIndex = 1;
-            // 
-            // repositoryItemGridLookUpEditCustomerType2Id
-            // 
-            this.repositoryItemGridLookUpEditCustomerType2Id.AutoHeight = false;
-            this.repositoryItemGridLookUpEditCustomerType2Id.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditCustomerType2Id.DisplayMember = "CustomerType21";
-            this.repositoryItemGridLookUpEditCustomerType2Id.Name = "repositoryItemGridLookUpEditCustomerType2Id";
-            this.repositoryItemGridLookUpEditCustomerType2Id.NullText = "";
-            this.repositoryItemGridLookUpEditCustomerType2Id.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditCustomerType2Id.ValueMember = "CustomerType2Id";
-            this.repositoryItemGridLookUpEditCustomerType2Id.View = this.gridView2;
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCustomerType2Id,
-            this.colCustomerType21});
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // colCustomerType2Id
-            // 
-            this.colCustomerType2Id.FieldName = "CustomerType2Id";
-            this.colCustomerType2Id.Name = "colCustomerType2Id";
-            this.colCustomerType2Id.Visible = true;
-            this.colCustomerType2Id.VisibleIndex = 0;
-            // 
-            // colCustomerType21
-            // 
-            this.colCustomerType21.FieldName = "CustomerType21";
-            this.colCustomerType21.Name = "colCustomerType21";
-            this.colCustomerType21.Visible = true;
-            this.colCustomerType21.VisibleIndex = 1;
-            // 
-            // colSubchannelId
-            // 
-            this.colSubchannelId.FieldName = "SubchannelId";
-            this.colSubchannelId.Name = "colSubchannelId";
-            this.colSubchannelId.Visible = true;
-            this.colSubchannelId.VisibleIndex = 0;
-            // 
-            // repositoryItemGridLookUpEditSubchannelId
-            // 
-            this.repositoryItemGridLookUpEditSubchannelId.AutoHeight = false;
-            this.repositoryItemGridLookUpEditSubchannelId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditSubchannelId.DisplayMember = "SubchannelName";
-            this.repositoryItemGridLookUpEditSubchannelId.Name = "repositoryItemGridLookUpEditSubchannelId";
-            this.repositoryItemGridLookUpEditSubchannelId.NullText = "";
-            this.repositoryItemGridLookUpEditSubchannelId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditSubchannelId.ValueMember = "SubchannelId";
-            this.repositoryItemGridLookUpEditSubchannelId.View = this.gridView4;
-            // 
-            // gridView4
-            // 
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSubchannelId,
-            this.colSubchannelName});
-            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView4.OptionsView.ShowGroupPanel = false;
-            // 
-            // colCustomerGroup1
-            // 
-            this.colCustomerGroup1.FieldName = "CustomerGroup1";
-            this.colCustomerGroup1.Name = "colCustomerGroup1";
-            this.colCustomerGroup1.Visible = true;
-            this.colCustomerGroup1.VisibleIndex = 1;
-            // 
-            // colCustomerGroupId
-            // 
-            this.colCustomerGroupId.FieldName = "CustomerGroupId";
-            this.colCustomerGroupId.Name = "colCustomerGroupId";
-            this.colCustomerGroupId.Visible = true;
-            this.colCustomerGroupId.VisibleIndex = 0;
-            // 
-            // gridView3
-            // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCustomerGroupId,
-            this.colCustomerGroup1});
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // repositoryItemGridLookUpEditCustomerGroupId
-            // 
-            this.repositoryItemGridLookUpEditCustomerGroupId.AutoHeight = false;
-            this.repositoryItemGridLookUpEditCustomerGroupId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditCustomerGroupId.DisplayMember = "CustomerGroup1";
-            this.repositoryItemGridLookUpEditCustomerGroupId.Name = "repositoryItemGridLookUpEditCustomerGroupId";
-            this.repositoryItemGridLookUpEditCustomerGroupId.NullText = "";
-            this.repositoryItemGridLookUpEditCustomerGroupId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditCustomerGroupId.ValueMember = "CustomerGroupId";
-            this.repositoryItemGridLookUpEditCustomerGroupId.View = this.gridView3;
-            // 
             // colValidYear
             // 
             this.colValidYear.FieldName = "Valid Year";
             this.colValidYear.Name = "colValidYear";
             this.colValidYear.Visible = true;
-            this.colValidYear.VisibleIndex = 30;
+            this.colValidYear.VisibleIndex = 23;
             // 
             // colPricePointrang
             // 
             this.colPricePointrang.FieldName = "Price Point rang";
             this.colPricePointrang.Name = "colPricePointrang";
             this.colPricePointrang.Visible = true;
-            this.colPricePointrang.VisibleIndex = 9;
-            this.colPricePointrang.Width = 94;
+            this.colPricePointrang.VisibleIndex = 5;
+            this.colPricePointrang.Width = 95;
             // 
             // colBrand
             // 
             this.colBrand.FieldName = "Brand";
             this.colBrand.Name = "colBrand";
             this.colBrand.Visible = true;
-            this.colBrand.VisibleIndex = 6;
-            // 
-            // colGroup3
-            // 
-            this.colGroup3.FieldName = "Group 3";
-            this.colGroup3.Name = "colGroup3";
-            this.colGroup3.Visible = true;
-            this.colGroup3.VisibleIndex = 5;
-            // 
-            // colGroup2
-            // 
-            this.colGroup2.FieldName = "Group 2";
-            this.colGroup2.Name = "colGroup2";
-            this.colGroup2.Visible = true;
-            this.colGroup2.VisibleIndex = 4;
-            // 
-            // colGroup1
-            // 
-            this.colGroup1.FieldName = "Group 1";
-            this.colGroup1.Name = "colGroup1";
-            this.colGroup1.Visible = true;
-            this.colGroup1.VisibleIndex = 3;
+            this.colBrand.VisibleIndex = 3;
             // 
             // colMaterialName
             // 
@@ -524,7 +131,7 @@
             this.colMaterialName.Name = "colMaterialName";
             this.colMaterialName.Visible = true;
             this.colMaterialName.VisibleIndex = 1;
-            this.colMaterialName.Width = 87;
+            this.colMaterialName.Width = 88;
             // 
             // colMaterialNumber
             // 
@@ -532,30 +139,24 @@
             this.colMaterialNumber.Name = "colMaterialNumber";
             this.colMaterialNumber.Visible = true;
             this.colMaterialNumber.VisibleIndex = 0;
-            this.colMaterialNumber.Width = 97;
+            this.colMaterialNumber.Width = 98;
             // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaterialNumber,
             this.colMaterialName,
-            this.colGroup1,
-            this.colGroup2,
-            this.colGroup3,
             this.colBrand,
-            this.colBaseBaseProduct,
+            this.colBaseProductId,
             this.colPricePointrang,
             this.colPricePoint,
             this.colMarketrang,
-            this.colBaseBaseProductOld,
-            this.colBaseProduct,
             this.colQuin,
             this.colVolumPice,
             this.colVolum,
             this.colVol,
             this.colNewQu,
             this.colPriceIncreas,
-            this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
@@ -567,12 +168,10 @@
             this.colNPDS,
             this.colValidYear,
             this.colValidMonth,
-            this.colPricePoint2009,
-            this.colPricePoint2010,
-            this.gridColumn6,
-            this.colBaseGroup,
             this.colMaterialName2,
-            this.colMaterialStatus});
+            this.colMaterialStatus,
+            this.colBrandRang,
+            this.gridColumn1});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new";
@@ -586,170 +185,131 @@
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
             // 
-            // colBaseBaseProduct
-            // 
-            this.colBaseBaseProduct.FieldName = "Base Base Product";
-            this.colBaseBaseProduct.Name = "colBaseBaseProduct";
-            this.colBaseBaseProduct.Visible = true;
-            this.colBaseBaseProduct.VisibleIndex = 7;
-            this.colBaseBaseProduct.Width = 108;
-            // 
             // colPricePoint
             // 
             this.colPricePoint.FieldName = "Price Point";
             this.colPricePoint.Name = "colPricePoint";
             this.colPricePoint.Visible = true;
-            this.colPricePoint.VisibleIndex = 10;
+            this.colPricePoint.VisibleIndex = 6;
             // 
             // colMarketrang
             // 
             this.colMarketrang.FieldName = "Market range";
             this.colMarketrang.Name = "colMarketrang";
             this.colMarketrang.Visible = true;
-            this.colMarketrang.VisibleIndex = 11;
-            this.colMarketrang.Width = 83;
-            // 
-            // colBaseBaseProductOld
-            // 
-            this.colBaseBaseProductOld.FieldName = "Base Base ProductOld";
-            this.colBaseBaseProductOld.Name = "colBaseBaseProductOld";
-            this.colBaseBaseProductOld.Visible = true;
-            this.colBaseBaseProductOld.VisibleIndex = 12;
-            this.colBaseBaseProductOld.Width = 127;
-            // 
-            // colBaseProduct
-            // 
-            this.colBaseProduct.FieldName = "Base Product";
-            this.colBaseProduct.Name = "colBaseProduct";
-            this.colBaseProduct.Visible = true;
-            this.colBaseProduct.VisibleIndex = 13;
-            this.colBaseProduct.Width = 82;
+            this.colMarketrang.VisibleIndex = 7;
+            this.colMarketrang.Width = 84;
             // 
             // colQuin
             // 
             this.colQuin.FieldName = "Quin";
             this.colQuin.Name = "colQuin";
             this.colQuin.Visible = true;
-            this.colQuin.VisibleIndex = 14;
+            this.colQuin.VisibleIndex = 8;
             // 
             // colVolumPice
             // 
             this.colVolumPice.FieldName = "Volum Pice";
             this.colVolumPice.Name = "colVolumPice";
             this.colVolumPice.Visible = true;
-            this.colVolumPice.VisibleIndex = 15;
+            this.colVolumPice.VisibleIndex = 9;
             // 
             // colVolum
             // 
             this.colVolum.FieldName = "Volum";
             this.colVolum.Name = "colVolum";
             this.colVolum.Visible = true;
-            this.colVolum.VisibleIndex = 16;
+            this.colVolum.VisibleIndex = 10;
             // 
             // colVol
             // 
             this.colVol.FieldName = "Vol";
             this.colVol.Name = "colVol";
             this.colVol.Visible = true;
-            this.colVol.VisibleIndex = 17;
+            this.colVol.VisibleIndex = 11;
             // 
             // colNewQu
             // 
             this.colNewQu.FieldName = "New Qu";
             this.colNewQu.Name = "colNewQu";
             this.colNewQu.Visible = true;
-            this.colNewQu.VisibleIndex = 18;
+            this.colNewQu.VisibleIndex = 12;
             // 
             // colPriceIncreas
             // 
             this.colPriceIncreas.FieldName = "Price Increas";
             this.colPriceIncreas.Name = "colPriceIncreas";
             this.colPriceIncreas.Visible = true;
-            this.colPriceIncreas.VisibleIndex = 19;
-            this.colPriceIncreas.Width = 81;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.FieldName = "Trade Price/Carton Old";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 20;
-            this.gridColumn1.Width = 129;
+            this.colPriceIncreas.VisibleIndex = 13;
+            this.colPriceIncreas.Width = 82;
             // 
             // gridColumn2
             // 
             this.gridColumn2.FieldName = "Trade Price/Carton";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 21;
-            this.gridColumn2.Width = 110;
+            this.gridColumn2.VisibleIndex = 14;
+            this.gridColumn2.Width = 111;
             // 
             // gridColumn3
             // 
             this.gridColumn3.FieldName = "Trade Price/Piece";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 22;
-            this.gridColumn3.Width = 102;
+            this.gridColumn3.VisibleIndex = 15;
+            this.gridColumn3.Width = 103;
             // 
             // gridColumn4
             // 
             this.gridColumn4.FieldName = "Consumer price /Carton";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 23;
-            this.gridColumn4.Width = 133;
+            this.gridColumn4.VisibleIndex = 16;
+            this.gridColumn4.Width = 134;
             // 
             // gridColumn5
             // 
             this.gridColumn5.FieldName = "Consumer price /Piece";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 24;
-            this.gridColumn5.Width = 125;
+            this.gridColumn5.VisibleIndex = 17;
+            this.gridColumn5.Width = 126;
             // 
             // colPallet
             // 
             this.colPallet.FieldName = "Pallet";
             this.colPallet.Name = "colPallet";
             this.colPallet.Visible = true;
-            this.colPallet.VisibleIndex = 25;
+            this.colPallet.VisibleIndex = 18;
             // 
             // colSplit
             // 
             this.colSplit.FieldName = "Split";
             this.colSplit.Name = "colSplit";
             this.colSplit.Visible = true;
-            this.colSplit.VisibleIndex = 26;
+            this.colSplit.VisibleIndex = 19;
             // 
             // colMaterialType
             // 
             this.colMaterialType.FieldName = "Material Type";
             this.colMaterialType.Name = "colMaterialType";
             this.colMaterialType.Visible = true;
-            this.colMaterialType.VisibleIndex = 27;
-            this.colMaterialType.Width = 84;
+            this.colMaterialType.VisibleIndex = 20;
+            this.colMaterialType.Width = 85;
             // 
             // colFlavor
             // 
             this.colFlavor.FieldName = "Flavor";
             this.colFlavor.Name = "colFlavor";
             this.colFlavor.Visible = true;
-            this.colFlavor.VisibleIndex = 28;
+            this.colFlavor.VisibleIndex = 21;
             // 
             // colNPDS
             // 
             this.colNPDS.FieldName = "NPDS";
             this.colNPDS.Name = "colNPDS";
             this.colNPDS.Visible = true;
-            this.colNPDS.VisibleIndex = 29;
-            // 
-            // colBaseGroup
-            // 
-            this.colBaseGroup.FieldName = "Base Group";
-            this.colBaseGroup.Name = "colBaseGroup";
-            this.colBaseGroup.Visible = true;
-            this.colBaseGroup.VisibleIndex = 8;
+            this.colNPDS.VisibleIndex = 22;
             // 
             // colMaterialName2
             // 
@@ -757,15 +317,41 @@
             this.colMaterialName2.Name = "colMaterialName2";
             this.colMaterialName2.Visible = true;
             this.colMaterialName2.VisibleIndex = 2;
-            this.colMaterialName2.Width = 96;
+            this.colMaterialName2.Width = 97;
             // 
             // colMaterialStatus
             // 
             this.colMaterialStatus.FieldName = "MaterialStatus";
             this.colMaterialStatus.Name = "colMaterialStatus";
             this.colMaterialStatus.Visible = true;
-            this.colMaterialStatus.VisibleIndex = 35;
-            this.colMaterialStatus.Width = 91;
+            this.colMaterialStatus.VisibleIndex = 25;
+            this.colMaterialStatus.Width = 92;
+            // 
+            // colBrandRang
+            // 
+            this.colBrandRang.FieldName = "Brand Rang";
+            this.colBrandRang.Name = "colBrandRang";
+            this.colBrandRang.Visible = true;
+            this.colBrandRang.VisibleIndex = 26;
+            this.colBrandRang.Width = 76;
+            // 
+            // colBaseProductId
+            // 
+            this.colBaseProductId.Caption = "Base Product";
+            this.colBaseProductId.ColumnEdit = this.repositoryItemGridLookUpEditBaseProductId;
+            this.colBaseProductId.FieldName = "BaseProductId";
+            this.colBaseProductId.Name = "colBaseProductId";
+            this.colBaseProductId.Visible = true;
+            this.colBaseProductId.VisibleIndex = 4;
+            this.colBaseProductId.Width = 83;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.FieldName = "Product/ Active- Cancel";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 27;
+            this.gridColumn1.Width = 133;
             // 
             // gridControlMain
             // 
@@ -776,18 +362,21 @@
             this.gridControlMain.MenuManager = this.barManagerMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemGridLookUpEditCustHierLevel6Id,
-            this.repositoryItemGridLookUpEditCustomerTypeId,
-            this.repositoryItemGridLookUpEditCustomerType2Id,
-            this.repositoryItemGridLookUpEditCustomerGroupId,
-            this.repositoryItemGridLookUpEditSubchannelId,
-            this.repositoryItemGridLookUpEditCityId,
-            this.repositoryItemDateEditCreationDate});
+            this.repositoryItemGridLookUpEditBaseProductId});
             this.gridControlMain.Size = new System.Drawing.Size(679, 360);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
+            // 
+            // XPSCS
+            // 
+            this.XPSCS.AllowEdit = true;
+            this.XPSCS.AllowNew = true;
+            this.XPSCS.AllowRemove = true;
+            this.XPSCS.DeleteObjectOnRemove = true;
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData._0_4__Product_DetailsDataTable);
+            this.XPSCS.Session = this.UOW;
             // 
             // barManagerMain
             // 
@@ -870,19 +459,101 @@
             this.barDockControlRight.Location = new System.Drawing.Point(679, 31);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 360);
             // 
-            // XPSCS
-            // 
-            this.XPSCS.AllowEdit = true;
-            this.XPSCS.AllowNew = true;
-            this.XPSCS.AllowRemove = true;
-            this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData._0_4__Product_DetailsDataTable);
-            this.XPSCS.Session = this.UOW;
-            // 
             // popupMenuMain
             // 
             this.popupMenuMain.Manager = this.barManagerMain;
             this.popupMenuMain.Name = "popupMenuMain";
+            // 
+            // LSMSBaseProduct
+            // 
+            this.LSMSBaseProduct.ElementType = typeof(NICSQLTools.Data.Linq.PRD_BaseProduct);
+            this.LSMSBaseProduct.KeyExpression = "[BaseProductId]";
+            // 
+            // repositoryItemGridLookUpEditBaseProductId
+            // 
+            this.repositoryItemGridLookUpEditBaseProductId.AutoHeight = false;
+            this.repositoryItemGridLookUpEditBaseProductId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEditBaseProductId.DataSource = this.LSMSBaseProduct;
+            this.repositoryItemGridLookUpEditBaseProductId.DisplayMember = "BaseProduct";
+            this.repositoryItemGridLookUpEditBaseProductId.Name = "repositoryItemGridLookUpEditBaseProductId";
+            this.repositoryItemGridLookUpEditBaseProductId.NullText = "";
+            this.repositoryItemGridLookUpEditBaseProductId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemGridLookUpEditBaseProductId.ValueMember = "BaseProductId";
+            this.repositoryItemGridLookUpEditBaseProductId.View = this.gridView6;
+            // 
+            // gridView6
+            // 
+            this.gridView6.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colsubBaseProductId,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9});
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // colsubBaseProductId
+            // 
+            this.colsubBaseProductId.AppearanceCell.Options.UseTextOptions = true;
+            this.colsubBaseProductId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsubBaseProductId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colsubBaseProductId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colsubBaseProductId.Caption = "Id";
+            this.colsubBaseProductId.FieldName = "BaseProductId";
+            this.colsubBaseProductId.Name = "colsubBaseProductId";
+            this.colsubBaseProductId.Visible = true;
+            this.colsubBaseProductId.VisibleIndex = 0;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn6.Caption = "Base Product";
+            this.gridColumn6.FieldName = "BaseProduct";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 1;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.Caption = "Group1";
+            this.gridColumn7.FieldName = "Group1";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 2;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn8.Caption = "Group2";
+            this.gridColumn8.FieldName = "Group2";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 3;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn9.Caption = "Group3";
+            this.gridColumn9.FieldName = "Group3";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 4;
             // 
             // ProductEditorUC
             // 
@@ -896,92 +567,37 @@
             this.Name = "ProductEditorUC";
             this.Size = new System.Drawing.Size(679, 391);
             this.Load += new System.EventHandler(this.ProductEditorUC_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerTypeId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustHierLevel6Id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditCreationDate.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditCreationDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCityId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerType2Id)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSubchannelId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditCustomerGroupId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSBaseProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditBaseProductId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn colPricePoint2009;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerTypeId;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerType1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditCustomerTypeId;
-        private DevExpress.XtraGrid.Columns.GridColumn colDistributionChannel;
-        private DevExpress.XtraGrid.Columns.GridColumn colDistributionChannelId;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustHierLevel3Name;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustHierLevel3Id;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustHierLevel4Name;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustHierLevel4Id;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustHierLevel5Id;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustHierLevel6Name;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustHierLevel6Id;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustHierLevel5Name;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditCustHierLevel6Id;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn colPricePoint2010;
         private DevExpress.XtraGrid.Columns.GridColumn colValidMonth;
         private DevExpress.Xpo.UnitOfWork UOW;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditCreationDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colCityArName;
-        private DevExpress.XtraGrid.Columns.GridColumn colCityEnName;
-        private DevExpress.XtraGrid.Columns.GridColumn colCityId;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditCityId;
-        private DevExpress.XtraGrid.Columns.GridColumn colSubchannelName;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditCustomerType2Id;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerType2Id;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerType21;
-        private DevExpress.XtraGrid.Columns.GridColumn colSubchannelId;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditSubchannelId;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerGroup1;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustomerGroupId;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditCustomerGroupId;
         private DevExpress.XtraGrid.Columns.GridColumn colValidYear;
         private DevExpress.XtraGrid.Columns.GridColumn colPricePointrang;
         private DevExpress.XtraGrid.Columns.GridColumn colBrand;
-        private DevExpress.XtraGrid.Columns.GridColumn colGroup3;
-        private DevExpress.XtraGrid.Columns.GridColumn colGroup2;
-        private DevExpress.XtraGrid.Columns.GridColumn colGroup1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaterialName;
         private DevExpress.XtraGrid.Columns.GridColumn colMaterialNumber;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
-        private DevExpress.XtraGrid.Columns.GridColumn colBaseBaseProduct;
         private DevExpress.XtraGrid.Columns.GridColumn colPricePoint;
         private DevExpress.XtraGrid.Columns.GridColumn colMarketrang;
-        private DevExpress.XtraGrid.Columns.GridColumn colBaseBaseProductOld;
-        private DevExpress.XtraGrid.Columns.GridColumn colBaseProduct;
         private DevExpress.XtraGrid.Columns.GridColumn colQuin;
         private DevExpress.XtraGrid.Columns.GridColumn colVolumPice;
         private DevExpress.XtraGrid.Columns.GridColumn colVolum;
         private DevExpress.XtraGrid.Columns.GridColumn colVol;
         private DevExpress.XtraGrid.Columns.GridColumn colNewQu;
         private DevExpress.XtraGrid.Columns.GridColumn colPriceIncreas;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
@@ -1002,9 +618,19 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.PopupMenu popupMenuMain;
         private DevExpress.Xpo.XPServerCollectionSource XPSCS;
-        private DevExpress.XtraGrid.Columns.GridColumn colBaseGroup;
         private DevExpress.XtraGrid.Columns.GridColumn colMaterialName2;
         private DevExpress.XtraGrid.Columns.GridColumn colMaterialStatus;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.XtraGrid.Columns.GridColumn colBrandRang;
+        private DevExpress.XtraGrid.Columns.GridColumn colBaseProductId;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSBaseProduct;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditBaseProductId;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraGrid.Columns.GridColumn colsubBaseProductId;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }

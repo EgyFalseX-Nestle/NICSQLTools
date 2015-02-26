@@ -231,4 +231,15 @@
       <Column Name="[Base Group]" Member="Base_Group" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.PRD_BaseProduct" Member="PRD_BaseProducts">
+    <Type Name="PRD_BaseProduct">
+      <Column Name="BaseProductId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BaseProduct" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BaseProductLevel" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BaseGroupId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Group1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Group2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Group3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

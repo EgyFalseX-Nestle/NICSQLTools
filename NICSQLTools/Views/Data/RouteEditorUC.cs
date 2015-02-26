@@ -12,6 +12,7 @@ namespace NICSQLTools.Views.Data
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(RouteEditorUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         #endregion
         #region - Fun -
         public RouteEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
@@ -25,6 +26,7 @@ namespace NICSQLTools.Views.Data
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 Invoke(new MethodInvoker(() => {
+                    LSMSSalesDistrict2.QueryableSource = from q in dsLinq.SalesDistrict3s select q;
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                     gridControlMain.DataSource = XPSCS;
                     gridViewMain.BestFitColumns();

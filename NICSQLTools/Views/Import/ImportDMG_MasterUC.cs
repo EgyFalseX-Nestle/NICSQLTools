@@ -117,7 +117,7 @@ _______________________________________________
             DateTime UserIn = DataManager.defaultInstance.ServerDateTime;
 
             //Load All Bill Docs
-            NICSQLTools.Data.dsQry.DMG_MasterDataTable TblMaster = new NICSQLTools.Data.dsQry.DMG_MasterDataTable();
+            NICSQLTools.Data.dsQry.QryBillDocDMGMasterDataTable TblMaster = new NICSQLTools.Data.dsQry.QryBillDocDMGMasterDataTable();
 
             //deleting data before saving new 1
             var result = from q in dtExcel.AsEnumerable()

@@ -199,10 +199,15 @@
       <DependentUpon>dsData.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Data\dsData.Designer.cs">
+    <Compile Include="Data\dsData1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsQry.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsQry.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\Linq\dsLinqData.designer.cs">
       <AutoGen>True</AutoGen>
@@ -212,11 +217,6 @@
     <Compile Include="Data\dsQry.cs">
       <DependentUpon>dsQry.xsd</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Data\dsQry.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsQry.xsd</DependentUpon>
     </Compile>
     <Compile Include="TestFrm.cs">
       <SubType>Form</SubType>
@@ -556,7 +556,7 @@
     <None Include="Data\dsData.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsData.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsData1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -572,6 +572,7 @@
     <None Include="Data\dsQry.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsQry.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsQry.xss">
       <DependentUpon>dsQry.xsd</DependentUpon>

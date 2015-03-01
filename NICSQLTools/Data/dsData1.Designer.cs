@@ -1259,13 +1259,15 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnyeard;
             
-            private global::System.Data.DataColumn columnNew_Quanteite;
-            
-            private global::System.Data.DataColumn columnMonth;
-            
-            private global::System.Data.DataColumn columnNew_Quanteite1;
-            
             private global::System.Data.DataColumn columnBilling_Type;
+            
+            private global::System.Data.DataColumn columnAutoKey;
+            
+            private global::System.Data.DataColumn columnDateIn;
+            
+            private global::System.Data.DataColumn columnUserIn;
+            
+            private global::System.Data.DataColumn columnNew_Quanteite;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1414,33 +1416,41 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn New_QuanteiteColumn {
-                get {
-                    return this.columnNew_Quanteite;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MonthColumn {
-                get {
-                    return this.columnMonth;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn New_Quanteite1Column {
-                get {
-                    return this.columnNew_Quanteite1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn Billing_TypeColumn {
                 get {
                     return this.columnBilling_Type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AutoKeyColumn {
+                get {
+                    return this.columnAutoKey;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateInColumn {
+                get {
+                    return this.columnDateIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UserInColumn {
+                get {
+                    return this.columnUserIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn New_QuanteiteColumn {
+                get {
+                    return this.columnNew_Quanteite;
                 }
             }
             
@@ -1496,10 +1506,10 @@ namespace NICSQLTools.Data {
                         double Condition_value, 
                         string _Route___Sold, 
                         string yeard, 
-                        int New_Quanteite, 
-                        string Month, 
-                        double New_Quanteite1, 
-                        string Billing_Type) {
+                        string Billing_Type, 
+                        System.DateTime DateIn, 
+                        int UserIn, 
+                        double New_Quanteite) {
                 _0_1__Master_AllRow row_0_1__Master_AllRow = ((_0_1__Master_AllRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Billing_Document,
@@ -1516,13 +1526,21 @@ namespace NICSQLTools.Data {
                         Condition_value,
                         _Route___Sold,
                         yeard,
-                        New_Quanteite,
-                        Month,
-                        New_Quanteite1,
-                        Billing_Type};
+                        Billing_Type,
+                        null,
+                        DateIn,
+                        UserIn,
+                        New_Quanteite};
                 row_0_1__Master_AllRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_0_1__Master_AllRow);
                 return row_0_1__Master_AllRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public _0_1__Master_AllRow FindByAutoKey(long AutoKey) {
+                return ((_0_1__Master_AllRow)(this.Rows.Find(new object[] {
+                            AutoKey})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1556,10 +1574,11 @@ namespace NICSQLTools.Data {
                 this.columnCondition_value = base.Columns["Condition value"];
                 this._columnRoute___Sold = base.Columns["Route & Sold"];
                 this.columnyeard = base.Columns["yeard"];
-                this.columnNew_Quanteite = base.Columns["New Quanteite"];
-                this.columnMonth = base.Columns["Month"];
-                this.columnNew_Quanteite1 = base.Columns["New Quanteite1"];
                 this.columnBilling_Type = base.Columns["Billing Type"];
+                this.columnAutoKey = base.Columns["AutoKey"];
+                this.columnDateIn = base.Columns["DateIn"];
+                this.columnUserIn = base.Columns["UserIn"];
+                this.columnNew_Quanteite = base.Columns["New Quanteite"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1597,14 +1616,18 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this._columnRoute___Sold);
                 this.columnyeard = new global::System.Data.DataColumn("yeard", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnyeard);
-                this.columnNew_Quanteite = new global::System.Data.DataColumn("New Quanteite", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNew_Quanteite);
-                this.columnMonth = new global::System.Data.DataColumn("Month", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMonth);
-                this.columnNew_Quanteite1 = new global::System.Data.DataColumn("New Quanteite1", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNew_Quanteite1);
                 this.columnBilling_Type = new global::System.Data.DataColumn("Billing Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBilling_Type);
+                this.columnAutoKey = new global::System.Data.DataColumn("AutoKey", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAutoKey);
+                this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateIn);
+                this.columnUserIn = new global::System.Data.DataColumn("UserIn", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserIn);
+                this.columnNew_Quanteite = new global::System.Data.DataColumn("New Quanteite", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNew_Quanteite);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnAutoKey}, true));
                 this.columnBilling_Document.MaxLength = 255;
                 this.columnDistribution_Channel.MaxLength = 255;
                 this._columnSold_to_party.MaxLength = 255;
@@ -1615,9 +1638,13 @@ namespace NICSQLTools.Data {
                 this.columnCondition_type.MaxLength = 255;
                 this._columnRoute___Sold.MaxLength = 50;
                 this.columnyeard.MaxLength = 50;
-                this.columnMonth.MaxLength = 255;
-                this.columnNew_Quanteite1.Caption = "New Quanteite";
                 this.columnBilling_Type.MaxLength = 255;
+                this.columnAutoKey.AutoIncrement = true;
+                this.columnAutoKey.AutoIncrementSeed = -1;
+                this.columnAutoKey.AutoIncrementStep = -1;
+                this.columnAutoKey.AllowDBNull = false;
+                this.columnAutoKey.ReadOnly = true;
+                this.columnAutoKey.Unique = true;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_table0_1__Master_All");
                 this.ExtendedProperties.Add("Generator_UserTableName", "0-1  Master All");
             }
@@ -4228,6 +4255,10 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnConstructYear;
             
+            private global::System.Data.DataColumn columnUserIn;
+            
+            private global::System.Data.DataColumn columnDateIn;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EquipmentDataTable() {
@@ -4343,6 +4374,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UserInColumn {
+                get {
+                    return this.columnUserIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateInColumn {
+                get {
+                    return this.columnDateIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4378,7 +4425,7 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EquipmentRow AddEquipmentRow(string Equipment, string Serial_Number, string Material, string Description, string Func_Loc, System.DateTime Valid_From, string Inventory_number, short YearNum, short MonthNum, short ConstructYear) {
+            public EquipmentRow AddEquipmentRow(string Equipment, string Serial_Number, string Material, string Description, string Func_Loc, System.DateTime Valid_From, string Inventory_number, short YearNum, short MonthNum, short ConstructYear, int UserIn, System.DateTime DateIn) {
                 EquipmentRow rowEquipmentRow = ((EquipmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Equipment,
@@ -4390,7 +4437,9 @@ namespace NICSQLTools.Data {
                         Inventory_number,
                         YearNum,
                         MonthNum,
-                        ConstructYear};
+                        ConstructYear,
+                        UserIn,
+                        DateIn};
                 rowEquipmentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEquipmentRow);
                 return rowEquipmentRow;
@@ -4432,6 +4481,8 @@ namespace NICSQLTools.Data {
                 this.columnYearNum = base.Columns["YearNum"];
                 this.columnMonthNum = base.Columns["MonthNum"];
                 this.columnConstructYear = base.Columns["ConstructYear"];
+                this.columnUserIn = base.Columns["UserIn"];
+                this.columnDateIn = base.Columns["DateIn"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4457,6 +4508,10 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnMonthNum);
                 this.columnConstructYear = new global::System.Data.DataColumn("ConstructYear", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnConstructYear);
+                this.columnUserIn = new global::System.Data.DataColumn("UserIn", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserIn);
+                this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateIn);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEquipment,
                                 this.columnYearNum,
@@ -4617,6 +4672,8 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnDateIn;
             
+            private global::System.Data.DataColumn columnUserIn;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CustomerRouteDataTable() {
@@ -4708,6 +4765,14 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UserInColumn {
+                get {
+                    return this.columnUserIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4743,7 +4808,7 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CustomerRouteRow AddCustomerRouteRow(string Route, string Customer, short DeliveryDay, System.DateTime ValidFrom, short MonthNum, short YearNum, System.DateTime DateIn) {
+            public CustomerRouteRow AddCustomerRouteRow(string Route, string Customer, short DeliveryDay, System.DateTime ValidFrom, short MonthNum, short YearNum, System.DateTime DateIn, int UserIn) {
                 CustomerRouteRow rowCustomerRouteRow = ((CustomerRouteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Route,
@@ -4752,7 +4817,8 @@ namespace NICSQLTools.Data {
                         ValidFrom,
                         MonthNum,
                         YearNum,
-                        DateIn};
+                        DateIn,
+                        UserIn};
                 rowCustomerRouteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCustomerRouteRow);
                 return rowCustomerRouteRow;
@@ -4793,6 +4859,7 @@ namespace NICSQLTools.Data {
                 this.columnMonthNum = base.Columns["MonthNum"];
                 this.columnYearNum = base.Columns["YearNum"];
                 this.columnDateIn = base.Columns["DateIn"];
+                this.columnUserIn = base.Columns["UserIn"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4812,6 +4879,8 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnYearNum);
                 this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDateIn);
+                this.columnUserIn = new global::System.Data.DataColumn("UserIn", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserIn);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnRoute,
                                 this.columnCustomer,
@@ -11841,54 +11910,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int New_Quanteite {
-                get {
-                    try {
-                        return ((int)(this[this._table0_1__Master_All.New_QuanteiteColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'New Quanteite\' in table \'0-1  Master All\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_1__Master_All.New_QuanteiteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Month {
-                get {
-                    try {
-                        return ((string)(this[this._table0_1__Master_All.MonthColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Month\' in table \'0-1  Master All\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_1__Master_All.MonthColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double New_Quanteite1 {
-                get {
-                    try {
-                        return ((double)(this[this._table0_1__Master_All.New_Quanteite1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'New Quanteite1\' in table \'0-1  Master All\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this._table0_1__Master_All.New_Quanteite1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Billing_Type {
                 get {
                     try {
@@ -11900,6 +11921,65 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this[this._table0_1__Master_All.Billing_TypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long AutoKey {
+                get {
+                    return ((long)(this[this._table0_1__Master_All.AutoKeyColumn]));
+                }
+                set {
+                    this[this._table0_1__Master_All.AutoKeyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateIn {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this._table0_1__Master_All.DateInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateIn\' in table \'0-1  Master All\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_1__Master_All.DateInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int UserIn {
+                get {
+                    try {
+                        return ((int)(this[this._table0_1__Master_All.UserInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserIn\' in table \'0-1  Master All\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_1__Master_All.UserInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double New_Quanteite {
+                get {
+                    try {
+                        return ((double)(this[this._table0_1__Master_All.New_QuanteiteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'New Quanteite\' in table \'0-1  Master All\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_1__Master_All.New_QuanteiteColumn] = value;
                 }
             }
             
@@ -12073,42 +12153,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNew_QuanteiteNull() {
-                return this.IsNull(this._table0_1__Master_All.New_QuanteiteColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNew_QuanteiteNull() {
-                this[this._table0_1__Master_All.New_QuanteiteColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMonthNull() {
-                return this.IsNull(this._table0_1__Master_All.MonthColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMonthNull() {
-                this[this._table0_1__Master_All.MonthColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNew_Quanteite1Null() {
-                return this.IsNull(this._table0_1__Master_All.New_Quanteite1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNew_Quanteite1Null() {
-                this[this._table0_1__Master_All.New_Quanteite1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBilling_TypeNull() {
                 return this.IsNull(this._table0_1__Master_All.Billing_TypeColumn);
             }
@@ -12117,6 +12161,42 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBilling_TypeNull() {
                 this[this._table0_1__Master_All.Billing_TypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateInNull() {
+                return this.IsNull(this._table0_1__Master_All.DateInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateInNull() {
+                this[this._table0_1__Master_All.DateInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUserInNull() {
+                return this.IsNull(this._table0_1__Master_All.UserInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUserInNull() {
+                this[this._table0_1__Master_All.UserInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNew_QuanteiteNull() {
+                return this.IsNull(this._table0_1__Master_All.New_QuanteiteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNew_QuanteiteNull() {
+                this[this._table0_1__Master_All.New_QuanteiteColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -14431,6 +14511,38 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int UserIn {
+                get {
+                    try {
+                        return ((int)(this[this.tableEquipment.UserInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserIn\' in table \'Equipment\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEquipment.UserInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateIn {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEquipment.DateInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateIn\' in table \'Equipment\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEquipment.DateInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSerial_NumberNull() {
                 return this.IsNull(this.tableEquipment.Serial_NumberColumn);
             }
@@ -14511,6 +14623,30 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetConstructYearNull() {
                 this[this.tableEquipment.ConstructYearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUserInNull() {
+                return this.IsNull(this.tableEquipment.UserInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUserInNull() {
+                this[this.tableEquipment.UserInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateInNull() {
+                return this.IsNull(this.tableEquipment.DateInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateInNull() {
+                this[this.tableEquipment.DateInColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -14617,6 +14753,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int UserIn {
+                get {
+                    try {
+                        return ((int)(this[this.tableCustomerRoute.UserInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserIn\' in table \'CustomerRoute\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerRoute.UserInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsValidFromNull() {
                 return this.IsNull(this.tableCustomerRoute.ValidFromColumn);
             }
@@ -14637,6 +14789,18 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDateInNull() {
                 this[this.tableCustomerRoute.DateInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUserInNull() {
+                return this.IsNull(this.tableCustomerRoute.UserInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUserInNull() {
+                this[this.tableCustomerRoute.UserInColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19299,9 +19463,11 @@ namespace NICSQLTools.Data.dsDataTableAdapters {
             tableMapping.ColumnMappings.Add("Condition value", "Condition value");
             tableMapping.ColumnMappings.Add("Route & Sold", "Route & Sold");
             tableMapping.ColumnMappings.Add("yeard", "yeard");
-            tableMapping.ColumnMappings.Add("Month", "Month");
-            tableMapping.ColumnMappings.Add("New Quanteite", "New Quanteite1");
             tableMapping.ColumnMappings.Add("Billing Type", "Billing Type");
+            tableMapping.ColumnMappings.Add("AutoKey", "AutoKey");
+            tableMapping.ColumnMappings.Add("DateIn", "DateIn");
+            tableMapping.ColumnMappings.Add("UserIn", "UserIn");
+            tableMapping.ColumnMappings.Add("New Quanteite", "New Quanteite");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -19318,8 +19484,8 @@ namespace NICSQLTools.Data.dsDataTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        [Billing Document], [Distribution Channel], [Sold-to party], Route, [Billing date for bil], [Material Number], [Reference Document N], [Sales unit], Plant, [Condition type], [Actual Invoiced Quan], [Condition value], 
-                         [Route & Sold], yeard, [New Quanteite], Month, [Billing Type]
+            this._commandCollection[0].CommandText = @"SELECT        AutoKey, [Billing Document], [Distribution Channel], [Sold-to party], Route, [Billing date for bil], [Material Number], [Reference Document N], [Sales unit], Plant, [Condition type], [Actual Invoiced Quan], 
+                         [Condition value], [Route & Sold], yeard, [Billing Type], [New Quanteite], DateIn, UserIn
 FROM            [0-1  Master All]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -22082,6 +22248,8 @@ FROM            [0-4  Product Details]";
             tableMapping.ColumnMappings.Add("YearNum", "YearNum");
             tableMapping.ColumnMappings.Add("MonthNum", "MonthNum");
             tableMapping.ColumnMappings.Add("ConstructYear", "ConstructYear");
+            tableMapping.ColumnMappings.Add("UserIn", "UserIn");
+            tableMapping.ColumnMappings.Add("DateIn", "DateIn");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -22099,8 +22267,8 @@ FROM            [0-4  Product Details]";
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        Equipment, [Serial Number], Material, Description, [Func Loc], [Val" +
-                "id From], [Inventory number], ConstructYear, YearNum, MonthNum\r\nFROM            " +
-                "Equipment";
+                "id From], [Inventory number], ConstructYear, YearNum, MonthNum, UserIn, DateIn\r\n" +
+                "FROM            Equipment";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -22257,6 +22425,7 @@ FROM            [0-4  Product Details]";
             tableMapping.ColumnMappings.Add("MonthNum", "MonthNum");
             tableMapping.ColumnMappings.Add("YearNum", "YearNum");
             tableMapping.ColumnMappings.Add("DateIn", "DateIn");
+            tableMapping.ColumnMappings.Add("UserIn", "UserIn");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -22273,8 +22442,8 @@ FROM            [0-4  Product Details]";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Route, Customer, DeliveryDay, ValidFrom, MonthNum, YearNum, DateIn FROM db" +
-                "o.CustomerRoute";
+            this._commandCollection[0].CommandText = "SELECT        Route, Customer, DeliveryDay, ValidFrom, MonthNum, YearNum, DateIn," +
+                " UserIn\r\nFROM            CustomerRoute";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

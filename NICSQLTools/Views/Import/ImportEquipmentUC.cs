@@ -48,7 +48,7 @@ _______________________________________________
             DataManager.SetAllCommandTimeouts(customerInfoTableAdapter, DataManager.ConnectionTimeout);
             tbMonth.EditValue = DataManager.defaultInstance.ServerDateTime.Month;
             tbYear.EditValue = DataManager.defaultInstance.ServerDateTime.Year;
-
+            
             _elementRule = RuleElement;
         }
         private void ShowHideProgress(bool ShowHide)
@@ -69,7 +69,7 @@ _______________________________________________
             //return false;
             bool output = false;
 
-            AddLog("Start importing ...");
+            AddLog("Start importing ...", false);
             DataTable dtExcel = new DataTable();
 
             //if (SSM.IsSplashFormVisible)
@@ -85,7 +85,7 @@ _______________________________________________
                         DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                         {
-                            AddLog("File empty " + lbcFilePath.Items[i]);
+                            AddLog("File empty " + lbcFilePath.Items[i], false);
                             continue;
                         }
                         dtExcel.Merge(dtPart);
@@ -96,7 +96,7 @@ _______________________________________________
             if (dtExcel.Rows.Count == 0)
             {
                 ShowHideProgress(false);
-                AddLog("Importing Aborted");
+                AddLog("Importing Aborted", false);
                 MsgDlg.Show("No Data Found", MsgDlg.MessageType.Error);
                 return false;
             }
@@ -159,6 +159,8 @@ _______________________________________________
                 SqlRow.MonthNum = Convert.ToInt16(tbMonth.EditValue);
                 SqlRow.YearNum = Convert.ToInt16(tbYear.EditValue);
 
+                SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
+
                 dsData.Equipment.AddEquipmentRow(SqlRow);
                 SqlRow.EndEdit();
             }
@@ -176,7 +178,7 @@ _______________________________________________
                 MsgDlg.Show("Update Equipment Failed", MsgDlg.MessageType.Error);
             else
             {
-                AddLog("New Equipment Saved " + dsData.Equipment.Count);
+                AddLog("New Equipment Saved " + dsData.Equipment.Count, true);
                 output = true;
             }
             dsData.Equipment.AcceptChanges();
@@ -189,12 +191,13 @@ _______________________________________________
 
             return output;
         }
-        private void AddLog(string strLog)
+        private void AddLog(string strLog, bool LogtoFile)
         {
             Invoke(new MethodInvoker(() =>
             {
                 tbLog.EditValue += string.Format("{0}{1}", strLog, Environment.NewLine);
-                Logger.Info(strLog);
+                if (LogtoFile)
+                    Logger.Info(strLog);
             }));
         }
         public void ActivateRules()
@@ -204,6 +207,29 @@ _______________________________________________
         
         #endregion
         #region -   Event Handlers   -
+        private void ImportEquipmentUC_Load(object sender, EventArgs e)
+        {
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    using (NICSQLTools.Data.dsQryTableAdapters.LastEditEquipmentTableAdapter lastEditEquipmentTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.LastEditEquipmentTableAdapter())
+                    {
+                        Classes.Managers.DataManager.SetAllCommandTimeouts(lastEditEquipmentTableAdapter, Classes.Managers.DataManager.ConnectionTimeout);
+                        NICSQLTools.Data.dsQry.LastEditEquipmentDataTable tbl = lastEditEquipmentTableAdapter.GetData();
+                        if (tbl.Count > 0)
+                        {
+                            NICSQLTools.Data.dsQry.LastEditEquipmentRow row = tbl[0];
+                            string log = string.Format("Last Edit {0}Year : {1}{0}Month : {2}{0}Date : {3}{0}User : {4}", Environment.NewLine, row.YearNum, row.MonthNum, row.DateIn, row.RealName);
+                            AddLog(log, false);
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                { Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId); }
+            
+            });
+        }
         private void btnGetFileName_Click(object sender, EventArgs e)
         {
             if (ofd.ShowDialog() == DialogResult.Cancel)
@@ -267,6 +293,8 @@ _______________________________________________
         }
 
         #endregion
+
+        
         
     }
 }

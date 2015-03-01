@@ -69,6 +69,7 @@ namespace NICSQLTools
                 bulkCopy.ColumnMappings.Add("ValidFrom", "ValidFrom");
                 bulkCopy.ColumnMappings.Add("MonthNum", "MonthNum");
                 bulkCopy.ColumnMappings.Add("YearNum", "YearNum");
+                bulkCopy.ColumnMappings.Add("UserIn", "UserIn");
 
                 bulkCopy.DestinationTableName = BulkTableName;
                 bulkCopy.BatchSize = BulkTable.Count;

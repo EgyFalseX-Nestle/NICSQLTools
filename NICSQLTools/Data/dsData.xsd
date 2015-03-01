@@ -14,8 +14,8 @@
               <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.[0-1  Master All]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        [Billing Document], [Distribution Channel], [Sold-to party], Route, [Billing date for bil], [Material Number], [Reference Document N], [Sales unit], Plant, [Condition type], [Actual Invoiced Quan], [Condition value], 
-                         [Route &amp; Sold], yeard, [New Quanteite], Month, [Billing Type]
+                    <CommandText>SELECT        AutoKey, [Billing Document], [Distribution Channel], [Sold-to party], Route, [Billing date for bil], [Material Number], [Reference Document N], [Sales unit], Plant, [Condition type], [Actual Invoiced Quan], 
+                         [Condition value], [Route &amp; Sold], yeard, [Billing Type], [New Quanteite], DateIn, UserIn
 FROM            [0-1  Master All]</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -37,9 +37,11 @@ FROM            [0-1  Master All]</CommandText>
               <Mapping SourceColumn="Condition value" DataSetColumn="Condition value" />
               <Mapping SourceColumn="Route &amp; Sold" DataSetColumn="Route &amp; Sold" />
               <Mapping SourceColumn="yeard" DataSetColumn="yeard" />
-              <Mapping SourceColumn="Month" DataSetColumn="Month" />
-              <Mapping SourceColumn="New Quanteite" DataSetColumn="New Quanteite1" />
               <Mapping SourceColumn="Billing Type" DataSetColumn="Billing Type" />
+              <Mapping SourceColumn="AutoKey" DataSetColumn="AutoKey" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
+              <Mapping SourceColumn="New Quanteite" DataSetColumn="New Quanteite" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -447,7 +449,7 @@ FROM            [0-4  Product Details]</CommandText>
               <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.Equipment" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Equipment, [Serial Number], Material, Description, [Func Loc], [Valid From], [Inventory number], ConstructYear, YearNum, MonthNum
+                    <CommandText>SELECT        Equipment, [Serial Number], Material, Description, [Func Loc], [Valid From], [Inventory number], ConstructYear, YearNum, MonthNum, UserIn, DateIn
 FROM            Equipment</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -465,6 +467,8 @@ FROM            Equipment</CommandText>
               <Mapping SourceColumn="YearNum" DataSetColumn="YearNum" />
               <Mapping SourceColumn="MonthNum" DataSetColumn="MonthNum" />
               <Mapping SourceColumn="ConstructYear" DataSetColumn="ConstructYear" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -473,7 +477,8 @@ FROM            Equipment</CommandText>
               <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.CustomerRoute" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Route, Customer, DeliveryDay, ValidFrom, MonthNum, YearNum, DateIn FROM dbo.CustomerRoute</CommandText>
+                    <CommandText>SELECT        Route, Customer, DeliveryDay, ValidFrom, MonthNum, YearNum, DateIn, UserIn
+FROM            CustomerRoute</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -487,6 +492,7 @@ FROM            Equipment</CommandText>
               <Mapping SourceColumn="MonthNum" DataSetColumn="MonthNum" />
               <Mapping SourceColumn="YearNum" DataSetColumn="YearNum" />
               <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1957,15 +1963,6 @@ WHERE        (AuthenticationId = @AuthenticationId)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="New_x0020_Quanteite" msprop:Generator_ColumnVarNameInTable="columnNew_Quanteite" msprop:Generator_ColumnPropNameInRow="New_Quanteite" msprop:Generator_ColumnPropNameInTable="New_QuanteiteColumn" msprop:Generator_UserColumnName="New Quanteite" type="xs:int" minOccurs="0" />
-              <xs:element name="Month" msprop:Generator_ColumnVarNameInTable="columnMonth" msprop:Generator_ColumnPropNameInRow="Month" msprop:Generator_ColumnPropNameInTable="MonthColumn" msprop:Generator_UserColumnName="Month" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="New_x0020_Quanteite1" msdata:Caption="New Quanteite" msprop:Generator_ColumnVarNameInTable="columnNew_Quanteite1" msprop:Generator_ColumnPropNameInRow="New_Quanteite1" msprop:Generator_ColumnPropNameInTable="New_Quanteite1Column" msprop:Generator_UserColumnName="New Quanteite1" type="xs:double" minOccurs="0" />
               <xs:element name="Billing_x0020_Type" msprop:Generator_ColumnVarNameInTable="columnBilling_Type" msprop:Generator_ColumnPropNameInRow="Billing_Type" msprop:Generator_ColumnPropNameInTable="Billing_TypeColumn" msprop:Generator_UserColumnName="Billing Type" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1973,6 +1970,10 @@ WHERE        (AuthenticationId = @AuthenticationId)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="AutoKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnAutoKey" msprop:Generator_ColumnPropNameInRow="AutoKey" msprop:Generator_ColumnPropNameInTable="AutoKeyColumn" msprop:Generator_UserColumnName="AutoKey" type="xs:long" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="New_x0020_Quanteite" msprop:Generator_ColumnVarNameInTable="columnNew_Quanteite" msprop:Generator_ColumnPropNameInRow="New_Quanteite" msprop:Generator_ColumnPropNameInTable="New_QuanteiteColumn" msprop:Generator_UserColumnName="New Quanteite" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2499,6 +2500,8 @@ WHERE        (AuthenticationId = @AuthenticationId)</CommandText>
               <xs:element name="YearNum" msprop:Generator_ColumnVarNameInTable="columnYearNum" msprop:Generator_ColumnPropNameInRow="YearNum" msprop:Generator_ColumnPropNameInTable="YearNumColumn" msprop:Generator_UserColumnName="YearNum" type="xs:short" />
               <xs:element name="MonthNum" msprop:Generator_ColumnVarNameInTable="columnMonthNum" msprop:Generator_ColumnPropNameInRow="MonthNum" msprop:Generator_ColumnPropNameInTable="MonthNumColumn" msprop:Generator_UserColumnName="MonthNum" type="xs:short" />
               <xs:element name="ConstructYear" msprop:Generator_ColumnVarNameInTable="columnConstructYear" msprop:Generator_ColumnPropNameInRow="ConstructYear" msprop:Generator_ColumnPropNameInTable="ConstructYearColumn" msprop:Generator_UserColumnName="ConstructYear" type="xs:short" minOccurs="0" />
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2524,6 +2527,7 @@ WHERE        (AuthenticationId = @AuthenticationId)</CommandText>
               <xs:element name="MonthNum" msprop:Generator_ColumnVarNameInTable="columnMonthNum" msprop:Generator_ColumnPropNameInRow="MonthNum" msprop:Generator_ColumnPropNameInTable="MonthNumColumn" msprop:Generator_UserColumnName="MonthNum" type="xs:short" />
               <xs:element name="YearNum" msprop:Generator_ColumnVarNameInTable="columnYearNum" msprop:Generator_ColumnPropNameInRow="YearNum" msprop:Generator_ColumnPropNameInTable="YearNumColumn" msprop:Generator_UserColumnName="YearNum" type="xs:short" />
               <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3119,6 +3123,10 @@ WHERE        (AuthenticationId = @AuthenticationId)</CommandText>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:_x0030_-1_x0020__x0020_Master_x0020_All" />
+      <xs:field xpath="mstns:AutoKey" />
+    </xs:unique>
+    <xs:unique name="QryBillDoc_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:QryBillDoc" />
       <xs:field xpath="mstns:Billing_x0020_Document" />
     </xs:unique>

@@ -21,6 +21,7 @@ namespace NICSQLTools.Views.Import
         #region -   Variables   -
         //private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportDaysFrm));
         List<string> Dist = new List<string>();
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(ImportDaysUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         private string RequiredField
         {
@@ -56,7 +57,7 @@ _______________________________________________
             DataManager.SetAllCommandTimeouts(_0_3__Route_DetailsTableAdapter, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(_0_6_Customer_HNTableAdapter, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(qryBillDocTableAdapter, DataManager.ConnectionTimeout);
-
+            
             _elementRule = RuleElement;
         }
         private static bool FindBillDoc(NICSQLTools.Data.dsData.QryBillDocDataTable tbl, string BillDoc)
@@ -136,7 +137,7 @@ _______________________________________________
             int NewCustomerFounded = 0;
             int NewRouteFounded = 0;
             int NewProductFounded = 0;
-            AddLog("Start importing ...");
+            AddLog("Start importing ...", false);
             DataTable dtExcel = new DataTable();
 
             ShowHideProgress(true);
@@ -150,7 +151,7 @@ _______________________________________________
                         DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                         {
-                            AddLog("File empty " + lbcFilePath.Items[i]);
+                            AddLog("File empty " + lbcFilePath.Items[i], false);
                             continue;
                         }
                         dtExcel.Merge(dtPart);
@@ -171,7 +172,7 @@ _______________________________________________
             if (dtExcel.Rows.Count == 0)
             {
                 ShowHideProgress(false);
-                AddLog("Importing Aborted");
+                AddLog("Importing Aborted", false);
                 MsgDlg.Show("No Data Found", MsgDlg.MessageType.Error);
                 return false;
             }
@@ -292,7 +293,7 @@ _______________________________________________
                     dsData._0_6_Customer_HN.Add_0_6_Customer_HNRow(CustomerRow);
                     CustomerRow.EndEdit();
                     _0_6_Customer_HNTableAdapter.Update(CustomerRow);//Update Customers
-                    AddLog("[New Customer Found] : " + row["Sold-to party"]);
+                    AddLog("[New Customer Found] : " + row["Sold-to party"], true);
                     NewCustomerFounded++;
                 }
                 //Route Update
@@ -305,7 +306,7 @@ _______________________________________________
                         RouteRow.Route_Number = SqlRow.Route;
                         dsData._0_3__Route_Details.Add_0_3__Route_DetailsRow(RouteRow);
                         RouteRow.EndEdit();
-                        AddLog("[New Route Found] : " + RouteRow.Route_Number);
+                        AddLog("[New Route Found] : " + RouteRow.Route_Number, true);
                         NewRouteFounded++;
                     }
                 }
@@ -318,7 +319,7 @@ _______________________________________________
                     ProductRow.Material_Number = SqlRow.Material_Number;
                     dsData._0_4__Product_Details.Add_0_4__Product_DetailsRow(ProductRow);
                     ProductRow.EndEdit();
-                    AddLog("[New Product Found] : " + ProductRow.Material_Number);
+                    AddLog("[New Product Found] : " + ProductRow.Material_Number, true);
                     NewProductFounded++;
                 }
 
@@ -326,6 +327,8 @@ _______________________________________________
                     SqlRow.New_Quanteite = Convert.ToInt32(SqlRow.Actual_Invoiced_Quan);
                 else
                     SqlRow.New_Quanteite = Convert.ToInt32(SqlRow.Actual_Invoiced_Quan * ProductRow.Quin / ProductRow.New_Qu);
+
+                SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
 
                 dsData._0_1__Master_All.Add_0_1__Master_AllRow(SqlRow);
                 SqlRow.EndEdit();
@@ -338,7 +341,7 @@ _______________________________________________
 
             else
             {
-                AddLog("New Billing Details Saved " + dsData._0_1__Master_All.Count);
+                AddLog("New Billing Details Saved " + dsData._0_1__Master_All.Count, true);
                 output = true;
             }
 
@@ -351,9 +354,9 @@ _______________________________________________
             dsData._0_1__Master_All.AcceptChanges();
             ShowHideProgress(false);
 
-            AddLog("New Customers Saved " + NewCustomerFounded);
-            AddLog("New Routes Saved " + NewRouteFounded);
-            AddLog("New Product Saved " + NewProductFounded);
+            AddLog("New Customers Saved " + NewCustomerFounded, true);
+            AddLog("New Routes Saved " + NewRouteFounded, true);
+            AddLog("New Product Saved " + NewProductFounded, true);
 
 
             dtExcel.Rows.Clear(); dtExcel.Dispose(); dtExcel = null;
@@ -364,12 +367,13 @@ _______________________________________________
 
             return output;
         }
-        private void AddLog(string strLog)
+        private void AddLog(string strLog, bool LogtoFile)
         {
-            this.Invoke(new MethodInvoker(() =>
+            Invoke(new MethodInvoker(() =>
             {
                 tbLog.EditValue += string.Format("{0}{1}", strLog, Environment.NewLine);
-                //Logger.Info(strLog);
+                if (LogtoFile)
+                    Logger.Info(strLog);
             }));
         }
         public void ActivateRules()
@@ -379,6 +383,30 @@ _______________________________________________
         
         #endregion
         #region -   Event Handlers   -
+        private void ImportDaysUC_Load(object sender, EventArgs e)
+        {
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    using (NICSQLTools.Data.dsQryTableAdapters.LastEditMasterAllTableAdapter lastEditMasterAllTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.LastEditMasterAllTableAdapter())
+                    {
+                        Classes.Managers.DataManager.SetAllCommandTimeouts(lastEditMasterAllTableAdapter, Classes.Managers.DataManager.ConnectionTimeout);
+                        NICSQLTools.Data.dsQry.LastEditMasterAllDataTable tbl = lastEditMasterAllTableAdapter.GetData();
+                        if (tbl.Count > 0)
+                        {
+                            NICSQLTools.Data.dsQry.LastEditMasterAllRow row = tbl[0];
+                            string log = string.Format("Last Edit {0}Billing Date For Bill: {1}{0}Date : {2}{0}User : {3}", Environment.NewLine, row.Billing_date_for_bil, row.DateIn, row.RealName);
+                            AddLog(log, false);
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                { Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId); }
+
+            });
+            
+        }
         private void btnGetFileName_Click(object sender, EventArgs e)
         {
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
@@ -444,6 +472,8 @@ _______________________________________________
         }
 
         #endregion
+
+        
 
     }
 }

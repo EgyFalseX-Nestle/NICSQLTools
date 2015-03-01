@@ -55,7 +55,7 @@
             this.layoutControlItemAdd = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemPnlProg = new DevExpress.XtraLayout.LayoutControlItem();
             this.dsQry = new NICSQLTools.Data.dsQry();
-            this.dmG_MasterTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.DMG_MasterTableAdapter();
+            this.dmG_MasterTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.QryBillDocDMGMasterTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).BeginInit();
@@ -442,6 +442,6 @@
         private NICSQLTools.Data.dsQry dsQry;
         private DevExpress.XtraWaitForm.ProgressPanel PnlProg;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPnlProg;
-        private NICSQLTools.Data.dsQryTableAdapters.DMG_MasterTableAdapter dmG_MasterTableAdapter;
+        private NICSQLTools.Data.dsQryTableAdapters.QryBillDocDMGMasterTableAdapter dmG_MasterTableAdapter;
     }
 }

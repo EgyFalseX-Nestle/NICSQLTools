@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TargetKPIEditorUC));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
@@ -43,6 +44,8 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcDel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colSalesDistrict2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditSalesDistrict2 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.salesDistrict2BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -69,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSalesDistrict2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesDistrict2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
@@ -174,13 +178,15 @@
             // gridControlMain
             // 
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlMain.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlMain_EmbeddedNavigator_ButtonClick);
             this.gridControlMain.Location = new System.Drawing.Point(0, 31);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.MenuManager = this.barManagerMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEditSalesDistrict2,
-            this.repositoryItemGridLookUpEditBrandRoute});
+            this.repositoryItemGridLookUpEditBrandRoute,
+            this.repositoryItemButtonEditDelete});
             this.gridControlMain.Size = new System.Drawing.Size(652, 377);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -190,6 +196,7 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gcDel,
             this.colSalesDistrict2,
             this.colBrandRoute,
             this.colMonthNum,
@@ -203,8 +210,12 @@
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new";
+            this.gridViewMain.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
             this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
+            this.gridViewMain.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.SegmentedFade;
+            this.gridViewMain.OptionsImageLoad.AsyncLoad = true;
+            this.gridViewMain.OptionsNavigation.AutoFocusNewRow = true;
             this.gridViewMain.OptionsSelection.InvertSelection = true;
             this.gridViewMain.OptionsSelection.MultiSelect = true;
             this.gridViewMain.OptionsView.ColumnAutoWidth = false;
@@ -212,9 +223,35 @@
             this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
+            this.gridViewMain.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
+            // 
+            // gcDel
+            // 
+            this.gcDel.AppearanceCell.Options.UseTextOptions = true;
+            this.gcDel.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcDel.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcDel.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcDel.Caption = "Delete";
+            this.gcDel.ColumnEdit = this.repositoryItemButtonEditDelete;
+            this.gcDel.Name = "gcDel";
+            this.gcDel.OptionsColumn.TabStop = false;
+            this.gcDel.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // repositoryItemButtonEditDelete
+            // 
+            this.repositoryItemButtonEditDelete.AutoHeight = false;
+            this.repositoryItemButtonEditDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject1, "", null, null, true)});
+            this.repositoryItemButtonEditDelete.Name = "repositoryItemButtonEditDelete";
+            this.repositoryItemButtonEditDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDelete_ButtonClick);
             // 
             // colSalesDistrict2
             // 
+            this.colSalesDistrict2.AppearanceCell.Options.UseTextOptions = true;
+            this.colSalesDistrict2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSalesDistrict2.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSalesDistrict2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSalesDistrict2.Caption = "Sales District 2";
             this.colSalesDistrict2.ColumnEdit = this.repositoryItemGridLookUpEditSalesDistrict2;
             this.colSalesDistrict2.FieldName = "Sales District 2";
@@ -265,6 +302,10 @@
             // 
             // colBrandRoute
             // 
+            this.colBrandRoute.AppearanceCell.Options.UseTextOptions = true;
+            this.colBrandRoute.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colBrandRoute.AppearanceHeader.Options.UseTextOptions = true;
+            this.colBrandRoute.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colBrandRoute.Caption = "Brand Route";
             this.colBrandRoute.ColumnEdit = this.repositoryItemGridLookUpEditBrandRoute;
             this.colBrandRoute.FieldName = "Brand Route";
@@ -300,6 +341,10 @@
             // 
             // colMonthNum
             // 
+            this.colMonthNum.AppearanceCell.Options.UseTextOptions = true;
+            this.colMonthNum.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMonthNum.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMonthNum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMonthNum.Caption = "Month Number";
             this.colMonthNum.FieldName = "MonthNum";
             this.colMonthNum.Name = "colMonthNum";
@@ -309,6 +354,10 @@
             // 
             // colYearNum
             // 
+            this.colYearNum.AppearanceCell.Options.UseTextOptions = true;
+            this.colYearNum.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colYearNum.AppearanceHeader.Options.UseTextOptions = true;
+            this.colYearNum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colYearNum.Caption = "Year Number";
             this.colYearNum.FieldName = "YearNum";
             this.colYearNum.Name = "colYearNum";
@@ -317,6 +366,10 @@
             // 
             // colNPSTarget
             // 
+            this.colNPSTarget.AppearanceCell.Options.UseTextOptions = true;
+            this.colNPSTarget.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNPSTarget.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNPSTarget.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colNPSTarget.Caption = "NPS Target";
             this.colNPSTarget.FieldName = "NPS Target";
             this.colNPSTarget.Name = "colNPSTarget";
@@ -325,6 +378,10 @@
             // 
             // colInvoicesTarget
             // 
+            this.colInvoicesTarget.AppearanceCell.Options.UseTextOptions = true;
+            this.colInvoicesTarget.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colInvoicesTarget.AppearanceHeader.Options.UseTextOptions = true;
+            this.colInvoicesTarget.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colInvoicesTarget.Caption = "Invoices Target";
             this.colInvoicesTarget.FieldName = "Invoices Target";
             this.colInvoicesTarget.Name = "colInvoicesTarget";
@@ -334,6 +391,10 @@
             // 
             // colAPOSTarget
             // 
+            this.colAPOSTarget.AppearanceCell.Options.UseTextOptions = true;
+            this.colAPOSTarget.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colAPOSTarget.AppearanceHeader.Options.UseTextOptions = true;
+            this.colAPOSTarget.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colAPOSTarget.Caption = "APOS Target";
             this.colAPOSTarget.FieldName = "APOS Target";
             this.colAPOSTarget.Name = "colAPOSTarget";
@@ -342,6 +403,10 @@
             // 
             // colDropSizeTarget
             // 
+            this.colDropSizeTarget.AppearanceCell.Options.UseTextOptions = true;
+            this.colDropSizeTarget.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDropSizeTarget.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDropSizeTarget.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colDropSizeTarget.Caption = "Drop Size Target";
             this.colDropSizeTarget.FieldName = "Drop Size Target";
             this.colDropSizeTarget.Name = "colDropSizeTarget";
@@ -351,6 +416,10 @@
             // 
             // colTrucks
             // 
+            this.colTrucks.AppearanceCell.Options.UseTextOptions = true;
+            this.colTrucks.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTrucks.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTrucks.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTrucks.Caption = "Trucks";
             this.colTrucks.FieldName = "Trucks";
             this.colTrucks.Name = "colTrucks";
@@ -359,6 +428,10 @@
             // 
             // colTPPBudget
             // 
+            this.colTPPBudget.AppearanceCell.Options.UseTextOptions = true;
+            this.colTPPBudget.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTPPBudget.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTPPBudget.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTPPBudget.Caption = "TPP Budget";
             this.colTPPBudget.FieldName = "TPP Budget";
             this.colTPPBudget.Name = "colTPPBudget";
@@ -399,6 +472,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSalesDistrict2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesDistrict2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
@@ -447,5 +521,7 @@
         private System.Windows.Forms.BindingSource brandRouteBindingSource;
         private NICSQLTools.Data.dsQryTableAdapters.BrandRouteTableAdapter brandRouteTableAdapter;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.XtraGrid.Columns.GridColumn gcDel;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDelete;
     }
 }

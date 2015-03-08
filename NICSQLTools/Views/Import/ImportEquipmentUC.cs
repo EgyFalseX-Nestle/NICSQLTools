@@ -135,8 +135,16 @@ _______________________________________________
                 }
                 if (row["Functional Loc#"].ToString() == string.Empty)
                     continue;
-                row["Functional Loc#"] = Convert.ToInt32(row["Functional Loc#"].ToString());
 
+                int Funloc = 0;
+                if (Int32.TryParse(row["Functional Loc#"].ToString(), out Funloc))
+                    row["Functional Loc#"] = Funloc;
+                else
+                {
+                    AddLog("Unknown Functional Loc Format : " + row["Functional Loc#"], true);
+                    AddLog(string.Format("Try To Convert ({0}) To ({1})", row["Functional Loc#"], FXFW.SqlDB.ConvertStringToInt(row["Functional Loc#"].ToString())).ToString(), true);
+                    row["Functional Loc#"] = FXFW.SqlDB.ConvertStringToInt(row["Functional Loc#"].ToString()).ToString();
+                }
                 ////remove duplicated
                 //if (dsData.CustomerInfo.FindByCustomerStart_date_of_validityEnd_date_of_validity(row["Customer"].ToString(), Convert.ToDateTime(row["Start date of validity"]), Convert.ToDateTime(row["End date of validity"])) != null)
                 //    continue;

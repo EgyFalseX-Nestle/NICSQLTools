@@ -638,6 +638,27 @@ ORDER BY [0-1  Master All].[Billing date for bil] DESC</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LastEditUMDTableAdapter" GeneratorDataComponentClassName="LastEditUMDTableAdapter" Name="LastEditUMD" UserDataComponentName="LastEditUMDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.AppUsers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(UMD.Customer) AS Num, MAX(UMD.DateIn) AS DateIn, AppUsers.RealName
+FROM            UMD INNER JOIN
+                         AppUsers ON UMD.UserIn = AppUsers.UserID
+GROUP BY AppUsers.RealName</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Num" DataSetColumn="Num" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1560,6 +1581,21 @@ ORDER BY [0-1  Master All].[Billing date for bil] DESC</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Billing_x0020_date_x0020_for_x0020_bil" msprop:Generator_ColumnVarNameInTable="columnBilling_date_for_bil" msprop:Generator_ColumnPropNameInRow="Billing_date_for_bil" msprop:Generator_ColumnPropNameInTable="Billing_date_for_bilColumn" msprop:Generator_UserColumnName="Billing date for bil" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LastEditUMD" msprop:Generator_TableClassName="LastEditUMDDataTable" msprop:Generator_TableVarName="tableLastEditUMD" msprop:Generator_TablePropName="LastEditUMD" msprop:Generator_RowDeletingName="LastEditUMDRowDeleting" msprop:Generator_RowChangingName="LastEditUMDRowChanging" msprop:Generator_RowEvHandlerName="LastEditUMDRowChangeEventHandler" msprop:Generator_RowDeletedName="LastEditUMDRowDeleted" msprop:Generator_UserTableName="LastEditUMD" msprop:Generator_RowChangedName="LastEditUMDRowChanged" msprop:Generator_RowEvArgName="LastEditUMDRowChangeEvent" msprop:Generator_RowClassName="LastEditUMDRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Num" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNum" msprop:Generator_ColumnPropNameInRow="Num" msprop:Generator_ColumnPropNameInTable="NumColumn" msprop:Generator_UserColumnName="Num" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

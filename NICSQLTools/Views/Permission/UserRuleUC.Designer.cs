@@ -29,19 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcDel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colUserId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEditUserID = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.usersLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsQry = new NICSQLTools.Data.dsQry();
-            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRuleId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEditRuleID = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.rulesLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colRuleName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRuleDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.userRuleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsData = new NICSQLTools.Data.dsData();
@@ -54,11 +47,26 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.repositoryItemGridLookUpEditUserID = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.usersLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsQry = new NICSQLTools.Data.dsQry();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemGridLookUpEditRuleID = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.rulesLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRuleName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRuleDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.userRuleTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppUserRuleTableAdapter();
             this.users_LUETableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Users_LUETableAdapter();
             this.rules_LUETableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Rules_LUETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userRuleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditUserID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersLUEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
@@ -66,16 +74,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRuleID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userRuleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             this.SuspendLayout();
             // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gcDel,
             this.colUserId,
             this.colRuleId});
             this.gridViewMain.GridControl = this.gridControlMain;
@@ -91,119 +96,66 @@
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
             // 
+            // gcDel
+            // 
+            this.gcDel.AppearanceCell.Options.UseTextOptions = true;
+            this.gcDel.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcDel.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcDel.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcDel.Caption = "Delete";
+            this.gcDel.ColumnEdit = this.repositoryItemButtonEditDelete;
+            this.gcDel.Name = "gcDel";
+            this.gcDel.OptionsColumn.TabStop = false;
+            this.gcDel.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // repositoryItemButtonEditDelete
+            // 
+            this.repositoryItemButtonEditDelete.AutoHeight = false;
+            this.repositoryItemButtonEditDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject1, "", null, null, true)});
+            this.repositoryItemButtonEditDelete.Name = "repositoryItemButtonEditDelete";
+            this.repositoryItemButtonEditDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDelete_ButtonClick);
+            // 
             // colUserId
             // 
+            this.colUserId.AppearanceCell.Options.UseTextOptions = true;
+            this.colUserId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colUserId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colUserId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colUserId.Caption = "User";
-            this.colUserId.ColumnEdit = this.repositoryItemGridLookUpEditUserID;
             this.colUserId.FieldName = "UserId";
             this.colUserId.Name = "colUserId";
             this.colUserId.Visible = true;
             this.colUserId.VisibleIndex = 0;
             this.colUserId.Width = 91;
             // 
-            // repositoryItemGridLookUpEditUserID
-            // 
-            this.repositoryItemGridLookUpEditUserID.AutoHeight = false;
-            this.repositoryItemGridLookUpEditUserID.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditUserID.DataSource = this.usersLUEBindingSource;
-            this.repositoryItemGridLookUpEditUserID.DisplayMember = "RealName";
-            this.repositoryItemGridLookUpEditUserID.Name = "repositoryItemGridLookUpEditUserID";
-            this.repositoryItemGridLookUpEditUserID.NullText = "";
-            this.repositoryItemGridLookUpEditUserID.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditUserID.ValueMember = "UserID";
-            this.repositoryItemGridLookUpEditUserID.View = this.repositoryItemGridLookUpEdit1View;
-            // 
-            // usersLUEBindingSource
-            // 
-            this.usersLUEBindingSource.DataMember = "Users_LUE";
-            this.usersLUEBindingSource.DataSource = this.dsQry;
-            // 
-            // dsQry
-            // 
-            this.dsQry.DataSetName = "dsQry";
-            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // repositoryItemGridLookUpEdit1View
-            // 
-            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colRealName});
-            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
-            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colRealName
-            // 
-            this.colRealName.FieldName = "RealName";
-            this.colRealName.Name = "colRealName";
-            this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 0;
-            // 
             // colRuleId
             // 
+            this.colRuleId.AppearanceCell.Options.UseTextOptions = true;
+            this.colRuleId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRuleId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRuleId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colRuleId.Caption = "Rule";
-            this.colRuleId.ColumnEdit = this.repositoryItemGridLookUpEditRuleID;
             this.colRuleId.FieldName = "RuleId";
             this.colRuleId.Name = "colRuleId";
             this.colRuleId.Visible = true;
             this.colRuleId.VisibleIndex = 1;
             this.colRuleId.Width = 95;
             // 
-            // repositoryItemGridLookUpEditRuleID
-            // 
-            this.repositoryItemGridLookUpEditRuleID.AutoHeight = false;
-            this.repositoryItemGridLookUpEditRuleID.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditRuleID.DataSource = this.rulesLUEBindingSource;
-            this.repositoryItemGridLookUpEditRuleID.DisplayMember = "RuleName";
-            this.repositoryItemGridLookUpEditRuleID.Name = "repositoryItemGridLookUpEditRuleID";
-            this.repositoryItemGridLookUpEditRuleID.NullText = "";
-            this.repositoryItemGridLookUpEditRuleID.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemGridLookUpEditRuleID.ValueMember = "RuleID";
-            this.repositoryItemGridLookUpEditRuleID.View = this.gridView1;
-            // 
-            // rulesLUEBindingSource
-            // 
-            this.rulesLUEBindingSource.DataMember = "Rules_LUE";
-            this.rulesLUEBindingSource.DataSource = this.dsQry;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colRuleName,
-            this.colRuleDesc});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // colRuleName
-            // 
-            this.colRuleName.FieldName = "RuleName";
-            this.colRuleName.Name = "colRuleName";
-            this.colRuleName.Visible = true;
-            this.colRuleName.VisibleIndex = 0;
-            // 
-            // colRuleDesc
-            // 
-            this.colRuleDesc.Caption = "Rule Description";
-            this.colRuleDesc.FieldName = "RuleDesc";
-            this.colRuleDesc.Name = "colRuleDesc";
-            this.colRuleDesc.Visible = true;
-            this.colRuleDesc.VisibleIndex = 1;
-            // 
             // gridControlMain
             // 
             this.gridControlMain.DataSource = this.userRuleBindingSource;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlMain.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlMain_EmbeddedNavigator_ButtonClick);
             this.gridControlMain.Location = new System.Drawing.Point(0, 31);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.MenuManager = this.barManagerMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEditUserID,
-            this.repositoryItemGridLookUpEditRuleID});
+            this.repositoryItemGridLookUpEditRuleID,
+            this.repositoryItemButtonEditDelete});
             this.gridControlMain.Size = new System.Drawing.Size(679, 360);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -302,6 +254,88 @@
             this.barDockControlRight.Location = new System.Drawing.Point(679, 31);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 360);
             // 
+            // repositoryItemGridLookUpEditUserID
+            // 
+            this.repositoryItemGridLookUpEditUserID.AutoHeight = false;
+            this.repositoryItemGridLookUpEditUserID.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEditUserID.DataSource = this.usersLUEBindingSource;
+            this.repositoryItemGridLookUpEditUserID.DisplayMember = "RealName";
+            this.repositoryItemGridLookUpEditUserID.Name = "repositoryItemGridLookUpEditUserID";
+            this.repositoryItemGridLookUpEditUserID.NullText = "";
+            this.repositoryItemGridLookUpEditUserID.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemGridLookUpEditUserID.ValueMember = "UserID";
+            this.repositoryItemGridLookUpEditUserID.View = this.repositoryItemGridLookUpEdit1View;
+            // 
+            // usersLUEBindingSource
+            // 
+            this.usersLUEBindingSource.DataMember = "Users_LUE";
+            this.usersLUEBindingSource.DataSource = this.dsQry;
+            // 
+            // dsQry
+            // 
+            this.dsQry.DataSetName = "dsQry";
+            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRealName});
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colRealName
+            // 
+            this.colRealName.FieldName = "RealName";
+            this.colRealName.Name = "colRealName";
+            this.colRealName.Visible = true;
+            this.colRealName.VisibleIndex = 0;
+            // 
+            // repositoryItemGridLookUpEditRuleID
+            // 
+            this.repositoryItemGridLookUpEditRuleID.AutoHeight = false;
+            this.repositoryItemGridLookUpEditRuleID.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEditRuleID.DataSource = this.rulesLUEBindingSource;
+            this.repositoryItemGridLookUpEditRuleID.DisplayMember = "RuleName";
+            this.repositoryItemGridLookUpEditRuleID.Name = "repositoryItemGridLookUpEditRuleID";
+            this.repositoryItemGridLookUpEditRuleID.NullText = "";
+            this.repositoryItemGridLookUpEditRuleID.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemGridLookUpEditRuleID.ValueMember = "RuleID";
+            this.repositoryItemGridLookUpEditRuleID.View = this.gridView1;
+            // 
+            // rulesLUEBindingSource
+            // 
+            this.rulesLUEBindingSource.DataMember = "Rules_LUE";
+            this.rulesLUEBindingSource.DataSource = this.dsQry;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRuleName,
+            this.colRuleDesc});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colRuleName
+            // 
+            this.colRuleName.FieldName = "RuleName";
+            this.colRuleName.Name = "colRuleName";
+            this.colRuleName.Visible = true;
+            this.colRuleName.VisibleIndex = 0;
+            // 
+            // colRuleDesc
+            // 
+            this.colRuleDesc.Caption = "Rule Description";
+            this.colRuleDesc.FieldName = "RuleDesc";
+            this.colRuleDesc.Name = "colRuleDesc";
+            this.colRuleDesc.Visible = true;
+            this.colRuleDesc.VisibleIndex = 1;
+            // 
             // popupMenuMain
             // 
             this.popupMenuMain.Manager = this.barManagerMain;
@@ -332,6 +366,11 @@
             this.Size = new System.Drawing.Size(679, 391);
             this.Load += new System.EventHandler(this.ProductEditorUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userRuleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditUserID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersLUEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
@@ -339,10 +378,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRuleID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userRuleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
             this.ResumeLayout(false);
 
@@ -379,5 +414,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRuleDesc;
         private NICSQLTools.Data.dsQryTableAdapters.Users_LUETableAdapter users_LUETableAdapter;
         private NICSQLTools.Data.dsQryTableAdapters.Rules_LUETableAdapter rules_LUETableAdapter;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDelete;
+        private DevExpress.XtraGrid.Columns.GridColumn gcDel;
     }
 }

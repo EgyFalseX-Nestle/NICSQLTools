@@ -31,12 +31,8 @@ namespace NICSQLTools
             
             //checkedComboBoxEdit1
 
-            this.checkedComboBoxEdit1.EditValue = "";
-            
-            
-            
-            
-            this.checkedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            //this.checkedComboBoxEdit1.EditValue = "";
+            //this.checkedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             
         }
 

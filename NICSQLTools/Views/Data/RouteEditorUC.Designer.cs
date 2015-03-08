@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RouteEditorUC));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
@@ -43,6 +44,8 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcDel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colRouteNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDistributionChannel1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRouteNumbersystem = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSalesDistrict3Id)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSalesDistrict2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
@@ -166,12 +170,14 @@
             // gridControlMain
             // 
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlMain.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlMain_EmbeddedNavigator_ButtonClick);
             this.gridControlMain.Location = new System.Drawing.Point(0, 31);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.MenuManager = this.barManagerMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemGridLookUpEditSalesDistrict3Id});
+            this.repositoryItemGridLookUpEditSalesDistrict3Id,
+            this.repositoryItemButtonEditDelete});
             this.gridControlMain.Size = new System.Drawing.Size(936, 377);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -181,6 +187,7 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gcDel,
             this.colRouteNumber,
             this.colDistributionChannel1,
             this.colRouteNumbersystem,
@@ -197,8 +204,11 @@
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new";
-            this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridViewMain.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
+            this.gridViewMain.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.SegmentedFade;
+            this.gridViewMain.OptionsImageLoad.AsyncLoad = true;
+            this.gridViewMain.OptionsNavigation.AutoFocusNewRow = true;
             this.gridViewMain.OptionsSelection.InvertSelection = true;
             this.gridViewMain.OptionsSelection.MultiSelect = true;
             this.gridViewMain.OptionsView.ColumnAutoWidth = false;
@@ -206,9 +216,35 @@
             this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
+            this.gridViewMain.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
+            // 
+            // gcDel
+            // 
+            this.gcDel.AppearanceCell.Options.UseTextOptions = true;
+            this.gcDel.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcDel.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcDel.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcDel.Caption = "Delete";
+            this.gcDel.ColumnEdit = this.repositoryItemButtonEditDelete;
+            this.gcDel.Name = "gcDel";
+            this.gcDel.OptionsColumn.TabStop = false;
+            this.gcDel.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // repositoryItemButtonEditDelete
+            // 
+            this.repositoryItemButtonEditDelete.AutoHeight = false;
+            this.repositoryItemButtonEditDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject1, "", null, null, true)});
+            this.repositoryItemButtonEditDelete.Name = "repositoryItemButtonEditDelete";
+            this.repositoryItemButtonEditDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDelete_ButtonClick);
             // 
             // colRouteNumber
             // 
+            this.colRouteNumber.AppearanceCell.Options.UseTextOptions = true;
+            this.colRouteNumber.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRouteNumber.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRouteNumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colRouteNumber.FieldName = "Route Number";
             this.colRouteNumber.Name = "colRouteNumber";
             this.colRouteNumber.Visible = true;
@@ -217,6 +253,10 @@
             // 
             // colDistributionChannel1
             // 
+            this.colDistributionChannel1.AppearanceCell.Options.UseTextOptions = true;
+            this.colDistributionChannel1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDistributionChannel1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDistributionChannel1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colDistributionChannel1.FieldName = "Distribution Channel";
             this.colDistributionChannel1.Name = "colDistributionChannel1";
             this.colDistributionChannel1.Visible = true;
@@ -225,6 +265,10 @@
             // 
             // colRouteNumbersystem
             // 
+            this.colRouteNumbersystem.AppearanceCell.Options.UseTextOptions = true;
+            this.colRouteNumbersystem.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRouteNumbersystem.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRouteNumbersystem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colRouteNumbersystem.FieldName = "Route Number  system";
             this.colRouteNumbersystem.Name = "colRouteNumbersystem";
             this.colRouteNumbersystem.Visible = true;
@@ -233,6 +277,10 @@
             // 
             // colRouteName
             // 
+            this.colRouteName.AppearanceCell.Options.UseTextOptions = true;
+            this.colRouteName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRouteName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRouteName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colRouteName.FieldName = "Route Name";
             this.colRouteName.Name = "colRouteName";
             this.colRouteName.Visible = true;
@@ -241,6 +289,10 @@
             // 
             // colRegion
             // 
+            this.colRegion.AppearanceCell.Options.UseTextOptions = true;
+            this.colRegion.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRegion.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRegion.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colRegion.FieldName = "Region";
             this.colRegion.Name = "colRegion";
             this.colRegion.Visible = true;
@@ -248,6 +300,10 @@
             // 
             // colPlant
             // 
+            this.colPlant.AppearanceCell.Options.UseTextOptions = true;
+            this.colPlant.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPlant.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPlant.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colPlant.FieldName = "Plant";
             this.colPlant.Name = "colPlant";
             this.colPlant.Visible = true;
@@ -255,6 +311,10 @@
             // 
             // colRSM
             // 
+            this.colRSM.AppearanceCell.Options.UseTextOptions = true;
+            this.colRSM.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRSM.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRSM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colRSM.FieldName = "RSM";
             this.colRSM.Name = "colRSM";
             this.colRSM.Visible = true;
@@ -262,6 +322,10 @@
             // 
             // colASM
             // 
+            this.colASM.AppearanceCell.Options.UseTextOptions = true;
+            this.colASM.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colASM.AppearanceHeader.Options.UseTextOptions = true;
+            this.colASM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colASM.FieldName = "ASM";
             this.colASM.Name = "colASM";
             this.colASM.Visible = true;
@@ -269,6 +333,10 @@
             // 
             // colSupervisor
             // 
+            this.colSupervisor.AppearanceCell.Options.UseTextOptions = true;
+            this.colSupervisor.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSupervisor.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSupervisor.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSupervisor.FieldName = "Supervisor";
             this.colSupervisor.Name = "colSupervisor";
             this.colSupervisor.Visible = true;
@@ -276,6 +344,10 @@
             // 
             // colBrandRoute
             // 
+            this.colBrandRoute.AppearanceCell.Options.UseTextOptions = true;
+            this.colBrandRoute.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colBrandRoute.AppearanceHeader.Options.UseTextOptions = true;
+            this.colBrandRoute.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colBrandRoute.FieldName = "Brand Route";
             this.colBrandRoute.Name = "colBrandRoute";
             this.colBrandRoute.Visible = true;
@@ -284,6 +356,10 @@
             // 
             // colSalesDistrict3Id
             // 
+            this.colSalesDistrict3Id.AppearanceCell.Options.UseTextOptions = true;
+            this.colSalesDistrict3Id.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSalesDistrict3Id.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSalesDistrict3Id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSalesDistrict3Id.Caption = "Sales District 2";
             this.colSalesDistrict3Id.ColumnEdit = this.repositoryItemGridLookUpEditSalesDistrict3Id;
             this.colSalesDistrict3Id.FieldName = "SalesDistrict3Id";
@@ -329,6 +405,10 @@
             // 
             // colWarehouse
             // 
+            this.colWarehouse.AppearanceCell.Options.UseTextOptions = true;
+            this.colWarehouse.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colWarehouse.AppearanceHeader.Options.UseTextOptions = true;
+            this.colWarehouse.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colWarehouse.FieldName = "Warehouse";
             this.colWarehouse.Name = "colWarehouse";
             this.colWarehouse.Visible = true;
@@ -336,6 +416,10 @@
             // 
             // colNCE_Project
             // 
+            this.colNCE_Project.AppearanceCell.Options.UseTextOptions = true;
+            this.colNCE_Project.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNCE_Project.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNCE_Project.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colNCE_Project.Caption = "NCE Project";
             this.colNCE_Project.FieldName = "NCE_Project";
             this.colNCE_Project.Name = "colNCE_Project";
@@ -369,6 +453,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSalesDistrict3Id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSSalesDistrict2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
@@ -410,5 +495,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditSalesDistrict3Id;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gcDel;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDelete;
     }
 }

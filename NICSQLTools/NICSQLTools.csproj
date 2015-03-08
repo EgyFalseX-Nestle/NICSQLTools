@@ -199,7 +199,7 @@
       <DependentUpon>dsData.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Data\dsData1.Designer.cs">
+    <Compile Include="Data\dsData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -218,6 +218,23 @@
       <DependentUpon>dsQry.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Data\xpoSPCode\ConnectionHelper.cs" />
+    <Compile Include="Data\xpoSPCode\sp_App_01A_Cus_SalResult.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\xpoSPCode\sp_App_01B_Cus_EquipResult.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\xpoSPCode\sp_App_01C_Cus_RouteResult.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\xpoSPCode\StoredProcHelper.cs" />
+    <Compile Include="Forms\MultiLineStringFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MultiLineStringFrm.Designer.cs">
+      <DependentUpon>MultiLineStringFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,10 +247,16 @@
     <Compile Include="Views\Dashboard\DashboardViewerEditorFrm.Designer.cs">
       <DependentUpon>DashboardViewerEditorFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\AppDatasourceParamUC.cs">
+    <Compile Include="Views\Qry\QryCustomerInfoUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\AppDatasourceParamUC.Designer.cs">
+    <Compile Include="Views\Qry\QryCustomerInfoUC.Designer.cs">
+      <DependentUpon>QryCustomerInfoUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Removed\AppDatasourceParamUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Removed\AppDatasourceParamUC.Designer.cs">
       <DependentUpon>AppDatasourceParamUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\DashboardDesignerUC.cs">
@@ -254,16 +277,22 @@
     <Compile Include="Views\Dashboard\DashboardOpenDlg.Designer.cs">
       <DependentUpon>DashboardOpenDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\AppDSCategoryUC.cs">
+    <Compile Include="Views\Data\AppDatasourceEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\AppDSCategoryUC.Designer.cs">
+    <Compile Include="Views\Data\AppDatasourceEditorUC.Designer.cs">
+      <DependentUpon>AppDatasourceEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Removed\AppDSCategoryUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Removed\AppDSCategoryUC.Designer.cs">
       <DependentUpon>AppDSCategoryUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\AppDatasourceUC.cs">
+    <Compile Include="Views\Removed\AppDatasourceUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\AppDatasourceUC.Designer.cs">
+    <Compile Include="Views\Removed\AppDatasourceUC.Designer.cs">
       <DependentUpon>AppDatasourceUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportDMG_MasterUC.cs">
@@ -433,13 +462,19 @@
     <Compile Include="Views\Qry\QryPivotUC.Designer.cs">
       <DependentUpon>QryPivotUC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\MultiLineStringFrm.resx">
+      <DependentUpon>MultiLineStringFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestFrm.resx">
       <DependentUpon>TestFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\DashboardViewerEditorFrm.resx">
       <DependentUpon>DashboardViewerEditorFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\AppDatasourceParamUC.resx">
+    <EmbeddedResource Include="Views\Qry\QryCustomerInfoUC.resx">
+      <DependentUpon>QryCustomerInfoUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Removed\AppDatasourceParamUC.resx">
       <DependentUpon>AppDatasourceParamUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\DashboardDesignerUC.resx">
@@ -451,10 +486,13 @@
     <EmbeddedResource Include="Views\Dashboard\DashboardOpenDlg.resx">
       <DependentUpon>DashboardOpenDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\AppDSCategoryUC.resx">
+    <EmbeddedResource Include="Views\Data\AppDatasourceEditorUC.resx">
+      <DependentUpon>AppDatasourceEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Removed\AppDSCategoryUC.resx">
       <DependentUpon>AppDSCategoryUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\AppDatasourceUC.resx">
+    <EmbeddedResource Include="Views\Removed\AppDatasourceUC.resx">
       <DependentUpon>AppDatasourceUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportDMG_MasterUC.resx">
@@ -556,7 +594,7 @@
     <None Include="Data\dsData.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsData1.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsData.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -576,6 +614,10 @@
     </None>
     <None Include="Data\dsQry.xss">
       <DependentUpon>dsQry.xsd</DependentUpon>
+    </None>
+    <None Include="Data\xpoSP.xpo" />
+    <None Include="Data\xpoSP.xpo.diagram">
+      <DependentUpon>xpoSP.xpo</DependentUpon>
     </None>
     <None Include="Log4Net\NICSQLToolsLog4Net.config">
       <SubType>Designer</SubType>
@@ -605,6 +647,7 @@
   <ItemGroup>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\find_16x16.png" />
     <None Include="Resources\clip_16x16.png" />
     <None Include="Resources\next_32x32.png" />
     <None Include="Resources\snaptocells_16x16.png" />

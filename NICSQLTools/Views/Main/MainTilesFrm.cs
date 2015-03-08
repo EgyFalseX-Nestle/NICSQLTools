@@ -91,8 +91,16 @@ namespace NICSQLTools.Views.Main
             string FileName = Program.TilesLayoutFile + Classes.Managers.UserManager.defaultInstance.User.UserId.ToString();
             if (System.IO.File.Exists(FileName))
             {
+                //backup
+                System.IO.MemoryStream Resert_ms = new System.IO.MemoryStream();
+                windowsUIView.SaveLayoutToStream(Resert_ms);
+                string currentVersion = windowsUIView.OptionsLayout.LayoutVersion;
+
                 System.IO.FileStream Fs = new System.IO.FileStream(FileName, System.IO.FileMode.Open);
+                //TilesLayoutFile
                 windowsUIView.RestoreLayoutFromStream(Fs);
+                //if (windowsUIView.OptionsLayout.LayoutVersion != currentVersion)//Rollback is version is not the same
+                //    windowsUIView.RestoreLayoutFromStream(Resert_ms);
             }
         }
         #endregion
@@ -141,7 +149,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Qry.QryPivotUC(RuleElemet);
             }
-
+            else if (e.Document == docQueriesQryCustomerInfo)
+            {
+                e.Control = new Views.Qry.QryCustomerInfoUC(RuleElemet);
+            }
 
             else if (e.Document == docDashboardDesigner)//--------------------  Dashboard
             {
@@ -164,17 +175,9 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Data.CustomerEditorUC(RuleElemet);
             }
-            else if (e.Document == docEditorsAppDSCategory)
+            else if (e.Document == docAppDatasourceEditor)
             {
-                e.Control = new Views.Data.AppDSCategoryUC(RuleElemet);
-            }
-            else if (e.Document == docAppDatasource)
-            {
-                e.Control = new Views.Data.AppDatasourceUC(RuleElemet);
-            }
-            else if (e.Document == docAppDatasourceParam)
-            {
-                e.Control = new Views.Data.AppDatasourceParamUC(RuleElemet);
+                e.Control = new Views.Data.AppDatasourceEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsTargetKPI)
             {
@@ -199,6 +202,10 @@ namespace NICSQLTools.Views.Main
             else if (e.Document == docEditorsImportCustomerSSInfo)
             {
                 e.Control = new Views.Import.ImportCustomerSSInfoUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsImportUMD)
+            {
+                e.Control = new Views.Import.ImportUMDUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportDamageMaster)
             {

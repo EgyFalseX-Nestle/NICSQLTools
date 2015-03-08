@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcDel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colRuleId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditRuleID = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.rulesLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,6 +63,7 @@
             this.rules_LUETableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Rules_LUETableAdapter();
             this.appRuleSalesDistrict3TableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRuleSalesDistrict3TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRuleID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
@@ -77,6 +81,7 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gcDel,
             this.colRuleId,
             this.colSalesDistrict3Id});
             this.gridViewMain.GridControl = this.gridControlMain;
@@ -92,8 +97,33 @@
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
             // 
+            // gcDel
+            // 
+            this.gcDel.AppearanceCell.Options.UseTextOptions = true;
+            this.gcDel.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcDel.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcDel.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcDel.Caption = "Delete";
+            this.gcDel.ColumnEdit = this.repositoryItemButtonEditDelete;
+            this.gcDel.Name = "gcDel";
+            this.gcDel.OptionsColumn.TabStop = false;
+            this.gcDel.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // repositoryItemButtonEditDelete
+            // 
+            this.repositoryItemButtonEditDelete.AutoHeight = false;
+            this.repositoryItemButtonEditDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject1, "", null, null, true)});
+            this.repositoryItemButtonEditDelete.Name = "repositoryItemButtonEditDelete";
+            this.repositoryItemButtonEditDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDelete_ButtonClick);
+            // 
             // colRuleId
             // 
+            this.colRuleId.AppearanceCell.Options.UseTextOptions = true;
+            this.colRuleId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRuleId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRuleId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colRuleId.Caption = "Rule";
             this.colRuleId.ColumnEdit = this.repositoryItemGridLookUpEditRuleID;
             this.colRuleId.FieldName = "RuleID";
@@ -152,6 +182,10 @@
             // 
             // colSalesDistrict3Id
             // 
+            this.colSalesDistrict3Id.AppearanceCell.Options.UseTextOptions = true;
+            this.colSalesDistrict3Id.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSalesDistrict3Id.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSalesDistrict3Id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSalesDistrict3Id.Caption = "Sales District 2";
             this.colSalesDistrict3Id.ColumnEdit = this.repositoryItemGridLookUpEditSalesDistrict3Id;
             this.colSalesDistrict3Id.FieldName = "SalesDistrict3Id";
@@ -219,13 +253,15 @@
             this.gridControlMain.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridControlMain.DataSource = this.appRuleSalesDistrict3BindingSource;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlMain.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlMain_EmbeddedNavigator_ButtonClick);
             this.gridControlMain.Location = new System.Drawing.Point(0, 31);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.MenuManager = this.barManagerMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEditSalesDistrict3Id,
-            this.repositoryItemGridLookUpEditRuleID});
+            this.repositoryItemGridLookUpEditRuleID,
+            this.repositoryItemButtonEditDelete});
             this.gridControlMain.Size = new System.Drawing.Size(679, 360);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -350,6 +386,7 @@
             this.Size = new System.Drawing.Size(679, 391);
             this.Load += new System.EventHandler(this.ProductEditorUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRuleID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
@@ -398,5 +435,7 @@
         private DevExpress.Data.Linq.LinqServerModeSource LSMSSalesDistrict3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gcDel;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDelete;
     }
 }

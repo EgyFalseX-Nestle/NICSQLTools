@@ -9,6 +9,7 @@ namespace NICSQLTools.Views.Data
 {
     public partial class RouteEditorUC : XtraUserControl
     {
+
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(RouteEditorUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
@@ -103,6 +104,21 @@ namespace NICSQLTools.Views.Data
             XPSCS.Reload();
             gridViewMain.RefreshData();
         }
+        private void repositoryItemButtonEditDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (MsgDlg.Show("Do you want to delete selected row ?", MsgDlg.MessageType.Question) == DialogResult.No)
+                return;
+            gridViewMain.DeleteRow(gridViewMain.FocusedRowHandle);
+        }
+        private void gridControlMain_EmbeddedNavigator_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
+        {
+            if (e.Button.ButtonType == NavigatorButtonType.Remove)
+            {
+                if (MsgDlg.Show("Do you want to delete selected rows ?", MsgDlg.MessageType.Question) == DialogResult.No)
+                    e.Handled = true;
+            }
+        }
+
         #endregion
 
     }

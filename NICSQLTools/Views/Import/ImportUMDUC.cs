@@ -65,7 +65,7 @@ _______________________________________________
             //return false;
             bool output = false;
 
-            AddLog("Start importing ...");
+            AddLog("Start importing ...", false);
             DataTable dtExcel = new DataTable();
 
             //if (SSM.IsSplashFormVisible)
@@ -81,7 +81,7 @@ _______________________________________________
                         DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                         {
-                            AddLog("File empty " + lbcFilePath.Items[i]);
+                            AddLog("File empty " + lbcFilePath.Items[i], false);
                             continue;
                         }
                         dtExcel.Merge(dtPart);
@@ -92,7 +92,7 @@ _______________________________________________
             if (dtExcel.Rows.Count == 0)
             {
                 ShowHideProgress(false);
-                AddLog("Importing Aborted");
+                AddLog("Importing Aborted", false);
                 MsgDlg.Show("No Data Found", MsgDlg.MessageType.Error);
                 return false;
             }
@@ -161,7 +161,7 @@ _______________________________________________
                 MsgDlg.Show("Update UMD Info Failed", MsgDlg.MessageType.Error);
             else
             {
-                AddLog("New UMD Saved " + dsData.UMD.Count);
+                AddLog("New UMD Saved " + dsData.UMD.Count, true);
                 output = true;
             }
             dsData.UMD.AcceptChanges();
@@ -174,12 +174,14 @@ _______________________________________________
 
             return output;
         }
-        private void AddLog(string strLog)
+        private void AddLog(string strLog, bool LogtoFile)
         {
+            
             Invoke(new MethodInvoker(() =>
             {
                 tbLog.EditValue += string.Format("{0}{1}", strLog, Environment.NewLine);
-                Logger.Info(strLog);
+                if (LogtoFile)
+                    Logger.Info(strLog);
             }));
         }
         public void ActivateRules()
@@ -189,6 +191,29 @@ _______________________________________________
         
         #endregion
         #region -   Event Handlers   -
+        private void ImportUMDUC_Load(object sender, EventArgs e)
+        {
+            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            {
+                try
+                {
+                    using (NICSQLTools.Data.dsQryTableAdapters.LastEditUMDTableAdapter lastEditUMDTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.LastEditUMDTableAdapter())
+                    {
+                        Classes.Managers.DataManager.SetAllCommandTimeouts(lastEditUMDTableAdapter, Classes.Managers.DataManager.ConnectionTimeout);
+                        NICSQLTools.Data.dsQry.LastEditUMDDataTable tbl = lastEditUMDTableAdapter.GetData();
+                        if (tbl.Count > 0)
+                        {
+                            NICSQLTools.Data.dsQry.LastEditUMDRow row = tbl[0];
+                            string log = string.Format("Last Edit {0}Row Count : {1}{0}Date : {2}{0}User : {3}", Environment.NewLine, row.Num, row.DateIn, row.RealName);
+                            AddLog(log, false);
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                { Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId); }
+
+            });
+        }
         private void btnGetFileName_Click(object sender, EventArgs e)
         {
             if (ofd.ShowDialog() == DialogResult.Cancel)
@@ -252,6 +277,8 @@ _______________________________________________
         }
 
         #endregion
+
+        
         
     }
 }

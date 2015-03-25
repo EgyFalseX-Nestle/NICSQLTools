@@ -164,7 +164,6 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "Root";
             this.layoutControlGroup2.Size = new System.Drawing.Size(273, 272);
-            this.layoutControlGroup2.Text = "Root";
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlGroupParamters
@@ -313,7 +312,6 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(273, 195);
-            this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -336,9 +334,7 @@
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(253, 35);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
@@ -350,7 +346,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(253, 64);
             this.layoutControlItem3.Text = "Edit Dashboard";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             this.layoutControlItem3.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
@@ -364,9 +359,7 @@
             this.lciWait.Name = "lciWait";
             this.lciWait.Size = new System.Drawing.Size(253, 50);
             this.lciWait.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.lciWait.Text = "lciWait";
             this.lciWait.TextSize = new System.Drawing.Size(0, 0);
-            this.lciWait.TextToControlDistance = 0;
             this.lciWait.TextVisible = false;
             this.lciWait.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 

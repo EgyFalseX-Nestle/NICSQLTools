@@ -404,6 +404,7 @@
             this.dsData = new NICSQLTools.Data.dsData();
             this.appDashboardSchemaTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardBackstageViewControl1)).BeginInit();
             this.dashboardBackstageViewControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarAndDockingControllerMain)).BeginInit();
             this.backstageViewClientControl1.SuspendLayout();
@@ -415,6 +416,7 @@
             // dashboardDesignerMain
             // 
             this.dashboardDesignerMain.ActionOnClose = DevExpress.DashboardWin.DashboardActionOnClose.Discard;
+            this.dashboardDesignerMain.AutoScroll = true;
             this.dashboardDesignerMain.CustomDBSchemaProvider = null;
             this.dashboardDesignerMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashboardDesignerMain.Location = new System.Drawing.Point(0, 142);
@@ -742,7 +744,6 @@
             // 
             // renameDataSourceBarItem1
             // 
-            this.renameDataSourceBarItem1.Enabled = false;
             this.renameDataSourceBarItem1.Id = 9;
             this.renameDataSourceBarItem1.Name = "renameDataSourceBarItem1";
             // 
@@ -963,7 +964,6 @@
             // 
             // dashboardSkinsBarItem1
             // 
-            this.dashboardSkinsBarItem1.AllowDrawArrow = true;
             // 
             // 
             // 
@@ -1226,7 +1226,6 @@
             // 
             // galleryChartLegendPositionItem1
             // 
-            this.galleryChartLegendPositionItem1.AllowDrawArrow = true;
             // 
             // 
             // 
@@ -1247,7 +1246,6 @@
             // 
             // galleryChartSeriesTypeItem1
             // 
-            this.galleryChartSeriesTypeItem1.AllowDrawArrow = true;
             // 
             // 
             // 
@@ -1748,7 +1746,6 @@
             // 
             // galleryMapLegendPositionItem1
             // 
-            this.galleryMapLegendPositionItem1.AllowDrawArrow = true;
             // 
             // 
             // 
@@ -1790,7 +1787,6 @@
             // 
             // galleryWeightedLegendPositionItem1
             // 
-            this.galleryWeightedLegendPositionItem1.AllowDrawArrow = true;
             // 
             // 
             // 
@@ -2819,6 +2815,7 @@
             this.itemOperationRibbonPageGroup1.ItemLinks.Add(this.removeDataItemsBarItem1);
             this.itemOperationRibbonPageGroup1.ItemLinks.Add(this.transposeItemBarItem1);
             this.itemOperationRibbonPageGroup1.Name = "itemOperationRibbonPageGroup1";
+            this.itemOperationRibbonPageGroup1.Visible = false;
             // 
             // dashboardDesignRibbonPageGroup1
             // 
@@ -3056,6 +3053,7 @@
             this.Size = new System.Drawing.Size(982, 533);
             this.Load += new System.EventHandler(this.DashboardDesignerUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dashboardBackstageViewControl1)).EndInit();
             this.dashboardBackstageViewControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarAndDockingControllerMain)).EndInit();
             this.backstageViewClientControl1.ResumeLayout(false);

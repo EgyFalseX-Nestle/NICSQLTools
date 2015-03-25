@@ -6,6 +6,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using System.Data;
 using DevExpress.XtraTreeList.Nodes;
+using System.Text;
 
 namespace NICSQLTools.Views.Permission
 {
@@ -14,6 +15,9 @@ namespace NICSQLTools.Views.Permission
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(RuleDetailsUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
+        NICSQLTools.Views.Main.rtfTextViewerFrm FrmViewer;
+        NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter adpDS = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
         #endregion
         #region - Fun -
         public RuleDetailsUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
@@ -24,6 +28,8 @@ namespace NICSQLTools.Views.Permission
         void LoadRulesList()
         {
             rules_LUETableAdapter.Fill(dsQry.Rules_LUE);
+            XPSCSDS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
+            gridControlMain.DataSource = XPSCSDS;
         }
         public static void LoadDefaultNodes(DevExpress.XtraTreeList.TreeList Tree, NICSQLTools.Views.Main.MainTilesFrm MainFrm)
         {
@@ -121,12 +127,32 @@ namespace NICSQLTools.Views.Permission
                 bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             
         }
+        private void ShowInfo(int dsID)
+        {
+            FrmViewer = new Main.rtfTextViewerFrm(string.Empty);
+            FrmViewer.WindowState = FormWindowState.Maximized;
+
+            object obj = adpDS.GetDesc(dsID);
+            if (obj == null || obj.ToString() == string.Empty)
+            {
+                MsgDlg.Show("No Help Found  ...", MsgDlg.MessageType.Info);
+                FrmViewer.TextData = string.Empty;
+            }
+            else
+            {
+                byte[] data = Classes.Managers.DataManager.DecompressFile((byte[])obj).ToArray();
+                FrmViewer.TextData = Encoding.Unicode.GetString(data);
+                FrmViewer.ShowDialog();
+            }
+        }
+
         #endregion
         #region -  EventWhnd - 
         private void ProductEditorUC_Load(object sender, EventArgs e)
         {
             LoadRulesList();
             ActivateRules();
+            
         }
         private void bbiRule_EditValueChanged(object sender, EventArgs e)
         {
@@ -137,9 +163,24 @@ namespace NICSQLTools.Views.Permission
                 {
                     LoadDefaultNodes(TLItems, (NICSQLTools.Views.Main.MainTilesFrm)Parent.Parent.Parent);
                     LoadUserData(Convert.ToInt32(bbiRule.EditValue));
+
+                    LSMSCategory.QueryableSource = from q in dsLinq.vAppDSCategories select q;
+                    treeListMain.BestFitColumns();
                 }));
                 SplashScreenManager.CloseForm();
             });
+        }
+        private void treeListMain_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
+        {
+            NICSQLTools.Data.Linq.vAppDSCategory ds = (NICSQLTools.Data.Linq.vAppDSCategory)treeListMain.GetDataRecordByNode(treeListMain.FocusedNode);
+            //LSMSDatasource.QueryableSource = from q in dsLinq.vAppDatasource_LUEs where q.DSCategoryId == ds.DSCategoryId select q;
+            //appRuleDatasourceForRuleTableAdapter.Fill(dsData.AppRuleDatasourceForRule, Convert.ToInt32(bbiRule.EditValue), ds.DSCategoryId);
+            XPSCSDS.FixedFilterString = "[DSCategoryId] = " + ds.DSCategoryId;
+            gridViewMain.BestFitColumns();
+        }
+        private void treeListMain_AfterExpand(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        {
+            treeListMain.BestFitColumns();
         }
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -186,6 +227,17 @@ namespace NICSQLTools.Views.Permission
                 return;
             LoadRulesList();
             bbiRule_EditValueChanged(bbiRule, EventArgs.Empty);
+        }
+        private void repositoryItemButtonEditDSInfo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //NICSQLTools.Data.dsData.AppRuleDatasourceForRuleRow row = (NICSQLTools.Data.dsData.AppRuleDatasourceForRuleRow)((DataRowView)gridViewMain.GetRow(gridViewMain.FocusedRowHandle)).Row;
+            //ShowInfo(row.DatasourceID);
+        }
+        private void gridViewMain_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)(gridViewMain.GetRow(e.RowHandle));
+
+            MessageBox.Show(row.GetMemberValue("EnableRule").ToString());
         }
         #endregion
 

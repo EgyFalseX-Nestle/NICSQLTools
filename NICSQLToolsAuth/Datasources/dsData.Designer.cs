@@ -281,14 +281,14 @@ namespace NICSQLToolsAuth.Datasources.dsDataTableAdapters {
                 "ssage = @AuthenticationApproveMessage\r\nWHERE        (AuthenticationId = @Authent" +
                 "icationId)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.Text;
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AuthenticationApproveMessage", global::System.Data.SqlDbType.Image, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "AuthenticationApproveMessage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AuthenticationApproveMessage", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "AuthenticationApproveMessage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AuthenticationId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AuthenticationId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual byte[] AuthenticationRequestMessage_Get(int AuthenticationId) {
+        public virtual object AuthenticationRequestMessage_Get(int AuthenticationId) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
             command.Parameters[0].Value = ((int)(AuthenticationId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -310,7 +310,7 @@ namespace NICSQLToolsAuth.Datasources.dsDataTableAdapters {
                 return null;
             }
             else {
-                return ((byte[])(returnValue));
+                return ((object)(returnValue));
             }
         }
         
@@ -318,13 +318,13 @@ namespace NICSQLToolsAuth.Datasources.dsDataTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int AuthenticationApproveMessage_Set(byte[] AuthenticationApproveMessage, int AuthenticationId) {
+        public virtual int AuthenticationApproveMessage_Set(string AuthenticationApproveMessage, int AuthenticationId) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[1]));
             if ((AuthenticationApproveMessage == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[0].Value = ((byte[])(AuthenticationApproveMessage));
+                command.Parameters[0].Value = ((string)(AuthenticationApproveMessage));
             }
             command.Parameters[1].Value = ((int)(AuthenticationId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;

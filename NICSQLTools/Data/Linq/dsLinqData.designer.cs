@@ -57,9 +57,6 @@ namespace NICSQLTools.Data.Linq
     partial void InsertvAppDSCategory(vAppDSCategory instance);
     partial void UpdatevAppDSCategory(vAppDSCategory instance);
     partial void DeletevAppDSCategory(vAppDSCategory instance);
-    partial void InsertvAppProductDetail(vAppProductDetail instance);
-    partial void UpdatevAppProductDetail(vAppProductDetail instance);
-    partial void DeletevAppProductDetail(vAppProductDetail instance);
     partial void InsertPRD_BaseProduct(PRD_BaseProduct instance);
     partial void UpdatePRD_BaseProduct(PRD_BaseProduct instance);
     partial void DeletePRD_BaseProduct(PRD_BaseProduct instance);
@@ -167,14 +164,6 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<vAppDatasource_LUE> vAppDatasource_LUEs
-		{
-			get
-			{
-				return this.GetTable<vAppDatasource_LUE>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vAppDSCategory> vAppDSCategories
 		{
 			get
@@ -183,19 +172,27 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<vAppProductDetail> vAppProductDetails
-		{
-			get
-			{
-				return this.GetTable<vAppProductDetail>();
-			}
-		}
-		
 		public System.Data.Linq.Table<PRD_BaseProduct> PRD_BaseProducts
 		{
 			get
 			{
 				return this.GetTable<PRD_BaseProduct>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vAppDatasource_LUE> vAppDatasource_LUEs
+		{
+			get
+			{
+				return this.GetTable<vAppDatasource_LUE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vAppProductDetail> vAppProductDetails
+		{
+			get
+			{
+				return this.GetTable<vAppProductDetail>();
 			}
 		}
 	}
@@ -3693,231 +3690,6 @@ namespace NICSQLTools.Data.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDatasource_LUE")]
-	public partial class vAppDatasource_LUE
-	{
-		
-		private int _DatasourceID;
-		
-		private System.Nullable<int> _AppDatasourceTypeId;
-		
-		private string _DatasourceName;
-		
-		private string _DatasourceSPName;
-		
-		private System.Nullable<int> _UserIn;
-		
-		private System.Nullable<System.DateTime> _DateIn;
-		
-		private string _Desc;
-		
-		private string _RealName;
-		
-		private string _AppDatasourceTypeName;
-		
-		private System.Nullable<int> _DSCategoryId;
-		
-		private string _DSCategoryName;
-		
-		private string _DSCategoryDesc;
-		
-		public vAppDatasource_LUE()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", DbType="Int NOT NULL")]
-		public int DatasourceID
-		{
-			get
-			{
-				return this._DatasourceID;
-			}
-			set
-			{
-				if ((this._DatasourceID != value))
-				{
-					this._DatasourceID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", DbType="Int")]
-		public System.Nullable<int> AppDatasourceTypeId
-		{
-			get
-			{
-				return this._AppDatasourceTypeId;
-			}
-			set
-			{
-				if ((this._AppDatasourceTypeId != value))
-				{
-					this._AppDatasourceTypeId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceName", DbType="NVarChar(50)")]
-		public string DatasourceName
-		{
-			get
-			{
-				return this._DatasourceName;
-			}
-			set
-			{
-				if ((this._DatasourceName != value))
-				{
-					this._DatasourceName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceSPName", DbType="NVarChar(50)")]
-		public string DatasourceSPName
-		{
-			get
-			{
-				return this._DatasourceSPName;
-			}
-			set
-			{
-				if ((this._DatasourceSPName != value))
-				{
-					this._DatasourceSPName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
-		public System.Nullable<int> UserIn
-		{
-			get
-			{
-				return this._UserIn;
-			}
-			set
-			{
-				if ((this._UserIn != value))
-				{
-					this._UserIn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateIn
-		{
-			get
-			{
-				return this._DateIn;
-			}
-			set
-			{
-				if ((this._DateIn != value))
-				{
-					this._DateIn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(255)")]
-		public string Desc
-		{
-			get
-			{
-				return this._Desc;
-			}
-			set
-			{
-				if ((this._Desc != value))
-				{
-					this._Desc = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
-		public string RealName
-		{
-			get
-			{
-				return this._RealName;
-			}
-			set
-			{
-				if ((this._RealName != value))
-				{
-					this._RealName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
-		public string AppDatasourceTypeName
-		{
-			get
-			{
-				return this._AppDatasourceTypeName;
-			}
-			set
-			{
-				if ((this._AppDatasourceTypeName != value))
-				{
-					this._AppDatasourceTypeName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryId", DbType="Int")]
-		public System.Nullable<int> DSCategoryId
-		{
-			get
-			{
-				return this._DSCategoryId;
-			}
-			set
-			{
-				if ((this._DSCategoryId != value))
-				{
-					this._DSCategoryId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryName", DbType="NVarChar(50)")]
-		public string DSCategoryName
-		{
-			get
-			{
-				return this._DSCategoryName;
-			}
-			set
-			{
-				if ((this._DSCategoryName != value))
-				{
-					this._DSCategoryName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryDesc", DbType="NVarChar(255)")]
-		public string DSCategoryDesc
-		{
-			get
-			{
-				return this._DSCategoryDesc;
-			}
-			set
-			{
-				if ((this._DSCategoryDesc != value))
-				{
-					this._DSCategoryDesc = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDSCategory")]
 	public partial class vAppDSCategory : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -4051,140 +3823,6 @@ namespace NICSQLTools.Data.Linq
 					this._DSCategoryParentName = value;
 					this.SendPropertyChanged("DSCategoryParentName");
 					this.OnDSCategoryParentNameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppProductDetails")]
-	public partial class vAppProductDetail : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private double _Material_Number;
-		
-		private string _Material_Name;
-		
-		private string _Base_Base_Product;
-		
-		private string _Base_Group;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaterial_NumberChanging(double value);
-    partial void OnMaterial_NumberChanged();
-    partial void OnMaterial_NameChanging(string value);
-    partial void OnMaterial_NameChanged();
-    partial void OnBase_Base_ProductChanging(string value);
-    partial void OnBase_Base_ProductChanged();
-    partial void OnBase_GroupChanging(string value);
-    partial void OnBase_GroupChanged();
-    #endregion
-		
-		public vAppProductDetail()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Material Number]", Storage="_Material_Number", DbType="Float NOT NULL", IsPrimaryKey=true)]
-		public double Material_Number
-		{
-			get
-			{
-				return this._Material_Number;
-			}
-			set
-			{
-				if ((this._Material_Number != value))
-				{
-					this.OnMaterial_NumberChanging(value);
-					this.SendPropertyChanging();
-					this._Material_Number = value;
-					this.SendPropertyChanged("Material_Number");
-					this.OnMaterial_NumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Material Name]", Storage="_Material_Name", DbType="NVarChar(255)")]
-		public string Material_Name
-		{
-			get
-			{
-				return this._Material_Name;
-			}
-			set
-			{
-				if ((this._Material_Name != value))
-				{
-					this.OnMaterial_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Material_Name = value;
-					this.SendPropertyChanged("Material_Name");
-					this.OnMaterial_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Base Base Product]", Storage="_Base_Base_Product", DbType="NVarChar(255)")]
-		public string Base_Base_Product
-		{
-			get
-			{
-				return this._Base_Base_Product;
-			}
-			set
-			{
-				if ((this._Base_Base_Product != value))
-				{
-					this.OnBase_Base_ProductChanging(value);
-					this.SendPropertyChanging();
-					this._Base_Base_Product = value;
-					this.SendPropertyChanged("Base_Base_Product");
-					this.OnBase_Base_ProductChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Base Group]", Storage="_Base_Group", DbType="NVarChar(255)")]
-		public string Base_Group
-		{
-			get
-			{
-				return this._Base_Group;
-			}
-			set
-			{
-				if ((this._Base_Group != value))
-				{
-					this.OnBase_GroupChanging(value);
-					this.SendPropertyChanging();
-					this._Base_Group = value;
-					this.SendPropertyChanged("Base_Group");
-					this.OnBase_GroupChanged();
 				}
 			}
 		}
@@ -4412,6 +4050,294 @@ namespace NICSQLTools.Data.Linq
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppDatasource_LUE")]
+	public partial class vAppDatasource_LUE
+	{
+		
+		private int _DatasourceID;
+		
+		private System.Nullable<int> _AppDatasourceTypeId;
+		
+		private string _DatasourceName;
+		
+		private string _DatasourceSPName;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private string _RealName;
+		
+		private string _AppDatasourceTypeName;
+		
+		private System.Nullable<int> _DSCategoryId;
+		
+		private string _DSCategoryName;
+		
+		private string _DSCategoryDesc;
+		
+		public vAppDatasource_LUE()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceID", DbType="Int NOT NULL")]
+		public int DatasourceID
+		{
+			get
+			{
+				return this._DatasourceID;
+			}
+			set
+			{
+				if ((this._DatasourceID != value))
+				{
+					this._DatasourceID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeId", DbType="Int")]
+		public System.Nullable<int> AppDatasourceTypeId
+		{
+			get
+			{
+				return this._AppDatasourceTypeId;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeId != value))
+				{
+					this._AppDatasourceTypeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceName", DbType="NVarChar(50)")]
+		public string DatasourceName
+		{
+			get
+			{
+				return this._DatasourceName;
+			}
+			set
+			{
+				if ((this._DatasourceName != value))
+				{
+					this._DatasourceName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DatasourceSPName", DbType="NVarChar(50)")]
+		public string DatasourceSPName
+		{
+			get
+			{
+				return this._DatasourceSPName;
+			}
+			set
+			{
+				if ((this._DatasourceSPName != value))
+				{
+					this._DatasourceSPName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this._UserIn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this._DateIn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this._RealName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppDatasourceTypeName", DbType="NVarChar(50)")]
+		public string AppDatasourceTypeName
+		{
+			get
+			{
+				return this._AppDatasourceTypeName;
+			}
+			set
+			{
+				if ((this._AppDatasourceTypeName != value))
+				{
+					this._AppDatasourceTypeName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryId", DbType="Int")]
+		public System.Nullable<int> DSCategoryId
+		{
+			get
+			{
+				return this._DSCategoryId;
+			}
+			set
+			{
+				if ((this._DSCategoryId != value))
+				{
+					this._DSCategoryId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryName", DbType="NVarChar(50)")]
+		public string DSCategoryName
+		{
+			get
+			{
+				return this._DSCategoryName;
+			}
+			set
+			{
+				if ((this._DSCategoryName != value))
+				{
+					this._DSCategoryName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DSCategoryDesc", DbType="NVarChar(255)")]
+		public string DSCategoryDesc
+		{
+			get
+			{
+				return this._DSCategoryDesc;
+			}
+			set
+			{
+				if ((this._DSCategoryDesc != value))
+				{
+					this._DSCategoryDesc = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vAppProductDetails")]
+	public partial class vAppProductDetail
+	{
+		
+		private double _Material_Number;
+		
+		private string _Material_Name;
+		
+		private string _BaseProduct;
+		
+		private string _BaseGroup;
+		
+		public vAppProductDetail()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Material Number]", Storage="_Material_Number", DbType="Float NOT NULL")]
+		public double Material_Number
+		{
+			get
+			{
+				return this._Material_Number;
+			}
+			set
+			{
+				if ((this._Material_Number != value))
+				{
+					this._Material_Number = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Material Name]", Storage="_Material_Name", DbType="NVarChar(255)")]
+		public string Material_Name
+		{
+			get
+			{
+				return this._Material_Name;
+			}
+			set
+			{
+				if ((this._Material_Name != value))
+				{
+					this._Material_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseProduct", DbType="NVarChar(50)")]
+		public string BaseProduct
+		{
+			get
+			{
+				return this._BaseProduct;
+			}
+			set
+			{
+				if ((this._BaseProduct != value))
+				{
+					this._BaseProduct = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseGroup", DbType="NVarChar(50)")]
+		public string BaseGroup
+		{
+			get
+			{
+				return this._BaseGroup;
+			}
+			set
+			{
+				if ((this._BaseGroup != value))
+				{
+					this._BaseGroup = value;
+				}
 			}
 		}
 	}

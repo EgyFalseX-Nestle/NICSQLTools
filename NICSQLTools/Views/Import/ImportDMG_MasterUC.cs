@@ -166,7 +166,7 @@ _______________________________________________
                 if (row["Actual Invoiced Quan"].ToString() != string.Empty)
                     SqlRow.Actual_Invoiced_Quan = Convert.ToDouble(row["Actual Invoiced Quan"]);
                 if (row["Condition value"].ToString() != string.Empty)
-                    SqlRow.Actual_Invoiced_Quan = Convert.ToDouble(row["Condition value"]);
+                    SqlRow.Condition_value = Convert.ToDouble(row["Condition value"]);
                 SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
                 SqlRow.DateIn = UserIn;
 

@@ -43,7 +43,6 @@ namespace NICSQLTools
                     Properties.Settings.Default["IC_DBConnectionString"] = FXFW.SqlDB.SqlConStr;
                     DevExpress.Xpo.XpoDefault.ConnectionString = FXFW.SqlDB.SqlConStr;
                     Init();
-
                     //Application.Run(new TestFrm());
                     Application.Run(new NICSQLTools.Views.Main.MainTilesFrm());
                 }
@@ -53,7 +52,6 @@ namespace NICSQLTools
                 NICSQLTools.Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId);
                 MsgDlg.Show(ex.Message, MsgDlg.MessageType.Fatal, ex);
             }
-            
         }
         public static void Init()
         {

@@ -17,23 +17,27 @@ namespace NICSQLToolsAuth
         }
         private void btnYes_Click(object sender, EventArgs e)
         {
+            if (txtId.Text.Trim() == string.Empty)
+                return;
             ApproveAuthentication(Convert.ToInt32(txtId.Text), true);
             MessageBox.Show("Done ...", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void btnNo_Click(object sender, EventArgs e)
         {
+            if (txtId.Text.Trim() == string.Empty)
+                return;
             ApproveAuthentication(Convert.ToInt32(txtId.Text), false);
             MessageBox.Show("Done ...", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public void ApproveAuthentication(int AuthenticationId, bool Approve)
         {
-            byte[] bytRequest = (byte[])adpQry.AuthenticationRequestMessage_Get(Convert.ToInt32(AuthenticationId));
-            string CPUID = Encoding.Unicode.GetString(bytRequest);
-            string ApproveMessage = FXFW.License.LicenseKeyGeneratorFrm.LncKey(CPUID + "NICSQLTools");
+            string bytRequest = adpQry.AuthenticationRequestMessage_Get(Convert.ToInt32(AuthenticationId)).ToString();
+            string BiosId = bytRequest;
+            string ApproveMessage = FXFW.License.LicenseKeyGeneratorFrm.LncKey(BiosId + "NICSQLTools");
             if (Approve)
-                adpQry.AuthenticationApproveMessage_Set(Encoding.Unicode.GetBytes(ApproveMessage), AuthenticationId);
+                adpQry.AuthenticationApproveMessage_Set(ApproveMessage, AuthenticationId);
             else
-                adpQry.AuthenticationApproveMessage_Set(Encoding.Unicode.GetBytes("FalseX"), AuthenticationId);
+                adpQry.AuthenticationApproveMessage_Set("FalseX", AuthenticationId);
         }
 
 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lsms = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.qryCustomerInfoUC1 = new NICSQLTools.Views.Qry.QryCustomerInfoUC(null);
+            this.txt = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.lsms)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,22 +38,23 @@
             this.lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail);
             this.lsms.KeyExpression = "[Material_Number]";
             // 
-            // qryCustomerInfoUC1
+            // txt
             // 
-            this.qryCustomerInfoUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.qryCustomerInfoUC1.Location = new System.Drawing.Point(0, 0);
-            this.qryCustomerInfoUC1.Name = "qryCustomerInfoUC1";
-            this.qryCustomerInfoUC1.Size = new System.Drawing.Size(784, 393);
-            this.qryCustomerInfoUC1.TabIndex = 0;
+            this.txt.Location = new System.Drawing.Point(12, 12);
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(760, 369);
+            this.txt.TabIndex = 0;
+            this.txt.Text = "";
             // 
             // TestFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 393);
-            this.Controls.Add(this.qryCustomerInfoUC1);
+            this.Controls.Add(this.txt);
             this.Name = "TestFrm";
             this.Text = "TestFrm";
+            this.Load += new System.EventHandler(this.TestFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lsms)).EndInit();
             this.ResumeLayout(false);
 
@@ -62,7 +63,7 @@
         #endregion
 
         private DevExpress.Data.Linq.LinqServerModeSource lsms;
-        private Views.Qry.QryCustomerInfoUC qryCustomerInfoUC1;
+        private System.Windows.Forms.RichTextBox txt;
 
 
 

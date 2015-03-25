@@ -17,9 +17,9 @@ namespace NICSQLTools
         {
             InitializeComponent();
 
-            NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new Data.Linq.dsLinqDataDataContext();
-            lsms.QueryableSource = from q in ds.vAppProductDetails select q;
-
+            //NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new Data.Linq.dsLinqDataDataContext();
+            //lsms.QueryableSource = from q in ds.vAppProductDetails select q;
+            //////////////////////
 
             //checkedComboBoxEdit1.Properties.DataSource = lsms;
             //checkedComboBoxEdit1.Properties.DisplayMember = "Material Number";
@@ -34,6 +34,15 @@ namespace NICSQLTools
             //this.checkedComboBoxEdit1.EditValue = "";
             //this.checkedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             
+        }
+
+        private void TestFrm_Load(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txt.LoadFile((ofd.FileName));
+            }
         }
 
     }

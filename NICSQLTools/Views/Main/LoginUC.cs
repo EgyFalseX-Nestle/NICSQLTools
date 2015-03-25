@@ -52,6 +52,12 @@ namespace NICSQLTools.Views.Main
             if (UserManager.defaultInstance.Login(tbUsername.EditValue.ToString(), tbPassword.EditValue.ToString()))
             {
                 SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormCaption("Updating .......");
+                //Check If Application Version Is no longer able to run or update
+                if (DataManager.VersionExpired())
+                {
+                    MsgDlg.Show("Application is too old to perform an update, please ask for new version ...", MsgDlg.MessageType.Error);
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
+                }
                 DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());// Perform Update Client If Exists
                 if (UserManager.defaultInstance.User.UserId == 1)
                 {
@@ -70,8 +76,8 @@ namespace NICSQLTools.Views.Main
                 if (Classes.Authentication.RequestAuthentication())// Check Authentication
                 {
                     SaveLoginInfoToFile();// Save UserName Into File For Auto Load
-                    _parent.ActivateRules();
                     _parent.LoadLayout();
+                    _parent.ActivateRules();
                     _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);
                     _parent.AddPrivateButtions();//Add User Private Buttons
                 }

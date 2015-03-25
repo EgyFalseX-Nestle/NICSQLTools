@@ -121,56 +121,26 @@ namespace NICSQLTools.Classes.Managers
                 return;
             }
         }
-        public static void PerformUpdate()
+        public static bool VersionExpired()
         {
-            int currentVersion = Convert.ToInt32(System.Windows.Forms.Application.ProductVersion.Replace(".", ""));
-            int? serverVersion = adpQry.GetAppVersion();
-
             try
             {
-                if (serverVersion == null)
-                {
-                    if (!Classes.Managers.UserManager.defaultInstance.User.IsAdmin)
-                        return;
-                    if (System.Windows.Forms.MsgDlg.Show("لا يوجد محتوي للبرنامج علي الخادم. هل ترغب في ارسال هذه النسخه للخادم؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
-                        return;
-                    byte[] data = File.ReadAllBytes(System.Windows.Forms.Application.ExecutablePath);
-                    adpQry.SetAppData(data, currentVersion);
-
-                }
+                int currentVersion = Convert.ToInt32(System.Windows.Forms.Application.ProductVersion.Replace(".", ""));
+                object MinAppVersion = adpQry.GetAppOptionValue(Uti.Types.AppOptionName.MinAppVersion.ToString());
+                if (MinAppVersion == null)
+                    return true;
                 else
                 {
-                    if (serverVersion == currentVersion)
-                        return;
-                    else if (serverVersion < currentVersion)
-                    {
-                        if (!Classes.Managers.UserManager.defaultInstance.User.IsAdmin)
-                            return;
-                        if (System.Windows.Forms.MsgDlg.Show("هذه الاصداره جديده عن الموجوده علي الخادم, هل ترغب في تحديث الخادم؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
-                            return;
-                        byte[] data = File.ReadAllBytes(System.Windows.Forms.Application.ExecutablePath);
-                        //Compress File
-                        MemoryStream ms = CompressFile(data);
-                        adpQry.SetAppData(ms.ToArray(), currentVersion);
-                    }
+                    if (currentVersion < Convert.ToInt32(MinAppVersion))
+                        return true;
                     else
-                    {
-                        if (System.Windows.Forms.MsgDlg.Show("يوجد اصداره جديده من البرنامج علي الخادم, هل ترغب في التحديث؟", System.Windows.Forms.MsgDlg.MessageType.Question) == System.Windows.Forms.DialogResult.No)
-                            return;
-                        byte[] data = adpQry.GetAppData();
-                        //Decompress File
-                        MemoryStream ms = DecompressFile(data);
-                        FileStream fs = File.Create(Program.updatePath);
-                        fs.Write(ms.ToArray(), 0, Convert.ToInt32(ms.Length));
-                        fs.Close();
-                        System.Diagnostics.Process.Start(Program.updatePath);
-                        System.Diagnostics.Process.GetCurrentProcess().Kill();
-                    }
+                        return false;
                 }
             }
             catch (Exception ex)
             {
-                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+                Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId);
+                return true;
             }
         }
         public static Dictionary<string, int> GetCurrentAssemblyFiles()
@@ -220,7 +190,7 @@ namespace NICSQLTools.Classes.Managers
             Asm.Add("DevExpress.XtraRichEdit.v14.2.Extensions.dll", 142415030);
             Asm.Add("DevExpress.XtraTreeList.v14.2.dll", 142415030);
             Asm.Add("DevExpress.XtraVerticalGrid.v14.2.dll", 142415030);
-            Asm.Add("FXFW.dll", 1002);
+            Asm.Add("FXFW.dll", 1003);
             //Asm.Add("Interop.DAO.dll", 5000);
             Asm.Add("Ionic.Zip.dll", 1918);
             Asm.Add("log4net.dll", 12110);

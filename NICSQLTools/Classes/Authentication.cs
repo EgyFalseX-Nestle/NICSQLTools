@@ -14,36 +14,38 @@ namespace NICSQLTools.Classes
             bool output = false;
             try
             {
-                string MachineID = FXFW.License.LicenseKeyFrm.CUPID();
-                byte[] bytRequest = Encoding.Unicode.GetBytes(MachineID);
-                object AuthenticationId = Classes.Managers.DataManager.adpQry.AuthenticationId_Get(bytRequest);
-
+                string MachineID = FXFW.License.LicenseKeyFrm.BiosId();
+                
+                //byte[] bytRequest = Encoding.Unicode.GetBytes(MachineID);
+                object AuthenticationId = Classes.Managers.DataManager.adpQry.AuthenticationId_Get(MachineID);
+                Logger.InfoFormat("MachineId : {0} AuthId : {1}", MachineID, AuthenticationId);
                 if (AuthenticationId == null)
                 {
                     //Test Mode........
-                    Classes.Managers.DataManager.adpQry.AuthenticationRequest(bytRequest, Classes.Managers.UserManager.defaultInstance.User.UserId);
-                    ApproveAuthentication((int)Classes.Managers.DataManager.adpQry.AuthenticationId_Get(bytRequest));
+                    //Classes.Managers.DataManager.adpQry.AuthenticationRequest(bytRequest, Classes.Managers.UserManager.defaultInstance.User.UserId);
+                    //ApproveAuthentication((int)Classes.Managers.DataManager.adpQry.AuthenticationId_Get(bytRequest));
                     //////////////////////////
 
-                    //if (MsgDlg.Show(String.Format("Your PC Is not Authorized To Run This Application{0}Wanna Ask For Approve ?", Environment.NewLine), MsgDlg.MessageType.Question) == DialogResult.Yes)
-                    //{//Yes
-                    //    Classes.Managers.DataManager.adpQry.AuthenticationRequest(bytRequest, Classes.Managers.UserManager.defaultInstance.User.UserId);
-                    //    MsgDlg.Show(String.Format("Your Request Send To Administrator, Please Wait For Approval.{0} Application Will Shutdown", Environment.NewLine), MsgDlg.MessageType.Success);
-                    //}
-                    //System.Diagnostics.Process.GetCurrentProcess().Kill();
+                    if (MsgDlg.Show(String.Format("Your PC Is not Authorized To Run This Application{0}Wanna Ask For Approve ?", Environment.NewLine), MsgDlg.MessageType.Question) == DialogResult.Yes)
+                    {//Yes
+                        Classes.Managers.DataManager.adpQry.AuthenticationRequest(MachineID, Classes.Managers.UserManager.defaultInstance.User.UserId);
+                        MsgDlg.Show(String.Format("Your Request Send To Administrator, Please Wait For Approval.{0} Application Will Shutdown", Environment.NewLine), MsgDlg.MessageType.Success);
+                    }
+                    System.Diagnostics.Process.GetCurrentProcess().Kill();
                 }
                 else// Have Request
                 {
                     object bytApprove = Classes.Managers.DataManager.adpQry.AuthenticationApproveSearch(Convert.ToInt32(AuthenticationId));
-                    if (bytApprove == null)// Request In Pending State
+                    Logger.InfoFormat("ApproveMsg : ", bytApprove);
+                    if (bytApprove == null || bytApprove.ToString() == string.Empty)// Request In Pending State
                     {
                         MsgDlg.Show(String.Format("Administrator Did Not Answer Your Request Yet, Please Wait For Approval.{0}Application Will Shutdown", Environment.NewLine), MsgDlg.MessageType.Info);
                         System.Diagnostics.Process.GetCurrentProcess().Kill();
                     }
                     else// Request Have Approval
                     {
-                        string Data = Encoding.Unicode.GetString((byte[])bytApprove);
-                        if (FXFW.License.LicenseKeyFrm.Compare2(Data, Application.ProductName))
+                        string Data = bytApprove.ToString();
+                        if (FXFW.License.LicenseKeyFrm.CompareBios(Data, Application.ProductName))
                             output = true;
                         else
                             output = false;
@@ -61,10 +63,10 @@ namespace NICSQLTools.Classes
         {
             try
             {
-                byte[] bytRequest = (byte[])Classes.Managers.DataManager.adpQry.AuthenticationRequestMessage_Get(Convert.ToInt32(AuthenticationId));
-                string CPUID = Encoding.Unicode.GetString(bytRequest);
-                string ApproveMessage = FXFW.License.LicenseKeyGeneratorFrm.LncKey(CPUID + Application.ProductName);
-                Classes.Managers.DataManager.adpQry.AuthenticationApproveMessage_Set(Encoding.Unicode.GetBytes(ApproveMessage), AuthenticationId);
+                string bytRequest = Classes.Managers.DataManager.adpQry.AuthenticationRequestMessage_Get(Convert.ToInt32(AuthenticationId)).ToString();
+                string BiosId = bytRequest;
+                string ApproveMessage = FXFW.License.LicenseKeyGeneratorFrm.LncKey(BiosId + Application.ProductName);
+                Classes.Managers.DataManager.adpQry.AuthenticationApproveMessage_Set(ApproveMessage, AuthenticationId);
                 return true;
             }
             catch (Exception ex)

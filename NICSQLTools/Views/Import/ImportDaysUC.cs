@@ -147,7 +147,7 @@ _______________________________________________
                 {
                     if (File.Exists(lbcFilePath.Items[i].ToString()))
                     {
-                        ChangeProgressCaption("Loading Excel File [" + (i + 1) + "] Contains [1/5]");
+                        ChangeProgressCaption("Loading Excel File [" + (i + 1) + "] Contains [1/6]");
                         DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                         {
@@ -157,15 +157,17 @@ _______________________________________________
                         dtExcel.Merge(dtPart);
                     }
                 }
-                ChangeProgressCaption("Loading Customers Informations [2/5]");
+                ChangeProgressCaption("Loading Distributor Routes Informations [2/6]");
+                distributorRouteTableAdapter.Fill(dsQry.DistributorRoute);
+                ChangeProgressCaption("Loading Customers Informations [3/6]");
                 //_0_6_Customer_HNTableAdapter.FillOnlyCode(dsData._0_6_Customer_HN);
                 LoadCustomerCodes(ref dsData);
-                ChangeProgressCaption("Loading Routes Informations [3/5]");
+                ChangeProgressCaption("Loading Routes Informations [4/6]");
                 _0_3__Route_DetailsTableAdapter.Fill(dsData._0_3__Route_Details);
                 //LoadRouteCodes(ref dsData);
-                ChangeProgressCaption("Loading Products Informations [4/5]");
+                ChangeProgressCaption("Loading Products Informations [5/6]");
                 _0_4__Product_DetailsTableAdapter.Fill(dsData._0_4__Product_Details);
-                ChangeProgressCaption("Loading Plants Informations [5/5]");
+                ChangeProgressCaption("Loading Plants Informations [6/6]");
                 plantsTableAdapter.Fill(dsQry.Plants);
             }));
 
@@ -258,6 +260,7 @@ _______________________________________________
                 SqlRow.Reference_Document_N = row["Reference Document N"].ToString();
                 //Set Route and Fix 999999 and 000001
                 SqlRow.Route = row["Route"].ToString();
+
                 if (SqlRow.Route == DataManager.Route999999 || SqlRow.Route == string.Empty)
                 {
                     if (SqlRow.Reference_Document_N.Trim().Substring(0, 2) == "CS")//try to get it from "Reference Document N"
@@ -272,10 +275,17 @@ _______________________________________________
                     }
                 }
                 //Set _Route___Sold
-                if (SqlRow.Route == DataManager.Route000001)
+                if (DataManager.Route000001 == row["Route"].ToString().Trim())
                     SqlRow._Route___Sold = SqlRow._Sold_to_party;
                 else
-                    SqlRow._Route___Sold = SqlRow.Route;
+                {//Code become Dist and still served with his old route not 000001
+                    NICSQLTools.Data.dsQry.DistributorRouteRow distRow = dsQry.DistributorRoute.FindByDistributorRoute(SqlRow.Route);
+                    if (distRow != null)
+                        SqlRow._Route___Sold = distRow.Customer;
+                    else
+                        SqlRow._Route___Sold = SqlRow.Route;
+                }
+                
                 
                 SqlRow.Sales_unit = row["Sales unit"].ToString();
 
@@ -289,10 +299,10 @@ _______________________________________________
                     CustomerRow.Customer_Type_2 = Customer.CustomerType2IdDirect;
                     CustomerRow.Customer_Group = Customer.CustomerGroupIdDirect;
                     CustomerRow.Subchannel = Customer.SubchannelIdDirect;
-                    CustomerRow.Customer_type_Code = Customer.CustomerTypeCodeDirect;
+                    //CustomerRow.Customer_type_Code = Customer.CustomerTypeCodeDirect;
                     dsData._0_6_Customer_HN.Add_0_6_Customer_HNRow(CustomerRow);
                     CustomerRow.EndEdit();
-                    _0_6_Customer_HNTableAdapter.Update(CustomerRow);//Update Customers
+                    _0_6_Customer_HNTableAdapter.InsertQueryLite(CustomerRow.Customer_T, CustomerRow.Customer_Group, CustomerRow.Customer_Type, CustomerRow.Customer_Type_2, Customer.SubchannelIdDirect);//Update Customers
                     AddLog("[New Customer Found] : " + row["Sold-to party"], true);
                     NewCustomerFounded++;
                 }
@@ -472,8 +482,6 @@ _______________________________________________
         }
 
         #endregion
-
-        
 
     }
 }

@@ -34,6 +34,7 @@ namespace NICSQLTools
                 bulkCopy.ColumnMappings.Add("Route & Sold", "Route & Sold"); bulkCopy.ColumnMappings.Add("yeard", "yeard");
                 bulkCopy.ColumnMappings.Add("New Quanteite", "New Quanteite");
                 bulkCopy.ColumnMappings.Add("UserIn", "UserIn");
+
                 //bulkCopy.ColumnMappings.Add("Month", "Month");
                 //bulkCopy.ColumnMappings.Add("Sales Organization", "Sales Organization");bulkCopy.ColumnMappings.Add("Plant", "Plant"); 
                 //bulkCopy.ColumnMappings.Add("Sales district", "Sales district"); bulkCopy.ColumnMappings.Add("Company Code", "Company Code");

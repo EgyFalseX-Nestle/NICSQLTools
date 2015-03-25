@@ -28,7 +28,7 @@ namespace NICSQLTools
         }
         public static string SubchannelIdDirect
         {
-            get { return "Direct"; }
+            get { return "Grocery"; }
         }
         public static int CustomerTypeCodeDirect
         {

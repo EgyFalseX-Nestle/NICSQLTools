@@ -44,7 +44,6 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gcDel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colRouteNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDistributionChannel1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -187,7 +186,6 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gcDel,
             this.colRouteNumber,
             this.colDistributionChannel1,
             this.colRouteNumbersystem,
@@ -204,7 +202,7 @@
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new";
-            this.gridViewMain.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
+            this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewMain.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.SegmentedFade;
             this.gridViewMain.OptionsImageLoad.AsyncLoad = true;
@@ -217,18 +215,6 @@
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
             this.gridViewMain.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
-            // 
-            // gcDel
-            // 
-            this.gcDel.AppearanceCell.Options.UseTextOptions = true;
-            this.gcDel.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcDel.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcDel.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcDel.Caption = "Delete";
-            this.gcDel.ColumnEdit = this.repositoryItemButtonEditDelete;
-            this.gcDel.Name = "gcDel";
-            this.gcDel.OptionsColumn.TabStop = false;
-            this.gcDel.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             // 
             // repositoryItemButtonEditDelete
             // 
@@ -495,7 +481,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEditSalesDistrict3Id;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gcDel;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDelete;
     }
 }

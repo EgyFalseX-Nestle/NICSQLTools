@@ -39,7 +39,6 @@
             this.colMaterialName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaterialNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gcDel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditDel = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colBaseProductId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditBaseProductId = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
@@ -83,6 +82,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.colConsumerSegment = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDel)).BeginInit();
@@ -127,14 +127,14 @@
             this.colBrand.FieldName = "Brand";
             this.colBrand.Name = "colBrand";
             this.colBrand.Visible = true;
-            this.colBrand.VisibleIndex = 4;
+            this.colBrand.VisibleIndex = 3;
             // 
             // colMaterialName
             // 
             this.colMaterialName.FieldName = "Material Name";
             this.colMaterialName.Name = "colMaterialName";
             this.colMaterialName.Visible = true;
-            this.colMaterialName.VisibleIndex = 2;
+            this.colMaterialName.VisibleIndex = 1;
             this.colMaterialName.Width = 88;
             // 
             // colMaterialNumber
@@ -142,13 +142,12 @@
             this.colMaterialNumber.FieldName = "Material Number";
             this.colMaterialNumber.Name = "colMaterialNumber";
             this.colMaterialNumber.Visible = true;
-            this.colMaterialNumber.VisibleIndex = 1;
+            this.colMaterialNumber.VisibleIndex = 0;
             this.colMaterialNumber.Width = 98;
             // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gcDel,
             this.colMaterialNumber,
             this.colMaterialName,
             this.colBrand,
@@ -176,11 +175,11 @@
             this.colMaterialName2,
             this.colMaterialStatus,
             this.colBrandRang,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.colConsumerSegment});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new";
-            this.gridViewMain.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
             this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewMain.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.SegmentedFade;
@@ -194,20 +193,6 @@
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
             this.gridViewMain.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
-            // 
-            // gcDel
-            // 
-            this.gcDel.AppearanceCell.Options.UseTextOptions = true;
-            this.gcDel.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcDel.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcDel.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcDel.Caption = "Delete";
-            this.gcDel.ColumnEdit = this.repositoryItemButtonEditDel;
-            this.gcDel.Name = "gcDel";
-            this.gcDel.OptionsColumn.TabStop = false;
-            this.gcDel.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
-            this.gcDel.Visible = true;
-            this.gcDel.VisibleIndex = 0;
             // 
             // repositoryItemButtonEditDel
             // 
@@ -225,7 +210,7 @@
             this.colBaseProductId.FieldName = "BaseProductId";
             this.colBaseProductId.Name = "colBaseProductId";
             this.colBaseProductId.Visible = true;
-            this.colBaseProductId.VisibleIndex = 5;
+            this.colBaseProductId.VisibleIndex = 4;
             this.colBaseProductId.Width = 83;
             // 
             // repositoryItemGridLookUpEditBaseProductId
@@ -450,7 +435,7 @@
             this.colMaterialName2.FieldName = "Material Name 2";
             this.colMaterialName2.Name = "colMaterialName2";
             this.colMaterialName2.Visible = true;
-            this.colMaterialName2.VisibleIndex = 3;
+            this.colMaterialName2.VisibleIndex = 2;
             this.colMaterialName2.Width = 97;
             // 
             // colMaterialStatus
@@ -590,6 +575,14 @@
             this.popupMenuMain.Manager = this.barManagerMain;
             this.popupMenuMain.Name = "popupMenuMain";
             // 
+            // colConsumerSegment
+            // 
+            this.colConsumerSegment.FieldName = "Consumer Segment";
+            this.colConsumerSegment.Name = "colConsumerSegment";
+            this.colConsumerSegment.Visible = true;
+            this.colConsumerSegment.VisibleIndex = 5;
+            this.colConsumerSegment.Width = 119;
+            // 
             // ProductEditorUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -668,7 +661,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gcDel;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDel;
+        private DevExpress.XtraGrid.Columns.GridColumn colConsumerSegment;
     }
 }

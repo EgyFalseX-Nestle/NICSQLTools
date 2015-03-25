@@ -6,6 +6,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using System.Data;
 using NICSQLTools.Classes.Managers;
+using NICSQLTools.Views.Main;
 
 namespace NICSQLTools.Views.Data
 {
@@ -16,12 +17,14 @@ namespace NICSQLTools.Views.Data
         private NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext() { ObjectTrackingEnabled = false };
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.dsDataTableAdapters.AppDSCategoryTableAdapter adpCategory = new NICSQLTools.Data.dsDataTableAdapters.AppDSCategoryTableAdapter();
+        rtfTextEditorFrm Frm;
         #endregion
         #region - Functions -
         public AppDatasourceEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             _elementRule = RuleElement;
+            Frm = new rtfTextEditorFrm(string.Empty);
         }
         void LoadData()
         {
@@ -200,13 +203,52 @@ namespace NICSQLTools.Views.Data
                 return;
             gridViewParam.DeleteRow(gridViewParam.FocusedRowHandle);
         }
+        private void repositoryItemButtonEditDesc_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Ellipsis)
+            {
+                gridViewDS.ShowLoadingPanel();
+                System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+                {
+                    try
+                    {
+                        DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewDS.GetRow(gridViewDS.FocusedRowHandle));
+                        object obj = row.GetMemberValue("Desc");
+                        if (obj == null)
+                            obj = string.Empty;
+                        else
+                        {
+                            obj = System.Text.Encoding.Unicode.GetString(DataManager.DecompressFile((byte[])obj).ToArray());
+                        }
+                        Invoke(new MethodInvoker(() =>
+                        {
+                            Frm = new rtfTextEditorFrm(obj.ToString());
+                            if (Frm.ShowDialog() == DialogResult.OK)
+                            {
+                                byte[] Data;
+                                if (Frm.TextData != string.Empty)
+                                    Data = DataManager.CompressFile(System.Text.Encoding.Unicode.GetBytes(Frm.TextData)).ToArray();
+                                else
+                                    Data = null;
+                                row.SetMemberValue("Desc", Data);
+                                row.Save();
+                            }
+                        }));
+                    }
+                    catch (Exception ex)
+                    {
+                        MsgDlg.Show(ex.Message, MsgDlg.MessageType.Error, ex);
+                        Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+                    }
+                    Invoke(new MethodInvoker(() => { gridViewDS.HideLoadingPanel(); }));
+                });
+                
+            }
+        }
+
 
 
         #endregion
-
-        
-
-        
         
     }
 }

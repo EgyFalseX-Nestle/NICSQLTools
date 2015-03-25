@@ -61,6 +61,7 @@
             this.qryBillDocTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.QryBillDocTableAdapter();
             this.dsQry = new NICSQLTools.Data.dsQry();
             this.plantsTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.PlantsTableAdapter();
+            this.distributorRouteTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.DistributorRouteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).BeginInit();
@@ -400,6 +401,10 @@
             // 
             this.plantsTableAdapter.ClearBeforeFill = true;
             // 
+            // distributorRouteTableAdapter
+            // 
+            this.distributorRouteTableAdapter.ClearBeforeFill = true;
+            // 
             // ImportDaysUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,5 +470,6 @@
         private NICSQLTools.Data.dsQryTableAdapters.PlantsTableAdapter plantsTableAdapter;
         private DevExpress.XtraWaitForm.ProgressPanel PnlProg;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPnlProg;
+        private NICSQLTools.Data.dsQryTableAdapters.DistributorRouteTableAdapter distributorRouteTableAdapter;
     }
 }

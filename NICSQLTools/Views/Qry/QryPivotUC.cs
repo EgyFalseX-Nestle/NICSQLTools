@@ -284,16 +284,16 @@ namespace NICSQLTools.Views.Qry
         {
             NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
             DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
-            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Base_Base_Product]";
-            lsms.QueryableSource = from q in ds.vAppProductDetails where q.Base_Base_Product != null group q by q.Base_Base_Product into g select new { Base_Base_Product = g.Key };
+            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[BaseProduct]";
+            lsms.QueryableSource = from q in ds.vAppProductDetails where q.BaseProduct != null group q by q.BaseProduct into g select new { BaseProduct = g.Key };
 
             CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
             ccbe.Properties.AllowMultiSelect = true;
             ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             ccbe.Properties.DataSource = lsms;
-            ccbe.Properties.DisplayMember = "Base_Base_Product";
+            ccbe.Properties.DisplayMember = "BaseProduct";
             ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            ccbe.Properties.ValueMember = "Base_Base_Product";
+            ccbe.Properties.ValueMember = "BaseProduct";
 
             return ccbe;
         }
@@ -301,16 +301,16 @@ namespace NICSQLTools.Views.Qry
         {
             NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
             DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
-            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Base_Group]";
-            lsms.QueryableSource = from q in ds.vAppProductDetails where q.Base_Group != null group q by q.Base_Group into g select new { Base_Group = g.Key };
+            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[BaseGroup]";
+            lsms.QueryableSource = from q in ds.vAppProductDetails where q.BaseGroup != null group q by q.BaseGroup into g select new { BaseGroup = g.Key };
 
             CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
             ccbe.Properties.AllowMultiSelect = true;
             ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             ccbe.Properties.DataSource = lsms;
-            ccbe.Properties.DisplayMember = "Base_Group";
+            ccbe.Properties.DisplayMember = "BaseGroup";
             ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            ccbe.Properties.ValueMember = "Base_Group";
+            ccbe.Properties.ValueMember = "BaseGroup";
 
             return ccbe;
         }

@@ -12,6 +12,8 @@
     <AssemblyName>NICSQLTools</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,10 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -246,6 +246,24 @@
     </Compile>
     <Compile Include="Views\Dashboard\DashboardViewerEditorFrm.Designer.cs">
       <DependentUpon>DashboardViewerEditorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportUpdateProductDetailsUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportUpdateProductDetailsUC.Designer.cs">
+      <DependentUpon>ImportUpdateProductDetailsUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\rtfTextViewerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Main\rtfTextViewerFrm.Designer.cs">
+      <DependentUpon>rtfTextViewerFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\rtfTextEditorFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Main\rtfTextEditorFrm.Designer.cs">
+      <DependentUpon>rtfTextEditorFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Qry\QryCustomerInfoUC.cs">
       <SubType>UserControl</SubType>
@@ -471,6 +489,15 @@
     <EmbeddedResource Include="Views\Dashboard\DashboardViewerEditorFrm.resx">
       <DependentUpon>DashboardViewerEditorFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportUpdateProductDetailsUC.resx">
+      <DependentUpon>ImportUpdateProductDetailsUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Main\rtfTextViewerFrm.resx">
+      <DependentUpon>rtfTextViewerFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Main\rtfTextEditorFrm.resx">
+      <DependentUpon>rtfTextEditorFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\QryCustomerInfoUC.resx">
       <DependentUpon>QryCustomerInfoUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -594,7 +621,7 @@
     <None Include="Data\dsData.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsData.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsData2.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -610,7 +637,7 @@
     <None Include="Data\dsQry.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsQry.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsQry1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsQry.xss">
       <DependentUpon>dsQry.xsd</DependentUpon>
@@ -647,6 +674,9 @@
   <ItemGroup>
     <Content Include="Log4Net\NICSQLToolsLog4Net.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\print_32x32.png" />
+    <None Include="Resources\print_16x16.png" />
+    <None Include="Resources\info_16x16.png" />
     <None Include="Resources\find_16x16.png" />
     <None Include="Resources\clip_16x16.png" />
     <None Include="Resources\next_32x32.png" />

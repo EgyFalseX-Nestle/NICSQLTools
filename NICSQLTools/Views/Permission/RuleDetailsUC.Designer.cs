@@ -30,11 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RuleDetailsUC));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
             this.rulesLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQry = new NICSQLTools.Data.dsQry();
-            this.dsData = new NICSQLTools.Data.dsData();
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiRule = new DevExpress.XtraBars.BarEditItem();
@@ -56,7 +55,6 @@
             this.tlcUpdate = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.tlcDelete = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.tlcID = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.ruleDetailTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRuleDetailTableAdapter();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageUI = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageDatasource = new DevExpress.XtraTab.XtraTabPage();
@@ -67,6 +65,7 @@
             this.LSMSCategory = new DevExpress.Data.Linq.LinqServerModeSource();
             this.imageCollectionNormal = new DevExpress.Utils.ImageCollection(this.components);
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.DSForRuleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colEnableRule = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnHelp = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,14 +76,11 @@
             this.repositoryItemDateEditDateIn = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemButtonEditSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemCheckEditEnable = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.XPSCSDS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.UOWDS = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.appRuleDatasourceForRuleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appRuleDatasourceTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRuleDatasourceTableAdapter();
-            this.appRuleDatasourceForRuleTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRuleDatasourceForRuleTableAdapter();
+            this.dsData = new NICSQLTools.Data.dsData();
+            this.appRuleDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appRuleDetailTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRuleDetailTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
@@ -100,15 +96,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSForRuleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDSInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditEnable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UOWDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appRuleDatasourceForRuleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appRuleDetailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rulesLUEBindingSource
@@ -121,11 +117,6 @@
             // 
             this.dsQry.DataSetName = "dsQry";
             this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dsData
-            // 
-            this.dsData.DataSetName = "dsData";
-            this.dsData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // barManagerMain
             // 
@@ -330,10 +321,6 @@
             this.tlcID.Name = "tlcID";
             this.tlcID.OptionsColumn.AllowEdit = false;
             // 
-            // ruleDetailTableAdapter
-            // 
-            this.ruleDetailTableAdapter.ClearBeforeFill = true;
-            // 
             // xtraTabControlMain
             // 
             this.xtraTabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -391,7 +378,6 @@
             this.treeListMain.OptionsNavigation.AutoMoveRowFocus = true;
             this.treeListMain.OptionsNavigation.EnterMovesNextColumn = true;
             this.treeListMain.OptionsView.AutoWidth = false;
-            this.treeListMain.OptionsView.ShowAutoFilterRow = true;
             this.treeListMain.ParentFieldName = "DSCategoryParent";
             this.treeListMain.SelectImageList = this.imageCollectionNormal;
             this.treeListMain.Size = new System.Drawing.Size(347, 273);
@@ -431,6 +417,7 @@
             // 
             // gridControlMain
             // 
+            this.gridControlMain.DataSource = this.DSForRuleBindingSource;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
@@ -449,6 +436,12 @@
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
+            // DSForRuleBindingSource
+            // 
+            this.DSForRuleBindingSource.AllowNew = false;
+            this.DSForRuleBindingSource.DataMember = "DSForRule";
+            this.DSForRuleBindingSource.DataSource = this.dsQry;
+            // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -462,7 +455,7 @@
             this.gridViewMain.OptionsView.ColumnAutoWidth = false;
             this.gridViewMain.OptionsView.ShowGroupPanel = false;
             this.gridViewMain.OptionsView.ShowIndicator = false;
-            this.gridViewMain.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridViewMain_RowUpdated);
+            this.gridViewMain.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewMain_CellValueChanging);
             // 
             // colEnableRule
             // 
@@ -487,7 +480,7 @@
             // 
             this.repositoryItemButtonEditDSInfo.AutoHeight = false;
             this.repositoryItemButtonEditDSInfo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Help", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.info_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Show Information About This Object", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Help", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.info_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, "Show Information About This Object", null, null, true)});
             this.repositoryItemButtonEditDSInfo.Name = "repositoryItemButtonEditDSInfo";
             this.repositoryItemButtonEditDSInfo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditDSInfo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDSInfo_ButtonClick);
@@ -556,7 +549,7 @@
             // 
             this.repositoryItemButtonEditSelect.AutoHeight = false;
             this.repositoryItemButtonEditSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Select", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.apply_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Select", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.apply_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject18, "", null, null, true)});
             this.repositoryItemButtonEditSelect.Name = "repositoryItemButtonEditSelect";
             this.repositoryItemButtonEditSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -565,29 +558,19 @@
             this.repositoryItemCheckEditEnable.AutoHeight = false;
             this.repositoryItemCheckEditEnable.Name = "repositoryItemCheckEditEnable";
             // 
-            // XPSCSDS
+            // dsData
             // 
-            this.XPSCSDS.AllowEdit = true;
-            this.XPSCSDS.Session = this.UOWDS;
-            this.XPSCSDS.TrackChanges = true;
+            this.dsData.DataSetName = "dsData";
+            this.dsData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // UOWDS
+            // appRuleDetailBindingSource
             // 
-            this.UOWDS.IsObjectModifiedOnNonPersistentPropertyChange = null;
-            this.UOWDS.TrackPropertiesModifications = false;
+            this.appRuleDetailBindingSource.DataMember = "AppRuleDetail";
+            this.appRuleDetailBindingSource.DataSource = this.dsData;
             // 
-            // appRuleDatasourceForRuleBindingSource
+            // appRuleDetailTableAdapter
             // 
-            this.appRuleDatasourceForRuleBindingSource.DataMember = "AppRuleDatasourceForRule";
-            this.appRuleDatasourceForRuleBindingSource.DataSource = this.dsData;
-            // 
-            // appRuleDatasourceTableAdapter
-            // 
-            this.appRuleDatasourceTableAdapter.ClearBeforeFill = true;
-            // 
-            // appRuleDatasourceForRuleTableAdapter
-            // 
-            this.appRuleDatasourceForRuleTableAdapter.ClearBeforeFill = true;
+            this.appRuleDetailTableAdapter.ClearBeforeFill = true;
             // 
             // RuleDetailsUC
             // 
@@ -603,7 +586,6 @@
             this.Load += new System.EventHandler(this.ProductEditorUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
@@ -619,15 +601,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionNormal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSForRuleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDSInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditEnable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCSDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UOWDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appRuleDatasourceForRuleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appRuleDetailBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,7 +626,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.PopupMenu popupMenuMain;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
-        private NICSQLTools.Data.dsData dsData;
         private NICSQLTools.Data.dsQry dsQry;
         private System.Windows.Forms.BindingSource rulesLUEBindingSource;
         private NICSQLTools.Data.dsQryTableAdapters.Rules_LUETableAdapter rules_LUETableAdapter;
@@ -654,7 +635,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlcUpdate;
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlcDelete;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private NICSQLTools.Data.dsDataTableAdapters.AppRuleDetailTableAdapter ruleDetailTableAdapter;
         private DevExpress.XtraTreeList.Columns.TreeListColumn tlcName;
         private DevExpress.XtraBars.BarEditItem bbiRule;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
@@ -677,12 +657,11 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDateIn;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSCategory;
         private DevExpress.Utils.ImageCollection imageCollectionNormal;
-        private NICSQLTools.Data.dsDataTableAdapters.AppRuleDatasourceTableAdapter appRuleDatasourceTableAdapter;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEditEnable;
-        private System.Windows.Forms.BindingSource appRuleDatasourceForRuleBindingSource;
-        private NICSQLTools.Data.dsDataTableAdapters.AppRuleDatasourceForRuleTableAdapter appRuleDatasourceForRuleTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colEnableRule;
-        private DevExpress.Xpo.XPServerCollectionSource XPSCSDS;
-        private DevExpress.Xpo.UnitOfWork UOWDS;
+        private System.Windows.Forms.BindingSource DSForRuleBindingSource;
+        private NICSQLTools.Data.dsData dsData;
+        private System.Windows.Forms.BindingSource appRuleDetailBindingSource;
+        private NICSQLTools.Data.dsDataTableAdapters.AppRuleDetailTableAdapter appRuleDetailTableAdapter;
     }
 }

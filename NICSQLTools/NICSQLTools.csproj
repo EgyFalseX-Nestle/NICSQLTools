@@ -199,12 +199,12 @@
       <DependentUpon>dsData.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Data\dsData.Designer.cs">
+    <Compile Include="Data\dsData2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\dsQry.Designer.cs">
+    <Compile Include="Data\dsQry1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsQry.xsd</DependentUpon>

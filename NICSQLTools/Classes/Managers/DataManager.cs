@@ -503,6 +503,49 @@ namespace NICSQLTools.Classes.Managers
             return dt;
         }
 
+        #region Rule
+        public static NICSQLTools.Data.dsQry.DSForRuleDataTable LoadRuleDS(NICSQLTools.Data.dsQry.DSForRuleDataTable tbl, int RuleId, int DS)
+        {
+            SqlDataAdapter adp = new SqlDataAdapter("", Properties.Settings.Default.IC_DBConnectionString);
+            tbl.Clear();
+            adp.SelectCommand.CommandText = string.Format(@"WITH CTE1 AS
+            (
+            SELECT RuleID, DatasourceID FROM dbo.AppRuleDatasource WHERE RuleID = {0}
+            )
+            SELECT CAST(CASE WHEN RuleID IS NULL THEN 0 ELSE 1 END AS bit) AS EnableRule, RuleID, vAppDatasource_LUE.DatasourceID, vAppDatasource_LUE.DatasourceName, 
+            vAppDatasource_LUE.DateIn, vAppDatasource_LUE.RealName, vAppDatasource_LUE.AppDatasourceTypeName, vAppDatasource_LUE.DSCategoryId 
+            FROM vAppDatasource_LUE LEFT OUTER JOIN CTE1 ON vAppDatasource_LUE.DatasourceID = CTE1.DatasourceID
+            WHERE DSCategoryId = {1}", RuleId, DS);
+            try
+            { adp.Fill(tbl); }
+            catch (SqlException ex)
+            { Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId); }
+            return tbl;
+        }
+        public static bool AddRuleDS(int RuleId, int DS)
+        {
+            bool output = false;
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
+            SqlCommand cmd = new SqlCommand(string.Format("INSERT INTO dbo.AppRuleDatasource (RuleID, DatasourceID) VALUES ({0}, {1})", RuleId, DS), con);
+            try
+            { con.Open(); cmd.ExecuteNonQuery(); output = true; con.Close(); }
+            catch (SqlException ex)
+            { Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId); }
+            return output;
+        }
+        public static bool RemoveRuleDS(int RuleId, int DS)
+        {
+            bool output = false;
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
+            SqlCommand cmd = new SqlCommand(string.Format("DELETE FROM dbo.AppRuleDatasource WHERE RuleID = {0} AND DatasourceID = {1}", RuleId, DS), con);
+            try
+            { con.Open(); cmd.ExecuteNonQuery(); output = true; con.Close(); }
+            catch (SqlException ex)
+            { Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId); }
+            return output;
+        }
+        #endregion
+
         #endregion
 
     }

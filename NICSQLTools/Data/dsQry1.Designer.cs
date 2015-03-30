@@ -72,7 +72,9 @@ namespace NICSQLTools.Data {
         
         private DistributorRouteDataTable tableDistributorRoute;
         
-        private vAppDatasource_LUEDataTable tablevAppDatasource_LUE;
+        private UserRuleDatasourceDataTable tableUserRuleDatasource;
+        
+        private DSForRuleDataTable tableDSForRule;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -174,8 +176,11 @@ namespace NICSQLTools.Data {
                 if ((ds.Tables["DistributorRoute"] != null)) {
                     base.Tables.Add(new DistributorRouteDataTable(ds.Tables["DistributorRoute"]));
                 }
-                if ((ds.Tables["vAppDatasource_LUE"] != null)) {
-                    base.Tables.Add(new vAppDatasource_LUEDataTable(ds.Tables["vAppDatasource_LUE"]));
+                if ((ds.Tables["UserRuleDatasource"] != null)) {
+                    base.Tables.Add(new UserRuleDatasourceDataTable(ds.Tables["UserRuleDatasource"]));
+                }
+                if ((ds.Tables["DSForRule"] != null)) {
+                    base.Tables.Add(new DSForRuleDataTable(ds.Tables["DSForRule"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -439,9 +444,19 @@ namespace NICSQLTools.Data {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public vAppDatasource_LUEDataTable vAppDatasource_LUE {
+        public UserRuleDatasourceDataTable UserRuleDatasource {
             get {
-                return this.tablevAppDatasource_LUE;
+                return this.tableUserRuleDatasource;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DSForRuleDataTable DSForRule {
+            get {
+                return this.tableDSForRule;
             }
         }
         
@@ -584,8 +599,11 @@ namespace NICSQLTools.Data {
                 if ((ds.Tables["DistributorRoute"] != null)) {
                     base.Tables.Add(new DistributorRouteDataTable(ds.Tables["DistributorRoute"]));
                 }
-                if ((ds.Tables["vAppDatasource_LUE"] != null)) {
-                    base.Tables.Add(new vAppDatasource_LUEDataTable(ds.Tables["vAppDatasource_LUE"]));
+                if ((ds.Tables["UserRuleDatasource"] != null)) {
+                    base.Tables.Add(new UserRuleDatasourceDataTable(ds.Tables["UserRuleDatasource"]));
+                }
+                if ((ds.Tables["DSForRule"] != null)) {
+                    base.Tables.Add(new DSForRuleDataTable(ds.Tables["DSForRule"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -764,10 +782,16 @@ namespace NICSQLTools.Data {
                     this.tableDistributorRoute.InitVars();
                 }
             }
-            this.tablevAppDatasource_LUE = ((vAppDatasource_LUEDataTable)(base.Tables["vAppDatasource_LUE"]));
+            this.tableUserRuleDatasource = ((UserRuleDatasourceDataTable)(base.Tables["UserRuleDatasource"]));
             if ((initTable == true)) {
-                if ((this.tablevAppDatasource_LUE != null)) {
-                    this.tablevAppDatasource_LUE.InitVars();
+                if ((this.tableUserRuleDatasource != null)) {
+                    this.tableUserRuleDatasource.InitVars();
+                }
+            }
+            this.tableDSForRule = ((DSForRuleDataTable)(base.Tables["DSForRule"]));
+            if ((initTable == true)) {
+                if ((this.tableDSForRule != null)) {
+                    this.tableDSForRule.InitVars();
                 }
             }
         }
@@ -828,8 +852,10 @@ namespace NICSQLTools.Data {
             base.Tables.Add(this.tableLastEditUMD);
             this.tableDistributorRoute = new DistributorRouteDataTable();
             base.Tables.Add(this.tableDistributorRoute);
-            this.tablevAppDatasource_LUE = new vAppDatasource_LUEDataTable();
-            base.Tables.Add(this.tablevAppDatasource_LUE);
+            this.tableUserRuleDatasource = new UserRuleDatasourceDataTable();
+            base.Tables.Add(this.tableUserRuleDatasource);
+            this.tableDSForRule = new DSForRuleDataTable();
+            base.Tables.Add(this.tableDSForRule);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -978,7 +1004,13 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializevAppDatasource_LUE() {
+        private bool ShouldSerializeUserRuleDatasource() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeDSForRule() {
             return false;
         }
         
@@ -1110,7 +1142,10 @@ namespace NICSQLTools.Data {
         public delegate void DistributorRouteRowChangeEventHandler(object sender, DistributorRouteRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void vAppDatasource_LUERowChangeEventHandler(object sender, vAppDatasource_LUERowChangeEvent e);
+        public delegate void UserRuleDatasourceRowChangeEventHandler(object sender, UserRuleDatasourceRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void DSForRuleRowChangeEventHandler(object sender, DSForRuleRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -9415,36 +9450,14 @@ namespace NICSQLTools.Data {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class vAppDatasource_LUEDataTable : global::System.Data.TypedTableBase<vAppDatasource_LUERow> {
+        public partial class UserRuleDatasourceDataTable : global::System.Data.TypedTableBase<UserRuleDatasourceRow> {
             
             private global::System.Data.DataColumn columnDatasourceID;
             
-            private global::System.Data.DataColumn columnAppDatasourceTypeId;
-            
-            private global::System.Data.DataColumn columnDatasourceName;
-            
-            private global::System.Data.DataColumn columnDatasourceSPName;
-            
-            private global::System.Data.DataColumn columnUserIn;
-            
-            private global::System.Data.DataColumn columnDateIn;
-            
-            private global::System.Data.DataColumn columnDesc;
-            
-            private global::System.Data.DataColumn columnRealName;
-            
-            private global::System.Data.DataColumn columnAppDatasourceTypeName;
-            
-            private global::System.Data.DataColumn columnDSCategoryId;
-            
-            private global::System.Data.DataColumn columnDSCategoryName;
-            
-            private global::System.Data.DataColumn columnDSCategoryDesc;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vAppDatasource_LUEDataTable() {
-                this.TableName = "vAppDatasource_LUE";
+            public UserRuleDatasourceDataTable() {
+                this.TableName = "UserRuleDatasource";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -9452,7 +9465,7 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal vAppDatasource_LUEDataTable(global::System.Data.DataTable table) {
+            internal UserRuleDatasourceDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -9469,7 +9482,7 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected vAppDatasource_LUEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected UserRuleDatasourceDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -9484,9 +9497,289 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AppDatasourceTypeIdColumn {
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
                 get {
-                    return this.columnAppDatasourceTypeId;
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UserRuleDatasourceRow this[int index] {
+                get {
+                    return ((UserRuleDatasourceRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UserRuleDatasourceRowChangeEventHandler UserRuleDatasourceRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UserRuleDatasourceRowChangeEventHandler UserRuleDatasourceRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UserRuleDatasourceRowChangeEventHandler UserRuleDatasourceRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event UserRuleDatasourceRowChangeEventHandler UserRuleDatasourceRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddUserRuleDatasourceRow(UserRuleDatasourceRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UserRuleDatasourceRow AddUserRuleDatasourceRow(int DatasourceID) {
+                UserRuleDatasourceRow rowUserRuleDatasourceRow = ((UserRuleDatasourceRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        DatasourceID};
+                rowUserRuleDatasourceRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowUserRuleDatasourceRow);
+                return rowUserRuleDatasourceRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UserRuleDatasourceRow FindByDatasourceID(int DatasourceID) {
+                return ((UserRuleDatasourceRow)(this.Rows.Find(new object[] {
+                            DatasourceID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                UserRuleDatasourceDataTable cln = ((UserRuleDatasourceDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new UserRuleDatasourceDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnDatasourceID = base.Columns["DatasourceID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnDatasourceID = new global::System.Data.DataColumn("DatasourceID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatasourceID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnDatasourceID}, true));
+                this.columnDatasourceID.AllowDBNull = false;
+                this.columnDatasourceID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public UserRuleDatasourceRow NewUserRuleDatasourceRow() {
+                return ((UserRuleDatasourceRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new UserRuleDatasourceRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(UserRuleDatasourceRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.UserRuleDatasourceRowChanged != null)) {
+                    this.UserRuleDatasourceRowChanged(this, new UserRuleDatasourceRowChangeEvent(((UserRuleDatasourceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.UserRuleDatasourceRowChanging != null)) {
+                    this.UserRuleDatasourceRowChanging(this, new UserRuleDatasourceRowChangeEvent(((UserRuleDatasourceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.UserRuleDatasourceRowDeleted != null)) {
+                    this.UserRuleDatasourceRowDeleted(this, new UserRuleDatasourceRowChangeEvent(((UserRuleDatasourceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.UserRuleDatasourceRowDeleting != null)) {
+                    this.UserRuleDatasourceRowDeleting(this, new UserRuleDatasourceRowChangeEvent(((UserRuleDatasourceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveUserRuleDatasourceRow(UserRuleDatasourceRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsQry ds = new dsQry();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "UserRuleDatasourceDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DSForRuleDataTable : global::System.Data.TypedTableBase<DSForRuleRow> {
+            
+            private global::System.Data.DataColumn columnEnableRule;
+            
+            private global::System.Data.DataColumn columnRuleID;
+            
+            private global::System.Data.DataColumn columnDatasourceID;
+            
+            private global::System.Data.DataColumn columnDatasourceName;
+            
+            private global::System.Data.DataColumn columnDateIn;
+            
+            private global::System.Data.DataColumn columnRealName;
+            
+            private global::System.Data.DataColumn columnAppDatasourceTypeName;
+            
+            private global::System.Data.DataColumn columnDSCategoryId;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DSForRuleDataTable() {
+                this.TableName = "DSForRule";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DSForRuleDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected DSForRuleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EnableRuleColumn {
+                get {
+                    return this.columnEnableRule;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RuleIDColumn {
+                get {
+                    return this.columnRuleID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DatasourceIDColumn {
+                get {
+                    return this.columnDatasourceID;
                 }
             }
             
@@ -9500,33 +9793,9 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DatasourceSPNameColumn {
-                get {
-                    return this.columnDatasourceSPName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UserInColumn {
-                get {
-                    return this.columnUserIn;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn DateInColumn {
                 get {
                     return this.columnDateIn;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DescColumn {
-                get {
-                    return this.columnDesc;
                 }
             }
             
@@ -9556,22 +9825,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DSCategoryNameColumn {
-                get {
-                    return this.columnDSCategoryName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DSCategoryDescColumn {
-                get {
-                    return this.columnDSCategoryDesc;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9581,63 +9834,59 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vAppDatasource_LUERow this[int index] {
+            public DSForRuleRow this[int index] {
                 get {
-                    return ((vAppDatasource_LUERow)(this.Rows[index]));
+                    return ((DSForRuleRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vAppDatasource_LUERowChangeEventHandler vAppDatasource_LUERowChanging;
+            public event DSForRuleRowChangeEventHandler DSForRuleRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vAppDatasource_LUERowChangeEventHandler vAppDatasource_LUERowChanged;
+            public event DSForRuleRowChangeEventHandler DSForRuleRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vAppDatasource_LUERowChangeEventHandler vAppDatasource_LUERowDeleting;
+            public event DSForRuleRowChangeEventHandler DSForRuleRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event vAppDatasource_LUERowChangeEventHandler vAppDatasource_LUERowDeleted;
+            public event DSForRuleRowChangeEventHandler DSForRuleRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddvAppDatasource_LUERow(vAppDatasource_LUERow row) {
+            public void AddDSForRuleRow(DSForRuleRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vAppDatasource_LUERow AddvAppDatasource_LUERow(int DatasourceID, int AppDatasourceTypeId, string DatasourceName, string DatasourceSPName, int UserIn, System.DateTime DateIn, byte[] Desc, string RealName, string AppDatasourceTypeName, int DSCategoryId, string DSCategoryName, string DSCategoryDesc) {
-                vAppDatasource_LUERow rowvAppDatasource_LUERow = ((vAppDatasource_LUERow)(this.NewRow()));
+            public DSForRuleRow AddDSForRuleRow(bool EnableRule, int RuleID, int DatasourceID, string DatasourceName, System.DateTime DateIn, string RealName, string AppDatasourceTypeName, int DSCategoryId) {
+                DSForRuleRow rowDSForRuleRow = ((DSForRuleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        EnableRule,
+                        RuleID,
                         DatasourceID,
-                        AppDatasourceTypeId,
                         DatasourceName,
-                        DatasourceSPName,
-                        UserIn,
                         DateIn,
-                        Desc,
                         RealName,
                         AppDatasourceTypeName,
-                        DSCategoryId,
-                        DSCategoryName,
-                        DSCategoryDesc};
-                rowvAppDatasource_LUERow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowvAppDatasource_LUERow);
-                return rowvAppDatasource_LUERow;
+                        DSCategoryId};
+                rowDSForRuleRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDSForRuleRow);
+                return rowDSForRuleRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vAppDatasource_LUERow FindByDatasourceID(int DatasourceID) {
-                return ((vAppDatasource_LUERow)(this.Rows.Find(new object[] {
+            public DSForRuleRow FindByDatasourceID(int DatasourceID) {
+                return ((DSForRuleRow)(this.Rows.Find(new object[] {
                             DatasourceID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                vAppDatasource_LUEDataTable cln = ((vAppDatasource_LUEDataTable)(base.Clone()));
+                DSForRuleDataTable cln = ((DSForRuleDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -9645,89 +9894,74 @@ namespace NICSQLTools.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new vAppDatasource_LUEDataTable();
+                return new DSForRuleDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnEnableRule = base.Columns["EnableRule"];
+                this.columnRuleID = base.Columns["RuleID"];
                 this.columnDatasourceID = base.Columns["DatasourceID"];
-                this.columnAppDatasourceTypeId = base.Columns["AppDatasourceTypeId"];
                 this.columnDatasourceName = base.Columns["DatasourceName"];
-                this.columnDatasourceSPName = base.Columns["DatasourceSPName"];
-                this.columnUserIn = base.Columns["UserIn"];
                 this.columnDateIn = base.Columns["DateIn"];
-                this.columnDesc = base.Columns["Desc"];
                 this.columnRealName = base.Columns["RealName"];
                 this.columnAppDatasourceTypeName = base.Columns["AppDatasourceTypeName"];
                 this.columnDSCategoryId = base.Columns["DSCategoryId"];
-                this.columnDSCategoryName = base.Columns["DSCategoryName"];
-                this.columnDSCategoryDesc = base.Columns["DSCategoryDesc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnEnableRule = new global::System.Data.DataColumn("EnableRule", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnableRule);
+                this.columnRuleID = new global::System.Data.DataColumn("RuleID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRuleID);
                 this.columnDatasourceID = new global::System.Data.DataColumn("DatasourceID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatasourceID);
-                this.columnAppDatasourceTypeId = new global::System.Data.DataColumn("AppDatasourceTypeId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAppDatasourceTypeId);
                 this.columnDatasourceName = new global::System.Data.DataColumn("DatasourceName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatasourceName);
-                this.columnDatasourceSPName = new global::System.Data.DataColumn("DatasourceSPName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatasourceSPName);
-                this.columnUserIn = new global::System.Data.DataColumn("UserIn", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUserIn);
                 this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDateIn);
-                this.columnDesc = new global::System.Data.DataColumn("Desc", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDesc);
                 this.columnRealName = new global::System.Data.DataColumn("RealName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRealName);
                 this.columnAppDatasourceTypeName = new global::System.Data.DataColumn("AppDatasourceTypeName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAppDatasourceTypeName);
                 this.columnDSCategoryId = new global::System.Data.DataColumn("DSCategoryId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDSCategoryId);
-                this.columnDSCategoryName = new global::System.Data.DataColumn("DSCategoryName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDSCategoryName);
-                this.columnDSCategoryDesc = new global::System.Data.DataColumn("DSCategoryDesc", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDSCategoryDesc);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDatasourceID}, true));
                 this.columnDatasourceID.AllowDBNull = false;
                 this.columnDatasourceID.Unique = true;
                 this.columnDatasourceName.MaxLength = 50;
-                this.columnDatasourceSPName.MaxLength = 50;
                 this.columnRealName.MaxLength = 50;
                 this.columnAppDatasourceTypeName.MaxLength = 50;
-                this.columnDSCategoryName.MaxLength = 50;
-                this.columnDSCategoryDesc.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vAppDatasource_LUERow NewvAppDatasource_LUERow() {
-                return ((vAppDatasource_LUERow)(this.NewRow()));
+            public DSForRuleRow NewDSForRuleRow() {
+                return ((DSForRuleRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new vAppDatasource_LUERow(builder);
+                return new DSForRuleRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(vAppDatasource_LUERow);
+                return typeof(DSForRuleRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.vAppDatasource_LUERowChanged != null)) {
-                    this.vAppDatasource_LUERowChanged(this, new vAppDatasource_LUERowChangeEvent(((vAppDatasource_LUERow)(e.Row)), e.Action));
+                if ((this.DSForRuleRowChanged != null)) {
+                    this.DSForRuleRowChanged(this, new DSForRuleRowChangeEvent(((DSForRuleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -9735,8 +9969,8 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.vAppDatasource_LUERowChanging != null)) {
-                    this.vAppDatasource_LUERowChanging(this, new vAppDatasource_LUERowChangeEvent(((vAppDatasource_LUERow)(e.Row)), e.Action));
+                if ((this.DSForRuleRowChanging != null)) {
+                    this.DSForRuleRowChanging(this, new DSForRuleRowChangeEvent(((DSForRuleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -9744,8 +9978,8 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.vAppDatasource_LUERowDeleted != null)) {
-                    this.vAppDatasource_LUERowDeleted(this, new vAppDatasource_LUERowChangeEvent(((vAppDatasource_LUERow)(e.Row)), e.Action));
+                if ((this.DSForRuleRowDeleted != null)) {
+                    this.DSForRuleRowDeleted(this, new DSForRuleRowChangeEvent(((DSForRuleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -9753,14 +9987,14 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.vAppDatasource_LUERowDeleting != null)) {
-                    this.vAppDatasource_LUERowDeleting(this, new vAppDatasource_LUERowChangeEvent(((vAppDatasource_LUERow)(e.Row)), e.Action));
+                if ((this.DSForRuleRowDeleting != null)) {
+                    this.DSForRuleRowDeleting(this, new DSForRuleRowChangeEvent(((DSForRuleRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovevAppDatasource_LUERow(vAppDatasource_LUERow row) {
+            public void RemoveDSForRuleRow(DSForRuleRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -9787,7 +10021,7 @@ namespace NICSQLTools.Data {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "vAppDatasource_LUEDataTable";
+                attribute2.FixedValue = "DSForRuleDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -14569,42 +14803,83 @@ namespace NICSQLTools.Data {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class vAppDatasource_LUERow : global::System.Data.DataRow {
+        public partial class UserRuleDatasourceRow : global::System.Data.DataRow {
             
-            private vAppDatasource_LUEDataTable tablevAppDatasource_LUE;
+            private UserRuleDatasourceDataTable tableUserRuleDatasource;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal vAppDatasource_LUERow(global::System.Data.DataRowBuilder rb) : 
+            internal UserRuleDatasourceRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablevAppDatasource_LUE = ((vAppDatasource_LUEDataTable)(this.Table));
+                this.tableUserRuleDatasource = ((UserRuleDatasourceDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int DatasourceID {
                 get {
-                    return ((int)(this[this.tablevAppDatasource_LUE.DatasourceIDColumn]));
+                    return ((int)(this[this.tableUserRuleDatasource.DatasourceIDColumn]));
                 }
                 set {
-                    this[this.tablevAppDatasource_LUE.DatasourceIDColumn] = value;
+                    this[this.tableUserRuleDatasource.DatasourceIDColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DSForRuleRow : global::System.Data.DataRow {
+            
+            private DSForRuleDataTable tableDSForRule;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal DSForRuleRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDSForRule = ((DSForRuleDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool EnableRule {
+                get {
+                    try {
+                        return ((bool)(this[this.tableDSForRule.EnableRuleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EnableRule\' in table \'DSForRule\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDSForRule.EnableRuleColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int AppDatasourceTypeId {
+            public int RuleID {
                 get {
                     try {
-                        return ((int)(this[this.tablevAppDatasource_LUE.AppDatasourceTypeIdColumn]));
+                        return ((int)(this[this.tableDSForRule.RuleIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AppDatasourceTypeId\' in table \'vAppDatasource_LUE\' is DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'RuleID\' in table \'DSForRule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevAppDatasource_LUE.AppDatasourceTypeIdColumn] = value;
+                    this[this.tableDSForRule.RuleIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DatasourceID {
+                get {
+                    return ((int)(this[this.tableDSForRule.DatasourceIDColumn]));
+                }
+                set {
+                    this[this.tableDSForRule.DatasourceIDColumn] = value;
                 }
             }
             
@@ -14613,46 +14888,14 @@ namespace NICSQLTools.Data {
             public string DatasourceName {
                 get {
                     try {
-                        return ((string)(this[this.tablevAppDatasource_LUE.DatasourceNameColumn]));
+                        return ((string)(this[this.tableDSForRule.DatasourceNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DatasourceName\' in table \'vAppDatasource_LUE\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatasourceName\' in table \'DSForRule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevAppDatasource_LUE.DatasourceNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DatasourceSPName {
-                get {
-                    try {
-                        return ((string)(this[this.tablevAppDatasource_LUE.DatasourceSPNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DatasourceSPName\' in table \'vAppDatasource_LUE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevAppDatasource_LUE.DatasourceSPNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int UserIn {
-                get {
-                    try {
-                        return ((int)(this[this.tablevAppDatasource_LUE.UserInColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UserIn\' in table \'vAppDatasource_LUE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevAppDatasource_LUE.UserInColumn] = value;
+                    this[this.tableDSForRule.DatasourceNameColumn] = value;
                 }
             }
             
@@ -14661,30 +14904,14 @@ namespace NICSQLTools.Data {
             public System.DateTime DateIn {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablevAppDatasource_LUE.DateInColumn]));
+                        return ((global::System.DateTime)(this[this.tableDSForRule.DateInColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DateIn\' in table \'vAppDatasource_LUE\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateIn\' in table \'DSForRule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevAppDatasource_LUE.DateInColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] Desc {
-                get {
-                    try {
-                        return ((byte[])(this[this.tablevAppDatasource_LUE.DescColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Desc\' in table \'vAppDatasource_LUE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevAppDatasource_LUE.DescColumn] = value;
+                    this[this.tableDSForRule.DateInColumn] = value;
                 }
             }
             
@@ -14693,14 +14920,14 @@ namespace NICSQLTools.Data {
             public string RealName {
                 get {
                     try {
-                        return ((string)(this[this.tablevAppDatasource_LUE.RealNameColumn]));
+                        return ((string)(this[this.tableDSForRule.RealNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RealName\' in table \'vAppDatasource_LUE\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'RealName\' in table \'DSForRule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevAppDatasource_LUE.RealNameColumn] = value;
+                    this[this.tableDSForRule.RealNameColumn] = value;
                 }
             }
             
@@ -14709,15 +14936,14 @@ namespace NICSQLTools.Data {
             public string AppDatasourceTypeName {
                 get {
                     try {
-                        return ((string)(this[this.tablevAppDatasource_LUE.AppDatasourceTypeNameColumn]));
+                        return ((string)(this[this.tableDSForRule.AppDatasourceTypeNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AppDatasourceTypeName\' in table \'vAppDatasource_LUE\' is DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AppDatasourceTypeName\' in table \'DSForRule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevAppDatasource_LUE.AppDatasourceTypeNameColumn] = value;
+                    this[this.tableDSForRule.AppDatasourceTypeNameColumn] = value;
                 }
             }
             
@@ -14726,179 +14952,99 @@ namespace NICSQLTools.Data {
             public int DSCategoryId {
                 get {
                     try {
-                        return ((int)(this[this.tablevAppDatasource_LUE.DSCategoryIdColumn]));
+                        return ((int)(this[this.tableDSForRule.DSCategoryIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DSCategoryId\' in table \'vAppDatasource_LUE\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DSCategoryId\' in table \'DSForRule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablevAppDatasource_LUE.DSCategoryIdColumn] = value;
+                    this[this.tableDSForRule.DSCategoryIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DSCategoryName {
-                get {
-                    try {
-                        return ((string)(this[this.tablevAppDatasource_LUE.DSCategoryNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DSCategoryName\' in table \'vAppDatasource_LUE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevAppDatasource_LUE.DSCategoryNameColumn] = value;
-                }
+            public bool IsEnableRuleNull() {
+                return this.IsNull(this.tableDSForRule.EnableRuleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DSCategoryDesc {
-                get {
-                    try {
-                        return ((string)(this[this.tablevAppDatasource_LUE.DSCategoryDescColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DSCategoryDesc\' in table \'vAppDatasource_LUE\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablevAppDatasource_LUE.DSCategoryDescColumn] = value;
-                }
+            public void SetEnableRuleNull() {
+                this[this.tableDSForRule.EnableRuleColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAppDatasourceTypeIdNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.AppDatasourceTypeIdColumn);
+            public bool IsRuleIDNull() {
+                return this.IsNull(this.tableDSForRule.RuleIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAppDatasourceTypeIdNull() {
-                this[this.tablevAppDatasource_LUE.AppDatasourceTypeIdColumn] = global::System.Convert.DBNull;
+            public void SetRuleIDNull() {
+                this[this.tableDSForRule.RuleIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDatasourceNameNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.DatasourceNameColumn);
+                return this.IsNull(this.tableDSForRule.DatasourceNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDatasourceNameNull() {
-                this[this.tablevAppDatasource_LUE.DatasourceNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDatasourceSPNameNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.DatasourceSPNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDatasourceSPNameNull() {
-                this[this.tablevAppDatasource_LUE.DatasourceSPNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUserInNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.UserInColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUserInNull() {
-                this[this.tablevAppDatasource_LUE.UserInColumn] = global::System.Convert.DBNull;
+                this[this.tableDSForRule.DatasourceNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDateInNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.DateInColumn);
+                return this.IsNull(this.tableDSForRule.DateInColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDateInNull() {
-                this[this.tablevAppDatasource_LUE.DateInColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDescNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.DescColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDescNull() {
-                this[this.tablevAppDatasource_LUE.DescColumn] = global::System.Convert.DBNull;
+                this[this.tableDSForRule.DateInColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsRealNameNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.RealNameColumn);
+                return this.IsNull(this.tableDSForRule.RealNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetRealNameNull() {
-                this[this.tablevAppDatasource_LUE.RealNameColumn] = global::System.Convert.DBNull;
+                this[this.tableDSForRule.RealNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAppDatasourceTypeNameNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.AppDatasourceTypeNameColumn);
+                return this.IsNull(this.tableDSForRule.AppDatasourceTypeNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAppDatasourceTypeNameNull() {
-                this[this.tablevAppDatasource_LUE.AppDatasourceTypeNameColumn] = global::System.Convert.DBNull;
+                this[this.tableDSForRule.AppDatasourceTypeNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDSCategoryIdNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.DSCategoryIdColumn);
+                return this.IsNull(this.tableDSForRule.DSCategoryIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDSCategoryIdNull() {
-                this[this.tablevAppDatasource_LUE.DSCategoryIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDSCategoryNameNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.DSCategoryNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDSCategoryNameNull() {
-                this[this.tablevAppDatasource_LUE.DSCategoryNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDSCategoryDescNull() {
-                return this.IsNull(this.tablevAppDatasource_LUE.DSCategoryDescColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDSCategoryDescNull() {
-                this[this.tablevAppDatasource_LUE.DSCategoryDescColumn] = global::System.Convert.DBNull;
+                this[this.tableDSForRule.DSCategoryIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -15722,22 +15868,56 @@ namespace NICSQLTools.Data {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class vAppDatasource_LUERowChangeEvent : global::System.EventArgs {
+        public class UserRuleDatasourceRowChangeEvent : global::System.EventArgs {
             
-            private vAppDatasource_LUERow eventRow;
+            private UserRuleDatasourceRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vAppDatasource_LUERowChangeEvent(vAppDatasource_LUERow row, global::System.Data.DataRowAction action) {
+            public UserRuleDatasourceRowChangeEvent(UserRuleDatasourceRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vAppDatasource_LUERow Row {
+            public UserRuleDatasourceRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class DSForRuleRowChangeEvent : global::System.EventArgs {
+            
+            private DSForRuleRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DSForRuleRowChangeEvent(DSForRuleRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DSForRuleRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -20447,7 +20627,7 @@ ORDER BY [0-1  Master All].[Billing date for bil] DESC";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class vAppDatasource_LUETableAdapter : global::System.ComponentModel.Component {
+    public partial class UserRuleDatasourceTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -20461,7 +20641,7 @@ ORDER BY [0-1  Master All].[Billing date for bil] DESC";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public vAppDatasource_LUETableAdapter() {
+        public UserRuleDatasourceTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -20558,19 +20738,8 @@ ORDER BY [0-1  Master All].[Billing date for bil] DESC";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "vAppDatasource_LUE";
+            tableMapping.DataSetTable = "UserRuleDatasource";
             tableMapping.ColumnMappings.Add("DatasourceID", "DatasourceID");
-            tableMapping.ColumnMappings.Add("AppDatasourceTypeId", "AppDatasourceTypeId");
-            tableMapping.ColumnMappings.Add("DatasourceName", "DatasourceName");
-            tableMapping.ColumnMappings.Add("DatasourceSPName", "DatasourceSPName");
-            tableMapping.ColumnMappings.Add("UserIn", "UserIn");
-            tableMapping.ColumnMappings.Add("DateIn", "DateIn");
-            tableMapping.ColumnMappings.Add("Desc", "Desc");
-            tableMapping.ColumnMappings.Add("RealName", "RealName");
-            tableMapping.ColumnMappings.Add("AppDatasourceTypeName", "AppDatasourceTypeName");
-            tableMapping.ColumnMappings.Add("DSCategoryId", "DSCategoryId");
-            tableMapping.ColumnMappings.Add("DSCategoryName", "DSCategoryName");
-            tableMapping.ColumnMappings.Add("DSCategoryDesc", "DSCategoryDesc");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -20584,20 +20753,27 @@ ORDER BY [0-1  Master All].[Billing date for bil] DESC";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DatasourceID, AppDatasourceTypeId, DatasourceName, DatasourceSPName, UserI" +
-                "n, DateIn, [Desc], RealName, AppDatasourceTypeName, DSCategoryId, DSCategoryName" +
-                ", DSCategoryDesc FROM dbo.vAppDatasource_LUE";
+            this._commandCollection[0].CommandText = "SELECT        DatasourceID\r\nFROM            AppDatasource\r\nGROUP BY DatasourceID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        AppRuleDatasource.DatasourceID
+FROM            AppRuleDatasource INNER JOIN
+                         AppUserRule ON AppRuleDatasource.RuleID = AppUserRule.RuleId
+WHERE        (AppUserRule.UserId = @UserId)
+GROUP BY AppRuleDatasource.DatasourceID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsQry.vAppDatasource_LUEDataTable dataTable) {
+        public virtual int Fill(dsQry.UserRuleDatasourceDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -20610,9 +20786,35 @@ ORDER BY [0-1  Master All].[Billing date for bil] DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsQry.vAppDatasource_LUEDataTable GetData() {
+        public virtual dsQry.UserRuleDatasourceDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsQry.vAppDatasource_LUEDataTable dataTable = new dsQry.vAppDatasource_LUEDataTable();
+            dsQry.UserRuleDatasourceDataTable dataTable = new dsQry.UserRuleDatasourceDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUserId(dsQry.UserRuleDatasourceDataTable dataTable, int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsQry.UserRuleDatasourceDataTable GetDataByUserId(int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            dsQry.UserRuleDatasourceDataTable dataTable = new dsQry.UserRuleDatasourceDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

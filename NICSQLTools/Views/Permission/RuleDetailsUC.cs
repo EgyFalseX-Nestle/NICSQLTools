@@ -28,8 +28,8 @@ namespace NICSQLTools.Views.Permission
         void LoadRulesList()
         {
             rules_LUETableAdapter.Fill(dsQry.Rules_LUE);
-            XPSCSDS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
-            gridControlMain.DataSource = XPSCSDS;
+            //XPSCSDS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
+            //gridControlMain.DataSource = XPSCSDS;
         }
         public static void LoadDefaultNodes(DevExpress.XtraTreeList.TreeList Tree, NICSQLTools.Views.Main.MainTilesFrm MainFrm)
         {
@@ -72,7 +72,7 @@ namespace NICSQLTools.Views.Permission
         }
         void LoadUserData(int RuleID)
         {
-            ruleDetailTableAdapter.FillByRuleID(dsData.AppRuleDetail, RuleID);
+            appRuleDetailTableAdapter.FillByRuleID(dsData.AppRuleDetail, RuleID);
 
             foreach (NICSQLTools.Data.dsData.AppRuleDetailRow row in dsData.AppRuleDetail)
             {
@@ -88,9 +88,9 @@ namespace NICSQLTools.Views.Permission
         }
         void SaveUserData(int RuleID)
         {
-            
-            ruleDetailTableAdapter.DeleteByRuleID(RuleID);//Delete All Rule Contains To Add New
-            ruleDetailTableAdapter.FillByRuleID(dsData.AppRuleDetail, RuleID);//Empty RuleDetail Table
+
+            appRuleDetailTableAdapter.DeleteByRuleID(RuleID);//Delete All Rule Contains To Add New
+            appRuleDetailTableAdapter.FillByRuleID(dsData.AppRuleDetail, RuleID);//Empty RuleDetail Table
 
             List<TreeListNode> Nodes = GetAllItems(TLItems);
          
@@ -102,7 +102,7 @@ namespace NICSQLTools.Views.Permission
                 row.Updateing = Convert.ToBoolean(node.GetValue(tlcUpdate)); row.Deleting = Convert.ToBoolean(node.GetValue(tlcDelete));
                 dsData.AppRuleDetail.AddAppRuleDetailRow(row);
             }
-            ruleDetailTableAdapter.Update(dsData.AppRuleDetail);
+            appRuleDetailTableAdapter.Update(dsData.AppRuleDetail);
         }
         public static List<TreeListNode> GetAllItems(DevExpress.XtraTreeList.TreeList Tree)
         {
@@ -172,10 +172,13 @@ namespace NICSQLTools.Views.Permission
         }
         private void treeListMain_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
+            if (e.Node == null)
+                return;
             NICSQLTools.Data.Linq.vAppDSCategory ds = (NICSQLTools.Data.Linq.vAppDSCategory)treeListMain.GetDataRecordByNode(treeListMain.FocusedNode);
             //LSMSDatasource.QueryableSource = from q in dsLinq.vAppDatasource_LUEs where q.DSCategoryId == ds.DSCategoryId select q;
             //appRuleDatasourceForRuleTableAdapter.Fill(dsData.AppRuleDatasourceForRule, Convert.ToInt32(bbiRule.EditValue), ds.DSCategoryId);
-            XPSCSDS.FixedFilterString = "[DSCategoryId] = " + ds.DSCategoryId;
+            //XPSCSDS.FixedFilterString = "[DSCategoryId] = " + ds.DSCategoryId;
+            Classes.Managers.DataManager.LoadRuleDS(dsQry.DSForRule, Convert.ToInt32(bbiRule.EditValue), ds.DSCategoryId);
             gridViewMain.BestFitColumns();
         }
         private void treeListMain_AfterExpand(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
@@ -230,16 +233,33 @@ namespace NICSQLTools.Views.Permission
         }
         private void repositoryItemButtonEditDSInfo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            //NICSQLTools.Data.dsData.AppRuleDatasourceForRuleRow row = (NICSQLTools.Data.dsData.AppRuleDatasourceForRuleRow)((DataRowView)gridViewMain.GetRow(gridViewMain.FocusedRowHandle)).Row;
-            //ShowInfo(row.DatasourceID);
+            NICSQLTools.Data.dsQry.DSForRuleRow row = (NICSQLTools.Data.dsQry.DSForRuleRow)((DataRowView)gridViewMain.GetRow(gridViewMain.FocusedRowHandle)).Row;
+            ShowInfo(row.DatasourceID);
         }
-        private void gridViewMain_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
-        {
-            DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)(gridViewMain.GetRow(e.RowHandle));
-
-            MessageBox.Show(row.GetMemberValue("EnableRule").ToString());
-        }
+        
         #endregion
+
+
+        private void gridViewMain_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName == "EnableRule")
+            {
+                NICSQLTools.Data.dsQry.DSForRuleRow row = (NICSQLTools.Data.dsQry.DSForRuleRow)((DataRowView)gridViewMain.GetRow(e.RowHandle)).Row;
+                bool EnableRule = !row.EnableRule;
+                bool output;
+                if (EnableRule)
+                    output = Classes.Managers.DataManager.AddRuleDS(Convert.ToInt16(bbiRule.EditValue), row.DatasourceID);
+                else
+                    output = Classes.Managers.DataManager.RemoveRuleDS(Convert.ToInt16(bbiRule.EditValue), row.DatasourceID);
+                if (output)
+                    MsgDlg.ShowAlert("Rule Updated ...", MsgDlg.MessageType.Success, this.ParentForm);
+                else
+                    MsgDlg.Show("Rule Updated ...", MsgDlg.MessageType.Error);
+                
+            }
+            
+        }
+        
 
     }
 }

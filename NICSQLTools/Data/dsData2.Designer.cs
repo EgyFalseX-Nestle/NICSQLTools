@@ -84,8 +84,6 @@ namespace NICSQLTools.Data {
         
         private AppRuleDatasourceDataTable tableAppRuleDatasource;
         
-        private AppRuleDatasourceForRuleDataTable tableAppRuleDatasourceForRule;
-        
         private global::System.Data.DataRelation relationFK_AppRole_Roles;
         
         private global::System.Data.DataRelation relationFK_UserRole_Roles;
@@ -211,9 +209,6 @@ namespace NICSQLTools.Data {
                 }
                 if ((ds.Tables["AppRuleDatasource"] != null)) {
                     base.Tables.Add(new AppRuleDatasourceDataTable(ds.Tables["AppRuleDatasource"]));
-                }
-                if ((ds.Tables["AppRuleDatasourceForRule"] != null)) {
-                    base.Tables.Add(new AppRuleDatasourceForRuleDataTable(ds.Tables["AppRuleDatasourceForRule"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -535,16 +530,6 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AppRuleDatasourceForRuleDataTable AppRuleDatasourceForRule {
-            get {
-                return this.tableAppRuleDatasourceForRule;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -699,9 +684,6 @@ namespace NICSQLTools.Data {
                 }
                 if ((ds.Tables["AppRuleDatasource"] != null)) {
                     base.Tables.Add(new AppRuleDatasourceDataTable(ds.Tables["AppRuleDatasource"]));
-                }
-                if ((ds.Tables["AppRuleDatasourceForRule"] != null)) {
-                    base.Tables.Add(new AppRuleDatasourceForRuleDataTable(ds.Tables["AppRuleDatasourceForRule"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -916,12 +898,6 @@ namespace NICSQLTools.Data {
                     this.tableAppRuleDatasource.InitVars();
                 }
             }
-            this.tableAppRuleDatasourceForRule = ((AppRuleDatasourceForRuleDataTable)(base.Tables["AppRuleDatasourceForRule"]));
-            if ((initTable == true)) {
-                if ((this.tableAppRuleDatasourceForRule != null)) {
-                    this.tableAppRuleDatasourceForRule.InitVars();
-                }
-            }
             this.relationFK_AppRole_Roles = this.Relations["FK_AppRole_Roles"];
             this.relationFK_UserRole_Roles = this.Relations["FK_UserRole_Roles"];
             this.relationFK_UserRole_Users = this.Relations["FK_UserRole_Users"];
@@ -996,8 +972,6 @@ namespace NICSQLTools.Data {
             base.Tables.Add(this.tableAppDatasource);
             this.tableAppRuleDatasource = new AppRuleDatasourceDataTable();
             base.Tables.Add(this.tableAppRuleDatasource);
-            this.tableAppRuleDatasourceForRule = new AppRuleDatasourceForRuleDataTable();
-            base.Tables.Add(this.tableAppRuleDatasourceForRule);
             this.relationFK_AppRole_Roles = new global::System.Data.DataRelation("FK_AppRole_Roles", new global::System.Data.DataColumn[] {
                         this.tableAppRules.RuleIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableAppRuleDetail.RuleIDColumn}, false);
@@ -1198,12 +1172,6 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeAppRuleDatasourceForRule() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1346,9 +1314,6 @@ namespace NICSQLTools.Data {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void AppRuleDatasourceRowChangeEventHandler(object sender, AppRuleDatasourceRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void AppRuleDatasourceForRuleRowChangeEventHandler(object sender, AppRuleDatasourceForRuleRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -12651,341 +12616,6 @@ namespace NICSQLTools.Data {
         }
         
         /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AppRuleDatasourceForRuleDataTable : global::System.Data.TypedTableBase<AppRuleDatasourceForRuleRow> {
-            
-            private global::System.Data.DataColumn columnDatasourceID;
-            
-            private global::System.Data.DataColumn columnDatasourceName;
-            
-            private global::System.Data.DataColumn columnDSCategoryId;
-            
-            private global::System.Data.DataColumn columnDateIn;
-            
-            private global::System.Data.DataColumn columnRealName;
-            
-            private global::System.Data.DataColumn columnEnableRule;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppRuleDatasourceForRuleDataTable() {
-                this.TableName = "AppRuleDatasourceForRule";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal AppRuleDatasourceForRuleDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected AppRuleDatasourceForRuleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DatasourceIDColumn {
-                get {
-                    return this.columnDatasourceID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DatasourceNameColumn {
-                get {
-                    return this.columnDatasourceName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DSCategoryIdColumn {
-                get {
-                    return this.columnDSCategoryId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateInColumn {
-                get {
-                    return this.columnDateIn;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RealNameColumn {
-                get {
-                    return this.columnRealName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EnableRuleColumn {
-                get {
-                    return this.columnEnableRule;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppRuleDatasourceForRuleRow this[int index] {
-                get {
-                    return ((AppRuleDatasourceForRuleRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AppRuleDatasourceForRuleRowChangeEventHandler AppRuleDatasourceForRuleRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AppRuleDatasourceForRuleRowChangeEventHandler AppRuleDatasourceForRuleRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AppRuleDatasourceForRuleRowChangeEventHandler AppRuleDatasourceForRuleRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AppRuleDatasourceForRuleRowChangeEventHandler AppRuleDatasourceForRuleRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddAppRuleDatasourceForRuleRow(AppRuleDatasourceForRuleRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppRuleDatasourceForRuleRow AddAppRuleDatasourceForRuleRow(string DatasourceName, int DSCategoryId, System.DateTime DateIn, string RealName, int EnableRule) {
-                AppRuleDatasourceForRuleRow rowAppRuleDatasourceForRuleRow = ((AppRuleDatasourceForRuleRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        DatasourceName,
-                        DSCategoryId,
-                        DateIn,
-                        RealName,
-                        EnableRule};
-                rowAppRuleDatasourceForRuleRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAppRuleDatasourceForRuleRow);
-                return rowAppRuleDatasourceForRuleRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppRuleDatasourceForRuleRow FindByDatasourceID(int DatasourceID) {
-                return ((AppRuleDatasourceForRuleRow)(this.Rows.Find(new object[] {
-                            DatasourceID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                AppRuleDatasourceForRuleDataTable cln = ((AppRuleDatasourceForRuleDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new AppRuleDatasourceForRuleDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnDatasourceID = base.Columns["DatasourceID"];
-                this.columnDatasourceName = base.Columns["DatasourceName"];
-                this.columnDSCategoryId = base.Columns["DSCategoryId"];
-                this.columnDateIn = base.Columns["DateIn"];
-                this.columnRealName = base.Columns["RealName"];
-                this.columnEnableRule = base.Columns["EnableRule"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnDatasourceID = new global::System.Data.DataColumn("DatasourceID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatasourceID);
-                this.columnDatasourceName = new global::System.Data.DataColumn("DatasourceName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatasourceName);
-                this.columnDSCategoryId = new global::System.Data.DataColumn("DSCategoryId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDSCategoryId);
-                this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDateIn);
-                this.columnRealName = new global::System.Data.DataColumn("RealName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRealName);
-                this.columnEnableRule = new global::System.Data.DataColumn("EnableRule", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEnableRule);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnDatasourceID}, true));
-                this.columnDatasourceID.AutoIncrement = true;
-                this.columnDatasourceID.AutoIncrementSeed = -1;
-                this.columnDatasourceID.AutoIncrementStep = -1;
-                this.columnDatasourceID.AllowDBNull = false;
-                this.columnDatasourceID.ReadOnly = true;
-                this.columnDatasourceID.Unique = true;
-                this.columnDatasourceName.MaxLength = 50;
-                this.columnRealName.MaxLength = 50;
-                this.columnEnableRule.ReadOnly = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppRuleDatasourceForRuleRow NewAppRuleDatasourceForRuleRow() {
-                return ((AppRuleDatasourceForRuleRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AppRuleDatasourceForRuleRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(AppRuleDatasourceForRuleRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.AppRuleDatasourceForRuleRowChanged != null)) {
-                    this.AppRuleDatasourceForRuleRowChanged(this, new AppRuleDatasourceForRuleRowChangeEvent(((AppRuleDatasourceForRuleRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.AppRuleDatasourceForRuleRowChanging != null)) {
-                    this.AppRuleDatasourceForRuleRowChanging(this, new AppRuleDatasourceForRuleRowChangeEvent(((AppRuleDatasourceForRuleRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.AppRuleDatasourceForRuleRowDeleted != null)) {
-                    this.AppRuleDatasourceForRuleRowDeleted(this, new AppRuleDatasourceForRuleRowChangeEvent(((AppRuleDatasourceForRuleRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.AppRuleDatasourceForRuleRowDeleting != null)) {
-                    this.AppRuleDatasourceForRuleRowDeleting(this, new AppRuleDatasourceForRuleRowChangeEvent(((AppRuleDatasourceForRuleRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveAppRuleDatasourceForRuleRow(AppRuleDatasourceForRuleRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsData ds = new dsData();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AppRuleDatasourceForRuleDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class _0_1__Master_AllRow : global::System.Data.DataRow {
@@ -19913,174 +19543,6 @@ namespace NICSQLTools.Data {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class AppRuleDatasourceForRuleRow : global::System.Data.DataRow {
-            
-            private AppRuleDatasourceForRuleDataTable tableAppRuleDatasourceForRule;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal AppRuleDatasourceForRuleRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableAppRuleDatasourceForRule = ((AppRuleDatasourceForRuleDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DatasourceID {
-                get {
-                    return ((int)(this[this.tableAppRuleDatasourceForRule.DatasourceIDColumn]));
-                }
-                set {
-                    this[this.tableAppRuleDatasourceForRule.DatasourceIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DatasourceName {
-                get {
-                    try {
-                        return ((string)(this[this.tableAppRuleDatasourceForRule.DatasourceNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DatasourceName\' in table \'AppRuleDatasourceForRule\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableAppRuleDatasourceForRule.DatasourceNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DSCategoryId {
-                get {
-                    try {
-                        return ((int)(this[this.tableAppRuleDatasourceForRule.DSCategoryIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DSCategoryId\' in table \'AppRuleDatasourceForRule\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableAppRuleDatasourceForRule.DSCategoryIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DateIn {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableAppRuleDatasourceForRule.DateInColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DateIn\' in table \'AppRuleDatasourceForRule\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAppRuleDatasourceForRule.DateInColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string RealName {
-                get {
-                    try {
-                        return ((string)(this[this.tableAppRuleDatasourceForRule.RealNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RealName\' in table \'AppRuleDatasourceForRule\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAppRuleDatasourceForRule.RealNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int EnableRule {
-                get {
-                    try {
-                        return ((int)(this[this.tableAppRuleDatasourceForRule.EnableRuleColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EnableRule\' in table \'AppRuleDatasourceForRule\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAppRuleDatasourceForRule.EnableRuleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDatasourceNameNull() {
-                return this.IsNull(this.tableAppRuleDatasourceForRule.DatasourceNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDatasourceNameNull() {
-                this[this.tableAppRuleDatasourceForRule.DatasourceNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDSCategoryIdNull() {
-                return this.IsNull(this.tableAppRuleDatasourceForRule.DSCategoryIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDSCategoryIdNull() {
-                this[this.tableAppRuleDatasourceForRule.DSCategoryIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDateInNull() {
-                return this.IsNull(this.tableAppRuleDatasourceForRule.DateInColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDateInNull() {
-                this[this.tableAppRuleDatasourceForRule.DateInColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRealNameNull() {
-                return this.IsNull(this.tableAppRuleDatasourceForRule.RealNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRealNameNull() {
-                this[this.tableAppRuleDatasourceForRule.RealNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEnableRuleNull() {
-                return this.IsNull(this.tableAppRuleDatasourceForRule.EnableRuleColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEnableRuleNull() {
-                this[this.tableAppRuleDatasourceForRule.EnableRuleColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -21086,40 +20548,6 @@ namespace NICSQLTools.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AppRuleDatasourceRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class AppRuleDatasourceForRuleRowChangeEvent : global::System.EventArgs {
-            
-            private AppRuleDatasourceForRuleRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppRuleDatasourceForRuleRowChangeEvent(AppRuleDatasourceForRuleRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppRuleDatasourceForRuleRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -32147,11 +31575,16 @@ SELECT RuleID, DatasourceID FROM AppRuleDatasource WHERE (DatasourceID = @Dataso
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT RuleID, DatasourceID FROM dbo.AppRuleDatasource";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT RuleID, DatasourceID FROM dbo.AppRuleDatasource\r\nWHERE RuleID = @RuleID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RuleID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RuleID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -32173,6 +31606,32 @@ SELECT RuleID, DatasourceID FROM AppRuleDatasource WHERE (DatasourceID = @Dataso
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsData.AppRuleDatasourceDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsData.AppRuleDatasourceDataTable dataTable = new dsData.AppRuleDatasourceDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByRuleID(dsData.AppRuleDatasourceDataTable dataTable, int RuleID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(RuleID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsData.AppRuleDatasourceDataTable GetDataByRuleID(int RuleID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(RuleID));
             dsData.AppRuleDatasourceDataTable dataTable = new dsData.AppRuleDatasourceDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -32284,210 +31743,6 @@ SELECT RuleID, DatasourceID FROM AppRuleDatasource WHERE (DatasourceID = @Dataso
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int Original_RuleID, int Original_DatasourceID) {
             return this.Update(Original_RuleID, Original_DatasourceID, Original_RuleID, Original_DatasourceID);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AppRuleDatasourceForRuleTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public AppRuleDatasourceForRuleTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AppRuleDatasourceForRule";
-            tableMapping.ColumnMappings.Add("DatasourceID", "DatasourceID");
-            tableMapping.ColumnMappings.Add("DatasourceName", "DatasourceName");
-            tableMapping.ColumnMappings.Add("DSCategoryId", "DSCategoryId");
-            tableMapping.ColumnMappings.Add("DateIn", "DateIn");
-            tableMapping.ColumnMappings.Add("RealName", "RealName");
-            tableMapping.ColumnMappings.Add("EnableRule", "EnableRule");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        AppDatasource.DatasourceID, AppDatasource.DatasourceName, AppDatasource.DSCategoryId, AppDatasource.DateIn, AppUsers.RealName, CASE WHEN EXISTS
-                             (SELECT        *
-                                FROM            AppRuleDatasource
-                                WHERE        [RuleID] = @RuleID AND [DatasourceID] = AppDatasource.DatasourceID) THEN 1 ELSE 0 END AS EnableRule
-FROM            AppDatasource LEFT OUTER JOIN
-                         AppUsers ON AppDatasource.UserIn = AppUsers.UserID
-WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RuleID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RuleID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DSCategoryId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DSCategoryId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsData.AppRuleDatasourceForRuleDataTable dataTable, global::System.Nullable<int> RuleID, global::System.Nullable<int> DSCategoryId) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((RuleID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(RuleID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((DSCategoryId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DSCategoryId.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsData.AppRuleDatasourceForRuleDataTable GetData(global::System.Nullable<int> RuleID, global::System.Nullable<int> DSCategoryId) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((RuleID.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(RuleID.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((DSCategoryId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DSCategoryId.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            dsData.AppRuleDatasourceForRuleDataTable dataTable = new dsData.AppRuleDatasourceForRuleDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
     }
     
@@ -33547,15 +32802,6 @@ WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(dsData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._appUsersTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AppUsers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._appUsersTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._appRulesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.AppRules.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -33565,12 +32811,12 @@ WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._appDatasourceTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._appUsersTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AppUsers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._appDatasourceTableAdapter.Update(updatedRows));
+                    result = (result + this._appUsersTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -33745,6 +32991,15 @@ WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._appDatasourceTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._appDatasourceTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._appRuleDatasourceTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.AppRuleDatasource.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -33764,14 +33019,6 @@ WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(dsData dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._appUsersTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AppUsers.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._appUsersTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._appRulesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.AppRules.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -33780,11 +33027,11 @@ WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._appDatasourceTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._appUsersTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AppUsers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._appDatasourceTableAdapter.Update(addedRows));
+                    result = (result + this._appUsersTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -33940,6 +33187,14 @@ WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._appDatasourceTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._appDatasourceTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._appRuleDatasourceTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.AppRuleDatasource.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -33963,6 +33218,14 @@ WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._appRuleDatasourceTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._appDatasourceTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._appDatasourceTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -34118,11 +33381,11 @@ WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._appDatasourceTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AppDatasource.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._appUsersTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AppUsers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._appDatasourceTableAdapter.Update(deletedRows));
+                    result = (result + this._appUsersTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -34131,14 +33394,6 @@ WHERE        (AppDatasource.DSCategoryId = @DSCategoryId)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._appRulesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._appUsersTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AppUsers.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._appUsersTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

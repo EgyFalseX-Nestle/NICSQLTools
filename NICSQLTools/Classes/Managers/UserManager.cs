@@ -17,6 +17,7 @@ namespace NICSQLTools.Classes.Managers
         public static Data.dsDataTableAdapters.AppUsersTableAdapter adpUser;
         public static Data.dsDataTableAdapters.AppRuleDetailTableAdapter adpUserRuleDetials;
         private static Data.dsQryTableAdapters.SalesDistrict2TableAdapter adpUserSalesDistrict2;
+        private static Data.dsQryTableAdapters.UserRuleDatasourceTableAdapter adpUserDatasource;
         public static readonly int SuperAdminId = 1;
         //public static Data.dsQry.sales
         #endregion
@@ -24,6 +25,7 @@ namespace NICSQLTools.Classes.Managers
         public Uti.Types.UserInfo User = new Uti.Types.UserInfo();
         private NICSQLTools.Data.dsData.AppRuleDetailDataTable UserRuleDetialsTable = new Data.dsData.AppRuleDetailDataTable();
         public NICSQLTools.Data.dsQry.SalesDistrict2DataTable UserRuleSalesDistrictTable = new Data.dsQry.SalesDistrict2DataTable();
+        public NICSQLTools.Data.dsQry.UserRuleDatasourceDataTable UserDatasource = new Data.dsQry.UserRuleDatasourceDataTable();
         #endregion
         #region -   Functions   -
         public static void Init()
@@ -31,16 +33,17 @@ namespace NICSQLTools.Classes.Managers
             adpUser = new Data.dsDataTableAdapters.AppUsersTableAdapter();
             adpUserRuleDetials = new Data.dsDataTableAdapters.AppRuleDetailTableAdapter();
             adpUserSalesDistrict2 = new Data.dsQryTableAdapters.SalesDistrict2TableAdapter();
+            adpUserDatasource = new Data.dsQryTableAdapters.UserRuleDatasourceTableAdapter();
             DataManager.SetAllCommandTimeouts(adpUser, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(adpUserRuleDetials, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(adpUserSalesDistrict2, DataManager.ConnectionTimeout);
+            DataManager.SetAllCommandTimeouts(adpUserDatasource, DataManager.ConnectionTimeout);
 
             defaultInstance = new UserManager();
 
         }
         public bool Login(string username, string password)
         {
-            bool ReturnMe = false;
             try
             {
                 Data.dsData.AppUsersDataTable UserTbl = adpUser.GetDataByNamePass(username, password);
@@ -54,19 +57,21 @@ namespace NICSQLTools.Classes.Managers
                         User.IsAdmin = true;
                     else
                         User.IsAdmin = false;
-                    if (GetUserRules(User.UserId))
-                        ReturnMe = true;
-                    if (GetUserSalesDistrict(User.UserId))
-                        ReturnMe = true;
+                    if (!GetUserRules(User.UserId))
+                        return false;
+                    if (!GetUserSalesDistrict(User.UserId))
+                        return false;
+                    if (!GetUserDatasource(User.UserId))
+                        return false;
                     Logger.InfoFormat("User Name {0} UserId {1} Logon Time {2}", User.UserName, User.UserId, DataManager.adpQry.GetServerDate());
                 }
             }
             catch (SqlException ex)
             {
                 Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+                return false;
             }
-
-            return ReturnMe;
+            return true;
         }
         private bool GetUserRules(int UserId)
         {
@@ -79,6 +84,15 @@ namespace NICSQLTools.Classes.Managers
                 adpUserSalesDistrict2.Fill(UserRuleSalesDistrictTable);
             else
                 adpUserSalesDistrict2.FillByUserId(UserRuleSalesDistrictTable, UserId);
+
+            return true;
+        }
+        private bool GetUserDatasource(int UserId)
+        {
+            if (UserId == SuperAdminId)
+                adpUserDatasource.Fill(UserDatasource);
+            else
+                adpUserDatasource.FillByUserId(UserDatasource, UserId);
 
             return true;
         }

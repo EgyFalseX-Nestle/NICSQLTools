@@ -676,37 +676,38 @@ GROUP BY AppUsers.RealName</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DSForRuleTableAdapter" GeneratorDataComponentClassName="DSForRuleTableAdapter" Name="DSForRule" UserDataComponentName="DSForRuleTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserRuleDatasourceTableAdapter" GeneratorDataComponentClassName="UserRuleDatasourceTableAdapter" Name="UserRuleDatasource" UserDataComponentName="UserRuleDatasourceTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.AppDatasource" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        CAST(CASE WHEN RuleID IS NULL THEN 0 ELSE 1 END AS bit) AS EnableRule, RuleID, vAppDatasource_LUE.DatasourceID, vAppDatasource_LUE.AppDatasourceTypeId, vAppDatasource_LUE.DatasourceName, vAppDatasource_LUE.DatasourceSPName, vAppDatasource_LUE.UserIn, 
-                         vAppDatasource_LUE.DateIn, vAppDatasource_LUE.RealName, vAppDatasource_LUE.AppDatasourceTypeName, vAppDatasource_LUE.DSCategoryId, 
-                         vAppDatasource_LUE.DSCategoryName, vAppDatasource_LUE.DSCategoryDesc
-FROM            vAppDatasource_LUE LEFT OUTER JOIN
-                         AppRuleDatasource ON vAppDatasource_LUE.DatasourceID = AppRuleDatasource.DatasourceID</CommandText>
+                    <CommandText>SELECT        DatasourceID
+FROM            AppDatasource
+GROUP BY DatasourceID</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="EnableRule" DataSetColumn="EnableRule" />
-              <Mapping SourceColumn="RuleID" DataSetColumn="RuleID" />
               <Mapping SourceColumn="DatasourceID" DataSetColumn="DatasourceID" />
-              <Mapping SourceColumn="AppDatasourceTypeId" DataSetColumn="AppDatasourceTypeId" />
-              <Mapping SourceColumn="DatasourceName" DataSetColumn="DatasourceName" />
-              <Mapping SourceColumn="DatasourceSPName" DataSetColumn="DatasourceSPName" />
-              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
-              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
-              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
-              <Mapping SourceColumn="AppDatasourceTypeName" DataSetColumn="AppDatasourceTypeName" />
-              <Mapping SourceColumn="DSCategoryId" DataSetColumn="DSCategoryId" />
-              <Mapping SourceColumn="DSCategoryName" DataSetColumn="DSCategoryName" />
-              <Mapping SourceColumn="DSCategoryDesc" DataSetColumn="DSCategoryDesc" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.AppRuleDatasource" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByUserId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUserId" GeneratorSourceName="FillByUserId" GetMethodModifier="Public" GetMethodName="GetDataByUserId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUserId" UserSourceName="FillByUserId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AppRuleDatasource.DatasourceID
+FROM            AppRuleDatasource INNER JOIN
+                         AppUserRule ON AppRuleDatasource.RuleID = AppUserRule.RuleId
+WHERE        (AppUserRule.UserId = @UserId)
+GROUP BY AppRuleDatasource.DatasourceID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="IC_DB.dbo.AppUserRule" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -1674,7 +1675,6 @@ FROM            vAppDatasource_LUE LEFT OUTER JOIN
               <xs:element name="EnableRule" msprop:Generator_ColumnVarNameInTable="columnEnableRule" msprop:Generator_ColumnPropNameInRow="EnableRule" msprop:Generator_ColumnPropNameInTable="EnableRuleColumn" msprop:Generator_UserColumnName="EnableRule" type="xs:boolean" minOccurs="0" />
               <xs:element name="RuleID" msprop:Generator_ColumnVarNameInTable="columnRuleID" msprop:Generator_ColumnPropNameInRow="RuleID" msprop:Generator_ColumnPropNameInTable="RuleIDColumn" msprop:Generator_UserColumnName="RuleID" type="xs:int" minOccurs="0" />
               <xs:element name="DatasourceID" msprop:Generator_ColumnVarNameInTable="columnDatasourceID" msprop:Generator_ColumnPropNameInRow="DatasourceID" msprop:Generator_ColumnPropNameInTable="DatasourceIDColumn" msprop:Generator_UserColumnName="DatasourceID" type="xs:int" />
-              <xs:element name="AppDatasourceTypeId" msprop:Generator_ColumnVarNameInTable="columnAppDatasourceTypeId" msprop:Generator_ColumnPropNameInRow="AppDatasourceTypeId" msprop:Generator_ColumnPropNameInTable="AppDatasourceTypeIdColumn" msprop:Generator_UserColumnName="AppDatasourceTypeId" type="xs:int" minOccurs="0" />
               <xs:element name="DatasourceName" msprop:Generator_ColumnVarNameInTable="columnDatasourceName" msprop:Generator_ColumnPropNameInRow="DatasourceName" msprop:Generator_ColumnPropNameInTable="DatasourceNameColumn" msprop:Generator_UserColumnName="DatasourceName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1682,14 +1682,6 @@ FROM            vAppDatasource_LUE LEFT OUTER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DatasourceSPName" msprop:Generator_ColumnVarNameInTable="columnDatasourceSPName" msprop:Generator_ColumnPropNameInRow="DatasourceSPName" msprop:Generator_ColumnPropNameInTable="DatasourceSPNameColumn" msprop:Generator_UserColumnName="DatasourceSPName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
               <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
               <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
                 <xs:simpleType>
@@ -1706,20 +1698,13 @@ FROM            vAppDatasource_LUE LEFT OUTER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="DSCategoryId" msprop:Generator_ColumnVarNameInTable="columnDSCategoryId" msprop:Generator_ColumnPropNameInRow="DSCategoryId" msprop:Generator_ColumnPropNameInTable="DSCategoryIdColumn" msprop:Generator_UserColumnName="DSCategoryId" type="xs:int" minOccurs="0" />
-              <xs:element name="DSCategoryName" msprop:Generator_ColumnVarNameInTable="columnDSCategoryName" msprop:Generator_ColumnPropNameInRow="DSCategoryName" msprop:Generator_ColumnPropNameInTable="DSCategoryNameColumn" msprop:Generator_UserColumnName="DSCategoryName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DSCategoryDesc" msprop:Generator_ColumnVarNameInTable="columnDSCategoryDesc" msprop:Generator_ColumnPropNameInRow="DSCategoryDesc" msprop:Generator_ColumnPropNameInTable="DSCategoryDescColumn" msprop:Generator_UserColumnName="DSCategoryDesc" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UserRuleDatasource" msprop:Generator_TableClassName="UserRuleDatasourceDataTable" msprop:Generator_TableVarName="tableUserRuleDatasource" msprop:Generator_RowChangedName="UserRuleDatasourceRowChanged" msprop:Generator_TablePropName="UserRuleDatasource" msprop:Generator_RowDeletingName="UserRuleDatasourceRowDeleting" msprop:Generator_RowChangingName="UserRuleDatasourceRowChanging" msprop:Generator_RowEvHandlerName="UserRuleDatasourceRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRuleDatasourceRowDeleted" msprop:Generator_RowClassName="UserRuleDatasourceRow" msprop:Generator_UserTableName="UserRuleDatasource" msprop:Generator_RowEvArgName="UserRuleDatasourceRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DatasourceID" msprop:Generator_ColumnVarNameInTable="columnDatasourceID" msprop:Generator_ColumnPropNameInRow="DatasourceID" msprop:Generator_ColumnPropNameInTable="DatasourceIDColumn" msprop:Generator_UserColumnName="DatasourceID" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1770,6 +1755,14 @@ FROM            vAppDatasource_LUE LEFT OUTER JOIN
     <xs:unique name="DistributorRoute_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DistributorRoute" />
       <xs:field xpath="mstns:DistributorRoute" />
+    </xs:unique>
+    <xs:unique name="DSForRule_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DSForRule" />
+      <xs:field xpath="mstns:DatasourceID" />
+    </xs:unique>
+    <xs:unique name="UserRuleDatasource_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:UserRuleDatasource" />
+      <xs:field xpath="mstns:DatasourceID" />
     </xs:unique>
   </xs:element>
 </xs:schema>

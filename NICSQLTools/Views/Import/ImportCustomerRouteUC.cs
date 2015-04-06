@@ -169,6 +169,11 @@ _______________________________________________
                 AddLog("New Customer Route Saved " + dsData.CustomerRoute.Count, true);
                 output = true;
             }
+            //Adding New Customers Found In CustomerRoute Into HN
+            ChangeProgressCaption("Adding New Customer ...");
+            int CustomerAdded = DataManager.adpQry.InsertNewCustomerFromCustomerRoute(Convert.ToInt16(tbYear.EditValue), Convert.ToInt16(tbMonth.EditValue));
+            AddLog("New Customer Added : " + CustomerAdded, true);
+
             dsData.CustomerRoute.AcceptChanges();
             ShowHideProgress(false);
 

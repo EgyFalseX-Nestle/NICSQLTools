@@ -40,7 +40,6 @@ namespace NICSQLTools.Classes.Managers
             DataManager.SetAllCommandTimeouts(adpUserDatasource, DataManager.ConnectionTimeout);
 
             defaultInstance = new UserManager();
-
         }
         public bool Login(string username, string password)
         {

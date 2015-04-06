@@ -195,6 +195,14 @@ namespace NICSQLTools.Data.Linq
 				return this.GetTable<vAppProductDetail>();
 			}
 		}
+		
+		public System.Data.Linq.Table<vRouteDetail> vRouteDetails
+		{
+			get
+			{
+				return this.GetTable<vRouteDetail>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[0-0 Final Data All]")]
@@ -4337,6 +4345,447 @@ namespace NICSQLTools.Data.Linq
 				if ((this._BaseGroup != value))
 				{
 					this._BaseGroup = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vRouteDetails")]
+	public partial class vRouteDetail
+	{
+		
+		private string _Distribution_Channel;
+		
+		private string _Route_Number;
+		
+		private string _Route_Number__system;
+		
+		private string _Type;
+		
+		private string _Route_Name;
+		
+		private string _Sales_District__;
+		
+		private string _Region;
+		
+		private string _Plant;
+		
+		private string _RSM;
+		
+		private string _ASM;
+		
+		private string _Supervisor;
+		
+		private string _Brand_Route;
+		
+		private string _Brand_Route_Old;
+		
+		private string _Field16;
+		
+		private string _SDN_Code;
+		
+		private string _Warehouse;
+		
+		private System.Nullable<short> _SalesDistrict3Id;
+		
+		private string _NCE_Project;
+		
+		private System.Nullable<short> _SalesDistrict2Id;
+		
+		private System.Nullable<short> _SalesDistrict1Id;
+		
+		private string _Sales_District_2;
+		
+		private string _Sales_District;
+		
+		private string _Sales_District_Name;
+		
+		private string _Regions_Group;
+		
+		public vRouteDetail()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Distribution Channel]", Storage="_Distribution_Channel", DbType="NVarChar(255)")]
+		public string Distribution_Channel
+		{
+			get
+			{
+				return this._Distribution_Channel;
+			}
+			set
+			{
+				if ((this._Distribution_Channel != value))
+				{
+					this._Distribution_Channel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Number]", Storage="_Route_Number", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string Route_Number
+		{
+			get
+			{
+				return this._Route_Number;
+			}
+			set
+			{
+				if ((this._Route_Number != value))
+				{
+					this._Route_Number = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Number  system]", Storage="_Route_Number__system", DbType="NVarChar(255)")]
+		public string Route_Number__system
+		{
+			get
+			{
+				return this._Route_Number__system;
+			}
+			set
+			{
+				if ((this._Route_Number__system != value))
+				{
+					this._Route_Number__system = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(255)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Name]", Storage="_Route_Name", DbType="NVarChar(255)")]
+		public string Route_Name
+		{
+			get
+			{
+				return this._Route_Name;
+			}
+			set
+			{
+				if ((this._Route_Name != value))
+				{
+					this._Route_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District #]", Storage="_Sales_District__", DbType="NVarChar(255)")]
+		public string Sales_District__
+		{
+			get
+			{
+				return this._Sales_District__;
+			}
+			set
+			{
+				if ((this._Sales_District__ != value))
+				{
+					this._Sales_District__ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="NVarChar(255)")]
+		public string Region
+		{
+			get
+			{
+				return this._Region;
+			}
+			set
+			{
+				if ((this._Region != value))
+				{
+					this._Region = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Plant", DbType="NVarChar(255)")]
+		public string Plant
+		{
+			get
+			{
+				return this._Plant;
+			}
+			set
+			{
+				if ((this._Plant != value))
+				{
+					this._Plant = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RSM", DbType="NVarChar(255)")]
+		public string RSM
+		{
+			get
+			{
+				return this._RSM;
+			}
+			set
+			{
+				if ((this._RSM != value))
+				{
+					this._RSM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ASM", DbType="NVarChar(255)")]
+		public string ASM
+		{
+			get
+			{
+				return this._ASM;
+			}
+			set
+			{
+				if ((this._ASM != value))
+				{
+					this._ASM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor", DbType="NVarChar(255)")]
+		public string Supervisor
+		{
+			get
+			{
+				return this._Supervisor;
+			}
+			set
+			{
+				if ((this._Supervisor != value))
+				{
+					this._Supervisor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Brand Route]", Storage="_Brand_Route", DbType="NVarChar(255)")]
+		public string Brand_Route
+		{
+			get
+			{
+				return this._Brand_Route;
+			}
+			set
+			{
+				if ((this._Brand_Route != value))
+				{
+					this._Brand_Route = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Brand Route Old]", Storage="_Brand_Route_Old", DbType="NVarChar(255)")]
+		public string Brand_Route_Old
+		{
+			get
+			{
+				return this._Brand_Route_Old;
+			}
+			set
+			{
+				if ((this._Brand_Route_Old != value))
+				{
+					this._Brand_Route_Old = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Field16", DbType="NVarChar(255)")]
+		public string Field16
+		{
+			get
+			{
+				return this._Field16;
+			}
+			set
+			{
+				if ((this._Field16 != value))
+				{
+					this._Field16 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[SDN Code]", Storage="_SDN_Code", DbType="NVarChar(255)")]
+		public string SDN_Code
+		{
+			get
+			{
+				return this._SDN_Code;
+			}
+			set
+			{
+				if ((this._SDN_Code != value))
+				{
+					this._SDN_Code = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Warehouse", DbType="NVarChar(255)")]
+		public string Warehouse
+		{
+			get
+			{
+				return this._Warehouse;
+			}
+			set
+			{
+				if ((this._Warehouse != value))
+				{
+					this._Warehouse = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict3Id", DbType="SmallInt")]
+		public System.Nullable<short> SalesDistrict3Id
+		{
+			get
+			{
+				return this._SalesDistrict3Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict3Id != value))
+				{
+					this._SalesDistrict3Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NCE_Project", DbType="NVarChar(255)")]
+		public string NCE_Project
+		{
+			get
+			{
+				return this._NCE_Project;
+			}
+			set
+			{
+				if ((this._NCE_Project != value))
+				{
+					this._NCE_Project = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict2Id", DbType="SmallInt")]
+		public System.Nullable<short> SalesDistrict2Id
+		{
+			get
+			{
+				return this._SalesDistrict2Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict2Id != value))
+				{
+					this._SalesDistrict2Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict1Id", DbType="SmallInt")]
+		public System.Nullable<short> SalesDistrict1Id
+		{
+			get
+			{
+				return this._SalesDistrict1Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict1Id != value))
+				{
+					this._SalesDistrict1Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(50)")]
+		public string Sales_District_2
+		{
+			get
+			{
+				return this._Sales_District_2;
+			}
+			set
+			{
+				if ((this._Sales_District_2 != value))
+				{
+					this._Sales_District_2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District]", Storage="_Sales_District", DbType="NVarChar(50)")]
+		public string Sales_District
+		{
+			get
+			{
+				return this._Sales_District;
+			}
+			set
+			{
+				if ((this._Sales_District != value))
+				{
+					this._Sales_District = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District Name]", Storage="_Sales_District_Name", DbType="NVarChar(50)")]
+		public string Sales_District_Name
+		{
+			get
+			{
+				return this._Sales_District_Name;
+			}
+			set
+			{
+				if ((this._Sales_District_Name != value))
+				{
+					this._Sales_District_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Regions Group]", Storage="_Regions_Group", DbType="NVarChar(50)")]
+		public string Regions_Group
+		{
+			get
+			{
+				return this._Regions_Group;
+			}
+			set
+			{
+				if ((this._Regions_Group != value))
+				{
+					this._Regions_Group = value;
 				}
 			}
 		}

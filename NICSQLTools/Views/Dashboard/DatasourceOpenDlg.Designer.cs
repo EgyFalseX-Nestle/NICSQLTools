@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatasourceOpenDlg));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.groupControlMain = new DevExpress.XtraEditors.GroupControl();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.treeListMain = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colDSCategoryDesc = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.LSMSCategory = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.imageCollectionNormal = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollectionNormal = new DevExpress.Utils.ImageCollection();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.vAppDatasourceForUserBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsQry = new NICSQLTools.Data.dsQry();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -57,7 +57,8 @@
             this.xtraTabPageTree = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageSearch = new DevExpress.XtraTab.XtraTabPage();
             this.gridControlSearch = new DevExpress.XtraGrid.GridControl();
-            this.LSMSDatasourceSearch = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.vAppDatasourceForUserSearchBindingSource = new System.Windows.Forms.BindingSource();
+            this.dsQrySearch = new NICSQLTools.Data.dsQry();
             this.gridViewSearch = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditSearchSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -69,7 +70,7 @@
             this.repositoryItemDateEditSearchDateIn = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colDSCategoryDesc1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDSCategoryName = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
+            this.vAppDatasourceForUserTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.vAppDatasourceForUserTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).BeginInit();
             this.groupControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListMain)).BeginInit();
@@ -78,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vAppDatasourceForUserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDSInfo)).BeginInit();
@@ -88,18 +91,14 @@
             this.xtraTabPageTree.SuspendLayout();
             this.xtraTabPageSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasourceSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vAppDatasourceForUserSearchBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQrySearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSearchSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDSSearchInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditSearchDateIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditSearchDateIn.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LSMSDatasource
-            // 
-            this.LSMSDatasource.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
-            this.LSMSDatasource.KeyExpression = "[DatasourceID]";
             // 
             // groupControlMain
             // 
@@ -192,8 +191,13 @@
             // 
             // gridControlMain
             // 
-            this.gridControlMain.DataSource = this.LSMSDatasource;
+            this.gridControlMain.DataSource = this.vAppDatasourceForUserBindingSource;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridControlMain.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gridControlMain.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gridControlMain.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gridControlMain.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridControlMain.Location = new System.Drawing.Point(0, 0);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.Name = "gridControlMain";
@@ -207,6 +211,16 @@
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
             // 
+            // vAppDatasourceForUserBindingSource
+            // 
+            this.vAppDatasourceForUserBindingSource.DataMember = "vAppDatasourceForUser";
+            this.vAppDatasourceForUserBindingSource.DataSource = this.dsQry;
+            // 
+            // dsQry
+            // 
+            this.dsQry.DataSetName = "dsQry";
+            this.dsQry.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -217,6 +231,7 @@
             this.colDateIn});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
+            this.gridViewMain.OptionsBehavior.ReadOnly = true;
             this.gridViewMain.OptionsView.ColumnAutoWidth = false;
             this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
             this.gridViewMain.OptionsView.ShowGroupPanel = false;
@@ -357,8 +372,13 @@
             // 
             // gridControlSearch
             // 
-            this.gridControlSearch.DataSource = this.LSMSDatasourceSearch;
+            this.gridControlSearch.DataSource = this.vAppDatasourceForUserSearchBindingSource;
             this.gridControlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlSearch.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridControlSearch.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gridControlSearch.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gridControlSearch.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gridControlSearch.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridControlSearch.Location = new System.Drawing.Point(0, 0);
             this.gridControlSearch.MainView = this.gridViewSearch;
             this.gridControlSearch.Name = "gridControlSearch";
@@ -372,10 +392,15 @@
             this.gridControlSearch.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSearch});
             // 
-            // LSMSDatasourceSearch
+            // vAppDatasourceForUserSearchBindingSource
             // 
-            this.LSMSDatasourceSearch.ElementType = typeof(NICSQLTools.Data.Linq.vAppDatasource_LUE);
-            this.LSMSDatasourceSearch.KeyExpression = "[DatasourceID]";
+            this.vAppDatasourceForUserSearchBindingSource.DataMember = "vAppDatasourceForUser";
+            this.vAppDatasourceForUserSearchBindingSource.DataSource = this.dsQrySearch;
+            // 
+            // dsQrySearch
+            // 
+            this.dsQrySearch.DataSetName = "dsQry";
+            this.dsQrySearch.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridViewSearch
             // 
@@ -389,6 +414,7 @@
             this.colDSCategoryName});
             this.gridViewSearch.GridControl = this.gridControlSearch;
             this.gridViewSearch.Name = "gridViewSearch";
+            this.gridViewSearch.OptionsBehavior.ReadOnly = true;
             this.gridViewSearch.OptionsView.ColumnAutoWidth = false;
             this.gridViewSearch.OptionsView.ShowAutoFilterRow = true;
             this.gridViewSearch.OptionsView.ShowGroupPanel = false;
@@ -526,6 +552,10 @@
             this.colDSCategoryName.VisibleIndex = 2;
             this.colDSCategoryName.Width = 109;
             // 
+            // vAppDatasourceForUserTableAdapter
+            // 
+            this.vAppDatasourceForUserTableAdapter.ClearBeforeFill = true;
+            // 
             // DatasourceOpenDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,7 +570,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open Data Sources";
             this.Load += new System.EventHandler(this.DashboardOpenDlg_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlMain)).EndInit();
             this.groupControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeListMain)).EndInit();
@@ -549,6 +578,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vAppDatasourceForUserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDSInfo)).EndInit();
@@ -559,7 +590,8 @@
             this.xtraTabPageTree.ResumeLayout(false);
             this.xtraTabPageSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasourceSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vAppDatasourceForUserSearchBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsQrySearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSearchSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDSSearchInfo)).EndInit();
@@ -573,7 +605,6 @@
 
         private DevExpress.XtraEditors.GroupControl groupControlMain;
         private DevExpress.XtraEditors.SimpleButton btnClose;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSDatasource;
         private DevExpress.XtraTreeList.TreeList treeListMain;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn colDSCategoryDesc;
@@ -593,7 +624,6 @@
         private DevExpress.XtraTab.XtraTabControl xtraTabControlMain;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageTree;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageSearch;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSDatasourceSearch;
         private DevExpress.XtraGrid.GridControl gridControlSearch;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewSearch;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
@@ -606,5 +636,10 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditSearchDateIn;
         private DevExpress.XtraGrid.Columns.GridColumn colDSCategoryDesc1;
         private DevExpress.XtraGrid.Columns.GridColumn colDSCategoryName;
+        private System.Windows.Forms.BindingSource vAppDatasourceForUserBindingSource;
+        private NICSQLTools.Data.dsQry dsQry;
+        private System.Windows.Forms.BindingSource vAppDatasourceForUserSearchBindingSource;
+        private NICSQLTools.Data.dsQry dsQrySearch;
+        private NICSQLTools.Data.dsQryTableAdapters.vAppDatasourceForUserTableAdapter vAppDatasourceForUserTableAdapter;
     }
 }

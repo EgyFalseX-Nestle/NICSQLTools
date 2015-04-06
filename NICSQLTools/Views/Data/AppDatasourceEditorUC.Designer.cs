@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppDatasourceEditorUC));
+            DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -66,7 +67,6 @@
             this.sessionParam = new DevExpress.Xpo.Session(this.components);
             this.gridViewParam = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcParamDel = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemButtonEditParamDel = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colPramName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPramDisplayName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
@@ -90,7 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSParam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionParam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewParam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditParamDel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(repositoryItemButtonEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManagerMain
@@ -207,6 +207,7 @@
             // 
             // treeListMain
             // 
+            this.treeListMain.AllowDrop = true;
             this.treeListMain.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.colDSCategoryName,
             this.colDSCategoryDesc});
@@ -216,7 +217,6 @@
             this.treeListMain.KeyFieldName = "DSCategoryId";
             this.treeListMain.Location = new System.Drawing.Point(0, 0);
             this.treeListMain.Name = "treeListMain";
-            this.treeListMain.OptionsBehavior.CanCloneNodesOnDrop = true;
             this.treeListMain.OptionsBehavior.DragNodes = true;
             this.treeListMain.OptionsBehavior.EnableFiltering = true;
             this.treeListMain.OptionsBehavior.ImmediateEditor = false;
@@ -226,12 +226,14 @@
             this.treeListMain.OptionsNavigation.AutoMoveRowFocus = true;
             this.treeListMain.OptionsNavigation.EnterMovesNextColumn = true;
             this.treeListMain.OptionsView.AutoWidth = false;
-            this.treeListMain.OptionsView.ShowAutoFilterRow = true;
             this.treeListMain.ParentFieldName = "DSCategoryParent";
             this.treeListMain.SelectImageList = this.imageCollectionNormal;
             this.treeListMain.Size = new System.Drawing.Size(450, 419);
             this.treeListMain.TabIndex = 10;
+            this.treeListMain.AfterExpand += new DevExpress.XtraTreeList.NodeEventHandler(this.treeListMain_AfterExpand);
             this.treeListMain.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeListMain_FocusedNodeChanged);
+            this.treeListMain.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeListMain_DragDrop);
+            this.treeListMain.DragOver += new System.Windows.Forms.DragEventHandler(this.treeListMain_DragOver);
             // 
             // colDSCategoryName
             // 
@@ -349,6 +351,8 @@
             this.gridViewDS.ViewCaption = "DataSource View";
             this.gridViewDS.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridViewDS_RowCellClick);
             this.gridViewDS.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridViewDS_InitNewRow);
+            this.gridViewDS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridViewDS_MouseDown);
+            this.gridViewDS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gridViewDS_MouseMove);
             // 
             // colDatasourceName
             // 
@@ -424,8 +428,6 @@
             this.gridControlParam.MainView = this.gridViewParam;
             this.gridControlParam.MenuManager = this.barManagerMain;
             this.gridControlParam.Name = "gridControlParam";
-            this.gridControlParam.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEditParamDel});
             this.gridControlParam.Size = new System.Drawing.Size(472, 215);
             this.gridControlParam.TabIndex = 6;
             this.gridControlParam.UseEmbeddedNavigator = true;
@@ -480,20 +482,16 @@
             this.gcParamDel.AppearanceHeader.Options.UseTextOptions = true;
             this.gcParamDel.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gcParamDel.Caption = "Delete";
-            this.gcParamDel.ColumnEdit = this.repositoryItemButtonEditParamDel;
+            repositoryItemButtonEdit1.AutoHeight = false;
+            repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "Delete", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            repositoryItemButtonEdit1.Name = "repositoryItemButtonEditParamDel";
+            repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.gcParamDel.ColumnEdit = repositoryItemButtonEdit1;
             this.gcParamDel.Name = "gcParamDel";
             this.gcParamDel.OptionsColumn.TabStop = false;
             this.gcParamDel.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             this.gcParamDel.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            // 
-            // repositoryItemButtonEditParamDel
-            // 
-            this.repositoryItemButtonEditParamDel.AutoHeight = false;
-            this.repositoryItemButtonEditParamDel.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "Delete", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
-            this.repositoryItemButtonEditParamDel.Name = "repositoryItemButtonEditParamDel";
-            this.repositoryItemButtonEditParamDel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.repositoryItemButtonEditParamDel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditParamDel_ButtonClick);
             // 
             // colPramName
             // 
@@ -546,7 +544,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSParam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionParam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewParam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditParamDel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(repositoryItemButtonEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -589,7 +587,6 @@
         private DevExpress.Xpo.Session sessionDS;
         private DevExpress.Xpo.Session sessionParam;
         private DevExpress.XtraGrid.Columns.GridColumn gcParamDel;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditParamDel;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDesc;
     }
 }

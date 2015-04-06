@@ -18,12 +18,10 @@ namespace NICSQLTools.Views.Dashboard
         #region -   Variables   -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(DashboardOpenDlg));
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext() { ObjectTrackingEnabled = false };
-        public NICSQLTools.Data.Linq.vAppDatasource_LUE DataSourceRow;
+        public NICSQLTools.Data.dsQry.vAppDatasourceForUserRow DataSourceRow;
         private NICSQLTools.Uti.Types.AppDatasourceTypeIdEnum DatasourceType = Uti.Types.AppDatasourceTypeIdEnum.SPQry;
         NICSQLTools.Views.Main.rtfTextViewerFrm FrmViewer;
         NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter adp = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
-
-
         #endregion
         #region -   Functions   -
         public DatasourceOpenDlg(NICSQLTools.Uti.Types.AppDatasourceTypeIdEnum Type)
@@ -62,7 +60,6 @@ namespace NICSQLTools.Views.Dashboard
                 FrmViewer.ShowDialog();
             }
         }
-
         #endregion
         #region -   EventWhnd   -
         private void DashboardOpenDlg_Load(object sender, EventArgs e)
@@ -77,36 +74,51 @@ namespace NICSQLTools.Views.Dashboard
         {
             DialogResult = System.Windows.Forms.DialogResult.OK;
             //Get Selected Row
-            DataSourceRow = (NICSQLTools.Data.Linq.vAppDatasource_LUE)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
-            Close();
+            NICSQLTools.Data.dsQry.vAppDatasourceForUserRow row = (NICSQLTools.Data.dsQry.vAppDatasourceForUserRow)((DataRowView)gridViewMain.GetRow(gridViewMain.FocusedRowHandle)).Row;
+            
+            if (Classes.Managers.UserManager.defaultInstance.UserDatasource.FindByDatasourceID(row.DatasourceID) == null)
+                MsgDlg.Show(string.Format("You don't have permission to use this item,{0}Ask Administrator to get access", Environment.NewLine), MsgDlg.MessageType.Error);
+            else
+            {
+                DataSourceRow = row;
+                Close();
+            }
         }
         private void repositoryItemButtonEditSearchSelect_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DialogResult = System.Windows.Forms.DialogResult.OK;
             //Get Selected Row
-            DataSourceRow = (NICSQLTools.Data.Linq.vAppDatasource_LUE)gridViewSearch.GetRow(gridViewSearch.FocusedRowHandle);
-            Close();
+            
+            NICSQLTools.Data.dsQry.vAppDatasourceForUserRow row = (NICSQLTools.Data.dsQry.vAppDatasourceForUserRow)((DataRowView)gridViewSearch.GetRow(gridViewSearch.FocusedRowHandle)).Row;
+
+            if (Classes.Managers.UserManager.defaultInstance.UserDatasource.FindByDatasourceID(row.DatasourceID) == null)
+                MsgDlg.Show(string.Format("You don't have permission to use this item,{0}Ask Administrator to get access", Environment.NewLine), MsgDlg.MessageType.Error);
+            else
+            {
+                DataSourceRow = row;
+                Close();
+            }
         }
         private void treeListMain_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
             NICSQLTools.Data.Linq.vAppDSCategory ds = (NICSQLTools.Data.Linq.vAppDSCategory)treeListMain.GetDataRecordByNode(treeListMain.FocusedNode);
-            LSMSDatasource.QueryableSource = from q in dsLinq.vAppDatasource_LUEs where q.AppDatasourceTypeId == (int)DatasourceType && q.DSCategoryId == ds.DSCategoryId select q;
+            vAppDatasourceForUserTableAdapter.FillByUserIdAndDSCategoryId(dsQry.vAppDatasourceForUser, Classes.Managers.UserManager.defaultInstance.User.UserId.ToString(), ds.DSCategoryId);
             gridViewMain.BestFitColumns();
         }
         private void repositoryItemButtonEditDSInfo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            DataSourceRow = (NICSQLTools.Data.Linq.vAppDatasource_LUE)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
+            DataSourceRow = (NICSQLTools.Data.dsQry.vAppDatasourceForUserRow)((DataRowView)gridViewMain.GetRow(gridViewMain.FocusedRowHandle)).Row;
             ShowInfo();
         }
         private void repositoryItemButtonEditDSSearchInfo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            DataSourceRow = (NICSQLTools.Data.Linq.vAppDatasource_LUE)gridViewSearch.GetRow(gridViewSearch.FocusedRowHandle);
+            DataSourceRow = (NICSQLTools.Data.dsQry.vAppDatasourceForUserRow)((DataRowView)gridViewSearch.GetRow(gridViewSearch.FocusedRowHandle)).Row;
             ShowInfo();
         }
         private void xtraTabControlMain_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
             if (e.Page == xtraTabPageSearch)
-                LSMSDatasourceSearch.QueryableSource = from q in dsLinq.vAppDatasource_LUEs where q.AppDatasourceTypeId == (int)DatasourceType select q;
+                vAppDatasourceForUserTableAdapter.FillByUserId(dsQrySearch.vAppDatasourceForUser, Classes.Managers.UserManager.defaultInstance.User.UserId.ToString());
         }
         #endregion
 

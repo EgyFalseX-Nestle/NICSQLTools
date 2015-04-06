@@ -7,6 +7,10 @@ using DevExpress.XtraSplashScreen;
 using System.Data;
 using NICSQLTools.Classes.Managers;
 using NICSQLTools.Views.Main;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using System.Drawing;
+using DevExpress.XtraGrid;
 
 namespace NICSQLTools.Views.Data
 {
@@ -18,6 +22,8 @@ namespace NICSQLTools.Views.Data
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.dsDataTableAdapters.AppDSCategoryTableAdapter adpCategory = new NICSQLTools.Data.dsDataTableAdapters.AppDSCategoryTableAdapter();
         rtfTextEditorFrm Frm;
+        GridHitInfo downHitInfo = null;
+
         #endregion
         #region - Functions -
         public AppDatasourceEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
@@ -28,17 +34,9 @@ namespace NICSQLTools.Views.Data
         }
         void LoadData()
         {
-            SplashScreenManager.ShowForm(typeof(WaitWindowFrm));
-            System.Threading.ThreadPool.QueueUserWorkItem((o) => 
-            {
-                Invoke(new MethodInvoker(() => {
-                    LSMSAppDatasourceType.QueryableSource = from q in dsLinq.AppDatasourceType_LUEs select q;
-                    XPSCSCat.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
-                    treeListMain.DataSource = XPSCSCat;
-                    treeListMain.BestFitColumns();
-                }));
-                SplashScreenManager.CloseForm();
-            });
+            XPSCSCat.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
+            treeListMain.DataSource = XPSCSCat;
+            LSMSAppDatasourceType.QueryableSource = from q in dsLinq.AppDatasourceType_LUEs select q;
         }
         public void ActivateRules()
         {
@@ -55,7 +53,8 @@ namespace NICSQLTools.Views.Data
         {
             object id = null;
             DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewDS.GetRow(gridViewDS.FocusedRowHandle);
-            if (row == null || row.GetMemberValue("DatasourceID").ToString() == string.Empty)
+            //DataRowView row = (DataRowView)gridViewDS.GetRow(gridViewDS.FocusedRowHandle);
+            if (row == null)
                 id = -1;
             else
                 id = row.GetMemberValue("DatasourceID");
@@ -70,8 +69,8 @@ namespace NICSQLTools.Views.Data
         #region - EventWhnd -
         private void ProductEditorUC_Load(object sender, EventArgs e)
         {
-            LoadData();
             ActivateRules();
+            LoadData();
         }
         private void bbiExport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -132,9 +131,17 @@ namespace NICSQLTools.Views.Data
             gridViewDS.HideLoadingPanel();
             LoadParamGrid();
         }
+        private void treeListMain_AfterExpand(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
+        {
+            treeListMain.BestFitColumns();
+        }
         private void gridViewDS_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            LoadParamGrid();
+            DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewDS.GetRow(e.RowHandle));
+            if (row != null && row.GetMemberValue("DatasourceID") != null)
+            {
+                LoadParamGrid();
+            }
         }
         private void gridViewDS_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
@@ -153,6 +160,7 @@ namespace NICSQLTools.Views.Data
         private void gridViewParam_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
             DevExpress.Xpo.Metadata.XPDataTableObject rowDS = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewDS.GetRow(gridViewDS.FocusedRowHandle));
+            //NICSQLTools.Data.dsQry.vAppDatasourceForUserRow rowDS = (NICSQLTools.Data.dsQry.vAppDatasourceForUserRow)((DataRowView)gridViewDS.GetRow(gridViewDS.FocusedRowHandle)).Row;
             if (rowDS == null)
             {
                 MsgDlg.Show("You Must Select Datasource To Add Paramter", MsgDlg.MessageType.Error);
@@ -246,8 +254,55 @@ namespace NICSQLTools.Views.Data
             }
         }
 
+        private void treeListMain_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(int)))
+                e.Effect = DragDropEffects.Move;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+        private void treeListMain_DragDrop(object sender, DragEventArgs e)
+        {
+            DevExpress.XtraTreeList.TreeList tree = sender as DevExpress.XtraTreeList.TreeList;
+            Point p = tree.PointToClient(new Point(e.X, e.Y));
+            DevExpress.XtraTreeList.Nodes.TreeListNode node = tree.CalcHitInfo(p).Node;
+            if (node == null)
+                return;
+            object dsID = e.Data.GetData(typeof(int));
+            if (dsID == null)
+                return;
+            Classes.Managers.DataManager.adpQry.UpdateDatasourceCategory((int)node.GetValue("DSCategoryId"), (int)dsID);
+            treeListMain.FocusedNode = node;
+        }
+        private void gridViewDS_MouseDown(object sender, MouseEventArgs e)
+        {
+            GridView view = sender as GridView;
+            downHitInfo = null;
 
+            GridHitInfo hitInfo = view.CalcHitInfo(new Point(e.X, e.Y));
+            if (Control.ModifierKeys != Keys.None) return;
+            if (e.Button == MouseButtons.Left && hitInfo.RowHandle >= 0)
+                downHitInfo = hitInfo;
+        }
+        private void gridViewDS_MouseMove(object sender, MouseEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.Button == MouseButtons.Left && downHitInfo != null)
+            {
+                Size dragSize = SystemInformation.DragSize;
+                Rectangle dragRect = new Rectangle(new Point(downHitInfo.HitPoint.X - dragSize.Width / 2, downHitInfo.HitPoint.Y - dragSize.Height / 2), dragSize);
+                if (!dragRect.Contains(new Point(e.X, e.Y)))
+                {
+                    DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewDS.GetRow(downHitInfo.RowHandle);
+                    view.GridControl.DoDragDrop(row.GetMemberValue("DatasourceID"), DragDropEffects.Move);
+                    //if (row != null && row.GetMemberValue("DatasourceID") != null)
 
+                    downHitInfo = null;
+                    DevExpress.Utils.DXMouseEventArgs.GetMouseArgs(e).Handled = true;
+                }
+            }
+        }
+        
         #endregion
         
     }

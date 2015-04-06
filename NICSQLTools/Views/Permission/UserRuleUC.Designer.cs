@@ -124,6 +124,7 @@
             this.colUserId.AppearanceHeader.Options.UseTextOptions = true;
             this.colUserId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colUserId.Caption = "User";
+            this.colUserId.ColumnEdit = this.repositoryItemGridLookUpEditUserID;
             this.colUserId.FieldName = "UserId";
             this.colUserId.Name = "colUserId";
             this.colUserId.Visible = true;
@@ -137,6 +138,7 @@
             this.colRuleId.AppearanceHeader.Options.UseTextOptions = true;
             this.colRuleId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colRuleId.Caption = "Rule";
+            this.colRuleId.ColumnEdit = this.repositoryItemGridLookUpEditRuleID;
             this.colRuleId.FieldName = "RuleId";
             this.colRuleId.Name = "colRuleId";
             this.colRuleId.Visible = true;

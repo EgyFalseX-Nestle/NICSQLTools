@@ -38,11 +38,7 @@ namespace NICSQLTools
 
         private void TestFrm_Load(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                txt.LoadFile((ofd.FileName));
-            }
+            
         }
 
     }

@@ -1092,7 +1092,7 @@
             // 
             // docQueriesQryPivot
             // 
-            this.docQueriesQryPivot.Caption = "Quereis Pivot Viewer";
+            this.docQueriesQryPivot.Caption = "Queries Pivot Viewer";
             this.docQueriesQryPivot.ControlName = "docQueriesQryPivot";
             // 
             // documentTileQueriesQryCustomerInfo

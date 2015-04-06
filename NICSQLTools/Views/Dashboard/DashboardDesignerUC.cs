@@ -68,7 +68,7 @@ namespace NICSQLTools.Views.Dashboard
             DatasourceOpenDlg dlg = new DatasourceOpenDlg(Uti.Types.AppDatasourceTypeIdEnum.Dashboard);
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
-            NICSQLTools.Data.Linq.vAppDatasource_LUE dsRow = dlg.DataSourceRow;
+            NICSQLTools.Data.dsQry.vAppDatasourceForUserRow dsRow = dlg.DataSourceRow;
             //Check if this DS Already Added Before
             foreach (DevExpress.DashboardCommon.DataSource item in dashboardDesignerMain.Dashboard.DataSources)
             {
@@ -151,8 +151,7 @@ namespace NICSQLTools.Views.Dashboard
                 MsgDlg.Show("Dashboard didn't saved", MsgDlg.MessageType.Error);
 
         }
-        #endregion}
-
+        #endregion
         
     }
 }

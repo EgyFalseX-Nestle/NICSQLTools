@@ -42,11 +42,7 @@
             this.colRuleDesc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSalesDistrict3Id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEditSalesDistrict3Id = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.LSMSSalesDistrict3 = new DevExpress.Data.Linq.LinqServerModeSource();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colSalesDistrict2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.appRuleSalesDistrict3BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsData = new NICSQLTools.Data.dsData();
@@ -59,9 +55,13 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.LSMSSalesDistrict3 = new DevExpress.Data.Linq.LinqServerModeSource();
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.rules_LUETableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Rules_LUETableAdapter();
             this.appRuleSalesDistrict3TableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRuleSalesDistrict3TableAdapter();
+            this.salesDistrictInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesDistrictInfoTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.SalesDistrictInfoTableAdapter();
+            this.colSalesDistrict2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditRuleID)).BeginInit();
@@ -69,13 +69,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSalesDistrict3Id)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSalesDistrict3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appRuleSalesDistrict3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSalesDistrict3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesDistrictInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridViewMain
@@ -199,54 +200,23 @@
             this.repositoryItemGridLookUpEditSalesDistrict3Id.AutoHeight = false;
             this.repositoryItemGridLookUpEditSalesDistrict3Id.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEditSalesDistrict3Id.DataSource = this.LSMSSalesDistrict3;
-            this.repositoryItemGridLookUpEditSalesDistrict3Id.DisplayMember = "Sales_District_2";
+            this.repositoryItemGridLookUpEditSalesDistrict3Id.DataSource = this.salesDistrictInfoBindingSource;
+            this.repositoryItemGridLookUpEditSalesDistrict3Id.DisplayMember = "Sales District 2";
             this.repositoryItemGridLookUpEditSalesDistrict3Id.Name = "repositoryItemGridLookUpEditSalesDistrict3Id";
             this.repositoryItemGridLookUpEditSalesDistrict3Id.NullText = "";
             this.repositoryItemGridLookUpEditSalesDistrict3Id.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.repositoryItemGridLookUpEditSalesDistrict3Id.ValueMember = "SalesDistrict3Id";
             this.repositoryItemGridLookUpEditSalesDistrict3Id.View = this.repositoryItemGridLookUpEdit1View;
             // 
-            // LSMSSalesDistrict3
-            // 
-            this.LSMSSalesDistrict3.ElementType = typeof(NICSQLTools.Data.Linq.SalesDistrict3);
-            this.LSMSSalesDistrict3.KeyExpression = "[SalesDistrict3Id]";
-            // 
             // repositoryItemGridLookUpEdit1View
             // 
             this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colSalesDistrict2,
-            this.gridColumn1,
-            this.gridColumn2});
+            this.colSalesDistrict2});
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
             this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colSalesDistrict2
-            // 
-            this.colSalesDistrict2.Caption = "Sales District 2";
-            this.colSalesDistrict2.FieldName = "Sales_District_2";
-            this.colSalesDistrict2.Name = "colSalesDistrict2";
-            this.colSalesDistrict2.Visible = true;
-            this.colSalesDistrict2.VisibleIndex = 0;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Sales District";
-            this.gridColumn1.FieldName = "SalesDistrict2Id.Sales_District";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Sales District Name";
-            this.gridColumn2.FieldName = "SalesDistrict2Id.SalesDistrict1Id.Sales_District_Name";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
             // 
             // gridControlMain
             // 
@@ -360,6 +330,11 @@
             this.barDockControlRight.Location = new System.Drawing.Point(679, 31);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 360);
             // 
+            // LSMSSalesDistrict3
+            // 
+            this.LSMSSalesDistrict3.ElementType = typeof(NICSQLTools.Data.Linq.vRouteDetail);
+            this.LSMSSalesDistrict3.KeyExpression = "[SalesDistrict3Id]";
+            // 
             // popupMenuMain
             // 
             this.popupMenuMain.Manager = this.barManagerMain;
@@ -372,6 +347,22 @@
             // appRuleSalesDistrict3TableAdapter
             // 
             this.appRuleSalesDistrict3TableAdapter.ClearBeforeFill = true;
+            // 
+            // salesDistrictInfoBindingSource
+            // 
+            this.salesDistrictInfoBindingSource.DataMember = "SalesDistrictInfo";
+            this.salesDistrictInfoBindingSource.DataSource = this.dsQry;
+            // 
+            // salesDistrictInfoTableAdapter
+            // 
+            this.salesDistrictInfoTableAdapter.ClearBeforeFill = true;
+            // 
+            // colSalesDistrict2
+            // 
+            this.colSalesDistrict2.FieldName = "Sales District 2";
+            this.colSalesDistrict2.Name = "colSalesDistrict2";
+            this.colSalesDistrict2.Visible = true;
+            this.colSalesDistrict2.VisibleIndex = 0;
             // 
             // RuleSalesDisitrct3UC
             // 
@@ -392,13 +383,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEditSalesDistrict3Id)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSSalesDistrict3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appRuleSalesDistrict3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSSalesDistrict3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesDistrictInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -431,11 +423,11 @@
         private System.Windows.Forms.BindingSource appRuleSalesDistrict3BindingSource;
         private NICSQLTools.Data.dsDataTableAdapters.AppRuleSalesDistrict3TableAdapter appRuleSalesDistrict3TableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colSalesDistrict3Id;
-        private DevExpress.XtraGrid.Columns.GridColumn colSalesDistrict2;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSSalesDistrict3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gcDel;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditDelete;
+        private System.Windows.Forms.BindingSource salesDistrictInfoBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalesDistrict2;
+        private NICSQLTools.Data.dsQryTableAdapters.SalesDistrictInfoTableAdapter salesDistrictInfoTableAdapter;
     }
 }

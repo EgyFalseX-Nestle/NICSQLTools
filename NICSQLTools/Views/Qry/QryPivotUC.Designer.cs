@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager();
             this.panelContainerMain = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanelDashboard = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -197,7 +196,6 @@
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "Root";
             this.layoutControlGroup2.Size = new System.Drawing.Size(281, 160);
-            this.layoutControlGroup2.Text = "Root";
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlGroupParamters
@@ -278,7 +276,7 @@
             this.lueLayout.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.lueLayout.Properties.DataSource = this.LSMSLayout;
             this.lueLayout.Properties.DisplayMember = "DatasourceLayoutName";
             this.lueLayout.Properties.NullText = "";
@@ -389,7 +387,7 @@
             this.layoutControlItemDelete,
             this.layoutControlItemLoad});
             this.layoutControlGroupDatasource.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroupDatasource.Name = "layoutControlGroupDatasource";
+            this.layoutControlGroupDatasource.Name = "Root";
             this.layoutControlGroupDatasource.Size = new System.Drawing.Size(281, 185);
             this.layoutControlGroupDatasource.Text = "Datasource";
             this.layoutControlGroupDatasource.TextVisible = false;
@@ -404,9 +402,7 @@
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(261, 35);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem2.Text = "layoutControlItem2";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItemLoadLayout
@@ -426,9 +422,7 @@
             this.layoutControlItemSave.Location = new System.Drawing.Point(0, 111);
             this.layoutControlItemSave.Name = "layoutControlItemSave";
             this.layoutControlItemSave.Size = new System.Drawing.Size(66, 54);
-            this.layoutControlItemSave.Text = "layoutControlItemSave";
             this.layoutControlItemSave.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemSave.TextToControlDistance = 0;
             this.layoutControlItemSave.TextVisible = false;
             // 
             // lciWait
@@ -441,9 +435,7 @@
             this.lciWait.Name = "lciWait";
             this.lciWait.Size = new System.Drawing.Size(261, 50);
             this.lciWait.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.lciWait.Text = "lciWait";
             this.lciWait.TextSize = new System.Drawing.Size(0, 0);
-            this.lciWait.TextToControlDistance = 0;
             this.lciWait.TextVisible = false;
             this.lciWait.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
@@ -454,9 +446,7 @@
             this.layoutControlItemSaveAs.Location = new System.Drawing.Point(66, 111);
             this.layoutControlItemSaveAs.Name = "layoutControlItemSaveAs";
             this.layoutControlItemSaveAs.Size = new System.Drawing.Size(73, 54);
-            this.layoutControlItemSaveAs.Text = "layoutControlItemSaveAs";
             this.layoutControlItemSaveAs.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemSaveAs.TextToControlDistance = 0;
             this.layoutControlItemSaveAs.TextVisible = false;
             // 
             // layoutControlItemDelete
@@ -466,9 +456,7 @@
             this.layoutControlItemDelete.Location = new System.Drawing.Point(196, 111);
             this.layoutControlItemDelete.Name = "layoutControlItemDelete";
             this.layoutControlItemDelete.Size = new System.Drawing.Size(65, 54);
-            this.layoutControlItemDelete.Text = "layoutControlItemDelete";
             this.layoutControlItemDelete.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemDelete.TextToControlDistance = 0;
             this.layoutControlItemDelete.TextVisible = false;
             // 
             // layoutControlItemLoad
@@ -478,9 +466,7 @@
             this.layoutControlItemLoad.Location = new System.Drawing.Point(139, 111);
             this.layoutControlItemLoad.Name = "layoutControlItemLoad";
             this.layoutControlItemLoad.Size = new System.Drawing.Size(57, 54);
-            this.layoutControlItemLoad.Text = "layoutControlItemLoad";
             this.layoutControlItemLoad.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemLoad.TextToControlDistance = 0;
             this.layoutControlItemLoad.TextVisible = false;
             // 
             // dockPanelProperties
@@ -560,7 +546,6 @@
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(281, 345);
-            this.layoutControlGroup3.Text = "layoutControlGroup3";
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItemPropertiesControl
@@ -572,7 +557,6 @@
             this.layoutControlItemPropertiesControl.Size = new System.Drawing.Size(261, 299);
             this.layoutControlItemPropertiesControl.Text = "Properties Control";
             this.layoutControlItemPropertiesControl.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemPropertiesControl.TextToControlDistance = 0;
             this.layoutControlItemPropertiesControl.TextVisible = false;
             // 
             // layoutControlItem3
@@ -582,9 +566,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(130, 26);
-            this.layoutControlItem3.Text = "layoutControlItem3";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
@@ -594,9 +576,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(130, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(131, 26);
-            this.layoutControlItem4.Text = "layoutControlItem4";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextToControlDistance = 0;
             this.layoutControlItem4.TextVisible = false;
             // 
             // LSMSDatasource

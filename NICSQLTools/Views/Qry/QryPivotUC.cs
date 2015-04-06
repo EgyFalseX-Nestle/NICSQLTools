@@ -28,7 +28,7 @@ namespace NICSQLTools.Views.Qry
         List<Control> LayoutControlList = new List<Control>();
         List<string> ProgressList = new List<string>();
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
-        NICSQLTools.Data.Linq.vAppDatasource_LUE _selectedDatasource = null;
+        NICSQLTools.Data.dsQry.vAppDatasourceForUserRow _selectedDatasource = null;
         #endregion
         #region -   Functions   -
         public QryPivotUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
@@ -61,13 +61,19 @@ namespace NICSQLTools.Views.Qry
                 SplashScreenManager.CloseForm();
             });
         }
-        private bool OpenDatasource()
+        private Task<bool> OpenDatasourceAsync()
         {
-            NICSQLTools.Views.Dashboard.DatasourceOpenDlg dlg = new NICSQLTools.Views.Dashboard.DatasourceOpenDlg(Uti.Types.AppDatasourceTypeIdEnum.SPQry);
-            if (dlg.ShowDialog() != DialogResult.OK)
-                return false;
-            _selectedDatasource = dlg.DataSourceRow;
-            return true;
+            return Task.Run(() =>
+            {
+                bool output = false;
+                NICSQLTools.Views.Dashboard.DatasourceOpenDlg dlg = new NICSQLTools.Views.Dashboard.DatasourceOpenDlg(Uti.Types.AppDatasourceTypeIdEnum.SPQry);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    _selectedDatasource = dlg.DataSourceRow;
+                    output = true;
+                }
+                return output;
+            });
         }
         /// <summary>
         /// Create Datasource And Its Controls And Add it to ref Param 'ds'
@@ -341,10 +347,12 @@ namespace NICSQLTools.Views.Qry
             ActivateRules();
 
         }
-        private void btnLoadDatasource_Click(object sender, EventArgs e)
+        private async void btnLoadDatasource_Click(object sender, EventArgs e)
         {
-            if (!OpenDatasource())
+            btnLoadDashboard.Enabled = false;
+            if (await OpenDatasourceAsync() == false)
                 return;
+            btnLoadDashboard.Enabled = true;
 
             if (_selectedDatasource == null)
                 return;
@@ -375,7 +383,6 @@ namespace NICSQLTools.Views.Qry
         }
         void btnRefresh_Click(object sender, EventArgs e)
         {
-
             SimpleButton btn = (SimpleButton)sender;
             int dsID = Convert.ToInt32(btn.Tag);
             if (Classes.QueryLayout.ChekForEmptyPram(DataSourceList))
@@ -457,8 +464,6 @@ namespace NICSQLTools.Views.Qry
                 return;
             int Datasource = _selectedDatasource.DatasourceID;
 
-            //if (MsgDlg.Show("Are You Sure You Wanna Save Layout ?", MsgDlg.MessageType.Question) == DialogResult.No)
-            //    return;
             Views.Main.ChooseSaveNameDlg dlg = null;
             if (FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))// Save As New
             {
@@ -473,6 +478,12 @@ namespace NICSQLTools.Views.Qry
             else// Update
             {
                 NICSQLTools.Data.Linq.vAppDatasourceLayout_LUE row = (NICSQLTools.Data.Linq.vAppDatasourceLayout_LUE)lueLayout.GetSelectedDataRow();
+                if (!Classes.Managers.UserManager.defaultInstance.User.IsAdmin && row.UserIn != Classes.Managers.UserManager.defaultInstance.User.UserId)
+                {
+                    MsgDlg.Show("Can't Edit Item you do not owen", MsgDlg.MessageType.Error);
+                    return;
+                }
+
                 dlg = new Main.ChooseSaveNameDlg(row.DatasourceLayoutName);
                 if (dlg.ShowDialog() != DialogResult.OK)
                     return;
@@ -508,7 +519,7 @@ namespace NICSQLTools.Views.Qry
         }
         private void btnLoadLayout_Click(object sender, EventArgs e)
         {
-            if (_selectedDatasource.DatasourceID == null || FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
+            if (_selectedDatasource == null || FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
                 return;
             if (MsgDlg.Show("Are You Sure You Wanna Load ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
@@ -517,8 +528,9 @@ namespace NICSQLTools.Views.Qry
         }
         private void btnDeleteLayout_Click(object sender, EventArgs e)
         {
-            if (_selectedDatasource.DatasourceID == null || FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
+            if (_selectedDatasource == null || FXFW.SqlDB.IsNullOrEmpty(lueLayout.EditValue))
                 return;
+
             if (MsgDlg.Show("Are You Sure You Wanna Delete ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
 
@@ -527,7 +539,7 @@ namespace NICSQLTools.Views.Qry
             {
                 MsgDlg.Show("Layout Deleted ...", MsgDlg.MessageType.Success);
                 //Load Datasource Layout
-                if (_selectedDatasource.DatasourceID != null)
+                if (_selectedDatasource != null)
                     LoadLayoutDatasource(_selectedDatasource.DatasourceID);
                 lueLayout.EditValue = null;
             }

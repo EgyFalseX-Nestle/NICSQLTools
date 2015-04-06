@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.lsms = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.txt = new System.Windows.Forms.RichTextBox();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.lsms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lsms
@@ -38,24 +41,34 @@
             this.lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail);
             this.lsms.KeyExpression = "[Material_Number]";
             // 
-            // txt
+            // gridControl1
             // 
-            this.txt.Location = new System.Drawing.Point(12, 12);
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(760, 369);
-            this.txt.TabIndex = 0;
-            this.txt.Text = "";
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(784, 393);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
             // 
             // TestFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 393);
-            this.Controls.Add(this.txt);
+            this.Controls.Add(this.gridControl1);
             this.Name = "TestFrm";
             this.Text = "TestFrm";
             this.Load += new System.EventHandler(this.TestFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lsms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -63,7 +76,8 @@
         #endregion
 
         private DevExpress.Data.Linq.LinqServerModeSource lsms;
-        private System.Windows.Forms.RichTextBox txt;
+        public DevExpress.XtraGrid.GridControl gridControl1;
+        public DevExpress.XtraGrid.Views.Grid.GridView gridView1;
 
 
 

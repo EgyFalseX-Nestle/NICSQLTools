@@ -29,7 +29,7 @@ namespace NICSQLTools.Views.Permission
                 Invoke(new MethodInvoker(() => {
                     rules_LUETableAdapter.Fill(dsQry.Rules_LUE);
                     appRuleSalesDistrict3TableAdapter.Fill(dsData.AppRuleSalesDistrict3);
-                    LSMSSalesDistrict3.QueryableSource = from q in dsLinq.SalesDistrict3s select q;
+                    salesDistrictInfoTableAdapter.Fill(dsQry.SalesDistrictInfo);
                     gridViewMain.BestFitColumns();
                 }));
                 SplashScreenManager.CloseForm();

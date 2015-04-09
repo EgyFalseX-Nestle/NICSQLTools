@@ -385,7 +385,7 @@ namespace NICSQLTools.Views.Dashboard
             DataSourceList[inx].CancelButton.Enabled = true;
             System.Threading.ThreadPool.QueueUserWorkItem((o) =>
             {
-                var data = DataManager.ExeDataSource(DataSourceList[inx].DatasourceSPName, Paramters, DataSourceList[inx].Execommand, StoredProcedure_InfoMessage, SelectCommand_StatementCompleted);
+                var data = DataManager.ExeDataSourceAsync(DataSourceList[inx].DatasourceSPName, Paramters, DataSourceList[inx].Execommand, StoredProcedure_InfoMessage, SelectCommand_StatementCompleted);
                 Invoke(new MethodInvoker(() => { dashboardViewerMain.Dashboard.DataSources[inx].Data = data; }));
                 //dashboardViewerMain.ReloadData(true);
                 Invoke(new MethodInvoker(() =>

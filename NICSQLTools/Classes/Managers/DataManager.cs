@@ -10,6 +10,7 @@ using log4net;
 using System.Collections;
 using System.IO.MemoryMappedFiles;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace NICSQLTools.Classes.Managers
 {
@@ -476,31 +477,34 @@ namespace NICSQLTools.Classes.Managers
             }
             con.Close();
         }
-        public static DataTable ExeDataSource(string StoredProcedureName, Dictionary<string, object> Paramters, SqlCommand cmd, SqlInfoMessageEventHandler InfoMessageHnd = null, StatementCompletedEventHandler StatementCompleted = null)
+        public static Task<DataTable> ExeDataSourceAsync(string StoredProcedureName, Dictionary<string, object> Paramters, SqlCommand cmd, SqlInfoMessageEventHandler InfoMessageHnd = null, StatementCompletedEventHandler StatementCompleted = null)
         {
-            DataTable dt = new DataTable();
-            SqlDataAdapter adp = new SqlDataAdapter("", Properties.Settings.Default.IC_DBConnectionString);
-            adp.SelectCommand.CommandType = CommandType.StoredProcedure;
-            adp.SelectCommand.CommandText = StoredProcedureName;
-
-            if (InfoMessageHnd != null)
-                adp.SelectCommand.Connection.InfoMessage += InfoMessageHnd;
-            if (StatementCompleted != null)
-                adp.SelectCommand.StatementCompleted += StatementCompleted;
-
-            cmd = adp.SelectCommand;
-            foreach (KeyValuePair<string, object> item in Paramters)
-                adp.SelectCommand.Parameters.Add(new SqlParameter(item.Key, item.Value));
-            try
+            return Task<DataTable>.Run(() => 
             {
-                adp.SelectCommand.CommandTimeout = DataManager.ConnectionTimeout;
-                adp.Fill(dt);
-            }
-            catch (SqlException ex)
-            {
-                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
-            }
-            return dt;
+                DataTable dt = new DataTable();
+                try
+                {
+                    SqlDataAdapter adp = new SqlDataAdapter("", Properties.Settings.Default.IC_DBConnectionString);
+                    adp.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adp.SelectCommand.CommandText = StoredProcedureName;
+
+                    if (InfoMessageHnd != null)
+                        adp.SelectCommand.Connection.InfoMessage += InfoMessageHnd;
+                    if (StatementCompleted != null)
+                        adp.SelectCommand.StatementCompleted += StatementCompleted;
+
+                    cmd = adp.SelectCommand;
+                    foreach (KeyValuePair<string, object> item in Paramters)
+                        adp.SelectCommand.Parameters.Add(new SqlParameter(item.Key, item.Value));
+                    adp.SelectCommand.CommandTimeout = DataManager.ConnectionTimeout;
+                    adp.Fill(dt);
+                }
+                catch (SqlException ex)
+                {
+                    Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+                }
+                return dt;
+            });
         }
 
         #region Rule

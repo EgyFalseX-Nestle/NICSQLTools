@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.LSMSSchema = new DevExpress.Data.Linq.LinqServerModeSource();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -68,7 +68,7 @@
             this.repositoryItemDateEditDateIn,
             this.repositoryItemButtonEditSelect,
             this.repositoryItemButtonEditDelete});
-            this.gridControlMain.Size = new System.Drawing.Size(560, 297);
+            this.gridControlMain.Size = new System.Drawing.Size(778, 297);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
@@ -113,7 +113,7 @@
             // 
             this.repositoryItemButtonEditSelect.AutoHeight = false;
             this.repositoryItemButtonEditSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Select", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.apply_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Select", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.apply_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.repositoryItemButtonEditSelect.Name = "repositoryItemButtonEditSelect";
             this.repositoryItemButtonEditSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditSelect.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditSelect_ButtonClick);
@@ -162,7 +162,7 @@
             this.colDateIn.Name = "colDateIn";
             this.colDateIn.Visible = true;
             this.colDateIn.VisibleIndex = 3;
-            this.colDateIn.Width = 115;
+            this.colDateIn.Width = 135;
             // 
             // repositoryItemDateEditDateIn
             // 
@@ -207,7 +207,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl1.Location = new System.Drawing.Point(0, 315);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(584, 66);
+            this.groupControl1.Size = new System.Drawing.Size(802, 66);
             this.groupControl1.TabIndex = 1;
             // 
             // btnClose
@@ -215,7 +215,7 @@
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Image = global::NICSQLTools.Properties.Resources.Stop;
-            this.btnClose.Location = new System.Drawing.Point(467, 23);
+            this.btnClose.Location = new System.Drawing.Point(685, 23);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(105, 37);
             this.btnClose.TabIndex = 0;
@@ -231,7 +231,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(584, 381);
+            this.ClientSize = new System.Drawing.Size(802, 381);
             this.ControlBox = false;
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControlMain);

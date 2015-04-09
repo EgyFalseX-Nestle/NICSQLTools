@@ -27,7 +27,7 @@
       &lt;/appender&gt;
 
       &lt;appender name="LogFileAppender" type="log4net.Appender.FileAppender"&gt;
-        &lt;param name="File" value="Log4Net\NICSQLToolsLog4Net.txt" /&gt;
+        &lt;param name="File" value="L4N\L4N.txt" /&gt;
         &lt;param name="AppendToFile" value="true" /&gt;
         &lt;layout type="log4net.Layout.PatternLayout"&gt;
           &lt;param name="Header" value="[Header]\r\n" /&gt;

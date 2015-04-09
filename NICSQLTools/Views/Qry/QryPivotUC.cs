@@ -80,52 +80,56 @@ namespace NICSQLTools.Views.Qry
         /// </summary>
         /// <param name="DatasourceID"> Database Datasource ID required to get its paramters</param>
         /// <param name="ds">DatasourceStrc needed to get its information</param>
-        private void CreateDatasource(int DatasourceID, ref Classes.QueryLayout.DatasourceStrc Datasource)
+        private Task CreateDatasourceAsync(int DatasourceID)
         {
-            NICSQLTools.Data.dsData.AppDatasourceRow DashboardDSRow = appDashboardDSTableAdapter.GetDataByDatasourceID(DatasourceID)[0];// Get information About DatasourceID
-            NICSQLTools.Data.dsData.AppDatasourceParamDataTable dtParam = appDashboardDSPramTableAdapter.GetDataByDatasourceID(DatasourceID);// Get Paramters Information For DatasourceID
-
-            Datasource.DashboadId = DatasourceID;
-            Datasource.DatasourceName = DashboardDSRow.DatasourceName;
-            Datasource.DatasourceSPName = DashboardDSRow.DatasourceSPName;
-
-            //Create All Datasource Paramters
-            foreach (NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow in dtParam.Rows)
+            return Task.Run(() =>
             {
-                NICSQLTools.Data.dsQry.Get_sp_PramDataTable tblPramType = get_sp_PramTableAdapter.GetDataByParamName(ParamRow.ParamName, DashboardDSRow.DatasourceSPName);//Get Paramter Information
-                string ParamType = string.Empty;
-                if (tblPramType.Rows.Count == 0)
-                    ParamType = "NVARCHAR";
-                else
-                    ParamType = ((NICSQLTools.Data.dsQry.Get_sp_PramRow)tblPramType.Rows[0]).type;
-                //Create Control For Parameter
-                Control item = CreateDSElement(ParamRow, ParamType);
-                //Add Control to Datasource Controls List
-                Datasource.Controls.Add(ParamRow.ParamName, item);
-            }
-            //Create Refresh Button For Datasource
-            SimpleButton btnRefresh = new SimpleButton();
-            btnRefresh.Image = global::NICSQLTools.Properties.Resources.refresh2_16x16;
-            btnRefresh.Name = String.Format("btnRefresh{0}{1}", DashboardDSRow.DatasourceSPName, DatasourceID);
-            btnRefresh.Size = new Size(170, 22);
-            btnRefresh.Location = new Point(120, layoutControlParamter.Controls.Count * 23);
-            btnRefresh.Text = "Refresh " + DashboardDSRow.DatasourceName;
-            btnRefresh.StyleController = layoutControlParamter;
-            btnRefresh.Click += btnRefresh_Click; btnRefresh.Tag = DatasourceID;
-            //Create Cancel Button For Datasource
-            SimpleButton btnCancel = new SimpleButton();
-            btnCancel.Image = global::NICSQLTools.Properties.Resources.cancel_16x16;
-            btnCancel.Name = String.Format("btnCancel{0}{1}", DashboardDSRow.DatasourceSPName, DatasourceID);
-            btnCancel.Size = new Size(170, 22);
-            btnCancel.Location = new Point(120, btnRefresh.Location.Y + 21);
-            btnCancel.StyleController = layoutControlParamter;
-            btnCancel.Text = "Cancel";
-            btnCancel.Enabled = false;
-            btnCancel.Click += btnCancel_Click; btnCancel.Tag = DatasourceID;
+                NICSQLTools.Data.dsData.AppDatasourceRow DashboardDSRow = appDashboardDSTableAdapter.GetDataByDatasourceID(DatasourceID)[0];// Get information About DatasourceID
+                NICSQLTools.Data.dsData.AppDatasourceParamDataTable dtParam = appDashboardDSPramTableAdapter.GetDataByDatasourceID(DatasourceID);// Get Paramters Information For DatasourceID
 
-            //Add Buttons to Datasource Controls List
-            Datasource.ExeButton = btnRefresh;
-            Datasource.CancelButton = btnCancel;
+                DataSourceList.DashboadId = DatasourceID;
+                DataSourceList.DatasourceName = DashboardDSRow.DatasourceName;
+                DataSourceList.DatasourceSPName = DashboardDSRow.DatasourceSPName;
+
+                //Create All Datasource Paramters
+                foreach (NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow in dtParam.Rows)
+                {
+                    NICSQLTools.Data.dsQry.Get_sp_PramDataTable tblPramType = get_sp_PramTableAdapter.GetDataByParamName(ParamRow.ParamName, DashboardDSRow.DatasourceSPName);//Get Paramter Information
+                    string ParamType = string.Empty;
+                    if (tblPramType.Rows.Count == 0)
+                        ParamType = "NVARCHAR";
+                    else
+                        ParamType = ((NICSQLTools.Data.dsQry.Get_sp_PramRow)tblPramType.Rows[0]).type;
+                    //Create Control For Parameter
+                    Control item = CreateDSElement(ParamRow, ParamType);
+                    //Add Control to Datasource Controls List
+                    DataSourceList.Controls.Add(ParamRow.ParamName, item);
+                }
+                //Create Refresh Button For Datasource
+                SimpleButton btnRefresh = new SimpleButton();
+                btnRefresh.Image = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+                btnRefresh.Name = String.Format("btnRefresh{0}{1}", DashboardDSRow.DatasourceSPName, DatasourceID);
+                btnRefresh.Size = new Size(170, 22);
+                btnRefresh.Location = new Point(120, layoutControlParamter.Controls.Count * 23);
+                btnRefresh.Text = "Refresh " + DashboardDSRow.DatasourceName;
+                btnRefresh.StyleController = layoutControlParamter;
+                btnRefresh.Click += btnRefresh_Click; btnRefresh.Tag = DatasourceID;
+                //Create Cancel Button For Datasource
+                SimpleButton btnCancel = new SimpleButton();
+                btnCancel.Image = global::NICSQLTools.Properties.Resources.cancel_16x16;
+                btnCancel.Name = String.Format("btnCancel{0}{1}", DashboardDSRow.DatasourceSPName, DatasourceID);
+                btnCancel.Size = new Size(170, 22);
+                btnCancel.Location = new Point(120, btnRefresh.Location.Y + 21);
+                btnCancel.StyleController = layoutControlParamter;
+                btnCancel.Text = "Cancel";
+                btnCancel.Enabled = false;
+                btnCancel.Click += btnCancel_Click; btnCancel.Tag = DatasourceID;
+
+                //Add Buttons to Datasource Controls List
+                DataSourceList.ExeButton = btnRefresh;
+                DataSourceList.CancelButton = btnCancel;
+            });
+            
         }
         private Control CreateDSElement(NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow, string ParamType)
         {
@@ -198,20 +202,15 @@ namespace NICSQLTools.Views.Qry
             ((TextEdit)ctr).Properties.NullValuePrompt = ParamRow.ParamDisplayName;
             return (Control)ctr;
         }
-        private void DeleteLayoutConrols(ref List<Control> lst)
+        private void CreateLayout(Classes.QueryLayout.DatasourceStrc ds)
         {
             layoutControlGroupParamters.Clear();
-            for (int i = 0; i < lst.Count; i++)
+            for (int i = 0; i < LayoutControlList.Count; i++)
             {
-                lst[i].Dispose();
-                lst[i] = null;
+                LayoutControlList[i].Dispose();
+                LayoutControlList[i] = null;
             }
-            lst.Clear();
-
-        }
-        private void CreateLayout(Classes.QueryLayout.DatasourceStrc ds, ref List<Control> LayControls)
-        {
-            DeleteLayoutConrols(ref LayControls);
+            LayoutControlList.Clear();
 
             LayoutControlGroup LayGroup = layoutControlGroupParamters.AddGroup();
             LayGroup.Text = ds.DatasourceName;
@@ -229,11 +228,18 @@ namespace NICSQLTools.Views.Qry
             //Add Cancel button
             LayoutControlItem layItemBtnCancel = LayGroup.AddItem(string.Empty, ds.CancelButton);
             layItemBtnCancel.TextVisible = false;
+            
         }
-        private void LoadLayoutDatasource(int DatasourceId)
+        private Task LoadLayoutDatasourceAsync(int DatasourceId)
         {
-            LSMSLayout.QueryableSource = from q in dsLinq.vAppDatasourceLayout_LUEs where q.DatasourceID == DatasourceId select q;
-
+            Task tsk = Task.Run(() =>
+            {
+                this.Invoke(new MethodInvoker(() => 
+                {
+                    LSMSLayout.QueryableSource = from q in dsLinq.vAppDatasourceLayout_LUEs where q.DatasourceID == DatasourceId select q;
+                }));
+            });
+            return tsk;
         }
         private bool LoadLayout(int DatasourceLayoutId)
         {
@@ -349,23 +355,24 @@ namespace NICSQLTools.Views.Qry
         }
         private async void btnLoadDatasource_Click(object sender, EventArgs e)
         {
-            btnLoadDashboard.Enabled = false;
-            if (await OpenDatasourceAsync() == false)
-                return;
-            btnLoadDashboard.Enabled = true;
-
-            if (_selectedDatasource == null)
-                return;
-            layoutControlGroupDatasource.Enabled = false;//Stop User Activity
             try
             {
+                btnLoadDashboard.Enabled = false;
+                if (await OpenDatasourceAsync() == false)
+                    return;
+                btnLoadDashboard.Enabled = true;
+
+                if (_selectedDatasource == null)
+                    return;
+                layoutControlGroupDatasource.Enabled = false;//Stop User Activity
+
                 int DatasourceID = _selectedDatasource.DatasourceID;
                 DataSourceList = new Classes.QueryLayout.DatasourceStrc(); DataSourceList.Controls = new Dictionary<string, Control>(); //Inti Datasource
-                CreateDatasource(DatasourceID, ref DataSourceList);
+                await CreateDatasourceAsync(DatasourceID);
                 //Add Controls To Form
-                CreateLayout(DataSourceList, ref LayoutControlList);
+                CreateLayout(DataSourceList);
                 //Load Datasource Layout
-                LoadLayoutDatasource(DatasourceID);
+                await LoadLayoutDatasourceAsync(DatasourceID);
             }
             catch (Exception ex)
             {
@@ -381,7 +388,7 @@ namespace NICSQLTools.Views.Qry
             layoutControlItemLoad.Control.Enabled = true;
             layoutControlItemDelete.Control.Enabled = true;
         }
-        void btnRefresh_Click(object sender, EventArgs e)
+        async void btnRefresh_Click(object sender, EventArgs e)
         {
             SimpleButton btn = (SimpleButton)sender;
             int dsID = Convert.ToInt32(btn.Tag);
@@ -399,23 +406,19 @@ namespace NICSQLTools.Views.Qry
             DataSourceList.ExeButton.Enabled = false;
             DataSourceList.CancelButton.Enabled = true;
             layoutControlGroupDatasource.Enabled = false;//Stop User Activity
-            System.Threading.ThreadPool.QueueUserWorkItem((o) =>
+            try
             {
                 pivotGridControlMain.Fields.Clear();
                 pivotGridControlMain.ForceInitialize();
-                pivotGridControlMain.DataSource = DataManager.ExeDataSource(DataSourceList.DatasourceSPName, Paramters, DataSourceList.Execommand, StoredProcedure_InfoMessage, SelectCommand_StatementCompleted);
+                pivotGridControlMain.DataSource = await DataManager.ExeDataSourceAsync(DataSourceList.DatasourceSPName, Paramters, DataSourceList.Execommand, StoredProcedure_InfoMessage, SelectCommand_StatementCompleted);
                 pivotGridControlMain.RetrieveFields();
-                //if (lueLayout.EditValue != null && lueLayout.EditValue.ToString() != string.Empty)
-                //    LoadLayout(Convert.ToInt32(lueLayout.EditValue));
-               
-                Invoke(new MethodInvoker(() =>
-                {
-                    RemoveProgressList(dsID.ToString());// Remove From Working List
-                    DataSourceList.ExeButton.Enabled = true;
-                    DataSourceList.CancelButton.Enabled = false;
-                    layoutControlGroupDatasource.Enabled = true;//Stop User Activity
-                }));
-            });
+            }
+            catch { }
+
+            RemoveProgressList(dsID.ToString());// Remove From Working List
+            DataSourceList.ExeButton.Enabled = true;
+            DataSourceList.CancelButton.Enabled = false;
+            layoutControlGroupDatasource.Enabled = true;//Stop User Activity
         }
         void btnCancel_Click(object sender, EventArgs e)
         {
@@ -446,7 +449,6 @@ namespace NICSQLTools.Views.Qry
                 ppWait.Description = e.Message;
                 //ppWait.Refresh();
                 //Application.DoEvents();
-
             }));
         }
         void SelectCommand_StatementCompleted(object sender, StatementCompletedEventArgs e)
@@ -455,7 +457,7 @@ namespace NICSQLTools.Views.Qry
         }
         private void lueLayout_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (_selectedDatasource != null)
+            if (_selectedDatasource != null && e.Button.Kind != DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)
                 LSMSLayout.Reload();
         }
         private void btnSaveLayout_Click(object sender, EventArgs e)
@@ -540,7 +542,7 @@ namespace NICSQLTools.Views.Qry
                 MsgDlg.Show("Layout Deleted ...", MsgDlg.MessageType.Success);
                 //Load Datasource Layout
                 if (_selectedDatasource != null)
-                    LoadLayoutDatasource(_selectedDatasource.DatasourceID);
+                    LoadLayoutDatasourceAsync(_selectedDatasource.DatasourceID);
                 lueLayout.EditValue = null;
             }
             else

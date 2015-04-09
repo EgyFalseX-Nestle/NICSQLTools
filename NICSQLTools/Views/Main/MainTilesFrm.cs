@@ -84,6 +84,25 @@ namespace NICSQLTools.Views.Main
                     }
                 }
             }
+            //Remove parent if all child are invisible
+            documentTileEditors.Visible = IsTileContainerContainVisibleItem(tileContainerEditors);
+            documentTileQueries.Visible = IsTileContainerContainVisibleItem(tileContainerQueries);
+            documentTileRules.Visible = IsTileContainerContainVisibleItem(tileContainerRules);
+            documentTileReports.Visible = IsTileContainerContainVisibleItem(tileContainerReports);
+            documentTileDashboard.Visible = IsTileContainerContainVisibleItem(tileContainerDashboard);
+        }
+        private static bool IsTileContainerContainVisibleItem(TileContainer cont)
+        {
+            for (int InxContainers = 0; InxContainers < ((TileContainer)cont).Items.Count; InxContainers++)
+            {
+                for (int i = (cont).Items.Count - 1; i >= 0; i--)
+                {
+                    Tile tile = (Tile)(cont).Items[i];
+                    if (tile.Visible == true)
+                        return true;
+                }
+            }
+            return false;
         }
         public void LoadLayout()
         {

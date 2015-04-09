@@ -80,6 +80,7 @@ namespace NICSQLTools.Views.Main
                     _parent.ActivateRules();
                     _parent.windowsUIView.ActivateContainer(_parent.tileContainerMain);
                     _parent.AddPrivateButtions();//Add User Private Buttons
+                    btnLogin.Enabled = false;
                 }
             }
             else

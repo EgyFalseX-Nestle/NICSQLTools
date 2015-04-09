@@ -338,6 +338,8 @@ _______________________________________________
                 else
                     SqlRow.New_Quanteite = Convert.ToInt32(SqlRow.Actual_Invoiced_Quan * ProductRow.Quin / ProductRow.New_Qu);
 
+                SqlRow.Master_Code = SqlRow._Sold_to_party;
+                SqlRow.Master_Route = SqlRow._Route___Sold;
                 SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
 
                 dsData._0_1__Master_All.Add_0_1__Master_AllRow(SqlRow);

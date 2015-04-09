@@ -15,9 +15,9 @@ namespace NICSQLTools
         public static string updatePath = Application.StartupPath + @"\zUpdateObject.exe";
         public static string updaterPath = Application.StartupPath + @"\Updater.exe";
         public static string AppPath = Application.StartupPath + @"\NICSQLTools.exe";
-        public static string Log4NetFolder = Application.StartupPath + @"\Log4Net";
-        public static string Log4NetConfigFile = Log4NetFolder + @"\NICSQLToolsLog4Net.config";
-        public static string Log4NetLogFile = Log4NetFolder + @"\NICSQLToolsLog4Net.txt";
+        public static string Log4NetFolder = Application.StartupPath + @"\L4N";
+        public static string Log4NetConfigFile = Log4NetFolder + @"\L4N.config";
+        public static string Log4NetLogFile = Log4NetFolder + @"\L4N.txt";
         public static string TilesLayoutFile = Application.StartupPath + @"\TilesLayoutFile";
 
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(Program));

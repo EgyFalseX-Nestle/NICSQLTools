@@ -33,6 +33,7 @@ namespace NICSQLTools
                 bulkCopy.ColumnMappings.Add("Actual Invoiced Quan", "Actual Invoiced Quan"); bulkCopy.ColumnMappings.Add("Condition value", "Condition value");
                 bulkCopy.ColumnMappings.Add("Route & Sold", "Route & Sold"); bulkCopy.ColumnMappings.Add("yeard", "yeard");
                 bulkCopy.ColumnMappings.Add("New Quanteite", "New Quanteite");
+                bulkCopy.ColumnMappings.Add("Master_Code", "Master_Code"); bulkCopy.ColumnMappings.Add("Master_Route", "Master_Route");
                 bulkCopy.ColumnMappings.Add("UserIn", "UserIn");
 
                 //bulkCopy.ColumnMappings.Add("Month", "Month");

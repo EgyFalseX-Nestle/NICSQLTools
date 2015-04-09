@@ -181,6 +181,7 @@
             // 
             // btnSaveLayout
             // 
+            this.btnSaveLayout.Enabled = false;
             this.btnSaveLayout.Image = global::NICSQLTools.Properties.Resources.save_16x16;
             this.btnSaveLayout.Location = new System.Drawing.Point(48, 114);
             this.btnSaveLayout.Name = "btnSaveLayout";
@@ -192,6 +193,7 @@
             // 
             // btnResertLayout
             // 
+            this.btnResertLayout.Enabled = false;
             this.btnResertLayout.Image = global::NICSQLTools.Properties.Resources.delete_16x16;
             this.btnResertLayout.Location = new System.Drawing.Point(609, 114);
             this.btnResertLayout.Name = "btnResertLayout";
@@ -233,7 +235,6 @@
             this.layoutControlGroupSettings.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroupSettings.Name = "layoutControlGroupSettings";
             this.layoutControlGroupSettings.Size = new System.Drawing.Size(751, 526);
-            this.layoutControlGroupSettings.Text = "layoutControlGroupSettings";
             this.layoutControlGroupSettings.TextVisible = false;
             // 
             // tabbedControlGroupSettings
@@ -334,7 +335,6 @@
             this.layoutControlItemChangeLoginInfo.Size = new System.Drawing.Size(659, 197);
             this.layoutControlItemChangeLoginInfo.Text = "Change Login Info";
             this.layoutControlItemChangeLoginInfo.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItemChangeLoginInfo.TextToControlDistance = 0;
             this.layoutControlItemChangeLoginInfo.TextVisible = false;
             // 
             // layoutControlGroupEditLayout
@@ -358,7 +358,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(561, 26);
             this.layoutControlItem3.Text = "Save Layout";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextToControlDistance = 0;
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem2
@@ -370,7 +369,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(98, 26);
             this.layoutControlItem2.Text = "Reset Layout";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextToControlDistance = 0;
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlGroupThemes
@@ -394,7 +392,6 @@
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "Themes Gallary";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextToControlDistance = 0;
             this.layoutControlItem1.TextVisible = false;
             // 
             // UserSettingsUC

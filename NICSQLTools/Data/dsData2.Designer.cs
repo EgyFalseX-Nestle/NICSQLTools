@@ -1360,6 +1360,10 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnNew_Quanteite;
             
+            private global::System.Data.DataColumn columnMaster_Code;
+            
+            private global::System.Data.DataColumn columnMaster_Route;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public _0_1__Master_AllDataTable() {
@@ -1547,6 +1551,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Master_CodeColumn {
+                get {
+                    return this.columnMaster_Code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Master_RouteColumn {
+                get {
+                    return this.columnMaster_Route;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1600,7 +1620,9 @@ namespace NICSQLTools.Data {
                         string Billing_Type, 
                         System.DateTime DateIn, 
                         int UserIn, 
-                        double New_Quanteite) {
+                        double New_Quanteite, 
+                        string Master_Code, 
+                        string Master_Route) {
                 _0_1__Master_AllRow row_0_1__Master_AllRow = ((_0_1__Master_AllRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Billing_Document,
@@ -1621,7 +1643,9 @@ namespace NICSQLTools.Data {
                         null,
                         DateIn,
                         UserIn,
-                        New_Quanteite};
+                        New_Quanteite,
+                        Master_Code,
+                        Master_Route};
                 row_0_1__Master_AllRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_0_1__Master_AllRow);
                 return row_0_1__Master_AllRow;
@@ -1670,6 +1694,8 @@ namespace NICSQLTools.Data {
                 this.columnDateIn = base.Columns["DateIn"];
                 this.columnUserIn = base.Columns["UserIn"];
                 this.columnNew_Quanteite = base.Columns["New Quanteite"];
+                this.columnMaster_Code = base.Columns["Master_Code"];
+                this.columnMaster_Route = base.Columns["Master_Route"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1717,6 +1743,10 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnUserIn);
                 this.columnNew_Quanteite = new global::System.Data.DataColumn("New Quanteite", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNew_Quanteite);
+                this.columnMaster_Code = new global::System.Data.DataColumn("Master_Code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaster_Code);
+                this.columnMaster_Route = new global::System.Data.DataColumn("Master_Route", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaster_Route);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAutoKey}, true));
                 this.columnBilling_Document.MaxLength = 255;
@@ -1736,6 +1766,8 @@ namespace NICSQLTools.Data {
                 this.columnAutoKey.AllowDBNull = false;
                 this.columnAutoKey.ReadOnly = true;
                 this.columnAutoKey.Unique = true;
+                this.columnMaster_Code.MaxLength = 50;
+                this.columnMaster_Route.MaxLength = 50;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_table0_1__Master_All");
                 this.ExtendedProperties.Add("Generator_UserTableName", "0-1  Master All");
             }
@@ -12934,6 +12966,38 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Master_Code {
+                get {
+                    try {
+                        return ((string)(this[this._table0_1__Master_All.Master_CodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Master_Code\' in table \'0-1  Master All\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_1__Master_All.Master_CodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Master_Route {
+                get {
+                    try {
+                        return ((string)(this[this._table0_1__Master_All.Master_RouteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Master_Route\' in table \'0-1  Master All\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_1__Master_All.Master_RouteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBilling_DocumentNull() {
                 return this.IsNull(this._table0_1__Master_All.Billing_DocumentColumn);
             }
@@ -13146,6 +13210,30 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNew_QuanteiteNull() {
                 this[this._table0_1__Master_All.New_QuanteiteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMaster_CodeNull() {
+                return this.IsNull(this._table0_1__Master_All.Master_CodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMaster_CodeNull() {
+                this[this._table0_1__Master_All.Master_CodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMaster_RouteNull() {
+                return this.IsNull(this._table0_1__Master_All.Master_RouteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMaster_RouteNull() {
+                this[this._table0_1__Master_All.Master_RouteColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -20706,6 +20794,8 @@ namespace NICSQLTools.Data.dsDataTableAdapters {
             tableMapping.ColumnMappings.Add("DateIn", "DateIn");
             tableMapping.ColumnMappings.Add("UserIn", "UserIn");
             tableMapping.ColumnMappings.Add("New Quanteite", "New Quanteite");
+            tableMapping.ColumnMappings.Add("Master_Code", "Master_Code");
+            tableMapping.ColumnMappings.Add("Master_Route", "Master_Route");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -20723,7 +20813,7 @@ namespace NICSQLTools.Data.dsDataTableAdapters {
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        AutoKey, [Billing Document], [Distribution Channel], [Sold-to party], Route, [Billing date for bil], [Material Number], [Reference Document N], [Sales unit], Plant, [Condition type], [Actual Invoiced Quan], 
-                         [Condition value], [Route & Sold], yeard, [Billing Type], [New Quanteite], DateIn, UserIn
+                         [Condition value], [Route & Sold], yeard, [Billing Type], [New Quanteite], DateIn, UserIn, Master_Code, Master_Route
 FROM            [0-1  Master All]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }

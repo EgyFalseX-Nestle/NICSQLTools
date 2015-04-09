@@ -386,6 +386,7 @@
             this.docEditorsImportUpdateProductDetails});
             this.windowsUIView.OptionsLayout.LayoutVersion = "2";
             this.windowsUIView.OptionsLayout.PropertiesRestoreMode = DevExpress.XtraBars.Docking2010.Views.PropertiesRestoreMode.All;
+            this.windowsUIView.SearchPanelProperties.Enabled = false;
             this.windowsUIView.SearchPanelProperties.VisibleRowCount = 10;
             this.windowsUIView.SplashScreenProperties.Image = global::NICSQLTools.Properties.Resources.NestleBanner;
             this.windowsUIView.SplashScreenProperties.LoadingDescription = "Loading data, Please wait ...";

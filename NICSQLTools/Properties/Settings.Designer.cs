@@ -42,22 +42,22 @@ namespace NICSQLTools.Properties {
             "  <sink value=\"tcp://localhost:1983/LoggingSink\" />\r\n        <lossy value=\"false" +
             "\" />\r\n        <bufferSize value=\"1\" />\r\n        <onlyFixPartialEventData value=\"" +
             "true\" />\r\n      </appender>\r\n\r\n      <appender name=\"LogFileAppender\" type=\"log4" +
-            "net.Appender.FileAppender\">\r\n        <param name=\"File\" value=\"Log4Net\\NICSQLToo" +
-            "lsLog4Net.txt\" />\r\n        <param name=\"AppendToFile\" value=\"true\" />\r\n        <" +
-            "layout type=\"log4net.Layout.PatternLayout\">\r\n          <param name=\"Header\" valu" +
-            "e=\"[Header]\\r\\n\" />\r\n          <param name=\"Footer\" value=\"[Footer]\\r\\n\" />\r\n   " +
-            "       <param name=\"ConversionPattern\" value=\"%d [%t] %-5p %c %m%n\" />\r\n        " +
-            "</layout>\r\n      </appender>\r\n\r\n      <appender name=\"ConsoleAppender\" type=\"log" +
-            "4net.Appender.ConsoleAppender\" >\r\n        <layout type=\"log4net.Layout.PatternLa" +
-            "yout\">\r\n          <param name=\"Header\" value=\"[Header]\\r\\n\" />\r\n          <param" +
-            " name=\"Footer\" value=\"[Footer]\\r\\n\" />\r\n          <param name=\"ConversionPattern" +
-            "\" value=\"%d [%t] %-5p %c %m%n\" />\r\n        </layout>\r\n      </appender>\r\n\r\n     " +
-            " <appender name=\"UdpAppender\" type=\"log4net.Appender.UdpAppender\">\r\n        <rem" +
-            "oteAddress value=\"localhost\" />\r\n        <remotePort value=\"7071\" />\r\n        <l" +
-            "ayout type=\"log4net.Layout.XmlLayoutSchemaLog4j\" />\r\n      </appender>\r\n\r\n      " +
-            "<root>\r\n        <level value=\"Debug\" />\r\n        <appender-ref ref=\"UdpAppender\"" +
-            " />\r\n        <appender-ref ref=\"RemotingAppender\" />\r\n        <appender-ref ref=" +
-            "\"LogFileAppender\" />\r\n      </root>\r\n    </log4net>\r\n</configuration>")]
+            "net.Appender.FileAppender\">\r\n        <param name=\"File\" value=\"L4N\\L4N.txt\" />\r\n" +
+            "        <param name=\"AppendToFile\" value=\"true\" />\r\n        <layout type=\"log4ne" +
+            "t.Layout.PatternLayout\">\r\n          <param name=\"Header\" value=\"[Header]\\r\\n\" />" +
+            "\r\n          <param name=\"Footer\" value=\"[Footer]\\r\\n\" />\r\n          <param name=" +
+            "\"ConversionPattern\" value=\"%d [%t] %-5p %c %m%n\" />\r\n        </layout>\r\n      </" +
+            "appender>\r\n\r\n      <appender name=\"ConsoleAppender\" type=\"log4net.Appender.Conso" +
+            "leAppender\" >\r\n        <layout type=\"log4net.Layout.PatternLayout\">\r\n          <" +
+            "param name=\"Header\" value=\"[Header]\\r\\n\" />\r\n          <param name=\"Footer\" valu" +
+            "e=\"[Footer]\\r\\n\" />\r\n          <param name=\"ConversionPattern\" value=\"%d [%t] %-" +
+            "5p %c %m%n\" />\r\n        </layout>\r\n      </appender>\r\n\r\n      <appender name=\"Ud" +
+            "pAppender\" type=\"log4net.Appender.UdpAppender\">\r\n        <remoteAddress value=\"l" +
+            "ocalhost\" />\r\n        <remotePort value=\"7071\" />\r\n        <layout type=\"log4net" +
+            ".Layout.XmlLayoutSchemaLog4j\" />\r\n      </appender>\r\n\r\n      <root>\r\n        <le" +
+            "vel value=\"Debug\" />\r\n        <appender-ref ref=\"UdpAppender\" />\r\n        <appen" +
+            "der-ref ref=\"RemotingAppender\" />\r\n        <appender-ref ref=\"LogFileAppender\" /" +
+            ">\r\n      </root>\r\n    </log4net>\r\n</configuration>")]
         public string L4N {
             get {
                 return ((string)(this["L4N"]));

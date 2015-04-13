@@ -238,6 +238,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Import.ImportUpdateProductDetailsUC(RuleElemet);
             }
+            else if (e.Document == docEditorsCostControl)
+            {
+                e.Control = new Views.Data.CostControlEditorUC(RuleElemet);
+            }
             else if (e.Document == docReportsReportViewer)
             {
                 e.Control = new System.Windows.Forms.Control();//ToDo

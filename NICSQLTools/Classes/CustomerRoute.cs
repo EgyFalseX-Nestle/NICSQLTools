@@ -19,33 +19,6 @@ namespace NICSQLTools
         #endregion
         #region -   Functions   -
 
-        public static void CreateDefaultCustomer(ref Data.dsData._0_6_Customer_HNRow row)
-        {
-            //row.CustomerNameEn1 = DefaultCustomerName;
-            //row.CustomerNameEn2 = string.Empty;
-            //row.CustomerNameAr1 = string.Empty;
-            //row.CustomerNameAr2 = string.Empty;
-            //row.CustHierLevel6Id = UnknownCustHierLevel6Id;
-            //row.SubchannelId = Customer.SubchannelIdDirect;
-            //row.CustomerTypeId = Customer.CustomerTypeIdDirect;
-            //row.CustomerType2Id = Customer.CustomerType2IdDirect;
-            //row.CustomerGroupId = Customer.CustomerGroupIdDirect;
-            //row.CustomerAddress = string.Empty;
-            //row.CityId = UnknownCityId;
-        }
-        public static Data.dsData._0_6_Customer_HNRow GetCustomerRow(string CustomerId, Data.dsData._0_6_Customer_HNDataTable tbl)
-        {
-            //return null;
-            Data.dsData._0_6_Customer_HNRow row = tbl.FindByCustomer_T(CustomerId);
-            if (row == null)
-            {
-                Data.dsData._0_6_Customer_HNRow CusRow = tbl.New_0_6_Customer_HNRow();
-                //////////////////Customer.CreateDefaultCustomer(ref CusRow);
-                return CusRow;
-            }
-            else
-                return row;
-        }
         public static bool UpdateBulkCustomerRoute(SqlCommand cmd, Data.dsData.CustomerRouteDataTable BulkTable, int YearNum, int MonthNum)
         {
             bool outPut = false;

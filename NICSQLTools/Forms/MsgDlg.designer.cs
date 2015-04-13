@@ -48,11 +48,11 @@
             this.btnYes.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnYes.Appearance.Options.UseFont = true;
             this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnYes.Image = global::NICSQLTools.Properties.Resources.done;
+            this.btnYes.Image = global::NICSQLTools.Properties.Resources.apply_16x16;
             this.btnYes.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnYes.Location = new System.Drawing.Point(4, 106);
             this.btnYes.Name = "btnYes";
-            this.btnYes.Size = new System.Drawing.Size(100, 32);
+            this.btnYes.Size = new System.Drawing.Size(100, 23);
             this.btnYes.TabIndex = 1;
             this.btnYes.Text = "Yes";
             // 
@@ -74,7 +74,6 @@
             this.tbMSG.Size = new System.Drawing.Size(302, 84);
             this.tbMSG.TabIndex = 0;
             this.tbMSG.TabStop = false;
-            this.tbMSG.UseOptimizedRendering = true;
             // 
             // panelControl1
             // 
@@ -107,11 +106,11 @@
             this.btnNo.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnNo.Appearance.Options.UseFont = true;
             this.btnNo.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnNo.Image = global::NICSQLTools.Properties.Resources.error;
+            this.btnNo.Image = global::NICSQLTools.Properties.Resources.cancel_16x16;
             this.btnNo.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
             this.btnNo.Location = new System.Drawing.Point(290, 106);
             this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(100, 32);
+            this.btnNo.Size = new System.Drawing.Size(100, 23);
             this.btnNo.TabIndex = 0;
             this.btnNo.Text = "No";
             // 
@@ -121,11 +120,11 @@
             this.btnClose.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnClose.Appearance.Options.UseFont = true;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Image = global::NICSQLTools.Properties.Resources.Delete;
+            this.btnClose.Image = global::NICSQLTools.Properties.Resources.cancel_16x16;
             this.btnClose.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnClose.Location = new System.Drawing.Point(147, 106);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 32);
+            this.btnClose.Size = new System.Drawing.Size(100, 23);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             // 
@@ -134,12 +133,12 @@
             this.tbStackTrace.BackColor = System.Drawing.Color.Gainsboro;
             this.tbStackTrace.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tbStackTrace.ForeColor = System.Drawing.Color.DimGray;
-            this.tbStackTrace.Location = new System.Drawing.Point(0, 157);
+            this.tbStackTrace.Location = new System.Drawing.Point(0, 135);
             this.tbStackTrace.Multiline = true;
             this.tbStackTrace.Name = "tbStackTrace";
             this.tbStackTrace.ReadOnly = true;
             this.tbStackTrace.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbStackTrace.Size = new System.Drawing.Size(394, 108);
+            this.tbStackTrace.Size = new System.Drawing.Size(394, 130);
             this.tbStackTrace.TabIndex = 3;
             // 
             // MsgDlg

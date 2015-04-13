@@ -187,6 +187,7 @@
   <ItemGroup>
     <Compile Include="Classes\Authentication.cs" />
     <Compile Include="Classes\Core.cs" />
+    <Compile Include="Classes\Cost.cs" />
     <Compile Include="Classes\QueryLayout.cs" />
     <Compile Include="Classes\Dashboard.cs" />
     <Compile Include="Classes\Managers\UserManager.cs" />
@@ -248,6 +249,12 @@
     </Compile>
     <Compile Include="Views\Dashboard\DashboardViewerEditorFrm.Designer.cs">
       <DependentUpon>DashboardViewerEditorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\CostControlEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\CostControlEditorUC.Designer.cs">
+      <DependentUpon>CostControlEditorUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportUpdateProductDetailsUC.cs">
       <SubType>UserControl</SubType>
@@ -491,6 +498,9 @@
     <EmbeddedResource Include="Views\Dashboard\DashboardViewerEditorFrm.resx">
       <DependentUpon>DashboardViewerEditorFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\CostControlEditorUC.resx">
+      <DependentUpon>CostControlEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportUpdateProductDetailsUC.resx">
       <DependentUpon>ImportUpdateProductDetailsUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -676,6 +686,8 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\CostControl128.png" />
+    <None Include="Resources\CostControl64.png" />
     <None Include="Resources\print_32x32.png" />
     <None Include="Resources\print_16x16.png" />
     <None Include="Resources\info_16x16.png" />

@@ -51,7 +51,7 @@ namespace System.Windows.Forms
             }
             else
             {
-                this.Size = new Size(410, 180);
+                this.Size = new Size(410, 170);
                 tbStackTrace.Visible = false;
             }
 

@@ -202,7 +202,7 @@
       <DependentUpon>dsData.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Data\dsData2.Designer.cs">
+    <Compile Include="Data\dsData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -232,6 +232,7 @@
       <DependentUpon>StoredProcHelper.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\xpoSPCode\StoredProcHelper.cs" />
+    <Compile Include="Data\xpo\CostDynamicForecast.cs" />
     <Compile Include="Forms\MultiLineStringFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +257,18 @@
     <Compile Include="Views\Data\CostControlEditorUC.Designer.cs">
       <DependentUpon>CostControlEditorUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Data\DynamicForecastEditorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Data\DynamicForecastEditorDlg.designer.cs">
+      <DependentUpon>DynamicForecastEditorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\AppDatasourceLookupEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\AppDatasourceLookupEditorUC.Designer.cs">
+      <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Import\ImportUpdateProductDetailsUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -273,6 +286,12 @@
     </Compile>
     <Compile Include="Views\Main\rtfTextEditorFrm.Designer.cs">
       <DependentUpon>rtfTextEditorFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Permission\LookupValuesDetailsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Permission\LookupValuesDetailsDlg.Designer.cs">
+      <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Qry\QryCustomerInfoUC.cs">
       <SubType>UserControl</SubType>
@@ -501,6 +520,12 @@
     <EmbeddedResource Include="Views\Data\CostControlEditorUC.resx">
       <DependentUpon>CostControlEditorUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\DynamicForecastEditorDlg.resx">
+      <DependentUpon>DynamicForecastEditorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\AppDatasourceLookupEditorUC.resx">
+      <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportUpdateProductDetailsUC.resx">
       <DependentUpon>ImportUpdateProductDetailsUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -509,6 +534,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Main\rtfTextEditorFrm.resx">
       <DependentUpon>rtfTextEditorFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Permission\LookupValuesDetailsDlg.resx">
+      <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\QryCustomerInfoUC.resx">
       <DependentUpon>QryCustomerInfoUC.cs</DependentUpon>
@@ -633,7 +661,7 @@
     <None Include="Data\dsData.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsData2.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsData.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -686,6 +714,10 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\Lookup64.png" />
+    <None Include="Resources\ExecuteSQL16.png" />
+    <None Include="Resources\pictureshapeoutlinecolor_16x16.png" />
+    <None Include="Resources\add_16x16.png" />
     <None Include="Resources\CostControl128.png" />
     <None Include="Resources\CostControl64.png" />
     <None Include="Resources\print_32x32.png" />

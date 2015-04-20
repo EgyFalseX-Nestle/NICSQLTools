@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace NICSQLTools.Classes.Managers
 {
@@ -18,6 +19,7 @@ namespace NICSQLTools.Classes.Managers
         public static Data.dsDataTableAdapters.AppRuleDetailTableAdapter adpUserRuleDetials;
         private static Data.dsQryTableAdapters.SalesDistrict2TableAdapter adpUserSalesDistrict2;
         private static Data.dsQryTableAdapters.UserRuleDatasourceTableAdapter adpUserDatasource;
+        private static Data.dsQryTableAdapters.AppRuleLookupValueForUserTableAdapter adpUserLookupValue;
         public static readonly int SuperAdminId = 1;
         //public static Data.dsQry.sales
         #endregion
@@ -34,10 +36,12 @@ namespace NICSQLTools.Classes.Managers
             adpUserRuleDetials = new Data.dsDataTableAdapters.AppRuleDetailTableAdapter();
             adpUserSalesDistrict2 = new Data.dsQryTableAdapters.SalesDistrict2TableAdapter();
             adpUserDatasource = new Data.dsQryTableAdapters.UserRuleDatasourceTableAdapter();
+            adpUserLookupValue = new Data.dsQryTableAdapters.AppRuleLookupValueForUserTableAdapter();
             DataManager.SetAllCommandTimeouts(adpUser, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(adpUserRuleDetials, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(adpUserSalesDistrict2, DataManager.ConnectionTimeout);
             DataManager.SetAllCommandTimeouts(adpUserDatasource, DataManager.ConnectionTimeout);
+            DataManager.SetAllCommandTimeouts(adpUserLookupValue, DataManager.ConnectionTimeout);
 
             defaultInstance = new UserManager();
         }
@@ -63,14 +67,14 @@ namespace NICSQLTools.Classes.Managers
                     if (!GetUserDatasource(User.UserId))
                         return false;
                     Logger.InfoFormat("User Name {0} UserId {1} Logon Time {2}", User.UserName, User.UserId, DataManager.adpQry.GetServerDate());
+                    return true;
                 }
             }
             catch (SqlException ex)
             {
                 Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
-                return false;
             }
-            return true;
+            return false;
         }
         private bool GetUserRules(int UserId)
         {
@@ -121,7 +125,6 @@ namespace NICSQLTools.Classes.Managers
             }
             return output;
         }
-        
         public bool CheckCurrentPassword(string CurrentPassword)
         {
             try
@@ -151,6 +154,22 @@ namespace NICSQLTools.Classes.Managers
                 Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, User.UserId);
             }
             return false;
+        }
+        public DataTable LookupUserValue(DataTable dt, string ValueColumnName, int LookupId)
+        {
+            //return Task<DataTable>.Run(() => 
+            //{});
+            NICSQLTools.Data.dsQry.AppRuleLookupValueForUserDataTable UserValues = new Data.dsQry.AppRuleLookupValueForUserDataTable();
+            adpUserLookupValue.FillByUserIdLookupId(UserValues, User.UserId, LookupId);
+            if (UserValues.Count == 0 || User.IsAdmin)
+                return dt;
+
+            for (int i = dt.Rows.Count - 1; i >= 0; i--)
+            {
+                if (UserValues.FindByValueName(dt.Rows[i][ValueColumnName].ToString()) == null)
+                    dt.Rows.RemoveAt(i);
+            }
+            return dt;
         }
         #endregion
 

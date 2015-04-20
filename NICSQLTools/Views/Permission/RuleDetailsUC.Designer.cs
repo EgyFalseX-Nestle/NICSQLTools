@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RuleDetailsUC));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             this.rulesLUEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQry = new NICSQLTools.Data.dsQry();
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
@@ -76,9 +76,18 @@
             this.repositoryItemDateEditDateIn = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemButtonEditSelect = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemCheckEditEnable = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.xtraTabPageLookupValue = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControlLookupValues = new DevExpress.XtraGrid.GridControl();
+            this.gridViewLookupValues = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dsData = new NICSQLTools.Data.dsData();
             this.appRuleDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appRuleDetailTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppRuleDetailTableAdapter();
+            this.lookupForRuleSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lookupForRuleSummaryTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.LookupForRuleSummaryTableAdapter();
+            this.colLookupName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditLookupValuesDetails = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.rulesLUEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
@@ -103,8 +112,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditEnable)).BeginInit();
+            this.xtraTabPageLookupValue.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlLookupValues)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewLookupValues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appRuleDetailBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupForRuleSummaryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditLookupValuesDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // rulesLUEBindingSource
@@ -331,7 +345,8 @@
             this.xtraTabControlMain.TabIndex = 15;
             this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageUI,
-            this.xtraTabPageDatasource});
+            this.xtraTabPageDatasource,
+            this.xtraTabPageLookupValue});
             // 
             // xtraTabPageUI
             // 
@@ -480,7 +495,7 @@
             // 
             this.repositoryItemButtonEditDSInfo.AutoHeight = false;
             this.repositoryItemButtonEditDSInfo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Help", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.info_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, "Show Information About This Object", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Help", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.info_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "Show Information About This Object", null, null, true)});
             this.repositoryItemButtonEditDSInfo.Name = "repositoryItemButtonEditDSInfo";
             this.repositoryItemButtonEditDSInfo.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditDSInfo.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDSInfo_ButtonClick);
@@ -549,7 +564,7 @@
             // 
             this.repositoryItemButtonEditSelect.AutoHeight = false;
             this.repositoryItemButtonEditSelect.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Select", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.apply_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject18, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Select", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.TopCenter, global::NICSQLTools.Properties.Resources.apply_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
             this.repositoryItemButtonEditSelect.Name = "repositoryItemButtonEditSelect";
             this.repositoryItemButtonEditSelect.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -557,6 +572,39 @@
             // 
             this.repositoryItemCheckEditEnable.AutoHeight = false;
             this.repositoryItemCheckEditEnable.Name = "repositoryItemCheckEditEnable";
+            // 
+            // xtraTabPageLookupValue
+            // 
+            this.xtraTabPageLookupValue.Controls.Add(this.gridControlLookupValues);
+            this.xtraTabPageLookupValue.Name = "xtraTabPageLookupValue";
+            this.xtraTabPageLookupValue.Size = new System.Drawing.Size(694, 273);
+            this.xtraTabPageLookupValue.Text = "Lookup Values";
+            // 
+            // gridControlLookupValues
+            // 
+            this.gridControlLookupValues.DataSource = this.lookupForRuleSummaryBindingSource;
+            this.gridControlLookupValues.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlLookupValues.Location = new System.Drawing.Point(0, 0);
+            this.gridControlLookupValues.MainView = this.gridViewLookupValues;
+            this.gridControlLookupValues.MenuManager = this.barManagerMain;
+            this.gridControlLookupValues.Name = "gridControlLookupValues";
+            this.gridControlLookupValues.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEditLookupValuesDetails});
+            this.gridControlLookupValues.Size = new System.Drawing.Size(694, 273);
+            this.gridControlLookupValues.TabIndex = 0;
+            this.gridControlLookupValues.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewLookupValues});
+            // 
+            // gridViewLookupValues
+            // 
+            this.gridViewLookupValues.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colLookupName,
+            this.colNum,
+            this.gridColumn1});
+            this.gridViewLookupValues.GridControl = this.gridControlLookupValues;
+            this.gridViewLookupValues.Name = "gridViewLookupValues";
+            this.gridViewLookupValues.OptionsView.ColumnAutoWidth = false;
+            this.gridViewLookupValues.OptionsView.ShowGroupPanel = false;
             // 
             // dsData
             // 
@@ -571,6 +619,59 @@
             // appRuleDetailTableAdapter
             // 
             this.appRuleDetailTableAdapter.ClearBeforeFill = true;
+            // 
+            // lookupForRuleSummaryBindingSource
+            // 
+            this.lookupForRuleSummaryBindingSource.DataMember = "LookupForRuleSummary";
+            this.lookupForRuleSummaryBindingSource.DataSource = this.dsQry;
+            // 
+            // lookupForRuleSummaryTableAdapter
+            // 
+            this.lookupForRuleSummaryTableAdapter.ClearBeforeFill = true;
+            // 
+            // colLookupName
+            // 
+            this.colLookupName.AppearanceCell.Options.UseTextOptions = true;
+            this.colLookupName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLookupName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLookupName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLookupName.FieldName = "LookupName";
+            this.colLookupName.Name = "colLookupName";
+            this.colLookupName.Visible = true;
+            this.colLookupName.VisibleIndex = 0;
+            // 
+            // colNum
+            // 
+            this.colNum.AppearanceCell.Options.UseTextOptions = true;
+            this.colNum.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNum.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNum.Caption = "Values Count";
+            this.colNum.FieldName = "Num";
+            this.colNum.Name = "colNum";
+            this.colNum.Visible = true;
+            this.colNum.VisibleIndex = 1;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.Caption = "Details";
+            this.gridColumn1.ColumnEdit = this.repositoryItemButtonEditLookupValuesDetails;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            // 
+            // repositoryItemButtonEditLookupValuesDetails
+            // 
+            this.repositoryItemButtonEditLookupValuesDetails.AutoHeight = false;
+            this.repositoryItemButtonEditLookupValuesDetails.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEditLookupValuesDetails.Name = "repositoryItemButtonEditLookupValuesDetails";
+            this.repositoryItemButtonEditLookupValuesDetails.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditLookupValuesDetails.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditLookupValuesDetails_ButtonClick);
             // 
             // RuleDetailsUC
             // 
@@ -608,8 +709,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditDateIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditSelect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditEnable)).EndInit();
+            this.xtraTabPageLookupValue.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlLookupValues)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewLookupValues)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appRuleDetailBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupForRuleSummaryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditLookupValuesDetails)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,5 +769,14 @@
         private NICSQLTools.Data.dsData dsData;
         private System.Windows.Forms.BindingSource appRuleDetailBindingSource;
         private NICSQLTools.Data.dsDataTableAdapters.AppRuleDetailTableAdapter appRuleDetailTableAdapter;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageLookupValue;
+        private DevExpress.XtraGrid.GridControl gridControlLookupValues;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewLookupValues;
+        private System.Windows.Forms.BindingSource lookupForRuleSummaryBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colLookupName;
+        private DevExpress.XtraGrid.Columns.GridColumn colNum;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditLookupValuesDetails;
+        private NICSQLTools.Data.dsQryTableAdapters.LookupForRuleSummaryTableAdapter lookupForRuleSummaryTableAdapter;
     }
 }

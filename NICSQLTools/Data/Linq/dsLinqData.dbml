@@ -267,4 +267,35 @@
       <Column Name="[Regions Group]" Member="Regions_Group" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CostCostcenter" Member="CostCostcenters">
+    <Type Name="CostCostcenter">
+      <Column Name="CostCenter" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CostCenterDesc" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Magnitude" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BusinessUnit" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Owner" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Owner2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CostAccountNature" Member="CostAccountNatures">
+    <Type Name="CostAccountNature">
+      <Column Name="GLAccount" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountDesc" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AccountNature" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AccountNature2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ShouldPaid" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Controllable" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AppDatasourceLookup" Member="AppDatasourceLookups">
+    <Type Name="AppDatasourceLookup">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LookupName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SQLStatment" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ValueName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

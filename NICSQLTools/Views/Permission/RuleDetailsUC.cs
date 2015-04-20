@@ -145,7 +145,11 @@ namespace NICSQLTools.Views.Permission
                 FrmViewer.ShowDialog();
             }
         }
-
+        private void LoadLookup()
+        {
+            lookupForRuleSummaryTableAdapter.Fill(dsQry.LookupForRuleSummary, Convert.ToInt32(bbiRule.EditValue));
+            gridViewLookupValues.BestFitColumns();
+        }
         #endregion
         #region -  EventWhnd - 
         private void ProductEditorUC_Load(object sender, EventArgs e)
@@ -166,10 +170,13 @@ namespace NICSQLTools.Views.Permission
 
                     LSMSCategory.QueryableSource = from q in dsLinq.vAppDSCategories select q;
                     treeListMain.BestFitColumns();
+
+                    LoadLookup();
                 }));
                 SplashScreenManager.CloseForm();
             });
         }
+
         private void treeListMain_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
             if (e.Node == null)
@@ -236,10 +243,6 @@ namespace NICSQLTools.Views.Permission
             NICSQLTools.Data.dsQry.DSForRuleRow row = (NICSQLTools.Data.dsQry.DSForRuleRow)((DataRowView)gridViewMain.GetRow(gridViewMain.FocusedRowHandle)).Row;
             ShowInfo(row.DatasourceID);
         }
-        
-        #endregion
-
-
         private void gridViewMain_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (e.Column.FieldName == "EnableRule")
@@ -255,11 +258,21 @@ namespace NICSQLTools.Views.Permission
                     MsgDlg.ShowAlert("Rule Updated ...", MsgDlg.MessageType.Success, this.ParentForm);
                 else
                     MsgDlg.Show("Rule Updated ...", MsgDlg.MessageType.Error);
-                
+
             }
-            
+
         }
-        
+        private void repositoryItemButtonEditLookupValuesDetails_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            NICSQLTools.Data.dsQry.LookupForRuleSummaryRow row = (NICSQLTools.Data.dsQry.LookupForRuleSummaryRow)((DataRowView)gridViewLookupValues.GetRow(gridViewLookupValues.FocusedRowHandle)).Row;
+            LookupValuesDetailsDlg dlg = new LookupValuesDetailsDlg(Convert.ToInt32(bbiRule.EditValue), row.ID);
+            if (dlg.ShowDialog() == DialogResult.Cancel)
+                return;
+            LoadLookup();
+            MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, this.ParentForm);
+        }
+
+        #endregion
 
     }
 }

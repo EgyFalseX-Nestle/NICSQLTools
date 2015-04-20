@@ -60,6 +60,15 @@ namespace NICSQLTools.Data.Linq
     partial void InsertPRD_BaseProduct(PRD_BaseProduct instance);
     partial void UpdatePRD_BaseProduct(PRD_BaseProduct instance);
     partial void DeletePRD_BaseProduct(PRD_BaseProduct instance);
+    partial void InsertCostCostcenter(CostCostcenter instance);
+    partial void UpdateCostCostcenter(CostCostcenter instance);
+    partial void DeleteCostCostcenter(CostCostcenter instance);
+    partial void InsertCostAccountNature(CostAccountNature instance);
+    partial void UpdateCostAccountNature(CostAccountNature instance);
+    partial void DeleteCostAccountNature(CostAccountNature instance);
+    partial void InsertAppDatasourceLookup(AppDatasourceLookup instance);
+    partial void UpdateAppDatasourceLookup(AppDatasourceLookup instance);
+    partial void DeleteAppDatasourceLookup(AppDatasourceLookup instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -201,6 +210,30 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<vRouteDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CostCostcenter> CostCostcenters
+		{
+			get
+			{
+				return this.GetTable<CostCostcenter>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CostAccountNature> CostAccountNatures
+		{
+			get
+			{
+				return this.GetTable<CostAccountNature>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AppDatasourceLookup> AppDatasourceLookups
+		{
+			get
+			{
+				return this.GetTable<AppDatasourceLookup>();
 			}
 		}
 	}
@@ -4787,6 +4820,576 @@ namespace NICSQLTools.Data.Linq
 				{
 					this._Regions_Group = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CostCostcenter")]
+	public partial class CostCostcenter : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _CostCenter;
+		
+		private string _CostCenterDesc;
+		
+		private string _Magnitude;
+		
+		private string _BusinessUnit;
+		
+		private string _Owner;
+		
+		private string _Owner2;
+		
+		private string _Department;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCostCenterChanging(string value);
+    partial void OnCostCenterChanged();
+    partial void OnCostCenterDescChanging(string value);
+    partial void OnCostCenterDescChanged();
+    partial void OnMagnitudeChanging(string value);
+    partial void OnMagnitudeChanged();
+    partial void OnBusinessUnitChanging(string value);
+    partial void OnBusinessUnitChanged();
+    partial void OnOwnerChanging(string value);
+    partial void OnOwnerChanged();
+    partial void OnOwner2Changing(string value);
+    partial void OnOwner2Changed();
+    partial void OnDepartmentChanging(string value);
+    partial void OnDepartmentChanged();
+    #endregion
+		
+		public CostCostcenter()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostCenter", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string CostCenter
+		{
+			get
+			{
+				return this._CostCenter;
+			}
+			set
+			{
+				if ((this._CostCenter != value))
+				{
+					this.OnCostCenterChanging(value);
+					this.SendPropertyChanging();
+					this._CostCenter = value;
+					this.SendPropertyChanged("CostCenter");
+					this.OnCostCenterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostCenterDesc", DbType="NVarChar(100)")]
+		public string CostCenterDesc
+		{
+			get
+			{
+				return this._CostCenterDesc;
+			}
+			set
+			{
+				if ((this._CostCenterDesc != value))
+				{
+					this.OnCostCenterDescChanging(value);
+					this.SendPropertyChanging();
+					this._CostCenterDesc = value;
+					this.SendPropertyChanged("CostCenterDesc");
+					this.OnCostCenterDescChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Magnitude", DbType="NVarChar(100)")]
+		public string Magnitude
+		{
+			get
+			{
+				return this._Magnitude;
+			}
+			set
+			{
+				if ((this._Magnitude != value))
+				{
+					this.OnMagnitudeChanging(value);
+					this.SendPropertyChanging();
+					this._Magnitude = value;
+					this.SendPropertyChanged("Magnitude");
+					this.OnMagnitudeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BusinessUnit", DbType="NVarChar(100)")]
+		public string BusinessUnit
+		{
+			get
+			{
+				return this._BusinessUnit;
+			}
+			set
+			{
+				if ((this._BusinessUnit != value))
+				{
+					this.OnBusinessUnitChanging(value);
+					this.SendPropertyChanging();
+					this._BusinessUnit = value;
+					this.SendPropertyChanged("BusinessUnit");
+					this.OnBusinessUnitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Owner", DbType="NVarChar(100)")]
+		public string Owner
+		{
+			get
+			{
+				return this._Owner;
+			}
+			set
+			{
+				if ((this._Owner != value))
+				{
+					this.OnOwnerChanging(value);
+					this.SendPropertyChanging();
+					this._Owner = value;
+					this.SendPropertyChanged("Owner");
+					this.OnOwnerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Owner2", DbType="NVarChar(100)")]
+		public string Owner2
+		{
+			get
+			{
+				return this._Owner2;
+			}
+			set
+			{
+				if ((this._Owner2 != value))
+				{
+					this.OnOwner2Changing(value);
+					this.SendPropertyChanging();
+					this._Owner2 = value;
+					this.SendPropertyChanged("Owner2");
+					this.OnOwner2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Department", DbType="NVarChar(100)")]
+		public string Department
+		{
+			get
+			{
+				return this._Department;
+			}
+			set
+			{
+				if ((this._Department != value))
+				{
+					this.OnDepartmentChanging(value);
+					this.SendPropertyChanging();
+					this._Department = value;
+					this.SendPropertyChanged("Department");
+					this.OnDepartmentChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CostAccountNature")]
+	public partial class CostAccountNature : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _GLAccount;
+		
+		private string _AccountDesc;
+		
+		private string _AccountNature;
+		
+		private string _AccountNature2;
+		
+		private string _ShouldPaid;
+		
+		private string _Controllable;
+		
+		private string _Category;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnGLAccountChanging(string value);
+    partial void OnGLAccountChanged();
+    partial void OnAccountDescChanging(string value);
+    partial void OnAccountDescChanged();
+    partial void OnAccountNatureChanging(string value);
+    partial void OnAccountNatureChanged();
+    partial void OnAccountNature2Changing(string value);
+    partial void OnAccountNature2Changed();
+    partial void OnShouldPaidChanging(string value);
+    partial void OnShouldPaidChanged();
+    partial void OnControllableChanging(string value);
+    partial void OnControllableChanged();
+    partial void OnCategoryChanging(string value);
+    partial void OnCategoryChanged();
+    #endregion
+		
+		public CostAccountNature()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GLAccount", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string GLAccount
+		{
+			get
+			{
+				return this._GLAccount;
+			}
+			set
+			{
+				if ((this._GLAccount != value))
+				{
+					this.OnGLAccountChanging(value);
+					this.SendPropertyChanging();
+					this._GLAccount = value;
+					this.SendPropertyChanged("GLAccount");
+					this.OnGLAccountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountDesc", DbType="NVarChar(100)")]
+		public string AccountDesc
+		{
+			get
+			{
+				return this._AccountDesc;
+			}
+			set
+			{
+				if ((this._AccountDesc != value))
+				{
+					this.OnAccountDescChanging(value);
+					this.SendPropertyChanging();
+					this._AccountDesc = value;
+					this.SendPropertyChanged("AccountDesc");
+					this.OnAccountDescChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountNature", DbType="NVarChar(100)")]
+		public string AccountNature
+		{
+			get
+			{
+				return this._AccountNature;
+			}
+			set
+			{
+				if ((this._AccountNature != value))
+				{
+					this.OnAccountNatureChanging(value);
+					this.SendPropertyChanging();
+					this._AccountNature = value;
+					this.SendPropertyChanged("AccountNature");
+					this.OnAccountNatureChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountNature2", DbType="NVarChar(100)")]
+		public string AccountNature2
+		{
+			get
+			{
+				return this._AccountNature2;
+			}
+			set
+			{
+				if ((this._AccountNature2 != value))
+				{
+					this.OnAccountNature2Changing(value);
+					this.SendPropertyChanging();
+					this._AccountNature2 = value;
+					this.SendPropertyChanged("AccountNature2");
+					this.OnAccountNature2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShouldPaid", DbType="NVarChar(100)")]
+		public string ShouldPaid
+		{
+			get
+			{
+				return this._ShouldPaid;
+			}
+			set
+			{
+				if ((this._ShouldPaid != value))
+				{
+					this.OnShouldPaidChanging(value);
+					this.SendPropertyChanging();
+					this._ShouldPaid = value;
+					this.SendPropertyChanged("ShouldPaid");
+					this.OnShouldPaidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Controllable", DbType="NVarChar(100)")]
+		public string Controllable
+		{
+			get
+			{
+				return this._Controllable;
+			}
+			set
+			{
+				if ((this._Controllable != value))
+				{
+					this.OnControllableChanging(value);
+					this.SendPropertyChanging();
+					this._Controllable = value;
+					this.SendPropertyChanged("Controllable");
+					this.OnControllableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(100)")]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this.OnCategoryChanging(value);
+					this.SendPropertyChanging();
+					this._Category = value;
+					this.SendPropertyChanged("Category");
+					this.OnCategoryChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppDatasourceLookup")]
+	public partial class AppDatasourceLookup : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _LookupName;
+		
+		private string _SQLStatment;
+		
+		private string _DisplayName;
+		
+		private string _ValueName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnLookupNameChanging(string value);
+    partial void OnLookupNameChanged();
+    partial void OnSQLStatmentChanging(string value);
+    partial void OnSQLStatmentChanged();
+    partial void OnDisplayNameChanging(string value);
+    partial void OnDisplayNameChanged();
+    partial void OnValueNameChanging(string value);
+    partial void OnValueNameChanged();
+    #endregion
+		
+		public AppDatasourceLookup()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LookupName", DbType="NVarChar(100)")]
+		public string LookupName
+		{
+			get
+			{
+				return this._LookupName;
+			}
+			set
+			{
+				if ((this._LookupName != value))
+				{
+					this.OnLookupNameChanging(value);
+					this.SendPropertyChanging();
+					this._LookupName = value;
+					this.SendPropertyChanged("LookupName");
+					this.OnLookupNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SQLStatment", DbType="NVarChar(MAX)")]
+		public string SQLStatment
+		{
+			get
+			{
+				return this._SQLStatment;
+			}
+			set
+			{
+				if ((this._SQLStatment != value))
+				{
+					this.OnSQLStatmentChanging(value);
+					this.SendPropertyChanging();
+					this._SQLStatment = value;
+					this.SendPropertyChanged("SQLStatment");
+					this.OnSQLStatmentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayName", DbType="NVarChar(100)")]
+		public string DisplayName
+		{
+			get
+			{
+				return this._DisplayName;
+			}
+			set
+			{
+				if ((this._DisplayName != value))
+				{
+					this.OnDisplayNameChanging(value);
+					this.SendPropertyChanging();
+					this._DisplayName = value;
+					this.SendPropertyChanged("DisplayName");
+					this.OnDisplayNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValueName", DbType="NVarChar(100)")]
+		public string ValueName
+		{
+			get
+			{
+				return this._ValueName;
+			}
+			set
+			{
+				if ((this._ValueName != value))
+				{
+					this.OnValueNameChanging(value);
+					this.SendPropertyChanging();
+					this._ValueName = value;
+					this.SendPropertyChanged("ValueName");
+					this.OnValueNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

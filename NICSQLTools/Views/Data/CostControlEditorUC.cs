@@ -13,6 +13,8 @@ using System.Data.SqlClient;
 using log4net;
 using NICSQLTools.Classes.Managers;
 using DevExpress.XtraSplashScreen;
+using DevExpress.Xpo.Metadata;
+using NICSQLTools.Data.xpo;
 
 namespace NICSQLTools.Views.Data
 {
@@ -24,6 +26,7 @@ namespace NICSQLTools.Views.Data
         NICSQLTools.Data.dsDataTableAdapters.CostCostcenterTableAdapter adpCostCenter = new NICSQLTools.Data.dsDataTableAdapters.CostCostcenterTableAdapter();
         NICSQLTools.Data.dsDataTableAdapters.CostAccountNatureTableAdapter adpAccountNature = new NICSQLTools.Data.dsDataTableAdapters.CostAccountNatureTableAdapter();
         NICSQLTools.Data.dsDataTableAdapters.QryCostCostActualDocNumberTableAdapter adpBillDoc = new NICSQLTools.Data.dsDataTableAdapters.QryCostCostActualDocNumberTableAdapter();
+        NICSQLTools.Data.dsDataTableAdapters.CostDynamicForecastTableAdapter adpDF = new NICSQLTools.Data.dsDataTableAdapters.CostDynamicForecastTableAdapter();
         private string RequiredFieldDF
         {
             get
@@ -65,6 +68,7 @@ _______________________________________________
 ", Environment.NewLine);
             }
         }
+      
         #endregion
         #region -   Functions   -
         public CostControlEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
@@ -77,7 +81,8 @@ _______________________________________________
             
             tbPeriodDF.EditValue = (DataManager.defaultInstance.ServerDateTime.Month - 1) / 3 + 1;
             tbYearDF.EditValue = DataManager.defaultInstance.ServerDateTime.Year;
-            
+
+            ActivateRules();
         }
         private void ShowHideProgressDF(bool ShowHide)
         {
@@ -264,7 +269,60 @@ _______________________________________________
         }
         public void ActivateRules()
         {
-            btnImportDF.Visible = _elementRule.Inserting;
+            //Selecting 
+            gridControlDFEditor.Visible = _elementRule.Selecting;
+            btnExportDFEditor.Visible = _elementRule.Selecting;
+            btnRefreshDFEditor.Visible = _elementRule.Selecting;
+            gridControlCostcenter.Visible = _elementRule.Selecting;
+            btnRefreshCostCent.Visible = _elementRule.Selecting;
+            btnExportCostCenter.Visible = _elementRule.Selecting;
+            gridControlAccountNature.Visible = _elementRule.Selecting;
+            btnRefreshAccountNature.Visible = _elementRule.Selecting;
+            btnExportAccountNature.Visible = _elementRule.Selecting;
+
+            //Inserting
+            XPSCSCostcenter.AllowNew = _elementRule.Inserting;
+            XPSCSAccountNature.AllowNew = _elementRule.Inserting;
+            XPSCSDFEditor.AllowNew = _elementRule.Inserting;
+            if (_elementRule.Updateing)
+            {
+                layoutControlItemImportDF.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                layoutControlItemImportActual.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            }
+            else
+            {
+                layoutControlItemImportDF.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                layoutControlItemImportActual.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+            btnAddDFEditor.Visible = _elementRule.Inserting;
+            btnSaveCostcenter.Visible = _elementRule.Inserting;
+            btnSaveAccountNature.Visible = _elementRule.Inserting;
+
+            //Updating
+            XPSCSCostcenter.AllowEdit = _elementRule.Updateing;
+            XPSCSAccountNature.AllowEdit = _elementRule.Updateing;
+            XPSCSDFEditor.AllowEdit = _elementRule.Updateing;
+            if (_elementRule.Updateing)
+            {
+                layoutControlItemImportDF.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                layoutControlItemImportActual.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            }
+            else
+            {
+                layoutControlItemImportDF.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                layoutControlItemImportActual.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+            }
+            btnEditDFEditor.Visible = _elementRule.Updateing;
+            btnSaveCostcenter.Visible = _elementRule.Updateing;
+            btnSaveAccountNature.Visible = _elementRule.Updateing;
+
+            //Deleting
+            XPSCSCostcenter.AllowRemove = _elementRule.Deleting;
+            XPSCSAccountNature.AllowRemove = _elementRule.Deleting;
+            XPSCSDFEditor.AllowRemove = _elementRule.Deleting;
+            btnDeleteDFEditor.Visible = _elementRule.Deleting;
+            btnSaveCostcenter.Visible = _elementRule.Deleting;
+            btnSaveAccountNature.Visible = _elementRule.Deleting;
         }
         private Task<bool> ImportActual()
         {
@@ -447,6 +505,13 @@ _______________________________________________
                 
             });
         }
+        private Task LoadDFEditorGridAsync()
+        {
+            return Task.Run(() =>
+            {
+                
+            });
+        }
         #endregion
         #region -   Event Handlers   -
         private async void ImportCustomerRouteUC_Load(object sender, EventArgs e)
@@ -472,8 +537,16 @@ _______________________________________________
             //});
             await LoadCostcenterGridAsync();
             await LoadAccountNatureGridAsync();
+            //await LoadDFEditorGridAsync();
+
+            gridViewDFEditor.ShowLoadingPanel();
+            XPSCSDFEditor.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
+            gridControlDFEditor.DataSource = XPSCSDFEditor;
+            gridViewDFEditor.BestFitColumns();
+            gridViewDFEditor.HideLoadingPanel();
+
         }
-        #region -   Import DF   -
+        #region -   DF   -
         private void btnGetFileName_Click(object sender, EventArgs e)
         {
             if (ofd.ShowDialog() == DialogResult.Cancel)
@@ -530,6 +603,97 @@ _______________________________________________
             }
             ProgressBarMainDF.EditValue = 0;
             layoutControlGroupCommandDF.Enabled = true;
+        }
+        private void btnRefreshDFEditor_Click(object sender, EventArgs e)
+        {
+            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
+                return;
+            UOWDFEditor.DropIdentityMap();
+            UOWDFEditor.DropChanges();
+            XPSCSDFEditor.Reload();
+            gridViewDFEditor.RefreshData();
+        }
+        private void btnAddDFEditor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DynamicForecastEditorDlg frm = new DynamicForecastEditorDlg(true, string.Empty, string.Empty, null, string.Empty, null);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    gridViewDFEditor.ShowLoadingPanel();
+                    UOWDFEditor.DropIdentityMap();
+                    UOWDFEditor.DropChanges();
+                    XPSCSDFEditor.Reload();
+                    gridViewDFEditor.RefreshData();
+                    gridViewDFEditor.HideLoadingPanel();
+                }
+            }
+            catch (Exception ex)
+            {
+                MsgDlg.Show(ex.Message, MsgDlg.MessageType.Error, ex);
+            }
+        }
+        private void btnEditDFEditor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CostDynamicForecast row = (CostDynamicForecast)gridViewDFEditor.GetRow(gridViewDFEditor.FocusedRowHandle);
+                if (row == null)
+                    return;
+
+
+                DynamicForecastEditorDlg frm = new DynamicForecastEditorDlg(false, row.ID.Costcenter,
+                    row.ID.GLAccount, row.ID.Year, row.ID.BusinessUnit, row.ID.Period);
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    gridViewDFEditor.ShowLoadingPanel();
+                    UOWDFEditor.DropIdentityMap();
+                    UOWDFEditor.DropChanges();
+                    XPSCSDFEditor.Reload();
+                    gridViewDFEditor.RefreshData();
+                    gridViewDFEditor.HideLoadingPanel();
+                }
+            }
+            catch (Exception ex)
+            {
+                MsgDlg.Show(ex.Message, MsgDlg.MessageType.Error, ex);
+            }
+        }
+        private void btnDeleteDFEditor_Click(object sender, EventArgs e)
+        {
+            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
+                return;
+            DevExpress.Xpo.AsyncCommitCallback CommitCallBack = (o) =>
+            {
+                SplashScreenManager.CloseForm();
+                if (o == null)
+                {
+                    MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
+                    Logger.Info("Data Saved ...");
+                }
+                else
+                {
+                    MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
+                    Classes.Core.LogException(Logger, o.InnerException, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+                }
+            };
+            SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");
+            gridViewDFEditor.ShowLoadingPanel();
+            gridViewDFEditor.DeleteSelectedRows();
+            gridViewDFEditor.RefreshData();
+            gridViewDFEditor.HideLoadingPanel();
+            UOWDFEditor.CommitTransactionAsync(CommitCallBack);
+        }
+        private void btnExportDFEditor_Click(object sender, EventArgs e)
+        {
+            // Check whether the GridControl can be previewed.
+            if (!gridControlDFEditor.IsPrintingAvailable)
+            {
+                MsgDlg.Show("The 'DevExpress.XtraPrinting' library is not found", MsgDlg.MessageType.Warn);
+                return;
+            }
+            // Open the Preview window.
+            gridViewDFEditor.ShowRibbonPrintPreview();
         }
         #endregion
         #region -   Import Actual   -
@@ -660,6 +824,7 @@ _______________________________________________
             gridControlAccountNature.ShowRibbonPrintPreview();
         }
         #endregion
+
         #endregion
 
     }

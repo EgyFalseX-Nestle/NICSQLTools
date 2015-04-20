@@ -47,7 +47,10 @@ namespace System.Windows.Forms
             {
                 this.Size = new Size(410, 300);
                 tbStackTrace.Visible = true;
-                tbStackTrace.Text = ex.StackTrace;
+                if (ex.InnerException != null)
+                    tbStackTrace.Text = ex.InnerException.StackTrace;
+                else
+                    tbStackTrace.Text = ex.StackTrace;
             }
             else
             {

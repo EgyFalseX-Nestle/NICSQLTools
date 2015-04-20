@@ -16,7 +16,13 @@ namespace NICSQLTools
         public TestFrm()
         {
             InitializeComponent();
+            checkedComboBoxEdit1.Properties.Items.Add("item1");
+            checkedComboBoxEdit1.Properties.Items.Add("item2");
+            checkedComboBoxEdit1.Properties.Items.Add("item3");
+            checkedComboBoxEdit1.Properties.Items.Add("item4");
+            checkedComboBoxEdit1.Properties.Items.Add("item5");
 
+            
             //NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new Data.Linq.dsLinqDataDataContext();
             //lsms.QueryableSource = from q in ds.vAppProductDetails select q;
             //////////////////////
@@ -33,11 +39,24 @@ namespace NICSQLTools
 
             //this.checkedComboBoxEdit1.EditValue = "";
             //this.checkedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            
+            //unitOfWork1.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
+            //gridControl1.DataSource = xpServerCollectionSource1;
+            //gridView1.PopulateColumns();
         }
 
         private void TestFrm_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            checkedComboBoxEdit1.RefreshEditValue();
+        }
+
+        private void checkedComboBoxEdit1_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            MessageBox.Show("changing");
             
         }
 

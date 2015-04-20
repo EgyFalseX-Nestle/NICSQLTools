@@ -63,6 +63,16 @@ namespace NICSQLTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("add_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap additem_16x16 {
             get {
                 object obj = ResourceManager.GetObject("additem_16x16", resourceCulture);
@@ -333,6 +343,16 @@ namespace NICSQLTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ExecuteSQL16 {
+            get {
+                object obj = ResourceManager.GetObject("ExecuteSQL16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Export {
             get {
                 object obj = ResourceManager.GetObject("Export", resourceCulture);
@@ -483,6 +503,16 @@ namespace NICSQLTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Lookup64 {
+            get {
+                object obj = ResourceManager.GetObject("Lookup64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MSG_Error {
             get {
                 object obj = ResourceManager.GetObject("MSG_Error", resourceCulture);
@@ -606,6 +636,16 @@ namespace NICSQLTools.Properties {
         internal static System.Drawing.Bitmap pictureshapefillcolor_32x32 {
             get {
                 object obj = ResourceManager.GetObject("pictureshapefillcolor_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pictureshapeoutlinecolor_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("pictureshapeoutlinecolor_16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

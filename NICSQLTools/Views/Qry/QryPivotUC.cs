@@ -47,7 +47,6 @@ namespace NICSQLTools.Views.Qry
             btnSaveAsLayout.Visible = _elementRule.Inserting;
             btnSaveLayout.Visible = _elementRule.Updateing;
             btnDeleteLayout.Visible = _elementRule.Deleting;
-
         }
         private void LoadDefaultData()
         {
@@ -134,68 +133,58 @@ namespace NICSQLTools.Views.Qry
         private Control CreateDSElement(NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow, string ParamType)
         {
             object ctr = null;
-            switch (ParamRow.ParamName)
+            if (!ParamRow.IsLookupIDNull())
             {
-                case "@SalesDistrict2":
-                    ctr = CreateLookupeditForSalesDistrict2();
-                    break;
-                case "@Materials":
-                    ctr = CreateLookupeditForMaterial();
-                    break;
-                case "@Base_Product":
-                    ctr = CreateLookupeditForBaseProduct();
-                    break;
-                case "@Base_Group":
-                    ctr = CreateLookupeditForBaseGroup();
-                    break;
-                default:// if param have not datasource
-                    switch (ParamType.ToLower())
-                    {
-                        case "nvarchar":
-                            TextEdit txt1 = new TextEdit();
-                            txt1.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
-                            ctr = txt1;
-                            break;
-                        case "int":
-                        case "smallint":
-                        case "bigint":
-                            TextEdit txt2 = new TextEdit();
-                            txt2.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
-                            txt2.Properties.DisplayFormat.FormatString = "n0";
-                            txt2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                            txt2.Properties.EditFormat.FormatString = "n0";
-                            txt2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                            txt2.Properties.Mask.EditMask = "n0";
-                            txt2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-                            ctr = txt2;
-                            break;
-                        case "float":
-                            TextEdit txt3 = new TextEdit();
-                            txt3.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
-                            txt3.Properties.DisplayFormat.FormatString = "f2";
-                            txt3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                            txt3.Properties.EditFormat.FormatString = "f2";
-                            txt3.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-                            txt3.Properties.Mask.EditMask = "f2";
-                            txt3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-                            ctr = txt3;
-                            break;
-                        case "datetime":
-                            DateEdit de1 = new DateEdit();
-                            de1.EditValue = null;
-                            de1.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
-                            de1.Properties.DisplayFormat.FormatString = "d/M/yyyy";
-                            de1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                            de1.Properties.EditFormat.FormatString = "d/M/yyyy";
-                            de1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                            de1.Properties.Mask.EditMask = "d/M/yyyy";
-                            de1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-                            ctr = de1;
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
+                ctr = CreateLookupedit(ParamRow.LookupID);
+            }
+            else
+            {
+                switch (ParamType.ToLower())
+                {
+                    case "nvarchar":
+                        TextEdit txt1 = new TextEdit();
+                        txt1.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
+                        ctr = txt1;
+                        break;
+                    case "int":
+                    case "smallint":
+                    case "bigint":
+                        TextEdit txt2 = new TextEdit();
+                        txt2.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
+                        txt2.Properties.DisplayFormat.FormatString = "n0";
+                        txt2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+                        txt2.Properties.EditFormat.FormatString = "n0";
+                        txt2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+                        txt2.Properties.Mask.EditMask = "n0";
+                        txt2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+                        ctr = txt2;
+                        break;
+                    case "float":
+                        TextEdit txt3 = new TextEdit();
+                        txt3.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
+                        txt3.Properties.DisplayFormat.FormatString = "f2";
+                        txt3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+                        txt3.Properties.EditFormat.FormatString = "f2";
+                        txt3.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+                        txt3.Properties.Mask.EditMask = "f2";
+                        txt3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+                        ctr = txt3;
+                        break;
+                    case "datetime":
+                        DateEdit de1 = new DateEdit();
+                        de1.EditValue = null;
+                        de1.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
+                        de1.Properties.DisplayFormat.FormatString = "d/M/yyyy";
+                        de1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                        de1.Properties.EditFormat.FormatString = "d/M/yyyy";
+                        de1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                        de1.Properties.Mask.EditMask = "d/M/yyyy";
+                        de1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                        ctr = de1;
+                        break;
+                    default:
+                        break;
+                }
             }
 
 
@@ -259,7 +248,7 @@ namespace NICSQLTools.Views.Qry
             }
             return false;
         }
-        private CheckedComboBoxEdit CreateLookupeditForSalesDistrict2()
+        private CheckedComboBoxEdit CreateLookupeditForSalesDistrict21()
         {
             NICSQLTools.Data.dsQryTableAdapters.SalesDistrict2TableAdapter adp = new NICSQLTools.Data.dsQryTableAdapters.SalesDistrict2TableAdapter();
             CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
@@ -275,7 +264,7 @@ namespace NICSQLTools.Views.Qry
             
             return ccbe;
         }
-        private CheckedComboBoxEdit CreateLookupeditForMaterial()
+        private CheckedComboBoxEdit CreateLookupeditForMaterial1()
         {
             NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
             DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
@@ -292,7 +281,7 @@ namespace NICSQLTools.Views.Qry
 
             return ccbe;
         }
-        private CheckedComboBoxEdit CreateLookupeditForBaseProduct()
+        private CheckedComboBoxEdit CreateLookupeditForBaseProduct1()
         {
             NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
             DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
@@ -309,7 +298,7 @@ namespace NICSQLTools.Views.Qry
 
             return ccbe;
         }
-        private CheckedComboBoxEdit CreateLookupeditForBaseGroup()
+        private CheckedComboBoxEdit CreateLookupeditForBaseGroup1()
         {
             NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
             DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
@@ -326,6 +315,21 @@ namespace NICSQLTools.Views.Qry
 
             return ccbe;
         }
+        private CheckedComboBoxEdit CreateLookupedit(int LookupID)
+        {
+            List<object> data = DataManager.ExeDSLookup(LookupID);
+            CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
+            ccbe.Properties.AllowMultiSelect = true;
+            ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            ccbe.Properties.DataSource = Classes.Managers.UserManager.defaultInstance.LookupUserValue((DataTable)data[0], data[2].ToString(), LookupID);
+            ccbe.Properties.DisplayMember = data[1].ToString();
+            ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            ccbe.Properties.ValueMember = data[2].ToString();
+            ccbe.EditValueChanged += new EventHandler((e, o) =>
+            { ((CheckedComboBoxEdit)e).RefreshEditValue(); });//validate edit value to do not select out of list items
+            return ccbe;
+        }
+
         private void AddToProgreeList(string WorkName)
         {
             lock (ProgressList)
@@ -346,10 +350,9 @@ namespace NICSQLTools.Views.Qry
         }
         #endregion
         #region -   EventWhnd   -
-
         private void QryPivotUC_Load(object sender, EventArgs e)
         {
-            LoadDefaultData();
+            //LoadDefaultData();
             ActivateRules();
 
         }
@@ -401,7 +404,11 @@ namespace NICSQLTools.Views.Qry
             //Executing SP
             Dictionary<string, object> Paramters = new Dictionary<string, object>();
             foreach (KeyValuePair<string, Control> ctrItem in DataSourceList.Controls)
+            {
+                //if (ctrItem.Value.GetType() == typeof(CheckedComboBoxEdit))// if this is CheckedComboBoxEdit then remove selected values that is not included in list items
+                    //((CheckedComboBoxEdit)ctrItem.Value).RefreshEditValue();
                 Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
+            }
 
             DataSourceList.ExeButton.Enabled = false;
             DataSourceList.CancelButton.Enabled = true;
@@ -548,7 +555,6 @@ namespace NICSQLTools.Views.Qry
             else
                 MsgDlg.Show("Can not Delete Layout ...", MsgDlg.MessageType.Error);
         }
-
         private void pivotGridControlMain_PopupMenuShowing(object sender, DevExpress.XtraPivotGrid.PopupMenuShowingEventArgs e)
         {
             //add custom item

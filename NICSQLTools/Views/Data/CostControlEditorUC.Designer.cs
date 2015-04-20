@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.emptySpaceItemSpace = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -62,7 +62,25 @@
             this.dsQry = new NICSQLTools.Data.dsQry();
             this.dsData = new NICSQLTools.Data.dsData();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPageImportDynamicForecast = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPageDynamicForecast = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabControlDF = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPageDFImport = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPageDFEditor = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControlDFEditor = new DevExpress.XtraGrid.GridControl();
+            this.gridViewDFEditor = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDF = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btnDeleteDFEditor = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEditDFEditor = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAddDFEditor = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExportDFEditor = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRefreshDFEditor = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPageImportActual = new DevExpress.XtraTab.XtraTabPage();
             this.ImportBillingDetailsFrmConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.PnlProgActual = new DevExpress.XtraWaitForm.ProgressPanel();
@@ -111,6 +129,13 @@
             this.xtraTabPageAccountNature = new DevExpress.XtraTab.XtraTabPage();
             this.gridControlAccountNature = new DevExpress.XtraGrid.GridControl();
             this.gridViewAccountNature = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colGLAccount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAccountDesc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAccountNature = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAccountNature2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colShouldPaid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colControllable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCategory = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -123,17 +148,12 @@
             this.btnSaveAccountNature = new DevExpress.XtraEditors.SimpleButton();
             this.btnExportAccountNature = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefreshAccountNature = new DevExpress.XtraEditors.SimpleButton();
+            this.XPSCSDFEditor = new DevExpress.Xpo.XPServerCollectionSource(this.components);
+            this.UOWDFEditor = new DevExpress.Xpo.UnitOfWork(this.components);
             this.XPSCSCostcenter = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.UOWCostcenter = new DevExpress.Xpo.UnitOfWork(this.components);
             this.XPSCSAccountNature = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.UOWAccountNature = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.colGLAccount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAccountDesc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAccountNature = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAccountNature2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colShouldPaid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colControllable = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCategory = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImportDF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FrmConvertedLayoutDF)).BeginInit();
@@ -159,7 +179,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
-            this.xtraTabPageImportDynamicForecast.SuspendLayout();
+            this.xtraTabPageDynamicForecast.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlDF)).BeginInit();
+            this.xtraTabControlDF.SuspendLayout();
+            this.xtraTabPageDFImport.SuspendLayout();
+            this.xtraTabPageDFEditor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDFEditor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDFEditor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             this.xtraTabPageImportActual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportBillingDetailsFrmConvertedLayout)).BeginInit();
             this.ImportBillingDetailsFrmConvertedLayout.SuspendLayout();
@@ -194,6 +222,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCSDFEditor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UOWDFEditor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSCostcenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UOWCostcenter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSAccountNature)).BeginInit();
@@ -211,7 +241,7 @@
             this.emptySpaceItemSpace.CustomizationFormText = "Space";
             this.emptySpaceItemSpace.Location = new System.Drawing.Point(0, 192);
             this.emptySpaceItemSpace.Name = "emptySpaceItemSpace";
-            this.emptySpaceItemSpace.Size = new System.Drawing.Size(282, 92);
+            this.emptySpaceItemSpace.Size = new System.Drawing.Size(282, 64);
             this.emptySpaceItemSpace.Text = "Space";
             this.emptySpaceItemSpace.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -233,7 +263,7 @@
             // 
             this.btnImportDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImportDF.Image = global::NICSQLTools.Properties.Resources.importtodatabase_32x32;
-            this.btnImportDF.Location = new System.Drawing.Point(24, 418);
+            this.btnImportDF.Location = new System.Drawing.Point(24, 390);
             this.btnImportDF.Name = "btnImportDF";
             this.btnImportDF.Size = new System.Drawing.Size(254, 38);
             this.btnImportDF.StyleController = this.FrmConvertedLayoutDF;
@@ -257,10 +287,10 @@
             this.FrmConvertedLayoutDF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FrmConvertedLayoutDF.Location = new System.Drawing.Point(0, 0);
             this.FrmConvertedLayoutDF.Name = "FrmConvertedLayoutDF";
-            this.FrmConvertedLayoutDF.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(474, 217, 315, 464);
+            this.FrmConvertedLayoutDF.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(479, 100, 315, 464);
             this.FrmConvertedLayoutDF.OptionsView.UseDefaultDragAndDropRendering = false;
             this.FrmConvertedLayoutDF.Root = this.layoutControlGroupDF;
-            this.FrmConvertedLayoutDF.Size = new System.Drawing.Size(981, 519);
+            this.FrmConvertedLayoutDF.Size = new System.Drawing.Size(975, 491);
             this.FrmConvertedLayoutDF.TabIndex = 7;
             // 
             // PnlProgDF
@@ -273,7 +303,7 @@
             this.PnlProgDF.AppearanceDescription.Options.UseFont = true;
             this.PnlProgDF.Location = new System.Drawing.Point(12, 154);
             this.PnlProgDF.Name = "PnlProgDF";
-            this.PnlProgDF.Size = new System.Drawing.Size(957, 46);
+            this.PnlProgDF.Size = new System.Drawing.Size(951, 46);
             this.PnlProgDF.StyleController = this.FrmConvertedLayoutDF;
             this.PnlProgDF.TabIndex = 9;
             this.PnlProgDF.Text = "Progress Status";
@@ -285,7 +315,7 @@
             0,
             0,
             0});
-            this.tbPeriodDF.Location = new System.Drawing.Point(62, 301);
+            this.tbPeriodDF.Location = new System.Drawing.Point(62, 273);
             this.tbPeriodDF.Name = "tbPeriodDF";
             this.tbPeriodDF.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -310,7 +340,7 @@
             0,
             0,
             0});
-            this.tbYearDF.Location = new System.Drawing.Point(62, 335);
+            this.tbYearDF.Location = new System.Drawing.Point(62, 307);
             this.tbYearDF.Name = "tbYearDF";
             this.tbYearDF.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -320,9 +350,9 @@
             // 
             // ProgressBarMainDF
             // 
-            this.ProgressBarMainDF.Location = new System.Drawing.Point(57, 489);
+            this.ProgressBarMainDF.Location = new System.Drawing.Point(57, 461);
             this.ProgressBarMainDF.Name = "ProgressBarMainDF";
-            this.ProgressBarMainDF.Size = new System.Drawing.Size(912, 18);
+            this.ProgressBarMainDF.Size = new System.Drawing.Size(906, 18);
             this.ProgressBarMainDF.StyleController = this.FrmConvertedLayoutDF;
             this.ProgressBarMainDF.TabIndex = 8;
             // 
@@ -332,13 +362,13 @@
             this.tbLogDF.Name = "tbLogDF";
             this.tbLogDF.Properties.ReadOnly = true;
             this.tbLogDF.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbLogDF.Size = new System.Drawing.Size(675, 264);
+            this.tbLogDF.Size = new System.Drawing.Size(669, 236);
             this.tbLogDF.StyleController = this.FrmConvertedLayoutDF;
             this.tbLogDF.TabIndex = 6;
             // 
             // lblCountDF
             // 
-            this.lblCountDF.Location = new System.Drawing.Point(953, 472);
+            this.lblCountDF.Location = new System.Drawing.Point(947, 444);
             this.lblCountDF.Name = "lblCountDF";
             this.lblCountDF.Size = new System.Drawing.Size(16, 13);
             this.lblCountDF.StyleController = this.FrmConvertedLayoutDF;
@@ -348,9 +378,9 @@
             // lblEstTimeDF
             // 
             this.lblEstTimeDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblEstTimeDF.Location = new System.Drawing.Point(57, 472);
+            this.lblEstTimeDF.Location = new System.Drawing.Point(57, 444);
             this.lblEstTimeDF.Name = "lblEstTimeDF";
-            this.lblEstTimeDF.Size = new System.Drawing.Size(892, 13);
+            this.lblEstTimeDF.Size = new System.Drawing.Size(886, 13);
             this.lblEstTimeDF.StyleController = this.FrmConvertedLayoutDF;
             this.lblEstTimeDF.TabIndex = 4;
             this.lblEstTimeDF.Text = "00:00";
@@ -358,7 +388,7 @@
             // btnRemoveDF
             // 
             this.btnRemoveDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoveDF.Location = new System.Drawing.Point(140, 376);
+            this.btnRemoveDF.Location = new System.Drawing.Point(140, 348);
             this.btnRemoveDF.Name = "btnRemoveDF";
             this.btnRemoveDF.Size = new System.Drawing.Size(85, 38);
             this.btnRemoveDF.StyleController = this.FrmConvertedLayoutDF;
@@ -369,7 +399,7 @@
             // btnGetFileNameDF
             // 
             this.btnGetFileNameDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGetFileNameDF.Location = new System.Drawing.Point(24, 376);
+            this.btnGetFileNameDF.Location = new System.Drawing.Point(24, 348);
             this.btnGetFileNameDF.Name = "btnGetFileNameDF";
             this.btnGetFileNameDF.Size = new System.Drawing.Size(112, 38);
             this.btnGetFileNameDF.StyleController = this.FrmConvertedLayoutDF;
@@ -383,7 +413,7 @@
             this.lbcFilePathDF.Location = new System.Drawing.Point(12, 12);
             this.lbcFilePathDF.Name = "lbcFilePathDF";
             this.lbcFilePathDF.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lbcFilePathDF.Size = new System.Drawing.Size(957, 138);
+            this.lbcFilePathDF.Size = new System.Drawing.Size(951, 138);
             this.lbcFilePathDF.StyleController = this.FrmConvertedLayoutDF;
             this.lbcFilePathDF.TabIndex = 2;
             // 
@@ -404,8 +434,8 @@
             this.layoutControlItem2,
             this.layoutControlItemPnlProgDF});
             this.layoutControlGroupDF.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroupDF.Name = "layoutControlGroupDF";
-            this.layoutControlGroupDF.Size = new System.Drawing.Size(981, 519);
+            this.layoutControlGroupDF.Name = "Root";
+            this.layoutControlGroupDF.Size = new System.Drawing.Size(975, 491);
             this.layoutControlGroupDF.TextVisible = false;
             // 
             // layoutControlItemFilesDF
@@ -416,7 +446,7 @@
             this.layoutControlItemFilesDF.MaxSize = new System.Drawing.Size(0, 142);
             this.layoutControlItemFilesDF.MinSize = new System.Drawing.Size(54, 142);
             this.layoutControlItemFilesDF.Name = "layoutControlItemFilesDF";
-            this.layoutControlItemFilesDF.Size = new System.Drawing.Size(961, 142);
+            this.layoutControlItemFilesDF.Size = new System.Drawing.Size(955, 142);
             this.layoutControlItemFilesDF.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemFilesDF.Text = "Files";
             this.layoutControlItemFilesDF.TextSize = new System.Drawing.Size(0, 0);
@@ -428,7 +458,7 @@
             this.layoutControlItemLogDF.CustomizationFormText = "Log";
             this.layoutControlItemLogDF.Location = new System.Drawing.Point(282, 192);
             this.layoutControlItemLogDF.Name = "layoutControlItemLogDF";
-            this.layoutControlItemLogDF.Size = new System.Drawing.Size(679, 268);
+            this.layoutControlItemLogDF.Size = new System.Drawing.Size(673, 240);
             this.layoutControlItemLogDF.Text = "Log";
             this.layoutControlItemLogDF.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemLogDF.TextVisible = false;
@@ -437,11 +467,11 @@
             // 
             this.layoutControlItemTimeDF.Control = this.lblEstTimeDF;
             this.layoutControlItemTimeDF.CustomizationFormText = "Time";
-            this.layoutControlItemTimeDF.Location = new System.Drawing.Point(0, 460);
+            this.layoutControlItemTimeDF.Location = new System.Drawing.Point(0, 432);
             this.layoutControlItemTimeDF.MaxSize = new System.Drawing.Size(0, 17);
             this.layoutControlItemTimeDF.MinSize = new System.Drawing.Size(77, 17);
             this.layoutControlItemTimeDF.Name = "layoutControlItemTimeDF";
-            this.layoutControlItemTimeDF.Size = new System.Drawing.Size(941, 17);
+            this.layoutControlItemTimeDF.Size = new System.Drawing.Size(935, 17);
             this.layoutControlItemTimeDF.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemTimeDF.Text = "Time";
             this.layoutControlItemTimeDF.TextSize = new System.Drawing.Size(42, 13);
@@ -451,7 +481,7 @@
             this.layoutControlItemCountDF.Control = this.lblCountDF;
             this.layoutControlItemCountDF.ControlAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.layoutControlItemCountDF.CustomizationFormText = "Count";
-            this.layoutControlItemCountDF.Location = new System.Drawing.Point(941, 460);
+            this.layoutControlItemCountDF.Location = new System.Drawing.Point(935, 432);
             this.layoutControlItemCountDF.Name = "layoutControlItemCountDF";
             this.layoutControlItemCountDF.Size = new System.Drawing.Size(20, 17);
             this.layoutControlItemCountDF.Text = "Count";
@@ -463,11 +493,11 @@
             // 
             this.layoutControlItemProgressDF.Control = this.ProgressBarMainDF;
             this.layoutControlItemProgressDF.CustomizationFormText = "Progress";
-            this.layoutControlItemProgressDF.Location = new System.Drawing.Point(0, 477);
+            this.layoutControlItemProgressDF.Location = new System.Drawing.Point(0, 449);
             this.layoutControlItemProgressDF.MaxSize = new System.Drawing.Size(0, 22);
             this.layoutControlItemProgressDF.MinSize = new System.Drawing.Size(99, 22);
             this.layoutControlItemProgressDF.Name = "layoutControlItemProgressDF";
-            this.layoutControlItemProgressDF.Size = new System.Drawing.Size(961, 22);
+            this.layoutControlItemProgressDF.Size = new System.Drawing.Size(955, 22);
             this.layoutControlItemProgressDF.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemProgressDF.Text = "Progress";
             this.layoutControlItemProgressDF.TextSize = new System.Drawing.Size(42, 13);
@@ -479,7 +509,7 @@
             this.layoutControlItemRemoveDF,
             this.layoutControlItemImportDF,
             this.layoutControlItemAddDF});
-            this.layoutControlGroupCommandDF.Location = new System.Drawing.Point(0, 352);
+            this.layoutControlGroupCommandDF.Location = new System.Drawing.Point(0, 324);
             this.layoutControlGroupCommandDF.Name = "layoutControlGroupCommandDF";
             this.layoutControlGroupCommandDF.Size = new System.Drawing.Size(282, 108);
             this.layoutControlGroupCommandDF.Text = "Command";
@@ -517,7 +547,7 @@
             // 
             this.layoutControlItem1.Control = this.tbYearDF;
             this.layoutControlItem1.CustomizationFormText = "Year";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 318);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 290);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(282, 34);
             this.layoutControlItem1.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -528,7 +558,7 @@
             // 
             this.layoutControlItem2.Control = this.tbPeriodDF;
             this.layoutControlItem2.CustomizationFormText = "Month";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 284);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 256);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(282, 34);
             this.layoutControlItem2.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -543,7 +573,7 @@
             this.layoutControlItemPnlProgDF.MaxSize = new System.Drawing.Size(0, 50);
             this.layoutControlItemPnlProgDF.MinSize = new System.Drawing.Size(54, 50);
             this.layoutControlItemPnlProgDF.Name = "layoutControlItemPnlProgDF";
-            this.layoutControlItemPnlProgDF.Size = new System.Drawing.Size(961, 50);
+            this.layoutControlItemPnlProgDF.Size = new System.Drawing.Size(955, 50);
             this.layoutControlItemPnlProgDF.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemPnlProgDF.Text = "Progress Panal";
             this.layoutControlItemPnlProgDF.TextSize = new System.Drawing.Size(0, 0);
@@ -566,21 +596,244 @@
             this.xtraTabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControlMain.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControlMain.Name = "xtraTabControlMain";
-            this.xtraTabControlMain.SelectedTabPage = this.xtraTabPageImportDynamicForecast;
+            this.xtraTabControlMain.SelectedTabPage = this.xtraTabPageDynamicForecast;
             this.xtraTabControlMain.Size = new System.Drawing.Size(987, 547);
             this.xtraTabControlMain.TabIndex = 8;
             this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPageImportDynamicForecast,
+            this.xtraTabPageDynamicForecast,
             this.xtraTabPageImportActual,
             this.xtraTabPageCostCenter,
             this.xtraTabPageAccountNature});
             // 
-            // xtraTabPageImportDynamicForecast
+            // xtraTabPageDynamicForecast
             // 
-            this.xtraTabPageImportDynamicForecast.Controls.Add(this.FrmConvertedLayoutDF);
-            this.xtraTabPageImportDynamicForecast.Name = "xtraTabPageImportDynamicForecast";
-            this.xtraTabPageImportDynamicForecast.Size = new System.Drawing.Size(981, 519);
-            this.xtraTabPageImportDynamicForecast.Text = "Import Dynamic Forecast";
+            this.xtraTabPageDynamicForecast.Controls.Add(this.xtraTabControlDF);
+            this.xtraTabPageDynamicForecast.Name = "xtraTabPageDynamicForecast";
+            this.xtraTabPageDynamicForecast.Size = new System.Drawing.Size(981, 519);
+            this.xtraTabPageDynamicForecast.Text = "Dynamic Forecast";
+            // 
+            // xtraTabControlDF
+            // 
+            this.xtraTabControlDF.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControlDF.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControlDF.Name = "xtraTabControlDF";
+            this.xtraTabControlDF.SelectedTabPage = this.xtraTabPageDFImport;
+            this.xtraTabControlDF.Size = new System.Drawing.Size(981, 519);
+            this.xtraTabControlDF.TabIndex = 8;
+            this.xtraTabControlDF.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPageDFImport,
+            this.xtraTabPageDFEditor});
+            // 
+            // xtraTabPageDFImport
+            // 
+            this.xtraTabPageDFImport.Controls.Add(this.FrmConvertedLayoutDF);
+            this.xtraTabPageDFImport.Name = "xtraTabPageDFImport";
+            this.xtraTabPageDFImport.Size = new System.Drawing.Size(975, 491);
+            this.xtraTabPageDFImport.Text = "Import Dynamic Forecast";
+            // 
+            // xtraTabPageDFEditor
+            // 
+            this.xtraTabPageDFEditor.Controls.Add(this.gridControlDFEditor);
+            this.xtraTabPageDFEditor.Controls.Add(this.panelControl3);
+            this.xtraTabPageDFEditor.Name = "xtraTabPageDFEditor";
+            this.xtraTabPageDFEditor.Size = new System.Drawing.Size(975, 491);
+            this.xtraTabPageDFEditor.Text = "Dynamic Forcast Editor";
+            // 
+            // gridControlDFEditor
+            // 
+            this.gridControlDFEditor.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gridControlDFEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlDFEditor.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridControlDFEditor.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gridControlDFEditor.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gridControlDFEditor.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gridControlDFEditor.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            this.gridControlDFEditor.Location = new System.Drawing.Point(0, 20);
+            this.gridControlDFEditor.MainView = this.gridViewDFEditor;
+            this.gridControlDFEditor.Name = "gridControlDFEditor";
+            this.gridControlDFEditor.Size = new System.Drawing.Size(975, 471);
+            this.gridControlDFEditor.TabIndex = 7;
+            this.gridControlDFEditor.UseEmbeddedNavigator = true;
+            this.gridControlDFEditor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewDFEditor});
+            // 
+            // gridViewDFEditor
+            // 
+            this.gridViewDFEditor.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.colDF,
+            this.colType});
+            this.gridViewDFEditor.GridControl = this.gridControlDFEditor;
+            this.gridViewDFEditor.Name = "gridViewDFEditor";
+            this.gridViewDFEditor.NewItemRowText = "Click here to add a new";
+            this.gridViewDFEditor.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridViewDFEditor.OptionsBehavior.ReadOnly = true;
+            this.gridViewDFEditor.OptionsEditForm.EditFormColumnCount = 2;
+            this.gridViewDFEditor.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.SegmentedFade;
+            this.gridViewDFEditor.OptionsImageLoad.AsyncLoad = true;
+            this.gridViewDFEditor.OptionsNavigation.AutoFocusNewRow = true;
+            this.gridViewDFEditor.OptionsSelection.InvertSelection = true;
+            this.gridViewDFEditor.OptionsSelection.MultiSelect = true;
+            this.gridViewDFEditor.OptionsView.ColumnAutoWidth = false;
+            this.gridViewDFEditor.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewDFEditor.OptionsView.ShowDetailButtons = false;
+            this.gridViewDFEditor.OptionsView.ShowFooter = true;
+            this.gridViewDFEditor.OptionsView.ShowGroupPanel = false;
+            this.gridViewDFEditor.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.Caption = "Costcenter";
+            this.gridColumn1.FieldName = "ID.Costcenter";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.Caption = "GLAccount";
+            this.gridColumn2.FieldName = "ID.GLAccount";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.Caption = "Year";
+            this.gridColumn3.FieldName = "ID.Year";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.Caption = "Business Unit";
+            this.gridColumn4.FieldName = "ID.BusinessUnit";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.Caption = "Period";
+            this.gridColumn5.FieldName = "ID.Period";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // colDF
+            // 
+            this.colDF.AppearanceCell.Options.UseTextOptions = true;
+            this.colDF.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDF.AppearanceHeader.Options.UseTextOptions = true;
+            this.colDF.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colDF.FieldName = "DF";
+            this.colDF.Name = "colDF";
+            this.colDF.Visible = true;
+            this.colDF.VisibleIndex = 5;
+            // 
+            // colType
+            // 
+            this.colType.AppearanceCell.Options.UseTextOptions = true;
+            this.colType.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colType.AppearanceHeader.Options.UseTextOptions = true;
+            this.colType.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colType.FieldName = "Type";
+            this.colType.Name = "colType";
+            this.colType.Visible = true;
+            this.colType.VisibleIndex = 6;
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.btnDeleteDFEditor);
+            this.panelControl3.Controls.Add(this.btnEditDFEditor);
+            this.panelControl3.Controls.Add(this.btnAddDFEditor);
+            this.panelControl3.Controls.Add(this.btnExportDFEditor);
+            this.panelControl3.Controls.Add(this.btnRefreshDFEditor);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(0, 0);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(975, 20);
+            this.panelControl3.TabIndex = 1;
+            // 
+            // btnDeleteDFEditor
+            // 
+            this.btnDeleteDFEditor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDeleteDFEditor.Image = global::NICSQLTools.Properties.Resources.cancel_16x16;
+            this.btnDeleteDFEditor.Location = new System.Drawing.Point(302, 2);
+            this.btnDeleteDFEditor.Name = "btnDeleteDFEditor";
+            this.btnDeleteDFEditor.Size = new System.Drawing.Size(75, 16);
+            this.btnDeleteDFEditor.TabIndex = 4;
+            this.btnDeleteDFEditor.Text = "Delete";
+            this.btnDeleteDFEditor.Click += new System.EventHandler(this.btnDeleteDFEditor_Click);
+            // 
+            // btnEditDFEditor
+            // 
+            this.btnEditDFEditor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnEditDFEditor.Image = global::NICSQLTools.Properties.Resources.pictureshapeoutlinecolor_16x16;
+            this.btnEditDFEditor.Location = new System.Drawing.Point(227, 2);
+            this.btnEditDFEditor.Name = "btnEditDFEditor";
+            this.btnEditDFEditor.Size = new System.Drawing.Size(75, 16);
+            this.btnEditDFEditor.TabIndex = 3;
+            this.btnEditDFEditor.Text = "Edit";
+            this.btnEditDFEditor.Click += new System.EventHandler(this.btnEditDFEditor_Click);
+            // 
+            // btnAddDFEditor
+            // 
+            this.btnAddDFEditor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddDFEditor.Image = global::NICSQLTools.Properties.Resources.add_16x16;
+            this.btnAddDFEditor.Location = new System.Drawing.Point(152, 2);
+            this.btnAddDFEditor.Name = "btnAddDFEditor";
+            this.btnAddDFEditor.Size = new System.Drawing.Size(75, 16);
+            this.btnAddDFEditor.TabIndex = 2;
+            this.btnAddDFEditor.Text = "New";
+            this.btnAddDFEditor.Click += new System.EventHandler(this.btnAddDFEditor_Click);
+            // 
+            // btnExportDFEditor
+            // 
+            this.btnExportDFEditor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExportDFEditor.Image = global::NICSQLTools.Properties.Resources.Export;
+            this.btnExportDFEditor.Location = new System.Drawing.Point(77, 2);
+            this.btnExportDFEditor.Name = "btnExportDFEditor";
+            this.btnExportDFEditor.Size = new System.Drawing.Size(75, 16);
+            this.btnExportDFEditor.TabIndex = 1;
+            this.btnExportDFEditor.Text = "Export";
+            this.btnExportDFEditor.Click += new System.EventHandler(this.btnExportDFEditor_Click);
+            // 
+            // btnRefreshDFEditor
+            // 
+            this.btnRefreshDFEditor.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnRefreshDFEditor.Image = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+            this.btnRefreshDFEditor.Location = new System.Drawing.Point(2, 2);
+            this.btnRefreshDFEditor.Name = "btnRefreshDFEditor";
+            this.btnRefreshDFEditor.Size = new System.Drawing.Size(75, 16);
+            this.btnRefreshDFEditor.TabIndex = 0;
+            this.btnRefreshDFEditor.Text = "Refresh";
+            this.btnRefreshDFEditor.Click += new System.EventHandler(this.btnRefreshDFEditor_Click);
             // 
             // xtraTabPageImportActual
             // 
@@ -918,6 +1171,7 @@
             this.gridViewCostcenter.OptionsView.ShowAutoFilterRow = true;
             this.gridViewCostcenter.OptionsView.ShowDetailButtons = false;
             this.gridViewCostcenter.OptionsView.ShowFooter = true;
+            this.gridViewCostcenter.OptionsView.ShowGroupPanel = false;
             this.gridViewCostcenter.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
             // 
             // colCostCenter
@@ -1064,7 +1318,7 @@
             // 
             this.repositoryItemButtonEditDel.AutoHeight = false;
             this.repositoryItemButtonEditDel.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject7, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemButtonEditDel.Name = "repositoryItemButtonEditDel";
             this.repositoryItemButtonEditDel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1081,8 +1335,9 @@
             // 
             // btnSaveCostcenter
             // 
+            this.btnSaveCostcenter.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSaveCostcenter.Image = global::NICSQLTools.Properties.Resources.save_16x16;
-            this.btnSaveCostcenter.Location = new System.Drawing.Point(83, 2);
+            this.btnSaveCostcenter.Location = new System.Drawing.Point(152, 2);
             this.btnSaveCostcenter.Name = "btnSaveCostcenter";
             this.btnSaveCostcenter.Size = new System.Drawing.Size(75, 16);
             this.btnSaveCostcenter.TabIndex = 2;
@@ -1091,8 +1346,9 @@
             // 
             // btnExportCostCenter
             // 
+            this.btnExportCostCenter.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnExportCostCenter.Image = global::NICSQLTools.Properties.Resources.Export;
-            this.btnExportCostCenter.Location = new System.Drawing.Point(164, 2);
+            this.btnExportCostCenter.Location = new System.Drawing.Point(77, 2);
             this.btnExportCostCenter.Name = "btnExportCostCenter";
             this.btnExportCostCenter.Size = new System.Drawing.Size(75, 16);
             this.btnExportCostCenter.TabIndex = 1;
@@ -1101,6 +1357,7 @@
             // 
             // btnRefreshCostCent
             // 
+            this.btnRefreshCostCent.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnRefreshCostCent.Image = global::NICSQLTools.Properties.Resources.refresh2_16x16;
             this.btnRefreshCostCent.Location = new System.Drawing.Point(2, 2);
             this.btnRefreshCostCent.Name = "btnRefreshCostCent";
@@ -1158,7 +1415,63 @@
             this.gridViewAccountNature.OptionsView.ShowAutoFilterRow = true;
             this.gridViewAccountNature.OptionsView.ShowDetailButtons = false;
             this.gridViewAccountNature.OptionsView.ShowFooter = true;
+            this.gridViewAccountNature.OptionsView.ShowGroupPanel = false;
             this.gridViewAccountNature.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
+            // 
+            // colGLAccount
+            // 
+            this.colGLAccount.FieldName = "GLAccount";
+            this.colGLAccount.Name = "colGLAccount";
+            this.colGLAccount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "GLAccount", "{0}")});
+            this.colGLAccount.Visible = true;
+            this.colGLAccount.VisibleIndex = 0;
+            // 
+            // colAccountDesc
+            // 
+            this.colAccountDesc.FieldName = "AccountDesc";
+            this.colAccountDesc.Name = "colAccountDesc";
+            this.colAccountDesc.Visible = true;
+            this.colAccountDesc.VisibleIndex = 1;
+            this.colAccountDesc.Width = 85;
+            // 
+            // colAccountNature
+            // 
+            this.colAccountNature.FieldName = "AccountNature";
+            this.colAccountNature.Name = "colAccountNature";
+            this.colAccountNature.Visible = true;
+            this.colAccountNature.VisibleIndex = 2;
+            this.colAccountNature.Width = 95;
+            // 
+            // colAccountNature2
+            // 
+            this.colAccountNature2.FieldName = "AccountNature2";
+            this.colAccountNature2.Name = "colAccountNature2";
+            this.colAccountNature2.Visible = true;
+            this.colAccountNature2.VisibleIndex = 3;
+            this.colAccountNature2.Width = 101;
+            // 
+            // colShouldPaid
+            // 
+            this.colShouldPaid.FieldName = "ShouldPaid";
+            this.colShouldPaid.Name = "colShouldPaid";
+            this.colShouldPaid.Visible = true;
+            this.colShouldPaid.VisibleIndex = 4;
+            // 
+            // colControllable
+            // 
+            this.colControllable.FieldName = "Controllable";
+            this.colControllable.Name = "colControllable";
+            this.colControllable.Visible = true;
+            this.colControllable.VisibleIndex = 5;
+            this.colControllable.Width = 77;
+            // 
+            // colCategory
+            // 
+            this.colCategory.FieldName = "Category";
+            this.colCategory.Name = "colCategory";
+            this.colCategory.Visible = true;
+            this.colCategory.VisibleIndex = 6;
             // 
             // repositoryItemGridLookUpEdit1
             // 
@@ -1249,7 +1562,7 @@
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject8, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject2, "", null, null, true)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1266,8 +1579,9 @@
             // 
             // btnSaveAccountNature
             // 
+            this.btnSaveAccountNature.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSaveAccountNature.Image = global::NICSQLTools.Properties.Resources.save_16x16;
-            this.btnSaveAccountNature.Location = new System.Drawing.Point(83, 2);
+            this.btnSaveAccountNature.Location = new System.Drawing.Point(152, 2);
             this.btnSaveAccountNature.Name = "btnSaveAccountNature";
             this.btnSaveAccountNature.Size = new System.Drawing.Size(75, 16);
             this.btnSaveAccountNature.TabIndex = 2;
@@ -1276,8 +1590,9 @@
             // 
             // btnExportAccountNature
             // 
+            this.btnExportAccountNature.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnExportAccountNature.Image = global::NICSQLTools.Properties.Resources.Export;
-            this.btnExportAccountNature.Location = new System.Drawing.Point(164, 2);
+            this.btnExportAccountNature.Location = new System.Drawing.Point(77, 2);
             this.btnExportAccountNature.Name = "btnExportAccountNature";
             this.btnExportAccountNature.Size = new System.Drawing.Size(75, 16);
             this.btnExportAccountNature.TabIndex = 1;
@@ -1286,6 +1601,7 @@
             // 
             // btnRefreshAccountNature
             // 
+            this.btnRefreshAccountNature.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnRefreshAccountNature.Image = global::NICSQLTools.Properties.Resources.refresh2_16x16;
             this.btnRefreshAccountNature.Location = new System.Drawing.Point(2, 2);
             this.btnRefreshAccountNature.Name = "btnRefreshAccountNature";
@@ -1293,6 +1609,20 @@
             this.btnRefreshAccountNature.TabIndex = 0;
             this.btnRefreshAccountNature.Text = "Refresh";
             this.btnRefreshAccountNature.Click += new System.EventHandler(this.btnRefreshAccountNature_Click);
+            // 
+            // XPSCSDFEditor
+            // 
+            this.XPSCSDFEditor.AllowEdit = true;
+            this.XPSCSDFEditor.AllowNew = true;
+            this.XPSCSDFEditor.AllowRemove = true;
+            this.XPSCSDFEditor.DeleteObjectOnRemove = true;
+            this.XPSCSDFEditor.ObjectType = typeof(NICSQLTools.Data.xpo.CostDynamicForecast);
+            this.XPSCSDFEditor.Session = this.UOWDFEditor;
+            // 
+            // UOWDFEditor
+            // 
+            this.UOWDFEditor.IsObjectModifiedOnNonPersistentPropertyChange = null;
+            this.UOWDFEditor.TrackPropertiesModifications = false;
             // 
             // XPSCSCostcenter
             // 
@@ -1321,61 +1651,6 @@
             // 
             this.UOWAccountNature.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.UOWAccountNature.TrackPropertiesModifications = false;
-            // 
-            // colGLAccount
-            // 
-            this.colGLAccount.FieldName = "GLAccount";
-            this.colGLAccount.Name = "colGLAccount";
-            this.colGLAccount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "GLAccount", "{0}")});
-            this.colGLAccount.Visible = true;
-            this.colGLAccount.VisibleIndex = 0;
-            // 
-            // colAccountDesc
-            // 
-            this.colAccountDesc.FieldName = "AccountDesc";
-            this.colAccountDesc.Name = "colAccountDesc";
-            this.colAccountDesc.Visible = true;
-            this.colAccountDesc.VisibleIndex = 1;
-            this.colAccountDesc.Width = 85;
-            // 
-            // colAccountNature
-            // 
-            this.colAccountNature.FieldName = "AccountNature";
-            this.colAccountNature.Name = "colAccountNature";
-            this.colAccountNature.Visible = true;
-            this.colAccountNature.VisibleIndex = 2;
-            this.colAccountNature.Width = 95;
-            // 
-            // colAccountNature2
-            // 
-            this.colAccountNature2.FieldName = "AccountNature2";
-            this.colAccountNature2.Name = "colAccountNature2";
-            this.colAccountNature2.Visible = true;
-            this.colAccountNature2.VisibleIndex = 3;
-            this.colAccountNature2.Width = 101;
-            // 
-            // colShouldPaid
-            // 
-            this.colShouldPaid.FieldName = "ShouldPaid";
-            this.colShouldPaid.Name = "colShouldPaid";
-            this.colShouldPaid.Visible = true;
-            this.colShouldPaid.VisibleIndex = 4;
-            // 
-            // colControllable
-            // 
-            this.colControllable.FieldName = "Controllable";
-            this.colControllable.Name = "colControllable";
-            this.colControllable.Visible = true;
-            this.colControllable.VisibleIndex = 5;
-            this.colControllable.Width = 77;
-            // 
-            // colCategory
-            // 
-            this.colCategory.FieldName = "Category";
-            this.colCategory.Name = "colCategory";
-            this.colCategory.Visible = true;
-            this.colCategory.VisibleIndex = 6;
             // 
             // CostControlEditorUC
             // 
@@ -1410,7 +1685,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
             this.xtraTabControlMain.ResumeLayout(false);
-            this.xtraTabPageImportDynamicForecast.ResumeLayout(false);
+            this.xtraTabPageDynamicForecast.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlDF)).EndInit();
+            this.xtraTabControlDF.ResumeLayout(false);
+            this.xtraTabPageDFImport.ResumeLayout(false);
+            this.xtraTabPageDFEditor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDFEditor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDFEditor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
             this.xtraTabPageImportActual.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImportBillingDetailsFrmConvertedLayout)).EndInit();
             this.ImportBillingDetailsFrmConvertedLayout.ResumeLayout(false);
@@ -1445,6 +1728,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCSDFEditor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UOWDFEditor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSCostcenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UOWCostcenter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSAccountNature)).EndInit();
@@ -1486,7 +1771,7 @@
         private DevExpress.XtraWaitForm.ProgressPanel PnlProgDF;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPnlProgDF;
         private DevExpress.XtraTab.XtraTabControl xtraTabControlMain;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPageImportDynamicForecast;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageDynamicForecast;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageImportActual;
         private DevExpress.XtraLayout.LayoutControl ImportBillingDetailsFrmConvertedLayout;
         private DevExpress.XtraWaitForm.ProgressPanel PnlProgActual;
@@ -1558,5 +1843,25 @@
         private DevExpress.XtraGrid.Columns.GridColumn colShouldPaid;
         private DevExpress.XtraGrid.Columns.GridColumn colControllable;
         private DevExpress.XtraGrid.Columns.GridColumn colCategory;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControlDF;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageDFImport;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageDFEditor;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.SimpleButton btnAddDFEditor;
+        private DevExpress.XtraEditors.SimpleButton btnExportDFEditor;
+        private DevExpress.XtraEditors.SimpleButton btnRefreshDFEditor;
+        private DevExpress.XtraGrid.GridControl gridControlDFEditor;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewDFEditor;
+        private DevExpress.Xpo.XPServerCollectionSource XPSCSDFEditor;
+        private DevExpress.Xpo.UnitOfWork UOWDFEditor;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn colDF;
+        private DevExpress.XtraGrid.Columns.GridColumn colType;
+        private DevExpress.XtraEditors.SimpleButton btnEditDFEditor;
+        private DevExpress.XtraEditors.SimpleButton btnDeleteDFEditor;
     }
 }

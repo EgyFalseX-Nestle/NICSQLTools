@@ -131,7 +131,7 @@ namespace NICSQLTools.Views.Main
         }
         private void windowsUIView_QueryControl(object sender, QueryControlEventArgs e)
         {
-            NICSQLTools.Data.dsData.AppRuleDetailRow RuleElemet = Classes.Managers.UserManager.defaultInstance.RuleElementInformation(docDashboardDesigner.ControlName);
+            NICSQLTools.Data.dsData.AppRuleDetailRow RuleElemet = Classes.Managers.UserManager.defaultInstance.RuleElementInformation(e.Document.ControlName);
             if (e.Control != null)
                 return;
             if (e.Document == docLogin)
@@ -197,6 +197,10 @@ namespace NICSQLTools.Views.Main
             else if (e.Document == docAppDatasourceEditor)
             {
                 e.Control = new Views.Data.AppDatasourceEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsAppDatasourceLookup)
+            {
+                e.Control = new Views.Data.AppDatasourceLookupEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsTargetKPI)
             {

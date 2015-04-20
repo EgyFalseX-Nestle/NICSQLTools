@@ -506,6 +506,48 @@ namespace NICSQLTools.Classes.Managers
                 return dt;
             });
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID">Id of LookupId</param>
+        /// <returns>List<object> 
+        /// 1- Datatable
+        /// 2- Display
+        /// 3- Value
+        /// </object></returns>
+        public static List<object> ExeDSLookup(int ID)
+        {
+            List<object> output = new List<object>();
+            DataTable dt = new DataTable();
+            output.Add(dt);
+            try
+            {
+                DataTable commandtextTbl = new DataTable();
+                SqlDataAdapter adp = new SqlDataAdapter("", Properties.Settings.Default.IC_DBConnectionString);
+                adp.SelectCommand.CommandTimeout = DataManager.ConnectionTimeout;
+
+                adp.SelectCommand.CommandText = "SELECT SQLStatment, DisplayName, ValueName FROM AppDatasourceLookup WHERE ID = " + ID;
+                adp.Fill(commandtextTbl);
+                if (commandtextTbl.Rows.Count == 0 || commandtextTbl.Rows[0]["SQLStatment"].ToString() == string.Empty)
+                {
+                    output.Add(string.Empty); output.Add(string.Empty);
+                }
+                else
+                {
+                    output.Add(commandtextTbl.Rows[0]["DisplayName"].ToString()); output.Add(commandtextTbl.Rows[0]["ValueName"].ToString());
+                    adp.SelectCommand.CommandText = commandtextTbl.Rows[0]["SQLStatment"].ToString();
+                    adp.Fill(dt);
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+            }
+            return output;
+
+            
+        }
 
         #region Rule
         public static NICSQLTools.Data.dsQry.DSForRuleDataTable LoadRuleDS(NICSQLTools.Data.dsQry.DSForRuleDataTable tbl, int RuleId, int DS)

@@ -117,67 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="rulesLUEBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>572, 17</value>
-  </metadata>
-  <metadata name="dsQry.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>488, 17</value>
-  </metadata>
-  <metadata name="dsQry.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>488, 17</value>
-  </metadata>
-  <metadata name="barManagerMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>131</value>
-  </metadata>
-  <metadata name="lookupForRuleSummaryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 56</value>
-  </metadata>
-  <metadata name="popupMenuMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>162, 17</value>
-  </metadata>
-  <metadata name="rules_LUETableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>749, 17</value>
-  </metadata>
-  <metadata name="LSMSCategory.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>925, 17</value>
-  </metadata>
-  <metadata name="imageCollectionNormal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>308, 17</value>
-  </metadata>
-  <metadata name="DSForRuleBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1056, 17</value>
-  </metadata>
-  <metadata name="LSMSCategory.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>925, 17</value>
-  </metadata>
-  <metadata name="imageCollectionNormal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>308, 17</value>
-  </metadata>
-  <assembly alias="DevExpress.Utils.v14.2" name="DevExpress.Utils.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="imageCollectionNormal.ImageStream" type="DevExpress.Utils.ImageCollectionStreamer, DevExpress.Utils.v14.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYxNC4yLCBWZXJzaW9uPTE0LjIu
-        NC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
-        eXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRv
-        a2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAAChEZXZFeHByZXNzLlV0aWxzLkltYWdlQ29sbGVjdGlvblN0
-        cmVhbWVyAgAAAAlJbWFnZVNpemUERGF0YQQHE1N5c3RlbS5EcmF3aW5nLlNpemUDAAAAAgIAAAAF/P//
-        /xNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAwAAABAAAAAQAAAACQUAAAAP
-        BQAAAAAAAAACCw==
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
+        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AAAAACAAAAAhAAAAIwAAACQAAAAmAAAAJwAAACkAAAAqAAAALAAAAC0AAAAvAAAAMQAA
+        ADIAAAA0////AP///wAAAAAUAAAAFQAAABYAAAAXAAAAGQAAABoAAAAbAAAAHQAAAB4AAAAgAAAAIQAA
+        ACMAAAAkAAAAJv///wD///8AAAAACQAAAAoAAAALAAAADAAAAA4AAAAPAAAAEAAAABEAAAASAAAAFAAA
+        ABUAAAAWAAAAFwAAABn///8A////AP///wD///8AMHW0AAAAAAQAAAAPAAAAEQAAAAsAAAAEAAAAAQIM
+        SAACC0cAAgtGAAMOSwAKJG4ADzGDAP///wBAKh//QCof/z4pH/8AAAAOQhwR/zcXDuEqEQqYDQ8cQgAA
+        AAwAAAACAw5LAAMOSwACDUoAAg1JAA0tfAD///8AQisg/////wD///8AAAAADXZGMty5x9L/eImi/yRB
+        gv8IG1eWAAAADwAAAAJCm9cAQZvXAAMQTgALJG8A////AEQtIv////8A////AAAAAAhyQzCRh5qy/8jj
+        9f8fZrb/K2uo/wkfXJUAAAAOAAAAAkmn3QAFE1MACB5kAP///wBFLiP/////AP///wAAAAADRE5bPkiL
+        w//e/v3/UbTj/x9ot/8xc67/CiRhlAAAAA0AAAACBhdZAAcZXQD///8ASDAi/////wD///8AAAAAAQAA
+        AAg0e6+NR5/S/97+/f9Zv+n/IWu5/zZ7s/8MKGWSAAAADAAAAAIHGl8A////AEkyJP////8A////AP//
+        /wAAAAABAAAACTR8sIxLpdX/3v79/2HK7/8kb7z/O4O5/w4tbJAAAAAKAAAAAv///wBKMiX/////AP//
+        /wD///8A////AAAAAAEAAAAINX6zik6q1//e/v3/aNT0/yh1vv8/i77/EDFyjgAAAAb///8ATDQm/0sz
+        Jv9LMiX/SjIl/0kyJf9IMST/SDEk/wAAAAc1f7WJUa7a/97+/f9u3fj/LHvC/xhEi/8AAAAI////AP//
+        /wD///8ARaHUAEWh1ABFodQAc+X8AP///wAAAAABAAAABjeBt4dUsdz/3v79/0+m1P8fUZKIAAAABP//
+        /wD///8A////AEWh1ABFodQARaHUAEWh1ABFodQARaHUAAAAAAEAAAAFN4S6hTV/vP8sbqmGAAAABQAA
+        AAH///8A////AP///wBFodQARaHUAEWh1ABFodQARaHUAEWh1ABFodQAAAAAAQAAAAIAAAAEAAAAAwAA
+        AAEqaasAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
 </value>
   </data>
-  <metadata name="dsData.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1243, 17</value>
-  </metadata>
-  <metadata name="appRuleDetailBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1332, 17</value>
-  </metadata>
-  <metadata name="appRuleDetailTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="lookupForRuleSummaryTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>479, 56</value>
-  </metadata>
 </root>

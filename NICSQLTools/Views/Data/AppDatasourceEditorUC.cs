@@ -37,6 +37,7 @@ namespace NICSQLTools.Views.Data
             XPSCSCat.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
             treeListMain.DataSource = XPSCSCat;
             LSMSAppDatasourceType.QueryableSource = from q in dsLinq.AppDatasourceType_LUEs select q;
+            LSMSLookup.QueryableSource = from q in dsLinq.AppDatasourceLookups select q;
         }
         public void ActivateRules()
         {

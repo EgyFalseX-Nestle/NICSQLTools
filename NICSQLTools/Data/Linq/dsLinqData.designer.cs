@@ -3091,8 +3091,6 @@ namespace NICSQLTools.Data.Linq
 		
 		private string _AppDatasourceTypeName;
 		
-		private string _Desc;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3117,8 +3115,6 @@ namespace NICSQLTools.Data.Linq
     partial void OnDatasourceSPNameChanged();
     partial void OnAppDatasourceTypeNameChanging(string value);
     partial void OnAppDatasourceTypeNameChanged();
-    partial void OnDescChanging(string value);
-    partial void OnDescChanged();
     #endregion
 		
 		public vAppDatasourceParam_LUE()
@@ -3326,26 +3322,6 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(255)")]
-		public string Desc
-		{
-			get
-			{
-				return this._Desc;
-			}
-			set
-			{
-				if ((this._Desc != value))
-				{
-					this.OnDescChanging(value);
-					this.SendPropertyChanging();
-					this._Desc = value;
-					this.SendPropertyChanged("Desc");
-					this.OnDescChanged();
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -3391,8 +3367,6 @@ namespace NICSQLTools.Data.Linq
 		
 		private string _AppDatasourceTypeName;
 		
-		private string _Desc;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3415,8 +3389,6 @@ namespace NICSQLTools.Data.Linq
     partial void OnDatasourceSPNameChanged();
     partial void OnAppDatasourceTypeNameChanging(string value);
     partial void OnAppDatasourceTypeNameChanged();
-    partial void OnDescChanging(string value);
-    partial void OnDescChanged();
     #endregion
 		
 		public vAppDatasourceLayout_LUE()
@@ -3600,26 +3572,6 @@ namespace NICSQLTools.Data.Linq
 					this._AppDatasourceTypeName = value;
 					this.SendPropertyChanged("AppDatasourceTypeName");
 					this.OnAppDatasourceTypeNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Desc]", Storage="_Desc", DbType="NVarChar(255)")]
-		public string Desc
-		{
-			get
-			{
-				return this._Desc;
-			}
-			set
-			{
-				if ((this._Desc != value))
-				{
-					this.OnDescChanging(value);
-					this.SendPropertyChanging();
-					this._Desc = value;
-					this.SendPropertyChanged("Desc");
-					this.OnDescChanged();
 				}
 			}
 		}

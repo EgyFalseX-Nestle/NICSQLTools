@@ -15,7 +15,11 @@ namespace NICSQLTools.Views.Main
         public string TextData
         {
             get { return rtb.Rtf; }
-            set { rtb.Rtf = value; } 
+            set {
+                try { rtb.Rtf = value; }
+                catch { }
+            }
+ 
         }
         public rtfTextViewerFrm(string text)
         {

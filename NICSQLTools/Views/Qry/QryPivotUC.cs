@@ -404,15 +404,12 @@ namespace NICSQLTools.Views.Qry
             //Executing SP
             Dictionary<string, object> Paramters = new Dictionary<string, object>();
             foreach (KeyValuePair<string, Control> ctrItem in DataSourceList.Controls)
-            {
-                //if (ctrItem.Value.GetType() == typeof(CheckedComboBoxEdit))// if this is CheckedComboBoxEdit then remove selected values that is not included in list items
-                    //((CheckedComboBoxEdit)ctrItem.Value).RefreshEditValue();
                 Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
-            }
 
             DataSourceList.ExeButton.Enabled = false;
             DataSourceList.CancelButton.Enabled = true;
             layoutControlGroupDatasource.Enabled = false;//Stop User Activity
+            Application.DoEvents();
             try
             {
                 pivotGridControlMain.Fields.Clear();
@@ -623,7 +620,21 @@ namespace NICSQLTools.Views.Qry
             DevExpress.Utils.Menu.DXMenuItem item = (DevExpress.Utils.Menu.DXMenuItem)sender;
             pivotGridControlMain.Fields.Remove((PivotGridField)item.Tag);
         }
-        private void btnExportPivot_Click(object sender, EventArgs e)
+
+        private void bbiExcelPivot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+        private void bbiExportRow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            GridControl grid = new GridControl();
+            GridView view = new GridView(); view.OptionsView.ColumnAutoWidth = false;
+            grid.MainView = view; grid.Parent = this;
+            grid.DataSource = pivotGridControlMain.DataSource;
+            grid.ShowRibbonPrintPreview();
+            this.Controls.Remove(grid); grid.Parent = null;
+        }
+        private void bbiPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // Check whether the GridControl can be previewed.
             if (!pivotGridControlMain.IsPrintingAvailable)
@@ -634,15 +645,8 @@ namespace NICSQLTools.Views.Qry
             // Open the Preview window.
             pivotGridControlMain.ShowRibbonPrintPreview();
         }
-        private void btnExportDatasource_Click(object sender, EventArgs e)
-        {
-            GridControl grid = new GridControl();
-            GridView view = new GridView(); view.OptionsView.ColumnAutoWidth = false;
-            grid.MainView = view; grid.Parent = this;
-            grid.DataSource = pivotGridControlMain.DataSource;
-            grid.ShowRibbonPrintPreview();
-            this.Controls.Remove(grid); grid.Parent = null;
-        }
+      
+        
         #endregion
 
     }

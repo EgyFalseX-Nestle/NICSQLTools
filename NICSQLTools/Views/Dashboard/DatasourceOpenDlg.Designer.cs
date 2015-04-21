@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatasourceOpenDlg));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -39,10 +40,10 @@
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colDSCategoryDesc = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.LSMSCategory = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.imageCollectionNormal = new DevExpress.Utils.ImageCollection();
+            this.imageCollectionNormal = new DevExpress.Utils.ImageCollection(this.components);
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.vAppDatasourceForUserBindingSource = new System.Windows.Forms.BindingSource();
+            this.vAppDatasourceForUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQry = new NICSQLTools.Data.dsQry();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatasourceID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,7 +58,7 @@
             this.xtraTabPageTree = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageSearch = new DevExpress.XtraTab.XtraTabPage();
             this.gridControlSearch = new DevExpress.XtraGrid.GridControl();
-            this.vAppDatasourceForUserSearchBindingSource = new System.Windows.Forms.BindingSource();
+            this.vAppDatasourceForUserSearchBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsQrySearch = new NICSQLTools.Data.dsQry();
             this.gridViewSearch = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -138,7 +139,6 @@
             this.treeListMain.OptionsNavigation.AutoMoveRowFocus = true;
             this.treeListMain.OptionsNavigation.EnterMovesNextColumn = true;
             this.treeListMain.OptionsView.AutoWidth = false;
-            this.treeListMain.OptionsView.ShowAutoFilterRow = true;
             this.treeListMain.ParentFieldName = "DSCategoryParent";
             this.treeListMain.SelectImageList = this.imageCollectionNormal;
             this.treeListMain.Size = new System.Drawing.Size(347, 287);
@@ -162,7 +162,7 @@
             this.colDSCategoryDesc.Name = "colDSCategoryDesc";
             this.colDSCategoryDesc.Visible = true;
             this.colDSCategoryDesc.VisibleIndex = 1;
-            this.colDSCategoryDesc.Width = 98;
+            this.colDSCategoryDesc.Width = 159;
             // 
             // LSMSCategory
             // 

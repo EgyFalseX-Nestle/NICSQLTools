@@ -28,9 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.bbiExcelPivot = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiExportRow = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiPrint = new DevExpress.XtraBars.BarButtonItem();
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.panelContainerMain = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanelDashboard = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -62,13 +73,9 @@
             this.dockPanelProperties = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.btnExportDatasource = new DevExpress.XtraEditors.SimpleButton();
-            this.btnExportPivot = new DevExpress.XtraEditors.SimpleButton();
             this.pgcProperties = new DevExpress.XtraVerticalGrid.PropertyGridControl();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemPropertiesControl = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.pivotGridControlMain = new DevExpress.XtraPivotGrid.PivotGridControl();
             this.get_sp_PramTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
@@ -78,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.panelContainerMain.SuspendLayout();
             this.dockPanelDashboard.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
@@ -104,8 +112,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pgcProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +133,7 @@
             // dockManagerMain
             // 
             this.dockManagerMain.Form = this;
+            this.dockManagerMain.MenuManager = this.barManager1;
             this.dockManagerMain.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
             this.panelContainerMain});
             this.dockManagerMain.TopZIndexControls.AddRange(new string[] {
@@ -138,6 +145,107 @@
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
             // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar2,
+            this.bar3});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.DockManager = this.dockManagerMain;
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.bbiExcelPivot,
+            this.bbiPrint,
+            this.bbiExportRow});
+            this.barManager1.MainMenu = this.bar2;
+            this.barManager1.MaxItemId = 7;
+            this.barManager1.StatusBar = this.bar3;
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Main menu";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiExcelPivot),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiExportRow),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiPrint)});
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.Text = "Main menu";
+            // 
+            // bbiExcelPivot
+            // 
+            this.bbiExcelPivot.Caption = "Excel Pivot";
+            this.bbiExcelPivot.Glyph = global::NICSQLTools.Properties.Resources.Export;
+            this.bbiExcelPivot.Id = 0;
+            this.bbiExcelPivot.Name = "bbiExcelPivot";
+            this.bbiExcelPivot.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiExcelPivot.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExcelPivot_ItemClick);
+            // 
+            // bbiExportRow
+            // 
+            this.bbiExportRow.Caption = "Export Table";
+            this.bbiExportRow.Glyph = global::NICSQLTools.Properties.Resources.grid_16x16;
+            this.bbiExportRow.Id = 6;
+            this.bbiExportRow.LargeGlyph = global::NICSQLTools.Properties.Resources.grid_32x32;
+            this.bbiExportRow.Name = "bbiExportRow";
+            this.bbiExportRow.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiExportRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExportRow_ItemClick);
+            // 
+            // bbiPrint
+            // 
+            this.bbiPrint.Caption = "Print Pivot";
+            this.bbiPrint.Glyph = global::NICSQLTools.Properties.Resources.print_16x16;
+            this.bbiPrint.Id = 4;
+            this.bbiPrint.Name = "bbiPrint";
+            this.bbiPrint.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiPrint.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiPrint_ItemClick);
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Status bar";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Status bar";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(757, 24);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 463);
+            this.barDockControlBottom.Size = new System.Drawing.Size(757, 23);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 439);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(757, 24);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 439);
+            // 
             // panelContainerMain
             // 
             this.panelContainerMain.ActiveChild = this.dockPanelDashboard;
@@ -145,10 +253,10 @@
             this.panelContainerMain.Controls.Add(this.dockPanelProperties);
             this.panelContainerMain.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.panelContainerMain.ID = new System.Guid("b03cb66a-f343-43c5-9f00-cc38f1b88658");
-            this.panelContainerMain.Location = new System.Drawing.Point(0, 0);
+            this.panelContainerMain.Location = new System.Drawing.Point(0, 24);
             this.panelContainerMain.Name = "panelContainerMain";
             this.panelContainerMain.OriginalSize = new System.Drawing.Size(289, 200);
-            this.panelContainerMain.Size = new System.Drawing.Size(289, 416);
+            this.panelContainerMain.Size = new System.Drawing.Size(289, 439);
             this.panelContainerMain.Tabbed = true;
             this.panelContainerMain.Text = "panelContainer1";
             // 
@@ -162,8 +270,8 @@
             this.dockPanelDashboard.Location = new System.Drawing.Point(4, 23);
             this.dockPanelDashboard.Name = "dockPanelDashboard";
             this.dockPanelDashboard.Options.ShowCloseButton = false;
-            this.dockPanelDashboard.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanelDashboard.Size = new System.Drawing.Size(281, 345);
+            this.dockPanelDashboard.OriginalSize = new System.Drawing.Size(281, 415);
+            this.dockPanelDashboard.Size = new System.Drawing.Size(281, 368);
             this.dockPanelDashboard.Text = "Control Panal";
             // 
             // dockPanel2_Container
@@ -172,17 +280,17 @@
             this.dockPanel2_Container.Controls.Add(this.layoutControlDatasource);
             this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(281, 345);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(281, 368);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // layoutControlParamter
             // 
             this.layoutControlParamter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControlParamter.Location = new System.Drawing.Point(0, 185);
+            this.layoutControlParamter.Location = new System.Drawing.Point(0, 157);
             this.layoutControlParamter.Name = "layoutControlParamter";
             this.layoutControlParamter.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(406, 100, 434, 493);
             this.layoutControlParamter.Root = this.layoutControlGroup2;
-            this.layoutControlParamter.Size = new System.Drawing.Size(281, 160);
+            this.layoutControlParamter.Size = new System.Drawing.Size(281, 211);
             this.layoutControlParamter.TabIndex = 1;
             this.layoutControlParamter.Text = "layoutControl2";
             // 
@@ -195,7 +303,7 @@
             this.layoutControlGroupParamters});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "Root";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(281, 160);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(281, 211);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlGroupParamters
@@ -203,7 +311,7 @@
             this.layoutControlGroupParamters.CustomizationFormText = "Paramters";
             this.layoutControlGroupParamters.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroupParamters.Name = "layoutControlGroupParamters";
-            this.layoutControlGroupParamters.Size = new System.Drawing.Size(261, 140);
+            this.layoutControlGroupParamters.Size = new System.Drawing.Size(261, 191);
             this.layoutControlGroupParamters.Text = "Paramters";
             // 
             // layoutControlDatasource
@@ -220,7 +328,7 @@
             this.layoutControlDatasource.Name = "layoutControlDatasource";
             this.layoutControlDatasource.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(569, 119, 328, 452);
             this.layoutControlDatasource.Root = this.layoutControlGroupDatasource;
-            this.layoutControlDatasource.Size = new System.Drawing.Size(281, 185);
+            this.layoutControlDatasource.Size = new System.Drawing.Size(281, 157);
             this.layoutControlDatasource.TabIndex = 0;
             this.layoutControlDatasource.Text = "layoutControl1";
             // 
@@ -364,7 +472,7 @@
             // 
             // btnLoadDashboard
             // 
-            this.btnLoadDashboard.Image = global::NICSQLTools.Properties.Resources.open_32x32;
+            this.btnLoadDashboard.Image = global::NICSQLTools.Properties.Resources.technology_32x32;
             this.btnLoadDashboard.Location = new System.Drawing.Point(12, 62);
             this.btnLoadDashboard.Name = "btnLoadDashboard";
             this.btnLoadDashboard.Size = new System.Drawing.Size(257, 31);
@@ -388,7 +496,7 @@
             this.layoutControlItemLoad});
             this.layoutControlGroupDatasource.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroupDatasource.Name = "Root";
-            this.layoutControlGroupDatasource.Size = new System.Drawing.Size(281, 185);
+            this.layoutControlGroupDatasource.Size = new System.Drawing.Size(281, 157);
             this.layoutControlGroupDatasource.Text = "Datasource";
             this.layoutControlGroupDatasource.TextVisible = false;
             // 
@@ -421,7 +529,7 @@
             this.layoutControlItemSave.CustomizationFormText = "Save";
             this.layoutControlItemSave.Location = new System.Drawing.Point(0, 111);
             this.layoutControlItemSave.Name = "layoutControlItemSave";
-            this.layoutControlItemSave.Size = new System.Drawing.Size(66, 54);
+            this.layoutControlItemSave.Size = new System.Drawing.Size(66, 26);
             this.layoutControlItemSave.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemSave.TextVisible = false;
             // 
@@ -445,7 +553,7 @@
             this.layoutControlItemSaveAs.CustomizationFormText = "Save As";
             this.layoutControlItemSaveAs.Location = new System.Drawing.Point(66, 111);
             this.layoutControlItemSaveAs.Name = "layoutControlItemSaveAs";
-            this.layoutControlItemSaveAs.Size = new System.Drawing.Size(73, 54);
+            this.layoutControlItemSaveAs.Size = new System.Drawing.Size(73, 26);
             this.layoutControlItemSaveAs.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemSaveAs.TextVisible = false;
             // 
@@ -455,7 +563,7 @@
             this.layoutControlItemDelete.CustomizationFormText = "Delete";
             this.layoutControlItemDelete.Location = new System.Drawing.Point(196, 111);
             this.layoutControlItemDelete.Name = "layoutControlItemDelete";
-            this.layoutControlItemDelete.Size = new System.Drawing.Size(65, 54);
+            this.layoutControlItemDelete.Size = new System.Drawing.Size(65, 26);
             this.layoutControlItemDelete.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemDelete.TextVisible = false;
             // 
@@ -465,7 +573,7 @@
             this.layoutControlItemLoad.CustomizationFormText = "Load";
             this.layoutControlItemLoad.Location = new System.Drawing.Point(139, 111);
             this.layoutControlItemLoad.Name = "layoutControlItemLoad";
-            this.layoutControlItemLoad.Size = new System.Drawing.Size(57, 54);
+            this.layoutControlItemLoad.Size = new System.Drawing.Size(57, 26);
             this.layoutControlItemLoad.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemLoad.TextVisible = false;
             // 
@@ -478,8 +586,8 @@
             this.dockPanelProperties.Location = new System.Drawing.Point(4, 23);
             this.dockPanelProperties.Name = "dockPanelProperties";
             this.dockPanelProperties.Options.ShowCloseButton = false;
-            this.dockPanelProperties.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanelProperties.Size = new System.Drawing.Size(281, 345);
+            this.dockPanelProperties.OriginalSize = new System.Drawing.Size(281, 415);
+            this.dockPanelProperties.Size = new System.Drawing.Size(281, 368);
             this.dockPanelProperties.Text = "Properties";
             // 
             // dockPanel1_Container
@@ -487,51 +595,27 @@
             this.dockPanel1_Container.Controls.Add(this.layoutControl1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(281, 345);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(281, 368);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.btnExportDatasource);
-            this.layoutControl1.Controls.Add(this.btnExportPivot);
             this.layoutControl1.Controls.Add(this.pgcProperties);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(541, 139, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup3;
-            this.layoutControl1.Size = new System.Drawing.Size(281, 345);
+            this.layoutControl1.Size = new System.Drawing.Size(281, 368);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // btnExportDatasource
-            // 
-            this.btnExportDatasource.Image = global::NICSQLTools.Properties.Resources.Export;
-            this.btnExportDatasource.Location = new System.Drawing.Point(142, 12);
-            this.btnExportDatasource.Name = "btnExportDatasource";
-            this.btnExportDatasource.Size = new System.Drawing.Size(127, 22);
-            this.btnExportDatasource.StyleController = this.layoutControl1;
-            this.btnExportDatasource.TabIndex = 5;
-            this.btnExportDatasource.Text = "Export Datasource";
-            this.btnExportDatasource.Click += new System.EventHandler(this.btnExportDatasource_Click);
-            // 
-            // btnExportPivot
-            // 
-            this.btnExportPivot.Image = global::NICSQLTools.Properties.Resources.pivot_16x16;
-            this.btnExportPivot.Location = new System.Drawing.Point(12, 12);
-            this.btnExportPivot.Name = "btnExportPivot";
-            this.btnExportPivot.Size = new System.Drawing.Size(126, 22);
-            this.btnExportPivot.StyleController = this.layoutControl1;
-            this.btnExportPivot.TabIndex = 4;
-            this.btnExportPivot.Text = "Export Pivot";
-            this.btnExportPivot.Click += new System.EventHandler(this.btnExportPivot_Click);
             // 
             // pgcProperties
             // 
             this.pgcProperties.AutoGenerateRows = true;
-            this.pgcProperties.Location = new System.Drawing.Point(12, 38);
+            this.pgcProperties.Location = new System.Drawing.Point(12, 12);
             this.pgcProperties.Name = "pgcProperties";
-            this.pgcProperties.Size = new System.Drawing.Size(257, 295);
+            this.pgcProperties.Size = new System.Drawing.Size(257, 344);
             this.pgcProperties.TabIndex = 0;
             // 
             // layoutControlGroup3
@@ -540,44 +624,22 @@
             this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup3.GroupBordersVisible = false;
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItemPropertiesControl,
-            this.layoutControlItem3,
-            this.layoutControlItem4});
+            this.layoutControlItemPropertiesControl});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(281, 345);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(281, 368);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItemPropertiesControl
             // 
             this.layoutControlItemPropertiesControl.Control = this.pgcProperties;
             this.layoutControlItemPropertiesControl.CustomizationFormText = "Properties Control";
-            this.layoutControlItemPropertiesControl.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItemPropertiesControl.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItemPropertiesControl.Name = "layoutControlItemPropertiesControl";
-            this.layoutControlItemPropertiesControl.Size = new System.Drawing.Size(261, 299);
+            this.layoutControlItemPropertiesControl.Size = new System.Drawing.Size(261, 348);
             this.layoutControlItemPropertiesControl.Text = "Properties Control";
             this.layoutControlItemPropertiesControl.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItemPropertiesControl.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.btnExportPivot;
-            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(130, 26);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.btnExportDatasource;
-            this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(130, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(131, 26);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
             // 
             // LSMSDatasource
             // 
@@ -593,7 +655,7 @@
             this.pivotGridControlMain.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 10F);
             this.pivotGridControlMain.Appearance.FieldValue.Options.UseFont = true;
             this.pivotGridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pivotGridControlMain.Location = new System.Drawing.Point(289, 0);
+            this.pivotGridControlMain.Location = new System.Drawing.Point(289, 24);
             this.pivotGridControlMain.Name = "pivotGridControlMain";
             this.pivotGridControlMain.OptionsData.DataFieldUnboundExpressionMode = DevExpress.XtraPivotGrid.DataFieldUnboundExpressionMode.UseSummaryValues;
             this.pivotGridControlMain.OptionsLayout.AddNewGroups = true;
@@ -603,7 +665,7 @@
             this.pivotGridControlMain.OptionsLayout.StoreAllOptions = true;
             this.pivotGridControlMain.OptionsLayout.StoreAppearance = true;
             this.pivotGridControlMain.OptionsLayout.StoreLayoutOptions = true;
-            this.pivotGridControlMain.Size = new System.Drawing.Size(468, 416);
+            this.pivotGridControlMain.Size = new System.Drawing.Size(468, 439);
             this.pivotGridControlMain.TabIndex = 2;
             this.pivotGridControlMain.PopupMenuShowing += new DevExpress.XtraPivotGrid.PopupMenuShowingEventHandler(this.pivotGridControlMain_PopupMenuShowing);
             // 
@@ -629,12 +691,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pivotGridControlMain);
             this.Controls.Add(this.panelContainerMain);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "QryPivotUC";
-            this.Size = new System.Drawing.Size(757, 416);
+            this.Size = new System.Drawing.Size(757, 486);
             this.Load += new System.EventHandler(this.QryPivotUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.panelContainerMain.ResumeLayout(false);
             this.dockPanelDashboard.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
@@ -661,8 +728,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pgcProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPropertiesControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).EndInit();
             this.ResumeLayout(false);
@@ -713,9 +778,15 @@
         private DevExpress.XtraBars.Docking.DockPanel panelContainerMain;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSDatasource;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSLayout;
-        private DevExpress.XtraEditors.SimpleButton btnExportDatasource;
-        private DevExpress.XtraEditors.SimpleButton btnExportPivot;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.BarButtonItem bbiExcelPivot;
+        private DevExpress.XtraBars.BarButtonItem bbiExportRow;
+        private DevExpress.XtraBars.BarButtonItem bbiPrint;
+        private DevExpress.XtraBars.Bar bar3;
     }
 }

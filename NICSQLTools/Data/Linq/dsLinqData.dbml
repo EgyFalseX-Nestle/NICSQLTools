@@ -173,7 +173,6 @@
       <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.vAppDatasourceLayout_LUE" Member="vAppDatasourceLayout_LUEs">
@@ -187,7 +186,6 @@
       <Column Name="DatasourceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DatasourceSPName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="AppDatasourceTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Desc]" Member="Desc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.AppDatasourceType" Member="AppDatasourceType_LUEs">

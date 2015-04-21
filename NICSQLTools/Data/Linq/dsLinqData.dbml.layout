@@ -52,16 +52,16 @@
         <elementListCompartment Id="bd5d4e2e-783d-43b7-b22b-5a6dbaaeef03" absoluteBounds="8.515, 4.71, 2.2199999999999998, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="24fec7aa-db6d-4e54-a4fb-baafd3a66d66" absoluteBounds="5.75, 1.125, 2.25, 2.9247054036458326">
+    <classShape Id="24fec7aa-db6d-4e54-a4fb-baafd3a66d66" absoluteBounds="5.75, 1.125, 2.25, 2.7324039713541666">
       <DataClassMoniker Name="/dsLinqDataDataContext/vAppDatasourceParam_LUE" />
       <nestedChildShapes>
-        <elementListCompartment Id="305e7af8-4a72-46dd-9f92-a939def36409" absoluteBounds="5.765, 1.585, 2.2199999999999998, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="305e7af8-4a72-46dd-9f92-a939def36409" absoluteBounds="5.765, 1.585, 2.2199999999999998, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="70de8094-3401-4a05-9f92-72978d84f9df" absoluteBounds="6.25, 4.25, 2, 2.7324039713541666">
+    <classShape Id="70de8094-3401-4a05-9f92-72978d84f9df" absoluteBounds="6.25, 4.25, 2, 2.5401025390624996">
       <DataClassMoniker Name="/dsLinqDataDataContext/vAppDatasourceLayout_LUE" />
       <nestedChildShapes>
-        <elementListCompartment Id="1a936a46-501f-4881-880e-e9776fc76707" absoluteBounds="6.265, 4.7100000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1a936a46-501f-4881-880e-e9776fc76707" absoluteBounds="6.265, 4.7100000000000009, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="0732145c-38a4-4810-b8d7-f5d69a0f1823" absoluteBounds="6.125, 7.375, 2.25, 1.1939925130208333">

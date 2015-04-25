@@ -482,11 +482,13 @@ namespace NICSQLTools.Classes.Managers
             return Task<DataTable>.Run(() => 
             {
                 DataTable dt = new DataTable();
+                string logstring = string.Empty;
                 try
                 {
                     SqlDataAdapter adp = new SqlDataAdapter("", Properties.Settings.Default.IC_DBConnectionString);
                     adp.SelectCommand.CommandType = CommandType.StoredProcedure;
                     adp.SelectCommand.CommandText = StoredProcedureName;
+                    logstring += StoredProcedureName + ": with Paramters " + Environment.NewLine;
 
                     if (InfoMessageHnd != null)
                         adp.SelectCommand.Connection.InfoMessage += InfoMessageHnd;
@@ -495,8 +497,12 @@ namespace NICSQLTools.Classes.Managers
 
                     cmd = adp.SelectCommand;
                     foreach (KeyValuePair<string, object> item in Paramters)
+                    {
                         adp.SelectCommand.Parameters.Add(new SqlParameter(item.Key, item.Value));
+                        logstring += item.Key + " = " + item.Value + Environment.NewLine;
+                    }
                     adp.SelectCommand.CommandTimeout = DataManager.ConnectionTimeout;
+                    Logger.Info(logstring);
                     adp.Fill(dt);
                 }
                 catch (SqlException ex)
@@ -591,6 +597,7 @@ namespace NICSQLTools.Classes.Managers
             return output;
         }
         #endregion
+        
 
         #endregion
 

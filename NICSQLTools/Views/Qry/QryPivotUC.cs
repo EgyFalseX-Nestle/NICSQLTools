@@ -362,7 +362,10 @@ namespace NICSQLTools.Views.Qry
             {
                 btnLoadDashboard.Enabled = false;
                 if (await OpenDatasourceAsync() == false)
+                {
+                    btnLoadDashboard.Enabled = true;
                     return;
+                }
                 btnLoadDashboard.Enabled = true;
 
                 if (_selectedDatasource == null)
@@ -620,10 +623,14 @@ namespace NICSQLTools.Views.Qry
             DevExpress.Utils.Menu.DXMenuItem item = (DevExpress.Utils.Menu.DXMenuItem)sender;
             pivotGridControlMain.Fields.Remove((PivotGridField)item.Tag);
         }
-
         private void bbiExcelPivot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (pivotGridControlMain.DataSource == null || _selectedDatasource == null)
+                return;
+            sfd.FileName = _selectedDatasource.DatasourceName;
+            if (sfd.ShowDialog() == DialogResult.Cancel)
+                return;
+            Classes.msExcel.CreatePivot(pivotGridControlMain, _selectedDatasource.DatasourceName, sfd.FileName);
         }
         private void bbiExportRow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

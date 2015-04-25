@@ -13,52 +13,54 @@ namespace NICSQLTools
 {
     public partial class TestFrm : DevExpress.XtraEditors.XtraForm
     {
+        DataTable dt = new DataTable();
         public TestFrm()
         {
             InitializeComponent();
-            checkedComboBoxEdit1.Properties.Items.Add("item1");
-            checkedComboBoxEdit1.Properties.Items.Add("item2");
-            checkedComboBoxEdit1.Properties.Items.Add("item3");
-            checkedComboBoxEdit1.Properties.Items.Add("item4");
-            checkedComboBoxEdit1.Properties.Items.Add("item5");
 
-            
-            //NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new Data.Linq.dsLinqDataDataContext();
-            //lsms.QueryableSource = from q in ds.vAppProductDetails select q;
-            //////////////////////
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("Address", typeof(string));
+            dt.Columns.Add("BirthDate", typeof(DateTime));
+            dt.Columns.Add("Age", typeof(int));
+            dt.Columns.Add("Salary", typeof(float));
 
-            //checkedComboBoxEdit1.Properties.DataSource = lsms;
-            //checkedComboBoxEdit1.Properties.DisplayMember = "Material Number";
-            //checkedComboBoxEdit1.Properties.ValueMember = "Material Number";
+            DataRow row1 = dt.NewRow();
+            row1["Name"] = "Hassan";
+            row1["Address"] = "57 ahmed";
+            row1["BirthDate"] = new DateTime(2000, 5, 7);
+            row1["Age"] = 17;
+            row1["Salary"] = 1500;
+            dt.Rows.Add(row1);
 
-            //checkedComboBoxEdit1.Properties.AllowMultiSelect = true;
-            //checkedComboBoxEdit1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            //checkedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            
-            //checkedComboBoxEdit1
+            DataRow row2 = dt.NewRow();
+            row2["Name"] = "ahmed";
+            row2["Address"] = "99 ahmed";
+            row2["BirthDate"] = new DateTime(2005, 6, 8);
+            row2["Age"] = 22;
+            row2["Salary"] = 2000;
+            dt.Rows.Add(row2);
 
-            //this.checkedComboBoxEdit1.EditValue = "";
-            //this.checkedComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            //unitOfWork1.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
-            //gridControl1.DataSource = xpServerCollectionSource1;
-            //gridView1.PopulateColumns();
+
         }
 
         private void TestFrm_Load(object sender, EventArgs e)
         {
-            
+            pivotGridControl1.DataSource = dt;
+            pivotGridControl1.RetrieveFields();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            checkedComboBoxEdit1.RefreshEditValue();
+            Classes.msExcel.CreatePivot(pivotGridControl1, "New Data Sheet", @"C:\111.xlsx");
+            MessageBox.Show("Done ...");
         }
 
         private void checkedComboBoxEdit1_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
             MessageBox.Show("changing");
-            
         }
+
+        
 
     }
 }

@@ -82,6 +82,7 @@
             this.appDatasourceLayoutTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceLayoutTableAdapter();
             this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
             this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).BeginInit();
@@ -685,6 +686,11 @@
             // 
             this.appDashboardDSPramTableAdapter.ClearBeforeFill = true;
             // 
+            // sfd
+            // 
+            this.sfd.Filter = "excel workbook (*.xlsx)|*.xlsx";
+            this.sfd.Title = "export to excel file (xlsx)";
+            // 
             // QryPivotUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -788,5 +794,6 @@
         private DevExpress.XtraBars.BarButtonItem bbiExportRow;
         private DevExpress.XtraBars.BarButtonItem bbiPrint;
         private DevExpress.XtraBars.Bar bar3;
+        private System.Windows.Forms.SaveFileDialog sfd;
     }
 }

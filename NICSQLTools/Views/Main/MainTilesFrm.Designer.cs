@@ -35,11 +35,11 @@
             DevExpress.XtraEditors.TileItemFrame tileItemFrame2 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame35 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement53 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame36 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement54 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement55 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame37 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement56 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame38 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement57 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement58 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame3 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame4 = new DevExpress.XtraEditors.TileItemFrame();
@@ -120,37 +120,37 @@
             DevExpress.XtraEditors.TileItemFrame tileItemFrame34 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement51 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement52 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame41 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement62 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame42 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement63 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement64 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement65 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame35 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement53 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame36 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement54 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement55 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame43 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement65 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame44 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement66 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame37 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement56 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame38 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement57 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement58 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement67 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement68 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame45 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement69 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame39 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement59 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame40 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement60 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement61 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame54 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement82 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame55 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement83 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement84 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame41 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement62 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame42 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement63 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement64 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame56 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement85 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame57 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement86 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame44 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement67 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame45 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement68 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement69 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement87 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame58 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement88 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement89 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame46 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement70 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame47 = new DevExpress.XtraEditors.TileItemFrame();
@@ -171,26 +171,36 @@
             DevExpress.XtraEditors.TileItemFrame tileItemFrame53 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement80 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement81 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame57 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement87 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame58 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement88 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement89 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame63 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement96 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemFrame tileItemFrame64 = new DevExpress.XtraEditors.TileItemFrame();
-            DevExpress.XtraEditors.TileItemElement tileItemElement97 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement98 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame54 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement82 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame55 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement83 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement84 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame59 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement90 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame60 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement91 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement92 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame65 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement99 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame66 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement100 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement101 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame61 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement93 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame62 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement94 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement95 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame63 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement96 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame64 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement97 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement98 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame67 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement102 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame68 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement103 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement104 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTilesFrm));
             this.documentManagerMain = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.windowsUIView = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView(this.components);
@@ -232,6 +242,13 @@
             this.docEditorsImportUpdateProductDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentTileEditorsAppDatasourceLookup = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.docEditorsAppDatasourceLookup = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsTaskManager = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tabbedGroupTaskManager = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
+            this.docEditorsTaskManagerTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsTaskManagerEmp = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsTaskManagerEmpTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsTaskManagerFactor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsTaskManager = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditors = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentTileQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileContainerQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
@@ -268,6 +285,12 @@
             this.pageUserSettings = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
             this.docUserSetting = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentTiledUserSetting = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsTaskManagerTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsTaskManagerEmp = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsTaskManagerEmpTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsTaskManagerFactor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsTaskManagerEmpTaskActual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsTaskManagerEmpTaskActual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerLogin)).BeginInit();
@@ -308,6 +331,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportUpdateProductDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsAppDatasourceLookup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsAppDatasourceLookup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupTaskManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerTask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerEmp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerEmpTask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerFactor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileQueries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerQueries)).BeginInit();
@@ -344,6 +374,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageUserSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docUserSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTiledUserSetting)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerTask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerEmp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerEmpTask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerFactor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerEmpTaskActual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerEmpTaskActual)).BeginInit();
             this.SuspendLayout();
             // 
             // documentManagerMain
@@ -369,7 +405,8 @@
             this.tileContainerRules,
             this.tileContainerReports,
             this.tileContainerDashboard,
-            this.pageUserSettings});
+            this.pageUserSettings,
+            this.tabbedGroupTaskManager});
             this.windowsUIView.Documents.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseDocument[] {
             this.docLogin,
             this.docEditors,
@@ -403,7 +440,13 @@
             this.docEditorsImportUMD,
             this.docEditorsImportUpdateProductDetails,
             this.docEditorsCostControl,
-            this.docEditorsAppDatasourceLookup});
+            this.docEditorsAppDatasourceLookup,
+            this.docEditorsTaskManager,
+            this.docEditorsTaskManagerTask,
+            this.docEditorsTaskManagerEmp,
+            this.docEditorsTaskManagerEmpTask,
+            this.docEditorsTaskManagerFactor,
+            this.docEditorsTaskManagerEmpTaskActual});
             this.windowsUIView.OptionsLayout.LayoutVersion = "2";
             this.windowsUIView.OptionsLayout.PropertiesRestoreMode = DevExpress.XtraBars.Docking2010.Views.PropertiesRestoreMode.All;
             this.windowsUIView.SearchPanelProperties.Enabled = false;
@@ -448,7 +491,13 @@
             this.documentTileEditorsImportUMD,
             this.documentTileUpdateProductDetails,
             this.documentTileEditorsCostControl,
-            this.documentTileEditorsAppDatasourceLookup});
+            this.documentTileEditorsAppDatasourceLookup,
+            this.documentTileEditorsTaskManager,
+            this.documentTileEditorsTaskManagerTask,
+            this.documentTileEditorsTaskManagerEmp,
+            this.documentTileEditorsTaskManagerEmpTask,
+            this.documentTileEditorsTaskManagerFactor,
+            this.documentTileEditorsTaskManagerEmpTaskActual});
             this.windowsUIView.QueryControl += new DevExpress.XtraBars.Docking2010.Views.QueryControlEventHandler(this.windowsUIView_QueryControl);
             // 
             // tileContainerLogin
@@ -532,24 +581,24 @@
             this.documentTileEditors.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileEditors.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileEditors.Document = this.docEditors;
-            tileItemElement53.AnimateTransition = DevExpress.Utils.DefaultBoolean.True;
-            tileItemElement53.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 11F);
-            tileItemElement53.Appearance.Normal.Options.UseFont = true;
-            tileItemElement53.Image = global::NICSQLTools.Properties.Resources.Editor128;
-            tileItemElement53.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement53.Text = "Editors";
-            tileItemFrame35.Elements.Add(tileItemElement53);
-            tileItemFrame35.Image = global::NICSQLTools.Properties.Resources.Editor128;
-            tileItemElement54.Image = global::NICSQLTools.Properties.Resources.Editor64;
-            tileItemElement54.Text = "";
-            tileItemElement55.MaxWidth = 160;
-            tileItemElement55.Text = "Add, Edit And Delete Database Records";
-            tileItemElement55.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame36.Elements.Add(tileItemElement54);
-            tileItemFrame36.Elements.Add(tileItemElement55);
-            tileItemFrame36.Image = global::NICSQLTools.Properties.Resources.Editor64;
-            this.documentTileEditors.Frames.Add(tileItemFrame35);
-            this.documentTileEditors.Frames.Add(tileItemFrame36);
+            tileItemElement56.AnimateTransition = DevExpress.Utils.DefaultBoolean.True;
+            tileItemElement56.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 11F);
+            tileItemElement56.Appearance.Normal.Options.UseFont = true;
+            tileItemElement56.Image = global::NICSQLTools.Properties.Resources.Editor128;
+            tileItemElement56.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement56.Text = "Editors";
+            tileItemFrame37.Elements.Add(tileItemElement56);
+            tileItemFrame37.Image = global::NICSQLTools.Properties.Resources.Editor128;
+            tileItemElement57.Image = global::NICSQLTools.Properties.Resources.Editor64;
+            tileItemElement57.Text = "";
+            tileItemElement58.MaxWidth = 160;
+            tileItemElement58.Text = "Add, Edit And Delete Database Records";
+            tileItemElement58.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame38.Elements.Add(tileItemElement57);
+            tileItemFrame38.Elements.Add(tileItemElement58);
+            tileItemFrame38.Image = global::NICSQLTools.Properties.Resources.Editor64;
+            this.documentTileEditors.Frames.Add(tileItemFrame37);
+            this.documentTileEditors.Frames.Add(tileItemFrame38);
             this.documentTileEditors.Group = "Editors";
             this.documentTileEditors.Name = "documentTileEditors";
             this.documentTileEditors.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -575,7 +624,8 @@
             this.documentTileEditorsImportDamageMaster,
             this.documentTileAppDatasourceEditor,
             this.documentTileUpdateProductDetails,
-            this.documentTileEditorsAppDatasourceLookup});
+            this.documentTileEditorsAppDatasourceLookup,
+            this.documentTileEditorsTaskManager});
             this.tileContainerEditors.Name = "tileContainerEditors";
             this.tileContainerEditors.Parent = this.tileContainerMain;
             // 
@@ -1084,6 +1134,71 @@
             this.docEditorsAppDatasourceLookup.Caption = "Datasource Lookup";
             this.docEditorsAppDatasourceLookup.ControlName = "docEditorsAppDatasourceLookup";
             // 
+            // documentTileEditorsTaskManager
+            // 
+            this.documentTileEditorsTaskManager.ActivationTarget = this.tabbedGroupTaskManager;
+            this.documentTileEditorsTaskManager.Appearances.Normal.BackColor = System.Drawing.Color.Gold;
+            this.documentTileEditorsTaskManager.Appearances.Normal.ForeColor = System.Drawing.Color.Black;
+            this.documentTileEditorsTaskManager.Appearances.Normal.Options.UseBackColor = true;
+            this.documentTileEditorsTaskManager.Appearances.Normal.Options.UseForeColor = true;
+            this.documentTileEditorsTaskManager.Document = this.docEditorsTaskManager;
+            tileItemElement53.Image = global::NICSQLTools.Properties.Resources.Task128;
+            tileItemElement53.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement53.Text = "Task Manager";
+            tileItemElement53.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
+            tileItemFrame35.Elements.Add(tileItemElement53);
+            tileItemFrame35.Image = global::NICSQLTools.Properties.Resources.Task128;
+            tileItemElement54.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement54.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement54.Text = "Task Manager";
+            tileItemElement55.Text = "Employee Task Manager";
+            tileItemElement55.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame36.Elements.Add(tileItemElement54);
+            tileItemFrame36.Elements.Add(tileItemElement55);
+            tileItemFrame36.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileEditorsTaskManager.Frames.Add(tileItemFrame35);
+            this.documentTileEditorsTaskManager.Frames.Add(tileItemFrame36);
+            this.documentTileEditorsTaskManager.Group = "Codes";
+            this.tileContainerEditors.SetID(this.documentTileEditorsTaskManager, 15);
+            this.documentTileEditorsTaskManager.Name = "documentTileEditorsTaskManager";
+            // 
+            // tabbedGroupTaskManager
+            // 
+            this.tabbedGroupTaskManager.Image = global::NICSQLTools.Properties.Resources.Task64;
+            this.tabbedGroupTaskManager.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document[] {
+            this.docEditorsTaskManagerEmpTaskActual,
+            this.docEditorsTaskManagerEmp,
+            this.docEditorsTaskManagerFactor,
+            this.docEditorsTaskManagerTask,
+            this.docEditorsTaskManagerEmpTask});
+            this.tabbedGroupTaskManager.Name = "tabbedGroupTaskManager";
+            this.tabbedGroupTaskManager.Parent = this.tileContainerEditors;
+            // 
+            // docEditorsTaskManagerTask
+            // 
+            this.docEditorsTaskManagerTask.Caption = "Tasks";
+            this.docEditorsTaskManagerTask.ControlName = "docEditorsTaskManagerTask";
+            // 
+            // docEditorsTaskManagerEmp
+            // 
+            this.docEditorsTaskManagerEmp.Caption = "Employees";
+            this.docEditorsTaskManagerEmp.ControlName = "docEditorsTaskManagerEmp";
+            // 
+            // docEditorsTaskManagerEmpTask
+            // 
+            this.docEditorsTaskManagerEmpTask.Caption = "Employees Tasks";
+            this.docEditorsTaskManagerEmpTask.ControlName = "docEditorsTaskManagerEmpTask";
+            // 
+            // docEditorsTaskManagerFactor
+            // 
+            this.docEditorsTaskManagerFactor.Caption = "Factors";
+            this.docEditorsTaskManagerFactor.ControlName = "docEditorsTaskManagerFactor";
+            // 
+            // docEditorsTaskManager
+            // 
+            this.docEditorsTaskManager.Caption = "Task Manager";
+            this.docEditorsTaskManager.ControlName = "docEditorsTaskManager";
+            // 
             // docEditors
             // 
             this.docEditors.ActionCaption = "";
@@ -1100,35 +1215,35 @@
             this.documentTileQueries.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileQueries.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileQueries.Document = this.docQueries;
-            tileItemFrame41.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollTop;
-            tileItemElement62.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
-            tileItemElement62.Appearance.Normal.Options.UseFont = true;
-            tileItemElement62.Image = global::NICSQLTools.Properties.Resources.Queries128;
-            tileItemElement62.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement62.Text = "Queries";
-            tileItemFrame41.Elements.Add(tileItemElement62);
-            tileItemFrame41.Image = global::NICSQLTools.Properties.Resources.Queries128;
-            tileItemFrame42.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.RandomSegmentedFade;
-            tileItemElement63.Image = global::NICSQLTools.Properties.Resources.Queries64;
-            tileItemElement63.Text = "";
-            tileItemElement64.Text = "Execute, Search And Calc Database Information";
-            tileItemElement64.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement65.Text = "Pivot Viewer and Data Exporter";
-            tileItemElement65.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemFrame42.Elements.Add(tileItemElement63);
-            tileItemFrame42.Elements.Add(tileItemElement64);
-            tileItemFrame42.Elements.Add(tileItemElement65);
-            tileItemFrame42.Image = global::NICSQLTools.Properties.Resources.Queries64;
-            tileItemFrame43.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.RandomSegmentedFade;
-            tileItemElement66.Image = global::NICSQLTools.Properties.Resources.Queries2_64;
-            tileItemElement66.MaxWidth = 140;
-            tileItemElement66.Text = "View Data In Many Charts Type";
-            tileItemElement66.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame43.Elements.Add(tileItemElement66);
-            tileItemFrame43.Image = global::NICSQLTools.Properties.Resources.Queries2_64;
-            this.documentTileQueries.Frames.Add(tileItemFrame41);
-            this.documentTileQueries.Frames.Add(tileItemFrame42);
+            tileItemFrame43.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.ScrollTop;
+            tileItemElement65.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
+            tileItemElement65.Appearance.Normal.Options.UseFont = true;
+            tileItemElement65.Image = global::NICSQLTools.Properties.Resources.Queries128;
+            tileItemElement65.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement65.Text = "Queries";
+            tileItemFrame43.Elements.Add(tileItemElement65);
+            tileItemFrame43.Image = global::NICSQLTools.Properties.Resources.Queries128;
+            tileItemFrame44.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.RandomSegmentedFade;
+            tileItemElement66.Image = global::NICSQLTools.Properties.Resources.Queries64;
+            tileItemElement66.Text = "";
+            tileItemElement67.Text = "Execute, Search And Calc Database Information";
+            tileItemElement67.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement68.Text = "Pivot Viewer and Data Exporter";
+            tileItemElement68.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemFrame44.Elements.Add(tileItemElement66);
+            tileItemFrame44.Elements.Add(tileItemElement67);
+            tileItemFrame44.Elements.Add(tileItemElement68);
+            tileItemFrame44.Image = global::NICSQLTools.Properties.Resources.Queries64;
+            tileItemFrame45.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.RandomSegmentedFade;
+            tileItemElement69.Image = global::NICSQLTools.Properties.Resources.Queries2_64;
+            tileItemElement69.MaxWidth = 140;
+            tileItemElement69.Text = "View Data In Many Charts Type";
+            tileItemElement69.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame45.Elements.Add(tileItemElement69);
+            tileItemFrame45.Image = global::NICSQLTools.Properties.Resources.Queries2_64;
             this.documentTileQueries.Frames.Add(tileItemFrame43);
+            this.documentTileQueries.Frames.Add(tileItemFrame44);
+            this.documentTileQueries.Frames.Add(tileItemFrame45);
             this.documentTileQueries.Group = "Queries";
             this.tileContainerMain.SetID(this.documentTileQueries, 1);
             this.documentTileQueries.Name = "documentTileQueries";
@@ -1153,27 +1268,27 @@
             this.documentTileQueriesQryPivot.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileQueriesQryPivot.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileQueriesQryPivot.Document = this.docQueriesQryPivot;
-            tileItemElement56.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement56.Appearance.Normal.Options.UseFont = true;
-            tileItemElement56.Image = global::NICSQLTools.Properties.Resources.Queries2128;
-            tileItemElement56.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement56.Text = "Queries Pivot Viewer";
-            tileItemFrame37.Elements.Add(tileItemElement56);
-            tileItemFrame37.Image = global::NICSQLTools.Properties.Resources.Queries2128;
-            tileItemElement57.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement57.Appearance.Normal.Options.UseFont = true;
-            tileItemElement57.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            tileItemElement57.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement57.Text = "Queries Pivot Viewer";
-            tileItemElement58.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement58.Appearance.Normal.Options.UseFont = true;
-            tileItemElement58.Text = "View Queries In Pivot Grid";
-            tileItemElement58.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame38.Elements.Add(tileItemElement57);
-            tileItemFrame38.Elements.Add(tileItemElement58);
-            tileItemFrame38.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            this.documentTileQueriesQryPivot.Frames.Add(tileItemFrame37);
-            this.documentTileQueriesQryPivot.Frames.Add(tileItemFrame38);
+            tileItemElement59.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement59.Appearance.Normal.Options.UseFont = true;
+            tileItemElement59.Image = global::NICSQLTools.Properties.Resources.Queries2128;
+            tileItemElement59.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement59.Text = "Queries Pivot Viewer";
+            tileItemFrame39.Elements.Add(tileItemElement59);
+            tileItemFrame39.Image = global::NICSQLTools.Properties.Resources.Queries2128;
+            tileItemElement60.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement60.Appearance.Normal.Options.UseFont = true;
+            tileItemElement60.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement60.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement60.Text = "Queries Pivot Viewer";
+            tileItemElement61.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement61.Appearance.Normal.Options.UseFont = true;
+            tileItemElement61.Text = "View Queries In Pivot Grid";
+            tileItemElement61.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame40.Elements.Add(tileItemElement60);
+            tileItemFrame40.Elements.Add(tileItemElement61);
+            tileItemFrame40.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileQueriesQryPivot.Frames.Add(tileItemFrame39);
+            this.documentTileQueriesQryPivot.Frames.Add(tileItemFrame40);
             this.documentTileQueriesQryPivot.Name = "documentTileQueriesQryPivot";
             this.documentTileQueriesQryPivot.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
@@ -1189,21 +1304,21 @@
             this.documentTileQueriesQryCustomerInfo.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileQueriesQryCustomerInfo.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileQueriesQryCustomerInfo.Document = this.docQueriesQryCustomerInfo;
-            tileItemElement59.Image = global::NICSQLTools.Properties.Resources.Queries2128;
-            tileItemElement59.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement59.Text = "Customer Information";
-            tileItemFrame39.Elements.Add(tileItemElement59);
-            tileItemFrame39.Image = global::NICSQLTools.Properties.Resources.Queries2128;
-            tileItemElement60.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            tileItemElement60.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement60.Text = "Customer Information";
-            tileItemElement61.Text = "Search For Sales, Freezers and Route For Customers";
-            tileItemElement61.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame40.Elements.Add(tileItemElement60);
-            tileItemFrame40.Elements.Add(tileItemElement61);
-            tileItemFrame40.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            this.documentTileQueriesQryCustomerInfo.Frames.Add(tileItemFrame39);
-            this.documentTileQueriesQryCustomerInfo.Frames.Add(tileItemFrame40);
+            tileItemElement62.Image = global::NICSQLTools.Properties.Resources.Queries2128;
+            tileItemElement62.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement62.Text = "Customer Information";
+            tileItemFrame41.Elements.Add(tileItemElement62);
+            tileItemFrame41.Image = global::NICSQLTools.Properties.Resources.Queries2128;
+            tileItemElement63.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement63.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement63.Text = "Customer Information";
+            tileItemElement64.Text = "Search For Sales, Freezers and Route For Customers";
+            tileItemElement64.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame42.Elements.Add(tileItemElement63);
+            tileItemFrame42.Elements.Add(tileItemElement64);
+            tileItemFrame42.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileQueriesQryCustomerInfo.Frames.Add(tileItemFrame41);
+            this.documentTileQueriesQryCustomerInfo.Frames.Add(tileItemFrame42);
             this.tileContainerQueries.SetID(this.documentTileQueriesQryCustomerInfo, 1);
             this.documentTileQueriesQryCustomerInfo.Name = "documentTileQueriesQryCustomerInfo";
             // 
@@ -1225,36 +1340,36 @@
             this.documentTileRules.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileRules.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileRules.Document = this.docRules;
-            tileItemElement82.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
-            tileItemElement82.Appearance.Normal.Options.UseFont = true;
-            tileItemElement82.Image = global::NICSQLTools.Properties.Resources.Roles128;
-            tileItemElement82.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement82.Text = "Roles";
-            tileItemFrame54.Elements.Add(tileItemElement82);
-            tileItemFrame54.Image = global::NICSQLTools.Properties.Resources.Roles128;
-            tileItemFrame55.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.RandomSegmentedFade;
-            tileItemElement83.Image = global::NICSQLTools.Properties.Resources.Roles64;
-            tileItemElement83.MaxWidth = 170;
-            tileItemElement83.Text = "Add, Edit And Delete User Roles";
-            tileItemElement83.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement84.Text = "Roles";
-            tileItemElement84.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemFrame55.Elements.Add(tileItemElement83);
-            tileItemFrame55.Elements.Add(tileItemElement84);
-            tileItemFrame55.Image = global::NICSQLTools.Properties.Resources.Roles64;
-            tileItemFrame56.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.RandomSegmentedFade;
-            tileItemElement85.Image = global::NICSQLTools.Properties.Resources.Users64;
-            tileItemElement85.MaxWidth = 160;
-            tileItemElement85.Text = "Add, Edit And Delete Users";
-            tileItemElement85.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement86.Text = "Roles";
-            tileItemElement86.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement85.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
+            tileItemElement85.Appearance.Normal.Options.UseFont = true;
+            tileItemElement85.Image = global::NICSQLTools.Properties.Resources.Roles128;
+            tileItemElement85.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement85.Text = "Roles";
             tileItemFrame56.Elements.Add(tileItemElement85);
-            tileItemFrame56.Elements.Add(tileItemElement86);
-            tileItemFrame56.Image = global::NICSQLTools.Properties.Resources.Users64;
-            this.documentTileRules.Frames.Add(tileItemFrame54);
-            this.documentTileRules.Frames.Add(tileItemFrame55);
+            tileItemFrame56.Image = global::NICSQLTools.Properties.Resources.Roles128;
+            tileItemFrame57.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.RandomSegmentedFade;
+            tileItemElement86.Image = global::NICSQLTools.Properties.Resources.Roles64;
+            tileItemElement86.MaxWidth = 170;
+            tileItemElement86.Text = "Add, Edit And Delete User Roles";
+            tileItemElement86.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement87.Text = "Roles";
+            tileItemElement87.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemFrame57.Elements.Add(tileItemElement86);
+            tileItemFrame57.Elements.Add(tileItemElement87);
+            tileItemFrame57.Image = global::NICSQLTools.Properties.Resources.Roles64;
+            tileItemFrame58.Animation = DevExpress.XtraEditors.TileItemContentAnimationType.RandomSegmentedFade;
+            tileItemElement88.Image = global::NICSQLTools.Properties.Resources.Users64;
+            tileItemElement88.MaxWidth = 160;
+            tileItemElement88.Text = "Add, Edit And Delete Users";
+            tileItemElement88.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement89.Text = "Roles";
+            tileItemElement89.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemFrame58.Elements.Add(tileItemElement88);
+            tileItemFrame58.Elements.Add(tileItemElement89);
+            tileItemFrame58.Image = global::NICSQLTools.Properties.Resources.Users64;
             this.documentTileRules.Frames.Add(tileItemFrame56);
+            this.documentTileRules.Frames.Add(tileItemFrame57);
+            this.documentTileRules.Frames.Add(tileItemFrame58);
             this.documentTileRules.Group = "Editors";
             this.tileContainerMain.SetID(this.documentTileRules, 2);
             this.documentTileRules.Name = "documentTileRules";
@@ -1282,25 +1397,25 @@
             this.documentTileRuleUser.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileRuleUser.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileRuleUser.Document = this.docRuleUser;
-            tileItemElement67.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement67.Appearance.Normal.Options.UseFont = true;
-            tileItemElement67.Image = global::NICSQLTools.Properties.Resources.User128;
-            tileItemElement67.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement67.Text = "Users";
-            tileItemFrame44.Elements.Add(tileItemElement67);
-            tileItemFrame44.Image = global::NICSQLTools.Properties.Resources.User128;
-            tileItemElement68.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement68.Appearance.Normal.Options.UseFont = true;
-            tileItemElement68.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            tileItemElement68.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement68.Text = "User";
-            tileItemElement69.Text = "Add, Edit And Delete User Information";
-            tileItemElement69.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame45.Elements.Add(tileItemElement68);
-            tileItemFrame45.Elements.Add(tileItemElement69);
-            tileItemFrame45.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            this.documentTileRuleUser.Frames.Add(tileItemFrame44);
-            this.documentTileRuleUser.Frames.Add(tileItemFrame45);
+            tileItemElement70.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement70.Appearance.Normal.Options.UseFont = true;
+            tileItemElement70.Image = global::NICSQLTools.Properties.Resources.User128;
+            tileItemElement70.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement70.Text = "Users";
+            tileItemFrame46.Elements.Add(tileItemElement70);
+            tileItemFrame46.Image = global::NICSQLTools.Properties.Resources.User128;
+            tileItemElement71.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement71.Appearance.Normal.Options.UseFont = true;
+            tileItemElement71.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement71.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement71.Text = "User";
+            tileItemElement72.Text = "Add, Edit And Delete User Information";
+            tileItemElement72.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame47.Elements.Add(tileItemElement71);
+            tileItemFrame47.Elements.Add(tileItemElement72);
+            tileItemFrame47.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileRuleUser.Frames.Add(tileItemFrame46);
+            this.documentTileRuleUser.Frames.Add(tileItemFrame47);
             this.documentTileRuleUser.Name = "documentTileRuleUser";
             this.documentTileRuleUser.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
@@ -1316,25 +1431,25 @@
             this.documentTileRuleRule.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileRuleRule.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileRuleRule.Document = this.docRuleRule;
-            tileItemElement70.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement70.Appearance.Normal.Options.UseFont = true;
-            tileItemElement70.Image = global::NICSQLTools.Properties.Resources.Rule128;
-            tileItemElement70.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement70.Text = "Rule";
-            tileItemFrame46.Elements.Add(tileItemElement70);
-            tileItemFrame46.Image = global::NICSQLTools.Properties.Resources.Rule128;
-            tileItemElement71.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement71.Appearance.Normal.Options.UseFont = true;
-            tileItemElement71.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            tileItemElement71.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement71.Text = "Rule";
-            tileItemElement72.Text = "Add, Edit And Delete Rule Information";
-            tileItemElement72.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame47.Elements.Add(tileItemElement71);
-            tileItemFrame47.Elements.Add(tileItemElement72);
-            tileItemFrame47.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            this.documentTileRuleRule.Frames.Add(tileItemFrame46);
-            this.documentTileRuleRule.Frames.Add(tileItemFrame47);
+            tileItemElement73.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement73.Appearance.Normal.Options.UseFont = true;
+            tileItemElement73.Image = global::NICSQLTools.Properties.Resources.Rule128;
+            tileItemElement73.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement73.Text = "Rule";
+            tileItemFrame48.Elements.Add(tileItemElement73);
+            tileItemFrame48.Image = global::NICSQLTools.Properties.Resources.Rule128;
+            tileItemElement74.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement74.Appearance.Normal.Options.UseFont = true;
+            tileItemElement74.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement74.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement74.Text = "Rule";
+            tileItemElement75.Text = "Add, Edit And Delete Rule Information";
+            tileItemElement75.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame49.Elements.Add(tileItemElement74);
+            tileItemFrame49.Elements.Add(tileItemElement75);
+            tileItemFrame49.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileRuleRule.Frames.Add(tileItemFrame48);
+            this.documentTileRuleRule.Frames.Add(tileItemFrame49);
             this.tileContainerRules.SetID(this.documentTileRuleRule, 1);
             this.documentTileRuleRule.Name = "documentTileRuleRule";
             this.documentTileRuleRule.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1351,25 +1466,25 @@
             this.documentTileRuleRuleDetails.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileRuleRuleDetails.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileRuleRuleDetails.Document = this.docRuleRuleDetails;
-            tileItemElement73.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement73.Appearance.Normal.Options.UseFont = true;
-            tileItemElement73.Image = global::NICSQLTools.Properties.Resources.RuleDetails128;
-            tileItemElement73.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement73.Text = "Rules Details";
-            tileItemFrame48.Elements.Add(tileItemElement73);
-            tileItemFrame48.Image = global::NICSQLTools.Properties.Resources.RuleDetails128;
-            tileItemElement74.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement74.Appearance.Normal.Options.UseFont = true;
-            tileItemElement74.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            tileItemElement74.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement74.Text = "Rules Details";
-            tileItemElement75.Text = "Add, Edit And Delete Rules Details Information";
-            tileItemElement75.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame49.Elements.Add(tileItemElement74);
-            tileItemFrame49.Elements.Add(tileItemElement75);
-            tileItemFrame49.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            this.documentTileRuleRuleDetails.Frames.Add(tileItemFrame48);
-            this.documentTileRuleRuleDetails.Frames.Add(tileItemFrame49);
+            tileItemElement76.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement76.Appearance.Normal.Options.UseFont = true;
+            tileItemElement76.Image = global::NICSQLTools.Properties.Resources.RuleDetails128;
+            tileItemElement76.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement76.Text = "Rules Details";
+            tileItemFrame50.Elements.Add(tileItemElement76);
+            tileItemFrame50.Image = global::NICSQLTools.Properties.Resources.RuleDetails128;
+            tileItemElement77.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement77.Appearance.Normal.Options.UseFont = true;
+            tileItemElement77.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement77.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement77.Text = "Rules Details";
+            tileItemElement78.Text = "Add, Edit And Delete Rules Details Information";
+            tileItemElement78.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame51.Elements.Add(tileItemElement77);
+            tileItemFrame51.Elements.Add(tileItemElement78);
+            tileItemFrame51.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileRuleRuleDetails.Frames.Add(tileItemFrame50);
+            this.documentTileRuleRuleDetails.Frames.Add(tileItemFrame51);
             this.tileContainerRules.SetID(this.documentTileRuleRuleDetails, 2);
             this.documentTileRuleRuleDetails.Name = "documentTileRuleRuleDetails";
             this.documentTileRuleRuleDetails.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1386,25 +1501,25 @@
             this.documentTileRuleUserRule.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileRuleUserRule.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileRuleUserRule.Document = this.docRuleUserRule;
-            tileItemElement76.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement76.Appearance.Normal.Options.UseFont = true;
-            tileItemElement76.Image = global::NICSQLTools.Properties.Resources.UserRule128;
-            tileItemElement76.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement76.Text = "Users Rules";
-            tileItemFrame50.Elements.Add(tileItemElement76);
-            tileItemFrame50.Image = global::NICSQLTools.Properties.Resources.UserRule128;
-            tileItemElement77.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            tileItemElement77.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement77.Text = "Users Rules";
-            tileItemElement78.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement78.Appearance.Normal.Options.UseFont = true;
-            tileItemElement78.Text = "Add, Edit And Delete Users Rules Information";
-            tileItemElement78.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame51.Elements.Add(tileItemElement77);
-            tileItemFrame51.Elements.Add(tileItemElement78);
-            tileItemFrame51.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            this.documentTileRuleUserRule.Frames.Add(tileItemFrame50);
-            this.documentTileRuleUserRule.Frames.Add(tileItemFrame51);
+            tileItemElement79.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement79.Appearance.Normal.Options.UseFont = true;
+            tileItemElement79.Image = global::NICSQLTools.Properties.Resources.UserRule128;
+            tileItemElement79.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement79.Text = "Users Rules";
+            tileItemFrame52.Elements.Add(tileItemElement79);
+            tileItemFrame52.Image = global::NICSQLTools.Properties.Resources.UserRule128;
+            tileItemElement80.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement80.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement80.Text = "Users Rules";
+            tileItemElement81.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement81.Appearance.Normal.Options.UseFont = true;
+            tileItemElement81.Text = "Add, Edit And Delete Users Rules Information";
+            tileItemElement81.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame53.Elements.Add(tileItemElement80);
+            tileItemFrame53.Elements.Add(tileItemElement81);
+            tileItemFrame53.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileRuleUserRule.Frames.Add(tileItemFrame52);
+            this.documentTileRuleUserRule.Frames.Add(tileItemFrame53);
             this.tileContainerRules.SetID(this.documentTileRuleUserRule, 3);
             this.documentTileRuleUserRule.Name = "documentTileRuleUserRule";
             this.documentTileRuleUserRule.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1421,25 +1536,25 @@
             this.documentTileRuleRuleSalesDisitrct3.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileRuleRuleSalesDisitrct3.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileRuleRuleSalesDisitrct3.Document = this.docRuleRuleSalesDisitrct3;
-            tileItemElement79.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement79.Appearance.Normal.Options.UseFont = true;
-            tileItemElement79.Image = global::NICSQLTools.Properties.Resources.SalesDistrict128;
-            tileItemElement79.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement79.Text = "Rule Sales District 2";
-            tileItemFrame52.Elements.Add(tileItemElement79);
-            tileItemFrame52.Image = global::NICSQLTools.Properties.Resources.SalesDistrict128;
-            tileItemElement80.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement80.Appearance.Normal.Options.UseFont = true;
-            tileItemElement80.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            tileItemElement80.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement80.Text = "Rule Sales District 2";
-            tileItemElement81.Text = "Add, Edit And Delete Users Rules Sales District 2";
-            tileItemElement81.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame53.Elements.Add(tileItemElement80);
-            tileItemFrame53.Elements.Add(tileItemElement81);
-            tileItemFrame53.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            this.documentTileRuleRuleSalesDisitrct3.Frames.Add(tileItemFrame52);
-            this.documentTileRuleRuleSalesDisitrct3.Frames.Add(tileItemFrame53);
+            tileItemElement82.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement82.Appearance.Normal.Options.UseFont = true;
+            tileItemElement82.Image = global::NICSQLTools.Properties.Resources.SalesDistrict128;
+            tileItemElement82.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement82.Text = "Rule Sales District 2";
+            tileItemFrame54.Elements.Add(tileItemElement82);
+            tileItemFrame54.Image = global::NICSQLTools.Properties.Resources.SalesDistrict128;
+            tileItemElement83.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement83.Appearance.Normal.Options.UseFont = true;
+            tileItemElement83.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement83.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement83.Text = "Rule Sales District 2";
+            tileItemElement84.Text = "Add, Edit And Delete Users Rules Sales District 2";
+            tileItemElement84.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame55.Elements.Add(tileItemElement83);
+            tileItemFrame55.Elements.Add(tileItemElement84);
+            tileItemFrame55.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileRuleRuleSalesDisitrct3.Frames.Add(tileItemFrame54);
+            this.documentTileRuleRuleSalesDisitrct3.Frames.Add(tileItemFrame55);
             this.tileContainerRules.SetID(this.documentTileRuleRuleSalesDisitrct3, 4);
             this.documentTileRuleRuleSalesDisitrct3.Name = "documentTileRuleRuleSalesDisitrct3";
             this.documentTileRuleRuleSalesDisitrct3.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1462,26 +1577,26 @@
             this.documentTileReports.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileReports.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileReports.Document = this.docReports;
-            tileItemElement87.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
-            tileItemElement87.Appearance.Normal.Options.UseFont = true;
-            tileItemElement87.Image = global::NICSQLTools.Properties.Resources.Reports128;
-            tileItemElement87.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement87.Text = "Reports";
-            tileItemFrame57.Elements.Add(tileItemElement87);
-            tileItemFrame57.Image = global::NICSQLTools.Properties.Resources.Reports128;
-            tileItemElement88.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement88.Appearance.Normal.Options.UseFont = true;
-            tileItemElement88.Image = global::NICSQLTools.Properties.Resources.Reports64;
-            tileItemElement88.Text = "Reports";
-            tileItemElement89.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement89.Appearance.Normal.Options.UseFont = true;
-            tileItemElement89.Text = "Reporting, Printing And Exporting Data";
-            tileItemElement89.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame58.Elements.Add(tileItemElement88);
-            tileItemFrame58.Elements.Add(tileItemElement89);
-            tileItemFrame58.Image = global::NICSQLTools.Properties.Resources.Reports64;
-            this.documentTileReports.Frames.Add(tileItemFrame57);
-            this.documentTileReports.Frames.Add(tileItemFrame58);
+            tileItemElement90.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
+            tileItemElement90.Appearance.Normal.Options.UseFont = true;
+            tileItemElement90.Image = global::NICSQLTools.Properties.Resources.Reports128;
+            tileItemElement90.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement90.Text = "Reports";
+            tileItemFrame59.Elements.Add(tileItemElement90);
+            tileItemFrame59.Image = global::NICSQLTools.Properties.Resources.Reports128;
+            tileItemElement91.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement91.Appearance.Normal.Options.UseFont = true;
+            tileItemElement91.Image = global::NICSQLTools.Properties.Resources.Reports64;
+            tileItemElement91.Text = "Reports";
+            tileItemElement92.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement92.Appearance.Normal.Options.UseFont = true;
+            tileItemElement92.Text = "Reporting, Printing And Exporting Data";
+            tileItemElement92.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame60.Elements.Add(tileItemElement91);
+            tileItemFrame60.Elements.Add(tileItemElement92);
+            tileItemFrame60.Image = global::NICSQLTools.Properties.Resources.Reports64;
+            this.documentTileReports.Frames.Add(tileItemFrame59);
+            this.documentTileReports.Frames.Add(tileItemFrame60);
             this.documentTileReports.Group = "Queries";
             this.tileContainerMain.SetID(this.documentTileReports, 3);
             this.documentTileReports.Name = "documentTileReports";
@@ -1521,26 +1636,26 @@
             this.documentTileDashboard.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileDashboard.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileDashboard.Document = this.docDashboard;
-            tileItemElement96.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
-            tileItemElement96.Appearance.Normal.Options.UseFont = true;
-            tileItemElement96.Image = global::NICSQLTools.Properties.Resources.Dashboard128;
-            tileItemElement96.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement96.Text = "Dashboard";
-            tileItemFrame63.Elements.Add(tileItemElement96);
-            tileItemFrame63.Image = global::NICSQLTools.Properties.Resources.Dashboard128;
-            tileItemElement97.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement97.Appearance.Normal.Options.UseFont = true;
-            tileItemElement97.Image = global::NICSQLTools.Properties.Resources.Dashboard64;
-            tileItemElement97.Text = "Dashboard";
-            tileItemElement98.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement98.Appearance.Normal.Options.UseFont = true;
-            tileItemElement98.Text = "Visual analysis tools and other data presentation media";
-            tileItemElement98.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame64.Elements.Add(tileItemElement97);
-            tileItemFrame64.Elements.Add(tileItemElement98);
-            tileItemFrame64.Image = global::NICSQLTools.Properties.Resources.Dashboard64;
-            this.documentTileDashboard.Frames.Add(tileItemFrame63);
-            this.documentTileDashboard.Frames.Add(tileItemFrame64);
+            tileItemElement99.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
+            tileItemElement99.Appearance.Normal.Options.UseFont = true;
+            tileItemElement99.Image = global::NICSQLTools.Properties.Resources.Dashboard128;
+            tileItemElement99.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement99.Text = "Dashboard";
+            tileItemFrame65.Elements.Add(tileItemElement99);
+            tileItemFrame65.Image = global::NICSQLTools.Properties.Resources.Dashboard128;
+            tileItemElement100.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement100.Appearance.Normal.Options.UseFont = true;
+            tileItemElement100.Image = global::NICSQLTools.Properties.Resources.Dashboard64;
+            tileItemElement100.Text = "Dashboard";
+            tileItemElement101.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement101.Appearance.Normal.Options.UseFont = true;
+            tileItemElement101.Text = "Visual analysis tools and other data presentation media";
+            tileItemElement101.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame66.Elements.Add(tileItemElement100);
+            tileItemFrame66.Elements.Add(tileItemElement101);
+            tileItemFrame66.Image = global::NICSQLTools.Properties.Resources.Dashboard64;
+            this.documentTileDashboard.Frames.Add(tileItemFrame65);
+            this.documentTileDashboard.Frames.Add(tileItemFrame66);
             this.documentTileDashboard.Group = "Queries";
             this.tileContainerMain.SetID(this.documentTileDashboard, 4);
             this.documentTileDashboard.Name = "documentTileDashboard";
@@ -1565,25 +1680,25 @@
             this.documentTileDashboardDesigner.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileDashboardDesigner.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileDashboardDesigner.Document = this.docDashboardDesigner;
-            tileItemElement90.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
-            tileItemElement90.Appearance.Normal.Options.UseFont = true;
-            tileItemElement90.Image = global::NICSQLTools.Properties.Resources.DashboardDesigner128;
-            tileItemElement90.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement90.Text = "Dashboard Designer";
-            tileItemFrame59.Elements.Add(tileItemElement90);
-            tileItemFrame59.Image = global::NICSQLTools.Properties.Resources.DashboardDesigner128;
-            tileItemElement91.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement91.Appearance.Normal.Options.UseFont = true;
-            tileItemElement91.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            tileItemElement91.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement91.Text = "Dashboard Designer";
-            tileItemElement92.Text = "Design Visual analysis and other data presentation media";
-            tileItemElement92.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame60.Elements.Add(tileItemElement91);
-            tileItemFrame60.Elements.Add(tileItemElement92);
-            tileItemFrame60.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            this.documentTileDashboardDesigner.Frames.Add(tileItemFrame59);
-            this.documentTileDashboardDesigner.Frames.Add(tileItemFrame60);
+            tileItemElement93.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
+            tileItemElement93.Appearance.Normal.Options.UseFont = true;
+            tileItemElement93.Image = global::NICSQLTools.Properties.Resources.DashboardDesigner128;
+            tileItemElement93.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement93.Text = "Dashboard Designer";
+            tileItemFrame61.Elements.Add(tileItemElement93);
+            tileItemFrame61.Image = global::NICSQLTools.Properties.Resources.DashboardDesigner128;
+            tileItemElement94.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement94.Appearance.Normal.Options.UseFont = true;
+            tileItemElement94.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement94.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement94.Text = "Dashboard Designer";
+            tileItemElement95.Text = "Design Visual analysis and other data presentation media";
+            tileItemElement95.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame62.Elements.Add(tileItemElement94);
+            tileItemFrame62.Elements.Add(tileItemElement95);
+            tileItemFrame62.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileDashboardDesigner.Frames.Add(tileItemFrame61);
+            this.documentTileDashboardDesigner.Frames.Add(tileItemFrame62);
             this.documentTileDashboardDesigner.Name = "documentTileDashboardDesigner";
             this.documentTileDashboardDesigner.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             // 
@@ -1599,25 +1714,25 @@
             this.documentTileDashboardViewer.Appearances.Normal.Options.UseBackColor = true;
             this.documentTileDashboardViewer.Appearances.Normal.Options.UseForeColor = true;
             this.documentTileDashboardViewer.Document = this.docDashboardViewer;
-            tileItemElement93.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
-            tileItemElement93.Appearance.Normal.Options.UseFont = true;
-            tileItemElement93.Image = global::NICSQLTools.Properties.Resources.DashboardViewer128;
-            tileItemElement93.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement93.Text = "Dashboard Viewer";
-            tileItemFrame61.Elements.Add(tileItemElement93);
-            tileItemFrame61.Image = global::NICSQLTools.Properties.Resources.DashboardViewer128;
-            tileItemElement94.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            tileItemElement94.Appearance.Normal.Options.UseFont = true;
-            tileItemElement94.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            tileItemElement94.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement94.Text = "Dashboard Viewer";
-            tileItemElement95.Text = "View Visual analysis and other data presentation media";
-            tileItemElement95.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemFrame62.Elements.Add(tileItemElement94);
-            tileItemFrame62.Elements.Add(tileItemElement95);
-            tileItemFrame62.Image = global::NICSQLTools.Properties.Resources.info_32x32;
-            this.documentTileDashboardViewer.Frames.Add(tileItemFrame61);
-            this.documentTileDashboardViewer.Frames.Add(tileItemFrame62);
+            tileItemElement96.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F);
+            tileItemElement96.Appearance.Normal.Options.UseFont = true;
+            tileItemElement96.Image = global::NICSQLTools.Properties.Resources.DashboardViewer128;
+            tileItemElement96.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement96.Text = "Dashboard Viewer";
+            tileItemFrame63.Elements.Add(tileItemElement96);
+            tileItemFrame63.Image = global::NICSQLTools.Properties.Resources.DashboardViewer128;
+            tileItemElement97.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            tileItemElement97.Appearance.Normal.Options.UseFont = true;
+            tileItemElement97.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement97.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement97.Text = "Dashboard Viewer";
+            tileItemElement98.Text = "View Visual analysis and other data presentation media";
+            tileItemElement98.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame64.Elements.Add(tileItemElement97);
+            tileItemFrame64.Elements.Add(tileItemElement98);
+            tileItemFrame64.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileDashboardViewer.Frames.Add(tileItemFrame63);
+            this.documentTileDashboardViewer.Frames.Add(tileItemFrame64);
             this.tileContainerDashboard.SetID(this.documentTileDashboardViewer, 1);
             this.documentTileDashboardViewer.Name = "documentTileDashboardViewer";
             this.documentTileDashboardViewer.Properties.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -1649,6 +1764,69 @@
             // 
             this.documentTiledUserSetting.Document = this.docUserSetting;
             this.documentTiledUserSetting.Name = "documentTiledUserSetting";
+            // 
+            // documentTileEditorsTaskManagerTask
+            // 
+            this.documentTileEditorsTaskManagerTask.Appearances.Normal.BackColor = System.Drawing.Color.Gold;
+            this.documentTileEditorsTaskManagerTask.Appearances.Normal.ForeColor = System.Drawing.Color.Black;
+            this.documentTileEditorsTaskManagerTask.Appearances.Normal.Options.UseBackColor = true;
+            this.documentTileEditorsTaskManagerTask.Appearances.Normal.Options.UseForeColor = true;
+            this.documentTileEditorsTaskManagerTask.Document = this.docEditorsTaskManagerTask;
+            this.documentTileEditorsTaskManagerTask.Name = "documentTileEditorsTaskManagerTask";
+            // 
+            // documentTileEditorsTaskManagerEmp
+            // 
+            this.documentTileEditorsTaskManagerEmp.Appearances.Normal.BackColor = System.Drawing.Color.Gold;
+            this.documentTileEditorsTaskManagerEmp.Appearances.Normal.ForeColor = System.Drawing.Color.Black;
+            this.documentTileEditorsTaskManagerEmp.Appearances.Normal.Options.UseBackColor = true;
+            this.documentTileEditorsTaskManagerEmp.Appearances.Normal.Options.UseForeColor = true;
+            this.documentTileEditorsTaskManagerEmp.Document = this.docEditorsTaskManagerEmp;
+            tileItemElement102.Image = global::NICSQLTools.Properties.Resources.Task128;
+            tileItemElement102.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement102.Text = "Employees";
+            tileItemElement102.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
+            tileItemFrame67.Elements.Add(tileItemElement102);
+            tileItemFrame67.Image = global::NICSQLTools.Properties.Resources.Task128;
+            tileItemElement103.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement103.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement103.Text = "Employees";
+            tileItemElement103.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement104.Text = "Add, Edit and Delete Company Employees";
+            tileItemElement104.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame68.Elements.Add(tileItemElement103);
+            tileItemFrame68.Elements.Add(tileItemElement104);
+            tileItemFrame68.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileEditorsTaskManagerEmp.Frames.Add(tileItemFrame67);
+            this.documentTileEditorsTaskManagerEmp.Frames.Add(tileItemFrame68);
+            this.documentTileEditorsTaskManagerEmp.Name = "documentTileEditorsTaskManagerEmp";
+            // 
+            // documentTileEditorsTaskManagerEmpTask
+            // 
+            this.documentTileEditorsTaskManagerEmpTask.Appearances.Normal.BackColor = System.Drawing.Color.Gold;
+            this.documentTileEditorsTaskManagerEmpTask.Appearances.Normal.ForeColor = System.Drawing.Color.Black;
+            this.documentTileEditorsTaskManagerEmpTask.Appearances.Normal.Options.UseBackColor = true;
+            this.documentTileEditorsTaskManagerEmpTask.Appearances.Normal.Options.UseForeColor = true;
+            this.documentTileEditorsTaskManagerEmpTask.Document = this.docEditorsTaskManagerEmpTask;
+            this.documentTileEditorsTaskManagerEmpTask.Name = "documentTileEditorsTaskManagerEmpTask";
+            // 
+            // documentTileEditorsTaskManagerFactor
+            // 
+            this.documentTileEditorsTaskManagerFactor.Appearances.Normal.BackColor = System.Drawing.Color.Gold;
+            this.documentTileEditorsTaskManagerFactor.Appearances.Normal.ForeColor = System.Drawing.Color.Black;
+            this.documentTileEditorsTaskManagerFactor.Appearances.Normal.Options.UseBackColor = true;
+            this.documentTileEditorsTaskManagerFactor.Appearances.Normal.Options.UseForeColor = true;
+            this.documentTileEditorsTaskManagerFactor.Document = this.docEditorsTaskManagerFactor;
+            this.documentTileEditorsTaskManagerFactor.Name = "documentTileEditorsTaskManagerFactor";
+            // 
+            // docEditorsTaskManagerEmpTaskActual
+            // 
+            this.docEditorsTaskManagerEmpTaskActual.Caption = "My Tasks";
+            this.docEditorsTaskManagerEmpTaskActual.ControlName = "docEditorsTaskManagerEmpTaskActual";
+            // 
+            // documentTileEditorsTaskManagerEmpTaskActual
+            // 
+            this.documentTileEditorsTaskManagerEmpTaskActual.Document = this.docEditorsTaskManagerEmpTaskActual;
+            this.documentTileEditorsTaskManagerEmpTaskActual.Name = "documentTileEditorsTaskManagerEmpTaskActual";
             // 
             // MainTilesFrm
             // 
@@ -1702,6 +1880,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportUpdateProductDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsAppDatasourceLookup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsAppDatasourceLookup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedGroupTaskManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerTask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerEmp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerEmpTask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerFactor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileQueries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerQueries)).EndInit();
@@ -1738,6 +1923,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageUserSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docUserSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTiledUserSetting)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerTask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerEmp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerEmpTask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerFactor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsTaskManagerEmpTaskActual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsTaskManagerEmpTaskActual)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1820,6 +2011,19 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsCostControl;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsAppDatasourceLookup;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsAppDatasourceLookup;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsTaskManager;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsTaskManager;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup tabbedGroupTaskManager;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsTaskManagerTask;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsTaskManagerTask;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsTaskManagerEmp;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsTaskManagerEmpTask;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsTaskManagerFactor;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsTaskManagerEmp;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsTaskManagerEmpTask;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsTaskManagerFactor;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsTaskManagerEmpTaskActual;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsTaskManagerEmpTaskActual;
     }
 }
 

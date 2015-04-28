@@ -62,28 +62,59 @@ namespace NICSQLTools.Views.Main
         {
             if (Classes.Managers.UserManager.defaultInstance.User.IsAdmin == true)
                 return;
-            
+
             foreach (var item in windowsUIView.ContentContainers.ToArray())
             {
-                if (item.GetType() != typeof(TileContainer))//Apply Only For Tiles Containers 
-                    continue;
-
-                if (((TileContainer)item).Items == null)
-                    continue;
-                for (int InxContainers = 0; InxContainers < ((TileContainer)item).Items.Count; InxContainers++)
+                if (item.GetType() == typeof(TileContainer))
                 {
-                    TileContainer cntr = (TileContainer)item;
-                    for (int i = (cntr).Items.Count - 1; i >= 0; i--)
+                    for (int InxContainers = 0; InxContainers < ((TileContainer)item).Items.Count; InxContainers++)
                     {
-                        Tile tile = (Tile)(cntr).Items[i];
-                        NICSQLTools.Data.dsData.AppRuleDetailRow elementRule = Classes.Managers.UserManager.defaultInstance.RuleElementInformation(tile.Document.ControlName);
-                        if (tile.Tag != null && (bool)tile.Tag)// Show Exception Tiles
-                            tile.Visible = true;
-                        else
-                            tile.Visible = elementRule.Selecting;
+                        TileContainer cntr = (TileContainer)item;
+                        for (int i = (cntr).Items.Count - 1; i >= 0; i--)
+                        {
+                            Tile tile = (Tile)(cntr).Items[i];
+                            NICSQLTools.Data.dsData.AppRuleDetailRow elementRule = Classes.Managers.UserManager.defaultInstance.RuleElementInformation(tile.Document.ControlName);
+                            if (tile.Tag != null && (bool)tile.Tag)// Show Exception Tiles
+                                tile.Visible = true;
+                            else
+                                tile.Visible = elementRule.Selecting;
+                        }
+                    }
+                }
+                else if (item.GetType() == typeof(TabbedGroup))
+                {
+                    TabbedGroup TGroup = (TabbedGroup)item;
+                    for (int i = TGroup.Items.Count - 1; i >= 0; i--)
+                    {
+                        Document doc = ((TabbedGroup)item).Items[i];
+                        NICSQLTools.Data.dsData.AppRuleDetailRow elementRule = Classes.Managers.UserManager.defaultInstance.RuleElementInformation(doc.ControlName);
+                        if (!elementRule.Selecting)
+                            TGroup.Items.Remove(doc);
                     }
                 }
             }
+
+            //foreach (var item in windowsUIView.ContentContainers.ToArray())
+            //{
+            //    if (item.GetType() != typeof(TileContainer))//Apply Only For Tiles Containers 
+            //        continue;
+
+            //    if (((TileContainer)item).Items == null)
+            //        continue;
+            //    for (int InxContainers = 0; InxContainers < ((TileContainer)item).Items.Count; InxContainers++)
+            //    {
+            //        TileContainer cntr = (TileContainer)item;
+            //        for (int i = (cntr).Items.Count - 1; i >= 0; i--)
+            //        {
+            //            Tile tile = (Tile)(cntr).Items[i];
+            //            NICSQLTools.Data.dsData.AppRuleDetailRow elementRule = Classes.Managers.UserManager.defaultInstance.RuleElementInformation(tile.Document.ControlName);
+            //            if (tile.Tag != null && (bool)tile.Tag)// Show Exception Tiles
+            //                tile.Visible = true;
+            //            else
+            //                tile.Visible = elementRule.Selecting;
+            //        }
+            //    }
+            //}
             //Remove parent if all child are invisible
             documentTileEditors.Visible = IsTileContainerContainVisibleItem(tileContainerEditors);
             documentTileQueries.Visible = IsTileContainerContainVisibleItem(tileContainerQueries);
@@ -122,11 +153,12 @@ namespace NICSQLTools.Views.Main
                 //    windowsUIView.RestoreLayoutFromStream(Resert_ms);
             }
         }
+       
+        
         #endregion
         #region -   EventWhnd   -
         private void MainTilesFrm_Load(object sender, EventArgs e)
         {
-            
             LoadLayout();
         }
         private void windowsUIView_QueryControl(object sender, QueryControlEventArgs e)
@@ -246,6 +278,27 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Data.CostControlEditorUC(RuleElemet);
             }
+            else if (e.Document == docEditorsTaskManagerTask)// Tasks
+            {
+                e.Control = new NICSQLTools.Views.Data.TaskManager.TaskEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsTaskManagerEmp)
+            {
+                e.Control = new NICSQLTools.Views.Data.TaskManager.EmpEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsTaskManagerEmpTask)
+            {
+                e.Control = new NICSQLTools.Views.Data.TaskManager.EmpTaskEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsTaskManagerFactor)
+            {
+                e.Control = new NICSQLTools.Views.Data.TaskManager.FactorEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsTaskManagerEmpTaskActual)
+            {
+                e.Control = new NICSQLTools.Views.Data.TaskManager.EmpTaskActualEditorUC(RuleElemet);
+            }
+
             else if (e.Document == docReportsReportViewer)
             {
                 e.Control = new System.Windows.Forms.Control();//ToDo

@@ -29,64 +29,102 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.unitOfWork1 = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.xpServerCollectionSource1 = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork1)).BeginInit();
+            this.unitOfWork1 = new DevExpress.Xpo.UnitOfWork(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colEmpTaskId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dsTask = new NICSQLTools.Data.dsTask();
+            this.tskEmpEmpTaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tskEmp_EmpTaskTableAdapter = new NICSQLTools.Data.dsTaskTableAdapters.TskEmp_EmpTaskTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpServerCollectionSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tskEmpEmpTaskBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataSource = this.tskEmpEmpTaskBindingSource;
+            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(760, 369);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // xpServerCollectionSource1
+            // 
+            this.xpServerCollectionSource1.DisplayableProperties = "This;EmpTaskId;EmpId;TaskId;TaskStartDate;TaskEndDate;UserIn;DateIn";
+            this.xpServerCollectionSource1.ObjectType = typeof(NICSQLTools.Data.dsTask.TskEmp_EmpTaskDataTable);
+            this.xpServerCollectionSource1.Session = this.unitOfWork1;
             // 
             // unitOfWork1
             // 
             this.unitOfWork1.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.unitOfWork1.TrackPropertiesModifications = false;
             // 
-            // simpleButton1
+            // gridView1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(333, 335);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "simpleButton1";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colEmpTaskId});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
             // 
-            // xpServerCollectionSource1
+            // colEmpTaskId
             // 
-            this.xpServerCollectionSource1.ObjectType = typeof(NICSQLTools.Data.xpo.CostDynamicForecast);
-            this.xpServerCollectionSource1.Session = this.unitOfWork1;
+            this.colEmpTaskId.FieldName = "EmpTaskId";
+            this.colEmpTaskId.Name = "colEmpTaskId";
+            this.colEmpTaskId.Visible = true;
+            this.colEmpTaskId.VisibleIndex = 0;
             // 
-            // pivotGridControl1
+            // dsTask
             // 
-            this.pivotGridControl1.Location = new System.Drawing.Point(12, 12);
-            this.pivotGridControl1.Name = "pivotGridControl1";
-            this.pivotGridControl1.Size = new System.Drawing.Size(760, 317);
-            this.pivotGridControl1.TabIndex = 2;
+            this.dsTask.DataSetName = "dsTask";
+            this.dsTask.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tskEmpEmpTaskBindingSource
+            // 
+            this.tskEmpEmpTaskBindingSource.DataMember = "TskEmp_EmpTask";
+            this.tskEmpEmpTaskBindingSource.DataSource = this.dsTask;
+            // 
+            // tskEmp_EmpTaskTableAdapter
+            // 
+            this.tskEmp_EmpTaskTableAdapter.ClearBeforeFill = true;
             // 
             // TestFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 393);
-            this.Controls.Add(this.pivotGridControl1);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.gridControl1);
             this.Name = "TestFrm";
             this.Text = "TestFrm";
             this.Load += new System.EventHandler(this.TestFrm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpServerCollectionSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitOfWork1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tskEmpEmpTaskBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.Xpo.XPServerCollectionSource xpServerCollectionSource1;
         private DevExpress.Xpo.UnitOfWork unitOfWork1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmpTaskId;
+        private Data.dsTask dsTask;
+        private System.Windows.Forms.BindingSource tskEmpEmpTaskBindingSource;
+        private Data.dsTaskTableAdapters.TskEmp_EmpTaskTableAdapter tskEmp_EmpTaskTableAdapter;
+
 
 
 

@@ -296,4 +296,32 @@
       <Column Name="ValueName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TskEmp_Factor" Member="TskEmp_Factors">
+    <Type Name="TskEmp_Factor">
+      <Column Name="FactorId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FactorName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TskEmp_Task" Member="TskEmp_Tasks">
+    <Type Name="TskEmp_Task">
+      <Column Name="TaskId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaskName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaskDays" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TaskDesc" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Plants" Member="Plants">
+    <Type Name="Plant">
+      <Column Name="PlantId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TskEmp_Emp" Member="TskEmp_Emps">
+    <Type Name="TskEmp_Emp">
+      <Column Name="EmpId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Empname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EmpSite" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

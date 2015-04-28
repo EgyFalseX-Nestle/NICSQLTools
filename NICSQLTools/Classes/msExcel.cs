@@ -136,7 +136,7 @@ namespace NICSQLTools.Classes
             // Declare helper variables.
             //string workBookPath = @"C:\pivottablesample.xlsx";
             //string workSheetName = @"Quarterly Sales";
-            const string pivotTableName = @"[NICSQLTools] by Mohamed Aly Omar";
+            const string pivotTableName = @"[NICSQLTools]";
             try
             {
                 // Create an instance of Excel.
@@ -165,10 +165,13 @@ namespace NICSQLTools.Classes
                 xlPivot.TableStyle2 = "PivotStyleLight1";
  
 
+                /////xlPivot.AddFields(,,,)
 
                 // Save the Workbook.
                 excelWorkBook.SaveAs(workBookPath, useDefault, useDefault, useDefault, useDefault, useDefault,
                     XlSaveAsAccessMode.xlNoChange, useDefault, useDefault, useDefault, useDefault, useDefault);
+
+
 
                 //for (int i = 0; i < pivotControl.Fields.Count; i++)
                 //{

@@ -13,51 +13,34 @@ namespace NICSQLTools
 {
     public partial class TestFrm : DevExpress.XtraEditors.XtraForm
     {
-        DataTable dt = new DataTable();
+        
         public TestFrm()
         {
             InitializeComponent();
-
-            dt.Columns.Add("Name", typeof(string));
-            dt.Columns.Add("Address", typeof(string));
-            dt.Columns.Add("BirthDate", typeof(DateTime));
-            dt.Columns.Add("Age", typeof(int));
-            dt.Columns.Add("Salary", typeof(float));
-
-            DataRow row1 = dt.NewRow();
-            row1["Name"] = "Hassan";
-            row1["Address"] = "57 ahmed";
-            row1["BirthDate"] = new DateTime(2000, 5, 7);
-            row1["Age"] = 17;
-            row1["Salary"] = 1500;
-            dt.Rows.Add(row1);
-
-            DataRow row2 = dt.NewRow();
-            row2["Name"] = "ahmed";
-            row2["Address"] = "99 ahmed";
-            row2["BirthDate"] = new DateTime(2005, 6, 8);
-            row2["Age"] = 22;
-            row2["Salary"] = 2000;
-            dt.Rows.Add(row2);
-
-
+            xpServerCollectionSource1.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
         }
 
         private void TestFrm_Load(object sender, EventArgs e)
         {
-            pivotGridControl1.DataSource = dt;
-            pivotGridControl1.RetrieveFields();
+            // TODO: This line of code loads data into the 'dsTask.TskEmp_EmpTask' table. You can move, or remove it, as needed.
+            this.tskEmp_EmpTaskTableAdapter.Fill(this.dsTask.TskEmp_EmpTask);
+            
+            //gridControl1.DataSource = xpServerCollectionSource1;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Classes.msExcel.CreatePivot(pivotGridControl1, "New Data Sheet", @"C:\111.xlsx");
-            MessageBox.Show("Done ...");
+        
         }
 
         private void checkedComboBoxEdit1_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
             MessageBox.Show("changing");
+        }
+
+        private void gridControlMain_EmbeddedNavigator_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
+        {
+
         }
 
         

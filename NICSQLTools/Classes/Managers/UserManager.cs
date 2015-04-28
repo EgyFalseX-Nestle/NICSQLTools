@@ -56,6 +56,11 @@ namespace NICSQLTools.Classes.Managers
                     User.UserId = row.UserID;
                     User.UserName = row.UserName;
                     User.RealName = row.RealName;
+                    if (!row.IsEmpIdNull())
+                        User.EmpId = row.EmpId;
+                    else
+                        User.EmpId = -999;
+                    
                     if (row.UserID == 1)
                         User.IsAdmin = true;
                     else

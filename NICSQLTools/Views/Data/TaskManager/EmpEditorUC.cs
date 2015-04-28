@@ -4,20 +4,19 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
-using System.Data;
 
-namespace NICSQLTools.Views.Permission
+namespace NICSQLTools.Views.Data.TaskManager
 {
-    public partial class UserUC : XtraUserControl
+    public partial class EmpEditorUC : XtraUserControl
     {
+
         #region - Var -
-        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(UserUC));
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(EmpEditorUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
-        int? NewId = null;
         #endregion
         #region - Fun -
-        public UserUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
+        public EmpEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             _elementRule = RuleElement;
@@ -28,8 +27,9 @@ namespace NICSQLTools.Views.Permission
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 Invoke(new MethodInvoker(() => {
+                    LSMSUsers.QueryableSource = from q in dsLinq.AppUsers select q;
+                    LSMSPlant.QueryableSource = from q in dsLinq.Plants select q;
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
-                    LSMSEmp.QueryableSource = from q in dsLinq.TskEmp_Emps select q;
                     gridControlMain.DataSource = XPSCS;
                     gridViewMain.BestFitColumns();
                 }));
@@ -53,14 +53,24 @@ namespace NICSQLTools.Views.Permission
 
             if (!_elementRule.Deleting)
                 gridControlMain.EmbeddedNavigator.Buttons.Remove.Visible = false;
-
+            
         }
         #endregion
         #region -  EventWhnd - 
-        private void ProductEditorUC_Load(object sender, EventArgs e)
+        private void RouteEditorUC_Load(object sender, EventArgs e)
         {
             LoadData();
             ActivateRules();
+        }
+        private void UOW_BeforeCommitTransaction(object sender, DevExpress.Xpo.SessionManipulationEventArgs e)
+        {
+            DevExpress.Xpo.Helpers.ObjectSet Rows = (DevExpress.Xpo.Helpers.ObjectSet)e.Session.GetObjectsToSave();
+            DateTime DateIn = NICSQLTools.Classes.Managers.DataManager.defaultInstance.ServerDateTime;
+            foreach (DevExpress.Xpo.Metadata.XPDataTableObject item in Rows)
+            {
+                item.SetMemberValue("UserIn", NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId);
+                item.SetMemberValue("DateIn", DateIn);
+            }
         }
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -77,7 +87,7 @@ namespace NICSQLTools.Views.Permission
                 }
                 else
                 {
-                    MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
+                    MsgDlg.Show(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, o);
                     Classes.Core.LogException(Logger, o.InnerException, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
                 }
             };
@@ -96,15 +106,6 @@ namespace NICSQLTools.Views.Permission
             // Open the Preview window.
             gridControlMain.ShowRibbonPrintPreview();
         }
-        private void gridViewMain_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
-        {
-            DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(e.RowHandle));
-            if (NewId == null)
-                NewId = Convert.ToInt32(usersTableAdapter.NewId());
-            else
-                NewId++;
-            row.SetMemberValue("UserID", NewId);
-        }
         private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
@@ -114,13 +115,6 @@ namespace NICSQLTools.Views.Permission
             XPSCS.Reload();
             gridViewMain.RefreshData();
         }
-        private void repositoryItemButtonEditDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            if (MsgDlg.Show("Do you want to delete selected row ?", MsgDlg.MessageType.Question) == DialogResult.No)
-                return;
-            gridViewMain.DeleteRow(gridViewMain.FocusedRowHandle);
-
-        }
         private void gridControlMain_EmbeddedNavigator_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
         {
             if (e.Button.ButtonType == NavigatorButtonType.Remove)
@@ -129,7 +123,10 @@ namespace NICSQLTools.Views.Permission
                     e.Handled = true;
             }
         }
+
         #endregion
+
+        
 
     }
 }

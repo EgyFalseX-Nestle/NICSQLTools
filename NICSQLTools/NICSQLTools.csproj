@@ -209,7 +209,7 @@
       <DependentUpon>dsData.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Data\dsData.Designer.cs">
+    <Compile Include="Data\dsData1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
@@ -218,6 +218,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsQry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsTask1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTask.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\Linq\dsLinqData.designer.cs">
       <AutoGen>True</AutoGen>
@@ -275,6 +280,42 @@
     </Compile>
     <Compile Include="Views\Data\AppDatasourceLookupEditorUC.Designer.cs">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\EmpTaskActualEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\EmpTaskActualEditorUC.Designer.cs">
+      <DependentUpon>EmpTaskActualEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\FactorEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\FactorEditorUC.Designer.cs">
+      <DependentUpon>FactorEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\EmpEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\EmpEditorUC.Designer.cs">
+      <DependentUpon>EmpEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\EmpTaskEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\EmpTaskEditorUC.Designer.cs">
+      <DependentUpon>EmpTaskEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\TaskFactorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\TaskFactorDlg.Designer.cs">
+      <DependentUpon>TaskFactorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\TaskEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TaskManager\TaskEditorUC.Designer.cs">
+      <DependentUpon>TaskEditorUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportUpdateProductDetailsUC.cs">
       <SubType>UserControl</SubType>
@@ -533,6 +574,24 @@
     <EmbeddedResource Include="Views\Data\AppDatasourceLookupEditorUC.resx">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TaskManager\EmpTaskActualEditorUC.resx">
+      <DependentUpon>EmpTaskActualEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TaskManager\FactorEditorUC.resx">
+      <DependentUpon>FactorEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TaskManager\EmpEditorUC.resx">
+      <DependentUpon>EmpEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TaskManager\EmpTaskEditorUC.resx">
+      <DependentUpon>EmpTaskEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TaskManager\TaskFactorDlg.resx">
+      <DependentUpon>TaskFactorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TaskManager\TaskEditorUC.resx">
+      <DependentUpon>TaskEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportUpdateProductDetailsUC.resx">
       <DependentUpon>ImportUpdateProductDetailsUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -623,6 +682,17 @@
     <EmbeddedResource Include="Views\Qry\QryPivotUC.resx">
       <DependentUpon>QryPivotUC.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Data\dsTask.xsc">
+      <DependentUpon>dsTask.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsTask.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTask1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\dsTask.xss">
+      <DependentUpon>dsTask.xsd</DependentUpon>
+    </None>
     <None Include="Data\Linq\dsLinqData.dbml.layout">
       <DependentUpon>dsLinqData.dbml</DependentUpon>
     </None>
@@ -668,14 +738,13 @@
     <None Include="Data\dsData.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsData.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsData1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsData.xss">
       <DependentUpon>dsData.xsd</DependentUpon>
     </None>
     <None Include="Data\Linq\dsLinqData.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dsLinqData.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Data\dsQry.xsc">
@@ -721,6 +790,8 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\Task128.png" />
+    <None Include="Resources\Task64.png" />
     <None Include="Resources\grid_32x32.png" />
     <None Include="Resources\grid_16x16.png" />
     <None Include="Resources\technology_32x32.png" />

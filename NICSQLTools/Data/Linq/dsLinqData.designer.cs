@@ -69,6 +69,18 @@ namespace NICSQLTools.Data.Linq
     partial void InsertAppDatasourceLookup(AppDatasourceLookup instance);
     partial void UpdateAppDatasourceLookup(AppDatasourceLookup instance);
     partial void DeleteAppDatasourceLookup(AppDatasourceLookup instance);
+    partial void InsertTskEmp_Factor(TskEmp_Factor instance);
+    partial void UpdateTskEmp_Factor(TskEmp_Factor instance);
+    partial void DeleteTskEmp_Factor(TskEmp_Factor instance);
+    partial void InsertTskEmp_Task(TskEmp_Task instance);
+    partial void UpdateTskEmp_Task(TskEmp_Task instance);
+    partial void DeleteTskEmp_Task(TskEmp_Task instance);
+    partial void InsertPlant(Plant instance);
+    partial void UpdatePlant(Plant instance);
+    partial void DeletePlant(Plant instance);
+    partial void InsertTskEmp_Emp(TskEmp_Emp instance);
+    partial void UpdateTskEmp_Emp(TskEmp_Emp instance);
+    partial void DeleteTskEmp_Emp(TskEmp_Emp instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -234,6 +246,38 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<AppDatasourceLookup>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TskEmp_Factor> TskEmp_Factors
+		{
+			get
+			{
+				return this.GetTable<TskEmp_Factor>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TskEmp_Task> TskEmp_Tasks
+		{
+			get
+			{
+				return this.GetTable<TskEmp_Task>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Plant> Plants
+		{
+			get
+			{
+				return this.GetTable<Plant>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TskEmp_Emp> TskEmp_Emps
+		{
+			get
+			{
+				return this.GetTable<TskEmp_Emp>();
 			}
 		}
 	}
@@ -5321,6 +5365,446 @@ namespace NICSQLTools.Data.Linq
 					this._ValueName = value;
 					this.SendPropertyChanged("ValueName");
 					this.OnValueNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TskEmp_Factor")]
+	public partial class TskEmp_Factor : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _FactorId;
+		
+		private string _FactorName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFactorIdChanging(int value);
+    partial void OnFactorIdChanged();
+    partial void OnFactorNameChanging(string value);
+    partial void OnFactorNameChanged();
+    #endregion
+		
+		public TskEmp_Factor()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FactorId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int FactorId
+		{
+			get
+			{
+				return this._FactorId;
+			}
+			set
+			{
+				if ((this._FactorId != value))
+				{
+					this.OnFactorIdChanging(value);
+					this.SendPropertyChanging();
+					this._FactorId = value;
+					this.SendPropertyChanged("FactorId");
+					this.OnFactorIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FactorName", DbType="NVarChar(50)")]
+		public string FactorName
+		{
+			get
+			{
+				return this._FactorName;
+			}
+			set
+			{
+				if ((this._FactorName != value))
+				{
+					this.OnFactorNameChanging(value);
+					this.SendPropertyChanging();
+					this._FactorName = value;
+					this.SendPropertyChanged("FactorName");
+					this.OnFactorNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TskEmp_Task")]
+	public partial class TskEmp_Task : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TaskId;
+		
+		private string _TaskName;
+		
+		private System.Nullable<short> _TaskDays;
+		
+		private string _TaskDesc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTaskIdChanging(int value);
+    partial void OnTaskIdChanged();
+    partial void OnTaskNameChanging(string value);
+    partial void OnTaskNameChanged();
+    partial void OnTaskDaysChanging(System.Nullable<short> value);
+    partial void OnTaskDaysChanged();
+    partial void OnTaskDescChanging(string value);
+    partial void OnTaskDescChanged();
+    #endregion
+		
+		public TskEmp_Task()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int TaskId
+		{
+			get
+			{
+				return this._TaskId;
+			}
+			set
+			{
+				if ((this._TaskId != value))
+				{
+					this.OnTaskIdChanging(value);
+					this.SendPropertyChanging();
+					this._TaskId = value;
+					this.SendPropertyChanged("TaskId");
+					this.OnTaskIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskName", DbType="NVarChar(50)")]
+		public string TaskName
+		{
+			get
+			{
+				return this._TaskName;
+			}
+			set
+			{
+				if ((this._TaskName != value))
+				{
+					this.OnTaskNameChanging(value);
+					this.SendPropertyChanging();
+					this._TaskName = value;
+					this.SendPropertyChanged("TaskName");
+					this.OnTaskNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskDays", DbType="SmallInt")]
+		public System.Nullable<short> TaskDays
+		{
+			get
+			{
+				return this._TaskDays;
+			}
+			set
+			{
+				if ((this._TaskDays != value))
+				{
+					this.OnTaskDaysChanging(value);
+					this.SendPropertyChanging();
+					this._TaskDays = value;
+					this.SendPropertyChanged("TaskDays");
+					this.OnTaskDaysChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskDesc", DbType="NVarChar(1024)")]
+		public string TaskDesc
+		{
+			get
+			{
+				return this._TaskDesc;
+			}
+			set
+			{
+				if ((this._TaskDesc != value))
+				{
+					this.OnTaskDescChanging(value);
+					this.SendPropertyChanging();
+					this._TaskDesc = value;
+					this.SendPropertyChanged("TaskDesc");
+					this.OnTaskDescChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Plants")]
+	public partial class Plant : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _PlantId;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPlantIdChanging(string value);
+    partial void OnPlantIdChanged();
+    #endregion
+		
+		public Plant()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlantId", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string PlantId
+		{
+			get
+			{
+				return this._PlantId;
+			}
+			set
+			{
+				if ((this._PlantId != value))
+				{
+					this.OnPlantIdChanging(value);
+					this.SendPropertyChanging();
+					this._PlantId = value;
+					this.SendPropertyChanged("PlantId");
+					this.OnPlantIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TskEmp_Emp")]
+	public partial class TskEmp_Emp : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EmpId;
+		
+		private string _Empname;
+		
+		private string _EmpSite;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEmpIdChanging(int value);
+    partial void OnEmpIdChanged();
+    partial void OnEmpnameChanging(string value);
+    partial void OnEmpnameChanged();
+    partial void OnEmpSiteChanging(string value);
+    partial void OnEmpSiteChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    #endregion
+		
+		public TskEmp_Emp()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EmpId
+		{
+			get
+			{
+				return this._EmpId;
+			}
+			set
+			{
+				if ((this._EmpId != value))
+				{
+					this.OnEmpIdChanging(value);
+					this.SendPropertyChanging();
+					this._EmpId = value;
+					this.SendPropertyChanged("EmpId");
+					this.OnEmpIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empname", DbType="NVarChar(50)")]
+		public string Empname
+		{
+			get
+			{
+				return this._Empname;
+			}
+			set
+			{
+				if ((this._Empname != value))
+				{
+					this.OnEmpnameChanging(value);
+					this.SendPropertyChanging();
+					this._Empname = value;
+					this.SendPropertyChanged("Empname");
+					this.OnEmpnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpSite", DbType="NVarChar(50)")]
+		public string EmpSite
+		{
+			get
+			{
+				return this._EmpSite;
+			}
+			set
+			{
+				if ((this._EmpSite != value))
+				{
+					this.OnEmpSiteChanging(value);
+					this.SendPropertyChanging();
+					this._EmpSite = value;
+					this.SendPropertyChanged("EmpSite");
+					this.OnEmpSiteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
 				}
 			}
 		}

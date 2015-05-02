@@ -91,14 +91,14 @@ namespace NICSQLTools.Views.Data.TaskManager
         }
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MsgDlg.Show("هل انت متأكد ؟", MsgDlg.MessageType.Question) == DialogResult.No)
+            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
             try
             {
                 tskEmpEmpTaskActualBindingSource.EndEdit();
                 tskEmp_EmpTaskActualTableAdapter.Update(dsTask.TskEmp_EmpTaskActual);
-                MsgDlg.ShowAlert("تم الحفظ ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
-                Logger.Info("تم الحفظ ...");
+                MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
+                Logger.Info("Data Saved ...");
             }
             catch (Exception ex)
             {
@@ -123,14 +123,14 @@ namespace NICSQLTools.Views.Data.TaskManager
         }
         private void gridViewFactors_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (MsgDlg.Show("هل انت متأكد ؟", MsgDlg.MessageType.Question) == DialogResult.No)
+            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
             try
             {
                 tskEmpEmpTaskActualFactorBindingSource.EndEdit();
                 tskEmp_EmpTaskActualFactorTableAdapter.Update(dsTask.TskEmp_EmpTaskActualFactor);
-                MsgDlg.ShowAlert("تم الحفظ ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
-                Logger.Info("تم الحفظ ...");
+                MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
+                Logger.Info("Data Saved ...");
             }
             catch (Exception ex)
             {

@@ -630,7 +630,7 @@ namespace NICSQLTools.Views.Qry
             sfd.FileName = _selectedDatasource.DatasourceName;
             if (sfd.ShowDialog() == DialogResult.Cancel)
                 return;
-            Classes.msExcel.CreatePivot(pivotGridControlMain, _selectedDatasource.DatasourceName, sfd.FileName);
+            Classes.msExcel.CreatePivotByRecordSet(pivotGridControlMain, _selectedDatasource.DatasourceName, sfd.FileName);
         }
         private void bbiExportRow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

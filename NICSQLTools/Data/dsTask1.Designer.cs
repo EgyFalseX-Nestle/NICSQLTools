@@ -5811,7 +5811,10 @@ FROM            TskEmp_EmpTaskActual INNER JOIN
             this._commandCollection[1].CommandText = @"SELECT        TskEmp_EmpTaskActual.EmpTaskActualId, TskEmp_EmpTaskActual.EmpTaskId, TskEmp_EmpTaskActual.ExeDate, TskEmp_EmpTaskActual.TaskActualDesc, TskEmp_EmpTask.TaskId
 FROM            TskEmp_EmpTaskActual INNER JOIN
                          TskEmp_EmpTask ON TskEmp_EmpTaskActual.EmpTaskId = TskEmp_EmpTask.EmpTaskId
-WHERE        (CAST(TskEmp_EmpTaskActual.ExeDate AS DATE) = CAST(GETDATE() AS DATE)) AND (TskEmp_EmpTask.EmpId = @EmpId)";
+WHERE        (CONVERT(DATETIME, CONVERT(VARCHAR, TskEmp_EmpTaskActual.ExeDate, 104), 104) = CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104)) AND (TskEmp_EmpTask.EmpId = @EmpId)
+
+
+";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -7225,8 +7228,10 @@ SELECT TaskId, TaskName, TaskDays, TaskDesc, UserIn, DateIn FROM TskEmp_Task WHE
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = @"INSERT INTO [dbo].[TskEmp_EmpTaskActual] ([EmpTaskId], [ExeDate], [TaskActualDesc])
-SELECT [EmpTaskId], CAST(GETDATE() AS DATE), NULL
-FROM [dbo].[TskEmp_EmpTask] WHERE NOT EXISTS(SELECT [EmpTaskId] FROM [TskEmp_EmpTaskActual] TBL WHERE [EmpTaskId] = [TskEmp_EmpTask].[EmpTaskId] AND ExeDate BETWEEN DateAdd(DAY, (-1 * (SELECT TaskDays FROM TskEmp_Task WHERE TaskId = [TskEmp_EmpTask].TaskId)) + 1, CAST(GETDATE() AS DATE)) AND GETDATE() )
+SELECT [EmpTaskId], CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104), NULL
+FROM [dbo].[TskEmp_EmpTask] WHERE NOT EXISTS(SELECT [EmpTaskId] FROM [TskEmp_EmpTaskActual] TBL 
+WHERE [EmpTaskId] = [TskEmp_EmpTask].[EmpTaskId] AND 
+ExeDate BETWEEN DateAdd(DAY, (-1 * (SELECT TaskDays FROM TskEmp_Task WHERE TaskId = [TskEmp_EmpTask].TaskId)) + 1, CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104)) AND CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104) )
 AND EmpId = @EmpId";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

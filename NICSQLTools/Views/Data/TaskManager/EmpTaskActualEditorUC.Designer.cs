@@ -221,7 +221,7 @@
             this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.Caption = "المهام";
+            this.gridColumn7.Caption = "Task";
             this.gridColumn7.ColumnEdit = this.repositoryItemLookUpEditTaskId;
             this.gridColumn7.FieldName = "TaskId";
             this.gridColumn7.Name = "gridColumn7";
@@ -258,7 +258,7 @@
             this.colTaskActualDesc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTaskActualDesc.AppearanceHeader.Options.UseTextOptions = true;
             this.colTaskActualDesc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colTaskActualDesc.Caption = "تعليق";
+            this.colTaskActualDesc.Caption = "Comments";
             this.colTaskActualDesc.FieldName = "TaskActualDesc";
             this.colTaskActualDesc.Name = "colTaskActualDesc";
             this.colTaskActualDesc.Visible = true;
@@ -336,7 +336,7 @@
             this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "معيار التقييم";
+            this.gridColumn2.Caption = "Criteria";
             this.gridColumn2.ColumnEdit = this.repositoryItemLookUpEditFactorId;
             this.gridColumn2.FieldName = "FactorId";
             this.gridColumn2.Name = "gridColumn2";
@@ -372,7 +372,7 @@
             this.colFactorEvalValue.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colFactorEvalValue.AppearanceHeader.Options.UseTextOptions = true;
             this.colFactorEvalValue.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colFactorEvalValue.Caption = "قيمة المعيار";
+            this.colFactorEvalValue.Caption = "Score";
             this.colFactorEvalValue.FieldName = "FactorEvalValue";
             this.colFactorEvalValue.Name = "colFactorEvalValue";
             this.colFactorEvalValue.Visible = true;

@@ -12,7 +12,7 @@ namespace NICSQLTools.Classes
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(msExcel));
         readonly static object useDefault = Type.Missing;
 
-        #region ExportExcelPivot
+        
         static public ADODB.Recordset ConvertToRecordset(System.Data.DataTable inTable)
         {
             ADODB.Recordset result = new ADODB.Recordset();
@@ -122,7 +122,66 @@ namespace NICSQLTools.Classes
         {
             targetSheet.get_Range(cell, useDefault).set_Value(XlRangeValueDataType.xlRangeValueDefault, value);
         }
-        public static void CreatePivot(DevExpress.XtraPivotGrid.PivotGridControl pivotControl, string workSheetName, string workBookPath)
+        /// <summary>
+        /// Export DataTable to Excel file
+        /// </summary>
+        /// <param name="DataTable">Source DataTable</param>
+        /// <param name="ExcelFilePath">Path to result file name</param>
+        public static void ExportToExcel(this System.Data.DataTable DataTable, string ExcelFilePath = null)
+        {
+            try
+            {
+                int ColumnsCount;
+
+                if (DataTable == null || (ColumnsCount = DataTable.Columns.Count) == 0)
+                    throw new Exception("ExportToExcel: Null or empty input table!\n");
+
+                // load excel, and create a new workbook
+                Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application();
+                Excel.Workbooks.Add();
+                // single worksheet
+                Microsoft.Office.Interop.Excel._Worksheet Worksheet = Excel.ActiveSheet;
+                object[] Header = new object[ColumnsCount];
+                // column headings               
+                for (int i = 0; i < ColumnsCount; i++)
+                    Header[i] = DataTable.Columns[i].ColumnName;
+                Microsoft.Office.Interop.Excel.Range HeaderRange = Worksheet.get_Range((Microsoft.Office.Interop.Excel.Range)(Worksheet.Cells[1, 1]), (Microsoft.Office.Interop.Excel.Range)(Worksheet.Cells[1, ColumnsCount]));
+                HeaderRange.Value = Header;
+                HeaderRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+                HeaderRange.Font.Bold = true;
+                // DataCells
+                int RowsCount = DataTable.Rows.Count;
+                object[,] Cells = new object[RowsCount, ColumnsCount];
+                for (int j = 0; j < RowsCount; j++)
+                    for (int i = 0; i < ColumnsCount; i++)
+                        Cells[j, i] = DataTable.Rows[j][i];
+                Worksheet.get_Range((Microsoft.Office.Interop.Excel.Range)(Worksheet.Cells[2, 1]), (Microsoft.Office.Interop.Excel.Range)(Worksheet.Cells[RowsCount + 1, ColumnsCount])).Value = Cells;
+                // check fielpath
+                if (ExcelFilePath != null && ExcelFilePath != "")
+                {
+                    try
+                    {
+                        Worksheet.SaveAs(ExcelFilePath);
+                        Excel.Quit();
+                        System.Windows.Forms.MessageBox.Show("Excel file saved!");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception("ExportToExcel: Excel file could not be saved! Check filepath.\n"
+                            + ex.Message);
+                    }
+                }
+                else    // no filepath is given
+                {
+                    Excel.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("ExportToExcel: \n" + ex.Message);
+            }
+        }
+        public static void CreatePivotByRecordSet(DevExpress.XtraPivotGrid.PivotGridControl pivotControl, string workSheetName, string workBookPath)
         {
             Application excelApplication = null;
             Workbook excelWorkBook = null;
@@ -165,36 +224,35 @@ namespace NICSQLTools.Classes
                 xlPivot.TableStyle2 = "PivotStyleLight1";
  
 
-                /////xlPivot.AddFields(,,,)
-
                 // Save the Workbook.
                 excelWorkBook.SaveAs(workBookPath, useDefault, useDefault, useDefault, useDefault, useDefault,
                     XlSaveAsAccessMode.xlNoChange, useDefault, useDefault, useDefault, useDefault, useDefault);
 
 
-
                 //for (int i = 0; i < pivotControl.Fields.Count; i++)
                 //{
-                //    DevExpress.XtraPivotGrid.PivotGridField xField = pivotControl.Fields[i];
+                //    DevExpress.XtraPivotGrid.PivotGridField DevField = pivotControl.Fields[i];
                 //    PivotField xlField = ((PivotField)xlPivot.PivotFields(i + 1));
 
 
-                //    PivotField pageField = (PivotField)xlPivot.PivotFields("Route Name");
-                //    pageField.Orientation = XlPivotFieldOrientation.xlRowField;
+                //    //PivotField pageField = (PivotField)xlPivot.PivotFields("Route Name");
+                //    //pageField.Orientation = XlPivotFieldOrientation.xlRowField;
 
                 //    //xlField.Name = xField.Caption;
                 //    //Set Unbound Calculation
-                    
 
-                //    switch (xField.Area)
+
+                //    switch (DevField.Area)
                 //    {
                 //        case DevExpress.XtraPivotGrid.PivotArea.ColumnArea:
-                //            xlField.Orientation = XlPivotFieldOrientation.xlColumnField;
+                //            //xlField.Orientation = XlPivotFieldOrientation.xlColumnField;
+                //            xlPivot.AddFields(Type.Missing, xlField.Caption, Type.Missing, Type.Missing);
                 //            break;
                 //        case DevExpress.XtraPivotGrid.PivotArea.DataArea:
-                //            xlField.Orientation = XlPivotFieldOrientation.xlDataField;
+                //            //xlField.Orientation = XlPivotFieldOrientation.xlDataField;
+                //            xlPivot.AddDataField(xlField.Caption, DevField.Caption, Type.Missing);
                 //            //xfield.SummaryType
-                //            switch (xField.SummaryType)
+                //            switch (DevField.SummaryType)
                 //            {
                 //                case DevExpress.Data.PivotGrid.PivotSummaryType.Average:
                 //                    xlField.Function = XlConsolidationFunction.xlAverage;
@@ -231,10 +289,13 @@ namespace NICSQLTools.Classes
                 //            }
                 //            break;
                 //        case DevExpress.XtraPivotGrid.PivotArea.FilterArea:
-                //            xlField.Orientation = XlPivotFieldOrientation.xlPageField;
+                //            //xlField.Orientation = XlPivotFieldOrientation.xlPageField;
+                //            xlPivot.AddFields(Type.Missing, Type.Missing, xlField.Caption);
                 //            break;
                 //        case DevExpress.XtraPivotGrid.PivotArea.RowArea:
-                //            xlField.Orientation = XlPivotFieldOrientation.xlRowField;
+                //            //xlField.Orientation = XlPivotFieldOrientation.xlRowField;
+                //            //xlPivot.AddFields(xlField.Caption, Type.Missing, Type.Missing);
+                //            xlPivot.AddDataField(xlField, "Eshta", Type.Missing);
                 //            break;
                 //        default:
                 //            break;
@@ -277,7 +338,166 @@ namespace NICSQLTools.Classes
             }
         }
 
-        #endregion
+        public static void CreatePivotByRange(DevExpress.XtraPivotGrid.PivotGridControl pivotControl, string workSheetName, string workBookPath)
+        {
+            Application excelApplication = null;
+            Workbook excelWorkBook = null;
+            Worksheet targetSheet = null;
+            //PivotTable pivotTable = null;
+            //Range pivotData = null;
+            Range pivotDestination = null;
+            //PivotField salesRegion = null;
+            //PivotField salesAmount = null;
+
+            // Declare helper variables.
+            //string workBookPath = @"C:\pivottablesample.xlsx";
+            //string workSheetName = @"Quarterly Sales";
+            const string pivotTableName = @"[NICSQLTools]";
+            try
+            {
+                // Create an instance of Excel.
+                excelApplication = new Application();
+                //Create a workbook and add a worksheet.
+                excelWorkBook = excelApplication.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
+                targetSheet = (Worksheet)(excelWorkBook.Worksheets[1]);
+                if (workSheetName.Length > 30)
+                    targetSheet.Name = workSheetName.Substring(0, 30);
+                else
+                    targetSheet.Name = workSheetName;
+
+                
+
+                // Create PivCache for the Pivot Table.
+                PivotCache xlPc = excelWorkBook.PivotCaches().Add(XlPivotTableSourceType.xlExternal, useDefault);
+                //inject PivCache's Recordset with data
+                xlPc.Recordset = ConvertToRecordset((System.Data.DataTable)pivotControl.DataSource);
+                // Select location of the Pivot Table.
+                pivotDestination = targetSheet.get_Range("A1", useDefault);
+                //Create Pivot Table
+                PivotTable xlPivot = xlPc.CreatePivotTable(pivotDestination, pivotTableName);
+
+                // Format the Pivot Table.
+                //xlPivot.Format(XlPivotFormatType.xlPTClassic);
+                //xlPivot.InGridDropZones = false;
+                xlPivot.SmallGrid = false;
+                xlPivot.ShowTableStyleRowStripes = true;
+                xlPivot.TableStyle2 = "PivotStyleLight1";
+
+
+                // Save the Workbook.
+                excelWorkBook.SaveAs(workBookPath, useDefault, useDefault, useDefault, useDefault, useDefault,
+                    XlSaveAsAccessMode.xlNoChange, useDefault, useDefault, useDefault, useDefault, useDefault);
+
+
+                //for (int i = 0; i < pivotControl.Fields.Count; i++)
+                //{
+                //    DevExpress.XtraPivotGrid.PivotGridField DevField = pivotControl.Fields[i];
+                //    PivotField xlField = ((PivotField)xlPivot.PivotFields(i + 1));
+
+
+                //    //PivotField pageField = (PivotField)xlPivot.PivotFields("Route Name");
+                //    //pageField.Orientation = XlPivotFieldOrientation.xlRowField;
+
+                //    //xlField.Name = xField.Caption;
+                //    //Set Unbound Calculation
+
+
+                //    switch (DevField.Area)
+                //    {
+                //        case DevExpress.XtraPivotGrid.PivotArea.ColumnArea:
+                //            //xlField.Orientation = XlPivotFieldOrientation.xlColumnField;
+                //            xlPivot.AddFields(Type.Missing, xlField.Caption, Type.Missing, Type.Missing);
+                //            break;
+                //        case DevExpress.XtraPivotGrid.PivotArea.DataArea:
+                //            //xlField.Orientation = XlPivotFieldOrientation.xlDataField;
+                //            xlPivot.AddDataField(xlField.Caption, DevField.Caption, Type.Missing);
+                //            //xfield.SummaryType
+                //            switch (DevField.SummaryType)
+                //            {
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.Average:
+                //                    xlField.Function = XlConsolidationFunction.xlAverage;
+                //                    break;
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.Count:
+                //                    xlField.Function = XlConsolidationFunction.xlCount;
+                //                    break;
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.Custom:
+                //                    xlField.Function = XlConsolidationFunction.xlUnknown;
+                //                    break;
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.Max:
+                //                    xlField.Function = XlConsolidationFunction.xlMax;
+                //                    break;
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.Min:
+                //                    xlField.Function = XlConsolidationFunction.xlMin;
+                //                    break;
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.StdDev:
+                //                    xlField.Function = XlConsolidationFunction.xlStDev;
+                //                    break;
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.StdDevp:
+                //                    xlField.Function = XlConsolidationFunction.xlStDevP;
+                //                    break;
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.Sum:
+                //                    xlField.Function = XlConsolidationFunction.xlSum;
+                //                    break;
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.Var:
+                //                    xlField.Function = XlConsolidationFunction.xlVar;
+                //                    break;
+                //                case DevExpress.Data.PivotGrid.PivotSummaryType.Varp:
+                //                    xlField.Function = XlConsolidationFunction.xlVarP;
+                //                    break;
+                //                default:
+                //                    break;
+                //            }
+                //            break;
+                //        case DevExpress.XtraPivotGrid.PivotArea.FilterArea:
+                //            //xlField.Orientation = XlPivotFieldOrientation.xlPageField;
+                //            xlPivot.AddFields(Type.Missing, Type.Missing, xlField.Caption);
+                //            break;
+                //        case DevExpress.XtraPivotGrid.PivotArea.RowArea:
+                //            //xlField.Orientation = XlPivotFieldOrientation.xlRowField;
+                //            //xlPivot.AddFields(xlField.Caption, Type.Missing, Type.Missing);
+                //            xlPivot.AddDataField(xlField, "Eshta", Type.Missing);
+                //            break;
+                //        default:
+                //            break;
+                //    }
+                //    //Set Filtering
+                //    //xlField.PivotFilters.Add2()
+                //}
+
+                //// Save the Workbook.
+                //excelWorkBook.SaveAs(workBookPath, useDefault, useDefault, useDefault, useDefault, useDefault,
+                //    XlSaveAsAccessMode.xlNoChange, useDefault, useDefault, useDefault, useDefault, useDefault);
+            }
+            catch (Exception ex)
+            {
+                Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, Managers.UserManager.defaultInstance.User.UserId);
+                System.Windows.Forms.MsgDlg.Show(ex.Message, System.Windows.Forms.MsgDlg.MessageType.Error, ex);
+            }
+            finally
+            {
+                // Release the references to the Excel objects.
+                //salesAmount = null;
+                //salesRegion = null;
+                pivotDestination = null;
+                //pivotData = null;
+                //pivotTable = null;
+                targetSheet = null;
+                // Release the Workbook object.
+                if (excelWorkBook != null)
+                    excelWorkBook = null;
+                // Release the ApplicationClass object.
+                if (excelApplication != null)
+                {
+                    excelApplication.Quit();
+                    excelApplication = null;
+                }
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+
 
     }
 }

@@ -486,22 +486,18 @@ _______________________________________________
         {
             return Task.Run(() => 
             {
-                gridViewCostcenter.ShowLoadingPanel();
                 XPSCSCostcenter.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                 gridControlCostcenter.DataSource = XPSCSCostcenter;
                 gridViewCostcenter.BestFitColumns();
-                gridViewCostcenter.HideLoadingPanel();
             });
         }
         private Task LoadAccountNatureGridAsync()
         {
             return Task.Run(() =>
             {
-                gridViewAccountNature.ShowLoadingPanel();
                 XPSCSAccountNature.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                 gridControlAccountNature.DataSource = XPSCSAccountNature;
                 gridViewAccountNature.BestFitColumns();
-                gridViewAccountNature.HideLoadingPanel();
                 
             });
         }
@@ -509,7 +505,9 @@ _______________________________________________
         {
             return Task.Run(() =>
             {
-                
+                XPSCSDFEditor.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
+                gridControlDFEditor.DataSource = XPSCSDFEditor;
+                gridViewDFEditor.BestFitColumns();
             });
         }
         #endregion
@@ -535,16 +533,9 @@ _______________________________________________
             //    catch (SqlException ex)
             //    { Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, UserManager.defaultInstance.User.UserId); }
             //});
-            await LoadCostcenterGridAsync();
-            await LoadAccountNatureGridAsync();
-            //await LoadDFEditorGridAsync();
-
-            gridViewDFEditor.ShowLoadingPanel();
-            XPSCSDFEditor.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
-            gridControlDFEditor.DataSource = XPSCSDFEditor;
-            gridViewDFEditor.BestFitColumns();
-            gridViewDFEditor.HideLoadingPanel();
-
+            LoadCostcenterGridAsync();
+            LoadAccountNatureGridAsync();
+            LoadDFEditorGridAsync();
         }
         #region -   DF   -
         private void btnGetFileName_Click(object sender, EventArgs e)

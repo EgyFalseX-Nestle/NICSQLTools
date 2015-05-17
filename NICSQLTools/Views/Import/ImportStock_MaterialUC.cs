@@ -15,21 +15,31 @@ using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Import
 {
-    public partial class ImportCustomerRouteUC : DevExpress.XtraEditors.XtraUserControl
+    public partial class ImportStock_MaterialUC : DevExpress.XtraEditors.XtraUserControl
     {
-        
         #region -   Variables   -
-        private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportCustomerRouteUC));
+        private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportStock_MaterialUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
-        NICSQLTools.Data.dsQryTableAdapters.DistributorRouteTableAdapter adpDistRoute = new NICSQLTools.Data.dsQryTableAdapters.DistributorRouteTableAdapter();
         private string RequiredField
         {
             get
             {
                 return string.Format(@"Required field for import{0}
-Customer
-Route
-Delivery Day
+Material
+Material Description
+Batch
+Batch Status
+Plant
+Storage Location
+Display Unit/Measure
+Unrestricted
+In Quality Insp.
+Restricted-Use Stock
+Blocked
+Returns
+Stock in Transit
+Transit CC
+Op. Delive
 _______________________________________________
 ", Environment.NewLine);
             }
@@ -37,17 +47,15 @@ _______________________________________________
      
         #endregion
         #region -   Functions   -
-        public ImportCustomerRouteUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
+        public ImportStock_MaterialUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             tbLog.Text = RequiredField;
 
-            DataManager.SetAllCommandTimeouts(customerRouteTableAdapter, DataManager.ConnectionTimeout);
+            DataManager.SetAllCommandTimeouts(stock_MaterialTableAdapter, DataManager.ConnectionTimeout);
             tbMonth.EditValue = DataManager.defaultInstance.ServerDateTime.Month;
             tbYear.EditValue = DataManager.defaultInstance.ServerDateTime.Year;
             _elementRule = RuleElement;
-
-            
         }
         private void ShowHideProgress(bool ShowHide)
         {
@@ -70,8 +78,6 @@ _______________________________________________
             AddLog("Start importing ...", false);
             DataTable dtExcel = new DataTable();
 
-            //if (SSM.IsSplashFormVisible)
-            //    SSM.CloseWaitForm();
             ShowHideProgress(true);
             this.Invoke(new MethodInvoker(() =>
             {
@@ -79,7 +85,7 @@ _______________________________________________
                 {
                     if (File.Exists(lbcFilePath.Items[i].ToString()))
                     {
-                        ChangeProgressCaption(String.Format("Loading Excel File [{0}] Contains[1 of 1]", (i + 1)));
+                        ChangeProgressCaption(String.Format("Loading Excel File [{0}] Contains[1/3]", (i + 1)));
                         DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                         {
@@ -90,6 +96,10 @@ _______________________________________________
                     }
                 }
             }));
+            ChangeProgressCaption("Loading Products Informations [2/3]");
+            _0_4__Product_DetailsTableAdapter.FillByKeyOnly(dsData._0_4__Product_Details);
+            ChangeProgressCaption("Loading Plants Informations [3/3]");
+            plantsTableAdapter.Fill(dsQry.Plants);
 
             if (dtExcel.Rows.Count == 0)
             {
@@ -113,12 +123,9 @@ _______________________________________________
                 ProgressBarMain.Properties.Maximum = ProcessedMax;
                 ProgressBarMain.EditValue = ProcessedCounter;
             }));
-            
-            //Load Fixed Distributor Routes
-            adpDistRoute.Fill(dsQry.DistributorRoute);
 
             ShowHideProgress(false);
-            //DataTable distinctTable = dtExcel.DefaultView.ToTable(true, new string[3] { "Route", "Customer", "Delivery Day" });
+       
             foreach (DataRow row in dtExcel.Rows)
             {
                 //Update UI
@@ -135,29 +142,40 @@ _______________________________________________
                         Application.DoEvents();
                     }));
                 }
-
-                //Remove @0A Or @09
-                if (row[0].ToString() != CustomerRoute.Status08)
-                    continue;
-                //remove duplicated
-                if (dsData.CustomerRoute.FindByRouteCustomerDeliveryDayMonthNumYearNum(row["Route"].ToString(), row["Customer"].ToString(), Convert.ToInt16(row["Delivery Day"]), Convert.ToInt16(tbMonth.EditValue), Convert.ToInt16(tbYear.EditValue)) != null)
+                if (dsQry.Plants.FindByPlantId(row["Plant"].ToString()) == null)// Check if its Unknown Plants
                     continue;
 
-                NICSQLTools.Data.dsData.CustomerRouteRow SqlRow = dsData.CustomerRoute.NewCustomerRouteRow();
-                SqlRow.Route = row["Route"].ToString();
-                SqlRow.Customer = row["Customer"].ToString();
-                SqlRow.DeliveryDay = Convert.ToInt16(row["Delivery Day"]);
-                SqlRow.ValidFrom = Convert.ToDateTime(row["Valid From"]);
+                NICSQLTools.Data.dsData.Stock_MaterialRow SqlRow = dsData.Stock_Material.NewStock_MaterialRow();
+                SqlRow.Material = Convert.ToDouble(row["Material"]);
+                SqlRow.Batch = row["Batch"].ToString();
+                SqlRow.Batch = row["Plant"].ToString();
+                SqlRow.BatchStatus = row["Batch Status"].ToString();
+                SqlRow.DisplayUnitMeasure = row["Display Unit/Measure"].ToString();
+                SqlRow.Unrestricted = Convert.ToDouble(row["Unrestricted"]);
+                SqlRow.InQualityInsp = Convert.ToDouble(row["In Quality Insp#"]);
+                SqlRow.RestrictedUseStock = Convert.ToDouble(row["Restricted-Use Stock"]);
+                SqlRow.Blocked = Convert.ToDouble(row["Blocked"]);
+                SqlRow.Returns = Convert.ToDouble(row["Returns"]);
+                SqlRow.StockInTransit = Convert.ToDouble(row["Stock in Transit"]);
+                SqlRow.TransitCC = Convert.ToDouble(row["Transit CC"]);
+                SqlRow.OpDelive = Convert.ToDouble(row["Op# Delive"]);
+                
                 SqlRow.MonthNum = Convert.ToInt16(tbMonth.EditValue);
                 SqlRow.YearNum = Convert.ToInt16(tbYear.EditValue);
                 SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
 
-                //Code become Dist and still served with his old route
-               
-                if (dsQry.DistributorRoute.FindByDistributorRoute(SqlRow.Customer) != null)// search by customer in route field
-                    SqlRow.Route = SqlRow.Customer;
+                //Product Update
+                NICSQLTools.Data.dsData._0_4__Product_DetailsRow ProductRow = Product.GetProductRow(SqlRow.Material, dsData._0_4__Product_Details);
+                if (ProductRow.RowState == DataRowState.Detached)
+                {
+                    ProductRow.Material_Number = SqlRow.Material;
+                    dsData._0_4__Product_Details.Add_0_4__Product_DetailsRow(ProductRow);
+                    ProductRow.EndEdit();
+                    _0_4__Product_DetailsTableAdapter.Update(ProductRow);
+                    AddLog("[New Product Found] : " + ProductRow.Material_Number, true);
+                }
 
-                dsData.CustomerRoute.AddCustomerRouteRow(SqlRow);
+                dsData.Stock_Material.AddStock_MaterialRow(SqlRow);
                 SqlRow.EndEdit();
             }
             Invoke(new MethodInvoker(() =>//100 %
@@ -169,24 +187,20 @@ _______________________________________________
                 Application.DoEvents();
             }));
             ShowHideProgress(true);
-            ChangeProgressCaption("Updating Customer Route ...");
-            if (!CustomerRoute.UpdateBulkCustomerRoute(cmd, dsData.CustomerRoute, Convert.ToInt16(tbYear.EditValue), Convert.ToInt16(tbMonth.EditValue)))
-                MsgDlg.Show("Update Customer Route Failed", MsgDlg.MessageType.Error);
+            ChangeProgressCaption("Updating Stock Material ...");
+            if (!Stock_Material.UpdateBulkStock_Material(cmd, dsData.Stock_Material, Convert.ToInt16(tbYear.EditValue), Convert.ToInt16(tbMonth.EditValue)))
+                MsgDlg.Show("Update Stock Material Failed", MsgDlg.MessageType.Error);
             else
             {
-                AddLog("New Customer Route Saved " + dsData.CustomerRoute.Count, true);
+                AddLog("New Stock Material Saved " + dsData.Stock_Material.Count, true);
                 output = true;
             }
-            //Adding New Customers Found In CustomerRoute Into HN
-            ChangeProgressCaption("Adding New Customer ...");
-            int CustomerAdded = DataManager.adpQry.InsertNewCustomerFromCustomerRoute(Convert.ToInt16(tbYear.EditValue), Convert.ToInt16(tbMonth.EditValue));
-            AddLog("New Customer Added : " + CustomerAdded, true);
 
-            dsData.CustomerRoute.AcceptChanges();
+            dsData.Stock_Material.AcceptChanges();
             ShowHideProgress(false);
 
             dtExcel.Rows.Clear(); dtExcel.Dispose(); dtExcel = null;
-            dsData.CustomerRoute.Clear(); dsData.CustomerRoute.Dispose();
+            dsData.Stock_Material.Clear(); dsData.Stock_Material.Dispose();
             cmd.Dispose(); cmd = null; con.Close(); con.Dispose(); con = null;
             GC.Collect(); GC.WaitForPendingFinalizers();
 
@@ -208,19 +222,19 @@ _______________________________________________
         
         #endregion
         #region -   Event Handlers   -
-        private void ImportCustomerRouteUC_Load(object sender, EventArgs e)
+        private void ImportStock_ListUC_Load(object sender, EventArgs e)
         {
             System.Threading.ThreadPool.QueueUserWorkItem((o) =>
             {
                 try
                 {
-                    using (NICSQLTools.Data.dsQryTableAdapters.LastEditCustomerRouteTableAdapter lastEditCustomerRouteTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.LastEditCustomerRouteTableAdapter())
+                    using (NICSQLTools.Data.dsQryTableAdapters.LastEditStock_MaterialTableAdapter lastEditStock_MaterialTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.LastEditStock_MaterialTableAdapter())
                     {
-                        Classes.Managers.DataManager.SetAllCommandTimeouts(lastEditCustomerRouteTableAdapter, Classes.Managers.DataManager.ConnectionTimeout);
-                        NICSQLTools.Data.dsQry.LastEditCustomerRouteDataTable tbl = lastEditCustomerRouteTableAdapter.GetData();
+                        Classes.Managers.DataManager.SetAllCommandTimeouts(lastEditStock_MaterialTableAdapter, Classes.Managers.DataManager.ConnectionTimeout);
+                        NICSQLTools.Data.dsQry.LastEditStock_MaterialDataTable tbl = lastEditStock_MaterialTableAdapter.GetData();
                         if (tbl.Count > 0)
                         {
-                            NICSQLTools.Data.dsQry.LastEditCustomerRouteRow row = tbl[0];
+                            NICSQLTools.Data.dsQry.LastEditStock_MaterialRow row = tbl[0];
                             string log = string.Format("Last Edit {0}Year : {1}{0}Month : {2}{0}Date : {3}{0}User : {4}", Environment.NewLine, row.YearNum, row.MonthNum, row.DateIn, row.RealName);
                             AddLog(log, false);
                         }

@@ -796,6 +796,50 @@ GROUP BY AppRuleLookupValue.ValueName</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LastEditStock_ListTableAdapter" GeneratorDataComponentClassName="LastEditStock_ListTableAdapter" Name="LastEditStock_List" UserDataComponentName="LastEditStock_ListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TOP 1 YearNum, MonthNum, DateIn, AppUsers.RealName
+FROM            dbo.Stock_List INNER JOIN dbo.AppUsers ON Stock_List.UserIn = AppUsers.UserID
+ORDER BY Stock_List.DateIn DESC
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="YearNum" DataSetColumn="YearNum" />
+              <Mapping SourceColumn="MonthNum" DataSetColumn="MonthNum" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LastEditStock_MaterialTableAdapter" GeneratorDataComponentClassName="LastEditStock_MaterialTableAdapter" Name="LastEditStock_Material" UserDataComponentName="LastEditStock_MaterialTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TOP 1 YearNum, MonthNum, DateIn, AppUsers.RealName
+FROM            dbo.Stock_Material INNER JOIN dbo.AppUsers ON Stock_Material.UserIn = AppUsers.UserID
+ORDER BY Stock_Material.DateIn DESC
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="YearNum" DataSetColumn="YearNum" />
+              <Mapping SourceColumn="MonthNum" DataSetColumn="MonthNum" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1833,6 +1877,38 @@ GROUP BY AppRuleLookupValue.ValueName</CommandText>
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ValueName" msprop:Generator_ColumnVarNameInTable="columnValueName" msprop:Generator_ColumnPropNameInRow="ValueName" msprop:Generator_ColumnPropNameInTable="ValueNameColumn" msprop:Generator_UserColumnName="ValueName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LastEditStock_List" msprop:Generator_TableClassName="LastEditStock_ListDataTable" msprop:Generator_TableVarName="tableLastEditStock_List" msprop:Generator_RowChangedName="LastEditStock_ListRowChanged" msprop:Generator_TablePropName="LastEditStock_List" msprop:Generator_RowDeletingName="LastEditStock_ListRowDeleting" msprop:Generator_RowChangingName="LastEditStock_ListRowChanging" msprop:Generator_RowEvHandlerName="LastEditStock_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="LastEditStock_ListRowDeleted" msprop:Generator_RowClassName="LastEditStock_ListRow" msprop:Generator_UserTableName="LastEditStock_List" msprop:Generator_RowEvArgName="LastEditStock_ListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YearNum" msprop:Generator_ColumnVarNameInTable="columnYearNum" msprop:Generator_ColumnPropNameInRow="YearNum" msprop:Generator_ColumnPropNameInTable="YearNumColumn" msprop:Generator_UserColumnName="YearNum" type="xs:int" minOccurs="0" />
+              <xs:element name="MonthNum" msprop:Generator_ColumnVarNameInTable="columnMonthNum" msprop:Generator_ColumnPropNameInRow="MonthNum" msprop:Generator_ColumnPropNameInTable="MonthNumColumn" msprop:Generator_UserColumnName="MonthNum" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LastEditStock_Material" msprop:Generator_TableClassName="LastEditStock_MaterialDataTable" msprop:Generator_TableVarName="tableLastEditStock_Material" msprop:Generator_TablePropName="LastEditStock_Material" msprop:Generator_RowDeletingName="LastEditStock_MaterialRowDeleting" msprop:Generator_RowChangingName="LastEditStock_MaterialRowChanging" msprop:Generator_RowEvHandlerName="LastEditStock_MaterialRowChangeEventHandler" msprop:Generator_RowDeletedName="LastEditStock_MaterialRowDeleted" msprop:Generator_UserTableName="LastEditStock_Material" msprop:Generator_RowChangedName="LastEditStock_MaterialRowChanged" msprop:Generator_RowEvArgName="LastEditStock_MaterialRowChangeEvent" msprop:Generator_RowClassName="LastEditStock_MaterialRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YearNum" msprop:Generator_ColumnVarNameInTable="columnYearNum" msprop:Generator_ColumnPropNameInRow="YearNum" msprop:Generator_ColumnPropNameInTable="YearNumColumn" msprop:Generator_UserColumnName="YearNum" type="xs:int" minOccurs="0" />
+              <xs:element name="MonthNum" msprop:Generator_ColumnVarNameInTable="columnMonthNum" msprop:Generator_ColumnPropNameInRow="MonthNum" msprop:Generator_ColumnPropNameInTable="MonthNumColumn" msprop:Generator_UserColumnName="MonthNum" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

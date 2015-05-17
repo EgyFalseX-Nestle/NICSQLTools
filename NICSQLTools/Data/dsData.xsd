@@ -444,7 +444,17 @@ FROM            [0-4  Product Details]</CommandText>
               <Mapping SourceColumn="Brand Rang" DataSetColumn="Brand Rang" />
               <Mapping SourceColumn="Consumer Segment" DataSetColumn="Consumer Segment" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.[0-4  Product Details]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByKeyOnly" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByKeyOnly" GeneratorSourceName="FillByKeyOnly" GetMethodModifier="Public" GetMethodName="GetDataByKeyOnly" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByKeyOnly" UserSourceName="FillByKeyOnly">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        [Material Number]
+FROM            [0-4  Product Details]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CustomerInfoTableAdapter" GeneratorDataComponentClassName="CustomerInfoTableAdapter" Name="CustomerInfo" UserDataComponentName="CustomerInfoTableAdapter">
             <MainSource>
@@ -2966,6 +2976,67 @@ SELECT TaskId, TaskName, TaskDays, TaskDesc, UserIn, DateIn FROM TskEmp_Task WHE
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Stock_ListTableAdapter" GeneratorDataComponentClassName="Stock_ListTableAdapter" Name="Stock_List" UserDataComponentName="Stock_ListTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.Stock_List" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AutoId, Material, Batch, Plant, [Storage Bin], [Storage Type], [Total Stock], [Base Unit of Measure], [Last movement], MonthNum, YearNum, UserIn, DateIn FROM dbo.Stock_List</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AutoId" DataSetColumn="AutoId" />
+              <Mapping SourceColumn="Material" DataSetColumn="Material" />
+              <Mapping SourceColumn="Batch" DataSetColumn="Batch" />
+              <Mapping SourceColumn="Plant" DataSetColumn="Plant" />
+              <Mapping SourceColumn="Storage Bin" DataSetColumn="Storage Bin" />
+              <Mapping SourceColumn="Storage Type" DataSetColumn="Storage Type" />
+              <Mapping SourceColumn="Total Stock" DataSetColumn="Total Stock" />
+              <Mapping SourceColumn="Base Unit of Measure" DataSetColumn="Base Unit of Measure" />
+              <Mapping SourceColumn="Last movement" DataSetColumn="Last movement" />
+              <Mapping SourceColumn="MonthNum" DataSetColumn="MonthNum" />
+              <Mapping SourceColumn="YearNum" DataSetColumn="YearNum" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Stock_MaterialTableAdapter" GeneratorDataComponentClassName="Stock_MaterialTableAdapter" Name="Stock_Material" UserDataComponentName="Stock_MaterialTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.Stock_Material" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AutoId, Material, Batch, BatchStatus, Plant, DisplayUnitMeasure, Unrestricted, InQualityInsp, RestrictedUseStock, Blocked, [Returns], StockInTransit, TransitCC, OpDelive, MonthNum, YearNum, UserIn, DateIn FROM dbo.Stock_Material</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AutoId" DataSetColumn="AutoId" />
+              <Mapping SourceColumn="Material" DataSetColumn="Material" />
+              <Mapping SourceColumn="Batch" DataSetColumn="Batch" />
+              <Mapping SourceColumn="BatchStatus" DataSetColumn="BatchStatus" />
+              <Mapping SourceColumn="Plant" DataSetColumn="Plant" />
+              <Mapping SourceColumn="DisplayUnitMeasure" DataSetColumn="DisplayUnitMeasure" />
+              <Mapping SourceColumn="Unrestricted" DataSetColumn="Unrestricted" />
+              <Mapping SourceColumn="InQualityInsp" DataSetColumn="InQualityInsp" />
+              <Mapping SourceColumn="RestrictedUseStock" DataSetColumn="RestrictedUseStock" />
+              <Mapping SourceColumn="Blocked" DataSetColumn="Blocked" />
+              <Mapping SourceColumn="Returns" DataSetColumn="Returns" />
+              <Mapping SourceColumn="StockInTransit" DataSetColumn="StockInTransit" />
+              <Mapping SourceColumn="TransitCC" DataSetColumn="TransitCC" />
+              <Mapping SourceColumn="OpDelive" DataSetColumn="OpDelive" />
+              <Mapping SourceColumn="MonthNum" DataSetColumn="MonthNum" />
+              <Mapping SourceColumn="YearNum" DataSetColumn="YearNum" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.AppOptions" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetAppOptionValue" MethodsParameterType="CLR" Modifier="Public" Name="GetAppOptionValue" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetAppOptionValue">
@@ -3043,11 +3114,12 @@ WHERE        (AuthenticationId = @AuthenticationId)</CommandText>
             <InsertCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>INSERT INTO AppMachineAuthentication
-                         (AuthenticationRequestMessage, RequestUserId, RequestDate)
-VALUES        (@AuthenticationRequestMessage,@RequestUserId, GETDATE())</CommandText>
+                         (AuthenticationRequestMessage, RequestUserId, RequestDate,  MachineUser)
+VALUES        (@AuthenticationRequestMessage,@RequestUserId, GETDATE(),  @MachineUser)</CommandText>
                 <Parameters>
                   <Parameter AllowDbNull="true" AutogeneratedName="AuthenticationRequestMessage" ColumnName="AuthenticationRequestMessage" DataSourceName="IC_DB.dbo.AppMachineAuthentication" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@AuthenticationRequestMessage" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="AuthenticationRequestMessage" SourceColumnNullMapping="false" SourceVersion="Current" />
                   <Parameter AllowDbNull="true" AutogeneratedName="RequestUserId" ColumnName="RequestUserId" DataSourceName="IC_DB.dbo.AppMachineAuthentication" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@RequestUserId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="RequestUserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="MachineUser" ColumnName="MachineUser" DataSourceName="IC_DB.dbo.AppMachineAuthentication" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@MachineUser" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="MachineUser" SourceColumnNullMapping="false" SourceVersion="Current" />
                 </Parameters>
               </DbCommand>
             </InsertCommand>
@@ -4880,6 +4952,103 @@ WHERE        (DatasourceID = @DatasourceID)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Stock_List" msprop:Generator_TableClassName="Stock_ListDataTable" msprop:Generator_TableVarName="tableStock_List" msprop:Generator_RowChangedName="Stock_ListRowChanged" msprop:Generator_TablePropName="Stock_List" msprop:Generator_RowDeletingName="Stock_ListRowDeleting" msprop:Generator_RowChangingName="Stock_ListRowChanging" msprop:Generator_RowEvHandlerName="Stock_ListRowChangeEventHandler" msprop:Generator_RowDeletedName="Stock_ListRowDeleted" msprop:Generator_RowClassName="Stock_ListRow" msprop:Generator_UserTableName="Stock_List" msprop:Generator_RowEvArgName="Stock_ListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AutoId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnAutoId" msprop:Generator_ColumnPropNameInRow="AutoId" msprop:Generator_ColumnPropNameInTable="AutoIdColumn" msprop:Generator_UserColumnName="AutoId" type="xs:int" />
+              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material" type="xs:double" minOccurs="0" />
+              <xs:element name="Batch" msprop:Generator_ColumnVarNameInTable="columnBatch" msprop:Generator_ColumnPropNameInRow="Batch" msprop:Generator_ColumnPropNameInTable="BatchColumn" msprop:Generator_UserColumnName="Batch" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plant" msprop:Generator_ColumnVarNameInTable="columnPlant" msprop:Generator_ColumnPropNameInRow="Plant" msprop:Generator_ColumnPropNameInTable="PlantColumn" msprop:Generator_UserColumnName="Plant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Storage_x0020_Bin" msprop:Generator_ColumnVarNameInTable="columnStorage_Bin" msprop:Generator_ColumnPropNameInRow="Storage_Bin" msprop:Generator_ColumnPropNameInTable="Storage_BinColumn" msprop:Generator_UserColumnName="Storage Bin" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Storage_x0020_Type" msprop:Generator_ColumnVarNameInTable="columnStorage_Type" msprop:Generator_ColumnPropNameInRow="Storage_Type" msprop:Generator_ColumnPropNameInTable="Storage_TypeColumn" msprop:Generator_UserColumnName="Storage Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total_x0020_Stock" msprop:Generator_ColumnVarNameInTable="columnTotal_Stock" msprop:Generator_ColumnPropNameInRow="Total_Stock" msprop:Generator_ColumnPropNameInTable="Total_StockColumn" msprop:Generator_UserColumnName="Total Stock" type="xs:double" minOccurs="0" />
+              <xs:element name="Base_x0020_Unit_x0020_of_x0020_Measure" msprop:Generator_ColumnVarNameInTable="columnBase_Unit_of_Measure" msprop:Generator_ColumnPropNameInRow="Base_Unit_of_Measure" msprop:Generator_ColumnPropNameInTable="Base_Unit_of_MeasureColumn" msprop:Generator_UserColumnName="Base Unit of Measure" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Last_x0020_movement" msprop:Generator_ColumnVarNameInTable="columnLast_movement" msprop:Generator_ColumnPropNameInRow="Last_movement" msprop:Generator_ColumnPropNameInTable="Last_movementColumn" msprop:Generator_UserColumnName="Last movement" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MonthNum" msprop:Generator_ColumnVarNameInTable="columnMonthNum" msprop:Generator_ColumnPropNameInRow="MonthNum" msprop:Generator_ColumnPropNameInTable="MonthNumColumn" msprop:Generator_UserColumnName="MonthNum" type="xs:int" minOccurs="0" />
+              <xs:element name="YearNum" msprop:Generator_ColumnVarNameInTable="columnYearNum" msprop:Generator_ColumnPropNameInRow="YearNum" msprop:Generator_ColumnPropNameInTable="YearNumColumn" msprop:Generator_UserColumnName="YearNum" type="xs:int" minOccurs="0" />
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Stock_Material" msprop:Generator_TableClassName="Stock_MaterialDataTable" msprop:Generator_TableVarName="tableStock_Material" msprop:Generator_RowChangedName="Stock_MaterialRowChanged" msprop:Generator_TablePropName="Stock_Material" msprop:Generator_RowDeletingName="Stock_MaterialRowDeleting" msprop:Generator_RowChangingName="Stock_MaterialRowChanging" msprop:Generator_RowEvHandlerName="Stock_MaterialRowChangeEventHandler" msprop:Generator_RowDeletedName="Stock_MaterialRowDeleted" msprop:Generator_RowClassName="Stock_MaterialRow" msprop:Generator_UserTableName="Stock_Material" msprop:Generator_RowEvArgName="Stock_MaterialRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AutoId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnAutoId" msprop:Generator_ColumnPropNameInRow="AutoId" msprop:Generator_ColumnPropNameInTable="AutoIdColumn" msprop:Generator_UserColumnName="AutoId" type="xs:int" />
+              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material" type="xs:double" minOccurs="0" />
+              <xs:element name="Batch" msprop:Generator_ColumnVarNameInTable="columnBatch" msprop:Generator_ColumnPropNameInRow="Batch" msprop:Generator_ColumnPropNameInTable="BatchColumn" msprop:Generator_UserColumnName="Batch" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BatchStatus" msprop:Generator_ColumnVarNameInTable="columnBatchStatus" msprop:Generator_ColumnPropNameInRow="BatchStatus" msprop:Generator_ColumnPropNameInTable="BatchStatusColumn" msprop:Generator_UserColumnName="BatchStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plant" msprop:Generator_ColumnVarNameInTable="columnPlant" msprop:Generator_ColumnPropNameInRow="Plant" msprop:Generator_ColumnPropNameInTable="PlantColumn" msprop:Generator_UserColumnName="Plant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DisplayUnitMeasure" msprop:Generator_ColumnVarNameInTable="columnDisplayUnitMeasure" msprop:Generator_ColumnPropNameInRow="DisplayUnitMeasure" msprop:Generator_ColumnPropNameInTable="DisplayUnitMeasureColumn" msprop:Generator_UserColumnName="DisplayUnitMeasure" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Unrestricted" msprop:Generator_ColumnVarNameInTable="columnUnrestricted" msprop:Generator_ColumnPropNameInRow="Unrestricted" msprop:Generator_ColumnPropNameInTable="UnrestrictedColumn" msprop:Generator_UserColumnName="Unrestricted" type="xs:double" minOccurs="0" />
+              <xs:element name="InQualityInsp" msprop:Generator_ColumnVarNameInTable="columnInQualityInsp" msprop:Generator_ColumnPropNameInRow="InQualityInsp" msprop:Generator_ColumnPropNameInTable="InQualityInspColumn" msprop:Generator_UserColumnName="InQualityInsp" type="xs:double" minOccurs="0" />
+              <xs:element name="RestrictedUseStock" msprop:Generator_ColumnVarNameInTable="columnRestrictedUseStock" msprop:Generator_ColumnPropNameInRow="RestrictedUseStock" msprop:Generator_ColumnPropNameInTable="RestrictedUseStockColumn" msprop:Generator_UserColumnName="RestrictedUseStock" type="xs:double" minOccurs="0" />
+              <xs:element name="Blocked" msprop:Generator_ColumnVarNameInTable="columnBlocked" msprop:Generator_ColumnPropNameInRow="Blocked" msprop:Generator_ColumnPropNameInTable="BlockedColumn" msprop:Generator_UserColumnName="Blocked" type="xs:double" minOccurs="0" />
+              <xs:element name="Returns" msprop:Generator_ColumnVarNameInTable="columnReturns" msprop:Generator_ColumnPropNameInRow="Returns" msprop:Generator_ColumnPropNameInTable="ReturnsColumn" msprop:Generator_UserColumnName="Returns" type="xs:double" minOccurs="0" />
+              <xs:element name="StockInTransit" msprop:Generator_ColumnVarNameInTable="columnStockInTransit" msprop:Generator_ColumnPropNameInRow="StockInTransit" msprop:Generator_ColumnPropNameInTable="StockInTransitColumn" msprop:Generator_UserColumnName="StockInTransit" type="xs:double" minOccurs="0" />
+              <xs:element name="TransitCC" msprop:Generator_ColumnVarNameInTable="columnTransitCC" msprop:Generator_ColumnPropNameInRow="TransitCC" msprop:Generator_ColumnPropNameInTable="TransitCCColumn" msprop:Generator_UserColumnName="TransitCC" type="xs:double" minOccurs="0" />
+              <xs:element name="OpDelive" msprop:Generator_ColumnVarNameInTable="columnOpDelive" msprop:Generator_ColumnPropNameInRow="OpDelive" msprop:Generator_ColumnPropNameInTable="OpDeliveColumn" msprop:Generator_UserColumnName="OpDelive" type="xs:double" minOccurs="0" />
+              <xs:element name="MonthNum" msprop:Generator_ColumnVarNameInTable="columnMonthNum" msprop:Generator_ColumnPropNameInRow="MonthNum" msprop:Generator_ColumnPropNameInTable="MonthNumColumn" msprop:Generator_UserColumnName="MonthNum" type="xs:int" minOccurs="0" />
+              <xs:element name="YearNum" msprop:Generator_ColumnVarNameInTable="columnYearNum" msprop:Generator_ColumnPropNameInRow="YearNum" msprop:Generator_ColumnPropNameInTable="YearNumColumn" msprop:Generator_UserColumnName="YearNum" type="xs:int" minOccurs="0" />
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -5078,6 +5247,14 @@ WHERE        (DatasourceID = @DatasourceID)</CommandText>
       <xs:selector xpath=".//mstns:TskEmp_Task" />
       <xs:field xpath="mstns:TaskId" />
     </xs:unique>
+    <xs:unique name="Stock_List_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Stock_List" />
+      <xs:field xpath="mstns:AutoId" />
+    </xs:unique>
+    <xs:unique name="Stock_Material_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Stock_Material" />
+      <xs:field xpath="mstns:AutoId" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -5086,7 +5263,6 @@ WHERE        (DatasourceID = @DatasourceID)</CommandText>
       <msdata:Relationship name="FK_UserRole_Users" msdata:parent="AppUsers" msdata:child="AppUserRule" msdata:parentkey="UserID" msdata:childkey="UserId" msprop:Generator_UserChildTable="AppUserRule" msprop:Generator_ChildPropName="GetAppUserRuleRows" msprop:Generator_UserRelationName="FK_UserRole_Users" msprop:Generator_ParentPropName="UsersRow" msprop:Generator_RelationVarName="relationFK_UserRole_Users" msprop:Generator_UserParentTable="AppUsers" />
       <msdata:Relationship name="AppUsers_AppDashboardSchema" msdata:parent="AppUsers" msdata:child="AppDashboardSchema" msdata:parentkey="UserID" msdata:childkey="UserIn" msprop:Generator_UserChildTable="AppDashboardSchema" msprop:Generator_ChildPropName="GetAppDashboardSchemaRows" msprop:Generator_UserRelationName="AppUsers_AppDashboardSchema" msprop:Generator_RelationVarName="relationAppUsers_AppDashboardSchema" msprop:Generator_UserParentTable="AppUsers" msprop:Generator_ParentPropName="AppUsersRow" />
       <msdata:Relationship name="FK_AppDatasourceLayout_UserIn" msdata:parent="AppUsers" msdata:child="AppDatasourceLayout" msdata:parentkey="UserID" msdata:childkey="UserIn" msprop:Generator_UserChildTable="AppDatasourceLayout" msprop:Generator_ChildPropName="GetAppDatasourceLayoutRows" msprop:Generator_UserRelationName="FK_AppDatasourceLayout_UserIn" msprop:Generator_ParentPropName="AppUsersRow" msprop:Generator_RelationVarName="relationFK_AppDatasourceLayout_UserIn" msprop:Generator_UserParentTable="AppUsers" />
-      <msdata:Relationship name="FK_AppDatasourceParam_UserIn" msdata:parent="AppUsers" msdata:child="AppDatasourceParam" msdata:parentkey="UserID" msdata:childkey="UserIn" msprop:Generator_UserChildTable="AppDatasourceParam" msprop:Generator_ChildPropName="GetAppDatasourceParamRows" msprop:Generator_UserRelationName="FK_AppDatasourceParam_UserIn" msprop:Generator_ParentPropName="AppUsersRow" msprop:Generator_RelationVarName="relationFK_AppDatasourceParam_UserIn" msprop:Generator_UserParentTable="AppUsers" />
       <msdata:Relationship name="FK_AppDatasource_UserIn" msdata:parent="AppUsers" msdata:child="AppDatasource" msdata:parentkey="UserID" msdata:childkey="UserIn" msprop:Generator_UserChildTable="AppDatasource" msprop:Generator_ChildPropName="GetAppDatasourceRows" msprop:Generator_UserRelationName="FK_AppDatasource_UserIn" msprop:Generator_ParentPropName="AppUsersRow" msprop:Generator_RelationVarName="relationFK_AppDatasource_UserIn" msprop:Generator_UserParentTable="AppUsers" />
     </xs:appinfo>
   </xs:annotation>

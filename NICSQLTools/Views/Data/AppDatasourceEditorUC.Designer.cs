@@ -455,7 +455,6 @@
             this.XPSCSParam.AllowNew = true;
             this.XPSCSParam.AllowRemove = true;
             this.XPSCSParam.DeleteObjectOnRemove = true;
-            this.XPSCSParam.FixedFilterString = "[AppDatasourceParamID] = -1";
             this.XPSCSParam.ObjectType = typeof(NICSQLTools.Data.dsData.AppDatasourceParamDataTable);
             this.XPSCSParam.Session = this.sessionParam;
             // 

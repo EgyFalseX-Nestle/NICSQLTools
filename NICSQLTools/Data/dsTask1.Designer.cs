@@ -1557,6 +1557,10 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnTaskId;
             
+            private global::System.Data.DataColumn columnRequestedQuentity;
+            
+            private global::System.Data.DataColumn columnCompletedQuentity;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TskEmp_EmpTaskActualDataTable() {
@@ -1632,6 +1636,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RequestedQuentityColumn {
+                get {
+                    return this.columnRequestedQuentity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CompletedQuentityColumn {
+                get {
+                    return this.columnCompletedQuentity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1667,14 +1687,16 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TskEmp_EmpTaskActualRow AddTskEmp_EmpTaskActualRow(TskEmp_EmpTask_XPORow parentTskEmp_EmpTask_XPORowByTskEmp_EmpTask_XPO_TskEmp_EmpTaskActual, System.DateTime ExeDate, string TaskActualDesc, int TaskId) {
+            public TskEmp_EmpTaskActualRow AddTskEmp_EmpTaskActualRow(TskEmp_EmpTask_XPORow parentTskEmp_EmpTask_XPORowByTskEmp_EmpTask_XPO_TskEmp_EmpTaskActual, System.DateTime ExeDate, string TaskActualDesc, int TaskId, double RequestedQuentity, double CompletedQuentity) {
                 TskEmp_EmpTaskActualRow rowTskEmp_EmpTaskActualRow = ((TskEmp_EmpTaskActualRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         ExeDate,
                         TaskActualDesc,
-                        TaskId};
+                        TaskId,
+                        RequestedQuentity,
+                        CompletedQuentity};
                 if ((parentTskEmp_EmpTask_XPORowByTskEmp_EmpTask_XPO_TskEmp_EmpTaskActual != null)) {
                     columnValuesArray[1] = parentTskEmp_EmpTask_XPORowByTskEmp_EmpTask_XPO_TskEmp_EmpTaskActual[0];
                 }
@@ -1712,6 +1734,8 @@ namespace NICSQLTools.Data {
                 this.columnExeDate = base.Columns["ExeDate"];
                 this.columnTaskActualDesc = base.Columns["TaskActualDesc"];
                 this.columnTaskId = base.Columns["TaskId"];
+                this.columnRequestedQuentity = base.Columns["RequestedQuentity"];
+                this.columnCompletedQuentity = base.Columns["CompletedQuentity"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1727,6 +1751,10 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnTaskActualDesc);
                 this.columnTaskId = new global::System.Data.DataColumn("TaskId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTaskId);
+                this.columnRequestedQuentity = new global::System.Data.DataColumn("RequestedQuentity", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRequestedQuentity);
+                this.columnCompletedQuentity = new global::System.Data.DataColumn("CompletedQuentity", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompletedQuentity);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnEmpTaskActualId}, true));
                 this.columnEmpTaskActualId.AutoIncrement = true;
@@ -3697,6 +3725,40 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double RequestedQuentity {
+                get {
+                    try {
+                        return ((double)(this[this.tableTskEmp_EmpTaskActual.RequestedQuentityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RequestedQuentity\' in table \'TskEmp_EmpTaskActual\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableTskEmp_EmpTaskActual.RequestedQuentityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double CompletedQuentity {
+                get {
+                    try {
+                        return ((double)(this[this.tableTskEmp_EmpTaskActual.CompletedQuentityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CompletedQuentity\' in table \'TskEmp_EmpTaskActual\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableTskEmp_EmpTaskActual.CompletedQuentityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TskEmp_EmpTask_XPORow TskEmp_EmpTask_XPORow {
                 get {
                     return ((TskEmp_EmpTask_XPORow)(this.GetParentRow(this.Table.ParentRelations["TskEmp_EmpTask_XPO_TskEmp_EmpTaskActual"])));
@@ -3716,6 +3778,30 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTaskActualDescNull() {
                 this[this.tableTskEmp_EmpTaskActual.TaskActualDescColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRequestedQuentityNull() {
+                return this.IsNull(this.tableTskEmp_EmpTaskActual.RequestedQuentityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRequestedQuentityNull() {
+                this[this.tableTskEmp_EmpTaskActual.RequestedQuentityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCompletedQuentityNull() {
+                return this.IsNull(this.tableTskEmp_EmpTaskActual.CompletedQuentityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCompletedQuentityNull() {
+                this[this.tableTskEmp_EmpTaskActual.CompletedQuentityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5761,32 +5847,40 @@ SELECT EmpTaskId, EmpId, TaskId, TaskStartDate, TaskEndDate, UserIn, DateIn FROM
             tableMapping.ColumnMappings.Add("ExeDate", "ExeDate");
             tableMapping.ColumnMappings.Add("TaskActualDesc", "TaskActualDesc");
             tableMapping.ColumnMappings.Add("TaskId", "TaskId");
+            tableMapping.ColumnMappings.Add("RequestedQuentity", "RequestedQuentity");
+            tableMapping.ColumnMappings.Add("CompletedQuentity", "CompletedQuentity");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TskEmp_EmpTaskActual] WHERE (([EmpTaskId] = @Original_EmpTaskI" +
-                "d) AND ([ExeDate] = @Original_ExeDate))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM TskEmp_EmpTaskActual\r\nWHERE        (EmpTaskId = @Original_EmpTaskId) " +
+                "AND (ExeDate = @Original_ExeDate)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmpTaskId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmpTaskId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExeDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExeDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmpTaskId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpTaskId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExeDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ExeDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TskEmp_EmpTaskActual] ([EmpTaskId], [ExeDate], [TaskActualDesc]) VALUES (@EmpTaskId, @ExeDate, @TaskActualDesc);
-SELECT EmpTaskActualId, EmpTaskId, ExeDate, TaskActualDesc FROM TskEmp_EmpTaskActual WHERE (EmpTaskId = @EmpTaskId) AND (ExeDate = @ExeDate)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO TskEmp_EmpTaskActual\r\n                         (EmpTaskId, ExeDate, T" +
+                "askActualDesc, RequestedQuentity, CompletedQuentity)\r\nVALUES        (@EmpTaskId," +
+                "@ExeDate,@TaskActualDesc,@RequestedQuentity,@CompletedQuentity)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpTaskId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmpTaskId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExeDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExeDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TaskActualDesc", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TaskActualDesc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpTaskId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpTaskId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExeDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ExeDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TaskActualDesc", global::System.Data.SqlDbType.NVarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "TaskActualDesc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestedQuentity", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "RequestedQuentity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompletedQuentity", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CompletedQuentity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TskEmp_EmpTaskActual] SET [EmpTaskId] = @EmpTaskId, [ExeDate] = @ExeDate, [TaskActualDesc] = @TaskActualDesc WHERE (([EmpTaskId] = @Original_EmpTaskId) AND ([ExeDate] = @Original_ExeDate));
-SELECT EmpTaskActualId, EmpTaskId, ExeDate, TaskActualDesc FROM TskEmp_EmpTaskActual WHERE (EmpTaskId = @EmpTaskId) AND (ExeDate = @ExeDate)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       TskEmp_EmpTaskActual
+SET                EmpTaskId = @EmpTaskId, ExeDate = @ExeDate, TaskActualDesc = @TaskActualDesc, RequestedQuentity = @RequestedQuentity, CompletedQuentity = @CompletedQuentity
+WHERE        (EmpTaskId = @Original_EmpTaskId) AND (ExeDate = @Original_ExeDate)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpTaskId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmpTaskId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExeDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExeDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TaskActualDesc", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TaskActualDesc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmpTaskId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmpTaskId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExeDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExeDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpTaskId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpTaskId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExeDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ExeDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TaskActualDesc", global::System.Data.SqlDbType.NVarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "TaskActualDesc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RequestedQuentity", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "RequestedQuentity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompletedQuentity", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CompletedQuentity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmpTaskId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpTaskId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExeDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ExeDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5802,19 +5896,18 @@ SELECT EmpTaskActualId, EmpTaskId, ExeDate, TaskActualDesc FROM TskEmp_EmpTaskAc
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        TskEmp_EmpTaskActual.EmpTaskActualId, TskEmp_EmpTaskActual.EmpTaskId, TskEmp_EmpTaskActual.ExeDate, TskEmp_EmpTaskActual.TaskActualDesc, TskEmp_EmpTask.TaskId
+            this._commandCollection[0].CommandText = @"SELECT        TskEmp_EmpTaskActual.EmpTaskActualId, TskEmp_EmpTaskActual.EmpTaskId, TskEmp_EmpTaskActual.ExeDate, TskEmp_EmpTaskActual.TaskActualDesc, TskEmp_EmpTask.TaskId, 
+                         TskEmp_EmpTaskActual.RequestedQuentity, TskEmp_EmpTaskActual.CompletedQuentity
 FROM            TskEmp_EmpTaskActual INNER JOIN
                          TskEmp_EmpTask ON TskEmp_EmpTaskActual.EmpTaskId = TskEmp_EmpTask.EmpTaskId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        TskEmp_EmpTaskActual.EmpTaskActualId, TskEmp_EmpTaskActual.EmpTaskId, TskEmp_EmpTaskActual.ExeDate, TskEmp_EmpTaskActual.TaskActualDesc, TskEmp_EmpTask.TaskId
+            this._commandCollection[1].CommandText = @"SELECT        TskEmp_EmpTaskActual.EmpTaskActualId, TskEmp_EmpTaskActual.EmpTaskId, TskEmp_EmpTaskActual.ExeDate, TskEmp_EmpTaskActual.TaskActualDesc, TskEmp_EmpTask.TaskId, 
+                         TskEmp_EmpTaskActual.RequestedQuentity, TskEmp_EmpTaskActual.CompletedQuentity
 FROM            TskEmp_EmpTaskActual INNER JOIN
                          TskEmp_EmpTask ON TskEmp_EmpTaskActual.EmpTaskId = TskEmp_EmpTask.EmpTaskId
-WHERE        (CONVERT(DATETIME, CONVERT(VARCHAR, TskEmp_EmpTaskActual.ExeDate, 104), 104) = CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104)) AND (TskEmp_EmpTask.EmpId = @EmpId)
-
-
-";
+WHERE        (CONVERT(DATETIME, CONVERT(VARCHAR, TskEmp_EmpTaskActual.ExeDate, 104), 104) = CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104)) AND (TskEmp_EmpTask.EmpId = @EmpId)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -5896,89 +5989,6 @@ WHERE        (CONVERT(DATETIME, CONVERT(VARCHAR, TskEmp_EmpTaskActual.ExeDate, 1
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_EmpTaskId, System.DateTime Original_ExeDate) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_EmpTaskId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_ExeDate));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int EmpTaskId, System.DateTime ExeDate, string TaskActualDesc) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(EmpTaskId));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(ExeDate));
-            if ((TaskActualDesc == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(TaskActualDesc));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int EmpTaskId, System.DateTime ExeDate, string TaskActualDesc, int Original_EmpTaskId, System.DateTime Original_ExeDate) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(EmpTaskId));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(ExeDate));
-            if ((TaskActualDesc == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(TaskActualDesc));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_EmpTaskId));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_ExeDate));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
         }
     }
     
@@ -7227,8 +7237,8 @@ SELECT TaskId, TaskName, TaskDays, TaskDesc, UserIn, DateIn FROM TskEmp_Task WHE
             this._commandCollection = new global::System.Data.IDbCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = @"INSERT INTO [dbo].[TskEmp_EmpTaskActual] ([EmpTaskId], [ExeDate], [TaskActualDesc])
-SELECT [EmpTaskId], CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104), NULL
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = @"INSERT INTO [dbo].[TskEmp_EmpTaskActual] ([EmpTaskId], [ExeDate], [TaskActualDesc], RequestedQuentity, CompletedQuentity)
+SELECT [EmpTaskId], CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104), NULL, 1, 0
 FROM [dbo].[TskEmp_EmpTask] WHERE NOT EXISTS(SELECT [EmpTaskId] FROM [TskEmp_EmpTaskActual] TBL 
 WHERE [EmpTaskId] = [TskEmp_EmpTask].[EmpTaskId] AND 
 ExeDate BETWEEN DateAdd(DAY, (-1 * (SELECT TaskDays FROM TskEmp_Task WHERE TaskId = [TskEmp_EmpTask].TaskId)) + 1, CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104)) AND CONVERT(DATETIME, CONVERT(VARCHAR, GETDATE(), 104), 104) )

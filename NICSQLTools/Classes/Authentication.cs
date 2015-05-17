@@ -28,7 +28,7 @@ namespace NICSQLTools.Classes
 
                     if (MsgDlg.Show(String.Format("Your PC Is not Authorized To Run This Application{0}Wanna Ask For Approve ?", Environment.NewLine), MsgDlg.MessageType.Question) == DialogResult.Yes)
                     {//Yes
-                        Classes.Managers.DataManager.adpQry.AuthenticationRequest(MachineID, Classes.Managers.UserManager.defaultInstance.User.UserId);
+                        Classes.Managers.DataManager.adpQry.AuthenticationRequest(MachineID, Classes.Managers.UserManager.defaultInstance.User.UserId, Environment.UserName);
                         MsgDlg.Show(String.Format("Your Request Send To Administrator, Please Wait For Approval.{0} Application Will Shutdown", Environment.NewLine), MsgDlg.MessageType.Success);
                     }
                     System.Diagnostics.Process.GetCurrentProcess().Kill();

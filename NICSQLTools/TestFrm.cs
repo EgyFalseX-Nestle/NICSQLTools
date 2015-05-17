@@ -51,7 +51,7 @@ namespace NICSQLTools
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            Classes.msExcel.CreatePivotByRecordSet(pivotGridControl1, "New Data Sheet", @"C:\111.xlsx");
+            Classes.msExcel.CreatePivotByRange(pivotGridControl1, "AAAA", @"C:\111.xlsx");
             MessageBox.Show("Done ...");
         }
 

@@ -194,6 +194,8 @@
     <Compile Include="Classes\Authentication.cs" />
     <Compile Include="Classes\Core.cs" />
     <Compile Include="Classes\Cost.cs" />
+    <Compile Include="Classes\Stock_Material.cs" />
+    <Compile Include="Classes\Stock_List.cs" />
     <Compile Include="Classes\msExcel.cs" />
     <Compile Include="Classes\QueryLayout.cs" />
     <Compile Include="Classes\Dashboard.cs" />
@@ -316,6 +318,18 @@
     </Compile>
     <Compile Include="Views\Data\TaskManager\TaskEditorUC.Designer.cs">
       <DependentUpon>TaskEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportStock_MaterialUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportStock_MaterialUC.Designer.cs">
+      <DependentUpon>ImportStock_MaterialUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportStock_ListUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportStock_ListUC.Designer.cs">
+      <DependentUpon>ImportStock_ListUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportUpdateProductDetailsUC.cs">
       <SubType>UserControl</SubType>
@@ -591,6 +605,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\TaskManager\TaskEditorUC.resx">
       <DependentUpon>TaskEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportStock_MaterialUC.resx">
+      <DependentUpon>ImportStock_MaterialUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportStock_ListUC.resx">
+      <DependentUpon>ImportStock_ListUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportUpdateProductDetailsUC.resx">
       <DependentUpon>ImportUpdateProductDetailsUC.cs</DependentUpon>

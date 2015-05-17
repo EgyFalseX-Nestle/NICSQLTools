@@ -48,6 +48,9 @@
             this.repositoryItemLookUpEditTaskId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LSMSTask = new DevExpress.Data.Linq.LinqServerModeSource();
             this.colTaskActualDesc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRequestedQuentity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEditf2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.colCompletedQuentity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LSMSUsers = new DevExpress.Data.Linq.LinqServerModeSource();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridControlFactors = new DevExpress.XtraGrid.GridControl();
@@ -61,6 +64,7 @@
             this.colDateIn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tskEmp_EmpTaskActualTableAdapter = new NICSQLTools.Data.dsTaskTableAdapters.TskEmp_EmpTaskActualTableAdapter();
             this.tskEmp_EmpTaskActualFactorTableAdapter = new NICSQLTools.Data.dsTaskTableAdapters.TskEmp_EmpTaskActualFactorTableAdapter();
+            this.repositoryItemMemoExEditDesc = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
@@ -69,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditTaskId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditf2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
@@ -77,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewFactors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditFactorId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSFactor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).BeginInit();
             this.SuspendLayout();
             // 
             // popupMenuMain
@@ -180,8 +186,10 @@
             this.gridControlMain.MenuManager = this.barManagerMain;
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEditTaskId});
-            this.gridControlMain.Size = new System.Drawing.Size(461, 377);
+            this.repositoryItemLookUpEditTaskId,
+            this.repositoryItemTextEditf2,
+            this.repositoryItemMemoExEditDesc});
+            this.gridControlMain.Size = new System.Drawing.Size(570, 377);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -201,6 +209,8 @@
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn7,
+            this.colRequestedQuentity,
+            this.colCompletedQuentity,
             this.colTaskActualDesc});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
@@ -259,11 +269,51 @@
             this.colTaskActualDesc.AppearanceHeader.Options.UseTextOptions = true;
             this.colTaskActualDesc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTaskActualDesc.Caption = "Comments";
+            this.colTaskActualDesc.ColumnEdit = this.repositoryItemMemoExEditDesc;
             this.colTaskActualDesc.FieldName = "TaskActualDesc";
             this.colTaskActualDesc.Name = "colTaskActualDesc";
             this.colTaskActualDesc.Visible = true;
-            this.colTaskActualDesc.VisibleIndex = 1;
+            this.colTaskActualDesc.VisibleIndex = 3;
             this.colTaskActualDesc.Width = 199;
+            // 
+            // colRequestedQuentity
+            // 
+            this.colRequestedQuentity.AppearanceCell.Options.UseTextOptions = true;
+            this.colRequestedQuentity.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRequestedQuentity.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRequestedQuentity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRequestedQuentity.Caption = "Requested Quentity";
+            this.colRequestedQuentity.ColumnEdit = this.repositoryItemTextEditf2;
+            this.colRequestedQuentity.FieldName = "RequestedQuentity";
+            this.colRequestedQuentity.Name = "colRequestedQuentity";
+            this.colRequestedQuentity.Visible = true;
+            this.colRequestedQuentity.VisibleIndex = 1;
+            this.colRequestedQuentity.Width = 117;
+            // 
+            // repositoryItemTextEditf2
+            // 
+            this.repositoryItemTextEditf2.AutoHeight = false;
+            this.repositoryItemTextEditf2.DisplayFormat.FormatString = "f2";
+            this.repositoryItemTextEditf2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEditf2.EditFormat.FormatString = "f2";
+            this.repositoryItemTextEditf2.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEditf2.Mask.EditMask = "f2";
+            this.repositoryItemTextEditf2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEditf2.Name = "repositoryItemTextEditf2";
+            // 
+            // colCompletedQuentity
+            // 
+            this.colCompletedQuentity.AppearanceCell.Options.UseTextOptions = true;
+            this.colCompletedQuentity.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCompletedQuentity.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCompletedQuentity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCompletedQuentity.Caption = "Completed Quentity";
+            this.colCompletedQuentity.ColumnEdit = this.repositoryItemTextEditf2;
+            this.colCompletedQuentity.FieldName = "CompletedQuentity";
+            this.colCompletedQuentity.Name = "colCompletedQuentity";
+            this.colCompletedQuentity.Visible = true;
+            this.colCompletedQuentity.VisibleIndex = 2;
+            this.colCompletedQuentity.Width = 116;
             // 
             // LSMSUsers
             // 
@@ -283,7 +333,7 @@
             this.splitContainerControl1.Panel2.Text = "Actual Completion";
             this.splitContainerControl1.ShowCaption = true;
             this.splitContainerControl1.Size = new System.Drawing.Size(936, 377);
-            this.splitContainerControl1.SplitterPosition = 461;
+            this.splitContainerControl1.SplitterPosition = 570;
             this.splitContainerControl1.TabIndex = 10;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -302,7 +352,7 @@
             this.gridControlFactors.Name = "gridControlFactors";
             this.gridControlFactors.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditFactorId});
-            this.gridControlFactors.Size = new System.Drawing.Size(470, 377);
+            this.gridControlFactors.Size = new System.Drawing.Size(361, 377);
             this.gridControlFactors.TabIndex = 6;
             this.gridControlFactors.UseEmbeddedNavigator = true;
             this.gridControlFactors.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -405,6 +455,13 @@
             // 
             this.tskEmp_EmpTaskActualFactorTableAdapter.ClearBeforeFill = true;
             // 
+            // repositoryItemMemoExEditDesc
+            // 
+            this.repositoryItemMemoExEditDesc.AutoHeight = false;
+            this.repositoryItemMemoExEditDesc.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemMemoExEditDesc.Name = "repositoryItemMemoExEditDesc";
+            // 
             // EmpTaskActualEditorUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditTaskId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditf2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
@@ -433,6 +491,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewFactors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditFactorId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSFactor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditDesc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,5 +529,9 @@
         private System.Windows.Forms.BindingSource tskEmpEmpTaskActualFactorBindingSource;
         private NICSQLTools.Data.dsTaskTableAdapters.TskEmp_EmpTaskActualTableAdapter tskEmp_EmpTaskActualTableAdapter;
         private NICSQLTools.Data.dsTaskTableAdapters.TskEmp_EmpTaskActualFactorTableAdapter tskEmp_EmpTaskActualFactorTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colRequestedQuentity;
+        private DevExpress.XtraGrid.Columns.GridColumn colCompletedQuentity;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEditf2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditDesc;
     }
 }

@@ -216,6 +216,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\dsDataSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDataSource.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\dsQry1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -354,6 +359,12 @@
     </Compile>
     <Compile Include="Views\Permission\LookupValuesDetailsDlg.Designer.cs">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\ExcelDynamicUpdateUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\ExcelDynamicUpdateUC.Designer.cs">
+      <DependentUpon>ExcelDynamicUpdateUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Qry\QryCustomerInfoUC.cs">
       <SubType>UserControl</SubType>
@@ -624,6 +635,9 @@
     <EmbeddedResource Include="Views\Permission\LookupValuesDetailsDlg.resx">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\ExcelDynamicUpdateUC.resx">
+      <DependentUpon>ExcelDynamicUpdateUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\QryCustomerInfoUC.resx">
       <DependentUpon>QryCustomerInfoUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -702,6 +716,17 @@
     <EmbeddedResource Include="Views\Qry\QryPivotUC.resx">
       <DependentUpon>QryPivotUC.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Data\dsDataSource.xsc">
+      <DependentUpon>dsDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsDataSource.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDataSource.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\dsDataSource.xss">
+      <DependentUpon>dsDataSource.xsd</DependentUpon>
+    </None>
     <None Include="Data\dsTask.xsc">
       <DependentUpon>dsTask.xsd</DependentUpon>
     </None>

@@ -45,14 +45,7 @@ namespace NICSQLTools
 
         private void TestFrm_Load(object sender, EventArgs e)
         {
-            pivotGridControl1.DataSource = dt;
-            pivotGridControl1.RetrieveFields();
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            Classes.msExcel.CreatePivotByRange(pivotGridControl1, "AAAA", @"C:\111.xlsx");
-            MessageBox.Show("Done ...");
+          
         }
 
     }

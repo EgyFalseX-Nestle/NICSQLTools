@@ -656,8 +656,7 @@ namespace NICSQLTools.Views.Qry
             // Open the Preview window.
             pivotGridControlMain.ShowRibbonPrintPreview();
         }
-      
-        
+
         #endregion
 
     }

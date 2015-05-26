@@ -114,7 +114,9 @@
     <Reference Include="DevExpress.XtraCharts.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v14.2.Extensions, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.2.Extensions, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.XtraCharts.v14.2.UI, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -160,6 +162,9 @@
     <Reference Include="DevExpress.XtraVerticalGrid.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraWizard.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FXFW, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\FalseX\FXFW\Releases\FXFW.dll</HintPath>
@@ -194,9 +199,14 @@
     <Compile Include="Classes\Authentication.cs" />
     <Compile Include="Classes\Core.cs" />
     <Compile Include="Classes\Cost.cs" />
+    <Compile Include="Classes\msExcel\DynamicRefresh\DatasourceBase.cs" />
+    <Compile Include="Classes\msExcel\DynamicRefresh\DynamicRefresh.cs" />
+    <Compile Include="Classes\msExcel\DynamicRefresh\ParamBase.cs" />
+    <Compile Include="Classes\msExcel\DynamicRefresh\xlDRJob.cs" />
+    <Compile Include="Classes\msExcel\xlTypes.cs" />
     <Compile Include="Classes\Stock_Material.cs" />
     <Compile Include="Classes\Stock_List.cs" />
-    <Compile Include="Classes\msExcel.cs" />
+    <Compile Include="Classes\msExcel\msExcel.cs" />
     <Compile Include="Classes\QueryLayout.cs" />
     <Compile Include="Classes\Dashboard.cs" />
     <Compile Include="Classes\Managers\UserManager.cs" />
@@ -365,6 +375,12 @@
     </Compile>
     <Compile Include="Views\Qry\ExcelDynamicUpdateUC.Designer.cs">
       <DependentUpon>ExcelDynamicUpdateUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\OpenXlDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\OpenXlDlg.Designer.cs">
+      <DependentUpon>OpenXlDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Qry\QryCustomerInfoUC.cs">
       <SubType>UserControl</SubType>
@@ -638,6 +654,9 @@
     <EmbeddedResource Include="Views\Qry\ExcelDynamicUpdateUC.resx">
       <DependentUpon>ExcelDynamicUpdateUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\OpenXlDlg.resx">
+      <DependentUpon>OpenXlDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\QryCustomerInfoUC.resx">
       <DependentUpon>QryCustomerInfoUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -835,6 +854,8 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\Excel128.png" />
+    <None Include="Resources\Excel64.png" />
     <None Include="Resources\Task128.png" />
     <None Include="Resources\Task64.png" />
     <None Include="Resources\grid_32x32.png" />

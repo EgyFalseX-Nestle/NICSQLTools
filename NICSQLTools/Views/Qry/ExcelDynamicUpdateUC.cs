@@ -13,15 +13,21 @@ namespace NICSQLTools.Views.Qry
 {
     public partial class ExcelDynamicUpdateUC : DevExpress.XtraEditors.XtraUserControl
     {
-        public ExcelDynamicUpdateUC()
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(ExcelDynamicUpdateUC));
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+
+        public ExcelDynamicUpdateUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
+            _elementRule = RuleElement;
         }
 
         private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (ofd.ShowDialog() == DialogResult.Cancel)
+            OpenXlDlg dlg = new OpenXlDlg();
+            if (dlg.ShowDialog() == DialogResult.Cancel)
                 return;
+
 
         }
     }

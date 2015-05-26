@@ -191,6 +191,9 @@ namespace NICSQLTools.Classes.Managers
             Asm.Add("DevExpress.XtraRichEdit.v14.2.Extensions.dll", 142415030);
             Asm.Add("DevExpress.XtraTreeList.v14.2.dll", 142415030);
             Asm.Add("DevExpress.XtraVerticalGrid.v14.2.dll", 142415030);
+            Asm.Add("DevExpress.XtraCharts.v14.2.Extensions.dll", 142415030);
+            Asm.Add("DevExpress.XtraWizard.v14.2.dll", 142415030);
+            
             Asm.Add("FXFW.dll", 1003);
             //Asm.Add("Interop.DAO.dll", 5000);
             Asm.Add("Ionic.Zip.dll", 1918);

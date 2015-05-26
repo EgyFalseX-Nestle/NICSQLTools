@@ -192,10 +192,10 @@
             // 
             this.rtbLog.BackColor = System.Drawing.Color.Black;
             this.rtbLog.ForeColor = System.Drawing.Color.Lime;
-            this.rtbLog.Location = new System.Drawing.Point(45, 296);
+            this.rtbLog.Location = new System.Drawing.Point(12, 296);
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.ReadOnly = true;
-            this.rtbLog.Size = new System.Drawing.Size(843, 69);
+            this.rtbLog.Size = new System.Drawing.Size(876, 69);
             this.rtbLog.TabIndex = 8;
             this.rtbLog.Text = "Ready";
             // 
@@ -462,7 +462,8 @@
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(880, 73);
             this.layoutControlItem5.Text = "Result";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(30, 13);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // appExcelDynamicUpdateParamTableAdapter
             // 

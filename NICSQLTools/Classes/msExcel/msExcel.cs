@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
 
-namespace NICSQLTools.Classes
+namespace NICSQLTools.Classes.msExcel
 {
-    public static class msExcel
+    public static class PivotCreator
     {
-        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(msExcel));
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(PivotCreator));
         readonly static object useDefault = Type.Missing;
 
-        
+        #region  - Create Pivot - 
+
         static public ADODB.Recordset ConvertToRecordset(System.Data.DataTable inTable)
         {
             ADODB.Recordset result = new ADODB.Recordset();
@@ -145,7 +146,7 @@ namespace NICSQLTools.Classes
             Range pivotSourceRange = null;
             try
             {
-                
+
 
                 // load excel, and create a new workbook
                 ExcelApp = new Application();
@@ -175,7 +176,7 @@ namespace NICSQLTools.Classes
                 pivotDestinationRange = PivotWorksheet.get_Range("A1", useDefault);
 
                 PivotTable xlPivot = PivotWorksheet.PivotTableWizard(XlPivotTableSourceType.xlDatabase, pivotSourceRange, pivotDestinationRange, pivotTableName, true, true, true, false, useDefault, useDefault, false, false, XlOrder.xlDownThenOver, useDefault, useDefault, useDefault);
-                
+
 
                 for (int i = 0; i < pivotControl.Fields.Count; i++)
                 {
@@ -244,7 +245,7 @@ namespace NICSQLTools.Classes
                     //Set Filtering
                     //xlField.PivotFilters.Add2()
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -312,7 +313,7 @@ namespace NICSQLTools.Classes
                 xlPivot.SmallGrid = false;
                 xlPivot.ShowTableStyleRowStripes = true;
                 xlPivot.TableStyle2 = "PivotStyleLight1";
- 
+
 
                 // Save the Workbook.
                 excelWorkBook.SaveAs(workBookPath, useDefault, useDefault, useDefault, useDefault, useDefault,
@@ -393,7 +394,7 @@ namespace NICSQLTools.Classes
                 //    //Set Filtering
                 //    //xlField.PivotFilters.Add2()
                 //}
-                
+
                 //// Save the Workbook.
                 //excelWorkBook.SaveAs(workBookPath, useDefault, useDefault, useDefault, useDefault, useDefault,
                 //    XlSaveAsAccessMode.xlNoChange, useDefault, useDefault, useDefault, useDefault, useDefault);
@@ -454,7 +455,7 @@ namespace NICSQLTools.Classes
                 else
                     targetSheet.Name = workSheetName;
 
-                
+
 
                 // Create PivCache for the Pivot Table.
                 PivotCache xlPc = excelWorkBook.PivotCaches().Add(XlPivotTableSourceType.xlExternal, useDefault);
@@ -589,6 +590,9 @@ namespace NICSQLTools.Classes
             }
         }
 
+        #endregion
+
+        
 
     }
 }

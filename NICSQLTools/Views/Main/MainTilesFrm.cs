@@ -204,6 +204,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Qry.QryCustomerInfoUC(RuleElemet);
             }
+            else if (e.Document == docQueriesExcelDynamicUpdate)
+            {
+                e.Control = new Views.Qry.ExcelDynamicUpdateUC(RuleElemet);
+            }
 
             else if (e.Document == docDashboardDesigner)//--------------------  Dashboard
             {

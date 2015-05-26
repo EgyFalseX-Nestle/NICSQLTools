@@ -8581,6 +8581,10 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnDatasourceID;
             
+            private global::System.Data.DataColumn columnDatasourceName;
+            
+            private global::System.Data.DataColumn columnDatasourceSPName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public UserRuleDatasourceDataTable() {
@@ -8624,6 +8628,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DatasourceNameColumn {
+                get {
+                    return this.columnDatasourceName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DatasourceSPNameColumn {
+                get {
+                    return this.columnDatasourceSPName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8659,10 +8679,12 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UserRuleDatasourceRow AddUserRuleDatasourceRow(int DatasourceID) {
+            public UserRuleDatasourceRow AddUserRuleDatasourceRow(int DatasourceID, string DatasourceName, string DatasourceSPName) {
                 UserRuleDatasourceRow rowUserRuleDatasourceRow = ((UserRuleDatasourceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        DatasourceID};
+                        DatasourceID,
+                        DatasourceName,
+                        DatasourceSPName};
                 rowUserRuleDatasourceRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUserRuleDatasourceRow);
                 return rowUserRuleDatasourceRow;
@@ -8693,6 +8715,8 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnDatasourceID = base.Columns["DatasourceID"];
+                this.columnDatasourceName = base.Columns["DatasourceName"];
+                this.columnDatasourceSPName = base.Columns["DatasourceSPName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8700,10 +8724,16 @@ namespace NICSQLTools.Data {
             private void InitClass() {
                 this.columnDatasourceID = new global::System.Data.DataColumn("DatasourceID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatasourceID);
+                this.columnDatasourceName = new global::System.Data.DataColumn("DatasourceName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatasourceName);
+                this.columnDatasourceSPName = new global::System.Data.DataColumn("DatasourceSPName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatasourceSPName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDatasourceID}, true));
                 this.columnDatasourceID.AllowDBNull = false;
                 this.columnDatasourceID.Unique = true;
+                this.columnDatasourceName.MaxLength = 50;
+                this.columnDatasourceSPName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15756,6 +15786,62 @@ namespace NICSQLTools.Data {
                     this[this.tableUserRuleDatasource.DatasourceIDColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DatasourceName {
+                get {
+                    try {
+                        return ((string)(this[this.tableUserRuleDatasource.DatasourceNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatasourceName\' in table \'UserRuleDatasource\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUserRuleDatasource.DatasourceNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DatasourceSPName {
+                get {
+                    try {
+                        return ((string)(this[this.tableUserRuleDatasource.DatasourceSPNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DatasourceSPName\' in table \'UserRuleDatasource\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUserRuleDatasource.DatasourceSPNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDatasourceNameNull() {
+                return this.IsNull(this.tableUserRuleDatasource.DatasourceNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDatasourceNameNull() {
+                this[this.tableUserRuleDatasource.DatasourceNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDatasourceSPNameNull() {
+                return this.IsNull(this.tableUserRuleDatasource.DatasourceSPNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDatasourceSPNameNull() {
+                this[this.tableUserRuleDatasource.DatasourceSPNameColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -22156,6 +22242,8 @@ ORDER BY [0-1  Master All].[Billing date for bil] DESC";
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "UserRuleDatasource";
             tableMapping.ColumnMappings.Add("DatasourceID", "DatasourceID");
+            tableMapping.ColumnMappings.Add("DatasourceName", "DatasourceName");
+            tableMapping.ColumnMappings.Add("DatasourceSPName", "DatasourceSPName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -22172,15 +22260,17 @@ ORDER BY [0-1  Master All].[Billing date for bil] DESC";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        DatasourceID\r\nFROM            AppDatasource\r\nGROUP BY DatasourceID";
+            this._commandCollection[0].CommandText = "SELECT        DatasourceID, DatasourceName, DatasourceSPName\r\nFROM            App" +
+                "Datasource\r\nGROUP BY DatasourceID, DatasourceName, DatasourceSPName";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        AppRuleDatasource.DatasourceID
+            this._commandCollection[1].CommandText = @"SELECT        AppRuleDatasource.DatasourceID, AppDatasource.DatasourceName, AppDatasource.DatasourceSPName
 FROM            AppRuleDatasource INNER JOIN
-                         AppUserRule ON AppRuleDatasource.RuleID = AppUserRule.RuleId
+                         AppUserRule ON AppRuleDatasource.RuleID = AppUserRule.RuleId INNER JOIN
+                         AppDatasource ON AppRuleDatasource.DatasourceID = AppDatasource.DatasourceID
 WHERE        (AppUserRule.UserId = @UserId)
-GROUP BY AppRuleDatasource.DatasourceID";
+GROUP BY AppRuleDatasource.DatasourceID, AppDatasource.DatasourceName, AppDatasource.DatasourceSPName";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

@@ -631,9 +631,9 @@ namespace NICSQLTools.Views.Qry
             if (sfd.ShowDialog() == DialogResult.Cancel)
                 return;
             if (((DataTable)pivotGridControlMain.DataSource).Rows.Count <= 1000000)
-                Classes.msExcel.CreatePivotByRecordSet(pivotGridControlMain, _selectedDatasource.DatasourceName, sfd.FileName);
+                Classes.msExcel.PivotCreator.CreatePivotByRecordSet(pivotGridControlMain, _selectedDatasource.DatasourceName, sfd.FileName);
             else
-                Classes.msExcel.CreatePivotByRecordSet(pivotGridControlMain, Application.ProductName, sfd.FileName);
+                Classes.msExcel.PivotCreator.CreatePivotByRecordSet(pivotGridControlMain, Application.ProductName, sfd.FileName);
             
         }
         private void bbiExportRow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

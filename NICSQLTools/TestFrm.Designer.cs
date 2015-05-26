@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.excelDynamicUpdateUC1 = new NICSQLTools.Views.Qry.ExcelDynamicUpdateUC();
+            this.excelDynamicUpdateUC1 = new NICSQLTools.Views.Qry.ExcelDynamicUpdateUC(null);
             this.SuspendLayout();
             // 
             // excelDynamicUpdateUC1

@@ -30,6 +30,8 @@ namespace NICSQLTools.Data {
         
         private AppExcuteResultDataTable tableAppExcuteResult;
         
+        private global::System.Data.DataRelation relationAppExcelDynamicUpdate_AppExcelDynamicUpdateParam;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,6 +244,7 @@ namespace NICSQLTools.Data {
                     this.tableAppExcuteResult.InitVars();
                 }
             }
+            this.relationAppExcelDynamicUpdate_AppExcelDynamicUpdateParam = this.Relations["AppExcelDynamicUpdate_AppExcelDynamicUpdateParam"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +261,10 @@ namespace NICSQLTools.Data {
             base.Tables.Add(this.tableAppExcelDynamicUpdateParam);
             this.tableAppExcuteResult = new AppExcuteResultDataTable();
             base.Tables.Add(this.tableAppExcuteResult);
+            this.relationAppExcelDynamicUpdate_AppExcelDynamicUpdateParam = new global::System.Data.DataRelation("AppExcelDynamicUpdate_AppExcelDynamicUpdateParam", new global::System.Data.DataColumn[] {
+                        this.tableAppExcelDynamicUpdate.AppExcelDynamicUpdateIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAppExcelDynamicUpdateParam.AppExcelDynamicUpdateIdColumn}, false);
+            this.Relations.Add(this.relationAppExcelDynamicUpdate_AppExcelDynamicUpdateParam);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -519,10 +526,10 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppExcelDynamicUpdateRow AddAppExcelDynamicUpdateRow(string FileName, string FilePath, int DatasourceID, System.DateTime ExcuteStartDate, System.DateTime ExcuteEndDate, int ExcuteResultId, int UserIn, System.DateTime DateIn, string ConnectionName) {
+            public AppExcelDynamicUpdateRow AddAppExcelDynamicUpdateRow(int AppExcelDynamicUpdateId, string FileName, string FilePath, int DatasourceID, System.DateTime ExcuteStartDate, System.DateTime ExcuteEndDate, int ExcuteResultId, int UserIn, System.DateTime DateIn, string ConnectionName) {
                 AppExcelDynamicUpdateRow rowAppExcelDynamicUpdateRow = ((AppExcelDynamicUpdateRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        AppExcelDynamicUpdateId,
                         FileName,
                         FilePath,
                         DatasourceID,
@@ -598,11 +605,7 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnConnectionName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAppExcelDynamicUpdateId}, true));
-                this.columnAppExcelDynamicUpdateId.AutoIncrement = true;
-                this.columnAppExcelDynamicUpdateId.AutoIncrementSeed = -1;
-                this.columnAppExcelDynamicUpdateId.AutoIncrementStep = -1;
                 this.columnAppExcelDynamicUpdateId.AllowDBNull = false;
-                this.columnAppExcelDynamicUpdateId.ReadOnly = true;
                 this.columnAppExcelDynamicUpdateId.Unique = true;
                 this.columnFileName.MaxLength = 50;
                 this.columnFilePath.MaxLength = 255;
@@ -850,13 +853,16 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppExcelDynamicUpdateParamRow AddAppExcelDynamicUpdateParamRow(int AppExcelDynamicUpdateId, int AppDatasourceParamID, string ParamValue) {
+            public AppExcelDynamicUpdateParamRow AddAppExcelDynamicUpdateParamRow(int AppExcelDynamicUpdateParamId, AppExcelDynamicUpdateRow parentAppExcelDynamicUpdateRowByAppExcelDynamicUpdate_AppExcelDynamicUpdateParam, int AppDatasourceParamID, string ParamValue) {
                 AppExcelDynamicUpdateParamRow rowAppExcelDynamicUpdateParamRow = ((AppExcelDynamicUpdateParamRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        AppExcelDynamicUpdateParamId,
                         null,
-                        AppExcelDynamicUpdateId,
                         AppDatasourceParamID,
                         ParamValue};
+                if ((parentAppExcelDynamicUpdateRowByAppExcelDynamicUpdate_AppExcelDynamicUpdateParam != null)) {
+                    columnValuesArray[1] = parentAppExcelDynamicUpdateRowByAppExcelDynamicUpdate_AppExcelDynamicUpdateParam[0];
+                }
                 rowAppExcelDynamicUpdateParamRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAppExcelDynamicUpdateParamRow);
                 return rowAppExcelDynamicUpdateParamRow;
@@ -905,11 +911,7 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnParamValue);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAppExcelDynamicUpdateParamId}, true));
-                this.columnAppExcelDynamicUpdateParamId.AutoIncrement = true;
-                this.columnAppExcelDynamicUpdateParamId.AutoIncrementSeed = -1;
-                this.columnAppExcelDynamicUpdateParamId.AutoIncrementStep = -1;
                 this.columnAppExcelDynamicUpdateParamId.AllowDBNull = false;
-                this.columnAppExcelDynamicUpdateParamId.ReadOnly = true;
                 this.columnAppExcelDynamicUpdateParamId.Unique = true;
                 this.columnParamValue.MaxLength = 2147483647;
             }
@@ -1594,6 +1596,17 @@ namespace NICSQLTools.Data {
             public void SetConnectionNameNull() {
                 this[this.tableAppExcelDynamicUpdate.ConnectionNameColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AppExcelDynamicUpdateParamRow[] GetAppExcelDynamicUpdateParamRows() {
+                if ((this.Table.ChildRelations["AppExcelDynamicUpdate_AppExcelDynamicUpdateParam"] == null)) {
+                    return new AppExcelDynamicUpdateParamRow[0];
+                }
+                else {
+                    return ((AppExcelDynamicUpdateParamRow[])(base.GetChildRows(this.Table.ChildRelations["AppExcelDynamicUpdate_AppExcelDynamicUpdateParam"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1669,6 +1682,17 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this[this.tableAppExcelDynamicUpdateParam.ParamValueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AppExcelDynamicUpdateRow AppExcelDynamicUpdateRow {
+                get {
+                    return ((AppExcelDynamicUpdateRow)(this.GetParentRow(this.Table.ParentRelations["AppExcelDynamicUpdate_AppExcelDynamicUpdateParam"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["AppExcelDynamicUpdate_AppExcelDynamicUpdateParam"]);
                 }
             }
             

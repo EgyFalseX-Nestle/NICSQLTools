@@ -47,15 +47,15 @@ namespace NICSQLTools.Views.Dashboard
         /// <param name="ds">DatasourceStrc needed to get its information</param>
         private void CreateDatasource(int DatasourceID, ref Classes.Dashboard.DatasourceStrc ds)
         {
-            NICSQLTools.Data.dsData.AppDatasourceRow DashboardDSRow = appDashboardDSTableAdapter.GetDataByDatasourceID(DatasourceID)[0];// Get information About DatasourceID
-            NICSQLTools.Data.dsData.AppDatasourceParamDataTable dtParam = appDashboardDSPramTableAdapter.GetDataByDatasourceID(DatasourceID);// Get Paramters Information For DatasourceID
+            NICSQLTools.Data.dsDataSource.AppDatasourceRow DashboardDSRow = appDashboardDSTableAdapter.GetDataByDatasourceID(DatasourceID)[0];// Get information About DatasourceID
+            NICSQLTools.Data.dsDataSource.AppDatasourceParamDataTable dtParam = appDashboardDSPramTableAdapter.GetDataByDatasourceID(DatasourceID);// Get Paramters Information For DatasourceID
 
             ds.DashboadId = DatasourceID;
             ds.DatasourceName = DashboardDSRow.DatasourceName;
             ds.DatasourceSPName = DashboardDSRow.DatasourceSPName;
 
             //Create All Datasource Paramters
-            foreach (NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow in dtParam.Rows)
+            foreach (NICSQLTools.Data.dsDataSource.AppDatasourceParamRow ParamRow in dtParam.Rows)
             {
                 NICSQLTools.Data.dsQry.Get_sp_PramDataTable tblPramType = get_sp_PramTableAdapter.GetDataByParamName(ParamRow.ParamName, DashboardDSRow.DatasourceSPName);//Get Paramter Information
                 string ParamType = string.Empty;
@@ -96,7 +96,7 @@ namespace NICSQLTools.Views.Dashboard
             ds.ExeButton = btnRefresh;
             ds.CancelButton = btnCancel;
         }
-        private Control CreateDSElement(NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow, string ParamType)
+        private Control CreateDSElement(NICSQLTools.Data.dsDataSource.AppDatasourceParamRow ParamRow, string ParamType)
         {
             object ctr = null;
             switch (ParamRow.ParamName)

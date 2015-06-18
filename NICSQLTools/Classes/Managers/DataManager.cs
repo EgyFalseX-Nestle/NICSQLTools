@@ -437,10 +437,10 @@ namespace NICSQLTools.Classes.Managers
             }
             return null;
         }
-        public static List<DataTable> GetStoredProcedureSchema(Data.dsData.AppDatasourceDataTable DashboardTbl)
+        public static List<DataTable> GetStoredProcedureSchema(Data.dsDataSource.AppDatasourceDataTable DashboardTbl)
         {
             List<DataTable> Tbls = new List<DataTable>();
-            foreach (Data.dsData.AppDatasourceRow row in DashboardTbl.Rows)
+            foreach (Data.dsDataSource.AppDatasourceRow row in DashboardTbl.Rows)
             {
                 DataTable dt = GetStoredProcedureSchema(row.DatasourceSPName);
                 if (dt != null)

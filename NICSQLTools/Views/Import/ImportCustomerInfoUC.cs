@@ -181,7 +181,6 @@ _______________________________________________
                 Logger.Info(strLog);
             }));
         }
-
         public void ActivateRules()
         {
             btnImport.Visible = _elementRule.Inserting;

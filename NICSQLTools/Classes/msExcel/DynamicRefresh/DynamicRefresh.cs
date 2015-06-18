@@ -10,7 +10,7 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
     public static class DynamicRefresh
     {
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(DynamicRefresh));
-        private static NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter adpParam = new Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
+        private static NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceParamTableAdapter adpParam = new Data.dsDataSourceTableAdapters.AppDatasourceParamTableAdapter();
         
         public static List<System.Data.DataTable> GetExcelConnections(string filename)
         {
@@ -119,7 +119,7 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
         /// <param name="ParamValue">Paramters Selected Values</param>
         private static void GetSpParam(Data.dsDataSource.AppExcelDynamicUpdateRow DynRow, ref Data.dsDataSource.AppExcelDynamicUpdateParamDataTable DynParamTbl, List<string> ParamValue)
         {
-            Data.dsData.AppDatasourceParamDataTable tbl = adpParam.GetDataByDatasourceID(DynRow.DatasourceID);
+            Data.dsDataSource.AppDatasourceParamDataTable tbl = adpParam.GetDataByDatasourceID(DynRow.DatasourceID);
             for (int i = 0; i < tbl.Rows.Count; i++)
             {
                 Data.dsDataSource.AppExcelDynamicUpdateParamRow row = DynParamTbl.NewAppExcelDynamicUpdateParamRow();

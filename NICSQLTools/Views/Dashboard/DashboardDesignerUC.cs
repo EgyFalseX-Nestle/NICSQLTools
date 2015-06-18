@@ -38,7 +38,7 @@ namespace NICSQLTools.Views.Dashboard
                 {
                     dashboardDesignerMain.Dashboard.DataSources.Clear();
                     //Load All Saved Data Sources
-                    appDashboardDSTableAdapter.Fill(dsData.AppDatasource);
+                    appDashboardDSTableAdapter.Fill(dsDataSource.AppDatasource);
                 }));
                 SplashScreenManager.CloseForm();
             });

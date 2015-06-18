@@ -272,7 +272,7 @@
             this.XPSCS.AllowNew = true;
             this.XPSCS.AllowRemove = true;
             this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData.AppDatasourceParamDataTable);
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsDataSource.AppDatasourceParamDataTable);
             this.XPSCS.Session = this.UOW;
             // 
             // popupMenuMain

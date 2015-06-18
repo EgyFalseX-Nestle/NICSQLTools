@@ -324,4 +324,10 @@
       <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.AppExcuteResult" Member="AppExcuteResults">
+    <Type Name="AppExcuteResult">
+      <Column Name="ExcuteResultId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ExcuteResultName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

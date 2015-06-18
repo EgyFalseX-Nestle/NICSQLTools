@@ -21,7 +21,7 @@ namespace NICSQLTools.Views.Dashboard
         public NICSQLTools.Data.dsQry.vAppDatasourceForUserRow DataSourceRow;
         private NICSQLTools.Uti.Types.AppDatasourceTypeIdEnum DatasourceType = Uti.Types.AppDatasourceTypeIdEnum.SPQry;
         NICSQLTools.Views.Main.rtfTextViewerFrm FrmViewer;
-        NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter adp = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
+        NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter adp = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter();
         #endregion
         #region -   Functions   -
         public DatasourceOpenDlg(NICSQLTools.Uti.Types.AppDatasourceTypeIdEnum Type)

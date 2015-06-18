@@ -29,6 +29,8 @@ namespace NICSQLTools.Views.Qry
         List<string> ProgressList = new List<string>();
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.dsQry.vAppDatasourceForUserRow _selectedDatasource = null;
+        UpdateInfo DynNotify = null;
+
         #endregion
         #region -   Functions   -
         public QryPivotUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
@@ -83,15 +85,15 @@ namespace NICSQLTools.Views.Qry
         {
             return Task.Run(() =>
             {
-                NICSQLTools.Data.dsData.AppDatasourceRow DashboardDSRow = appDashboardDSTableAdapter.GetDataByDatasourceID(DatasourceID)[0];// Get information About DatasourceID
-                NICSQLTools.Data.dsData.AppDatasourceParamDataTable dtParam = appDashboardDSPramTableAdapter.GetDataByDatasourceID(DatasourceID);// Get Paramters Information For DatasourceID
+                NICSQLTools.Data.dsDataSource.AppDatasourceRow DashboardDSRow = appDashboardDSTableAdapter.GetDataByDatasourceID(DatasourceID)[0];// Get information About DatasourceID
+                NICSQLTools.Data.dsDataSource.AppDatasourceParamDataTable dtParam = appDashboardDSPramTableAdapter.GetDataByDatasourceID(DatasourceID);// Get Paramters Information For DatasourceID
 
                 DataSourceList.DashboadId = DatasourceID;
                 DataSourceList.DatasourceName = DashboardDSRow.DatasourceName;
                 DataSourceList.DatasourceSPName = DashboardDSRow.DatasourceSPName;
 
                 //Create All Datasource Paramters
-                foreach (NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow in dtParam.Rows)
+                foreach (NICSQLTools.Data.dsDataSource.AppDatasourceParamRow ParamRow in dtParam.Rows)
                 {
                     NICSQLTools.Data.dsQry.Get_sp_PramDataTable tblPramType = get_sp_PramTableAdapter.GetDataByParamName(ParamRow.ParamName, DashboardDSRow.DatasourceSPName);//Get Paramter Information
                     string ParamType = string.Empty;
@@ -104,6 +106,27 @@ namespace NICSQLTools.Views.Qry
                     //Add Control to Datasource Controls List
                     DataSourceList.Controls.Add(ParamRow.ParamName, item);
                 }
+
+                //Create Excel Dynamic Update Button For Datasource
+                SimpleButton btnDyn = new SimpleButton();
+                btnDyn.Image = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+                btnDyn.Name = String.Format("btnDyn{0}{1}", DashboardDSRow.DatasourceSPName, DatasourceID);
+                btnDyn.Size = new Size(170, 22);
+                btnDyn.Location = new Point(120, layoutControlParamter.Controls.Count * 23);
+                btnDyn.Text = "Excel Dynamic Update " + DashboardDSRow.DatasourceName;
+                btnDyn.StyleController = layoutControlParamter;
+                btnDyn.Click += btnDyn_Click; btnDyn.Tag = DatasourceID;
+                //Create Cancel Button For Dynamic Update
+                SimpleButton btnDynCancel = new SimpleButton();
+                btnDynCancel.Image = global::NICSQLTools.Properties.Resources.cancel_16x16;
+                btnDynCancel.Name = String.Format("btnDynCancel{0}{1}", DashboardDSRow.DatasourceSPName, DatasourceID);
+                btnDynCancel.Size = new Size(170, 22);
+                btnDynCancel.Location = new Point(120, btnDynCancel.Location.Y + 21);
+                btnDynCancel.StyleController = layoutControlParamter;
+                btnDynCancel.Text = "Cancel Excel Dynamic Update";
+                btnDynCancel.Enabled = false;
+                btnDynCancel.Click += btnDynCancel_Click; btnDynCancel.Tag = DatasourceID;
+
                 //Create Refresh Button For Datasource
                 SimpleButton btnRefresh = new SimpleButton();
                 btnRefresh.Image = global::NICSQLTools.Properties.Resources.refresh2_16x16;
@@ -126,11 +149,13 @@ namespace NICSQLTools.Views.Qry
 
                 //Add Buttons to Datasource Controls List
                 DataSourceList.ExeButton = btnRefresh;
+                DataSourceList.EDUCancelButton = btnDynCancel;
                 DataSourceList.CancelButton = btnCancel;
+                DataSourceList.EDUButton = btnDyn;
             });
             
         }
-        private Control CreateDSElement(NICSQLTools.Data.dsData.AppDatasourceParamRow ParamRow, string ParamType)
+        private Control CreateDSElement(NICSQLTools.Data.dsDataSource.AppDatasourceParamRow ParamRow, string ParamType)
         {
             object ctr = null;
             if (!ParamRow.IsLookupIDNull())
@@ -211,13 +236,18 @@ namespace NICSQLTools.Views.Qry
                 layItem.Text = ((TextEdit)item.Value).Properties.NullValuePrompt;
                 layItem.Control = item.Value;
             }
+            //Add Excel Dynamic Update button
+            LayoutControlItem layItemBtnDyn = LayGroup.AddItem(string.Empty, ds.EDUButton);
+            layItemBtnDyn.TextVisible = false;
+            //Add Excel Dynamic Update Cancel button
+            LayoutControlItem layItemBtnDynCancel = LayGroup.AddItem(string.Empty, ds.EDUCancelButton);
+            layItemBtnDynCancel.TextVisible = false;
             //Add Refresh button
             LayoutControlItem layItemBtnRefresh = LayGroup.AddItem(string.Empty, ds.ExeButton);
             layItemBtnRefresh.TextVisible = false;
             //Add Cancel button
             LayoutControlItem layItemBtnCancel = LayGroup.AddItem(string.Empty, ds.CancelButton);
             layItemBtnCancel.TextVisible = false;
-            
         }
         private Task LoadLayoutDatasourceAsync(int DatasourceId)
         {
@@ -234,7 +264,6 @@ namespace NICSQLTools.Views.Qry
         {
             try
             {
-
                 byte[] data = Classes.QueryLayout.LoadDatasourceLayoutData(DatasourceLayoutId);
                 System.IO.MemoryStream ms = new System.IO.MemoryStream(data);
                 pivotGridControlMain.Fields.Clear();
@@ -247,73 +276,6 @@ namespace NICSQLTools.Views.Qry
                 MsgDlg.Show(ex.Message, MsgDlg.MessageType.Error, ex);
             }
             return false;
-        }
-        private CheckedComboBoxEdit CreateLookupeditForSalesDistrict21()
-        {
-            NICSQLTools.Data.dsQryTableAdapters.SalesDistrict2TableAdapter adp = new NICSQLTools.Data.dsQryTableAdapters.SalesDistrict2TableAdapter();
-            CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
-            //ccbe.Name = "ccbe";
-            ccbe.Properties.AllowMultiSelect = true;
-            ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            ccbe.Properties.DataSource = Classes.Managers.UserManager.defaultInstance.UserRuleSalesDistrictTable;
-            ccbe.Properties.DisplayMember = "Sales District 2";
-            ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            ccbe.Properties.ValueMember = "Sales District 2";
-            //ccbe.Size = new Size(100, 20);
-            //ccbe.TabIndex = 2;
-            
-            return ccbe;
-        }
-        private CheckedComboBoxEdit CreateLookupeditForMaterial1()
-        {
-            NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
-            DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
-            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[Material_Number]";
-            lsms.QueryableSource = from q in ds.vAppProductDetails select q;
-
-            CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
-            ccbe.Properties.AllowMultiSelect = true;
-            ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            ccbe.Properties.DataSource = lsms;
-            ccbe.Properties.DisplayMember = "Material_Number";
-            ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            ccbe.Properties.ValueMember = "Material_Number";
-
-            return ccbe;
-        }
-        private CheckedComboBoxEdit CreateLookupeditForBaseProduct1()
-        {
-            NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
-            DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
-            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[BaseProduct]";
-            lsms.QueryableSource = from q in ds.vAppProductDetails where q.BaseProduct != null group q by q.BaseProduct into g select new { BaseProduct = g.Key };
-
-            CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
-            ccbe.Properties.AllowMultiSelect = true;
-            ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            ccbe.Properties.DataSource = lsms;
-            ccbe.Properties.DisplayMember = "BaseProduct";
-            ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            ccbe.Properties.ValueMember = "BaseProduct";
-
-            return ccbe;
-        }
-        private CheckedComboBoxEdit CreateLookupeditForBaseGroup1()
-        {
-            NICSQLTools.Data.Linq.dsLinqDataDataContext ds = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
-            DevExpress.Data.Linq.LinqServerModeSource lsms = new DevExpress.Data.Linq.LinqServerModeSource();
-            lsms.ElementType = typeof(NICSQLTools.Data.Linq.vAppProductDetail); lsms.KeyExpression = "[BaseGroup]";
-            lsms.QueryableSource = from q in ds.vAppProductDetails where q.BaseGroup != null group q by q.BaseGroup into g select new { BaseGroup = g.Key };
-
-            CheckedComboBoxEdit ccbe = new CheckedComboBoxEdit();
-            ccbe.Properties.AllowMultiSelect = true;
-            ccbe.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            ccbe.Properties.DataSource = lsms;
-            ccbe.Properties.DisplayMember = "BaseGroup";
-            ccbe.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            ccbe.Properties.ValueMember = "BaseGroup";
-
-            return ccbe;
         }
         private CheckedComboBoxEdit CreateLookupedit(int LookupID)
         {
@@ -329,7 +291,6 @@ namespace NICSQLTools.Views.Qry
             { ((CheckedComboBoxEdit)e).RefreshEditValue(); });//validate edit value to do not select out of list items
             return ccbe;
         }
-
         private void AddToProgreeList(string WorkName)
         {
             lock (ProgressList)
@@ -394,6 +355,42 @@ namespace NICSQLTools.Views.Qry
             layoutControlItemLoad.Control.Enabled = true;
             layoutControlItemDelete.Control.Enabled = true;
         }
+        private async void btnDyn_Click(object sender, EventArgs e)
+        {
+            SimpleButton btn = (SimpleButton)sender;
+            int dsID = Convert.ToInt32(btn.Tag);
+            if (Classes.QueryLayout.ChekForEmptyPram(DataSourceList))
+            {
+                MsgDlg.Show("Please Fill All Paramters For Data Source: " + DataSourceList.DatasourceName, MsgDlg.MessageType.Info);
+                return;
+            }
+            //Creating Excel Updatable Sheet
+            Dictionary<string, object> Paramters = new Dictionary<string, object>();
+            foreach (KeyValuePair<string, Control> ctrItem in DataSourceList.Controls)
+                Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
+
+            DataSourceList.EDUButton.Enabled = false;
+            DataSourceList.EDUCancelButton.Enabled = true;
+            layoutControlGroupDatasource.Enabled = false;//Stop User Activity
+            Application.DoEvents();
+            try
+            {
+                DynNotify = new UpdateInfo(); DynNotify.AddItem(null);//Add Item To Kill Excel App
+                Classes.msExcel.DynamicRefresh.xlDRJobManager DynJobManager = new Classes.msExcel.DynamicRefresh.xlDRJobManager();
+                await DynJobManager.CreateDynamicWorkbookAsync(DataSourceList, Paramters, DynNotify);
+            }
+            catch { }
+
+            RemoveProgressList(dsID.ToString());// Remove From Working List
+            DataSourceList.EDUButton.Enabled = true;
+            DataSourceList.EDUCancelButton.Enabled = false;
+            layoutControlGroupDatasource.Enabled = true;//Stop User Activity
+        }
+        void btnDynCancel_Click(object sender, EventArgs e)
+        {
+            //Kill Excel Application
+            DynNotify.SetValue(0, null);
+        }
         async void btnRefresh_Click(object sender, EventArgs e)
         {
             SimpleButton btn = (SimpleButton)sender;
@@ -409,6 +406,7 @@ namespace NICSQLTools.Views.Qry
             foreach (KeyValuePair<string, Control> ctrItem in DataSourceList.Controls)
                 Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
 
+            DataSourceList.EDUButton.Enabled = false;
             DataSourceList.ExeButton.Enabled = false;
             DataSourceList.CancelButton.Enabled = true;
             layoutControlGroupDatasource.Enabled = false;//Stop User Activity
@@ -423,6 +421,7 @@ namespace NICSQLTools.Views.Qry
             catch { }
 
             RemoveProgressList(dsID.ToString());// Remove From Working List
+            DataSourceList.EDUButton.Enabled = true;
             DataSourceList.ExeButton.Enabled = true;
             DataSourceList.CancelButton.Enabled = false;
             layoutControlGroupDatasource.Enabled = true;//Stop User Activity

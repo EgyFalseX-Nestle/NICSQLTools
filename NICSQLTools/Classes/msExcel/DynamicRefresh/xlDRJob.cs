@@ -7,15 +7,18 @@ using Microsoft.Office.Interop.Excel;
 
 namespace NICSQLTools.Classes.msExcel.DynamicRefresh
 {
-    public class xlDRJob
+    public class xlDRJob : IDisposable
     {
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(xlDRJob));
-        NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter adpDS = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
-        NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter _adpParam = new Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
+        NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter adpDS = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter();
+        NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceParamTableAdapter _adpParam = new Data.dsDataSourceTableAdapters.AppDatasourceParamTableAdapter();
         NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter adp_spInfo = new Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
         NICSQLTools.Views.Main.rtfTextViewerFrm FrmViewer;
         DevExpress.XtraLayout.LayoutControl _layoutControlMain;
         DevExpress.XtraLayout.LayoutControlGroup _layoutControlGroupMain;
+        NICSQLTools.Data.dsDataSourceTableAdapters.AppExcelDynamicUpdateTableAdapter adpDynUp = new Data.dsDataSourceTableAdapters.AppExcelDynamicUpdateTableAdapter();
+        NICSQLTools.Data.dsDataSourceTableAdapters.AppExcelDynamicUpdateParamTableAdapter adpDynUpParam = new Data.dsDataSourceTableAdapters.AppExcelDynamicUpdateParamTableAdapter();
+        Microsoft.Office.Interop.Excel.WorkbookConnection _runningConnection = null;
 
         #region  - Properties - 
 
@@ -27,8 +30,9 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
         private DateTime _exStartDate;
         private DateTime _exEndDate;
         private xlTypes.ExcuteResult _exResult;
-        private Workbook _xlworkbook;
-        private WorkbookConnection _xlconnection;
+        private string _conname;
+        private TimeSpan _elapsed;
+
         public int ID
         {
             get { return _id; }
@@ -64,6 +68,12 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
             get { return _exEndDate; }
             set { _exEndDate = value; }
         }
+        public TimeSpan Elapsed
+        {
+            get { return _elapsed; }
+            set { _elapsed = value; }
+        }
+
         public xlTypes.ExcuteResult ExResult
         {
             get { return _exResult; }
@@ -71,42 +81,78 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
         }
         public string ConName
         {
-            get { return _xlconnection.Name; }
-            set { _xlconnection.Name = value; }
-        }
-        public Workbook xlWorkbook
-        {
-            get { return _xlworkbook; }
-            set { _xlworkbook = value; }
-        }
-        public WorkbookConnection xlconnection
-        {
-            get { return _xlconnection; }
-            set { _xlconnection = value; }
+            get { return _conname; }
+            set { _conname = value; }
         }
         public DevExpress.XtraEditors.SimpleButton _btnHelp { get; set; }
 
         #endregion
         #region  - Functions - 
+        public void Dispose()
+        {
+            if (adpDS != null)
+            {
+                adpDS.Dispose();
+                adpDS = null;
+            }
+            if (_adpParam != null)
+            {
+                _adpParam.Dispose();
+                _adpParam = null;
+            }
+            if (adp_spInfo != null)
+            {
+                adp_spInfo.Dispose();
+                adp_spInfo = null;
+            }
+            if (FrmViewer != null)
+            {
+                FrmViewer.Dispose();
+                FrmViewer = null;
+            }
+            if (_layoutControlMain != null)
+            {
+                _layoutControlMain.Dispose();
+                _layoutControlMain = null;
+            }
+            if (_layoutControlGroupMain != null)
+            {
+                _layoutControlGroupMain.Dispose();
+                _layoutControlGroupMain = null;
+            }
+            if (_btnHelp != null)
+            {
+                _btnHelp.Dispose();
+                _btnHelp = null;
+            }
+            if (adpDynUp != null)
+            {
+                adpDynUp.Dispose();
+                adpDynUp = null;
+            }
+            if (adpDynUpParam != null)
+            {
+                adpDynUpParam.Dispose();
+                adpDynUpParam = null;
+            }
+        }
         public xlDRJob(string filepath)
         {
             _filepath = filepath;
             _filename = System.IO.Path.GetFileName(filepath);
             _exResult = xlTypes.ExcuteResult.Ready;
         }
-        public static xlDRJob? GetJob(string filepath, Workbook wb, int conInx, DevExpress.XtraLayout.LayoutControl layoutctr, DevExpress.XtraLayout.LayoutControlGroup layoutgroup)
+        public static xlDRJob GetJob(string filepath, Workbook wb, int conInx)
         {
-            xlDRJob job = new xlDRJob(filepath) { _xlworkbook = wb, _xlconnection = wb.Connections[conInx] };
+            xlDRJob job = new xlDRJob(filepath) { _conname = wb.Connections[conInx].Name };
 
-            if (job._xlconnection.Type != XlConnectionType.xlConnectionTypeOLEDB)// bad connection type
+            if (wb.Connections[conInx].Type != XlConnectionType.xlConnectionTypeOLEDB)// bad connection type
                 return null;
-            if (job._xlconnection.OLEDBConnection.CommandType != XlCmdType.xlCmdSql)// bad command type
+            if (wb.Connections[conInx].OLEDBConnection.CommandType != XlCmdType.xlCmdSql)// bad command type
                 return null;
-            if (!SetDatasourceIdAndParam(job._xlconnection.OLEDBConnection.CommandText))// check if command is known and set datasource
+            //string cmdText = wb.Connections[conInx].OLEDBConnection.CommandText;
+            if (!job.SetDatasourceIdAndParam(wb.Connections[conInx].OLEDBConnection.CommandText))// check if command is known and set datasource
                 return null;
-            job._layoutControlMain = layoutctr;// Set Main Layout Control
-            job._layoutControlGroupMain = layoutgroup;// Set Main LayoutGroup
-            job.CreateDatasourceControls();// Create Datasource Layout Controls
             return job;
         }
         private bool SetDatasourceIdAndParam(string commandtext)
@@ -124,7 +170,8 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
             //get datasource id
             foreach (Data.dsQry.UserRuleDatasourceRow row in Classes.Managers.UserManager.defaultInstance.UserDatasource)
             {
-                if (row.DatasourceSPName.ToLower() == spName.ToLower())
+                string Prx_Name = spName.Replace("dbo.", "").Replace("db_accessadmin.", "").Replace("db_owner.", "").ToLower();
+                if (row.DatasourceSPName.ToLower() == Prx_Name)
                 {
                     _datasource = new DatasourceBase() { Id = row.DatasourceID, Name = row.DatasourceName, SP_Name = row.DatasourceSPName, Params = new List<ParamBase>() };
                   if (SetParam(commandtext.Substring(i)))
@@ -144,15 +191,19 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 foreach (string item in param)
                     lst.Add(item.Replace('\'', ' ').Trim());
 
-                NICSQLTools.Data.dsData.AppDatasourceParamDataTable tbl = _adpParam.GetDataByDatasourceID(_datasource.Id);
+                NICSQLTools.Data.dsDataSource.AppDatasourceParamDataTable tbl = _adpParam.GetDataByDatasourceID(_datasource.Id);
                 for (int i = 0; i < tbl.Count; i++)
                 {
                     string val;
-                    if (i <= lst.Count)
+                    if (i < lst.Count)
                         val = lst[i];
                     else
                         val = string.Empty;
-                    _datasource.Params.Add(new ParamBase() { Id = tbl[i].AppDatasourceParamID, Name = tbl[i].ParamName, DisplayName = tbl[i].ParamDisplayName, ParamValue = val, Lookup = tbl[i].LookupID });
+
+                    ParamBase newParam = new ParamBase() { Id = tbl[i].AppDatasourceParamID, Name = tbl[i].ParamName, DisplayName = tbl[i].ParamDisplayName, ParamValue = val };
+                    if (!tbl[i].IsLookupIDNull())
+                        newParam.Lookup = tbl[i].LookupID;
+                    _datasource.Params.Add(newParam);
                 }
                 output = true;
             }
@@ -162,9 +213,16 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
             }
             return output;
         }
-
-        private async void CreateDatasourceControls()
+        /// <summary>
+        /// Create Datasource Layout Controls
+        /// </summary>
+        /// <param name="layoutctr">this is the Layout Control</param>
+        /// <param name="layoutgroup">this is the Main Layout Group</param>
+        public async void CreateDatasourceControls(DevExpress.XtraLayout.LayoutControl layoutctr, DevExpress.XtraLayout.LayoutControlGroup layoutgroup)
         {
+            _layoutControlMain = layoutctr;// Set Main Layout Control
+            _layoutControlGroupMain = layoutgroup;// Set Main LayoutGroup
+
             await CreateDatasourceAsync();
             //Add Controls To Form
             CreateLayout();
@@ -194,7 +252,7 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 _btnHelp.Size = new System.Drawing.Size(170, 22);
                 //btnHelp.Location = new Point(120, layoutControlMain.Controls.Count * 23);
                 _btnHelp.Location = new System.Drawing.Point(120, Datasource.Params.Count * 23);
-                _btnHelp.Text = "show help " + Datasource.Name;
+                _btnHelp.Text = "show help for datasource"; //+ Datasource.Name;
                 //btnHelp.StyleController = layoutControlMain;
                 _btnHelp.Click += btnHelp_Click; _btnHelp.Tag = Datasource.Id;
             });
@@ -266,7 +324,9 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 }
             }
             ((DevExpress.XtraEditors.TextEdit)ctr).Properties.NullValuePrompt = param.DisplayName;
-            ((DevExpress.XtraEditors.TextEdit)ctr).EditValue = param.ParamValue;
+            //((DevExpress.XtraEditors.TextEdit)ctr).EditValue = param.ParamValue;
+            //Binding Control
+            ((DevExpress.XtraEditors.TextEdit)ctr).DataBindings.Add("EditValue", param, "ParamValue");
             return (System.Windows.Forms.Control)ctr;
         }
         private void CreateLayout()
@@ -288,8 +348,8 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 layItem.Control = param.ctr;
             }
             //Add Help button
-            DevExpress.XtraLayout.LayoutControlItem layItemBtnRefresh = LayGroup.AddItem(string.Empty, _btnHelp);
-            layItemBtnRefresh.TextVisible = false;
+            DevExpress.XtraLayout.LayoutControlItem layItemBtnHelp = LayGroup.AddItem(string.Empty, _btnHelp);
+            layItemBtnHelp.TextVisible = false;
         }
         private void btnHelp_Click(object sender, EventArgs e)
         {
@@ -306,6 +366,185 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 byte[] data = Classes.Managers.DataManager.DecompressFile((byte[])obj).ToArray();
                 FrmViewer.TextData = Encoding.Unicode.GetString(data);
                 FrmViewer.ShowDialog();
+            }
+        }
+        public bool SaveToDatabase()
+        {
+            bool output = false;
+            System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
+            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("", con);
+            System.Data.SqlClient.SqlTransaction trn = null;
+            cmd.CommandText = @"INSERT INTO dbo.AppExcelDynamicUpdate (AppExcelDynamicUpdateId, FileName, FilePath, DatasourceID, ExcuteStartDate, ExcuteEndDate, ExcuteResultId, ConnectionName, UserIn, DateIn)
+            VALUES (@AppExcelDynamicUpdateId, @FileName, @FilePath, @DatasourceID, @ExcuteStartDate, @ExcuteEndDate, @ExcuteResultId, @ConnectionName, @UserIn, GETDATE())";
+            try
+            {
+                int AppExcelDynamicUpdateId = Convert.ToInt32(adpDynUp.NewId());
+                cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@AppExcelDynamicUpdateId", System.Data.SqlDbType.Int) { Value = AppExcelDynamicUpdateId });
+                cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@FileName", System.Data.SqlDbType.NVarChar) { Value = _filename });
+                cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@FilePath", System.Data.SqlDbType.NVarChar) { Value = _filepath });
+                cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@DatasourceID", System.Data.SqlDbType.Int) { Value = _datasource.Id });
+                cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@ExcuteStartDate", System.Data.SqlDbType.DateTime) { Value = _exStartDate });
+                cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@ExcuteEndDate", System.Data.SqlDbType.DateTime) { Value = _exEndDate });
+                cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@ExcuteResultId", System.Data.SqlDbType.Int) { Value = _exResult });
+                cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@ConnectionName", System.Data.SqlDbType.NVarChar) { Value = _conname });
+                cmd.Parameters.Add(new System.Data.SqlClient.SqlParameter("@UserIn", System.Data.SqlDbType.Int) { Value = Classes.Managers.UserManager.defaultInstance.User.UserId });
+                con.Open();
+                trn = con.BeginTransaction();
+                cmd.Transaction = trn;
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+
+                cmd.CommandText = @"INSERT INTO AppExcelDynamicUpdateParam (AppExcelDynamicUpdateParamId, AppExcelDynamicUpdateId, AppDatasourceParamID, ParamValue)
+                VALUES (@AppExcelDynamicUpdateParamId, @AppExcelDynamicUpdateId, @AppDatasourceParamID, @ParamValue)";
+                int AppExcelDynamicUpdateParamId = Convert.ToInt32(adpDynUpParam.NewId());
+                System.Data.SqlClient.SqlParameter prmAppExcelDynamicUpdateParamId = new System.Data.SqlClient.SqlParameter("@AppExcelDynamicUpdateParamId", System.Data.SqlDbType.Int);
+                System.Data.SqlClient.SqlParameter prmAppExcelDynamicUpdateId = new System.Data.SqlClient.SqlParameter("@AppExcelDynamicUpdateId", System.Data.SqlDbType.Int) { Value = AppExcelDynamicUpdateId };
+                System.Data.SqlClient.SqlParameter prmAppDatasourceParamID = new System.Data.SqlClient.SqlParameter("@AppDatasourceParamID", System.Data.SqlDbType.Int);
+                System.Data.SqlClient.SqlParameter prmParamValue = new System.Data.SqlClient.SqlParameter("@ParamValue", System.Data.SqlDbType.NVarChar);
+                cmd.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] { prmAppExcelDynamicUpdateParamId, prmAppExcelDynamicUpdateId, prmAppDatasourceParamID, prmParamValue });
+                foreach (ParamBase param in _datasource.Params)
+                {
+                    prmAppExcelDynamicUpdateParamId.Value = AppExcelDynamicUpdateParamId;
+                    prmAppDatasourceParamID.Value = _datasource.Id;
+                    prmParamValue.Value = param.ParamValue;
+                    AppExcelDynamicUpdateParamId++;
+                    cmd.ExecuteNonQuery();
+                }
+                trn.Commit();
+                output = true;
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+                output = false;
+                trn.Rollback();
+            }
+            con.Close(); cmd.Dispose(); cmd = null; con = null;
+            return output;
+        }
+        public Task ExecuteJob(Microsoft.Office.Interop.Excel.Workbook excelWorkBook)
+        {
+            return Task.Run(() =>
+            {
+                //excelApplication.CalculationState = XlCalculationState.xlDone; //excelApplication.WorkbookOpen //excelApplication.AfterCalculate//excelApplication.Workbooks.Open("csharp.net-informations.xls", 0, false, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+                try
+                {
+                    _runningConnection = GetJobConnection(excelWorkBook);
+                    if (_runningConnection == null)
+                        return;
+                    _runningConnection.OLEDBConnection.CommandText = PrepareCommandText(_datasource);// Set command text
+                    _runningConnection.OLEDBConnection.Connection = PrepareConnectionString(false);// Set connection string
+
+                    _exStartDate = DateTime.Now; _exEndDate = DateTime.Now;
+                    System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch(); stopWatch.Start();
+                    
+                    _runningConnection.OLEDBConnection.Refresh();// Execute refresh
+                    
+                    _exEndDate = DateTime.Now;
+                    stopWatch.Stop(); Elapsed = stopWatch.Elapsed;
+
+                    if (_exResult != xlTypes.ExcuteResult.Canceled)
+                        _exResult = xlTypes.ExcuteResult.Success;
+                    
+                    _runningConnection.OLEDBConnection.Connection = PrepareConnectionString(true);// Remove connection string
+                    excelWorkBook.Save();// Save workbook
+                    releaseObject(_runningConnection);
+                }
+                catch (Exception ex)
+                {
+                    Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, Managers.UserManager.defaultInstance.User.UserId);
+                    _exResult = xlTypes.ExcuteResult.Faild;
+                }
+            });
+        }
+        public void CancelExecution()
+        {
+            if (_runningConnection == null)
+                return;
+            //if (_runningConnection.OLEDBConnection.Refreshing)
+            //{
+            //    _runningConnection.OLEDBConnection.CancelRefresh();
+            //}
+            //_runningConnection.OLEDBConnection.Connection = PrepareConnectionString(true);// Remove connection string
+        }
+        /// <summary>
+        /// Get connection related to this jobn
+        /// </summary>
+        /// <param name="excelWorkBook">excel workbook that have connection to search for</param>
+        /// <returns>excel connection</returns>
+        private Microsoft.Office.Interop.Excel.WorkbookConnection GetJobConnection(Microsoft.Office.Interop.Excel.Workbook excelWorkBook)
+        {
+            Microsoft.Office.Interop.Excel.WorkbookConnection xlcon = null;
+            for (int i = 1; i <= excelWorkBook.Connections.Count; i++)// Find connection to execute
+            {
+                if (excelWorkBook.Connections[i].Name == _conname)
+                    return xlcon = excelWorkBook.Connections[i];
+            }
+            return xlcon;
+        }
+        /// <summary>
+        /// Prepare connection command text to new values
+        /// </summary>
+        /// <returns> return sp name + paramters in execution format</returns>
+        public static string PrepareCommandText(DatasourceBase ds)
+        {
+            string commandtext = string.Empty;
+            commandtext = ds.SP_Name;
+
+            for (int i = 0; i < ds.Params.Count; i++)
+            {
+                NICSQLTools.Data.dsQry.Get_sp_PramDataTable tblPramType = new Data.dsQryTableAdapters.Get_sp_PramTableAdapter().GetDataByParamName(ds.Params[i].Name, ds.SP_Name);//Get Paramter Information
+                string ParamType = ((NICSQLTools.Data.dsQry.Get_sp_PramRow)tblPramType.Rows[0]).type.ToLower();
+                string paramPart = string.Empty;
+                if (ParamType == "nvarchar" || ParamType == "date" || ParamType == "datetime" || ParamType == "nchar" || ParamType == "ntext" || ParamType == "text")
+                    paramPart = string.Format(@" '{0}'", ds.Params[i].ParamValue);
+                else
+                    paramPart = string.Format(@" {0}", ds.Params[i].ParamValue);
+                if (i == 0)
+                    commandtext = commandtext + paramPart;
+                else
+                    commandtext = string.Format("{0}, {1}", commandtext, paramPart); 
+            }
+            
+            return commandtext;
+        }
+        /// <summary>
+        /// Prepare Excel Connection String
+        /// </summary>
+        /// <param name="servername"></param>
+        /// <param name="databaseame"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public static string PrepareConnectionString(bool Fake)
+        {
+            if (Fake)
+            {
+                return string.Format(@"OLEDB;Provider=SQLOLEDB.1;Password={0};Persist Security Info=True;User ID={0};Initial Catalog={0};Data Source={0};Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=MohamedAlyOmarPC;Use Encryption for Data=False;Tag with column collation when possible=False", "RemovedBy" + System.Windows.Forms.Application.ProductName);
+            }
+            else
+            {
+                System.Data.SqlClient.SqlConnectionStringBuilder builder = new System.Data.SqlClient.SqlConnectionStringBuilder() { ConnectionString = Properties.Settings.Default.IC_DBConnectionString };
+                return string.Format(@"OLEDB;Provider=SQLOLEDB.1;Password={0};Persist Security Info=True;User ID={1};Initial Catalog={2};Data Source={3};Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID={4};Use Encryption for Data=False;Tag with column collation when possible=False", builder.Password, builder.UserID, builder.InitialCatalog, builder.DataSource, Environment.MachineName);
+            }
+            
+        }
+        private static void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, Managers.UserManager.defaultInstance.User.UserId);
+                System.Windows.Forms.MsgDlg.Show(ex.Message, System.Windows.Forms.MsgDlg.MessageType.Error, ex);
+            }
+            finally
+            {
+                GC.Collect();
             }
         }
 

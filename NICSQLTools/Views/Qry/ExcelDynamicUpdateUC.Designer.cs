@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue2 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            this.colExcuteResultId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditExcuteResultId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSAppExcuteResult = new DevExpress.Data.Linq.LinqServerModeSource();
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -41,21 +48,21 @@
             this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnStart = new DevExpress.XtraEditors.SimpleButton();
-            this.progressBarControl1 = new DevExpress.XtraEditors.ProgressBarControl();
+            this.pbc = new DevExpress.XtraEditors.ProgressBarControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.appExcelDynamicUpdateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsDataSource = new NICSQLTools.Data.dsDataSource();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcRemove = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditRemove = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colFileName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFilePath = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colConnectionName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDatasourceID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colExcuteStartDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTimeEditHMS = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.colExcuteEndDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colExcuteResultId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gcEst = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcElapsed = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFilePath = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcParam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditParam = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -63,19 +70,19 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.appExcelDynamicUpdateParamTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppExcelDynamicUpdateParamTableAdapter();
-            this.appExcelDynamicUpdateTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppExcelDynamicUpdateTableAdapter();
+            this.dsDataSource = new NICSQLTools.Data.dsDataSource();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditExcuteResultId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSAppExcuteResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appExcelDynamicUpdateBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsDataSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditRemove)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEditHMS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditParam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -83,7 +90,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDataSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // colExcuteResultId
+            // 
+            this.colExcuteResultId.AppearanceCell.Options.UseTextOptions = true;
+            this.colExcuteResultId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colExcuteResultId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colExcuteResultId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colExcuteResultId.Caption = "State";
+            this.colExcuteResultId.ColumnEdit = this.repositoryItemLookUpEditExcuteResultId;
+            this.colExcuteResultId.FieldName = "ExResult";
+            this.colExcuteResultId.Name = "colExcuteResultId";
+            this.colExcuteResultId.Visible = true;
+            this.colExcuteResultId.VisibleIndex = 1;
+            this.colExcuteResultId.Width = 99;
+            // 
+            // repositoryItemLookUpEditExcuteResultId
+            // 
+            this.repositoryItemLookUpEditExcuteResultId.AutoHeight = false;
+            this.repositoryItemLookUpEditExcuteResultId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditExcuteResultId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ExcuteResultId", "Excute Result Id", 102, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ExcuteResultName", "Excute Result Name", 106, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditExcuteResultId.DataSource = this.LSMSAppExcuteResult;
+            this.repositoryItemLookUpEditExcuteResultId.DisplayMember = "ExcuteResultName";
+            this.repositoryItemLookUpEditExcuteResultId.Name = "repositoryItemLookUpEditExcuteResultId";
+            this.repositoryItemLookUpEditExcuteResultId.NullText = "";
+            this.repositoryItemLookUpEditExcuteResultId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditExcuteResultId.ValueMember = "ExcuteResultId";
+            // 
+            // LSMSAppExcuteResult
+            // 
+            this.LSMSAppExcuteResult.ElementType = typeof(NICSQLTools.Data.Linq.AppExcuteResult);
+            this.LSMSAppExcuteResult.KeyExpression = "[ExcuteResultId]";
             // 
             // barManagerMain
             // 
@@ -167,7 +209,7 @@
             this.layoutControl1.Controls.Add(this.rtbLog);
             this.layoutControl1.Controls.Add(this.btnCancel);
             this.layoutControl1.Controls.Add(this.btnStart);
-            this.layoutControl1.Controls.Add(this.progressBarControl1);
+            this.layoutControl1.Controls.Add(this.pbc);
             this.layoutControl1.Controls.Add(this.gridControlMain);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 24);
@@ -197,10 +239,11 @@
             this.rtbLog.ReadOnly = true;
             this.rtbLog.Size = new System.Drawing.Size(876, 69);
             this.rtbLog.TabIndex = 8;
-            this.rtbLog.Text = "Ready";
+            this.rtbLog.Text = "Ready\n";
             // 
             // btnCancel
             // 
+            this.btnCancel.Enabled = false;
             this.btnCancel.Image = global::NICSQLTools.Properties.Resources.cancel_16x16;
             this.btnCancel.Location = new System.Drawing.Point(172, 369);
             this.btnCancel.Name = "btnCancel";
@@ -208,6 +251,7 @@
             this.btnCancel.StyleController = this.layoutControl1;
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnStart
             // 
@@ -218,19 +262,19 @@
             this.btnStart.StyleController = this.layoutControl1;
             this.btnStart.TabIndex = 6;
             this.btnStart.Text = "Start";
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // progressBarControl1
+            // pbc
             // 
-            this.progressBarControl1.Location = new System.Drawing.Point(264, 369);
-            this.progressBarControl1.MenuManager = this.barManagerMain;
-            this.progressBarControl1.Name = "progressBarControl1";
-            this.progressBarControl1.Size = new System.Drawing.Size(624, 18);
-            this.progressBarControl1.StyleController = this.layoutControl1;
-            this.progressBarControl1.TabIndex = 5;
+            this.pbc.Location = new System.Drawing.Point(264, 369);
+            this.pbc.MenuManager = this.barManagerMain;
+            this.pbc.Name = "pbc";
+            this.pbc.Size = new System.Drawing.Size(624, 18);
+            this.pbc.StyleController = this.layoutControl1;
+            this.pbc.TabIndex = 1;
             // 
             // gridControlMain
             // 
-            this.gridControlMain.DataSource = this.appExcelDynamicUpdateBindingSource;
             this.gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlMain.EmbeddedNavigator.Buttons.Edit.Visible = false;
@@ -242,38 +286,53 @@
             this.gridControlMain.Name = "gridControlMain";
             this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEditRemove,
-            this.repositoryItemTimeEditHMS});
+            this.repositoryItemTimeEditHMS,
+            this.repositoryItemLookUpEditExcuteResultId,
+            this.repositoryItemButtonEditParam});
             this.gridControlMain.Size = new System.Drawing.Size(876, 275);
-            this.gridControlMain.TabIndex = 4;
+            this.gridControlMain.TabIndex = 0;
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
-            // 
-            // appExcelDynamicUpdateBindingSource
-            // 
-            this.appExcelDynamicUpdateBindingSource.DataMember = "AppExcelDynamicUpdate";
-            this.appExcelDynamicUpdateBindingSource.DataSource = this.dsDataSource;
-            // 
-            // dsDataSource
-            // 
-            this.dsDataSource.DataSetName = "dsDataSource";
-            this.dsDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gcRemove,
+            this.colExcuteResultId,
             this.colFileName,
-            this.colFilePath,
+            this.colConnectionName,
             this.colDatasourceID,
             this.colExcuteStartDate,
             this.colExcuteEndDate,
-            this.colExcuteResultId,
-            this.gcEst});
+            this.gcElapsed,
+            this.colFilePath,
+            this.gcParam});
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Column = this.colExcuteResultId;
+            gridFormatRule1.ColumnApplyTo = this.colExcuteResultId;
+            gridFormatRule1.Name = "ExcuteResultId=1[Success]";
+            formatConditionRuleValue1.Appearance.BorderColor = System.Drawing.Color.Lime;
+            formatConditionRuleValue1.Appearance.Options.UseBorderColor = true;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue1.Expression = "Iif([ExResult] = 1,  True, False)";
+            formatConditionRuleValue1.PredefinedName = "Green Bold Text";
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            gridFormatRule2.ApplyToRow = true;
+            gridFormatRule2.Column = this.colExcuteResultId;
+            gridFormatRule2.ColumnApplyTo = this.colExcuteResultId;
+            gridFormatRule2.Name = "ExcuteResultId=2[Faild]";
+            formatConditionRuleValue2.Appearance.BorderColor = System.Drawing.Color.Red;
+            formatConditionRuleValue2.Appearance.Options.UseBorderColor = true;
+            formatConditionRuleValue2.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue2.Expression = "Iif([ExResult] = 2,  True, False)";
+            formatConditionRuleValue2.PredefinedName = "Red Bold Text";
+            gridFormatRule2.Rule = formatConditionRuleValue2;
+            this.gridViewMain.FormatRules.Add(gridFormatRule1);
+            this.gridViewMain.FormatRules.Add(gridFormatRule2);
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.OptionsBehavior.ReadOnly = true;
-            this.gridViewMain.OptionsView.ColumnAutoWidth = false;
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
             this.gridViewMain.OptionsView.ShowGroupPanel = false;
@@ -298,6 +357,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)});
             this.repositoryItemButtonEditRemove.Name = "repositoryItemButtonEditRemove";
             this.repositoryItemButtonEditRemove.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditRemove.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditRemove_ButtonClick);
             // 
             // colFileName
             // 
@@ -312,16 +372,18 @@
             this.colFileName.Visible = true;
             this.colFileName.VisibleIndex = 2;
             // 
-            // colFilePath
+            // colConnectionName
             // 
-            this.colFilePath.AppearanceCell.Options.UseTextOptions = true;
-            this.colFilePath.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colFilePath.AppearanceHeader.Options.UseTextOptions = true;
-            this.colFilePath.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colFilePath.FieldName = "FilePath";
-            this.colFilePath.Name = "colFilePath";
-            this.colFilePath.Visible = true;
-            this.colFilePath.VisibleIndex = 7;
+            this.colConnectionName.AppearanceCell.Options.UseTextOptions = true;
+            this.colConnectionName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colConnectionName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colConnectionName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colConnectionName.Caption = "Connection Name";
+            this.colConnectionName.FieldName = "ConName";
+            this.colConnectionName.Name = "colConnectionName";
+            this.colConnectionName.Visible = true;
+            this.colConnectionName.VisibleIndex = 3;
+            this.colConnectionName.Width = 125;
             // 
             // colDatasourceID
             // 
@@ -329,10 +391,11 @@
             this.colDatasourceID.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colDatasourceID.AppearanceHeader.Options.UseTextOptions = true;
             this.colDatasourceID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colDatasourceID.FieldName = "DatasourceID";
+            this.colDatasourceID.Caption = "Datasource";
+            this.colDatasourceID.FieldName = "Datasource.Name";
             this.colDatasourceID.Name = "colDatasourceID";
             this.colDatasourceID.Visible = true;
-            this.colDatasourceID.VisibleIndex = 3;
+            this.colDatasourceID.VisibleIndex = 4;
             this.colDatasourceID.Width = 89;
             // 
             // colExcuteStartDate
@@ -344,8 +407,6 @@
             this.colExcuteStartDate.ColumnEdit = this.repositoryItemTimeEditHMS;
             this.colExcuteStartDate.FieldName = "ExcuteStartDate";
             this.colExcuteStartDate.Name = "colExcuteStartDate";
-            this.colExcuteStartDate.Visible = true;
-            this.colExcuteStartDate.VisibleIndex = 4;
             this.colExcuteStartDate.Width = 106;
             // 
             // repositoryItemTimeEditHMS
@@ -364,35 +425,53 @@
             this.colExcuteEndDate.ColumnEdit = this.repositoryItemTimeEditHMS;
             this.colExcuteEndDate.FieldName = "ExcuteEndDate";
             this.colExcuteEndDate.Name = "colExcuteEndDate";
-            this.colExcuteEndDate.Visible = true;
-            this.colExcuteEndDate.VisibleIndex = 5;
             this.colExcuteEndDate.Width = 100;
             // 
-            // colExcuteResultId
+            // gcElapsed
             // 
-            this.colExcuteResultId.AppearanceCell.Options.UseTextOptions = true;
-            this.colExcuteResultId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colExcuteResultId.AppearanceHeader.Options.UseTextOptions = true;
-            this.colExcuteResultId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colExcuteResultId.FieldName = "ExcuteResultId";
-            this.colExcuteResultId.Name = "colExcuteResultId";
-            this.colExcuteResultId.Visible = true;
-            this.colExcuteResultId.VisibleIndex = 1;
-            this.colExcuteResultId.Width = 99;
+            this.gcElapsed.AppearanceCell.Options.UseTextOptions = true;
+            this.gcElapsed.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcElapsed.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcElapsed.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcElapsed.Caption = "Elapsed";
+            this.gcElapsed.ColumnEdit = this.repositoryItemTimeEditHMS;
+            this.gcElapsed.FieldName = "Elapsed";
+            this.gcElapsed.Name = "gcElapsed";
+            this.gcElapsed.Visible = true;
+            this.gcElapsed.VisibleIndex = 5;
             // 
-            // gcEst
+            // colFilePath
             // 
-            this.gcEst.AppearanceCell.Options.UseTextOptions = true;
-            this.gcEst.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcEst.AppearanceHeader.Options.UseTextOptions = true;
-            this.gcEst.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gcEst.Caption = "Estimated";
-            this.gcEst.FieldName = "gcEst";
-            this.gcEst.Name = "gcEst";
-            this.gcEst.UnboundExpression = "ToStr(DateDiffMinute([ExcuteStartDate],[ExcuteEndDate] )) + \' m \'";
-            this.gcEst.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
-            this.gcEst.Visible = true;
-            this.gcEst.VisibleIndex = 6;
+            this.colFilePath.AppearanceCell.Options.UseTextOptions = true;
+            this.colFilePath.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colFilePath.AppearanceHeader.Options.UseTextOptions = true;
+            this.colFilePath.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colFilePath.FieldName = "FilePath";
+            this.colFilePath.Name = "colFilePath";
+            this.colFilePath.Visible = true;
+            this.colFilePath.VisibleIndex = 6;
+            this.colFilePath.Width = 190;
+            // 
+            // gcParam
+            // 
+            this.gcParam.AppearanceCell.Options.UseTextOptions = true;
+            this.gcParam.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcParam.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcParam.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcParam.Caption = "Paramters";
+            this.gcParam.ColumnEdit = this.repositoryItemButtonEditParam;
+            this.gcParam.Name = "gcParam";
+            this.gcParam.Visible = true;
+            this.gcParam.VisibleIndex = 7;
+            // 
+            // repositoryItemButtonEditParam
+            // 
+            this.repositoryItemButtonEditParam.AutoHeight = false;
+            this.repositoryItemButtonEditParam.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemButtonEditParam.Name = "repositoryItemButtonEditParam";
+            this.repositoryItemButtonEditParam.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditParam.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditParam_ButtonClick);
             // 
             // layoutControlGroup1
             // 
@@ -421,7 +500,7 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.progressBarControl1;
+            this.layoutControlItem2.Control = this.pbc;
             this.layoutControlItem2.Location = new System.Drawing.Point(252, 357);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(628, 26);
@@ -465,13 +544,10 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // appExcelDynamicUpdateParamTableAdapter
+            // dsDataSource
             // 
-            this.appExcelDynamicUpdateParamTableAdapter.ClearBeforeFill = true;
-            // 
-            // appExcelDynamicUpdateTableAdapter
-            // 
-            this.appExcelDynamicUpdateTableAdapter.ClearBeforeFill = true;
+            this.dsDataSource.DataSetName = "dsDataSource";
+            this.dsDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ofd
             // 
@@ -489,16 +565,17 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "ExcelDynamicUpdateUC";
             this.Size = new System.Drawing.Size(900, 450);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditExcuteResultId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSAppExcuteResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControl1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appExcelDynamicUpdateBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsDataSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditRemove)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEditHMS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditParam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -506,6 +583,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDataSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -523,7 +601,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton btnStart;
-        private DevExpress.XtraEditors.ProgressBarControl progressBarControl1;
+        private DevExpress.XtraEditors.ProgressBarControl pbc;
         private DevExpress.XtraGrid.GridControl gridControlMain;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
@@ -531,11 +609,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private NICSQLTools.Data.dsDataSourceTableAdapters.AppExcelDynamicUpdateParamTableAdapter appExcelDynamicUpdateParamTableAdapter;
-        private NICSQLTools.Data.dsDataSourceTableAdapters.AppExcelDynamicUpdateTableAdapter appExcelDynamicUpdateTableAdapter;
         private System.Windows.Forms.OpenFileDialog ofd;
         private NICSQLTools.Data.dsDataSource dsDataSource;
-        private System.Windows.Forms.BindingSource appExcelDynamicUpdateBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colFileName;
         private DevExpress.XtraGrid.Columns.GridColumn colFilePath;
         private DevExpress.XtraGrid.Columns.GridColumn colDatasourceID;
@@ -548,6 +623,11 @@
         private System.Windows.Forms.RichTextBox rtbLog;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit repositoryItemTimeEditHMS;
-        private DevExpress.XtraGrid.Columns.GridColumn gcEst;
+        private DevExpress.XtraGrid.Columns.GridColumn gcElapsed;
+        private DevExpress.XtraGrid.Columns.GridColumn colConnectionName;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditExcuteResultId;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSAppExcuteResult;
+        private DevExpress.XtraGrid.Columns.GridColumn gcParam;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditParam;
     }
 }

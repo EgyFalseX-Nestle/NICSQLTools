@@ -157,6 +157,8 @@ namespace NICSQLTools.Views.Data
 
             DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewDS.GetRow(e.RowHandle));
             row.SetMemberValue("DSCategoryId", id);
+            row.SetMemberValue("UserIn", Classes.Managers.UserManager.defaultInstance.User.UserId);
+            row.SetMemberValue("DateIn", Classes.Managers.DataManager.defaultInstance.ServerDateTime);
         }
         private void gridViewParam_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
@@ -257,7 +259,7 @@ namespace NICSQLTools.Views.Data
 
         private void treeListMain_DragOver(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(typeof(int)))
+            if (e.Data.GetDataPresent(typeof(int)) || e.Data.GetDataPresent(typeof(DevExpress.XtraTreeList.Nodes.TreeListNode)))
                 e.Effect = DragDropEffects.Move;
             else
                 e.Effect = DragDropEffects.None;

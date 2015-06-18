@@ -56,15 +56,19 @@ namespace NICSQLTools.Classes.Managers
                     User.UserId = row.UserID;
                     User.UserName = row.UserName;
                     User.RealName = row.RealName;
+                    if (row.IsIsAdminNull())
+                        User.IsAdmin = false;
+                    else
+                        User.IsAdmin = row.IsAdmin;
                     if (!row.IsEmpIdNull())
                         User.EmpId = row.EmpId;
                     else
                         User.EmpId = -999;
                     
-                    if (row.UserID == 1)
-                        User.IsAdmin = true;
-                    else
-                        User.IsAdmin = false;
+                    //if (row.UserID == 1)
+                    //    User.IsAdmin = true;
+                    //else
+                    //    User.IsAdmin = false;
                     if (!GetUserRules(User.UserId))
                         return false;
                     if (!GetUserSalesDistrict(User.UserId))
@@ -88,7 +92,7 @@ namespace NICSQLTools.Classes.Managers
         }
         private bool GetUserSalesDistrict(int UserId)
         {
-            if (UserId == SuperAdminId)
+            if (User.IsAdmin)
                 adpUserSalesDistrict2.Fill(UserRuleSalesDistrictTable);
             else
                 adpUserSalesDistrict2.FillByUserId(UserRuleSalesDistrictTable, UserId);
@@ -97,7 +101,7 @@ namespace NICSQLTools.Classes.Managers
         }
         private bool GetUserDatasource(int UserId)
         {
-            if (UserId == SuperAdminId)
+            if (User.IsAdmin)
                 adpUserDatasource.Fill(UserDatasource);
             else
                 adpUserDatasource.FillByUserId(UserDatasource, UserId);

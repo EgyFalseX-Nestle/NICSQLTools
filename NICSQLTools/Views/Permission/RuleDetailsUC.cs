@@ -17,7 +17,7 @@ namespace NICSQLTools.Views.Permission
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         NICSQLTools.Views.Main.rtfTextViewerFrm FrmViewer;
-        NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter adpDS = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
+        NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter adpDS = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter();
         #endregion
         #region - Fun -
         public RuleDetailsUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)

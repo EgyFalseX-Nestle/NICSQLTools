@@ -15,6 +15,7 @@ namespace NICSQLTools
         public static readonly string _colGLAccount = "Acc No";
         public static readonly string _colDF = "DF";
         public static readonly string _colType = "Type";
+        public static readonly string _colBusinessUnit = "Business Unit";
         public static readonly string _IC_BU = "IC BU";
         public static readonly string _FC = "F&C";
 

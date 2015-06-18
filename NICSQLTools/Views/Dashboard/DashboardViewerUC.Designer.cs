@@ -56,8 +56,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.lciWait = new DevExpress.XtraLayout.LayoutControlItem();
-            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
-            this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter();
+            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter();
+            this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceParamTableAdapter();
             this.appDashboardSchemaTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter();
             this.get_sp_PramTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -426,8 +426,8 @@
         private DevExpress.XtraLayout.LayoutControl layoutControlParamter;
         private DevExpress.XtraEditors.SimpleButton btnEditDashboard;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter appDashboardDSTableAdapter;
-        private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceParamTableAdapter appDashboardDSPramTableAdapter;
+        private NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter appDashboardDSTableAdapter;
+        private NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceParamTableAdapter appDashboardDSPramTableAdapter;
         private NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter appDashboardSchemaTableAdapter;
         private NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter get_sp_PramTableAdapter;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSSchema;

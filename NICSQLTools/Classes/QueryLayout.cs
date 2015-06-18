@@ -19,6 +19,8 @@ namespace NICSQLTools.Classes
         public struct DatasourceStrc
         {
             public Dictionary<string, System.Windows.Forms.Control> Controls;
+            public DevExpress.XtraEditors.SimpleButton EDUButton;//Excel Dynamic Update
+            public DevExpress.XtraEditors.SimpleButton EDUCancelButton;//Excel Dynamic Update Cancel
             public DevExpress.XtraEditors.SimpleButton ExeButton;
             public DevExpress.XtraEditors.SimpleButton CancelButton;
             public int DashboadId;

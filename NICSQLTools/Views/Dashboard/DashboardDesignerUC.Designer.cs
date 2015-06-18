@@ -400,9 +400,10 @@
             this.viewRibbonPage1 = new DevExpress.DashboardWin.Bars.ViewRibbonPage();
             this.skinsRibbonPageGroup1 = new DevExpress.DashboardWin.Bars.SkinsRibbonPageGroup();
             this.dashboardBarControllerMain = new DevExpress.DashboardWin.Bars.DashboardBarController();
-            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();
+            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter();
             this.dsData = new NICSQLTools.Data.dsData();
             this.appDashboardSchemaTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter();
+            this.dsDataSource = new NICSQLTools.Data.dsDataSource();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBackstageViewControl1)).BeginInit();
             this.dashboardBackstageViewControl1.SuspendLayout();
@@ -411,6 +412,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarControllerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDataSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dashboardDesignerMain
@@ -3042,6 +3044,11 @@
             // 
             this.appDashboardSchemaTableAdapter.ClearBeforeFill = true;
             // 
+            // dsDataSource
+            // 
+            this.dsDataSource.DataSetName = "dsDataSource";
+            this.dsDataSource.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // DashboardDesignerUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3060,6 +3067,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardBarControllerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsDataSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3366,12 +3374,13 @@
         private DevExpress.DashboardWin.Bars.ViewRibbonPage viewRibbonPage1;
         private DevExpress.DashboardWin.Bars.SkinsRibbonPageGroup skinsRibbonPageGroup1;
         private DevExpress.DashboardWin.Bars.DashboardBarController dashboardBarControllerMain;
-        private NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter appDashboardDSTableAdapter;
+        private NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter appDashboardDSTableAdapter;
         private NICSQLTools.Data.dsData dsData;
         private NICSQLTools.Data.dsDataTableAdapters.AppDashboardSchemaTableAdapter appDashboardSchemaTableAdapter;
         private DevExpress.XtraBars.BarButtonItem bbiOpen;
         private DevExpress.XtraBars.BarButtonItem bbiSave;
         private DevExpress.XtraBars.BarButtonItem bbiSaveAs;
         private DevExpress.XtraBars.BarButtonItem bbiAddDatasource;
+        private NICSQLTools.Data.dsDataSource dsDataSource;
     }
 }

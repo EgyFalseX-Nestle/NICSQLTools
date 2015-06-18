@@ -291,6 +291,7 @@
             // splitContainerControl2
             // 
             this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerControl2.Horizontal = false;
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl2.Name = "splitContainerControl2";
@@ -299,7 +300,7 @@
             this.splitContainerControl2.Panel2.Controls.Add(this.gridControlParam);
             this.splitContainerControl2.Panel2.Text = "Panel2";
             this.splitContainerControl2.Size = new System.Drawing.Size(472, 419);
-            this.splitContainerControl2.SplitterPosition = 199;
+            this.splitContainerControl2.SplitterPosition = 319;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
@@ -316,7 +317,7 @@
             this.gridControlDS.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditAppDatasourceTypeId,
             this.repositoryItemButtonEditDesc});
-            this.gridControlDS.Size = new System.Drawing.Size(472, 199);
+            this.gridControlDS.Size = new System.Drawing.Size(472, 95);
             this.gridControlDS.TabIndex = 6;
             this.gridControlDS.UseEmbeddedNavigator = true;
             this.gridControlDS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -328,8 +329,7 @@
             this.XPSCSDS.AllowNew = true;
             this.XPSCSDS.AllowRemove = true;
             this.XPSCSDS.DeleteObjectOnRemove = true;
-            this.XPSCSDS.FixedFilterString = "[DSCategoryId] = -1";
-            this.XPSCSDS.ObjectType = typeof(NICSQLTools.Data.dsData.AppDatasourceDataTable);
+            this.XPSCSDS.ObjectType = typeof(NICSQLTools.Data.dsDataSource.AppDatasourceDataTable);
             this.XPSCSDS.Session = this.sessionDS;
             // 
             // sessionDS
@@ -443,7 +443,7 @@
             this.gridControlParam.Name = "gridControlParam";
             this.gridControlParam.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditLookupID});
-            this.gridControlParam.Size = new System.Drawing.Size(472, 215);
+            this.gridControlParam.Size = new System.Drawing.Size(472, 319);
             this.gridControlParam.TabIndex = 6;
             this.gridControlParam.UseEmbeddedNavigator = true;
             this.gridControlParam.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -455,7 +455,7 @@
             this.XPSCSParam.AllowNew = true;
             this.XPSCSParam.AllowRemove = true;
             this.XPSCSParam.DeleteObjectOnRemove = true;
-            this.XPSCSParam.ObjectType = typeof(NICSQLTools.Data.dsData.AppDatasourceParamDataTable);
+            this.XPSCSParam.ObjectType = typeof(NICSQLTools.Data.dsDataSource.AppDatasourceParamDataTable);
             this.XPSCSParam.Session = this.sessionParam;
             // 
             // sessionParam

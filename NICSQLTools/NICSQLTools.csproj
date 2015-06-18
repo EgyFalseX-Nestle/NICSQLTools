@@ -201,8 +201,10 @@
     <Compile Include="Classes\Cost.cs" />
     <Compile Include="Classes\msExcel\DynamicRefresh\DatasourceBase.cs" />
     <Compile Include="Classes\msExcel\DynamicRefresh\DynamicRefresh.cs" />
+    <Compile Include="Classes\msExcel\DynamicRefresh\JobsViewer.cs" />
     <Compile Include="Classes\msExcel\DynamicRefresh\ParamBase.cs" />
     <Compile Include="Classes\msExcel\DynamicRefresh\xlDRJob.cs" />
+    <Compile Include="Classes\msExcel\DynamicRefresh\xlDRJobManager.cs" />
     <Compile Include="Classes\msExcel\xlTypes.cs" />
     <Compile Include="Classes\Stock_Material.cs" />
     <Compile Include="Classes\Stock_List.cs" />
@@ -241,14 +243,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTask.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\Linq\dsLinqData.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsLinqData.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Data\dsQry.cs">
       <DependentUpon>dsQry.xsd</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\Linq\dsLinqData1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLinqData.dbml</DependentUpon>
     </Compile>
     <Compile Include="Data\xpoSPCode\ConnectionHelper.cs" />
     <Compile Include="Data\xpoSPCode\sp_App_01A_Cus_SalResult.cs">
@@ -381,6 +383,12 @@
     </Compile>
     <Compile Include="Views\Qry\OpenXlDlg.Designer.cs">
       <DependentUpon>OpenXlDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\ParamEditorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\ParamEditorDlg.Designer.cs">
+      <DependentUpon>ParamEditorDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Qry\QryCustomerInfoUC.cs">
       <SubType>UserControl</SubType>
@@ -657,6 +665,9 @@
     <EmbeddedResource Include="Views\Qry\OpenXlDlg.resx">
       <DependentUpon>OpenXlDlg.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\ParamEditorDlg.resx">
+      <DependentUpon>ParamEditorDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\QryCustomerInfoUC.resx">
       <DependentUpon>QryCustomerInfoUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -810,6 +821,7 @@
     <None Include="Data\Linq\dsLinqData.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>dsLinqData1.designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsQry.xsc">
       <DependentUpon>dsQry.xsd</DependentUpon>
@@ -854,6 +866,7 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\Excel16.png" />
     <None Include="Resources\Excel128.png" />
     <None Include="Resources\Excel64.png" />
     <None Include="Resources\Task128.png" />

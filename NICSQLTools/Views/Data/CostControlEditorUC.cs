@@ -34,6 +34,7 @@ namespace NICSQLTools.Views.Data
                 return string.Format(@"Required field for import{0}
 New CC NO
 Acc No
+Business Unit
 DF
 Type
 _______________________________________________
@@ -182,16 +183,19 @@ _______________________________________________
                         Application.DoEvents();
                     }));
                 }
-
+                if (row[Cost._colCostcenter].ToString() == string.Empty || row[Cost._colGLAccount].ToString() == string.Empty )
+                    continue;
                 NICSQLTools.Data.dsData.CostDynamicForecastRow SqlRow = dsData.CostDynamicForecast.NewCostDynamicForecastRow();
                 SqlRow.Costcenter = row[Cost._colCostcenter].ToString();
                 SqlRow.GLAccount = row[Cost._colGLAccount].ToString();
                 SqlRow.DF = Convert.ToDouble(row[Cost._colDF]);
                 SqlRow.Type = row[Cost._colType].ToString();
-                if (row[Cost._colType].ToString().Contains(Cost._FC))
-                    SqlRow.BusinessUnit = Cost._FC;
-                else
-                    SqlRow.BusinessUnit = Cost._IC_BU;
+                //if (row[Cost._colType].ToString().Contains(Cost._FC))
+                //    SqlRow.BusinessUnit = Cost._FC;
+                //else
+                //    SqlRow.BusinessUnit = Cost._IC_BU;
+                SqlRow.BusinessUnit = row[Cost._colBusinessUnit].ToString().Trim();
+
                 SqlRow.Period = Convert.ToInt32(tbPeriodDF.EditValue);
                 SqlRow.Year = Convert.ToInt32(tbYearDF.EditValue);
 

@@ -81,6 +81,9 @@ namespace NICSQLTools.Data.Linq
     partial void InsertTskEmp_Emp(TskEmp_Emp instance);
     partial void UpdateTskEmp_Emp(TskEmp_Emp instance);
     partial void DeleteTskEmp_Emp(TskEmp_Emp instance);
+    partial void InsertAppExcuteResult(AppExcuteResult instance);
+    partial void UpdateAppExcuteResult(AppExcuteResult instance);
+    partial void DeleteAppExcuteResult(AppExcuteResult instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -278,6 +281,14 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<TskEmp_Emp>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AppExcuteResult> AppExcuteResults
+		{
+			get
+			{
+				return this.GetTable<AppExcuteResult>();
 			}
 		}
 	}
@@ -5805,6 +5816,92 @@ namespace NICSQLTools.Data.Linq
 					this._DateIn = value;
 					this.SendPropertyChanged("DateIn");
 					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AppExcuteResult")]
+	public partial class AppExcuteResult : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ExcuteResultId;
+		
+		private string _ExcuteResultName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnExcuteResultIdChanging(int value);
+    partial void OnExcuteResultIdChanged();
+    partial void OnExcuteResultNameChanging(string value);
+    partial void OnExcuteResultNameChanged();
+    #endregion
+		
+		public AppExcuteResult()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExcuteResultId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ExcuteResultId
+		{
+			get
+			{
+				return this._ExcuteResultId;
+			}
+			set
+			{
+				if ((this._ExcuteResultId != value))
+				{
+					this.OnExcuteResultIdChanging(value);
+					this.SendPropertyChanging();
+					this._ExcuteResultId = value;
+					this.SendPropertyChanged("ExcuteResultId");
+					this.OnExcuteResultIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExcuteResultName", DbType="NVarChar(50)")]
+		public string ExcuteResultName
+		{
+			get
+			{
+				return this._ExcuteResultName;
+			}
+			set
+			{
+				if ((this._ExcuteResultName != value))
+				{
+					this.OnExcuteResultNameChanging(value);
+					this.SendPropertyChanging();
+					this._ExcuteResultName = value;
+					this.SendPropertyChanged("ExcuteResultName");
+					this.OnExcuteResultNameChanged();
 				}
 			}
 		}

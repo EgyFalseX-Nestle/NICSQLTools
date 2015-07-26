@@ -180,7 +180,9 @@ namespace NICSQLTools.Views.Data
             {
                 item.SetMemberValue("UserIn", UserManager.defaultInstance.User.UserId);
                 item.SetMemberValue("DateIn", DateIn);
+                
             }
+            
         }
         private void sessionParam_BeforeCommitTransaction(object sender, DevExpress.Xpo.SessionManipulationEventArgs e)
         {

@@ -186,10 +186,10 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
             bool output = false;
             try
             {
-                List<string> lst = new List<string>();
-                string[] param = paramText.Trim().Split(',');
-                foreach (string item in param)
-                    lst.Add(item.Replace('\'', ' ').Trim());
+                List<string> lst = SplitParam(paramText);
+                //string[] param = paramText.Trim().Split(',');
+                //foreach (string item in param)
+                //    lst.Add(item.Replace('\'', ' ').Trim());
 
                 NICSQLTools.Data.dsDataSource.AppDatasourceParamDataTable tbl = _adpParam.GetDataByDatasourceID(_datasource.Id);
                 for (int i = 0; i < tbl.Count; i++)
@@ -212,6 +212,42 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, Managers.UserManager.defaultInstance.User.UserId);
             }
             return output;
+        }
+        private List<string> SplitParam(string param)
+        {
+            string[] split1 = param.Split(',');
+            List<string> SplitedParam = new List<string>();
+
+            for (int i = 0; i < split1.Length ; i++)
+            {
+                //have no '
+                if (!split1[i].Contains('\''))
+                {
+                    SplitedParam.Add(split1[i].Trim());
+                    continue;
+                }
+                //have 2 '
+                int count = split1[i].Count(f => f == '\'');
+                if (count == 2)
+                {
+                    SplitedParam.Add(split1[i].Replace("'", "").Trim());
+                    continue;
+                }
+                //have 1 '
+                string str = split1[i].Replace("'", "");
+                for (int inx = i + 1; inx < split1.Length; inx++)
+                {
+                    i++;
+                    if (split1[inx].Contains('\''))
+                    {
+                        str += "," + split1[inx].Replace("'", "");
+                        SplitedParam.Add(str.Trim());
+                        break;
+                    }
+                    str += "," + split1[inx];
+                }
+            }
+            return SplitedParam;
         }
         /// <summary>
         /// Create Datasource Layout Controls
@@ -311,12 +347,14 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                         DevExpress.XtraEditors.DateEdit de1 = new DevExpress.XtraEditors.DateEdit();
                         de1.EditValue = null;
                         de1.Name = String.Format("ctr{0}{1}{2}", param.Id, param.Id, Datasource.Id);
-                        de1.Properties.DisplayFormat.FormatString = "d/M/yyyy";
                         de1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                        de1.Properties.EditFormat.FormatString = "d/M/yyyy";
+                        de1.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
                         de1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                        de1.Properties.Mask.EditMask = "d/M/yyyy";
+                        de1.Properties.EditFormat.FormatString = "yyyy-MM-dd";
+                        de1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
+                        de1.Properties.Mask.EditMask = "yyyy-MM-dd";
                         de1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                        
                         ctr = de1;
                         break;
                     default:
@@ -324,9 +362,12 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 }
             }
             ((DevExpress.XtraEditors.TextEdit)ctr).Properties.NullValuePrompt = param.DisplayName;
-            //((DevExpress.XtraEditors.TextEdit)ctr).EditValue = param.ParamValue;
             //Binding Control
-            ((DevExpress.XtraEditors.TextEdit)ctr).DataBindings.Add("EditValue", param, "ParamValue");
+            if (ctr.GetType() == typeof(DevExpress.XtraEditors.DateEdit))
+                ((DevExpress.XtraEditors.TextEdit)ctr).DataBindings.Add("Datetime", param, "ParamValue", true);
+            else
+                ((DevExpress.XtraEditors.TextEdit)ctr).DataBindings.Add("EditValue", param, "ParamValue", true);
+            ((DevExpress.XtraEditors.TextEdit)ctr).Properties.MaxLength = 64000;
             return (System.Windows.Forms.Control)ctr;
         }
         private void CreateLayout()
@@ -434,6 +475,7 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                         return;
                     _runningConnection.OLEDBConnection.CommandText = PrepareCommandText(_datasource);// Set command text
                     _runningConnection.OLEDBConnection.Connection = PrepareConnectionString(false);// Set connection string
+                    _runningConnection.OLEDBConnection.SavePassword = false;
 
                     _exStartDate = DateTime.Now; _exEndDate = DateTime.Now;
                     System.Diagnostics.Stopwatch stopWatch = new System.Diagnostics.Stopwatch(); stopWatch.Start();
@@ -446,7 +488,7 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                     if (_exResult != xlTypes.ExcuteResult.Canceled)
                         _exResult = xlTypes.ExcuteResult.Success;
                     
-                    _runningConnection.OLEDBConnection.Connection = PrepareConnectionString(true);// Remove connection string
+                    //_runningConnection.OLEDBConnection.Connection = PrepareConnectionString(true);// Remove connection string
                     excelWorkBook.Save();// Save workbook
                     releaseObject(_runningConnection);
                 }

@@ -22474,38 +22474,34 @@ GROUP BY AppRuleDatasource.DatasourceID, AppDatasource.DatasourceName, AppDataso
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        DatasourceID, AppDatasourceTypeId, DatasourceName, DatasourceSPName, UserIn, DateIn, RealName, AppDatasourceTypeName, DSCategoryId, DSCategoryName, DSCategoryDesc
-FROM            vAppDatasource_LUE
-WHERE (@UserIn = 1) OR
+            this._commandCollection[0].CommandText = @"SELECT        DatasourceID, AppDatasourceTypeId, DatasourceName, DatasourceSPName, UserIn, DateIn, RealName
+, AppDatasourceTypeName, DSCategoryId, DSCategoryName, DSCategoryDesc
+FROM vAppDatasource_LUE
+WHERE EXISTS(SELECT IsAdmin FROM dbo.AppUsers WHERE UserId = @UserIn And IsAdmin = 'True') OR
 (EXISTS(SELECT DatasourceID FROM AppRuleDatasource WHERE DatasourceID = vAppDatasource_LUE.DatasourceID AND 
 EXISTS(SELECT RuleId FROM AppUserRule WHERE RuleId = AppRuleDatasource.RuleId AND UserId = @UserIn)))";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        DatasourceID, AppDatasourceTypeId, DatasourceName, DatasourceSPName, UserIn, DateIn, RealName, AppDatasourceTypeName, DSCategoryId, DSCategoryName, DSCategoryDesc
-FROM            vAppDatasource_LUE
-WHERE ((@UserIn = 1) OR
-(EXISTS(SELECT DatasourceID FROM AppRuleDatasource WHERE DatasourceID = vAppDatasource_LUE.DatasourceID AND 
-EXISTS(SELECT RuleId FROM AppUserRule WHERE RuleId = AppRuleDatasource.RuleId AND UserId = @UserIn))))
-AND DSCategoryId = @DSCategoryId";
+            this._commandCollection[1].CommandText = @" SELECT AppDatasourceTypeId, AppDatasourceTypeName, DSCategoryDesc, DSCategoryId, DSCategoryName, DatasourceID, DatasourceName
+ , DatasourceSPName, DateIn, RealName, UserIn 
+ FROM vAppDatasource_LUE 
+ WHERE EXISTS(SELECT IsAdmin FROM dbo.AppUsers WHERE UserId = @UserIn And IsAdmin = 'True') 
+ AND (DSCategoryId = @DSCategoryId) OR (DSCategoryId = @DSCategoryId) AND EXISTS (SELECT DatasourceID FROM AppRuleDatasource WHERE (DatasourceID = vAppDatasource_LUE.DatasourceID) AND EXISTS (SELECT RuleId FROM AppUserRule WHERE (RuleId = AppRuleDatasource.RuleID) AND (UserId = @UserIn)))
+ ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DSCategoryId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DSCategoryId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FillByUserId(dsQry.vAppDatasourceForUserDataTable dataTable, string UserIn) {
+        public virtual int FillByUserId(dsQry.vAppDatasourceForUserDataTable dataTable, int UserIn) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((UserIn == null)) {
-                throw new global::System.ArgumentNullException("UserIn");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserIn));
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserIn));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -22517,14 +22513,9 @@ AND DSCategoryId = @DSCategoryId";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsQry.vAppDatasourceForUserDataTable GetDataByUserId(string UserIn) {
+        public virtual dsQry.vAppDatasourceForUserDataTable GetDataByUserId(int UserIn) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((UserIn == null)) {
-                throw new global::System.ArgumentNullException("UserIn");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserIn));
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserIn));
             dsQry.vAppDatasourceForUserDataTable dataTable = new dsQry.vAppDatasourceForUserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -22534,20 +22525,15 @@ AND DSCategoryId = @DSCategoryId";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByUserIdAndDSCategoryId(dsQry.vAppDatasourceForUserDataTable dataTable, string UserIn, global::System.Nullable<int> DSCategoryId) {
+        public virtual int FillByUserIdAndDSCategoryId(dsQry.vAppDatasourceForUserDataTable dataTable, global::System.Nullable<int> DSCategoryId, int UserIn) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((UserIn == null)) {
-                throw new global::System.ArgumentNullException("UserIn");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserIn));
-            }
             if ((DSCategoryId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DSCategoryId.Value));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DSCategoryId.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(UserIn));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -22559,20 +22545,15 @@ AND DSCategoryId = @DSCategoryId";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual dsQry.vAppDatasourceForUserDataTable GetDataByUserIdAndDSCategoryId(string UserIn, global::System.Nullable<int> DSCategoryId) {
+        public virtual dsQry.vAppDatasourceForUserDataTable GetDataByUserIdAndDSCategoryId(global::System.Nullable<int> DSCategoryId, int UserIn) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((UserIn == null)) {
-                throw new global::System.ArgumentNullException("UserIn");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UserIn));
-            }
             if ((DSCategoryId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DSCategoryId.Value));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DSCategoryId.Value));
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(UserIn));
             dsQry.vAppDatasourceForUserDataTable dataTable = new dsQry.vAppDatasourceForUserDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

@@ -241,13 +241,14 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 xlWorkSheet = (Excel.Worksheet)xlWorkbook_Dyn.Worksheets.get_Item(1);//Create Worksheet
                 _xlDynCon = xlWorkbook_Dyn.Connections.Add2(ds.DatasourceName + " con", "This Connection Created By NICSQLTools", connectionstring, commandtext
                     , Excel.XlCmdType.xlCmdSql);//Create Excel Connection
-
+                _xlDynCon.OLEDBConnection.SavePassword = false;
+                
                 Excel.PivotCache pivotCach = xlWorkbook_Dyn.PivotCaches().Create(Excel.XlPivotTableSourceType.xlExternal, _xlDynCon);// Create Pivot Cach
                 GetWindowThreadProcessId(xlApp_Dyn.Hwnd, out app_ProcessId_Dyn);
                 CreateDyn_Notify.OnItemChanged += CreateDyn_Notify_OnItemChanged;
                 pivotCach.CreatePivotTable(xlWorkSheet.get_Range("A1", misvalue), ds.DatasourceName + " Table");
                 if (_xlDynCon != null)
-                    _xlDynCon.OLEDBConnection.Connection = xlDRJob.PrepareConnectionString(true);
+                    _xlDynCon.OLEDBConnection.SavePassword = false;
                 if (xlApp_Dyn != null)
                     xlApp_Dyn.Visible = true;
                 //////////////xlWorkSheet.Protect()

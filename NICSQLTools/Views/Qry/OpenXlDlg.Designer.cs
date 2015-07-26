@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OpenXlDlg));
             this.wizardControlMain = new DevExpress.XtraWizard.WizardControl();
             this.OpenExcelWizardPage = new DevExpress.XtraWizard.WelcomeWizardPage();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -71,7 +72,7 @@
             this.OpenExcelWizardPage,
             this.ParamtersWizardPage,
             this.completionWizardPage});
-            this.wizardControlMain.Size = new System.Drawing.Size(684, 461);
+            this.wizardControlMain.Size = new System.Drawing.Size(684, 389);
             this.wizardControlMain.Text = "Open Excel File";
             this.wizardControlMain.WizardStyle = DevExpress.XtraWizard.WizardStyle.WizardAero;
             this.wizardControlMain.SelectedPageChanging += new DevExpress.XtraWizard.WizardPageChangingEventHandler(this.wizardControlMain_SelectedPageChanging);
@@ -82,13 +83,13 @@
             this.OpenExcelWizardPage.Controls.Add(this.labelControl1);
             this.OpenExcelWizardPage.Controls.Add(this.beOpenFile);
             this.OpenExcelWizardPage.Name = "OpenExcelWizardPage";
-            this.OpenExcelWizardPage.Size = new System.Drawing.Size(624, 299);
+            this.OpenExcelWizardPage.Size = new System.Drawing.Size(624, 227);
             this.OpenExcelWizardPage.Text = "Please select excel file and press Next";
             // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.labelControl1.Location = new System.Drawing.Point(73, 126);
+            this.labelControl1.Location = new System.Drawing.Point(73, 86);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(111, 19);
             this.labelControl1.TabIndex = 1;
@@ -96,14 +97,14 @@
             // 
             // beOpenFile
             // 
-            this.beOpenFile.Location = new System.Drawing.Point(73, 151);
+            this.beOpenFile.Location = new System.Drawing.Point(73, 111);
             this.beOpenFile.Name = "beOpenFile";
-            this.beOpenFile.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.beOpenFile.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.beOpenFile.Properties.Appearance.Options.UseFont = true;
             this.beOpenFile.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.up_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.beOpenFile.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.beOpenFile.Size = new System.Drawing.Size(478, 26);
+            this.beOpenFile.Size = new System.Drawing.Size(478, 30);
             this.beOpenFile.TabIndex = 0;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Must select excel file to continue";
@@ -116,7 +117,7 @@
             this.ParamtersWizardPage.AllowBack = false;
             this.ParamtersWizardPage.Controls.Add(this.gridControlJobs);
             this.ParamtersWizardPage.Name = "ParamtersWizardPage";
-            this.ParamtersWizardPage.Size = new System.Drawing.Size(624, 299);
+            this.ParamtersWizardPage.Size = new System.Drawing.Size(624, 227);
             this.ParamtersWizardPage.Text = "Connection Paramters";
             // 
             // gridControlJobs
@@ -133,7 +134,7 @@
             this.gridControlJobs.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEditSelect,
             this.repositoryItemButtonEditParam});
-            this.gridControlJobs.Size = new System.Drawing.Size(624, 299);
+            this.gridControlJobs.Size = new System.Drawing.Size(624, 227);
             this.gridControlJobs.TabIndex = 0;
             this.gridControlJobs.UseEmbeddedNavigator = true;
             this.gridControlJobs.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -227,7 +228,7 @@
             // completionWizardPage
             // 
             this.completionWizardPage.Name = "completionWizardPage";
-            this.completionWizardPage.Size = new System.Drawing.Size(624, 299);
+            this.completionWizardPage.Size = new System.Drawing.Size(624, 227);
             // 
             // ofd
             // 
@@ -238,8 +239,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(684, 389);
             this.Controls.Add(this.wizardControlMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OpenXlDlg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open Excel file";

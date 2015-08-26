@@ -310,6 +310,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new NICSQLTools.Views.Data.TaskManager.EmpTaskActualEditorUC(RuleElemet);
             }
+            else if (e.Document == docEditorsActivities_Actual)// Activities
+            {
+                e.Control = new NICSQLTools.Views.Data.Activities.ImportSTI_Actv_ActualUC(RuleElemet);
+            }
 
             else if (e.Document == docReportsReportViewer)
             {

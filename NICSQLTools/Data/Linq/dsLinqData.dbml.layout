@@ -94,10 +94,10 @@
         <elementListCompartment Id="323e6eed-edb3-4113-86ae-d3415c25cbb5" absoluteBounds="6.14, 9.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="593ad1f7-62ef-46b1-9ed3-269cacd5c763" absoluteBounds="6.125, 11.25, 2, 5.4246240234375">
+    <classShape Id="593ad1f7-62ef-46b1-9ed3-269cacd5c763" absoluteBounds="6.125, 11.25, 2, 4.8477197265625023">
       <DataClassMoniker Name="/dsLinqDataDataContext/vRouteDetail" />
       <nestedChildShapes>
-        <elementListCompartment Id="051f4e85-dbc4-4f8d-b10f-17593201be6d" absoluteBounds="6.14, 11.71, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="051f4e85-dbc4-4f8d-b10f-17593201be6d" absoluteBounds="6.14, 11.71, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="81c4de1b-0ec8-460f-a46a-17749b3999d6" absoluteBounds="0.875, 24.875, 2, 2.1554996744791666">

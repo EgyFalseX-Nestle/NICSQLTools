@@ -13,13 +13,12 @@ using System.Data.SqlClient;
 using log4net;
 using NICSQLTools.Classes.Managers;
 
-namespace NICSQLTools.Views.Import
+namespace NICSQLTools.Views.Data.Activities
 {
-    public partial class ImportDMG_MasterUC : DevExpress.XtraEditors.XtraUserControl
+    public partial class ImportSTI_Actv_ActualUC : DevExpress.XtraEditors.XtraUserControl
     {
-
         #region -   Variables   -
-        private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportDMG_MasterUC));
+        private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportSTI_Actv_ActualUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         private string RequiredField
         {
@@ -27,17 +26,14 @@ namespace NICSQLTools.Views.Import
             {
                 return string.Format(@"Required field for import{0}
 [Billing Document]
-[Route]
-[Reference Document N]
-[Distribution Channel]
 [Billing date for bil]
-[Billing Type]
 [Sold-to party]
-[Material Number]
-[Sales unit]
 [Condition type]
-[Actual Invoiced Quan]
 [Condition value]
+[Actual Invoiced Quan]
+[Distribution Channel]
+[Reference Document N]
+[Agreement (various c]
 _______________________________________________
 ", Environment.NewLine);
             }
@@ -45,7 +41,7 @@ _______________________________________________
      
         #endregion
         #region -   Functions   -
-        public ImportDMG_MasterUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
+        public ImportSTI_Actv_ActualUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             tbLog.Text = RequiredField;
@@ -117,7 +113,7 @@ _______________________________________________
             DateTime UserIn = DataManager.defaultInstance.ServerDateTime;
 
             //Load All Bill Docs
-            NICSQLTools.Data.dsQry.QryBillDocDMGMasterDataTable TblMaster = new NICSQLTools.Data.dsQry.QryBillDocDMGMasterDataTable();
+            NICSQLTools.Data.dsQry.QryBillDocSTI_Actv_ActualDataTable TblMaster = new NICSQLTools.Data.dsQry.QryBillDocSTI_Actv_ActualDataTable();
 
             //deleting data before saving new 1
             var result = from q in dtExcel.AsEnumerable()
@@ -126,7 +122,8 @@ _______________________________________________
                          select new { BillingDate = grp.Key };
             DateTime BillStartDate = (DateTime)result.ElementAt(0).BillingDate;
             DateTime BillEndDate = (DateTime)result.ElementAt(result.Count() - 1).BillingDate;
-            dmG_MasterTableAdapter.Fill(TblMaster, BillStartDate, BillEndDate);
+            qryBillDocSTI_Actv_ActualTableAdapter.Fill(TblMaster, BillStartDate, BillEndDate);
+            
 
             ShowHideProgress(false);
             foreach (DataRow row in dtExcel.Rows)
@@ -145,32 +142,30 @@ _______________________________________________
                     }));
                 }
 
-                if (TblMaster.FindByBilling_Document(row["Billing Document"].ToString()) != null)
+                if (TblMaster.FindByBillingDocument(row["Billing Document"].ToString()) != null)
+                    continue;
+                if (Convert.ToDouble(row["Condition value"]) < 0)
                     continue;
 
-                NICSQLTools.Data.dsData.DMG_MasterRow SqlRow = dsData.DMG_Master.NewDMG_MasterRow();
+                NICSQLTools.Data.dsData.STI_Actv_ActualRow SqlRow = dsData.STI_Actv_Actual.NewSTI_Actv_ActualRow();
 
-                SqlRow.Billing_Document = row["Billing Document"].ToString();
-                SqlRow.Route = row["Route"].ToString();
-                SqlRow.Reference_Document_N = row["Reference Document N"].ToString();
-                SqlRow.Distribution_Channel = row["Distribution Channel"].ToString();
+                SqlRow.BillingDocument = row["Billing Document"].ToString();
+                SqlRow.ReferenceDocumentN = row["Reference Document N"].ToString();
+                SqlRow.DistributionChannel = row["Distribution Channel"].ToString();
                 if (row["Billing date for bil"].ToString() != string.Empty)
-                    SqlRow.Billing_date_for_bil = Convert.ToDateTime(row["Billing date for bil"]);
-                SqlRow.Billing_Type = row["Billing Type"].ToString();
-                SqlRow._Sold_to_party = Convert.ToInt32(row["Sold-to party"]).ToString(); ;
-                
-                if (row["Material Number"].ToString() != string.Empty)
-                    SqlRow.Material_Number = Convert.ToDouble(row["Material Number"]);
-                SqlRow.Sales_unit = row["Sales unit"].ToString();
-                SqlRow.Condition_type = row["Condition type"].ToString();
+                    SqlRow.BillingDateForBil = Convert.ToDateTime(row["Billing date for bil"]);
+                SqlRow.SoldToParty = Convert.ToInt32(row["Sold-to party"]).ToString();
+                SqlRow.AgreementVariousC = Convert.ToInt32(row["Agreement (various c"]).ToString();
+
+                SqlRow.ConditionType = row["Condition type"].ToString();
                 if (row["Actual Invoiced Quan"].ToString() != string.Empty)
-                    SqlRow.Actual_Invoiced_Quan = Convert.ToDouble(row["Actual Invoiced Quan"]);
+                    SqlRow.ActualInvoicedQuan = Convert.ToDouble(row["Actual Invoiced Quan"]);
                 if (row["Condition value"].ToString() != string.Empty)
-                    SqlRow.Condition_value = Convert.ToDouble(row["Condition value"]);
+                    SqlRow.ConditionValue = Convert.ToDouble(row["Condition value"]);
                 SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
                 SqlRow.DateIn = UserIn;
 
-                dsData.DMG_Master.AddDMG_MasterRow(SqlRow);
+                dsData.STI_Actv_Actual.AddSTI_Actv_ActualRow(SqlRow);
                 SqlRow.EndEdit();
             }
             Invoke(new MethodInvoker(() =>//100 %
@@ -181,19 +176,19 @@ _______________________________________________
 
                 Application.DoEvents();
             }));
-            ShowHideProgress(true); ChangeProgressCaption("Updating Damage Master ...");
+            ShowHideProgress(true); ChangeProgressCaption("Updating Activities Actual ...");
 
-            if (!DMG_Master.UpdateBulkDMG_Master(cmd, dsData.DMG_Master))
-                MsgDlg.Show("Update Damage Master Failed", MsgDlg.MessageType.Error);
+            if (!STI_Actv_Actual.UpdateBulkSTI_Actv_Actual(cmd, dsData.STI_Actv_Actual))
+                MsgDlg.Show("Update Activities Actual Failed", MsgDlg.MessageType.Error);
             else
             {
-                AddLog("New Damage Master Saved " + dsData.DMG_Master.Count);
+                AddLog("New Activities Actual Saved " + dsData.STI_Actv_Actual.Count);
                 output = true;
             }
-            dsData.DMG_Master.AcceptChanges();
+            dsData.STI_Actv_Actual.AcceptChanges();
             ShowHideProgress(false);
             dtExcel.Rows.Clear(); dtExcel.Dispose(); dtExcel = null;
-            dsData.DMG_Master.Clear(); dsData.DMG_Master.Dispose();
+            dsData.STI_Actv_Actual.Clear(); dsData.STI_Actv_Actual.Dispose();
             cmd.Dispose(); cmd = null; con.Close(); con.Dispose(); con = null;
             GC.Collect(); GC.WaitForPendingFinalizers();
 
@@ -264,8 +259,6 @@ _______________________________________________
         }
         void ImportWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            
-
             if (e.Result != null)
             {
                 DateTime dt = (DateTime)e.Result;

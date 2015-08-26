@@ -252,11 +252,8 @@
       <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[Brand Route]" Member="Brand_Route" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="[Brand Route Old]" Member="Brand_Route_Old" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Field16" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[SDN Code]" Member="SDN_Code" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="Warehouse" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="SalesDistrict3Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="NCE_Project" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="SalesDistrict2Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="SalesDistrict1Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />

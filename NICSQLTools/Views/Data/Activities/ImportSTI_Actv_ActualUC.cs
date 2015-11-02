@@ -34,6 +34,7 @@ namespace NICSQLTools.Views.Data.Activities
 [Distribution Channel]
 [Reference Document N]
 [Agreement (various c]
+[Billing Type]
 _______________________________________________
 ", Environment.NewLine);
             }
@@ -155,9 +156,12 @@ _______________________________________________
                 if (row["Billing date for bil"].ToString() != string.Empty)
                     SqlRow.BillingDateForBil = Convert.ToDateTime(row["Billing date for bil"]);
                 SqlRow.SoldToParty = Convert.ToInt32(row["Sold-to party"]).ToString();
-                SqlRow.AgreementVariousC = Convert.ToInt32(row["Agreement (various c"]).ToString();
+                if (row["Agreement (various c"].ToString() != string.Empty)
+                    SqlRow.AgreementVariousC = Convert.ToInt32(row["Agreement (various c"]).ToString();
 
                 SqlRow.ConditionType = row["Condition type"].ToString();
+                SqlRow.BillingType = row["Billing Type"].ToString();
+
                 if (row["Actual Invoiced Quan"].ToString() != string.Empty)
                     SqlRow.ActualInvoicedQuan = Convert.ToDouble(row["Actual Invoiced Quan"]);
                 if (row["Condition value"].ToString() != string.Empty)

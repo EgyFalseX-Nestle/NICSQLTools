@@ -18301,6 +18301,8 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnDateIn;
             
+            private global::System.Data.DataColumn columnBillingType;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public STI_Actv_ActualDataTable() {
@@ -18424,6 +18426,14 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BillingTypeColumn {
+                get {
+                    return this.columnBillingType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -18459,7 +18469,7 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STI_Actv_ActualRow AddSTI_Actv_ActualRow(string BillingDocument, System.DateTime BillingDateForBil, string SoldToParty, string ConditionType, double ConditionValue, double ActualInvoicedQuan, string DistributionChannel, string ReferenceDocumentN, string AgreementVariousC, int UserIn, System.DateTime DateIn) {
+            public STI_Actv_ActualRow AddSTI_Actv_ActualRow(string BillingDocument, System.DateTime BillingDateForBil, string SoldToParty, string ConditionType, double ConditionValue, double ActualInvoicedQuan, string DistributionChannel, string ReferenceDocumentN, string AgreementVariousC, int UserIn, System.DateTime DateIn, string BillingType) {
                 STI_Actv_ActualRow rowSTI_Actv_ActualRow = ((STI_Actv_ActualRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         BillingDocument,
@@ -18472,7 +18482,8 @@ namespace NICSQLTools.Data {
                         ReferenceDocumentN,
                         AgreementVariousC,
                         UserIn,
-                        DateIn};
+                        DateIn,
+                        BillingType};
                 rowSTI_Actv_ActualRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSTI_Actv_ActualRow);
                 return rowSTI_Actv_ActualRow;
@@ -18506,6 +18517,7 @@ namespace NICSQLTools.Data {
                 this.columnAgreementVariousC = base.Columns["AgreementVariousC"];
                 this.columnUserIn = base.Columns["UserIn"];
                 this.columnDateIn = base.Columns["DateIn"];
+                this.columnBillingType = base.Columns["BillingType"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18533,12 +18545,15 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnUserIn);
                 this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDateIn);
+                this.columnBillingType = new global::System.Data.DataColumn("BillingType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBillingType);
                 this.columnBillingDocument.MaxLength = 50;
                 this.columnSoldToParty.MaxLength = 50;
                 this.columnConditionType.MaxLength = 50;
                 this.columnDistributionChannel.MaxLength = 50;
                 this.columnReferenceDocumentN.MaxLength = 50;
                 this.columnAgreementVariousC.MaxLength = 50;
+                this.columnBillingType.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28651,6 +28666,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string BillingType {
+                get {
+                    try {
+                        return ((string)(this[this.tableSTI_Actv_Actual.BillingTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BillingType\' in table \'STI_Actv_Actual\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSTI_Actv_Actual.BillingTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsBillingDocumentNull() {
                 return this.IsNull(this.tableSTI_Actv_Actual.BillingDocumentColumn);
             }
@@ -28779,6 +28810,18 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDateInNull() {
                 this[this.tableSTI_Actv_Actual.DateInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBillingTypeNull() {
+                return this.IsNull(this.tableSTI_Actv_Actual.BillingTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBillingTypeNull() {
+                this[this.tableSTI_Actv_Actual.BillingTypeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -46918,10 +46961,11 @@ SELECT TaskId, TaskName, TaskDays, TaskDesc, UserIn, DateIn FROM TskEmp_Task WHE
             tableMapping.ColumnMappings.Add("AgreementVariousC", "AgreementVariousC");
             tableMapping.ColumnMappings.Add("UserIn", "UserIn");
             tableMapping.ColumnMappings.Add("DateIn", "DateIn");
+            tableMapping.ColumnMappings.Add("BillingType", "BillingType");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[STI_Actv_Actual] ([BillingDocument], [BillingDateForBil], [SoldToParty], [ConditionType], [ConditionValue], [ActualInvoicedQuan], [DistributionChannel], [ReferenceDocumentN], [AgreementVariousC], [UserIn], [DateIn]) VALUES (@BillingDocument, @BillingDateForBil, @SoldToParty, @ConditionType, @ConditionValue, @ActualInvoicedQuan, @DistributionChannel, @ReferenceDocumentN, @AgreementVariousC, @UserIn, @DateIn)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [STI_Actv_Actual] ([BillingDocument], [BillingDateForBil], [SoldToParty], [ConditionType], [ConditionValue], [ActualInvoicedQuan], [DistributionChannel], [ReferenceDocumentN], [AgreementVariousC], [UserIn], [DateIn], [BillingType]) VALUES (@BillingDocument, @BillingDateForBil, @SoldToParty, @ConditionType, @ConditionValue, @ActualInvoicedQuan, @DistributionChannel, @ReferenceDocumentN, @AgreementVariousC, @UserIn, @DateIn, @BillingType)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillingDocument", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillingDocument", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillingDateForBil", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillingDateForBil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -46934,6 +46978,7 @@ SELECT TaskId, TaskName, TaskDays, TaskDesc, UserIn, DateIn FROM TskEmp_Task WHE
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AgreementVariousC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AgreementVariousC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateIn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillingType", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillingType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -46949,9 +46994,9 @@ SELECT TaskId, TaskName, TaskDays, TaskDesc, UserIn, DateIn FROM TskEmp_Task WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT BillingDocument, BillingDateForBil, SoldToParty, ConditionType, ConditionV" +
-                "alue, ActualInvoicedQuan, DistributionChannel, ReferenceDocumentN, AgreementVari" +
-                "ousC, UserIn, DateIn FROM dbo.STI_Actv_Actual";
+            this._commandCollection[0].CommandText = "SELECT        BillingDocument, BillingDateForBil, SoldToParty, ConditionType, Con" +
+                "ditionValue, ActualInvoicedQuan, DistributionChannel, ReferenceDocumentN, Agreem" +
+                "entVariousC, UserIn, DateIn, BillingType\r\nFROM            STI_Actv_Actual";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -47012,7 +47057,7 @@ SELECT TaskId, TaskName, TaskDays, TaskDesc, UserIn, DateIn FROM TskEmp_Task WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string BillingDocument, global::System.Nullable<global::System.DateTime> BillingDateForBil, string SoldToParty, string ConditionType, global::System.Nullable<double> ConditionValue, global::System.Nullable<double> ActualInvoicedQuan, string DistributionChannel, string ReferenceDocumentN, string AgreementVariousC, global::System.Nullable<int> UserIn, global::System.Nullable<global::System.DateTime> DateIn) {
+        public virtual int Insert(string BillingDocument, global::System.Nullable<global::System.DateTime> BillingDateForBil, string SoldToParty, string ConditionType, global::System.Nullable<double> ConditionValue, global::System.Nullable<double> ActualInvoicedQuan, string DistributionChannel, string ReferenceDocumentN, string AgreementVariousC, global::System.Nullable<int> UserIn, global::System.Nullable<global::System.DateTime> DateIn, string BillingType) {
             if ((BillingDocument == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -47078,6 +47123,12 @@ SELECT TaskId, TaskName, TaskDays, TaskDesc, UserIn, DateIn FROM TskEmp_Task WHE
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((BillingType == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(BillingType));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

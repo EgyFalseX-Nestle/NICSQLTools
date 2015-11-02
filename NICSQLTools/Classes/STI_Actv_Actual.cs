@@ -32,7 +32,7 @@ namespace NICSQLTools
                 bulkCopy.ColumnMappings.Add("BillingDocument", "BillingDocument"); bulkCopy.ColumnMappings.Add("ReferenceDocumentN", "ReferenceDocumentN");
                 bulkCopy.ColumnMappings.Add("DistributionChannel", "DistributionChannel"); bulkCopy.ColumnMappings.Add("BillingDateForBil", "BillingDateForBil");
                 bulkCopy.ColumnMappings.Add("AgreementVariousC", "AgreementVariousC"); bulkCopy.ColumnMappings.Add("SoldToParty", "SoldToParty");
-                bulkCopy.ColumnMappings.Add("ConditionType", "ConditionType");
+                bulkCopy.ColumnMappings.Add("ConditionType", "ConditionType"); bulkCopy.ColumnMappings.Add("BillingType", "BillingType");
                 bulkCopy.ColumnMappings.Add("ActualInvoicedQuan", "ActualInvoicedQuan"); bulkCopy.ColumnMappings.Add("ConditionValue", "ConditionValue");
                 bulkCopy.ColumnMappings.Add("UserIn", "UserIn"); bulkCopy.ColumnMappings.Add("DateIn", "DateIn");
 

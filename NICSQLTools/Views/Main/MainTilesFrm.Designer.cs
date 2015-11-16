@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.TileItemFrame tileItemFrame1 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
@@ -225,110 +226,117 @@
             DevExpress.XtraEditors.TileItemFrame tileItemFrame78 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement118 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement119 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame79 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement120 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame80 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement121 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement122 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTilesFrm));
-            this.documentManagerMain = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.windowsUIView = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView();
-            this.tileContainerLogin = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer();
-            this.docLoginTile = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docLogin = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.tileContainerMain = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer();
-            this.documentTileEditors = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.tileContainerEditors = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer();
-            this.documentTileEditorsRoutes = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docEditorsRoutes = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsProducts = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docEditorsProducts = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsCustomers = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docEditorsCustomers = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsTargetKPI = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docEditorsTargetKPI = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsTargetNCE = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docEditorsTargetNCE = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsCostControl = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docEditorsCostControl = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileAppDatasourceEditor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docAppDatasourceEditor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsAppDatasourceLookup = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docEditorsAppDatasourceLookup = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsTaskManager = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.tabbedGroupTaskManager = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup();
-            this.docEditorsTaskManagerEmpTaskActual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsTaskManagerEmp = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsTaskManagerFactor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsTaskManagerTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsTaskManagerEmpTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsTaskManager = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsActivities = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.tabbedGroupActivities = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup();
-            this.docEditorsActivities_Actual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsActivities = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditors = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileRules = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.tileContainerRules = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer();
-            this.documentTileRuleUser = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docRuleUser = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileRuleRule = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docRuleRule = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileRuleRuleDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docRuleRuleDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileRuleUserRule = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docRuleUserRule = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileRuleRuleSalesDisitrct3 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docRuleRuleSalesDisitrct3 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docRules = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.tileContainerQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer();
-            this.documentTileQueriesQryPivot = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docQueriesQryPivot = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileQueriesQryCustomerInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docQueriesQryCustomerInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileQueriesExcelDynamicUpdate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docQueriesExcelDynamicUpdate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsImportFromExcel = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.tabbedGroupImport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup();
-            this.docEditorsImportDays = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportCustomerRoute = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportCustomerInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportEquipment = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportDamageMaster = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportCustomerSSInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportUMD = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportUpdateProductDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportStock_List = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportStock_Material = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docEditorsImportFromExcel = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.tileContainerDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer();
-            this.documentTileDashboardDesigner = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docDashboardDesigner = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileDashboardViewer = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docDashboardViewer = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileReports = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.tileContainerReports = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer();
-            this.documentTileReportViewer = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.docReportsReportViewer = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.docReports = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.pageUserSettings = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page();
-            this.docUserSetting = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document();
-            this.documentTileEditorsImportDays = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsImportCustomerRoute = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsImportCustomerInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsImportEquipment = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsImportDamageMaster = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsImportCustomerSSInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTiledUserSetting = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsImportUMD = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileUpdateProductDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsTaskManagerTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsTaskManagerEmp = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsTaskManagerEmpTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsTaskManagerFactor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsTaskManagerEmpTaskActual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsImportStock_List = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsImportStock_Material = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
-            this.documentTileEditorsActivities_Actual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile();
+            this.documentManagerMain = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.windowsUIView = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView(this.components);
+            this.tileContainerLogin = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
+            this.docLoginTile = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docLogin = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.tileContainerMain = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
+            this.documentTileEditors = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileContainerEditors = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
+            this.documentTileEditorsRoutes = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsRoutes = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsProducts = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsProducts = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsCustomers = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsCustomers = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsTargetKPI = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsTargetKPI = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsTargetNCE = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsTargetNCE = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsCostControl = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsCostControl = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileAppDatasourceEditor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docAppDatasourceEditor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsAppDatasourceLookup = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsAppDatasourceLookup = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsTaskManager = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tabbedGroupTaskManager = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
+            this.docEditorsTaskManagerEmpTaskActual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsTaskManagerEmp = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsTaskManagerFactor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsTaskManagerTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsTaskManagerEmpTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsTaskManager = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsActivities = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tabbedGroupActivities = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
+            this.docEditorsActivities_Actual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsActivities = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditors = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileRules = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileContainerRules = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
+            this.documentTileRuleUser = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docRuleUser = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileRuleRule = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docRuleRule = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileRuleRuleDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docRuleRuleDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileRuleUserRule = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docRuleUserRule = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileRuleRuleSalesDisitrct3 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docRuleRuleSalesDisitrct3 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docRules = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileContainerQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
+            this.documentTileQueriesQryPivot = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docQueriesQryPivot = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileQueriesQryCustomerInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docQueriesQryCustomerInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileQueriesExcelDynamicUpdate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docQueriesExcelDynamicUpdate = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docQueries = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsImportFromExcel = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tabbedGroupImport = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
+            this.docEditorsImportDays = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportCustomerRoute = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportCustomerInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportEquipment = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportDamageMaster = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportCustomerSSInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportUMD = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportUpdateProductDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportStock_List = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportStock_Material = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportFromExcel = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileContainerDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
+            this.documentTileDashboardDesigner = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docDashboardDesigner = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileDashboardViewer = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docDashboardViewer = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileReports = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.tileContainerReports = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
+            this.documentTileReportViewer = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docReportsReportViewer = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docReports = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.pageUserSettings = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Page(this.components);
+            this.docUserSetting = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsImportDays = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportCustomerRoute = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportCustomerInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportEquipment = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportDamageMaster = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportCustomerSSInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTiledUserSetting = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportUMD = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileUpdateProductDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsTaskManagerTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsTaskManagerEmp = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsTaskManagerEmpTask = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsTaskManagerFactor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsTaskManagerEmpTaskActual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportStock_List = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportStock_Material = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsActivities_Actual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsImportDst_Master = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsImportDst_Master = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerLogin)).BeginInit();
@@ -432,6 +440,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_Material)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsActivities_Actual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportDst_Master)).BeginInit();
             this.SuspendLayout();
             // 
             // documentManagerMain
@@ -506,7 +516,8 @@
             this.docEditorsImportStock_Material,
             this.docQueriesExcelDynamicUpdate,
             this.docEditorsActivities,
-            this.docEditorsActivities_Actual});
+            this.docEditorsActivities_Actual,
+            this.docEditorsImportDst_Master});
             this.windowsUIView.OptionsLayout.LayoutVersion = "2";
             this.windowsUIView.OptionsLayout.PropertiesRestoreMode = DevExpress.XtraBars.Docking2010.Views.PropertiesRestoreMode.All;
             this.windowsUIView.SearchPanelProperties.Enabled = false;
@@ -563,7 +574,8 @@
             this.documentTileEditorsImportStock_Material,
             this.documentTileQueriesExcelDynamicUpdate,
             this.documentTileEditorsActivities,
-            this.documentTileEditorsActivities_Actual});
+            this.documentTileEditorsActivities_Actual,
+            this.documentTileEditorsImportDst_Master});
             this.windowsUIView.QueryControl += new DevExpress.XtraBars.Docking2010.Views.QueryControlEventHandler(this.windowsUIView_QueryControl);
             // 
             // tileContainerLogin
@@ -1499,7 +1511,8 @@
             this.docEditorsImportUMD,
             this.docEditorsImportUpdateProductDetails,
             this.docEditorsImportStock_List,
-            this.docEditorsImportStock_Material});
+            this.docEditorsImportStock_Material,
+            this.docEditorsImportDst_Master});
             this.tabbedGroupImport.Name = "tabbedGroupImport";
             this.tabbedGroupImport.Parent = this.tileContainerEditors;
             // 
@@ -2059,6 +2072,35 @@
             this.documentTileEditorsActivities_Actual.Document = this.docEditorsActivities_Actual;
             this.documentTileEditorsActivities_Actual.Name = "documentTileEditorsActivities_Actual";
             // 
+            // docEditorsImportDst_Master
+            // 
+            this.docEditorsImportDst_Master.Caption = "Import Distributor Days";
+            this.docEditorsImportDst_Master.ControlName = "docEditorsImportDst_Master";
+            // 
+            // documentTileEditorsImportDst_Master
+            // 
+            this.documentTileEditorsImportDst_Master.Appearances.Normal.BackColor = System.Drawing.Color.Gold;
+            this.documentTileEditorsImportDst_Master.Appearances.Normal.ForeColor = System.Drawing.Color.Black;
+            this.documentTileEditorsImportDst_Master.Appearances.Normal.Options.UseBackColor = true;
+            this.documentTileEditorsImportDst_Master.Appearances.Normal.Options.UseForeColor = true;
+            this.documentTileEditorsImportDst_Master.Document = this.docEditorsImportDst_Master;
+            tileItemElement120.Image = global::NICSQLTools.Properties.Resources.ImportR3_128;
+            tileItemElement120.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement120.Text = "Import Distributor Days";
+            tileItemFrame79.Elements.Add(tileItemElement120);
+            tileItemFrame79.Image = global::NICSQLTools.Properties.Resources.ImportR3_128;
+            tileItemElement121.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement121.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement121.Text = "Import Distributor Days";
+            tileItemElement122.Text = "Import Bill Document From oERPTools Report In xlsx Format";
+            tileItemElement122.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame80.Elements.Add(tileItemElement121);
+            tileItemFrame80.Elements.Add(tileItemElement122);
+            tileItemFrame80.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileEditorsImportDst_Master.Frames.Add(tileItemFrame79);
+            this.documentTileEditorsImportDst_Master.Frames.Add(tileItemFrame80);
+            this.documentTileEditorsImportDst_Master.Name = "documentTileEditorsImportDst_Master";
+            // 
             // MainTilesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2174,6 +2216,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_List)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_Material)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsActivities_Actual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportDst_Master)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2283,6 +2327,8 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup tabbedGroupActivities;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsActivities_Actual;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsActivities_Actual;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsImportDst_Master;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportDst_Master;
     }
 }
 

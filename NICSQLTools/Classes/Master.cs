@@ -10,7 +10,6 @@ namespace NICSQLTools
     public static class Master
     {
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(Master));
-
         public static bool UpdateBulkMaster(SqlCommand cmd, Data.dsData._0_1__Master_AllDataTable BulkTable)
         {
             bool outPut = false;

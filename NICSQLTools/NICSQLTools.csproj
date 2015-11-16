@@ -199,6 +199,9 @@
     <Compile Include="Classes\Authentication.cs" />
     <Compile Include="Classes\Core.cs" />
     <Compile Include="Classes\Cost.cs" />
+    <Compile Include="Classes\Dst_Customer.cs" />
+    <Compile Include="Classes\Dst_Route.cs" />
+    <Compile Include="Classes\Dst_Master.cs" />
     <Compile Include="Classes\STI_Actv_Actual.cs" />
     <Compile Include="Classes\msExcel\DynamicRefresh\DatasourceBase.cs" />
     <Compile Include="Classes\msExcel\DynamicRefresh\DynamicRefresh.cs" />
@@ -222,6 +225,7 @@
     <Compile Include="Classes\CustomerRoute.cs" />
     <Compile Include="Data\dsData.cs">
       <DependentUpon>dsData.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Data\dsData1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -245,6 +249,7 @@
     </Compile>
     <Compile Include="Data\dsQry.cs">
       <DependentUpon>dsQry.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Data\Linq\dsLinqData1.designer.cs">
       <AutoGen>True</AutoGen>
@@ -340,6 +345,12 @@
     </Compile>
     <Compile Include="Views\Data\Activities\ImportSTI_Actv_ActualUC.Designer.cs">
       <DependentUpon>ImportSTI_Actv_ActualUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportDst_MasterUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportDst_MasterUC.Designer.cs">
+      <DependentUpon>ImportDst_MasterUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportStock_MaterialUC.cs">
       <SubType>UserControl</SubType>
@@ -648,6 +659,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\Activities\ImportSTI_Actv_ActualUC.resx">
       <DependentUpon>ImportSTI_Actv_ActualUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportDst_MasterUC.resx">
+      <DependentUpon>ImportDst_MasterUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportStock_MaterialUC.resx">
       <DependentUpon>ImportStock_MaterialUC.cs</DependentUpon>

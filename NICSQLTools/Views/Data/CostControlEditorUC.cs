@@ -127,7 +127,7 @@ _______________________________________________
                     if (File.Exists(lbcFilePathDF.Items[i].ToString()))
                     {
                         ChangeProgressCaptionDF(String.Format("Loading Excel File [{0}] Contains[1 of 3]", (i + 1)));
-                        DataTable dtPart = DataManager.LoadExcelFile(lbcFilePathDF.Items[i].ToString(), 0, "*");
+                        DataTable dtPart = DataManager.LoadExcelFile_VBA(lbcFilePathDF.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                         {
                             AddLogDF("File empty " + lbcFilePathDF.Items[i], false);
@@ -345,7 +345,7 @@ _______________________________________________
                         if (File.Exists(lbcFilePathActual.Items[i].ToString()))
                         {
                             ChangeProgressCaptionActual("Loading Excel File [" + (i + 1) + "] Contains. [1 of 3]");
-                            DataTable dtPart = DataManager.LoadExcelFile(lbcFilePathActual.Items[i].ToString(), 0, "*");
+                            DataTable dtPart = DataManager.LoadExcelFile_VBA(lbcFilePathActual.Items[i].ToString(), 0, "*");
                             if (dtPart.Rows.Count == 0)
                             {
                                 AddLogActual("File empty " + lbcFilePathActual.Items[i], false);

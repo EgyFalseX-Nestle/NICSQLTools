@@ -80,7 +80,7 @@ _______________________________________________
                     if (File.Exists(lbcFilePath.Items[i].ToString()))
                     {
                         ChangeProgressCaption(String.Format("Loading Excel File [{0}] Contains[1/3]", (i + 1)));
-                        DataTable dtPart = DataManager.LoadExcelFile(lbcFilePath.Items[i].ToString(), 0, "*");
+                        DataTable dtPart = DataManager.LoadExcelFile_VBA(lbcFilePath.Items[i].ToString(), 0, "*");
                         if (dtPart.Rows.Count == 0)
                         {
                             AddLog("File empty " + lbcFilePath.Items[i], false);

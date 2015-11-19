@@ -11,6 +11,7 @@ using System.Collections;
 using System.IO.MemoryMappedFiles;
 using System.Threading;
 using System.Threading.Tasks;
+using Excel_VBA = Microsoft.Office.Interop.Excel; 
 
 namespace NICSQLTools.Classes.Managers
 {
@@ -322,7 +323,7 @@ namespace NICSQLTools.Classes.Managers
             return NeededFiles;
         }
 
-        public static DataTable LoadExcelFile(string strFile, string sheetName, string ColumnsNames)
+        public static DataTable LoadExcelFile1(string strFile, string sheetName, string ColumnsNames)
         {
             DataTable dt = new DataTable();
             try
@@ -343,20 +344,27 @@ namespace NICSQLTools.Classes.Managers
             }
             return dt;
         }
-        public static DataTable LoadExcelFile(string strFile, int sheetIndex, string ColumnsNames)
+        public static DataTable LoadExcelFile1(string strFile, int sheetIndex, string ColumnsNames)
         {
             DataTable dt = new DataTable();
             try
             {
-                string strConnectionString = "";
+                //string strConnectionString = "";
+                OleDbConnection con = new OleDbConnection("");
+                
                 if (strFile.Trim().ToLower().EndsWith(".xlsx"))
-                    strConnectionString = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1\";", strFile);
+                {
+                    con.ConnectionString = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1\";", strFile);
+                    try { con.Open(); } catch (Exception ex)
+                    {
+                        if (ex.Message.Contains("provider is not registered on the local machine"))
+                            con.ConnectionString = string.Format("Provider=Microsoft.ACE.OLEDB.14.0;Data Source={0};Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1\";", strFile);
+                    }
+                    con.Close();
+                }
                 else if (strFile.Trim().ToLower().EndsWith(".xls"))
-                    strConnectionString = string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";", strFile);
-
-                //strConnectionString = string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties=\"Excel 12.0 Xml;HDR=YES;IMEX=1\";", strFile);
-
-                OleDbConnection con = new OleDbConnection(strConnectionString);
+                    con.ConnectionString = string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";", strFile);
+                //connect.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.14.0;Data Source={0};ExtendedProperties=""Excel 12.0;HDR=YES;""";
                 con.Open();
                 DataTable dtSchema = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
                 con.Close();
@@ -388,6 +396,73 @@ namespace NICSQLTools.Classes.Managers
             }
             return dt;
         }
+        public static DataTable LoadExcelFile_VBA(string strFile, int sheetIndex, string ColumnsNames)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                Excel_VBA.Application xlApp;
+                Excel_VBA.Workbook xlWorkBook;
+                Excel_VBA.Worksheet xlWorkSheet;
+                Excel_VBA.Range range;
+
+                int rCnt = 0;
+                int cCnt = 0;
+
+                xlApp = new Excel_VBA.Application();
+                xlWorkBook = xlApp.Workbooks.Open(strFile, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+                xlWorkSheet = (Excel_VBA.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                range = xlWorkSheet.UsedRange;
+                int colCount = range.Columns.Count;
+                int rowCount = range.Rows.Count;
+                if (rowCount <= 1)
+                    return dt;
+                for (int colInx = 1; colInx <= colCount; colInx++)
+                    dt.Columns.Add(Convert.ToString((range.Cells[1, colInx] as Excel_VBA.Range).Value), ((object)(range.Cells[2, colInx] as Excel_VBA.Range).Value).GetType());
+
+                string address = range.get_Address();
+                string[] cells = address.Split(new char[] { ':' });
+                string beginCell = cells[0].Replace("$", "");
+                string endCell = cells[1].Replace("$", "");
+                object[,] objectArray = xlWorkSheet.get_Range(beginCell + ":" + endCell).Value;
+                for (rCnt = 2; rCnt <= rowCount; rCnt++)
+                {
+                    DataRow row = dt.NewRow();
+                    for (cCnt = 1; cCnt <= colCount; cCnt++)
+                        row[cCnt - 1] = objectArray[rCnt, cCnt].ToString();
+                    dt.Rows.Add(row);
+                }
+                objectArray = null;
+                xlWorkBook.Close(true, null, null);
+                xlApp.Quit();
+                releaseObject(xlWorkSheet);
+                releaseObject(xlWorkBook);
+                releaseObject(xlApp);
+            }
+            catch (Exception ex)
+            {
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+            }
+            return dt;
+        }
+        private static void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                //MessageBox.Show("Unable to release the Object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        } 
 
         public static MemoryStream CompressFile(byte[] date)
         {

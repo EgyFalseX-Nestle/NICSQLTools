@@ -419,8 +419,10 @@ namespace NICSQLTools.Classes.Managers
                 if (rowCount <= 1)
                     return dt;
                 for (int colInx = 1; colInx <= colCount; colInx++)
-                    dt.Columns.Add(Convert.ToString((range.Cells[1, colInx] as Excel_VBA.Range).Value), ((object)(range.Cells[2, colInx] as Excel_VBA.Range).Value).GetType());
-
+                {
+                    string colname = GetValidColumnName(Convert.ToString((range.Cells[1, colInx] as Excel_VBA.Range).Value), dt.Columns);
+                    dt.Columns.Add(colname, ((object)(range.Cells[2, colInx] as Excel_VBA.Range).Value).GetType());
+                }
                 string address = range.get_Address();
                 string[] cells = address.Split(new char[] { ':' });
                 string beginCell = cells[0].Replace("$", "");
@@ -445,6 +447,39 @@ namespace NICSQLTools.Classes.Managers
                 Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
             }
             return dt;
+        }
+        private static string GetValidColumnName(string colname, DataColumnCollection cols)
+        {
+            bool NameInUse = false;
+            foreach (DataColumn col in cols)
+            {
+                if (col.ColumnName == colname)
+                {
+                    NameInUse = true;
+                    break;
+                }
+            }
+            if (!NameInUse)
+                return colname;
+
+            for (int i = 1; i < 255; i++)
+            {
+                bool nameExists = false;
+                foreach (DataColumn col in cols)
+                {
+                    if (col.ColumnName == colname + i)
+                    {
+                        nameExists = true;
+                        break;
+                    }
+                }
+                if (!nameExists)
+                {
+                    colname = colname + i;
+                    break;
+                }
+            }
+            return colname;
         }
         private static void releaseObject(object obj)
         {

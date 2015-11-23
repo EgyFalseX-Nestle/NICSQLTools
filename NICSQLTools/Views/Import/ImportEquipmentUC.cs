@@ -133,17 +133,17 @@ _______________________________________________
                         Application.DoEvents();
                     }));
                 }
-                if (row["Functional Loc#"].ToString() == string.Empty)
+                if (row["Functional Loc."].ToString() == string.Empty)
                     continue;
 
                 int Funloc = 0;
-                if (Int32.TryParse(row["Functional Loc#"].ToString(), out Funloc))
-                    row["Functional Loc#"] = Funloc;
+                if (Int32.TryParse(row["Functional Loc."].ToString(), out Funloc))
+                    row["Functional Loc."] = Funloc;
                 else
                 {
-                    AddLog("Unknown Functional Loc Format : " + row["Functional Loc#"], true);
-                    AddLog(string.Format("Try To Convert ({0}) To ({1})", row["Functional Loc#"], FXFW.SqlDB.ConvertStringToInt(row["Functional Loc#"].ToString())).ToString(), true);
-                    row["Functional Loc#"] = FXFW.SqlDB.ConvertStringToInt(row["Functional Loc#"].ToString()).ToString();
+                    AddLog("Unknown Functional Loc Format : " + row["Functional Loc."], true);
+                    AddLog(string.Format("Try To Convert ({0}) To ({1})", row["Functional Loc."], FXFW.SqlDB.ConvertStringToInt(row["Functional Loc."].ToString())).ToString(), true);
+                    row["Functional Loc."] = FXFW.SqlDB.ConvertStringToInt(row["Functional Loc."].ToString()).ToString();
                 }
                 ////remove duplicated
                 //if (dsData.CustomerInfo.FindByCustomerStart_date_of_validityEnd_date_of_validity(row["Customer"].ToString(), Convert.ToDateTime(row["Start date of validity"]), Convert.ToDateTime(row["End date of validity"])) != null)
@@ -155,10 +155,9 @@ _______________________________________________
                 SqlRow.Serial_Number = row["Serial Number"].ToString();
                 SqlRow.Material = row["Material"].ToString();
                 SqlRow.Description = row["Description"].ToString();
-                SqlRow.Func_Loc = row["Functional Loc#"].ToString();
-                SqlRow.Description = row["Description"].ToString();
+                SqlRow.Func_Loc = row["Functional Loc."].ToString();
                 SqlRow.Valid_From = Convert.ToDateTime(row["Valid From"]);
-                SqlRow.Inventory_number = row["Inventory no#"].ToString();
+                SqlRow.Inventory_number = row["Inventory no."].ToString();
                 if (row["ConstructYear"].ToString() == string.Empty)
                     SqlRow.ConstructYear = Convert.ToInt16(tbYear.EditValue);
                 else
@@ -302,7 +301,5 @@ _______________________________________________
 
         #endregion
 
-        
-        
     }
 }

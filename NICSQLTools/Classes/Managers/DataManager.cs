@@ -421,7 +421,8 @@ namespace NICSQLTools.Classes.Managers
                 for (int colInx = 1; colInx <= colCount; colInx++)
                 {
                     string colname = GetValidColumnName(Convert.ToString((range.Cells[1, colInx] as Excel_VBA.Range).Value), dt.Columns);
-                    dt.Columns.Add(colname, ((object)(range.Cells[2, colInx] as Excel_VBA.Range).Value).GetType());
+                    object TypeName = (object)(range.Cells[2, colInx] as Excel_VBA.Range).Value;
+                    dt.Columns.Add(colname, TypeName == null ? typeof(string) : (TypeName).GetType());
                 }
                 string address = range.get_Address();
                 string[] cells = address.Split(new char[] { ':' });
@@ -432,7 +433,9 @@ namespace NICSQLTools.Classes.Managers
                 {
                     DataRow row = dt.NewRow();
                     for (cCnt = 1; cCnt <= colCount; cCnt++)
-                        row[cCnt - 1] = objectArray[rCnt, cCnt].ToString();
+                    {
+                        row[cCnt - 1] = objectArray[rCnt, cCnt];
+                    }
                     dt.Rows.Add(row);
                 }
                 objectArray = null;

@@ -239,14 +239,17 @@ ______________________________________________
                 }
                 if (FindBillDoc(TblMaster, row["BillingNumber"].ToString()))// Check Bill Doc Exists
                     continue;
-                if (row["Invoicekey"].ToString().Trim() == string.Empty)
+                if (row["Invoicekey"] == null || row["Invoicekey"].ToString().Trim() == string.Empty
+                    || row["ProductRef"] == null || row["ProductRef"].ToString().Trim() == string.Empty
+                    || row["PartnerRef"] == null || row["PartnerRef"].ToString().Trim() == string.Empty)
                     continue;
+
                 NICSQLTools.Data.dsData.Dst_MasterRow SqlRow = dsData.Dst_Master.NewDst_MasterRow();
 
                 SqlRow.Invoicekey = Convert.ToInt32(row["Invoicekey"]);
                 SqlRow.BillingNumber = row["BillingNumber"].ToString();
                 SqlRow.BillingType = row["BillingType"].ToString();
-                SqlRow.BillingDate = Convert.ToDateTime(row["Billingdateforbil"]);
+                SqlRow.BillingDate = Convert.ToDateTime(row["Billingdateforbil"]).Date;
                 SqlRow.Route = row["RouteNumberSystem"].ToString();
                 SqlRow.Distributer = row["Distributer"].ToString();
                 SqlRow.Product = Convert.ToInt64(row["ProductRef"]);

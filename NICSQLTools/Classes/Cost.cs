@@ -21,7 +21,7 @@ namespace NICSQLTools
 
         public static readonly string _colAct_GLAccount = "Cost Element";
         public static readonly string _colAct_Costcenter = "Cost Center";
-        public static readonly string _colAct_OffsettingAccount = "Offsetting acct no#";
+        public static readonly string _colAct_OffsettingAccount = "Offsetting acct no.";
         public static readonly string _colAct_OffsettingAccountName = "Name of offsetting account";
         public static readonly string _colAct_Desc = "Name";
         public static readonly string _colAct_DocumentHeaderText = "Document Header Text";
@@ -32,7 +32,7 @@ namespace NICSQLTools
         public static readonly string _colAct_UserName = "User Name";
         public static readonly string _colAct_ValueTranCurr = "Value TranCurr";
         public static readonly string _colAct_TransactionCurrency = "Transaction Currency";
-        public static readonly string _colAct_VblValue_ObjCurr = "Vbl# value/Obj# curr";
+        public static readonly string _colAct_VblValue_ObjCurr = "Vbl. value/Obj. curr";
         public static readonly string _colAct_ObjectCurrency = "Object Currency";
         public static readonly string _colAct_DocumentDate = "Document Date";
         public static readonly string _colAct_PostingDate = "Posting Date";

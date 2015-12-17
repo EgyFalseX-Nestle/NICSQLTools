@@ -231,6 +231,11 @@
             DevExpress.XtraEditors.TileItemFrame tileItemFrame80 = new DevExpress.XtraEditors.TileItemFrame();
             DevExpress.XtraEditors.TileItemElement tileItemElement121 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement122 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame81 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement123 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemFrame tileItemFrame82 = new DevExpress.XtraEditors.TileItemFrame();
+            DevExpress.XtraEditors.TileItemElement tileItemElement124 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement125 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTilesFrm));
             this.documentManagerMain = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.windowsUIView = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView(this.components);
@@ -303,6 +308,7 @@
             this.docEditorsImportUpdateProductDetails = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportStock_List = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportStock_Material = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportDst_Master = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportFromExcel = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentTileDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileContainerDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
@@ -335,8 +341,9 @@
             this.documentTileEditorsImportStock_List = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsImportStock_Material = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsActivities_Actual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.docEditorsImportDst_Master = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentTileEditorsImportDst_Master = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsImportEquipmentAll = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsImportEquipmentAll = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerLogin)).BeginInit();
@@ -408,6 +415,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportUpdateProductDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportStock_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportStock_Material)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportFromExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileDashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerDashboard)).BeginInit();
@@ -440,8 +448,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_Material)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsActivities_Actual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportDst_Master)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEquipmentAll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportEquipmentAll)).BeginInit();
             this.SuspendLayout();
             // 
             // documentManagerMain
@@ -517,7 +526,8 @@
             this.docQueriesExcelDynamicUpdate,
             this.docEditorsActivities,
             this.docEditorsActivities_Actual,
-            this.docEditorsImportDst_Master});
+            this.docEditorsImportDst_Master,
+            this.docEditorsImportEquipmentAll});
             this.windowsUIView.OptionsLayout.LayoutVersion = "2";
             this.windowsUIView.OptionsLayout.PropertiesRestoreMode = DevExpress.XtraBars.Docking2010.Views.PropertiesRestoreMode.All;
             this.windowsUIView.SearchPanelProperties.Enabled = false;
@@ -575,7 +585,8 @@
             this.documentTileQueriesExcelDynamicUpdate,
             this.documentTileEditorsActivities,
             this.documentTileEditorsActivities_Actual,
-            this.documentTileEditorsImportDst_Master});
+            this.documentTileEditorsImportDst_Master,
+            this.documentTileEditorsImportEquipmentAll});
             this.windowsUIView.QueryControl += new DevExpress.XtraBars.Docking2010.Views.QueryControlEventHandler(this.windowsUIView_QueryControl);
             // 
             // tileContainerLogin
@@ -1506,6 +1517,7 @@
             this.docEditorsImportCustomerRoute,
             this.docEditorsImportCustomerInfo,
             this.docEditorsImportEquipment,
+            this.docEditorsImportEquipmentAll,
             this.docEditorsImportDamageMaster,
             this.docEditorsImportCustomerSSInfo,
             this.docEditorsImportUMD,
@@ -1565,6 +1577,11 @@
             // 
             this.docEditorsImportStock_Material.Caption = "Import Stock Material";
             this.docEditorsImportStock_Material.ControlName = "docEditorsImportStock_Material";
+            // 
+            // docEditorsImportDst_Master
+            // 
+            this.docEditorsImportDst_Master.Caption = "Import Distributor Days (Zad)";
+            this.docEditorsImportDst_Master.ControlName = "docEditorsImportDst_Master";
             // 
             // docEditorsImportFromExcel
             // 
@@ -2072,11 +2089,6 @@
             this.documentTileEditorsActivities_Actual.Document = this.docEditorsActivities_Actual;
             this.documentTileEditorsActivities_Actual.Name = "documentTileEditorsActivities_Actual";
             // 
-            // docEditorsImportDst_Master
-            // 
-            this.docEditorsImportDst_Master.Caption = "Import Distributor Days";
-            this.docEditorsImportDst_Master.ControlName = "docEditorsImportDst_Master";
-            // 
             // documentTileEditorsImportDst_Master
             // 
             this.documentTileEditorsImportDst_Master.Appearances.Normal.BackColor = System.Drawing.Color.Gold;
@@ -2100,6 +2112,35 @@
             this.documentTileEditorsImportDst_Master.Frames.Add(tileItemFrame79);
             this.documentTileEditorsImportDst_Master.Frames.Add(tileItemFrame80);
             this.documentTileEditorsImportDst_Master.Name = "documentTileEditorsImportDst_Master";
+            // 
+            // docEditorsImportEquipmentAll
+            // 
+            this.docEditorsImportEquipmentAll.Caption = "Import EquipmentAll";
+            this.docEditorsImportEquipmentAll.ControlName = "docEditorsImportEquipmentAll";
+            // 
+            // documentTileEditorsImportEquipmentAll
+            // 
+            this.documentTileEditorsImportEquipmentAll.Appearances.Normal.BackColor = System.Drawing.Color.Gold;
+            this.documentTileEditorsImportEquipmentAll.Appearances.Normal.ForeColor = System.Drawing.Color.Black;
+            this.documentTileEditorsImportEquipmentAll.Appearances.Normal.Options.UseBackColor = true;
+            this.documentTileEditorsImportEquipmentAll.Appearances.Normal.Options.UseForeColor = true;
+            this.documentTileEditorsImportEquipmentAll.Document = this.docEditorsImportEquipmentAll;
+            tileItemElement123.Image = global::NICSQLTools.Properties.Resources.ImportR3_64;
+            tileItemElement123.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement123.Text = "Import EquipmentAll";
+            tileItemFrame81.Elements.Add(tileItemElement123);
+            tileItemFrame81.Image = global::NICSQLTools.Properties.Resources.ImportR3_64;
+            tileItemElement124.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            tileItemElement124.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement124.Text = "Import EquipmentAll";
+            tileItemElement125.Text = "Import EquipmentAll From Excel file";
+            tileItemElement125.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemFrame82.Elements.Add(tileItemElement124);
+            tileItemFrame82.Elements.Add(tileItemElement125);
+            tileItemFrame82.Image = global::NICSQLTools.Properties.Resources.info_32x32;
+            this.documentTileEditorsImportEquipmentAll.Frames.Add(tileItemFrame81);
+            this.documentTileEditorsImportEquipmentAll.Frames.Add(tileItemFrame82);
+            this.documentTileEditorsImportEquipmentAll.Name = "documentTileEditorsImportEquipmentAll";
             // 
             // MainTilesFrm
             // 
@@ -2184,6 +2225,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportUpdateProductDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportStock_List)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportStock_Material)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportFromExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileDashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerDashboard)).EndInit();
@@ -2216,8 +2258,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_List)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_Material)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsActivities_Actual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportDst_Master)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEquipmentAll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportEquipmentAll)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2329,6 +2372,8 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsActivities_Actual;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsImportDst_Master;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportDst_Master;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsImportEquipmentAll;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportEquipmentAll;
     }
 }
 

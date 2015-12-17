@@ -197,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Authentication.cs" />
+    <Compile Include="Classes\EquipmentAll.cs" />
     <Compile Include="Classes\Core.cs" />
     <Compile Include="Classes\Cost.cs" />
     <Compile Include="Classes\Dst_Customer.cs" />
@@ -345,6 +346,12 @@
     </Compile>
     <Compile Include="Views\Data\Activities\ImportSTI_Actv_ActualUC.Designer.cs">
       <DependentUpon>ImportSTI_Actv_ActualUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportEquipmentAllUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportEquipmentAllUC.Designer.cs">
+      <DependentUpon>ImportEquipmentAllUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportDst_MasterUC.cs">
       <SubType>UserControl</SubType>
@@ -659,6 +666,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\Activities\ImportSTI_Actv_ActualUC.resx">
       <DependentUpon>ImportSTI_Actv_ActualUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportEquipmentAllUC.resx">
+      <DependentUpon>ImportEquipmentAllUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportDst_MasterUC.resx">
       <DependentUpon>ImportDst_MasterUC.cs</DependentUpon>

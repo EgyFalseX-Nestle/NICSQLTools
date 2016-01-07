@@ -294,6 +294,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Import.ImportDst_MasterUC(RuleElemet);
             }
+            else if (e.Document == docEditorsImportActual_OTRUC)
+            {
+                e.Control = new Views.Import.ImportActual_OTRUC(RuleElemet);
+            }
             else if (e.Document == docEditorsCostControl)
             {
                 e.Control = new Views.Data.CostControlEditorUC(RuleElemet);

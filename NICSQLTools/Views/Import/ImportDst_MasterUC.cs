@@ -27,34 +27,34 @@ namespace NICSQLTools.Views.Import
             get
             {
                 return string.Format(@"Required field for import{0}
-Invoicekey
-BillingNumber
-BillingType
-Billingdateforbil
+Invoice key
+Billing Number
+Billing Type
+Billing date for bil
 route
 Salesman
-BrandRoute
+Brand Route
 Supervisor
 Region
 Distributer
-ProductRef
-ProductName
+Product Ref
+Product Name
 brand
 price_point_range
 price_point
-BaseProduct
-PartnerRef
-PartnerName
+Base Product
+Partner Ref
+Partner Name
 level3
 subchannel
-CustomerType
+Customer Type
 invoice_value
 invoice_case
 invoice_volume
-SalesType
-ProductSalesType
-PatnerNameعربي
-systemdate
+Sales Type
+Product Sales Type
+Patner Name عربي
+system date
 ______________________________________________
 ", Environment.NewLine);
             }
@@ -74,9 +74,9 @@ ______________________________________________
             
             _elementRule = RuleElement;
         }
-        private static bool FindBillDoc(NICSQLTools.Data.dsData.QryDst_MasterDocNumberDataTable tbl, string BillDoc)
+        private static bool FindBillDoc(NICSQLTools.Data.dsData.QryDst_MasterDocNumberDataTable tbl, int Invoicekey)
         {
-            if (tbl.FindByBillingNumber(BillDoc) != null)
+            if (tbl.FindByInvoicekey(Invoicekey) != null)
                 return true;
             else
                 return false;
@@ -208,9 +208,9 @@ ______________________________________________
             
             //deleting data before saving new 1
             var result = from row in dtExcel.AsEnumerable()
-                         where row["Billingdateforbil"] != null & row["Billingdateforbil"].ToString() != string.Empty
-                         orderby row["Billingdateforbil"]
-                         group row by row["Billingdateforbil"] into grp
+                         where row["Billing date for bil"] != null & row["Billing date for bil"].ToString() != string.Empty
+                         orderby row["Billing date for bil"]
+                         group row by row["Billing date for bil"] into grp
                          select new { BillingDate = grp.Key };
 
             
@@ -237,29 +237,45 @@ ______________________________________________
                         Application.DoEvents();
                     }));
                 }
-                if (FindBillDoc(TblMaster, row["BillingNumber"].ToString()))// Check Bill Doc Exists
+                //if (row["Invoice key"].ToString() == "77997")
+                //{
+                //    string x = "";
+                //}
+                if (row["Invoice key"] == null || row["Invoice key"].ToString().Trim() == string.Empty
+                    || row["Product Ref"] == null || row["Product Ref"].ToString().Trim() == string.Empty
+                    || row["Partner Ref"] == null || row["Partner Ref"].ToString().Trim() == string.Empty)
                     continue;
-                if (row["Invoicekey"] == null || row["Invoicekey"].ToString().Trim() == string.Empty
-                    || row["ProductRef"] == null || row["ProductRef"].ToString().Trim() == string.Empty
-                    || row["PartnerRef"] == null || row["PartnerRef"].ToString().Trim() == string.Empty)
+                if (FindBillDoc(TblMaster, Convert.ToInt32(row["Invoice key"])))// Check Bill Doc Exists
                     continue;
 
                 NICSQLTools.Data.dsData.Dst_MasterRow SqlRow = dsData.Dst_Master.NewDst_MasterRow();
 
-                SqlRow.Invoicekey = Convert.ToInt32(row["Invoicekey"]);
-                SqlRow.BillingNumber = row["BillingNumber"].ToString();
-                SqlRow.BillingType = row["BillingType"].ToString();
-                SqlRow.BillingDate = Convert.ToDateTime(row["Billingdateforbil"]).Date;
-                SqlRow.Route = row["RouteNumberSystem"].ToString();
+                SqlRow.Invoicekey = Convert.ToInt32(row["Invoice key"]);
+                SqlRow.BillingNumber = row["Billing Number"].ToString();
+                SqlRow.BillingType = row["Billing Type"].ToString();
+                SqlRow.BillingDate = Convert.ToDateTime(row["Billing date for bil"]).Date;
+                SqlRow.Route = row["Route Number System"].ToString();
                 SqlRow.Distributer = row["Distributer"].ToString();
-                SqlRow.Product = Convert.ToInt64(row["ProductRef"]);
-                SqlRow.Customer = Convert.ToInt64(row["PartnerRef"]);
-                SqlRow.Value = Convert.ToDouble(row["invoice_value"]);
-                SqlRow.CS = Convert.ToDouble(row["invoice_case"]);
-                SqlRow.Vol = Convert.ToDouble(row["invoice_volume"]);
-                SqlRow.SalesType = row["SalesType"].ToString();
-                SqlRow.ProductSalesType = row["ProductSalesType"].ToString();
-                SqlRow.systemdate = Convert.ToDateTime(row["systemdate"]);
+                if (row["Product Ref"].ToString() == string.Empty)
+                    SqlRow.Product = 0;
+                else
+                    SqlRow.Product = Convert.ToInt64(row["Product Ref"]);
+                SqlRow.Customer = Convert.ToInt64(row["Partner Ref"]);
+                if (row["invoice_value"].ToString() == string.Empty)
+                    SqlRow.Value = 0;
+                else
+                    SqlRow.Value = Convert.ToDouble(row["invoice_value"]);
+                if (row["invoice_case"].ToString() == string.Empty)
+                    SqlRow.CS = 0;
+                else
+                    SqlRow.CS = Convert.ToDouble(row["invoice_case"]);
+                if (row["invoice_volume"].ToString() == string.Empty)
+                    SqlRow.Vol = 0;
+                else
+                    SqlRow.Vol = Convert.ToDouble(row["invoice_volume"]);
+                SqlRow.SalesType = row["Sales Type"].ToString();
+                SqlRow.ProductSalesType = row["Product Sales Type"].ToString();
+                SqlRow.systemdate = Convert.ToDateTime(row["system date"]);
                 
                 if (SqlRow.Route == string.Empty)
                 {
@@ -275,13 +291,13 @@ ______________________________________________
                 if (CustomerRow.RowState == DataRowState.Detached)
                 {
                     CustomerRow.Customer = SqlRow.Customer;
-                    CustomerRow.CustomerName = row["PartnerName"].ToString();
-                    CustomerRow.CustomerName2 = row["PatnerNameعربي"].ToString();
-                    CustomerRow.CustomerNameAr = row["PartnerName"].ToString();
-                    CustomerRow.CustomerName2Ar = row["PatnerNameعربي"].ToString();
+                    CustomerRow.CustomerName = row["Partner Name"].ToString();
+                    CustomerRow.CustomerName2 = row["Patner Name عربي"].ToString();
+                    CustomerRow.CustomerNameAr = row["Partner Name"].ToString();
+                    CustomerRow.CustomerName2Ar = row["Patner Name عربي"].ToString();
                     CustomerRow.Level3 = row["level3"].ToString();
                     CustomerRow.Subchannel = row["subchannel"].ToString();
-                    CustomerRow.CustomerType = row["CustomerType"].ToString();
+                    CustomerRow.CustomerType = row["Customer Type"].ToString();
 
                     dsData.Dst_Customer.AddDst_CustomerRow(CustomerRow);
                     CustomerRow.EndEdit();
@@ -292,7 +308,7 @@ ______________________________________________
                 //Route Update
                 if (row["Route"].ToString().Trim() != string.Empty)
                 {
-                    NICSQLTools.Data.dsData.Dst_RouteRow RouteRow = Dst_Route.GetRouteNumber(row["RouteNumberSystem"].ToString().Trim(), dsData.Dst_Route);
+                    NICSQLTools.Data.dsData.Dst_RouteRow RouteRow = Dst_Route.GetRouteNumber(row["Route Number System"].ToString().Trim(), dsData.Dst_Route);
                     if (RouteRow == null)
                     {
                         RouteRow = dsData.Dst_Route.NewDst_RouteRow();
@@ -300,7 +316,7 @@ ______________________________________________
                         RouteRow.Distributer = row["Distributer"].ToString();
                         RouteRow.RouteName = row["Route"].ToString();
                         RouteRow.SalesMan = row["Salesman"].ToString();
-                        RouteRow.BrandRoute = row["BrandRoute"].ToString();
+                        RouteRow.BrandRoute = row["Brand Route"].ToString();
                         RouteRow.Supervisor = row["Supervisor"].ToString();
                         RouteRow.Region = row["Region"].ToString();
                         dsData.Dst_Route.AddDst_RouteRow(RouteRow);

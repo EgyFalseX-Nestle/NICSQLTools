@@ -197,6 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Authentication.cs" />
+    <Compile Include="Classes\MSrvType.cs" />
+    <Compile Include="Classes\STI_1Actv_Actual_OTR.cs" />
     <Compile Include="Classes\EquipmentAll.cs" />
     <Compile Include="Classes\Core.cs" />
     <Compile Include="Classes\Cost.cs" />
@@ -237,6 +239,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDataSource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsMSrc1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMSrc.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\dsQry1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -305,6 +312,24 @@
     <Compile Include="Views\Data\AppDatasourceLookupEditorUC.Designer.cs">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Data\MSrv\MSrv_TypeEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\MSrv_TypeEditorUC.Designer.cs">
+      <DependentUpon>MSrv_TypeEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\MSrv_TechnicianEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\MSrv_TechnicianEditorUC.Designer.cs">
+      <DependentUpon>MSrv_TechnicianEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\MSrv_PartEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\MSrv_PartEditorUC.Designer.cs">
+      <DependentUpon>MSrv_PartEditorUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Data\TaskManager\EmpTaskActualEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -346,6 +371,12 @@
     </Compile>
     <Compile Include="Views\Data\Activities\ImportSTI_Actv_ActualUC.Designer.cs">
       <DependentUpon>ImportSTI_Actv_ActualUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportActual_OTRUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportActual_OTRUC.Designer.cs">
+      <DependentUpon>ImportActual_OTRUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportEquipmentAllUC.cs">
       <SubType>UserControl</SubType>
@@ -394,6 +425,12 @@
     </Compile>
     <Compile Include="Views\Permission\LookupValuesDetailsDlg.Designer.cs">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\QryPivotOLapUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\QryPivotOLapUC.Designer.cs">
+      <DependentUpon>QryPivotOLapUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Qry\ExcelDynamicUpdateUC.cs">
       <SubType>UserControl</SubType>
@@ -646,6 +683,15 @@
     <EmbeddedResource Include="Views\Data\AppDatasourceLookupEditorUC.resx">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TypeEditorUC.resx">
+      <DependentUpon>MSrv_TypeEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TechnicianEditorUC.resx">
+      <DependentUpon>MSrv_TechnicianEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\MSrv\MSrv_PartEditorUC.resx">
+      <DependentUpon>MSrv_PartEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\TaskManager\EmpTaskActualEditorUC.resx">
       <DependentUpon>EmpTaskActualEditorUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -666,6 +712,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\Activities\ImportSTI_Actv_ActualUC.resx">
       <DependentUpon>ImportSTI_Actv_ActualUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportActual_OTRUC.resx">
+      <DependentUpon>ImportActual_OTRUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportEquipmentAllUC.resx">
       <DependentUpon>ImportEquipmentAllUC.cs</DependentUpon>
@@ -690,6 +739,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Permission\LookupValuesDetailsDlg.resx">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\QryPivotOLapUC.resx">
+      <DependentUpon>QryPivotOLapUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\ExcelDynamicUpdateUC.resx">
       <DependentUpon>ExcelDynamicUpdateUC.cs</DependentUpon>
@@ -788,6 +840,17 @@
     </None>
     <None Include="Data\dsDataSource.xss">
       <DependentUpon>dsDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsMSrc.xsc">
+      <DependentUpon>dsMSrc.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsMSrc.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMSrc1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\dsMSrc.xss">
+      <DependentUpon>dsMSrc.xsd</DependentUpon>
     </None>
     <None Include="Data\dsTask.xsc">
       <DependentUpon>dsTask.xsd</DependentUpon>

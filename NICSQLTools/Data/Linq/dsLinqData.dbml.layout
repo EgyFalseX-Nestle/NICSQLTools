@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 30.75" name="dsLinqData">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 35.625" name="dsLinqData">
   <DataContextMoniker Name="/dsLinqDataDataContext" />
   <nestedChildShapes>
     <classShape Id="81751340-4c25-483e-aba3-7214bdcb9086" absoluteBounds="3.5, 1, 2, 23.308657226562502">
@@ -148,5 +148,42 @@
         <elementListCompartment Id="7864d4ca-3745-4654-aeef-ec8ea26be451" absoluteBounds="4.39, 29.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="009556e4-9db0-47f6-afe2-8556d1c1a6db" absoluteBounds="1.25, 30.375, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/dsLinqDataDataContext/vMSrv_Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd070634-d497-4d6f-8222-f5e3c83440cd" absoluteBounds="1.2650000000000001, 30.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="672e01a2-44d1-44fd-a0ac-d9d569dd205d" absoluteBounds="3.5, 30.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dsLinqDataDataContext/vMSrv_Equipment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de5f3b37-d141-4436-b854-28c801fa7364" absoluteBounds="3.5149999999999997, 31.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70fd0e38-77ad-455b-8936-39ee1e566ce7" absoluteBounds="0.5, 33.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/dsLinqDataDataContext/MSrv_Type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10c19a1d-8ba8-4e6e-a988-8cb1ecb2cabd" absoluteBounds="0.51499999999999968, 33.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31df1384-24e6-4869-b8a8-779d7f2b17d7" absoluteBounds="3.125, 33.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/dsLinqDataDataContext/MSrv_Part" />
+      <nestedChildShapes>
+        <elementListCompartment Id="387169d2-be2a-4baa-9718-1b37f0e73748" absoluteBounds="3.14, 34.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d08df0c-1fa5-4ded-b0a4-79146f88796a" absoluteBounds="5.75, 33.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dsLinqDataDataContext/MSrv_Department" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a580be3-e13a-49ea-9ed2-f72fd89a7b50" absoluteBounds="5.765, 34.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.75 : 33.75); (6.75 : 33.375); (3.5 : 33.375); (3.5 : 33.5497054036458); (2.875 : 33.5497054036458); (2.875 : 34.3854484049479); (2.5 : 34.3854484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dsLinqDataDataContext/MSrv_Department/MSrv_Department_MSrv_Type" />
+      <nodes>
+        <classShapeMoniker Id="6d08df0c-1fa5-4ded-b0a4-79146f88796a" />
+        <classShapeMoniker Id="70fd0e38-77ad-455b-8936-39ee1e566ce7" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

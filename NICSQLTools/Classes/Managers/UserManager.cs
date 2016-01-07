@@ -20,6 +20,7 @@ namespace NICSQLTools.Classes.Managers
         private static Data.dsQryTableAdapters.SalesDistrict2TableAdapter adpUserSalesDistrict2;
         private static Data.dsQryTableAdapters.UserRuleDatasourceTableAdapter adpUserDatasource;
         private static Data.dsQryTableAdapters.AppRuleLookupValueForUserTableAdapter adpUserLookupValue;
+
         public static readonly int SuperAdminId = 1;
         //public static Data.dsQry.sales
         #endregion
@@ -27,6 +28,7 @@ namespace NICSQLTools.Classes.Managers
         public Uti.Types.UserInfo User = new Uti.Types.UserInfo();
         private NICSQLTools.Data.dsData.AppRuleDetailDataTable UserRuleDetialsTable = new Data.dsData.AppRuleDetailDataTable();
         public NICSQLTools.Data.dsQry.SalesDistrict2DataTable UserRuleSalesDistrictTable = new Data.dsQry.SalesDistrict2DataTable();
+        
         public NICSQLTools.Data.dsQry.UserRuleDatasourceDataTable UserDatasource = new Data.dsQry.UserRuleDatasourceDataTable();
         #endregion
         #region -   Functions   -
@@ -75,6 +77,8 @@ namespace NICSQLTools.Classes.Managers
                         return false;
                     if (!GetUserDatasource(User.UserId))
                         return false;
+                    if (!GetUserDepartment(User.UserId))
+                        return false;
                     Logger.InfoFormat("User Name {0} UserId {1} Logon Time {2}", User.UserName, User.UserId, DataManager.adpQry.GetServerDate());
                     return true;
                 }
@@ -106,6 +110,12 @@ namespace NICSQLTools.Classes.Managers
             else
                 adpUserDatasource.FillByUserId(UserDatasource, UserId);
 
+            return true;
+        }
+        private bool GetUserDepartment(int UserId)
+        {
+            NICSQLTools.Data.dsMSrcTableAdapters.QueriesTableAdapter adp = new Data.dsMSrcTableAdapters.QueriesTableAdapter();
+            User.MSrvDepartmentId = (short)adp.GetUserMSrvDepartmentId(UserId);
             return true;
         }
         public NICSQLTools.Data.dsData.AppRuleDetailRow RuleElementInformation(string ElementName)

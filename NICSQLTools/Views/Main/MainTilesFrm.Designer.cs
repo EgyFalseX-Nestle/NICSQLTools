@@ -302,6 +302,7 @@
             this.docEditorsImportCustomerRoute = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportCustomerInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportEquipment = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportEquipmentAll = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportDamageMaster = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportCustomerSSInfo = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportUMD = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
@@ -342,8 +343,9 @@
             this.documentTileEditorsImportStock_Material = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsActivities_Actual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsImportDst_Master = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.docEditorsImportEquipmentAll = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentTileEditorsImportEquipmentAll = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.docEditorsImportActual_OTRUC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.documentTileEditorsImportActual_OTRUC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerLogin)).BeginInit();
@@ -409,6 +411,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportCustomerRoute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportCustomerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEquipment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEquipmentAll)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDamageMaster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportCustomerSSInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportUMD)).BeginInit();
@@ -449,8 +452,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_Material)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsActivities_Actual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportDst_Master)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEquipmentAll)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportEquipmentAll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportActual_OTRUC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportActual_OTRUC)).BeginInit();
             this.SuspendLayout();
             // 
             // documentManagerMain
@@ -527,7 +531,8 @@
             this.docEditorsActivities,
             this.docEditorsActivities_Actual,
             this.docEditorsImportDst_Master,
-            this.docEditorsImportEquipmentAll});
+            this.docEditorsImportEquipmentAll,
+            this.docEditorsImportActual_OTRUC});
             this.windowsUIView.OptionsLayout.LayoutVersion = "2";
             this.windowsUIView.OptionsLayout.PropertiesRestoreMode = DevExpress.XtraBars.Docking2010.Views.PropertiesRestoreMode.All;
             this.windowsUIView.SearchPanelProperties.Enabled = false;
@@ -586,7 +591,8 @@
             this.documentTileEditorsActivities,
             this.documentTileEditorsActivities_Actual,
             this.documentTileEditorsImportDst_Master,
-            this.documentTileEditorsImportEquipmentAll});
+            this.documentTileEditorsImportEquipmentAll,
+            this.documentTileEditorsImportActual_OTRUC});
             this.windowsUIView.QueryControl += new DevExpress.XtraBars.Docking2010.Views.QueryControlEventHandler(this.windowsUIView_QueryControl);
             // 
             // tileContainerLogin
@@ -1524,7 +1530,8 @@
             this.docEditorsImportUpdateProductDetails,
             this.docEditorsImportStock_List,
             this.docEditorsImportStock_Material,
-            this.docEditorsImportDst_Master});
+            this.docEditorsImportDst_Master,
+            this.docEditorsImportActual_OTRUC});
             this.tabbedGroupImport.Name = "tabbedGroupImport";
             this.tabbedGroupImport.Parent = this.tileContainerEditors;
             // 
@@ -1547,6 +1554,11 @@
             // 
             this.docEditorsImportEquipment.Caption = "Import Equipment";
             this.docEditorsImportEquipment.ControlName = "docEditorsImportEquipment";
+            // 
+            // docEditorsImportEquipmentAll
+            // 
+            this.docEditorsImportEquipmentAll.Caption = "Import EquipmentAll";
+            this.docEditorsImportEquipmentAll.ControlName = "docEditorsImportEquipmentAll";
             // 
             // docEditorsImportDamageMaster
             // 
@@ -2113,11 +2125,6 @@
             this.documentTileEditorsImportDst_Master.Frames.Add(tileItemFrame80);
             this.documentTileEditorsImportDst_Master.Name = "documentTileEditorsImportDst_Master";
             // 
-            // docEditorsImportEquipmentAll
-            // 
-            this.docEditorsImportEquipmentAll.Caption = "Import EquipmentAll";
-            this.docEditorsImportEquipmentAll.ControlName = "docEditorsImportEquipmentAll";
-            // 
             // documentTileEditorsImportEquipmentAll
             // 
             this.documentTileEditorsImportEquipmentAll.Appearances.Normal.BackColor = System.Drawing.Color.Gold;
@@ -2141,6 +2148,16 @@
             this.documentTileEditorsImportEquipmentAll.Frames.Add(tileItemFrame81);
             this.documentTileEditorsImportEquipmentAll.Frames.Add(tileItemFrame82);
             this.documentTileEditorsImportEquipmentAll.Name = "documentTileEditorsImportEquipmentAll";
+            // 
+            // docEditorsImportActual_OTRUC
+            // 
+            this.docEditorsImportActual_OTRUC.Caption = "Import Actual OTR";
+            this.docEditorsImportActual_OTRUC.ControlName = "docEditorsImportActual_OTRUC";
+            // 
+            // documentTileEditorsImportActual_OTRUC
+            // 
+            this.documentTileEditorsImportActual_OTRUC.Document = this.docEditorsImportActual_OTRUC;
+            this.documentTileEditorsImportActual_OTRUC.Name = "documentTileEditorsImportActual_OTRUC";
             // 
             // MainTilesFrm
             // 
@@ -2219,6 +2236,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportCustomerRoute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportCustomerInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEquipment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEquipmentAll)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDamageMaster)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportCustomerSSInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportUMD)).EndInit();
@@ -2259,8 +2277,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_Material)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsActivities_Actual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportDst_Master)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEquipmentAll)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportEquipmentAll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportActual_OTRUC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportActual_OTRUC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2374,6 +2393,8 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportDst_Master;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsImportEquipmentAll;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportEquipmentAll;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsImportActual_OTRUC;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportActual_OTRUC;
     }
 }
 

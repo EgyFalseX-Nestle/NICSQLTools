@@ -28,23 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.excelDynamicUpdateUC1 = new NICSQLTools.Views.Qry.ExcelDynamicUpdateUC(null);
             this.SuspendLayout();
-            // 
-            // excelDynamicUpdateUC1
-            // 
-            this.excelDynamicUpdateUC1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.excelDynamicUpdateUC1.Location = new System.Drawing.Point(0, 0);
-            this.excelDynamicUpdateUC1.Name = "excelDynamicUpdateUC1";
-            this.excelDynamicUpdateUC1.Size = new System.Drawing.Size(908, 480);
-            this.excelDynamicUpdateUC1.TabIndex = 0;
             // 
             // TestFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 480);
-            this.Controls.Add(this.excelDynamicUpdateUC1);
             this.Name = "TestFrm";
             this.Text = "TestFrm";
             this.Load += new System.EventHandler(this.TestFrm_Load);
@@ -54,7 +44,6 @@
 
         #endregion
 
-        private Views.Qry.ExcelDynamicUpdateUC excelDynamicUpdateUC1;
 
 
 

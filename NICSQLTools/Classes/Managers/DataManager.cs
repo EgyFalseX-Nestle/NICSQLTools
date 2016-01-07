@@ -421,7 +421,10 @@ namespace NICSQLTools.Classes.Managers
                 for (int colInx = 1; colInx <= colCount; colInx++)
                 {
                     string colname = GetValidColumnName(Convert.ToString((range.Cells[1, colInx] as Excel_VBA.Range).Value), dt.Columns);
+                    //object x = (object)(range.Cells[2, colInx] as Excel_VBA.Range);
+                    //System.Windows.Forms.MessageBox.Show((range.Cells[2, colInx] as Excel_VBA.Range).NumberFormat.ToString());
                     object TypeName = (object)(range.Cells[2, colInx] as Excel_VBA.Range).Value;
+                    //object TypeName2 = (object)(range.Cells[2, colInx] as Excel_VBA.Range).Value2;
                     dt.Columns.Add(colname, TypeName == null ? typeof(string) : (TypeName).GetType());
                 }
                 string address = range.get_Address();

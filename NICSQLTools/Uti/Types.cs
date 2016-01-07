@@ -15,6 +15,7 @@ namespace NICSQLTools.Uti
             public bool IsAdmin;
             public int EmpId;
             public List<int> SalesDistrict2;
+            public Int16 MSrvDepartmentId;
         }
         public enum UpdaterArgsEnum
         {

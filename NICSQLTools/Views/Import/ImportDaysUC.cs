@@ -273,6 +273,7 @@ _______________________________________________
                         if (obj != null)
                             SqlRow.Route = obj.ToString();
                     }
+                    row["Route"] = SqlRow.Route;
                 }
                 //Set _Route___Sold
                 if (DataManager.Route000001 == row["Route"].ToString().Trim())

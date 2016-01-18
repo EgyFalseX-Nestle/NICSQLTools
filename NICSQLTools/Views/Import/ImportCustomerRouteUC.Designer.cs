@@ -60,6 +60,8 @@
             this.layoutControlItemPnlProg = new DevExpress.XtraLayout.LayoutControlItem();
             this.dsQry = new NICSQLTools.Data.dsQry();
             this.customerRouteTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.CustomerRouteTableAdapter();
+            this.ceUpdateMSrv = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemImport)).BeginInit();
@@ -83,6 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPnlProg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceUpdateMSrv.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // dsData
@@ -101,7 +105,7 @@
             this.emptySpaceItemSpace.CustomizationFormText = "Space";
             this.emptySpaceItemSpace.Location = new System.Drawing.Point(0, 192);
             this.emptySpaceItemSpace.Name = "emptySpaceItemSpace";
-            this.emptySpaceItemSpace.Size = new System.Drawing.Size(269, 98);
+            this.emptySpaceItemSpace.Size = new System.Drawing.Size(269, 75);
             this.emptySpaceItemSpace.Text = "Space";
             this.emptySpaceItemSpace.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -133,6 +137,7 @@
             // 
             // ImportBillingDetailsFrmConvertedLayout
             // 
+            this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.ceUpdateMSrv);
             this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.PnlProg);
             this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.tbMonth);
             this.ImportBillingDetailsFrmConvertedLayout.Controls.Add(this.tbYear);
@@ -175,7 +180,7 @@
             0,
             0,
             0});
-            this.tbMonth.Location = new System.Drawing.Point(62, 307);
+            this.tbMonth.Location = new System.Drawing.Point(62, 284);
             this.tbMonth.Name = "tbMonth";
             this.tbMonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -190,7 +195,7 @@
             0,
             0,
             0});
-            this.tbYear.Location = new System.Drawing.Point(62, 341);
+            this.tbYear.Location = new System.Drawing.Point(62, 318);
             this.tbYear.Name = "tbYear";
             this.tbYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -282,7 +287,8 @@
             this.emptySpaceItemSpace,
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItemPnlProg});
+            this.layoutControlItemPnlProg,
+            this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(903, 525);
@@ -397,7 +403,7 @@
             // 
             this.layoutControlItem1.Control = this.tbYear;
             this.layoutControlItem1.CustomizationFormText = "Year";
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 324);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 301);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(269, 34);
             this.layoutControlItem1.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -408,7 +414,7 @@
             // 
             this.layoutControlItem2.Control = this.tbMonth;
             this.layoutControlItem2.CustomizationFormText = "Month";
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 290);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 267);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(269, 34);
             this.layoutControlItem2.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
@@ -439,6 +445,26 @@
             // customerRouteTableAdapter
             // 
             this.customerRouteTableAdapter.ClearBeforeFill = true;
+            // 
+            // ceUpdateMSrv
+            // 
+            this.ceUpdateMSrv.EditValue = true;
+            this.ceUpdateMSrv.Location = new System.Drawing.Point(12, 347);
+            this.ceUpdateMSrv.Name = "ceUpdateMSrv";
+            this.ceUpdateMSrv.Properties.Caption = "Update Maintenance Information";
+            this.ceUpdateMSrv.Size = new System.Drawing.Size(265, 19);
+            this.ceUpdateMSrv.StyleController = this.ImportBillingDetailsFrmConvertedLayout;
+            this.ceUpdateMSrv.TabIndex = 10;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.ceUpdateMSrv;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 335);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(269, 23);
+            this.layoutControlItem3.Text = "Update Maintenance Info";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
             // 
             // ImportCustomerRouteUC
             // 
@@ -471,6 +497,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPnlProg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsQry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ceUpdateMSrv.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -508,5 +536,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraWaitForm.ProgressPanel PnlProg;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPnlProg;
+        private DevExpress.XtraEditors.CheckEdit ceUpdateMSrv;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }

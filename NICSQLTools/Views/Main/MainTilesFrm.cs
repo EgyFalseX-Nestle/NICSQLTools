@@ -298,6 +298,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Import.ImportActual_OTRUC(RuleElemet);
             }
+            else if (e.Document == docEditorsImportActualBillArg)
+            {
+                e.Control = new Views.Import.ImportActualBillArgUC(RuleElemet);
+            }
             else if (e.Document == docEditorsCostControl)
             {
                 e.Control = new Views.Data.CostControlEditorUC(RuleElemet);
@@ -325,6 +329,30 @@ namespace NICSQLTools.Views.Main
             else if (e.Document == docEditorsActivities_Actual)// Activities
             {
                 e.Control = new NICSQLTools.Views.Data.Activities.ImportSTI_Actv_ActualUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsMSrv_TypeEditor)// MSrv
+            {
+                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TypeEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsMSrv_TechnicianEditor)
+            {
+                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TechnicianEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsMSrv_TicketEditor)
+            {
+                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TicketEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsMSrv_TechnicianSalesDistrictEditor)
+            {
+                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TechnicianSalesDistrictUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsMSrv_TechnicianCompanyEditor)
+            {
+                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TechnicianCompanyEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsMSrv_TicketEditorEditor)
+            {
+                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TicketEditorUC(RuleElemet);
             }
 
             else if (e.Document == docReportsReportViewer)

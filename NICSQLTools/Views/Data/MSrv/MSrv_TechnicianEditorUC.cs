@@ -13,6 +13,7 @@ namespace NICSQLTools.Views.Data.MSrv
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(NICSQLTools.Views.Data.MSrv.MSrv_TechnicianEditorUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         #endregion
         #region - Fun -
         public MSrv_TechnicianEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
@@ -26,6 +27,7 @@ namespace NICSQLTools.Views.Data.MSrv
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 Invoke(new MethodInvoker(() => {
+                    LSMSTechnicianCompany.QueryableSource = dsLinq.MSrv_TechnicianCompanies;
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                     gridControlMain.DataSource = XPSCS;
                     gridViewMain.BestFitColumns();
@@ -111,8 +113,8 @@ namespace NICSQLTools.Views.Data.MSrv
         }
         private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
-                return;
+            //if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
+            //    return;
             UOW.DropIdentityMap();
             UOW.DropChanges();
             XPSCS.Reload();

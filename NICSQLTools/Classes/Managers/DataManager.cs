@@ -25,6 +25,7 @@ namespace NICSQLTools.Classes.Managers
         public static Char SplitChar = Convert.ToChar("|");
         public static string DecryptPassword = "FalseX";
         public static Data.dsDataTableAdapters.QueriesTableAdapter adpQry = new Data.dsDataTableAdapters.QueriesTableAdapter();
+        public static Data.dsMSrcTableAdapters.QueriesTableAdapter adpMSrvQry;
         public enum ParamDataSource
         {
             @SalesDistrict2
@@ -61,7 +62,9 @@ namespace NICSQLTools.Classes.Managers
         public static void Init()
         {
             defaultInstance = new DataManager();
+            adpMSrvQry = new Data.dsMSrcTableAdapters.QueriesTableAdapter();
             SetAllCommandTimeouts(adpQry, ConnectionTimeout);
+            SetAllCommandTimeouts(adpMSrvQry, ConnectionTimeout);
 
             //Set Theme
             LoadTheme();

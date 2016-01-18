@@ -115,7 +115,11 @@ namespace NICSQLTools.Classes.Managers
         private bool GetUserDepartment(int UserId)
         {
             NICSQLTools.Data.dsMSrcTableAdapters.QueriesTableAdapter adp = new Data.dsMSrcTableAdapters.QueriesTableAdapter();
-            User.MSrvDepartmentId = (short)adp.GetUserMSrvDepartmentId(UserId);
+            object obj = adp.GetUserMSrvDepartmentId(UserId);
+            if (obj == null)
+                User.MSrvDepartmentId = (int)Classes.MSrvType.MSrvDepartment.Sales;
+            else
+                User.MSrvDepartmentId = (short)obj;
             return true;
         }
         public NICSQLTools.Data.dsData.AppRuleDetailRow RuleElementInformation(string ElementName)

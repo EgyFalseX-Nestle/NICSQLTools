@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcDel = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,6 +43,7 @@
             this.colEmpId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditEmpId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LSMSEmp = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.colIsAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -56,7 +57,9 @@
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.usersTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppUsersTableAdapter();
-            this.colIsAdmin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMSrvDepartmentId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LSMSMSrv_Department = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.repositoryItemLookUpEditMSrvDepartmentId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDelete)).BeginInit();
@@ -68,6 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSMSrv_Department)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditMSrvDepartmentId)).BeginInit();
             this.SuspendLayout();
             // 
             // UOW
@@ -82,8 +87,9 @@
             this.colUserName,
             this.colUserPass,
             this.colRealName,
-            this.colIsActive,
             this.colEmpId,
+            this.colMSrvDepartmentId,
+            this.colIsActive,
             this.colIsAdmin});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
@@ -115,7 +121,7 @@
             // 
             this.repositoryItemButtonEditDelete.AutoHeight = false;
             this.repositoryItemButtonEditDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.Delete), serializableAppearanceObject2, "", null, null, true)});
             this.repositoryItemButtonEditDelete.Name = "repositoryItemButtonEditDelete";
             this.repositoryItemButtonEditDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditDelete.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDelete_ButtonClick);
@@ -174,7 +180,7 @@
             this.colIsActive.FieldName = "IsActive";
             this.colIsActive.Name = "colIsActive";
             this.colIsActive.Visible = true;
-            this.colIsActive.VisibleIndex = 4;
+            this.colIsActive.VisibleIndex = 5;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -215,6 +221,18 @@
             this.LSMSEmp.ElementType = typeof(NICSQLTools.Data.Linq.TskEmp_Emp);
             this.LSMSEmp.KeyExpression = "[EmpId]";
             // 
+            // colIsAdmin
+            // 
+            this.colIsAdmin.AppearanceCell.Options.UseTextOptions = true;
+            this.colIsAdmin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colIsAdmin.AppearanceHeader.Options.UseTextOptions = true;
+            this.colIsAdmin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colIsAdmin.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colIsAdmin.FieldName = "IsAdmin";
+            this.colIsAdmin.Name = "colIsAdmin";
+            this.colIsAdmin.Visible = true;
+            this.colIsAdmin.VisibleIndex = 6;
+            // 
             // gridControlMain
             // 
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -227,7 +245,8 @@
             this.repositoryItemTextEditPass,
             this.repositoryItemCheckEdit1,
             this.repositoryItemButtonEditDelete,
-            this.repositoryItemLookUpEditEmpId});
+            this.repositoryItemLookUpEditEmpId,
+            this.repositoryItemLookUpEditMSrvDepartmentId});
             this.gridControlMain.Size = new System.Drawing.Size(679, 360);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -334,17 +353,37 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // colIsAdmin
+            // colMSrvDepartmentId
             // 
-            this.colIsAdmin.AppearanceCell.Options.UseTextOptions = true;
-            this.colIsAdmin.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colIsAdmin.AppearanceHeader.Options.UseTextOptions = true;
-            this.colIsAdmin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colIsAdmin.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.colIsAdmin.FieldName = "IsAdmin";
-            this.colIsAdmin.Name = "colIsAdmin";
-            this.colIsAdmin.Visible = true;
-            this.colIsAdmin.VisibleIndex = 5;
+            this.colMSrvDepartmentId.AppearanceCell.Options.UseTextOptions = true;
+            this.colMSrvDepartmentId.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMSrvDepartmentId.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMSrvDepartmentId.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMSrvDepartmentId.Caption = "Department";
+            this.colMSrvDepartmentId.ColumnEdit = this.repositoryItemLookUpEditMSrvDepartmentId;
+            this.colMSrvDepartmentId.FieldName = "MSrvDepartmentId";
+            this.colMSrvDepartmentId.Name = "colMSrvDepartmentId";
+            this.colMSrvDepartmentId.Visible = true;
+            this.colMSrvDepartmentId.VisibleIndex = 4;
+            // 
+            // LSMSMSrv_Department
+            // 
+            this.LSMSMSrv_Department.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Department);
+            this.LSMSMSrv_Department.KeyExpression = "[MSrvDepartmentId]";
+            // 
+            // repositoryItemLookUpEditMSrvDepartmentId
+            // 
+            this.repositoryItemLookUpEditMSrvDepartmentId.AutoHeight = false;
+            this.repositoryItemLookUpEditMSrvDepartmentId.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditMSrvDepartmentId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MSrvDepartment", "Department", 94, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEditMSrvDepartmentId.DataSource = this.LSMSMSrv_Department;
+            this.repositoryItemLookUpEditMSrvDepartmentId.DisplayMember = "MSrvDepartment";
+            this.repositoryItemLookUpEditMSrvDepartmentId.Name = "repositoryItemLookUpEditMSrvDepartmentId";
+            this.repositoryItemLookUpEditMSrvDepartmentId.NullText = "";
+            this.repositoryItemLookUpEditMSrvDepartmentId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEditMSrvDepartmentId.ValueMember = "MSrvDepartmentId";
             // 
             // UserUC
             // 
@@ -369,7 +408,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSMSrv_Department)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditMSrvDepartmentId)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -402,5 +444,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditEmpId;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSEmp;
         private DevExpress.XtraGrid.Columns.GridColumn colIsAdmin;
+        private DevExpress.XtraGrid.Columns.GridColumn colMSrvDepartmentId;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSMSrv_Department;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditMSrvDepartmentId;
     }
 }

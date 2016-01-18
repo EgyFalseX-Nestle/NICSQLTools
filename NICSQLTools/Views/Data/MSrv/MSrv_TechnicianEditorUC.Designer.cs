@@ -44,12 +44,17 @@
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colTechnicianName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.LSMSTechnicianCompany = new DevExpress.Data.Linq.LinqServerModeSource();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTechnicianCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,6 +161,8 @@
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.MenuManager = this.barManagerMain;
             this.gridControlMain.Name = "gridControlMain";
+            this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEdit1});
             this.gridControlMain.Size = new System.Drawing.Size(936, 377);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -165,7 +172,8 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colTechnicianName});
+            this.colTechnicianName,
+            this.gridColumn1});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
             this.gridViewMain.NewItemRowText = "Click here to add a new";
@@ -198,6 +206,39 @@
             this.colTechnicianName.VisibleIndex = 0;
             this.colTechnicianName.Width = 147;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.Caption = "Technician Company";
+            this.gridColumn1.ColumnEdit = this.repositoryItemLookUpEdit1;
+            this.gridColumn1.FieldName = "TechnicianCompanyId!Key";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 175;
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TechnicianCompany", "Technician Company", 108, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.repositoryItemLookUpEdit1.DataSource = this.LSMSTechnicianCompany;
+            this.repositoryItemLookUpEdit1.DisplayMember = "TechnicianCompany";
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
+            this.repositoryItemLookUpEdit1.NullText = "";
+            this.repositoryItemLookUpEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.repositoryItemLookUpEdit1.ValueMember = "TechnicianCompanyId";
+            // 
+            // LSMSTechnicianCompany
+            // 
+            this.LSMSTechnicianCompany.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_TechnicianCompany);
+            this.LSMSTechnicianCompany.KeyExpression = "[TechnicianCompanyId]";
+            // 
             // XPSCS
             // 
             this.XPSCS.AllowEdit = true;
@@ -224,6 +265,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSTechnicianCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,5 +290,8 @@
         private DevExpress.Xpo.XPServerCollectionSource XPSCS;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
         private DevExpress.XtraGrid.Columns.GridColumn colTechnicianName;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSTechnicianCompany;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
     }
 }

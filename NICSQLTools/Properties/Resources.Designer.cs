@@ -93,6 +93,16 @@ namespace NICSQLTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("add_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap additem_16x16 {
             get {
                 object obj = ResourceManager.GetObject("additem_16x16", resourceCulture);
@@ -616,6 +626,246 @@ namespace NICSQLTools.Properties {
         internal static System.Drawing.Bitmap MSG_Warnning {
             get {
                 object obj = ResourceManager.GetObject("MSG_Warnning", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Technician128 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Technician128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Technician32 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Technician32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Technician64 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Technician64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TechnicianCompany128 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TechnicianCompany128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TechnicianCompany16 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TechnicianCompany16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TechnicianCompany32 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TechnicianCompany32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TechnicianCompany64 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TechnicianCompany64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Ticket128 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Ticket128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Ticket16 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Ticket16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Ticket32 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Ticket32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Ticket64 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Ticket64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TicketChat16 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TicketChat16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TicketChat32 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TicketChat32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TicketClose16 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TicketClose16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TicketClose32 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TicketClose32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TicketVisit128 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TicketVisit128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TicketVisit16 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TicketVisit16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TicketVisit32 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TicketVisit32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_TicketVisit64 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_TicketVisit64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Type128 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Type128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Type32 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Type32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Type64 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Type64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv128 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv64 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

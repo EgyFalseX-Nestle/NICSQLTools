@@ -110,8 +110,8 @@ namespace NICSQLTools.Views.Data.MSrv
         }
         private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
-                return;
+            //if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
+            //    return;
             UOW.DropIdentityMap();
             UOW.DropChanges();
             XPSCS.Reload();

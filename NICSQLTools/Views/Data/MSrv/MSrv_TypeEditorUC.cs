@@ -13,6 +13,8 @@ namespace NICSQLTools.Views.Data.MSrv
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(NICSQLTools.Views.Data.MSrv.MSrv_TypeEditorUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+        NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter adpType = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
+        int _newid = 0;
         #endregion
         #region - Fun -
         public MSrv_TypeEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
@@ -67,6 +69,11 @@ namespace NICSQLTools.Views.Data.MSrv
                 return;
             }
             DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(e.RowHandle));
+            if (_newid == 0)
+                row.SetMemberValue("MSrvTypeId", adpType.NewId());
+            else
+                row.SetMemberValue("MSrvTypeId", _newid + 1);
+            _newid++;
             row.SetMemberValue("MSrvDepartmentId", NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId);
             row.SetMemberValue("UserIn", Classes.Managers.UserManager.defaultInstance.User.UserId);
             row.SetMemberValue("DateIn", Classes.Managers.DataManager.defaultInstance.ServerDateTime);
@@ -117,8 +124,8 @@ namespace NICSQLTools.Views.Data.MSrv
         }
         private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
-                return;
+            //if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
+            //    return;
             UOW.DropIdentityMap();
             UOW.DropChanges();
             XPSCS.Reload();
@@ -134,10 +141,6 @@ namespace NICSQLTools.Views.Data.MSrv
         }
 
         #endregion
-
-        
-
-        
 
     }
 }

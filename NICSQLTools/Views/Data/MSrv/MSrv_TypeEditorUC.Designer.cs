@@ -42,17 +42,17 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMSrvType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             this.SuspendLayout();
             // 
             // UOW
@@ -152,7 +152,6 @@
             // 
             // gridControlMain
             // 
-            this.gridControlMain.DataSource = this.XPSCS;
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMain.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlMain_EmbeddedNavigator_ButtonClick);
             this.gridControlMain.Location = new System.Drawing.Point(0, 31);
@@ -166,15 +165,6 @@
             this.gridControlMain.UseEmbeddedNavigator = true;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
-            // 
-            // XPSCS
-            // 
-            this.XPSCS.AllowEdit = true;
-            this.XPSCS.AllowNew = true;
-            this.XPSCS.AllowRemove = true;
-            this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsMSrc.MSrv_TypeDataTable);
-            this.XPSCS.Session = this.UOW;
             // 
             // gridViewMain
             // 
@@ -223,6 +213,15 @@
             this.repositoryItemTextEditn2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEditn2.Name = "repositoryItemTextEditn2";
             // 
+            // XPSCS
+            // 
+            this.XPSCS.AllowEdit = true;
+            this.XPSCS.AllowNew = true;
+            this.XPSCS.AllowRemove = true;
+            this.XPSCS.DeleteObjectOnRemove = true;
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsMSrc.MSrv_TypeDataTable);
+            this.XPSCS.Session = this.UOW;
+            // 
             // MSrv_TypeEditorUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,9 +238,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

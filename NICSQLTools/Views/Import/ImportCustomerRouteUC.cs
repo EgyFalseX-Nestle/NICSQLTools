@@ -177,6 +177,11 @@ _______________________________________________
                 AddLog("New Customer Route Saved " + dsData.CustomerRoute.Count, true);
                 output = true;
             }
+            //Add Insert Into Maintenance Info
+            if (!CustomerRoute.UpdateMaintenanceInfo(cmd, Convert.ToInt16(tbYear.EditValue), Convert.ToInt16(tbMonth.EditValue)))
+                MsgDlg.Show("Update Maintenance Info Failed", MsgDlg.MessageType.Error);
+            else
+                AddLog("Update Maintenance Info Saved ", true);
             //Adding New Customers Found In CustomerRoute Into HN
             ChangeProgressCaption("Adding New Customer ...");
             int CustomerAdded = DataManager.adpQry.InsertNewCustomerFromCustomerRoute(Convert.ToInt16(tbYear.EditValue), Convert.ToInt16(tbMonth.EditValue));

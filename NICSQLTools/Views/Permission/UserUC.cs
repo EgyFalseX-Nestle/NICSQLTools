@@ -29,7 +29,8 @@ namespace NICSQLTools.Views.Permission
             {
                 Invoke(new MethodInvoker(() => {
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
-                    LSMSEmp.QueryableSource = from q in dsLinq.TskEmp_Emps select q;
+                    LSMSEmp.QueryableSource = dsLinq.TskEmp_Emps;
+                    LSMSMSrv_Department.QueryableSource = dsLinq.MSrv_Departments;
                     gridControlMain.DataSource = XPSCS;
                     gridViewMain.BestFitColumns();
                 }));

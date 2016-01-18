@@ -104,6 +104,26 @@ namespace NICSQLTools
             }
             return outPut;
         }
+        public static bool UpdateMaintenanceInfo(SqlCommand cmd, int YearNum, int MonthNum)
+        {
+            bool outPut = false;
+            
+            try
+            {
+                cmd.CommandText = "DELETE FROM dbo.MSrv_CustomerRoute";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = string.Format(@"INSERT INTO dbo.MSrv_CustomerRoute(Customer, Route)
+                SELECT Customer , (SELECT TOP 1 Route FROM dbo.CustomerRoute TBL WHERE YearNum = {0} AND MonthNum = {1} AND Customer = CustomerRoute.Customer)
+                FROM dbo.CustomerRoute WHERE YearNum = {0} AND MonthNum = {1} GROUP BY Customer", YearNum, MonthNum);
+                Logger.DebugFormat("Data Inserted into MSrv_CustomerRoute = {0}", cmd.ExecuteNonQuery());
+                outPut = true;
+            }
+            catch (SqlException ex)
+            {
+                Classes.Core.LogException(Logger, ex, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+            }
+            return outPut;
+        }
 
         #endregion
         

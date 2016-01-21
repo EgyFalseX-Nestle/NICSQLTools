@@ -87,9 +87,6 @@ namespace NICSQLTools.Data.Linq
     partial void InsertvMSrv_Equipment(vMSrv_Equipment instance);
     partial void UpdatevMSrv_Equipment(vMSrv_Equipment instance);
     partial void DeletevMSrv_Equipment(vMSrv_Equipment instance);
-    partial void InsertMSrv_Type(MSrv_Type instance);
-    partial void UpdateMSrv_Type(MSrv_Type instance);
-    partial void DeleteMSrv_Type(MSrv_Type instance);
     partial void InsertMSrv_Department(MSrv_Department instance);
     partial void UpdateMSrv_Department(MSrv_Department instance);
     partial void DeleteMSrv_Department(MSrv_Department instance);
@@ -99,9 +96,6 @@ namespace NICSQLTools.Data.Linq
     partial void InsertAppUserRule(AppUserRule instance);
     partial void UpdateAppUserRule(AppUserRule instance);
     partial void DeleteAppUserRule(AppUserRule instance);
-    partial void InsertvMSrv_Customer(vMSrv_Customer instance);
-    partial void UpdatevMSrv_Customer(vMSrv_Customer instance);
-    partial void DeletevMSrv_Customer(vMSrv_Customer instance);
     partial void InsertMSrv_TechnicianCompany(MSrv_TechnicianCompany instance);
     partial void UpdateMSrv_TechnicianCompany(MSrv_TechnicianCompany instance);
     partial void DeleteMSrv_TechnicianCompany(MSrv_TechnicianCompany instance);
@@ -111,18 +105,36 @@ namespace NICSQLTools.Data.Linq
     partial void InsertMSrv_Technician(MSrv_Technician instance);
     partial void UpdateMSrv_Technician(MSrv_Technician instance);
     partial void DeleteMSrv_Technician(MSrv_Technician instance);
-    partial void InsertvMSrv_Ticket(vMSrv_Ticket instance);
-    partial void UpdatevMSrv_Ticket(vMSrv_Ticket instance);
-    partial void DeletevMSrv_Ticket(vMSrv_Ticket instance);
     partial void InsertvMSrv_Technician_ByUser(vMSrv_Technician_ByUser instance);
     partial void UpdatevMSrv_Technician_ByUser(vMSrv_Technician_ByUser instance);
     partial void DeletevMSrv_Technician_ByUser(vMSrv_Technician_ByUser instance);
-    partial void InsertvMSrv_Ticket_ByUser(vMSrv_Ticket_ByUser instance);
-    partial void UpdatevMSrv_Ticket_ByUser(vMSrv_Ticket_ByUser instance);
-    partial void DeletevMSrv_Ticket_ByUser(vMSrv_Ticket_ByUser instance);
     partial void InsertMSrv_Part(MSrv_Part instance);
     partial void UpdateMSrv_Part(MSrv_Part instance);
     partial void DeleteMSrv_Part(MSrv_Part instance);
+    partial void InsertvMSrv_TicketVisit(vMSrv_TicketVisit instance);
+    partial void UpdatevMSrv_TicketVisit(vMSrv_TicketVisit instance);
+    partial void DeletevMSrv_TicketVisit(vMSrv_TicketVisit instance);
+    partial void InsertMSrv_ActionType(MSrv_ActionType instance);
+    partial void UpdateMSrv_ActionType(MSrv_ActionType instance);
+    partial void DeleteMSrv_ActionType(MSrv_ActionType instance);
+    partial void InsertvMSrv_TicketAction(vMSrv_TicketAction instance);
+    partial void UpdatevMSrv_TicketAction(vMSrv_TicketAction instance);
+    partial void DeletevMSrv_TicketAction(vMSrv_TicketAction instance);
+    partial void InsertMSrv_TypeCondition(MSrv_TypeCondition instance);
+    partial void UpdateMSrv_TypeCondition(MSrv_TypeCondition instance);
+    partial void DeleteMSrv_TypeCondition(MSrv_TypeCondition instance);
+    partial void InsertMSrv_Type(MSrv_Type instance);
+    partial void UpdateMSrv_Type(MSrv_Type instance);
+    partial void DeleteMSrv_Type(MSrv_Type instance);
+    partial void InsertvMSrv_Ticket(vMSrv_Ticket instance);
+    partial void UpdatevMSrv_Ticket(vMSrv_Ticket instance);
+    partial void DeletevMSrv_Ticket(vMSrv_Ticket instance);
+    partial void InsertvMSrv_Ticket_ByUser(vMSrv_Ticket_ByUser instance);
+    partial void UpdatevMSrv_Ticket_ByUser(vMSrv_Ticket_ByUser instance);
+    partial void DeletevMSrv_Ticket_ByUser(vMSrv_Ticket_ByUser instance);
+    partial void InsertvMSrv_Customer(vMSrv_Customer instance);
+    partial void UpdatevMSrv_Customer(vMSrv_Customer instance);
+    partial void DeletevMSrv_Customer(vMSrv_Customer instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -339,14 +351,6 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<MSrv_Type> MSrv_Types
-		{
-			get
-			{
-				return this.GetTable<MSrv_Type>();
-			}
-		}
-		
 		public System.Data.Linq.Table<MSrv_Department> MSrv_Departments
 		{
 			get
@@ -368,14 +372,6 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<AppUserRule>();
-			}
-		}
-		
-		public System.Data.Linq.Table<vMSrv_Customer> vMSrv_Customers
-		{
-			get
-			{
-				return this.GetTable<vMSrv_Customer>();
 			}
 		}
 		
@@ -403,19 +399,67 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<vMSrv_Ticket> vMSrv_Tickets
-		{
-			get
-			{
-				return this.GetTable<vMSrv_Ticket>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vMSrv_Technician_ByUser> vMSrv_Technician_ByUsers
 		{
 			get
 			{
 				return this.GetTable<vMSrv_Technician_ByUser>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MSrv_Part> MSrv_Parts
+		{
+			get
+			{
+				return this.GetTable<MSrv_Part>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vMSrv_TicketVisit> vMSrv_TicketVisits
+		{
+			get
+			{
+				return this.GetTable<vMSrv_TicketVisit>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MSrv_ActionType> MSrv_ActionTypes
+		{
+			get
+			{
+				return this.GetTable<MSrv_ActionType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vMSrv_TicketAction> vMSrv_TicketActions
+		{
+			get
+			{
+				return this.GetTable<vMSrv_TicketAction>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MSrv_TypeCondition> MSrv_TypeConditions
+		{
+			get
+			{
+				return this.GetTable<MSrv_TypeCondition>();
+			}
+		}
+		
+		public System.Data.Linq.Table<MSrv_Type> MSrv_Types
+		{
+			get
+			{
+				return this.GetTable<MSrv_Type>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vMSrv_Ticket> vMSrv_Tickets
+		{
+			get
+			{
+				return this.GetTable<vMSrv_Ticket>();
 			}
 		}
 		
@@ -427,11 +471,11 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public System.Data.Linq.Table<MSrv_Part> MSrv_Parts
+		public System.Data.Linq.Table<vMSrv_Customer> vMSrv_Customers
 		{
 			get
 			{
-				return this.GetTable<MSrv_Part>();
+				return this.GetTable<vMSrv_Customer>();
 			}
 		}
 	}
@@ -6274,205 +6318,6 @@ namespace NICSQLTools.Data.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MSrv_Type")]
-	public partial class MSrv_Type : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private short _MSrvTypeId;
-		
-		private string _MSrvType;
-		
-		private System.Nullable<short> _MSrvDepartmentId;
-		
-		private System.Nullable<int> _UserIn;
-		
-		private System.Nullable<System.DateTime> _DateIn;
-		
-		private EntityRef<MSrv_Department> _MSrv_Department;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMSrvTypeIdChanging(short value);
-    partial void OnMSrvTypeIdChanged();
-    partial void OnMSrvTypeChanging(string value);
-    partial void OnMSrvTypeChanged();
-    partial void OnMSrvDepartmentIdChanging(System.Nullable<short> value);
-    partial void OnMSrvDepartmentIdChanged();
-    partial void OnUserInChanging(System.Nullable<int> value);
-    partial void OnUserInChanged();
-    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateInChanged();
-    #endregion
-		
-		public MSrv_Type()
-		{
-			this._MSrv_Department = default(EntityRef<MSrv_Department>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrvTypeId", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
-		public short MSrvTypeId
-		{
-			get
-			{
-				return this._MSrvTypeId;
-			}
-			set
-			{
-				if ((this._MSrvTypeId != value))
-				{
-					this.OnMSrvTypeIdChanging(value);
-					this.SendPropertyChanging();
-					this._MSrvTypeId = value;
-					this.SendPropertyChanged("MSrvTypeId");
-					this.OnMSrvTypeIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrvType", DbType="NVarChar(100)")]
-		public string MSrvType
-		{
-			get
-			{
-				return this._MSrvType;
-			}
-			set
-			{
-				if ((this._MSrvType != value))
-				{
-					this.OnMSrvTypeChanging(value);
-					this.SendPropertyChanging();
-					this._MSrvType = value;
-					this.SendPropertyChanged("MSrvType");
-					this.OnMSrvTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrvDepartmentId", DbType="SmallInt")]
-		public System.Nullable<short> MSrvDepartmentId
-		{
-			get
-			{
-				return this._MSrvDepartmentId;
-			}
-			set
-			{
-				if ((this._MSrvDepartmentId != value))
-				{
-					if (this._MSrv_Department.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMSrvDepartmentIdChanging(value);
-					this.SendPropertyChanging();
-					this._MSrvDepartmentId = value;
-					this.SendPropertyChanged("MSrvDepartmentId");
-					this.OnMSrvDepartmentIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
-		public System.Nullable<int> UserIn
-		{
-			get
-			{
-				return this._UserIn;
-			}
-			set
-			{
-				if ((this._UserIn != value))
-				{
-					this.OnUserInChanging(value);
-					this.SendPropertyChanging();
-					this._UserIn = value;
-					this.SendPropertyChanged("UserIn");
-					this.OnUserInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateIn
-		{
-			get
-			{
-				return this._DateIn;
-			}
-			set
-			{
-				if ((this._DateIn != value))
-				{
-					this.OnDateInChanging(value);
-					this.SendPropertyChanging();
-					this._DateIn = value;
-					this.SendPropertyChanged("DateIn");
-					this.OnDateInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MSrv_Department_MSrv_Type", Storage="_MSrv_Department", ThisKey="MSrvDepartmentId", OtherKey="MSrvDepartmentId", IsForeignKey=true)]
-		public MSrv_Department MSrv_Department
-		{
-			get
-			{
-				return this._MSrv_Department.Entity;
-			}
-			set
-			{
-				MSrv_Department previousValue = this._MSrv_Department.Entity;
-				if (((previousValue != value) 
-							|| (this._MSrv_Department.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._MSrv_Department.Entity = null;
-						previousValue.MSrv_Types.Remove(this);
-					}
-					this._MSrv_Department.Entity = value;
-					if ((value != null))
-					{
-						value.MSrv_Types.Add(this);
-						this._MSrvDepartmentId = value.MSrvDepartmentId;
-					}
-					else
-					{
-						this._MSrvDepartmentId = default(Nullable<short>);
-					}
-					this.SendPropertyChanged("MSrv_Department");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MSrv_Department")]
 	public partial class MSrv_Department : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6486,8 +6331,6 @@ namespace NICSQLTools.Data.Linq
 		private System.Nullable<int> _UserIn;
 		
 		private System.Nullable<System.DateTime> _DateIn;
-		
-		private EntitySet<MSrv_Type> _MSrv_Types;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6505,7 +6348,6 @@ namespace NICSQLTools.Data.Linq
 		
 		public MSrv_Department()
 		{
-			this._MSrv_Types = new EntitySet<MSrv_Type>(new Action<MSrv_Type>(this.attach_MSrv_Types), new Action<MSrv_Type>(this.detach_MSrv_Types));
 			OnCreated();
 		}
 		
@@ -6589,19 +6431,6 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MSrv_Department_MSrv_Type", Storage="_MSrv_Types", ThisKey="MSrvDepartmentId", OtherKey="MSrvDepartmentId")]
-		public EntitySet<MSrv_Type> MSrv_Types
-		{
-			get
-			{
-				return this._MSrv_Types;
-			}
-			set
-			{
-				this._MSrv_Types.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -6620,18 +6449,6 @@ namespace NICSQLTools.Data.Linq
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_MSrv_Types(MSrv_Type entity)
-		{
-			this.SendPropertyChanging();
-			entity.MSrv_Department = this;
-		}
-		
-		private void detach_MSrv_Types(MSrv_Type entity)
-		{
-			this.SendPropertyChanging();
-			entity.MSrv_Department = null;
 		}
 	}
 	
@@ -6823,284 +6640,6 @@ namespace NICSQLTools.Data.Linq
 						this._UserId = default(int);
 					}
 					this.SendPropertyChanged("AppUser");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vMSrv_Customer")]
-	public partial class vMSrv_Customer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _DisplayName;
-		
-		private string _Customer;
-		
-		private string _Route;
-		
-		private string _Address;
-		
-		private string _Route_Name;
-		
-		private string _Supervisor;
-		
-		private string _Sales_District_2;
-		
-		private System.Nullable<double> _SalesDistrict3Id;
-		
-		private int _UserId;
-		
-		private string _PlantNumber;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDisplayNameChanging(string value);
-    partial void OnDisplayNameChanged();
-    partial void OnCustomerChanging(string value);
-    partial void OnCustomerChanged();
-    partial void OnRouteChanging(string value);
-    partial void OnRouteChanged();
-    partial void OnAddressChanging(string value);
-    partial void OnAddressChanged();
-    partial void OnRoute_NameChanging(string value);
-    partial void OnRoute_NameChanged();
-    partial void OnSupervisorChanging(string value);
-    partial void OnSupervisorChanged();
-    partial void OnSales_District_2Changing(string value);
-    partial void OnSales_District_2Changed();
-    partial void OnSalesDistrict3IdChanging(System.Nullable<double> value);
-    partial void OnSalesDistrict3IdChanged();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    partial void OnPlantNumberChanging(string value);
-    partial void OnPlantNumberChanged();
-    #endregion
-		
-		public vMSrv_Customer()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayName", DbType="NVarChar(308)")]
-		public string DisplayName
-		{
-			get
-			{
-				return this._DisplayName;
-			}
-			set
-			{
-				if ((this._DisplayName != value))
-				{
-					this.OnDisplayNameChanging(value);
-					this.SendPropertyChanging();
-					this._DisplayName = value;
-					this.SendPropertyChanged("DisplayName");
-					this.OnDisplayNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Customer
-		{
-			get
-			{
-				return this._Customer;
-			}
-			set
-			{
-				if ((this._Customer != value))
-				{
-					this.OnCustomerChanging(value);
-					this.SendPropertyChanging();
-					this._Customer = value;
-					this.SendPropertyChanged("Customer");
-					this.OnCustomerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Route", DbType="NVarChar(50)")]
-		public string Route
-		{
-			get
-			{
-				return this._Route;
-			}
-			set
-			{
-				if ((this._Route != value))
-				{
-					this.OnRouteChanging(value);
-					this.SendPropertyChanging();
-					this._Route = value;
-					this.SendPropertyChanged("Route");
-					this.OnRouteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(255)")]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this.OnAddressChanging(value);
-					this.SendPropertyChanging();
-					this._Address = value;
-					this.SendPropertyChanged("Address");
-					this.OnAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Name]", Storage="_Route_Name", DbType="NVarChar(255)")]
-		public string Route_Name
-		{
-			get
-			{
-				return this._Route_Name;
-			}
-			set
-			{
-				if ((this._Route_Name != value))
-				{
-					this.OnRoute_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Route_Name = value;
-					this.SendPropertyChanged("Route_Name");
-					this.OnRoute_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor", DbType="NVarChar(255)")]
-		public string Supervisor
-		{
-			get
-			{
-				return this._Supervisor;
-			}
-			set
-			{
-				if ((this._Supervisor != value))
-				{
-					this.OnSupervisorChanging(value);
-					this.SendPropertyChanging();
-					this._Supervisor = value;
-					this.SendPropertyChanged("Supervisor");
-					this.OnSupervisorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(50)")]
-		public string Sales_District_2
-		{
-			get
-			{
-				return this._Sales_District_2;
-			}
-			set
-			{
-				if ((this._Sales_District_2 != value))
-				{
-					this.OnSales_District_2Changing(value);
-					this.SendPropertyChanging();
-					this._Sales_District_2 = value;
-					this.SendPropertyChanged("Sales_District_2");
-					this.OnSales_District_2Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict3Id", DbType="Float")]
-		public System.Nullable<double> SalesDistrict3Id
-		{
-			get
-			{
-				return this._SalesDistrict3Id;
-			}
-			set
-			{
-				if ((this._SalesDistrict3Id != value))
-				{
-					this.OnSalesDistrict3IdChanging(value);
-					this.SendPropertyChanging();
-					this._SalesDistrict3Id = value;
-					this.SendPropertyChanged("SalesDistrict3Id");
-					this.OnSalesDistrict3IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlantNumber", DbType="NVarChar(255)")]
-		public string PlantNumber
-		{
-			get
-			{
-				return this._PlantNumber;
-			}
-			set
-			{
-				if ((this._PlantNumber != value))
-				{
-					this.OnPlantNumberChanging(value);
-					this.SendPropertyChanging();
-					this._PlantNumber = value;
-					this.SendPropertyChanged("PlantNumber");
-					this.OnPlantNumberChanged();
 				}
 			}
 		}
@@ -7666,6 +7205,1349 @@ namespace NICSQLTools.Data.Linq
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vMSrv_Technician_ByUser")]
+	public partial class vMSrv_Technician_ByUser : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TechnicianId;
+		
+		private string _TechnicianName;
+		
+		private System.Nullable<int> _TechnicianCompanyId;
+		
+		private string _TechnicianCompany;
+		
+		private int _UserId;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTechnicianIdChanging(int value);
+    partial void OnTechnicianIdChanged();
+    partial void OnTechnicianNameChanging(string value);
+    partial void OnTechnicianNameChanged();
+    partial void OnTechnicianCompanyIdChanging(System.Nullable<int> value);
+    partial void OnTechnicianCompanyIdChanged();
+    partial void OnTechnicianCompanyChanging(string value);
+    partial void OnTechnicianCompanyChanged();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    #endregion
+		
+		public vMSrv_Technician_ByUser()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int TechnicianId
+		{
+			get
+			{
+				return this._TechnicianId;
+			}
+			set
+			{
+				if ((this._TechnicianId != value))
+				{
+					this.OnTechnicianIdChanging(value);
+					this.SendPropertyChanging();
+					this._TechnicianId = value;
+					this.SendPropertyChanged("TechnicianId");
+					this.OnTechnicianIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianName", DbType="NVarChar(100)")]
+		public string TechnicianName
+		{
+			get
+			{
+				return this._TechnicianName;
+			}
+			set
+			{
+				if ((this._TechnicianName != value))
+				{
+					this.OnTechnicianNameChanging(value);
+					this.SendPropertyChanging();
+					this._TechnicianName = value;
+					this.SendPropertyChanged("TechnicianName");
+					this.OnTechnicianNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianCompanyId", DbType="Int")]
+		public System.Nullable<int> TechnicianCompanyId
+		{
+			get
+			{
+				return this._TechnicianCompanyId;
+			}
+			set
+			{
+				if ((this._TechnicianCompanyId != value))
+				{
+					this.OnTechnicianCompanyIdChanging(value);
+					this.SendPropertyChanging();
+					this._TechnicianCompanyId = value;
+					this.SendPropertyChanged("TechnicianCompanyId");
+					this.OnTechnicianCompanyIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianCompany", DbType="NVarChar(50)")]
+		public string TechnicianCompany
+		{
+			get
+			{
+				return this._TechnicianCompany;
+			}
+			set
+			{
+				if ((this._TechnicianCompany != value))
+				{
+					this.OnTechnicianCompanyChanging(value);
+					this.SendPropertyChanging();
+					this._TechnicianCompany = value;
+					this.SendPropertyChanged("TechnicianCompany");
+					this.OnTechnicianCompanyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MSrv_Part")]
+	public partial class MSrv_Part : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PartId;
+		
+		private string _PartName;
+		
+		private System.Nullable<double> _PartPrice;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPartIdChanging(int value);
+    partial void OnPartIdChanged();
+    partial void OnPartNameChanging(string value);
+    partial void OnPartNameChanged();
+    partial void OnPartPriceChanging(System.Nullable<double> value);
+    partial void OnPartPriceChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    #endregion
+		
+		public MSrv_Part()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int PartId
+		{
+			get
+			{
+				return this._PartId;
+			}
+			set
+			{
+				if ((this._PartId != value))
+				{
+					this.OnPartIdChanging(value);
+					this.SendPropertyChanging();
+					this._PartId = value;
+					this.SendPropertyChanged("PartId");
+					this.OnPartIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartName", DbType="NVarChar(100)")]
+		public string PartName
+		{
+			get
+			{
+				return this._PartName;
+			}
+			set
+			{
+				if ((this._PartName != value))
+				{
+					this.OnPartNameChanging(value);
+					this.SendPropertyChanging();
+					this._PartName = value;
+					this.SendPropertyChanged("PartName");
+					this.OnPartNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartPrice", DbType="Float")]
+		public System.Nullable<double> PartPrice
+		{
+			get
+			{
+				return this._PartPrice;
+			}
+			set
+			{
+				if ((this._PartPrice != value))
+				{
+					this.OnPartPriceChanging(value);
+					this.SendPropertyChanging();
+					this._PartPrice = value;
+					this.SendPropertyChanged("PartPrice");
+					this.OnPartPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vMSrv_TicketVisit")]
+	public partial class vMSrv_TicketVisit : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TicketVisitId;
+		
+		private System.Nullable<int> _TicketId;
+		
+		private System.Nullable<int> _TechnicianId;
+		
+		private System.Nullable<System.DateTime> _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private string _VisitComment;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private string _TechnicianName;
+		
+		private string _RealName;
+		
+		private System.Nullable<double> _Parts;
+		
+		private System.Nullable<double> _ActualPrice;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTicketVisitIdChanging(int value);
+    partial void OnTicketVisitIdChanged();
+    partial void OnTicketIdChanging(System.Nullable<int> value);
+    partial void OnTicketIdChanged();
+    partial void OnTechnicianIdChanging(System.Nullable<int> value);
+    partial void OnTechnicianIdChanged();
+    partial void OnStartDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    partial void OnVisitCommentChanging(string value);
+    partial void OnVisitCommentChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    partial void OnTechnicianNameChanging(string value);
+    partial void OnTechnicianNameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnPartsChanging(System.Nullable<double> value);
+    partial void OnPartsChanged();
+    partial void OnActualPriceChanging(System.Nullable<double> value);
+    partial void OnActualPriceChanged();
+    #endregion
+		
+		public vMSrv_TicketVisit()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketVisitId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int TicketVisitId
+		{
+			get
+			{
+				return this._TicketVisitId;
+			}
+			set
+			{
+				if ((this._TicketVisitId != value))
+				{
+					this.OnTicketVisitIdChanging(value);
+					this.SendPropertyChanging();
+					this._TicketVisitId = value;
+					this.SendPropertyChanged("TicketVisitId");
+					this.OnTicketVisitIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketId", DbType="Int")]
+		public System.Nullable<int> TicketId
+		{
+			get
+			{
+				return this._TicketId;
+			}
+			set
+			{
+				if ((this._TicketId != value))
+				{
+					this.OnTicketIdChanging(value);
+					this.SendPropertyChanging();
+					this._TicketId = value;
+					this.SendPropertyChanged("TicketId");
+					this.OnTicketIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianId", DbType="Int")]
+		public System.Nullable<int> TechnicianId
+		{
+			get
+			{
+				return this._TechnicianId;
+			}
+			set
+			{
+				if ((this._TechnicianId != value))
+				{
+					this.OnTechnicianIdChanging(value);
+					this.SendPropertyChanging();
+					this._TechnicianId = value;
+					this.SendPropertyChanged("TechnicianId");
+					this.OnTechnicianIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisitComment", DbType="NVarChar(255)")]
+		public string VisitComment
+		{
+			get
+			{
+				return this._VisitComment;
+			}
+			set
+			{
+				if ((this._VisitComment != value))
+				{
+					this.OnVisitCommentChanging(value);
+					this.SendPropertyChanging();
+					this._VisitComment = value;
+					this.SendPropertyChanged("VisitComment");
+					this.OnVisitCommentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianName", DbType="NVarChar(100)")]
+		public string TechnicianName
+		{
+			get
+			{
+				return this._TechnicianName;
+			}
+			set
+			{
+				if ((this._TechnicianName != value))
+				{
+					this.OnTechnicianNameChanging(value);
+					this.SendPropertyChanging();
+					this._TechnicianName = value;
+					this.SendPropertyChanged("TechnicianName");
+					this.OnTechnicianNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Parts", DbType="Float")]
+		public System.Nullable<double> Parts
+		{
+			get
+			{
+				return this._Parts;
+			}
+			set
+			{
+				if ((this._Parts != value))
+				{
+					this.OnPartsChanging(value);
+					this.SendPropertyChanging();
+					this._Parts = value;
+					this.SendPropertyChanged("Parts");
+					this.OnPartsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActualPrice", DbType="Float")]
+		public System.Nullable<double> ActualPrice
+		{
+			get
+			{
+				return this._ActualPrice;
+			}
+			set
+			{
+				if ((this._ActualPrice != value))
+				{
+					this.OnActualPriceChanging(value);
+					this.SendPropertyChanging();
+					this._ActualPrice = value;
+					this.SendPropertyChanged("ActualPrice");
+					this.OnActualPriceChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MSrv_ActionType")]
+	public partial class MSrv_ActionType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MSrv_ActionTypeId;
+		
+		private string _MSrv_ActionTypeName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMSrv_ActionTypeIdChanging(int value);
+    partial void OnMSrv_ActionTypeIdChanged();
+    partial void OnMSrv_ActionTypeNameChanging(string value);
+    partial void OnMSrv_ActionTypeNameChanged();
+    #endregion
+		
+		public MSrv_ActionType()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_ActionTypeId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MSrv_ActionTypeId
+		{
+			get
+			{
+				return this._MSrv_ActionTypeId;
+			}
+			set
+			{
+				if ((this._MSrv_ActionTypeId != value))
+				{
+					this.OnMSrv_ActionTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._MSrv_ActionTypeId = value;
+					this.SendPropertyChanged("MSrv_ActionTypeId");
+					this.OnMSrv_ActionTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_ActionTypeName", DbType="NVarChar(50)")]
+		public string MSrv_ActionTypeName
+		{
+			get
+			{
+				return this._MSrv_ActionTypeName;
+			}
+			set
+			{
+				if ((this._MSrv_ActionTypeName != value))
+				{
+					this.OnMSrv_ActionTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._MSrv_ActionTypeName = value;
+					this.SendPropertyChanged("MSrv_ActionTypeName");
+					this.OnMSrv_ActionTypeNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vMSrv_TicketAction")]
+	public partial class vMSrv_TicketAction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MSrv_TicketActionId;
+		
+		private System.Nullable<int> _MSrv_ActionTypeId;
+		
+		private System.Nullable<int> _TicketId;
+		
+		private System.Nullable<System.DateTime> _ActionDate;
+		
+		private string _ActionComment;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private System.Nullable<short> _MSrvDepartmentId;
+		
+		private string _MSrvDepartment;
+		
+		private string _MSrv_ActionTypeName;
+		
+		private string _RealName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMSrv_TicketActionIdChanging(int value);
+    partial void OnMSrv_TicketActionIdChanged();
+    partial void OnMSrv_ActionTypeIdChanging(System.Nullable<int> value);
+    partial void OnMSrv_ActionTypeIdChanged();
+    partial void OnTicketIdChanging(System.Nullable<int> value);
+    partial void OnTicketIdChanged();
+    partial void OnActionDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnActionDateChanged();
+    partial void OnActionCommentChanging(string value);
+    partial void OnActionCommentChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    partial void OnMSrvDepartmentIdChanging(System.Nullable<short> value);
+    partial void OnMSrvDepartmentIdChanged();
+    partial void OnMSrvDepartmentChanging(string value);
+    partial void OnMSrvDepartmentChanged();
+    partial void OnMSrv_ActionTypeNameChanging(string value);
+    partial void OnMSrv_ActionTypeNameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    #endregion
+		
+		public vMSrv_TicketAction()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_TicketActionId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MSrv_TicketActionId
+		{
+			get
+			{
+				return this._MSrv_TicketActionId;
+			}
+			set
+			{
+				if ((this._MSrv_TicketActionId != value))
+				{
+					this.OnMSrv_TicketActionIdChanging(value);
+					this.SendPropertyChanging();
+					this._MSrv_TicketActionId = value;
+					this.SendPropertyChanged("MSrv_TicketActionId");
+					this.OnMSrv_TicketActionIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_ActionTypeId", DbType="Int")]
+		public System.Nullable<int> MSrv_ActionTypeId
+		{
+			get
+			{
+				return this._MSrv_ActionTypeId;
+			}
+			set
+			{
+				if ((this._MSrv_ActionTypeId != value))
+				{
+					this.OnMSrv_ActionTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._MSrv_ActionTypeId = value;
+					this.SendPropertyChanged("MSrv_ActionTypeId");
+					this.OnMSrv_ActionTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketId", DbType="Int")]
+		public System.Nullable<int> TicketId
+		{
+			get
+			{
+				return this._TicketId;
+			}
+			set
+			{
+				if ((this._TicketId != value))
+				{
+					this.OnTicketIdChanging(value);
+					this.SendPropertyChanging();
+					this._TicketId = value;
+					this.SendPropertyChanged("TicketId");
+					this.OnTicketIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActionDate
+		{
+			get
+			{
+				return this._ActionDate;
+			}
+			set
+			{
+				if ((this._ActionDate != value))
+				{
+					this.OnActionDateChanging(value);
+					this.SendPropertyChanging();
+					this._ActionDate = value;
+					this.SendPropertyChanged("ActionDate");
+					this.OnActionDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionComment", DbType="NVarChar(255)")]
+		public string ActionComment
+		{
+			get
+			{
+				return this._ActionComment;
+			}
+			set
+			{
+				if ((this._ActionComment != value))
+				{
+					this.OnActionCommentChanging(value);
+					this.SendPropertyChanging();
+					this._ActionComment = value;
+					this.SendPropertyChanged("ActionComment");
+					this.OnActionCommentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrvDepartmentId", DbType="SmallInt")]
+		public System.Nullable<short> MSrvDepartmentId
+		{
+			get
+			{
+				return this._MSrvDepartmentId;
+			}
+			set
+			{
+				if ((this._MSrvDepartmentId != value))
+				{
+					this.OnMSrvDepartmentIdChanging(value);
+					this.SendPropertyChanging();
+					this._MSrvDepartmentId = value;
+					this.SendPropertyChanged("MSrvDepartmentId");
+					this.OnMSrvDepartmentIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrvDepartment", DbType="NVarChar(50)")]
+		public string MSrvDepartment
+		{
+			get
+			{
+				return this._MSrvDepartment;
+			}
+			set
+			{
+				if ((this._MSrvDepartment != value))
+				{
+					this.OnMSrvDepartmentChanging(value);
+					this.SendPropertyChanging();
+					this._MSrvDepartment = value;
+					this.SendPropertyChanged("MSrvDepartment");
+					this.OnMSrvDepartmentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_ActionTypeName", DbType="NVarChar(50)")]
+		public string MSrv_ActionTypeName
+		{
+			get
+			{
+				return this._MSrv_ActionTypeName;
+			}
+			set
+			{
+				if ((this._MSrv_ActionTypeName != value))
+				{
+					this.OnMSrv_ActionTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._MSrv_ActionTypeName = value;
+					this.SendPropertyChanged("MSrv_ActionTypeName");
+					this.OnMSrv_ActionTypeNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MSrv_TypeCondition")]
+	public partial class MSrv_TypeCondition : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MSrv_TypeConditionId;
+		
+		private string _MSrv_TypeConditionName;
+		
+		private EntitySet<MSrv_Type> _MSrv_Types;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMSrv_TypeConditionIdChanging(int value);
+    partial void OnMSrv_TypeConditionIdChanged();
+    partial void OnMSrv_TypeConditionNameChanging(string value);
+    partial void OnMSrv_TypeConditionNameChanged();
+    #endregion
+		
+		public MSrv_TypeCondition()
+		{
+			this._MSrv_Types = new EntitySet<MSrv_Type>(new Action<MSrv_Type>(this.attach_MSrv_Types), new Action<MSrv_Type>(this.detach_MSrv_Types));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_TypeConditionId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MSrv_TypeConditionId
+		{
+			get
+			{
+				return this._MSrv_TypeConditionId;
+			}
+			set
+			{
+				if ((this._MSrv_TypeConditionId != value))
+				{
+					this.OnMSrv_TypeConditionIdChanging(value);
+					this.SendPropertyChanging();
+					this._MSrv_TypeConditionId = value;
+					this.SendPropertyChanged("MSrv_TypeConditionId");
+					this.OnMSrv_TypeConditionIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_TypeConditionName", DbType="NVarChar(50)")]
+		public string MSrv_TypeConditionName
+		{
+			get
+			{
+				return this._MSrv_TypeConditionName;
+			}
+			set
+			{
+				if ((this._MSrv_TypeConditionName != value))
+				{
+					this.OnMSrv_TypeConditionNameChanging(value);
+					this.SendPropertyChanging();
+					this._MSrv_TypeConditionName = value;
+					this.SendPropertyChanged("MSrv_TypeConditionName");
+					this.OnMSrv_TypeConditionNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MSrv_TypeCondition_MSrv_Type", Storage="_MSrv_Types", ThisKey="MSrv_TypeConditionId", OtherKey="MSrv_TypeConditionId")]
+		public EntitySet<MSrv_Type> MSrv_Types
+		{
+			get
+			{
+				return this._MSrv_Types;
+			}
+			set
+			{
+				this._MSrv_Types.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_MSrv_Types(MSrv_Type entity)
+		{
+			this.SendPropertyChanging();
+			entity.MSrv_TypeCondition = this;
+		}
+		
+		private void detach_MSrv_Types(MSrv_Type entity)
+		{
+			this.SendPropertyChanging();
+			entity.MSrv_TypeCondition = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MSrv_Type")]
+	public partial class MSrv_Type : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private short _MSrvTypeId;
+		
+		private string _MSrvType;
+		
+		private System.Nullable<int> _MSrv_TypeConditionId;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private EntityRef<MSrv_TypeCondition> _MSrv_TypeCondition;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMSrvTypeIdChanging(short value);
+    partial void OnMSrvTypeIdChanged();
+    partial void OnMSrvTypeChanging(string value);
+    partial void OnMSrvTypeChanged();
+    partial void OnMSrv_TypeConditionIdChanging(System.Nullable<int> value);
+    partial void OnMSrv_TypeConditionIdChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    #endregion
+		
+		public MSrv_Type()
+		{
+			this._MSrv_TypeCondition = default(EntityRef<MSrv_TypeCondition>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrvTypeId", DbType="SmallInt NOT NULL", IsPrimaryKey=true)]
+		public short MSrvTypeId
+		{
+			get
+			{
+				return this._MSrvTypeId;
+			}
+			set
+			{
+				if ((this._MSrvTypeId != value))
+				{
+					this.OnMSrvTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._MSrvTypeId = value;
+					this.SendPropertyChanged("MSrvTypeId");
+					this.OnMSrvTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrvType", DbType="NVarChar(100)")]
+		public string MSrvType
+		{
+			get
+			{
+				return this._MSrvType;
+			}
+			set
+			{
+				if ((this._MSrvType != value))
+				{
+					this.OnMSrvTypeChanging(value);
+					this.SendPropertyChanging();
+					this._MSrvType = value;
+					this.SendPropertyChanged("MSrvType");
+					this.OnMSrvTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_TypeConditionId", DbType="Int")]
+		public System.Nullable<int> MSrv_TypeConditionId
+		{
+			get
+			{
+				return this._MSrv_TypeConditionId;
+			}
+			set
+			{
+				if ((this._MSrv_TypeConditionId != value))
+				{
+					if (this._MSrv_TypeCondition.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMSrv_TypeConditionIdChanging(value);
+					this.SendPropertyChanging();
+					this._MSrv_TypeConditionId = value;
+					this.SendPropertyChanged("MSrv_TypeConditionId");
+					this.OnMSrv_TypeConditionIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MSrv_TypeCondition_MSrv_Type", Storage="_MSrv_TypeCondition", ThisKey="MSrv_TypeConditionId", OtherKey="MSrv_TypeConditionId", IsForeignKey=true)]
+		public MSrv_TypeCondition MSrv_TypeCondition
+		{
+			get
+			{
+				return this._MSrv_TypeCondition.Entity;
+			}
+			set
+			{
+				MSrv_TypeCondition previousValue = this._MSrv_TypeCondition.Entity;
+				if (((previousValue != value) 
+							|| (this._MSrv_TypeCondition.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MSrv_TypeCondition.Entity = null;
+						previousValue.MSrv_Types.Remove(this);
+					}
+					this._MSrv_TypeCondition.Entity = value;
+					if ((value != null))
+					{
+						value.MSrv_Types.Add(this);
+						this._MSrv_TypeConditionId = value.MSrv_TypeConditionId;
+					}
+					else
+					{
+						this._MSrv_TypeConditionId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("MSrv_TypeCondition");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vMSrv_Ticket")]
 	public partial class vMSrv_Ticket : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -7728,7 +8610,13 @@ namespace NICSQLTools.Data.Linq
 		
 		private System.Nullable<int> _VisitCount;
 		
-		private System.Nullable<int> _PartCount;
+		private System.Nullable<double> _PartCount;
+		
+		private string _MSrv_ActionTypeName;
+		
+		private string _ActionComment;
+		
+		private System.Nullable<System.DateTime> _ActionDate;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -7790,8 +8678,14 @@ namespace NICSQLTools.Data.Linq
     partial void OnMSrvDepartmentChanged();
     partial void OnVisitCountChanging(System.Nullable<int> value);
     partial void OnVisitCountChanged();
-    partial void OnPartCountChanging(System.Nullable<int> value);
+    partial void OnPartCountChanging(System.Nullable<double> value);
     partial void OnPartCountChanged();
+    partial void OnMSrv_ActionTypeNameChanging(string value);
+    partial void OnMSrv_ActionTypeNameChanged();
+    partial void OnActionCommentChanging(string value);
+    partial void OnActionCommentChanged();
+    partial void OnActionDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnActionDateChanged();
     #endregion
 		
 		public vMSrv_Ticket()
@@ -8359,8 +9253,8 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartCount", DbType="Int")]
-		public System.Nullable<int> PartCount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartCount", DbType="Float")]
+		public System.Nullable<double> PartCount
 		{
 			get
 			{
@@ -8379,160 +9273,62 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vMSrv_Technician_ByUser")]
-	public partial class vMSrv_Technician_ByUser : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _TechnicianId;
-		
-		private string _TechnicianName;
-		
-		private System.Nullable<int> _TechnicianCompanyId;
-		
-		private string _TechnicianCompany;
-		
-		private int _UserId;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTechnicianIdChanging(int value);
-    partial void OnTechnicianIdChanged();
-    partial void OnTechnicianNameChanging(string value);
-    partial void OnTechnicianNameChanged();
-    partial void OnTechnicianCompanyIdChanging(System.Nullable<int> value);
-    partial void OnTechnicianCompanyIdChanged();
-    partial void OnTechnicianCompanyChanging(string value);
-    partial void OnTechnicianCompanyChanged();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    #endregion
-		
-		public vMSrv_Technician_ByUser()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int TechnicianId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_ActionTypeName", DbType="NVarChar(50)")]
+		public string MSrv_ActionTypeName
 		{
 			get
 			{
-				return this._TechnicianId;
+				return this._MSrv_ActionTypeName;
 			}
 			set
 			{
-				if ((this._TechnicianId != value))
+				if ((this._MSrv_ActionTypeName != value))
 				{
-					this.OnTechnicianIdChanging(value);
+					this.OnMSrv_ActionTypeNameChanging(value);
 					this.SendPropertyChanging();
-					this._TechnicianId = value;
-					this.SendPropertyChanged("TechnicianId");
-					this.OnTechnicianIdChanged();
+					this._MSrv_ActionTypeName = value;
+					this.SendPropertyChanged("MSrv_ActionTypeName");
+					this.OnMSrv_ActionTypeNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianName", DbType="NVarChar(100)")]
-		public string TechnicianName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionComment", DbType="NVarChar(255)")]
+		public string ActionComment
 		{
 			get
 			{
-				return this._TechnicianName;
+				return this._ActionComment;
 			}
 			set
 			{
-				if ((this._TechnicianName != value))
+				if ((this._ActionComment != value))
 				{
-					this.OnTechnicianNameChanging(value);
+					this.OnActionCommentChanging(value);
 					this.SendPropertyChanging();
-					this._TechnicianName = value;
-					this.SendPropertyChanged("TechnicianName");
-					this.OnTechnicianNameChanged();
+					this._ActionComment = value;
+					this.SendPropertyChanged("ActionComment");
+					this.OnActionCommentChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianCompanyId", DbType="Int")]
-		public System.Nullable<int> TechnicianCompanyId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActionDate
 		{
 			get
 			{
-				return this._TechnicianCompanyId;
+				return this._ActionDate;
 			}
 			set
 			{
-				if ((this._TechnicianCompanyId != value))
+				if ((this._ActionDate != value))
 				{
-					this.OnTechnicianCompanyIdChanging(value);
+					this.OnActionDateChanging(value);
 					this.SendPropertyChanging();
-					this._TechnicianCompanyId = value;
-					this.SendPropertyChanged("TechnicianCompanyId");
-					this.OnTechnicianCompanyIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TechnicianCompany", DbType="NVarChar(50)")]
-		public string TechnicianCompany
-		{
-			get
-			{
-				return this._TechnicianCompany;
-			}
-			set
-			{
-				if ((this._TechnicianCompany != value))
-				{
-					this.OnTechnicianCompanyChanging(value);
-					this.SendPropertyChanging();
-					this._TechnicianCompany = value;
-					this.SendPropertyChanged("TechnicianCompany");
-					this.OnTechnicianCompanyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
+					this._ActionDate = value;
+					this.SendPropertyChanged("ActionDate");
+					this.OnActionDateChanged();
 				}
 			}
 		}
@@ -8620,9 +9416,15 @@ namespace NICSQLTools.Data.Linq
 		
 		private System.Nullable<int> _VisitCount;
 		
-		private System.Nullable<int> _PartCount;
+		private System.Nullable<double> _PartCount;
 		
 		private int _VisibleToUserId;
+		
+		private string _MSrv_ActionTypeName;
+		
+		private string _ActionComment;
+		
+		private System.Nullable<System.DateTime> _ActionDate;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -8684,10 +9486,16 @@ namespace NICSQLTools.Data.Linq
     partial void OnMSrvDepartmentChanged();
     partial void OnVisitCountChanging(System.Nullable<int> value);
     partial void OnVisitCountChanged();
-    partial void OnPartCountChanging(System.Nullable<int> value);
+    partial void OnPartCountChanging(System.Nullable<double> value);
     partial void OnPartCountChanged();
     partial void OnVisibleToUserIdChanging(int value);
     partial void OnVisibleToUserIdChanged();
+    partial void OnMSrv_ActionTypeNameChanging(string value);
+    partial void OnMSrv_ActionTypeNameChanged();
+    partial void OnActionCommentChanging(string value);
+    partial void OnActionCommentChanged();
+    partial void OnActionDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnActionDateChanged();
     #endregion
 		
 		public vMSrv_Ticket_ByUser()
@@ -9255,8 +10063,8 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartCount", DbType="Int")]
-		public System.Nullable<int> PartCount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartCount", DbType="Float")]
+		public System.Nullable<double> PartCount
 		{
 			get
 			{
@@ -9295,6 +10103,66 @@ namespace NICSQLTools.Data.Linq
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MSrv_ActionTypeName", DbType="NVarChar(50)")]
+		public string MSrv_ActionTypeName
+		{
+			get
+			{
+				return this._MSrv_ActionTypeName;
+			}
+			set
+			{
+				if ((this._MSrv_ActionTypeName != value))
+				{
+					this.OnMSrv_ActionTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._MSrv_ActionTypeName = value;
+					this.SendPropertyChanged("MSrv_ActionTypeName");
+					this.OnMSrv_ActionTypeNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionComment", DbType="NVarChar(255)")]
+		public string ActionComment
+		{
+			get
+			{
+				return this._ActionComment;
+			}
+			set
+			{
+				if ((this._ActionComment != value))
+				{
+					this.OnActionCommentChanging(value);
+					this.SendPropertyChanging();
+					this._ActionComment = value;
+					this.SendPropertyChanged("ActionComment");
+					this.OnActionCommentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActionDate
+		{
+			get
+			{
+				return this._ActionDate;
+			}
+			set
+			{
+				if ((this._ActionDate != value))
+				{
+					this.OnActionDateChanging(value);
+					this.SendPropertyChanging();
+					this._ActionDate = value;
+					this.SendPropertyChanged("ActionDate");
+					this.OnActionDateChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -9316,139 +10184,307 @@ namespace NICSQLTools.Data.Linq
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MSrv_Part")]
-	public partial class MSrv_Part : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vMSrv_Customer")]
+	public partial class vMSrv_Customer : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _PartId;
+		private string _DisplayName;
 		
-		private string _PartName;
+		private string _Customer;
 		
-		private System.Nullable<double> _PartPrice;
+		private string _Route;
 		
-		private System.Nullable<int> _UserIn;
+		private string _Address;
 		
-		private System.Nullable<System.DateTime> _DateIn;
+		private string _Route_Name;
+		
+		private string _Supervisor;
+		
+		private string _Sales_District_2;
+		
+		private System.Nullable<double> _SalesDistrict3Id;
+		
+		private int _UserId;
+		
+		private string _PlantNumber;
+		
+		private string _Telephone;
+		
+		private string _Supervisor_Telephone;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnPartIdChanging(int value);
-    partial void OnPartIdChanged();
-    partial void OnPartNameChanging(string value);
-    partial void OnPartNameChanged();
-    partial void OnPartPriceChanging(System.Nullable<double> value);
-    partial void OnPartPriceChanged();
-    partial void OnUserInChanging(System.Nullable<int> value);
-    partial void OnUserInChanged();
-    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateInChanged();
+    partial void OnDisplayNameChanging(string value);
+    partial void OnDisplayNameChanged();
+    partial void OnCustomerChanging(string value);
+    partial void OnCustomerChanged();
+    partial void OnRouteChanging(string value);
+    partial void OnRouteChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnRoute_NameChanging(string value);
+    partial void OnRoute_NameChanged();
+    partial void OnSupervisorChanging(string value);
+    partial void OnSupervisorChanged();
+    partial void OnSales_District_2Changing(string value);
+    partial void OnSales_District_2Changed();
+    partial void OnSalesDistrict3IdChanging(System.Nullable<double> value);
+    partial void OnSalesDistrict3IdChanged();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnPlantNumberChanging(string value);
+    partial void OnPlantNumberChanged();
+    partial void OnTelephoneChanging(string value);
+    partial void OnTelephoneChanged();
+    partial void OnSupervisor_TelephoneChanging(string value);
+    partial void OnSupervisor_TelephoneChanged();
     #endregion
 		
-		public MSrv_Part()
+		public vMSrv_Customer()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int PartId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayName", DbType="NVarChar(308)")]
+		public string DisplayName
 		{
 			get
 			{
-				return this._PartId;
+				return this._DisplayName;
 			}
 			set
 			{
-				if ((this._PartId != value))
+				if ((this._DisplayName != value))
 				{
-					this.OnPartIdChanging(value);
+					this.OnDisplayNameChanging(value);
 					this.SendPropertyChanging();
-					this._PartId = value;
-					this.SendPropertyChanged("PartId");
-					this.OnPartIdChanged();
+					this._DisplayName = value;
+					this.SendPropertyChanged("DisplayName");
+					this.OnDisplayNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartName", DbType="NVarChar(100)")]
-		public string PartName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Customer
 		{
 			get
 			{
-				return this._PartName;
+				return this._Customer;
 			}
 			set
 			{
-				if ((this._PartName != value))
+				if ((this._Customer != value))
 				{
-					this.OnPartNameChanging(value);
+					this.OnCustomerChanging(value);
 					this.SendPropertyChanging();
-					this._PartName = value;
-					this.SendPropertyChanged("PartName");
-					this.OnPartNameChanged();
+					this._Customer = value;
+					this.SendPropertyChanged("Customer");
+					this.OnCustomerChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartPrice", DbType="Float")]
-		public System.Nullable<double> PartPrice
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Route", DbType="NVarChar(50)")]
+		public string Route
 		{
 			get
 			{
-				return this._PartPrice;
+				return this._Route;
 			}
 			set
 			{
-				if ((this._PartPrice != value))
+				if ((this._Route != value))
 				{
-					this.OnPartPriceChanging(value);
+					this.OnRouteChanging(value);
 					this.SendPropertyChanging();
-					this._PartPrice = value;
-					this.SendPropertyChanged("PartPrice");
-					this.OnPartPriceChanged();
+					this._Route = value;
+					this.SendPropertyChanged("Route");
+					this.OnRouteChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
-		public System.Nullable<int> UserIn
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(255)")]
+		public string Address
 		{
 			get
 			{
-				return this._UserIn;
+				return this._Address;
 			}
 			set
 			{
-				if ((this._UserIn != value))
+				if ((this._Address != value))
 				{
-					this.OnUserInChanging(value);
+					this.OnAddressChanging(value);
 					this.SendPropertyChanging();
-					this._UserIn = value;
-					this.SendPropertyChanged("UserIn");
-					this.OnUserInChanged();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateIn
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Name]", Storage="_Route_Name", DbType="NVarChar(255)")]
+		public string Route_Name
 		{
 			get
 			{
-				return this._DateIn;
+				return this._Route_Name;
 			}
 			set
 			{
-				if ((this._DateIn != value))
+				if ((this._Route_Name != value))
 				{
-					this.OnDateInChanging(value);
+					this.OnRoute_NameChanging(value);
 					this.SendPropertyChanging();
-					this._DateIn = value;
-					this.SendPropertyChanged("DateIn");
-					this.OnDateInChanged();
+					this._Route_Name = value;
+					this.SendPropertyChanged("Route_Name");
+					this.OnRoute_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor", DbType="NVarChar(255)")]
+		public string Supervisor
+		{
+			get
+			{
+				return this._Supervisor;
+			}
+			set
+			{
+				if ((this._Supervisor != value))
+				{
+					this.OnSupervisorChanging(value);
+					this.SendPropertyChanging();
+					this._Supervisor = value;
+					this.SendPropertyChanged("Supervisor");
+					this.OnSupervisorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(50)")]
+		public string Sales_District_2
+		{
+			get
+			{
+				return this._Sales_District_2;
+			}
+			set
+			{
+				if ((this._Sales_District_2 != value))
+				{
+					this.OnSales_District_2Changing(value);
+					this.SendPropertyChanging();
+					this._Sales_District_2 = value;
+					this.SendPropertyChanged("Sales_District_2");
+					this.OnSales_District_2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict3Id", DbType="Float")]
+		public System.Nullable<double> SalesDistrict3Id
+		{
+			get
+			{
+				return this._SalesDistrict3Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict3Id != value))
+				{
+					this.OnSalesDistrict3IdChanging(value);
+					this.SendPropertyChanging();
+					this._SalesDistrict3Id = value;
+					this.SendPropertyChanged("SalesDistrict3Id");
+					this.OnSalesDistrict3IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlantNumber", DbType="NVarChar(255)")]
+		public string PlantNumber
+		{
+			get
+			{
+				return this._PlantNumber;
+			}
+			set
+			{
+				if ((this._PlantNumber != value))
+				{
+					this.OnPlantNumberChanging(value);
+					this.SendPropertyChanging();
+					this._PlantNumber = value;
+					this.SendPropertyChanged("PlantNumber");
+					this.OnPlantNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telephone", DbType="NVarChar(50)")]
+		public string Telephone
+		{
+			get
+			{
+				return this._Telephone;
+			}
+			set
+			{
+				if ((this._Telephone != value))
+				{
+					this.OnTelephoneChanging(value);
+					this.SendPropertyChanging();
+					this._Telephone = value;
+					this.SendPropertyChanged("Telephone");
+					this.OnTelephoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor_Telephone", DbType="NVarChar(50)")]
+		public string Supervisor_Telephone
+		{
+			get
+			{
+				return this._Supervisor_Telephone;
+			}
+			set
+			{
+				if ((this._Supervisor_Telephone != value))
+				{
+					this.OnSupervisor_TelephoneChanging(value);
+					this.SendPropertyChanging();
+					this._Supervisor_Telephone = value;
+					this.SendPropertyChanged("Supervisor_Telephone");
+					this.OnSupervisor_TelephoneChanged();
 				}
 			}
 		}

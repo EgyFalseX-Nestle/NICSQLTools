@@ -1153,6 +1153,16 @@ namespace NICSQLTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RequestAction16 {
+            get {
+                object obj = ResourceManager.GetObject("RequestAction16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Roles128 {
             get {
                 object obj = ResourceManager.GetObject("Roles128", resourceCulture);

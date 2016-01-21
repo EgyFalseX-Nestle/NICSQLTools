@@ -98,6 +98,7 @@
             this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
+            this.gridViewMain.OptionsView.ShowGroupPanel = false;
             // 
             // gcDel
             // 

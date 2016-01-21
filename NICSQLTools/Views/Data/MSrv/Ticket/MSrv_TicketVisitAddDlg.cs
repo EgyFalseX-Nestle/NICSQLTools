@@ -14,20 +14,27 @@ namespace NICSQLTools.Views.Data
     {
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(MSrv_TicketVisitAddDlg));
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitTableAdapter adp = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitTableAdapter();
         NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitTypeTableAdapter adpTicketVisitType = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitTypeTableAdapter();
         public delegate void RequestRefreshEventhandler(); public event RequestRefreshEventhandler RequestRefresh;
         #endregion
         #region - Fun -
-        public MSrv_TicketVisitAddDlg()
+        public MSrv_TicketVisitAddDlg(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
+            _elementRule = RuleElement;
         }
-        public MSrv_TicketVisitAddDlg(int TicketId)
+        public MSrv_TicketVisitAddDlg(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement, int TicketId)
         {
             InitializeComponent();
+            _elementRule = RuleElement;
             lueTicket.EditValue = TicketId;
+        }
+        public void ActivateRules()
+        {
+            btnSave.Visible = btnSave.Enabled = _elementRule.Inserting;
         }
         private void ResetDlg()
         {
@@ -45,8 +52,13 @@ namespace NICSQLTools.Views.Data
         #region - EventWhnd -
         private void Dlg_Load(object sender, EventArgs e)
         {
-            this.mSrv_TypeTableAdapter.Fill(this.dsMSrc.MSrv_Type);
-            LSMSTicket.QueryableSource = from q in dsLinq.vMSrv_Ticket_ByUsers where q.VisibleToUserId == Classes.Managers.UserManager.defaultInstance.User.UserId && q.TicketClosed == false select q;
+            ActivateRules();
+            mSrv_TypeTableAdapter.FillByMSrv_TypeConditionId(dsMSrc.MSrv_Type, (int)Classes.MSrvType.TypeCondition.Open_Ticket);
+            LSMSTicket.QueryableSource = from q in dsLinq.vMSrv_Ticket_ByUsers 
+                                         where q.VisibleToUserId == Classes.Managers.UserManager.defaultInstance.User.UserId 
+                                         && q.TicketClosed == false
+                                         && q.CurrentDepartmentId == (short)Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId
+                                         select q;
             LSMSTechnicianId.QueryableSource = from q in dsLinq.vMSrv_Technician_ByUsers where q.UserId == Classes.Managers.UserManager.defaultInstance.User.UserId select q;
             LSMSPartId.QueryableSource = from q in dsLinq.MSrv_Parts select q;
         }
@@ -72,6 +84,7 @@ namespace NICSQLTools.Views.Data
             row.UserIn = NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId;
             row.DateIn = NICSQLTools.Classes.Managers.DataManager.defaultInstance.ServerDateTime;
             row.TicketVisitId = Convert.ToInt32(lueTicket.EditValue);
+            row.Quantity = 1;
             row.ActualPrice = 0;
         }
         private void repositoryItemLookUpEditPartId_EditValueChanged(object sender, EventArgs e)
@@ -79,7 +92,7 @@ namespace NICSQLTools.Views.Data
             LookUpEdit lue = (LookUpEdit)sender;
             NICSQLTools.Data.Linq.MSrv_Part part = (NICSQLTools.Data.Linq.MSrv_Part)lue.GetSelectedDataRow();
             NICSQLTools.Data.dsMSrc.MSrv_TicketVisitPartRow Gridrow = (NICSQLTools.Data.dsMSrc.MSrv_TicketVisitPartRow)((DataRowView)gridViewPart.GetRow(gridViewPart.FocusedRowHandle)).Row;
-            Gridrow.ActualPrice = (double)part.PartPrice;
+            Gridrow.ActualPrice = (double)part.PartPrice * Gridrow.Quantity;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -107,11 +120,16 @@ namespace NICSQLTools.Views.Data
                     return;
                 }
                 // Insert Reasons
+                string Reason_Msg = string.Empty;
                 foreach (object item in clbcReason.CheckedItems)
                 {
                     NICSQLTools.Data.dsMSrc.MSrv_TypeRow TicketType = (NICSQLTools.Data.dsMSrc.MSrv_TypeRow)((DataRowView)item).Row;
                     adpTicketVisitType.Insert(TicketVisitId, TicketType.MSrvTypeId, NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId, serverDatetime);
+                    Reason_Msg += TicketType.MSrvType + ", ";
                 }
+                Reason_Msg = Reason_Msg.Substring(0, Reason_Msg.Length - 2);
+                //Add Action
+                Classes.MSrv.CreateAction(Classes.MSrvType.ActionType.Visit_Added, TicketId, "Visit Added with reasons (" + Reason_Msg + ") At " + deEndDate.DateTime);
                 // Insert Parts
                 mSrv_TicketVisitPartTableAdapter.Update(dsMSrc.MSrv_TicketVisitPart);
                 MsgDlg.ShowAlert("Data Saved ..", MsgDlg.MessageType.Success, this);

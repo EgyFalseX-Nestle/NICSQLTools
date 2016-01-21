@@ -23,43 +23,13 @@ namespace NICSQLTools.Views.Data
         public MSrv_TicketAddDlg()
         {
             InitializeComponent();
-
             //LSMSCustomerId.QueryableSource = from c in dsLinq.vMSrv_Customers 
             //                                 join ss in dsLinq.AppRuleSalesDistrict3s on c.SalesDistrict3Id equals ss.SalesDistrict3Id 
             //                                 join userrole in dsLinq.AppUserRules on ss.RuleID equals userrole.RuleId
             //                                 where userrole.UserId == Classes.Managers.UserManager.defaultInstance.User.UserId
             //                                 select new { c.Customer};
-            
+            LSMSMSrvTypeId.QueryableSource = from q in dsLinq.MSrv_Types where q.MSrv_TypeConditionId == (int)Classes.MSrvType.TypeCondition.Open_Ticket select q;
             LSMSCustomerId.QueryableSource = from q in dsLinq.vMSrv_Customers where q.UserId == Classes.Managers.UserManager.defaultInstance.User.UserId select q;
-
-            //try
-            //{
-            //    DateTime ServerDatetime = NICSQLTools.Classes.Managers.DataManager.defaultInstance.ServerDateTime;
-
-            //    if (New)
-            //    {
-            //        NICSQLTools.Data.dsData.CostDynamicForecastRow row = dsData.CostDynamicForecast.NewCostDynamicForecastRow();
-            //        row.Costcenter = string.Empty;
-            //        row.GLAccount = string.Empty;
-            //        row.BusinessUnit = string.Empty;
-            //        row.Year = ServerDatetime.Year;
-            //        row.Period = (ServerDatetime.Month - 1) / 3 + 1;
-            //        row.DF = 0;
-            //        row.Type = string.Empty;
-            //        row.UserIn = NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId;
-            //        row.DateIn = ServerDatetime;
-            //        dsData.CostDynamicForecast.AddCostDynamicForecastRow(row);
-            //    }
-            //    else
-            //        adp.FillByPK(dsData.CostDynamicForecast, Costcenter.ToString(), GLAccount.ToString(), (int)Year, BusinessUnit.ToString(), (int)Period);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MsgDlg.Show(ex.Message, MsgDlg.MessageType.Error, ex);
-            //    NICSQLTools.Classes.Core.LogException(Logger, ex, NICSQLTools.Classes.Core.ExceptionLevelEnum.General, NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId);
-            //    Close();
-            //}
-
         }
         private void ResetDlg()
         {
@@ -80,8 +50,6 @@ namespace NICSQLTools.Views.Data
         #region - EventWhnd -
         private void Dlg_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsMSrc.MSrv_Type' table. You can move, or remove it, as needed.
-            this.mSrv_TypeTableAdapter.Fill(this.dsMSrc.MSrv_Type);
         }
         private void lueCustomerId_EditValueChanged(object sender, EventArgs e)
         {
@@ -94,6 +62,8 @@ namespace NICSQLTools.Views.Data
             
             tbIssueContactPerson.EditValue = customer.DisplayName;
             tbIssueAddress.EditValue = customer.Address;
+            tbIssueContactPhone.EditValue = customer.Telephone;
+            tbIssueContactPhone2.EditValue = customer.Supervisor_Telephone;
             //Get 1st Freezer
             tbEquipmentSerial.EditValue =  NICSQLTools.Classes.Managers.DataManager.adpMSrvQry.GetCusEqpSerial(customer.Customer);
         }
@@ -135,9 +105,11 @@ namespace NICSQLTools.Views.Data
                 {
                     foreach (object item in clbcReason.CheckedItems)
                     {
-                        NICSQLTools.Data.dsMSrc.MSrv_TypeRow TicketType = (NICSQLTools.Data.dsMSrc.MSrv_TypeRow)((DataRowView)item).Row;
+                        NICSQLTools.Data.Linq.MSrv_Type TicketType = (NICSQLTools.Data.Linq.MSrv_Type)item;
                         adpTicketType.Insert(TicketId, TicketType.MSrvTypeId, NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId, serverDatetime);
                     }
+                    // Add Action
+                    Classes.MSrv.CreateAction(Classes.MSrvType.ActionType.Ticket_Created, TicketId, "Ticket Created #: " + TicketId + " request action from " + Classes.MSrvType.MSrvDepartment.Logistics.ToString()  + " department");
                     MsgDlg.ShowAlert("Data Saved ..", MsgDlg.MessageType.Success, this);
                     ResetDlg();
                     if (RequestRefresh != null)

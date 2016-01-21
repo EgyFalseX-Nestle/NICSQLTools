@@ -38,6 +38,7 @@
             this.dataLayoutControlMain = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.tbIssueContactPhone2 = new DevExpress.XtraEditors.TextEdit();
             this.clbcReason = new DevExpress.XtraEditors.CheckedListBoxControl();
+            this.LSMSMSrvTypeId = new DevExpress.Data.Linq.LinqServerModeSource();
             this.tbIssueAddress = new DevExpress.XtraEditors.TextEdit();
             this.tbIssueContactPhone = new DevExpress.XtraEditors.TextEdit();
             this.tbIssueContactPerson = new DevExpress.XtraEditors.TextEdit();
@@ -62,14 +63,13 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMSrc = new NICSQLTools.Data.dsMSrc();
-            this.mSrv_TypeTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
+            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).BeginInit();
             this.dataLayoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueContactPhone2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clbcReason)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSMSrvTypeId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueContactPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueContactPerson.Properties)).BeginInit();
@@ -91,9 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControlMain
@@ -130,7 +129,7 @@
             // 
             // clbcReason
             // 
-            this.clbcReason.DataSource = this.mSrvTypeBindingSource;
+            this.clbcReason.DataSource = this.LSMSMSrvTypeId;
             this.clbcReason.DisplayMember = "MSrvType";
             this.clbcReason.HorizontalScrollbar = true;
             this.clbcReason.Location = new System.Drawing.Point(94, 265);
@@ -141,6 +140,11 @@
             this.clbcReason.StyleController = this.dataLayoutControlMain;
             this.clbcReason.TabIndex = 28;
             this.clbcReason.ValueMember = "MSrvTypeId";
+            // 
+            // LSMSMSrvTypeId
+            // 
+            this.LSMSMSrvTypeId.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Type);
+            this.LSMSMSrvTypeId.KeyExpression = "MSrvTypeId";
             // 
             // tbIssueAddress
             // 
@@ -427,19 +431,10 @@
             this.layoutControlItem4.Text = "Ticket Reason";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(79, 13);
             // 
-            // mSrvTypeBindingSource
-            // 
-            this.mSrvTypeBindingSource.DataMember = "MSrv_Type";
-            this.mSrvTypeBindingSource.DataSource = this.dsMSrc;
-            // 
             // dsMSrc
             // 
             this.dsMSrc.DataSetName = "dsMSrc";
             this.dsMSrc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mSrv_TypeTableAdapter
-            // 
-            this.mSrv_TypeTableAdapter.ClearBeforeFill = true;
             // 
             // MSrv_TicketAddDlg
             // 
@@ -458,6 +453,7 @@
             this.dataLayoutControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueContactPhone2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clbcReason)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSMSrvTypeId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueContactPhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueContactPerson.Properties)).EndInit();
@@ -479,9 +475,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -515,9 +510,8 @@
         private DevExpress.XtraEditors.CheckedListBoxControl clbcReason;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private NICSQLTools.Data.dsMSrc dsMSrc;
-        private System.Windows.Forms.BindingSource mSrvTypeBindingSource;
-        private NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter mSrv_TypeTableAdapter;
         private DevExpress.XtraEditors.TextEdit tbIssueContactPhone2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSMSrvTypeId;
     }
 }

@@ -14,6 +14,7 @@ namespace NICSQLTools.Views.Data
     {
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(MSrv_TicketCloseDlg));
+        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketTableAdapter adp = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketTableAdapter();
         NICSQLTools.Data.dsMSrcTableAdapters.MSrvTicketTypeTableAdapter adpTicketType = new NICSQLTools.Data.dsMSrcTableAdapters.MSrvTicketTypeTableAdapter();
@@ -21,17 +22,23 @@ namespace NICSQLTools.Views.Data
         NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser _ticket;
         #endregion
         #region - Fun -
-        public MSrv_TicketCloseDlg(NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser Ticket)
+        public MSrv_TicketCloseDlg(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement, NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser Ticket)
         {
             InitializeComponent();
-            LSMSCloseMSrvTypeId.QueryableSource = dsLinq.MSrv_Types;
+            _elementRule = RuleElement;
+            LSMSCloseMSrvTypeId.QueryableSource = from q in dsLinq.MSrv_Types where q.MSrv_TypeConditionId == (int)Classes.MSrvType.TypeCondition.Close_Ticket select q;
             _ticket = Ticket;
             tbTecEquipmentSerial.EditValue = _ticket.EquipmentSerial;
+        }
+        public void ActivateRules()
+        {
+            btnSave.Visible = btnSave.Enabled = _elementRule.Deleting;
         }
         #endregion
         #region - EventWhnd -
         private void Dlg_Load(object sender, EventArgs e)
         {
+            ActivateRules();
         }
         private void btnSearchSerial_Click(object sender, EventArgs e)
         {
@@ -52,6 +59,8 @@ namespace NICSQLTools.Views.Data
                     , (short)lueCloseMSrvTypeId.EditValue, Classes.Managers.UserManager.defaultInstance.User.UserId, (DateTime)deClosedDate.EditValue, _ticket.TicketId);
                 if (Effected > 0)
                 {
+                    //Add Action
+                    Classes.MSrv.CreateAction(Classes.MSrvType.ActionType.Action_Close, _ticket.TicketId, "Ticket closed with reason " + lueCloseMSrvTypeId.Text + " by " + Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId.ToString() + " department");
                     MsgDlg.ShowAlert("Data Saved ..", MsgDlg.MessageType.Success, this);
                     DialogResult = System.Windows.Forms.DialogResult.OK;
                     Close();

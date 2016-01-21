@@ -197,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Authentication.cs" />
+    <Compile Include="Classes\MSrv.cs" />
     <Compile Include="Classes\STI_2Actv_Bill_Agree.cs" />
     <Compile Include="Classes\MSrvType.cs" />
     <Compile Include="Classes\STI_1Actv_Actual_OTR.cs" />
@@ -313,64 +314,82 @@
     <Compile Include="Views\Data\AppDatasourceLookupEditorUC.Designer.cs">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketVisitAddDlg.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_EquestActionDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketVisitAddDlg.designer.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_EquestActionDlg.designer.cs">
+      <DependentUpon>MSrv_EquestActionDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitEditDlg.designer.cs">
+      <DependentUpon>MSrv_TicketVisitEditDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitEditorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitEditorDlg.Designer.cs">
+      <DependentUpon>MSrv_TicketVisitEditorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitAddDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitAddDlg.designer.cs">
       <DependentUpon>MSrv_TicketVisitAddDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketCloseDlg.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketCloseDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketCloseDlg.designer.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketCloseDlg.designer.cs">
       <DependentUpon>MSrv_TicketCloseDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketChatDlg.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketChatDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketChatDlg.Designer.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketChatDlg.Designer.cs">
       <DependentUpon>MSrv_TicketChatDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TechnicianCompanyEditorUC.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_TechnicianCompanyEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TechnicianCompanyEditorUC.Designer.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_TechnicianCompanyEditorUC.Designer.cs">
       <DependentUpon>MSrv_TechnicianCompanyEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketAddDlg.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketAddDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketAddDlg.designer.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketAddDlg.designer.cs">
       <DependentUpon>MSrv_TicketAddDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketEditorUC.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TicketEditorUC.Designer.cs">
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketEditorUC.Designer.cs">
       <DependentUpon>MSrv_TicketEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TypeEditorUC.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_TypeEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TypeEditorUC.Designer.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_TypeEditorUC.Designer.cs">
       <DependentUpon>MSrv_TypeEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TechnicianEditorUC.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_TechnicianEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TechnicianEditorUC.Designer.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_TechnicianEditorUC.Designer.cs">
       <DependentUpon>MSrv_TechnicianEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_PartEditorUC.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_PartEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_PartEditorUC.Designer.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_PartEditorUC.Designer.cs">
       <DependentUpon>MSrv_PartEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TechnicianSalesDistrictUC.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_TechnicianSalesDistrictUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\MSrv\MSrv_TechnicianSalesDistrictUC.Designer.cs">
+    <Compile Include="Views\Data\MSrv\Code\MSrv_TechnicianSalesDistrictUC.Designer.cs">
       <DependentUpon>MSrv_TechnicianSalesDistrictUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\MSrv\SelectEquipmentDlg.cs">
@@ -738,34 +757,43 @@
     <EmbeddedResource Include="Views\Data\AppDatasourceLookupEditorUC.resx">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TicketVisitAddDlg.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_EquestActionDlg.resx">
+      <DependentUpon>MSrv_EquestActionDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitEditDlg.resx">
+      <DependentUpon>MSrv_TicketVisitEditDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitEditorDlg.resx">
+      <DependentUpon>MSrv_TicketVisitEditorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitAddDlg.resx">
       <DependentUpon>MSrv_TicketVisitAddDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TicketCloseDlg.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_TicketCloseDlg.resx">
       <DependentUpon>MSrv_TicketCloseDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TicketChatDlg.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_TicketChatDlg.resx">
       <DependentUpon>MSrv_TicketChatDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TechnicianCompanyEditorUC.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Code\MSrv_TechnicianCompanyEditorUC.resx">
       <DependentUpon>MSrv_TechnicianCompanyEditorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TicketAddDlg.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_TicketAddDlg.resx">
       <DependentUpon>MSrv_TicketAddDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TicketEditorUC.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_TicketEditorUC.resx">
       <DependentUpon>MSrv_TicketEditorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TypeEditorUC.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Code\MSrv_TypeEditorUC.resx">
       <DependentUpon>MSrv_TypeEditorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TechnicianEditorUC.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Code\MSrv_TechnicianEditorUC.resx">
       <DependentUpon>MSrv_TechnicianEditorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_PartEditorUC.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Code\MSrv_PartEditorUC.resx">
       <DependentUpon>MSrv_PartEditorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\MSrv\MSrv_TechnicianSalesDistrictUC.resx">
+    <EmbeddedResource Include="Views\Data\MSrv\Code\MSrv_TechnicianSalesDistrictUC.resx">
       <DependentUpon>MSrv_TechnicianSalesDistrictUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\MSrv\SelectEquipmentDlg.resx">
@@ -1043,6 +1071,7 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\RequestAction16.png" />
     <None Include="Resources\MSrv_TicketClose32.png" />
     <None Include="Resources\MSrv_TicketClose16.png" />
     <None Include="Resources\MSrv_TicketChat32.png" />

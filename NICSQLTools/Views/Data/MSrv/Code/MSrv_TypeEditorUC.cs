@@ -9,11 +9,12 @@ namespace NICSQLTools.Views.Data.MSrv
 {
     public partial class MSrv_TypeEditorUC : XtraUserControl
     {
-
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(NICSQLTools.Views.Data.MSrv.MSrv_TypeEditorUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter adpType = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
+
         int _newid = 0;
         #endregion
         #region - Fun -
@@ -28,6 +29,7 @@ namespace NICSQLTools.Views.Data.MSrv
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
                 Invoke(new MethodInvoker(() => {
+                    LSMSMSrv_TypeConditionId.QueryableSource = from q in dsLinq.MSrv_TypeConditions select q;
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                     gridControlMain.DataSource = XPSCS;
                     gridViewMain.BestFitColumns();
@@ -74,7 +76,6 @@ namespace NICSQLTools.Views.Data.MSrv
             else
                 row.SetMemberValue("MSrvTypeId", _newid + 1);
             _newid++;
-            row.SetMemberValue("MSrvDepartmentId", NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId);
             row.SetMemberValue("UserIn", Classes.Managers.UserManager.defaultInstance.User.UserId);
             row.SetMemberValue("DateIn", Classes.Managers.DataManager.defaultInstance.ServerDateTime);
         }
@@ -126,6 +127,7 @@ namespace NICSQLTools.Views.Data.MSrv
         {
             //if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
             //    return;
+            LSMSMSrv_TypeConditionId.Reload();
             UOW.DropIdentityMap();
             UOW.DropChanges();
             XPSCS.Reload();

@@ -40,9 +40,9 @@ namespace NICSQLTools
             //row2["Salary"] = 2000;
             //dt.Rows.Add(row2);
 
-            LSMSData.KeyExpression = "TicketId";
-            LSMSData.QueryableSource = new NICSQLTools.Data.Linq.dsLinqDataDataContext().vMSrv_Tickets;
-            LSMSData.KeyExpression = "TicketId";
+            //LSMSData.KeyExpression = "TicketId";
+            LSMSData.QueryableSource = new NICSQLTools.Data.Linq.dsLinqDataDataContext().MSrv_Types;
+            //LSMSData.KeyExpression = "TicketId";
             
 
         }

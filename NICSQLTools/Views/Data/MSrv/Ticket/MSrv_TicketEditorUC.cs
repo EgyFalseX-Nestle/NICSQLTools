@@ -30,7 +30,7 @@ namespace NICSQLTools.Views.Data.MSrv
                     LSMSData.QueryableSource = from q in dsLinq.vMSrv_Ticket_ByUsers 
                                                where q.VisibleToUserId == Classes.Managers.UserManager.defaultInstance.User.UserId 
                                                && q.TicketClosed == false 
-                                               //&& q.CurrentDepartmentId == Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId
+                                               && q.CurrentDepartmentId == (short)Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId
                                                select q;
                     gridViewMain.BestFitColumns();
                 }));
@@ -43,15 +43,34 @@ namespace NICSQLTools.Views.Data.MSrv
         }
         public void ActivateRules()
         {
+            //Insert
             if (!_elementRule.Inserting)
             {
-                bbiAdd.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiAddTicket.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                bbiAddVisit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 repositoryItemButtonEditChat.ReadOnly = true;
             }
-            
+            //Update
+            if (!_elementRule.Updateing)
+            {
+                repositoryItemButtonEditRequestAction.ReadOnly = true;
+            }
             repositoryItemButtonEditAddVisit.ReadOnly = !_elementRule.Updateing;
-            
-            repositoryItemButtonEditChat.ReadOnly = !_elementRule.Deleting;
+            //Delete
+            repositoryItemButtonEditCloseTicket.ReadOnly = !_elementRule.Deleting;
+
+            //Department Rules
+            switch (Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId)
+            {
+                case NICSQLTools.Classes.MSrvType.MSrvDepartment.Sales:
+                    bbiAddVisit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                    repositoryItemButtonEditCloseTicket.ReadOnly = true;
+                    break;
+                case NICSQLTools.Classes.MSrvType.MSrvDepartment.Logistics:
+                    break;
+                default:
+                    break;
+            }
         }
         #endregion
         #region -  EventWhnd - 
@@ -85,6 +104,20 @@ namespace NICSQLTools.Views.Data.MSrv
             dlg.RequestRefresh += () => { ReloadGrid(); };
             dlg.ShowDialog();
         }
+        private void bbiAddVisit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                MSrv_TicketVisitAddDlg dlg = new MSrv_TicketVisitAddDlg(_elementRule);
+                dlg.ShowDialog();
+                ReloadGrid();
+            }
+            catch (Exception ex)
+            {
+                MsgDlg.Show(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, ex.Message), MsgDlg.MessageType.Error, ex);
+                Classes.Core.LogException(Logger, ex.InnerException, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+            }
+        }
         private void bbiExport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // Check whether the GridControl can be previewed.
@@ -105,12 +138,12 @@ namespace NICSQLTools.Views.Data.MSrv
             try
             {
                 NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket = (NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
-                if (ticket.CurrentDepartmentId != Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId)
+                if (ticket.CurrentDepartmentId != (short)Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId)
                 {
                     MsgDlg.Show("Controled by another department", MsgDlg.MessageType.Info);
                     return;
                 }
-                MSrv_TicketVisitAddDlg dlg = new MSrv_TicketVisitAddDlg(ticket.TicketId);
+                MSrv_TicketVisitEditorDlg dlg = new MSrv_TicketVisitEditorDlg(_elementRule, ticket);
                 dlg.ShowDialog();
                 ReloadGrid();
             }
@@ -125,8 +158,24 @@ namespace NICSQLTools.Views.Data.MSrv
             try
             {
                 NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket = (NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
-                MSrv_TicketChatDlg dlg = new MSrv_TicketChatDlg(ticket.TicketId);
+                MSrv_TicketChatDlg dlg = new MSrv_TicketChatDlg(_elementRule, ticket.TicketId);
                 dlg.ShowDialog();
+                ReloadGrid();
+            }
+            catch (Exception ex)
+            {
+                MsgDlg.Show(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, ex.Message), MsgDlg.MessageType.Error, ex);
+                Classes.Core.LogException(Logger, ex.InnerException, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
+            }
+        }
+        private void repositoryItemButtonEditRequestAction_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket = (NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
+                MSrv_EquestActionDlg dlg = new MSrv_EquestActionDlg(ticket);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    ReloadGrid();
             }
             catch (Exception ex)
             {
@@ -139,12 +188,12 @@ namespace NICSQLTools.Views.Data.MSrv
             try
             {
                 NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket = (NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
-                if (ticket.CurrentDepartmentId != Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId)
+                if (ticket.CurrentDepartmentId != (short)Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId)
                 {
                     MsgDlg.Show("Controled by another department", MsgDlg.MessageType.Info);
                     return;
                 }
-                MSrv_TicketCloseDlg dlg = new MSrv_TicketCloseDlg(ticket);
+                MSrv_TicketCloseDlg dlg = new MSrv_TicketCloseDlg(_elementRule, ticket);
                 if (dlg.ShowDialog() == DialogResult.OK)
                     ReloadGrid();
             }
@@ -167,7 +216,7 @@ namespace NICSQLTools.Views.Data.MSrv
                     if (row1 == null)
                         return;
                     DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit be = (DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit)e.RepositoryItem;
-                    if (row1.CurrentDepartmentId != Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId && e.Column.Name != "gcChat")
+                    if (row1.CurrentDepartmentId != (short)Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId && e.Column.Name != "gcChat")
                         be.Buttons[0].Enabled = false;
                     break;
                 default:
@@ -187,7 +236,7 @@ namespace NICSQLTools.Views.Data.MSrv
                     if (row1 == null)
                         return;
                     DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit be = (DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit)e.RepositoryItem;
-                    if (row1.CurrentDepartmentId != Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId && e.Column.Name != "gcChat")
+                    if (row1.CurrentDepartmentId != (short)Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId && e.Column.Name != "gcChat")
                         be.Buttons[0].Enabled = false;
                     break;
                 default:
@@ -195,5 +244,6 @@ namespace NICSQLTools.Views.Data.MSrv
             }
         }
         #endregion
+        
     }
 }

@@ -117,9 +117,9 @@ namespace NICSQLTools.Classes.Managers
             NICSQLTools.Data.dsMSrcTableAdapters.QueriesTableAdapter adp = new Data.dsMSrcTableAdapters.QueriesTableAdapter();
             object obj = adp.GetUserMSrvDepartmentId(UserId);
             if (obj == null)
-                User.MSrvDepartmentId = (int)Classes.MSrvType.MSrvDepartment.Sales;
+                User.MSrvDepartmentId = Classes.MSrvType.MSrvDepartment.Sales;
             else
-                User.MSrvDepartmentId = (short)obj;
+                User.MSrvDepartmentId = (Classes.MSrvType.MSrvDepartment)obj;
             return true;
         }
         public NICSQLTools.Data.dsData.AppRuleDetailRow RuleElementInformation(string ElementName)

@@ -592,7 +592,5 @@ namespace NICSQLTools.Classes.msExcel
 
         #endregion
 
-        
-
     }
 }

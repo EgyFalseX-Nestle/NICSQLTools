@@ -350,10 +350,6 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TechnicianCompanyEditorUC(RuleElemet);
             }
-            else if (e.Document == docEditorsMSrv_TicketEditorEditor)
-            {
-                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TicketEditorUC(RuleElemet);
-            }
 
             else if (e.Document == docReportsReportViewer)
             {

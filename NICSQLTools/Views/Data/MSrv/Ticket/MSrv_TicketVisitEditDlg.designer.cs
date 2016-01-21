@@ -1,6 +1,6 @@
 ﻿namespace NICSQLTools.Views.Data
 {
-    partial class MSrv_TicketVisitAddDlg
+    partial class MSrv_TicketVisitEditDlg
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrv_TicketVisitAddDlg));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrv_TicketVisitEditDlg));
             this.dataLayoutControlMain = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.clbcReason = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource();
+            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridControlPart = new DevExpress.XtraGrid.GridControl();
-            this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource();
+            this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewPart = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPartId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditPartId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.colActualPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LSMSPartId = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
+            this.colActualPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.deEndDate = new DevExpress.XtraEditors.DateEdit();
             this.deStartDate = new DevExpress.XtraEditors.DateEdit();
-            this.tbOpenComment = new DevExpress.XtraEditors.MemoEdit();
+            this.tbVisitComment = new DevExpress.XtraEditors.MemoEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.lueTicket = new DevExpress.XtraEditors.LookUpEdit();
@@ -66,14 +69,13 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroupTicket = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
-            this.LSMSPartId = new DevExpress.Data.Linq.LinqServerModeSource();
-            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
-            this.mSrv_TypeTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
+            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.mSrv_TicketVisitPartTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitPartTableAdapter();
+            this.mSrv_TypeTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).BeginInit();
             this.dataLayoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clbcReason)).BeginInit();
@@ -83,12 +85,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.mSrvTicketVisitPartBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPartId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSPartId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEditn2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deStartDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOpenComment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbVisitComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueTicket.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTicket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueTechnicianId.Properties)).BeginInit();
@@ -105,11 +108,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupTicket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSPartId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,7 +121,7 @@
             this.dataLayoutControlMain.Controls.Add(this.gridControlPart);
             this.dataLayoutControlMain.Controls.Add(this.deEndDate);
             this.dataLayoutControlMain.Controls.Add(this.deStartDate);
-            this.dataLayoutControlMain.Controls.Add(this.tbOpenComment);
+            this.dataLayoutControlMain.Controls.Add(this.tbVisitComment);
             this.dataLayoutControlMain.Controls.Add(this.btnSave);
             this.dataLayoutControlMain.Controls.Add(this.btnCancel);
             this.dataLayoutControlMain.Controls.Add(this.lueTicket);
@@ -140,10 +142,10 @@
             this.clbcReason.DataSource = this.mSrvTypeBindingSource;
             this.clbcReason.DisplayMember = "MSrvType";
             this.clbcReason.HorizontalScrollbar = true;
-            this.clbcReason.Location = new System.Drawing.Point(24, 255);
+            this.clbcReason.Location = new System.Drawing.Point(24, 240);
             this.clbcReason.Name = "clbcReason";
             this.clbcReason.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.clbcReason.Size = new System.Drawing.Size(574, 169);
+            this.clbcReason.Size = new System.Drawing.Size(574, 184);
             this.clbcReason.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.clbcReason.StyleController = this.dataLayoutControlMain;
             this.clbcReason.TabIndex = 1;
@@ -162,13 +164,13 @@
             // gridControlPart
             // 
             this.gridControlPart.DataSource = this.mSrvTicketVisitPartBindingSource;
-            this.gridControlPart.Location = new System.Drawing.Point(24, 255);
+            this.gridControlPart.Location = new System.Drawing.Point(24, 240);
             this.gridControlPart.MainView = this.gridViewPart;
             this.gridControlPart.Name = "gridControlPart";
             this.gridControlPart.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCalcEditn2,
             this.repositoryItemLookUpEditPartId});
-            this.gridControlPart.Size = new System.Drawing.Size(574, 169);
+            this.gridControlPart.Size = new System.Drawing.Size(574, 184);
             this.gridControlPart.TabIndex = 7;
             this.gridControlPart.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewPart});
@@ -182,6 +184,7 @@
             // 
             this.gridViewPart.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colPartId,
+            this.colQuantity,
             this.colActualPrice});
             this.gridViewPart.GridControl = this.gridControlPart;
             this.gridViewPart.Name = "gridViewPart";
@@ -192,6 +195,7 @@
             this.gridViewPart.OptionsView.ShowGroupPanel = false;
             this.gridViewPart.OptionsView.ShowIndicator = false;
             this.gridViewPart.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridViewPart_InitNewRow);
+            this.gridViewPart.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewPart_CellValueChanged);
             // 
             // colPartId
             // 
@@ -219,15 +223,18 @@
             this.repositoryItemLookUpEditPartId.ValueMember = "PartId";
             this.repositoryItemLookUpEditPartId.EditValueChanged += new System.EventHandler(this.repositoryItemLookUpEditPartId_EditValueChanged);
             // 
-            // colActualPrice
+            // LSMSPartId
             // 
-            this.colActualPrice.Caption = "Price";
-            this.colActualPrice.ColumnEdit = this.repositoryItemCalcEditn2;
-            this.colActualPrice.FieldName = "ActualPrice";
-            this.colActualPrice.Name = "colActualPrice";
-            this.colActualPrice.Visible = true;
-            this.colActualPrice.VisibleIndex = 1;
-            this.colActualPrice.Width = 162;
+            this.LSMSPartId.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Part);
+            this.LSMSPartId.KeyExpression = "PartId";
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.ColumnEdit = this.repositoryItemCalcEditn2;
+            this.colQuantity.FieldName = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.Visible = true;
+            this.colQuantity.VisibleIndex = 1;
             // 
             // repositoryItemCalcEditn2
             // 
@@ -240,6 +247,16 @@
             this.repositoryItemCalcEditn2.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemCalcEditn2.Mask.EditMask = "n2";
             this.repositoryItemCalcEditn2.Name = "repositoryItemCalcEditn2";
+            // 
+            // colActualPrice
+            // 
+            this.colActualPrice.Caption = "Price";
+            this.colActualPrice.ColumnEdit = this.repositoryItemCalcEditn2;
+            this.colActualPrice.FieldName = "ActualPrice";
+            this.colActualPrice.Name = "colActualPrice";
+            this.colActualPrice.Visible = true;
+            this.colActualPrice.VisibleIndex = 2;
+            this.colActualPrice.Width = 162;
             // 
             // deEndDate
             // 
@@ -283,17 +300,17 @@
             conditionValidationRule2.ErrorText = "This value is not valid";
             this.dxValidationProviderMain.SetValidationRule(this.deStartDate, conditionValidationRule2);
             // 
-            // tbOpenComment
+            // tbVisitComment
             // 
-            this.tbOpenComment.Location = new System.Drawing.Point(65, 156);
-            this.tbOpenComment.Name = "tbOpenComment";
-            this.tbOpenComment.Properties.MaxLength = 255;
-            this.tbOpenComment.Size = new System.Drawing.Size(545, 56);
-            this.tbOpenComment.StyleController = this.dataLayoutControlMain;
-            this.tbOpenComment.TabIndex = 5;
+            this.tbVisitComment.Location = new System.Drawing.Point(65, 156);
+            this.tbVisitComment.Name = "tbVisitComment";
+            this.tbVisitComment.Properties.MaxLength = 255;
+            this.tbVisitComment.Size = new System.Drawing.Size(545, 41);
+            this.tbVisitComment.StyleController = this.dataLayoutControlMain;
+            this.tbVisitComment.TabIndex = 5;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.tbOpenComment, conditionValidationRule3);
+            this.dxValidationProviderMain.SetValidationRule(this.tbVisitComment, conditionValidationRule3);
             // 
             // btnSave
             // 
@@ -352,7 +369,6 @@
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "This value is not valid";
             this.dxValidationProviderMain.SetValidationRule(this.lueTicket, conditionValidationRule4);
-            this.lueTicket.EditValueChanged += new System.EventHandler(this.lueTicket_EditValueChanged);
             // 
             // LSMSTicket
             // 
@@ -405,7 +421,7 @@
             this.layoutControlItem6,
             this.layoutControlItem8,
             this.tabbedControlGroupDetails,
-            this.layoutControlGroup2,
+            this.layoutControlGroupTicket,
             this.emptySpaceItem1,
             this.splitterItem1});
             this.layoutControlGroupMain.Location = new System.Drawing.Point(0, 0);
@@ -448,10 +464,10 @@
             // 
             this.layoutControlItem9.AppearanceItemCaption.Options.UseTextOptions = true;
             this.layoutControlItem9.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.layoutControlItem9.Control = this.tbOpenComment;
+            this.layoutControlItem9.Control = this.tbVisitComment;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(602, 60);
+            this.layoutControlItem9.Size = new System.Drawing.Size(602, 45);
             this.layoutControlItem9.Text = "Comment";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(50, 13);
             // 
@@ -475,11 +491,11 @@
             // 
             // tabbedControlGroupDetails
             // 
-            this.tabbedControlGroupDetails.Location = new System.Drawing.Point(0, 209);
+            this.tabbedControlGroupDetails.Location = new System.Drawing.Point(0, 194);
             this.tabbedControlGroupDetails.Name = "tabbedControlGroupDetails";
-            this.tabbedControlGroupDetails.SelectedTabPage = this.layoutControlGroup1;
-            this.tabbedControlGroupDetails.SelectedTabPageIndex = 1;
-            this.tabbedControlGroupDetails.Size = new System.Drawing.Size(602, 219);
+            this.tabbedControlGroupDetails.SelectedTabPage = this.layoutControlGroup3;
+            this.tabbedControlGroupDetails.SelectedTabPageIndex = 0;
+            this.tabbedControlGroupDetails.Size = new System.Drawing.Size(602, 234);
             this.tabbedControlGroupDetails.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup3,
             this.layoutControlGroup1});
@@ -491,7 +507,7 @@
             this.layoutControlItem4});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(578, 173);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(578, 188);
             this.layoutControlGroup3.Text = "Reasons";
             // 
             // layoutControlItem4
@@ -499,7 +515,7 @@
             this.layoutControlItem4.Control = this.clbcReason;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(578, 173);
+            this.layoutControlItem4.Size = new System.Drawing.Size(578, 188);
             this.layoutControlItem4.Text = "Reasons List";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -510,7 +526,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(578, 173);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(578, 188);
             this.layoutControlGroup1.Text = "Parts Usage";
             // 
             // layoutControlItem3
@@ -518,20 +534,20 @@
             this.layoutControlItem3.Control = this.gridControlPart;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(578, 173);
+            this.layoutControlItem3.Size = new System.Drawing.Size(578, 188);
             this.layoutControlItem3.Text = "Parts";
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // layoutControlGroup2
+            // layoutControlGroupTicket
             // 
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroupTicket.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem5});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(602, 68);
-            this.layoutControlGroup2.Text = "Select Ticket";
+            this.layoutControlGroupTicket.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroupTicket.Name = "layoutControlGroupTicket";
+            this.layoutControlGroupTicket.Size = new System.Drawing.Size(602, 68);
+            this.layoutControlGroupTicket.Text = "Select Ticket";
             // 
             // layoutControlItem5
             // 
@@ -557,24 +573,19 @@
             // splitterItem1
             // 
             this.splitterItem1.AllowHotTrack = true;
-            this.splitterItem1.Location = new System.Drawing.Point(0, 204);
+            this.splitterItem1.Location = new System.Drawing.Point(0, 189);
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(602, 5);
-            // 
-            // LSMSPartId
-            // 
-            this.LSMSPartId.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Part);
-            this.LSMSPartId.KeyExpression = "PartId";
-            // 
-            // mSrv_TypeTableAdapter
-            // 
-            this.mSrv_TypeTableAdapter.ClearBeforeFill = true;
             // 
             // mSrv_TicketVisitPartTableAdapter
             // 
             this.mSrv_TicketVisitPartTableAdapter.ClearBeforeFill = true;
             // 
-            // MSrv_TicketVisitAddDlg
+            // mSrv_TypeTableAdapter
+            // 
+            this.mSrv_TypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // MSrv_TicketVisitEditDlg
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -583,7 +594,7 @@
             this.ClientSize = new System.Drawing.Size(622, 475);
             this.Controls.Add(this.dataLayoutControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MSrv_TicketVisitAddDlg";
+            this.Name = "MSrv_TicketVisitEditDlg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editor";
             this.Load += new System.EventHandler(this.Dlg_Load);
@@ -596,12 +607,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.mSrvTicketVisitPartBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPartId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSPartId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEditn2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deStartDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deStartDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbOpenComment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbVisitComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueTicket.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTicket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueTechnicianId.Properties)).EndInit();
@@ -618,11 +630,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupTicket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSPartId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
             this.ResumeLayout(false);
 
@@ -637,16 +648,13 @@
         private DevExpress.XtraEditors.LookUpEdit lueTechnicianId;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSTechnicianId;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProviderMain;
-        private DevExpress.XtraEditors.MemoEdit tbOpenComment;
+        private DevExpress.XtraEditors.MemoEdit tbVisitComment;
         private NICSQLTools.Data.dsMSrc dsMSrc;
-        private System.Windows.Forms.BindingSource mSrvTypeBindingSource;
-        private NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter mSrv_TypeTableAdapter;
         private DevExpress.XtraEditors.DateEdit deEndDate;
         private DevExpress.XtraEditors.DateEdit deStartDate;
         private DevExpress.XtraGrid.GridControl gridControlPart;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewPart;
         private DevExpress.XtraEditors.CheckedListBoxControl clbcReason;
-        private DevExpress.XtraEditors.LookUpEdit lueTicket;
         private DevExpress.XtraLayout.LayoutControlItem ItemForAssetplaceId;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -658,8 +666,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSTicket;
         private DevExpress.XtraLayout.SplitterItem splitterItem1;
@@ -670,5 +676,11 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEditn2;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSPartId;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditPartId;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraEditors.LookUpEdit lueTicket;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupTicket;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private System.Windows.Forms.BindingSource mSrvTypeBindingSource;
+        private NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter mSrv_TypeTableAdapter;
     }
 }

@@ -199,11 +199,11 @@ namespace NICSQLTools.Views.Qry
                         DateEdit de1 = new DateEdit();
                         de1.EditValue = null;
                         de1.Name = String.Format("ctr{0}{1}{2}", ParamRow.ParamName, ParamRow.AppDatasourceParamID, ParamRow.DatasourceID);
-                        de1.Properties.DisplayFormat.FormatString = "d/M/yyyy";
+                        de1.Properties.DisplayFormat.FormatString = "yyyy-MM-dd";
                         de1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                        de1.Properties.EditFormat.FormatString = "d/M/yyyy";
+                        de1.Properties.EditFormat.FormatString = "yyyy-MM-dd";
                         de1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                        de1.Properties.Mask.EditMask = "d/M/yyyy";
+                        de1.Properties.Mask.EditMask = "yyyy-MM-dd";
                         de1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
                         ctr = de1;
                         break;
@@ -367,7 +367,7 @@ namespace NICSQLTools.Views.Qry
             //Creating Excel Updatable Sheet
             Dictionary<string, object> Paramters = new Dictionary<string, object>();
             foreach (KeyValuePair<string, Control> ctrItem in DataSourceList.Controls)
-                Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
+                Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).Text);
 
             DataSourceList.EDUButton.Enabled = false;
             DataSourceList.EDUCancelButton.Enabled = true;
@@ -404,7 +404,7 @@ namespace NICSQLTools.Views.Qry
             //Executing SP
             Dictionary<string, object> Paramters = new Dictionary<string, object>();
             foreach (KeyValuePair<string, Control> ctrItem in DataSourceList.Controls)
-                Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
+                Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).Text);
 
             DataSourceList.EDUButton.Enabled = false;
             DataSourceList.ExeButton.Enabled = false;

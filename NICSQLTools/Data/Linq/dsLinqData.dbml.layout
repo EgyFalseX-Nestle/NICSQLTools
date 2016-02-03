@@ -39,7 +39,7 @@
         <classShapeMoniker Id="bbad3ede-7876-42b2-a64a-c10da5797c2e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.875 : 3.94399251302083); (1.875 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.875 : 3.94399251302083); (1.875 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsLinqDataDataContext/SalesDistrict1/SalesDistrict1_SalesDistrict2" />
       <nodes>
         <classShapeMoniker Id="f93eb5ea-ddbe-46ec-8938-34cd2faeb0d5" />
@@ -172,7 +172,7 @@
         <elementListCompartment Id="de95e26e-31d2-4e74-b5fe-9d724451335f" absoluteBounds="3.8899999999999997, 36.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.75 : 2.2612939453125); (1.75 : 2.6875); (3.3125 : 2.6875); (3.3125 : 36.7219962565104); (3.875 : 36.7219962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 2.2612939453125); (1.75 : 2.6875); (3.3125 : 2.6875); (3.3125 : 36.7219962565104); (3.875 : 36.7219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsLinqDataDataContext/AppUser/AppUser_AppUserRule" />
       <nodes>
         <classShapeMoniker Id="212f7983-8a89-4fd0-b999-96effdc6d6e3" />
@@ -223,10 +223,10 @@
         <elementListCompartment Id="3f68007f-29df-46f6-887b-b05eca1f253a" absoluteBounds="3.515, 34.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="19d8ce8b-8a05-45ec-9ade-95dd433ecd36" absoluteBounds="3.875, 44.125, 2, 3.1170068359375">
+    <classShape Id="19d8ce8b-8a05-45ec-9ade-95dd433ecd36" absoluteBounds="3.625, 44.375, 2, 3.1170068359375">
       <DataClassMoniker Name="/dsLinqDataDataContext/vMSrv_TicketVisit" />
       <nestedChildShapes>
-        <elementListCompartment Id="183662a8-c5d6-4fd6-9611-65d51a496153" absoluteBounds="3.8899999999999997, 44.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="183662a8-c5d6-4fd6-9611-65d51a496153" absoluteBounds="3.6399999999999997, 44.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="2d9c8b92-5412-4205-88dd-89feeb20f6d9" absoluteBounds="6.5, 41.125, 2, 1.1939925130208333">
@@ -253,7 +253,7 @@
         <elementListCompartment Id="bdb71419-f95d-416c-8a8c-d7442278e934" absoluteBounds="0.89000000000000012, 33.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.5 : 46.3469962565104); (5.9375 : 46.3469962565104); (5.9375 : 44.0625); (2.9375 : 44.0625); (2.9375 : 35.2396468098958); (1.875 : 35.2396468098958); (1.875 : 35.1458968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(6.5 : 46.3469962565104); (5.95833333333333 : 46.3469962565104); (5.95833333333333 : 44.0859375); (2.9375 : 44.0859375); (2.9375 : 35.2396468098958); (1.875 : 35.2396468098958); (1.875 : 35.1458968098958)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dsLinqDataDataContext/MSrv_TypeCondition/MSrv_TypeCondition_MSrv_Type" />
       <nodes>
         <classShapeMoniker Id="9ed8c34a-4caa-4832-a3fb-1a451c9adf86" />

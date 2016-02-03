@@ -136,6 +136,29 @@ namespace NICSQLTools.Views.Data
         {
             treeListMain.BestFitColumns();
         }
+        private void btnAddDS_Click(object sender, EventArgs e)
+        {
+            object id = null;
+            if (treeListMain.FocusedNode == null)
+            {
+                MsgDlg.Show("You Must Select Category To Add Datasource", MsgDlg.MessageType.Error);
+                return;
+            }
+            else
+                id = treeListMain.FocusedNode.GetValue("DSCategoryId");
+
+            AddDatasourceWiz wiz = new AddDatasourceWiz(Convert.ToInt32(id));
+            if (wiz.ShowDialog() == DialogResult.OK)
+            {
+                gridViewDS.ShowLoadingPanel();
+                XPSCSDS.FixedFilterString = "[DSCategoryId] = " + id;
+                sessionDS.DropIdentityMap();
+                XPSCSDS.Reload();
+                gridViewDS.RefreshData();
+                gridViewDS.HideLoadingPanel();
+                LoadParamGrid();
+            }
+        }
         private void gridViewDS_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewDS.GetRow(e.RowHandle));
@@ -309,6 +332,8 @@ namespace NICSQLTools.Views.Data
         }
         
         #endregion
+
+       
         
     }
 }

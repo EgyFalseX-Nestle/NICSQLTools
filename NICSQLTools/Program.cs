@@ -28,6 +28,8 @@ namespace NICSQLTools
         [STAThread]
         static void Main()
         {
+            
+
 
             //UserLookAndFeel.Default.SkinName = "DevExpress Dark Style";
             Application.EnableVisualStyles();

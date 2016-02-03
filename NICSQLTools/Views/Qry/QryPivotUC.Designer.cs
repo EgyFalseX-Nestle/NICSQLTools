@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraPivotGrid.PivotGridGroup pivotGridGroup1 = new DevExpress.XtraPivotGrid.PivotGridGroup();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -666,8 +667,15 @@
             this.pivotGridControlMain.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 10F);
             this.pivotGridControlMain.Appearance.FieldValue.Options.UseFont = true;
             this.pivotGridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            pivotGridGroup1.Caption = "Sales District Level";
+            pivotGridGroup1.Hierarchy = "[Route].[Sales District Level]";
+            pivotGridGroup1.ShowNewValues = true;
+            this.pivotGridControlMain.Groups.AddRange(new DevExpress.XtraPivotGrid.PivotGridGroup[] {
+            pivotGridGroup1});
             this.pivotGridControlMain.Location = new System.Drawing.Point(363, 24);
             this.pivotGridControlMain.Name = "pivotGridControlMain";
+            this.pivotGridControlMain.OLAPConnectionString = "";
+            this.pivotGridControlMain.OLAPDataProvider = DevExpress.XtraPivotGrid.OLAPDataProvider.OleDb;
             this.pivotGridControlMain.OptionsData.DataFieldUnboundExpressionMode = DevExpress.XtraPivotGrid.DataFieldUnboundExpressionMode.UseSummaryValues;
             this.pivotGridControlMain.OptionsLayout.AddNewGroups = true;
             this.pivotGridControlMain.OptionsLayout.Columns.RemoveOldColumns = false;
@@ -747,6 +755,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

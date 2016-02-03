@@ -49,8 +49,6 @@
             this.colDSCategoryName = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colDSCategoryDesc = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.imageCollectionNormal = new DevExpress.Utils.ImageCollection(this.components);
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.gridControlDS = new DevExpress.XtraGrid.GridControl();
             this.XPSCSDS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             this.sessionDS = new DevExpress.Xpo.Session(this.components);
@@ -72,6 +70,16 @@
             this.colLookupID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditLookupID = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.LSMSLookup = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnAddDS = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
+            this.splitterItem2 = new DevExpress.XtraLayout.SplitterItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditParamDel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSCat)).BeginInit();
@@ -79,10 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionNormal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
-            this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionDS)).BeginInit();
@@ -96,6 +100,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewParam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditLookupID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSLookup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemButtonEditParamDel
@@ -224,11 +238,10 @@
             this.treeListMain.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.colDSCategoryName,
             this.colDSCategoryDesc});
-            this.treeListMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeListMain.DragNodesMode = DevExpress.XtraTreeList.TreeListDragNodesMode.Advanced;
             this.treeListMain.HorzScrollVisibility = DevExpress.XtraTreeList.ScrollVisibility.Always;
             this.treeListMain.KeyFieldName = "DSCategoryId";
-            this.treeListMain.Location = new System.Drawing.Point(0, 0);
+            this.treeListMain.Location = new System.Drawing.Point(12, 12);
             this.treeListMain.Name = "treeListMain";
             this.treeListMain.OptionsBehavior.DragNodes = true;
             this.treeListMain.OptionsBehavior.EnableFiltering = true;
@@ -241,7 +254,7 @@
             this.treeListMain.OptionsView.AutoWidth = false;
             this.treeListMain.ParentFieldName = "DSCategoryParent";
             this.treeListMain.SelectImageList = this.imageCollectionNormal;
-            this.treeListMain.Size = new System.Drawing.Size(450, 419);
+            this.treeListMain.Size = new System.Drawing.Size(360, 395);
             this.treeListMain.TabIndex = 10;
             this.treeListMain.AfterExpand += new DevExpress.XtraTreeList.NodeEventHandler(this.treeListMain_AfterExpand);
             this.treeListMain.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeListMain_FocusedNodeChanged);
@@ -273,51 +286,20 @@
             this.imageCollectionNormal.InsertImage(global::NICSQLTools.Properties.Resources.open_16x16, "open_16x16", typeof(global::NICSQLTools.Properties.Resources), 0);
             this.imageCollectionNormal.Images.SetKeyName(0, "open_16x16");
             // 
-            // splitContainerControl1
-            // 
-            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 31);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.treeListMain);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(927, 419);
-            this.splitContainerControl1.SplitterPosition = 450;
-            this.splitContainerControl1.TabIndex = 15;
-            this.splitContainerControl1.Text = "splitContainerControl1";
-            // 
-            // splitContainerControl2
-            // 
-            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
-            this.splitContainerControl2.Horizontal = false;
-            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.gridControlDS);
-            this.splitContainerControl2.Panel1.Text = "Panel1";
-            this.splitContainerControl2.Panel2.Controls.Add(this.gridControlParam);
-            this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(472, 419);
-            this.splitContainerControl2.SplitterPosition = 319;
-            this.splitContainerControl2.TabIndex = 0;
-            this.splitContainerControl2.Text = "splitContainerControl2";
-            // 
             // gridControlDS
             // 
             this.gridControlDS.Cursor = System.Windows.Forms.Cursors.Default;
             this.gridControlDS.DataSource = this.XPSCSDS;
-            this.gridControlDS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlDS.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlDS.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlDS_EmbeddedNavigator_ButtonClick);
-            this.gridControlDS.Location = new System.Drawing.Point(0, 0);
+            this.gridControlDS.Location = new System.Drawing.Point(381, 38);
             this.gridControlDS.MainView = this.gridViewDS;
             this.gridControlDS.MenuManager = this.barManagerMain;
             this.gridControlDS.Name = "gridControlDS";
             this.gridControlDS.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditAppDatasourceTypeId,
             this.repositoryItemButtonEditDesc});
-            this.gridControlDS.Size = new System.Drawing.Size(472, 95);
+            this.gridControlDS.Size = new System.Drawing.Size(534, 165);
             this.gridControlDS.TabIndex = 6;
             this.gridControlDS.UseEmbeddedNavigator = true;
             this.gridControlDS.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -357,7 +339,6 @@
             this.gridViewDS.OptionsSelection.InvertSelection = true;
             this.gridViewDS.OptionsSelection.MultiSelect = true;
             this.gridViewDS.OptionsView.ColumnAutoWidth = false;
-            this.gridViewDS.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridViewDS.OptionsView.ShowDetailButtons = false;
             this.gridViewDS.OptionsView.ShowGroupPanel = false;
             this.gridViewDS.OptionsView.ShowViewCaption = true;
@@ -435,15 +416,14 @@
             // gridControlParam
             // 
             this.gridControlParam.DataSource = this.XPSCSParam;
-            this.gridControlParam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlParam.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlParam_EmbeddedNavigator_ButtonClick);
-            this.gridControlParam.Location = new System.Drawing.Point(0, 0);
+            this.gridControlParam.Location = new System.Drawing.Point(381, 212);
             this.gridControlParam.MainView = this.gridViewParam;
             this.gridControlParam.MenuManager = this.barManagerMain;
             this.gridControlParam.Name = "gridControlParam";
             this.gridControlParam.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEditLookupID});
-            this.gridControlParam.Size = new System.Drawing.Size(472, 319);
+            this.gridControlParam.Size = new System.Drawing.Size(534, 195);
             this.gridControlParam.TabIndex = 6;
             this.gridControlParam.UseEmbeddedNavigator = true;
             this.gridControlParam.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -554,11 +534,116 @@
             this.LSMSLookup.ElementType = typeof(NICSQLTools.Data.Linq.AppDatasourceLookup);
             this.LSMSLookup.KeyExpression = "[ID]";
             // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.btnAddDS);
+            this.layoutControl1.Controls.Add(this.gridControlParam);
+            this.layoutControl1.Controls.Add(this.gridControlDS);
+            this.layoutControl1.Controls.Add(this.treeListMain);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.Location = new System.Drawing.Point(0, 31);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(993, 276, 374, 350);
+            this.layoutControl1.OptionsView.UseDefaultDragAndDropRendering = false;
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(927, 419);
+            this.layoutControl1.TabIndex = 7;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btnAddDS
+            // 
+            this.btnAddDS.Image = global::NICSQLTools.Properties.Resources.add_16x16;
+            this.btnAddDS.Location = new System.Drawing.Point(808, 12);
+            this.btnAddDS.Name = "btnAddDS";
+            this.btnAddDS.Size = new System.Drawing.Size(107, 22);
+            this.btnAddDS.StyleController = this.layoutControl1;
+            this.btnAddDS.TabIndex = 11;
+            this.btnAddDS.Text = "Add Datasource";
+            this.btnAddDS.Click += new System.EventHandler(this.btnAddDS_Click);
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2,
+            this.layoutControlItem1,
+            this.layoutControlItem3,
+            this.splitterItem1,
+            this.splitterItem2,
+            this.layoutControlItem4,
+            this.emptySpaceItem1});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(927, 419);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.gridControlDS;
+            this.layoutControlItem2.Location = new System.Drawing.Point(369, 26);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(538, 169);
+            this.layoutControlItem2.Text = "DataSource";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.treeListMain;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(364, 399);
+            this.layoutControlItem1.Text = "Tree";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.gridControlParam;
+            this.layoutControlItem3.Location = new System.Drawing.Point(369, 200);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(538, 199);
+            this.layoutControlItem3.Text = "Paramter";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
+            // splitterItem1
+            // 
+            this.splitterItem1.AllowHotTrack = true;
+            this.splitterItem1.Location = new System.Drawing.Point(369, 195);
+            this.splitterItem1.Name = "splitterItem1";
+            this.splitterItem1.Size = new System.Drawing.Size(538, 5);
+            // 
+            // splitterItem2
+            // 
+            this.splitterItem2.AllowHotTrack = true;
+            this.splitterItem2.Location = new System.Drawing.Point(364, 0);
+            this.splitterItem2.Name = "splitterItem2";
+            this.splitterItem2.Size = new System.Drawing.Size(5, 399);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btnAddDS;
+            this.layoutControlItem4.Location = new System.Drawing.Point(796, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(111, 26);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(369, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(427, 26);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // AppDatasourceEditorUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.splitContainerControl1);
+            this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -573,10 +658,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionNormal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
-            this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionDS)).EndInit();
@@ -590,7 +671,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewParam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditLookupID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSLookup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -613,8 +705,6 @@
         private DevExpress.XtraBars.BarButtonItem bbiDeleteNode;
         private DevExpress.Xpo.Session sessionCat;
         private DevExpress.Utils.ImageCollection imageCollectionNormal;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
         private DevExpress.XtraGrid.GridControl gridControlDS;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDS;
         private DevExpress.XtraGrid.Columns.GridColumn colDatasourceName;
@@ -637,5 +727,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLookupID;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditLookupID;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSLookup;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.SplitterItem splitterItem1;
+        private DevExpress.XtraLayout.SplitterItem splitterItem2;
+        private DevExpress.XtraEditors.SimpleButton btnAddDS;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     }
 }

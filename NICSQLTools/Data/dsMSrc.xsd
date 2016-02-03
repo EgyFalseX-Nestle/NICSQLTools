@@ -1210,6 +1210,215 @@ FROM MSrv_Type
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMSrv_TicketVisitTableAdapter" GeneratorDataComponentClassName="vMSrv_TicketVisitTableAdapter" Name="vMSrv_TicketVisit" UserDataComponentName="vMSrv_TicketVisitTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.vMSrv_TicketVisit" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, UserIn, DateIn, TechnicianName, RealName, Parts, ActualPrice FROM dbo.vMSrv_TicketVisit</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TicketVisitId" DataSetColumn="TicketVisitId" />
+              <Mapping SourceColumn="TicketId" DataSetColumn="TicketId" />
+              <Mapping SourceColumn="TechnicianId" DataSetColumn="TechnicianId" />
+              <Mapping SourceColumn="StartDate" DataSetColumn="StartDate" />
+              <Mapping SourceColumn="EndDate" DataSetColumn="EndDate" />
+              <Mapping SourceColumn="VisitComment" DataSetColumn="VisitComment" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="TechnicianName" DataSetColumn="TechnicianName" />
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+              <Mapping SourceColumn="Parts" DataSetColumn="Parts" />
+              <Mapping SourceColumn="ActualPrice" DataSetColumn="ActualPrice" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMSrv_TicketChatTableAdapter" GeneratorDataComponentClassName="vMSrv_TicketChatTableAdapter" Name="vMSrv_TicketChat" UserDataComponentName="vMSrv_TicketChatTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.vMSrv_TicketChat" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TicketChatId, TicketId, ChatData, UserIn, DateIn, RealName FROM dbo.vMSrv_TicketChat</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TicketChatId" DataSetColumn="TicketChatId" />
+              <Mapping SourceColumn="TicketId" DataSetColumn="TicketId" />
+              <Mapping SourceColumn="ChatData" DataSetColumn="ChatData" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMSrv_TicketVisitPartTableAdapter" GeneratorDataComponentClassName="vMSrv_TicketVisitPartTableAdapter" Name="vMSrv_TicketVisitPart" UserDataComponentName="vMSrv_TicketVisitPartTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.vMSrv_TicketVisitPart" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TicketVisitPartId, TicketVisitId, PartId, Quantity, ActualPrice, UserIn, DateIn, PartName, DefaultPrice, RealName FROM dbo.vMSrv_TicketVisitPart</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TicketVisitPartId" DataSetColumn="TicketVisitPartId" />
+              <Mapping SourceColumn="TicketVisitId" DataSetColumn="TicketVisitId" />
+              <Mapping SourceColumn="PartId" DataSetColumn="PartId" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="ActualPrice" DataSetColumn="ActualPrice" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="PartName" DataSetColumn="PartName" />
+              <Mapping SourceColumn="DefaultPrice" DataSetColumn="DefaultPrice" />
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMSrv_TicketActionTableAdapter" GeneratorDataComponentClassName="vMSrv_TicketActionTableAdapter" Name="vMSrv_TicketAction" UserDataComponentName="vMSrv_TicketActionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.vMSrv_TicketAction" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MSrv_TicketActionId, MSrv_ActionTypeId, TicketId, ActionDate, ActionComment, UserIn, DateIn, MSrvDepartmentId, MSrvDepartment, MSrv_ActionTypeName, RealName FROM dbo.vMSrv_TicketAction</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MSrv_TicketActionId" DataSetColumn="MSrv_TicketActionId" />
+              <Mapping SourceColumn="MSrv_ActionTypeId" DataSetColumn="MSrv_ActionTypeId" />
+              <Mapping SourceColumn="TicketId" DataSetColumn="TicketId" />
+              <Mapping SourceColumn="ActionDate" DataSetColumn="ActionDate" />
+              <Mapping SourceColumn="ActionComment" DataSetColumn="ActionComment" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="MSrvDepartmentId" DataSetColumn="MSrvDepartmentId" />
+              <Mapping SourceColumn="MSrvDepartment" DataSetColumn="MSrvDepartment" />
+              <Mapping SourceColumn="MSrv_ActionTypeName" DataSetColumn="MSrv_ActionTypeName" />
+              <Mapping SourceColumn="RealName" DataSetColumn="RealName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMSrv_EquipmentTableAdapter" GeneratorDataComponentClassName="vMSrv_EquipmentTableAdapter" Name="vMSrv_Equipment" UserDataComponentName="vMSrv_EquipmentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.vMSrv_Equipment" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Equipment, [Serial Number], [Func Loc], [Valid From], [Inventory number], ConstructYear, Description, Material FROM dbo.vMSrv_Equipment</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Equipment" DataSetColumn="Equipment" />
+              <Mapping SourceColumn="Serial Number" DataSetColumn="Serial Number" />
+              <Mapping SourceColumn="Func Loc" DataSetColumn="Func Loc" />
+              <Mapping SourceColumn="Valid From" DataSetColumn="Valid From" />
+              <Mapping SourceColumn="Inventory number" DataSetColumn="Inventory number" />
+              <Mapping SourceColumn="ConstructYear" DataSetColumn="ConstructYear" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Material" DataSetColumn="Material" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMSrv_TicketTableAdapter" GeneratorDataComponentClassName="vMSrv_TicketTableAdapter" Name="vMSrv_Ticket" UserDataComponentName="vMSrv_TicketTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.vMSrv_Ticket" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TicketId, CustomerId, EquipmentSerial, Route, OpenDate, OpenComment, SalesDistrict3Id, IssueContactPerson, IssueAddress, IssueContactPhone, IssueContactPhone2, TecEquipmentSerial, CurrentDepartmentId, TicketClosed, ClosedComment, CloseMSrvTypeId, CloseMSrvType, ClosedDate, CloseUserIn, ClosedDateIn, UserIn, DateIn, [Sales District 2], Plant, Ticket_User, Close_User, MSrvDepartment, VisitCount, PartCount, MSrv_ActionTypeName, ActionComment, ActionDate FROM dbo.vMSrv_Ticket</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TicketId" DataSetColumn="TicketId" />
+              <Mapping SourceColumn="CustomerId" DataSetColumn="CustomerId" />
+              <Mapping SourceColumn="EquipmentSerial" DataSetColumn="EquipmentSerial" />
+              <Mapping SourceColumn="Route" DataSetColumn="Route" />
+              <Mapping SourceColumn="OpenDate" DataSetColumn="OpenDate" />
+              <Mapping SourceColumn="OpenComment" DataSetColumn="OpenComment" />
+              <Mapping SourceColumn="SalesDistrict3Id" DataSetColumn="SalesDistrict3Id" />
+              <Mapping SourceColumn="IssueContactPerson" DataSetColumn="IssueContactPerson" />
+              <Mapping SourceColumn="IssueAddress" DataSetColumn="IssueAddress" />
+              <Mapping SourceColumn="IssueContactPhone" DataSetColumn="IssueContactPhone" />
+              <Mapping SourceColumn="IssueContactPhone2" DataSetColumn="IssueContactPhone2" />
+              <Mapping SourceColumn="TecEquipmentSerial" DataSetColumn="TecEquipmentSerial" />
+              <Mapping SourceColumn="CurrentDepartmentId" DataSetColumn="CurrentDepartmentId" />
+              <Mapping SourceColumn="TicketClosed" DataSetColumn="TicketClosed" />
+              <Mapping SourceColumn="ClosedComment" DataSetColumn="ClosedComment" />
+              <Mapping SourceColumn="CloseMSrvTypeId" DataSetColumn="CloseMSrvTypeId" />
+              <Mapping SourceColumn="CloseMSrvType" DataSetColumn="CloseMSrvType" />
+              <Mapping SourceColumn="ClosedDate" DataSetColumn="ClosedDate" />
+              <Mapping SourceColumn="CloseUserIn" DataSetColumn="CloseUserIn" />
+              <Mapping SourceColumn="ClosedDateIn" DataSetColumn="ClosedDateIn" />
+              <Mapping SourceColumn="UserIn" DataSetColumn="UserIn" />
+              <Mapping SourceColumn="DateIn" DataSetColumn="DateIn" />
+              <Mapping SourceColumn="Sales District 2" DataSetColumn="Sales District 2" />
+              <Mapping SourceColumn="Plant" DataSetColumn="Plant" />
+              <Mapping SourceColumn="Ticket_User" DataSetColumn="Ticket_User" />
+              <Mapping SourceColumn="Close_User" DataSetColumn="Close_User" />
+              <Mapping SourceColumn="MSrvDepartment" DataSetColumn="MSrvDepartment" />
+              <Mapping SourceColumn="VisitCount" DataSetColumn="VisitCount" />
+              <Mapping SourceColumn="PartCount" DataSetColumn="PartCount" />
+              <Mapping SourceColumn="MSrv_ActionTypeName" DataSetColumn="MSrv_ActionTypeName" />
+              <Mapping SourceColumn="ActionComment" DataSetColumn="ActionComment" />
+              <Mapping SourceColumn="ActionDate" DataSetColumn="ActionDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vMSrv_CustomerTableAdapter" GeneratorDataComponentClassName="vMSrv_CustomerTableAdapter" Name="vMSrv_Customer" UserDataComponentName="vMSrv_CustomerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.vMSrv_Customer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DisplayName, Customer, Route, Address, [Route Name], Supervisor, [Sales District 2], SalesDistrict3Id, UserId, PlantNumber, Telephone, Supervisor_Telephone FROM dbo.vMSrv_Customer</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DisplayName" DataSetColumn="DisplayName" />
+              <Mapping SourceColumn="Customer" DataSetColumn="Customer" />
+              <Mapping SourceColumn="Route" DataSetColumn="Route" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="Route Name" DataSetColumn="Route Name" />
+              <Mapping SourceColumn="Supervisor" DataSetColumn="Supervisor" />
+              <Mapping SourceColumn="Sales District 2" DataSetColumn="Sales District 2" />
+              <Mapping SourceColumn="SalesDistrict3Id" DataSetColumn="SalesDistrict3Id" />
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+              <Mapping SourceColumn="PlantNumber" DataSetColumn="PlantNumber" />
+              <Mapping SourceColumn="Telephone" DataSetColumn="Telephone" />
+              <Mapping SourceColumn="Supervisor_Telephone" DataSetColumn="Supervisor_Telephone" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.vMSrv_Customer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillById_User" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataById_User" GeneratorSourceName="FillById_User" GetMethodModifier="Public" GetMethodName="GetDataById_User" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataById_User" UserSourceName="FillById_User">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DisplayName, Customer, Route, Address, [Route Name], Supervisor, [Sales District 2], SalesDistrict3Id, UserId, PlantNumber, Telephone, Supervisor_Telephone FROM dbo.vMSrv_Customer
+WHERE Customer = @Customer AND UserId = @UserId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Customer" ColumnName="Customer" DataSourceName="IC_DB.dbo.vMSrv_Customer" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Customer" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Customer" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UserId" ColumnName="UserId" DataSourceName="IC_DB.dbo.vMSrv_Customer" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UserId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UserId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="IC_DBConnectionString (Settings)" DbObjectName="IC_DB.dbo.AppUsers" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="GetUserMSrvDepartmentId" MethodsParameterType="CLR" Modifier="Public" Name="GetUserMSrvDepartmentId" QueryType="Scalar" ScalarCallRetval="System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetUserMSrvDepartmentId">
@@ -1297,7 +1506,7 @@ WHERE        (PartId = @PartId)</CommandText>
   <xs:element name="dsMSrc" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsMSrc" msprop:Generator_UserDSName="dsMSrc">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MSrv_Department" msprop:Generator_TableClassName="MSrv_DepartmentDataTable" msprop:Generator_TableVarName="tableMSrv_Department" msprop:Generator_RowChangedName="MSrv_DepartmentRowChanged" msprop:Generator_TablePropName="MSrv_Department" msprop:Generator_RowDeletingName="MSrv_DepartmentRowDeleting" msprop:Generator_RowChangingName="MSrv_DepartmentRowChanging" msprop:Generator_RowEvHandlerName="MSrv_DepartmentRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_DepartmentRowDeleted" msprop:Generator_RowClassName="MSrv_DepartmentRow" msprop:Generator_UserTableName="MSrv_Department" msprop:Generator_RowEvArgName="MSrv_DepartmentRowChangeEvent">
+        <xs:element name="MSrv_Department" msprop:Generator_TableClassName="MSrv_DepartmentDataTable" msprop:Generator_TableVarName="tableMSrv_Department" msprop:Generator_TablePropName="MSrv_Department" msprop:Generator_RowDeletingName="MSrv_DepartmentRowDeleting" msprop:Generator_RowChangingName="MSrv_DepartmentRowChanging" msprop:Generator_RowEvHandlerName="MSrv_DepartmentRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_DepartmentRowDeleted" msprop:Generator_UserTableName="MSrv_Department" msprop:Generator_RowChangedName="MSrv_DepartmentRowChanged" msprop:Generator_RowEvArgName="MSrv_DepartmentRowChangeEvent" msprop:Generator_RowClassName="MSrv_DepartmentRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MSrvDepartmentId" msprop:Generator_ColumnVarNameInTable="columnMSrvDepartmentId" msprop:Generator_ColumnPropNameInRow="MSrvDepartmentId" msprop:Generator_ColumnPropNameInTable="MSrvDepartmentIdColumn" msprop:Generator_UserColumnName="MSrvDepartmentId" type="xs:short" />
@@ -1313,7 +1522,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrvTicketType" msprop:Generator_TableClassName="MSrvTicketTypeDataTable" msprop:Generator_TableVarName="tableMSrvTicketType" msprop:Generator_RowChangedName="MSrvTicketTypeRowChanged" msprop:Generator_TablePropName="MSrvTicketType" msprop:Generator_RowDeletingName="MSrvTicketTypeRowDeleting" msprop:Generator_RowChangingName="MSrvTicketTypeRowChanging" msprop:Generator_RowEvHandlerName="MSrvTicketTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrvTicketTypeRowDeleted" msprop:Generator_RowClassName="MSrvTicketTypeRow" msprop:Generator_UserTableName="MSrvTicketType" msprop:Generator_RowEvArgName="MSrvTicketTypeRowChangeEvent">
+        <xs:element name="MSrvTicketType" msprop:Generator_TableClassName="MSrvTicketTypeDataTable" msprop:Generator_TableVarName="tableMSrvTicketType" msprop:Generator_TablePropName="MSrvTicketType" msprop:Generator_RowDeletingName="MSrvTicketTypeRowDeleting" msprop:Generator_RowChangingName="MSrvTicketTypeRowChanging" msprop:Generator_RowEvHandlerName="MSrvTicketTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrvTicketTypeRowDeleted" msprop:Generator_UserTableName="MSrvTicketType" msprop:Generator_RowChangedName="MSrvTicketTypeRowChanged" msprop:Generator_RowEvArgName="MSrvTicketTypeRowChangeEvent" msprop:Generator_RowClassName="MSrvTicketTypeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TicketId" msprop:Generator_ColumnVarNameInTable="columnTicketId" msprop:Generator_ColumnPropNameInRow="TicketId" msprop:Generator_ColumnPropNameInTable="TicketIdColumn" msprop:Generator_UserColumnName="TicketId" type="xs:int" />
@@ -1323,7 +1532,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_TicketVisitType" msprop:Generator_TableClassName="MSrv_TicketVisitTypeDataTable" msprop:Generator_TableVarName="tableMSrv_TicketVisitType" msprop:Generator_RowChangedName="MSrv_TicketVisitTypeRowChanged" msprop:Generator_TablePropName="MSrv_TicketVisitType" msprop:Generator_RowDeletingName="MSrv_TicketVisitTypeRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketVisitTypeRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketVisitTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketVisitTypeRowDeleted" msprop:Generator_RowClassName="MSrv_TicketVisitTypeRow" msprop:Generator_UserTableName="MSrv_TicketVisitType" msprop:Generator_RowEvArgName="MSrv_TicketVisitTypeRowChangeEvent">
+        <xs:element name="MSrv_TicketVisitType" msprop:Generator_TableClassName="MSrv_TicketVisitTypeDataTable" msprop:Generator_TableVarName="tableMSrv_TicketVisitType" msprop:Generator_TablePropName="MSrv_TicketVisitType" msprop:Generator_RowDeletingName="MSrv_TicketVisitTypeRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketVisitTypeRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketVisitTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketVisitTypeRowDeleted" msprop:Generator_UserTableName="MSrv_TicketVisitType" msprop:Generator_RowChangedName="MSrv_TicketVisitTypeRowChanged" msprop:Generator_RowEvArgName="MSrv_TicketVisitTypeRowChangeEvent" msprop:Generator_RowClassName="MSrv_TicketVisitTypeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TicketVisitTypeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTicketVisitTypeId" msprop:Generator_ColumnPropNameInRow="TicketVisitTypeId" msprop:Generator_ColumnPropNameInTable="TicketVisitTypeIdColumn" msprop:Generator_UserColumnName="TicketVisitTypeId" type="xs:int" />
@@ -1334,7 +1543,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_TechnicianSalesDistrict" msprop:Generator_TableClassName="MSrv_TechnicianSalesDistrictDataTable" msprop:Generator_TableVarName="tableMSrv_TechnicianSalesDistrict" msprop:Generator_RowChangedName="MSrv_TechnicianSalesDistrictRowChanged" msprop:Generator_TablePropName="MSrv_TechnicianSalesDistrict" msprop:Generator_RowDeletingName="MSrv_TechnicianSalesDistrictRowDeleting" msprop:Generator_RowChangingName="MSrv_TechnicianSalesDistrictRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TechnicianSalesDistrictRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TechnicianSalesDistrictRowDeleted" msprop:Generator_RowClassName="MSrv_TechnicianSalesDistrictRow" msprop:Generator_UserTableName="MSrv_TechnicianSalesDistrict" msprop:Generator_RowEvArgName="MSrv_TechnicianSalesDistrictRowChangeEvent">
+        <xs:element name="MSrv_TechnicianSalesDistrict" msprop:Generator_TableClassName="MSrv_TechnicianSalesDistrictDataTable" msprop:Generator_TableVarName="tableMSrv_TechnicianSalesDistrict" msprop:Generator_TablePropName="MSrv_TechnicianSalesDistrict" msprop:Generator_RowDeletingName="MSrv_TechnicianSalesDistrictRowDeleting" msprop:Generator_RowChangingName="MSrv_TechnicianSalesDistrictRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TechnicianSalesDistrictRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TechnicianSalesDistrictRowDeleted" msprop:Generator_UserTableName="MSrv_TechnicianSalesDistrict" msprop:Generator_RowChangedName="MSrv_TechnicianSalesDistrictRowChanged" msprop:Generator_RowEvArgName="MSrv_TechnicianSalesDistrictRowChangeEvent" msprop:Generator_RowClassName="MSrv_TechnicianSalesDistrictRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TechnicianSalesDistrictId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTechnicianSalesDistrictId" msprop:Generator_ColumnPropNameInRow="TechnicianSalesDistrictId" msprop:Generator_ColumnPropNameInTable="TechnicianSalesDistrictIdColumn" msprop:Generator_UserColumnName="TechnicianSalesDistrictId" type="xs:int" />
@@ -1343,7 +1552,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_TechnicianCompany" msprop:Generator_TableClassName="MSrv_TechnicianCompanyDataTable" msprop:Generator_TableVarName="tableMSrv_TechnicianCompany" msprop:Generator_RowChangedName="MSrv_TechnicianCompanyRowChanged" msprop:Generator_TablePropName="MSrv_TechnicianCompany" msprop:Generator_RowDeletingName="MSrv_TechnicianCompanyRowDeleting" msprop:Generator_RowChangingName="MSrv_TechnicianCompanyRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TechnicianCompanyRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TechnicianCompanyRowDeleted" msprop:Generator_RowClassName="MSrv_TechnicianCompanyRow" msprop:Generator_UserTableName="MSrv_TechnicianCompany" msprop:Generator_RowEvArgName="MSrv_TechnicianCompanyRowChangeEvent">
+        <xs:element name="MSrv_TechnicianCompany" msprop:Generator_TableClassName="MSrv_TechnicianCompanyDataTable" msprop:Generator_TableVarName="tableMSrv_TechnicianCompany" msprop:Generator_TablePropName="MSrv_TechnicianCompany" msprop:Generator_RowDeletingName="MSrv_TechnicianCompanyRowDeleting" msprop:Generator_RowChangingName="MSrv_TechnicianCompanyRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TechnicianCompanyRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TechnicianCompanyRowDeleted" msprop:Generator_UserTableName="MSrv_TechnicianCompany" msprop:Generator_RowChangedName="MSrv_TechnicianCompanyRowChanged" msprop:Generator_RowEvArgName="MSrv_TechnicianCompanyRowChangeEvent" msprop:Generator_RowClassName="MSrv_TechnicianCompanyRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TechnicianCompanyId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTechnicianCompanyId" msprop:Generator_ColumnPropNameInRow="TechnicianCompanyId" msprop:Generator_ColumnPropNameInTable="TechnicianCompanyIdColumn" msprop:Generator_UserColumnName="TechnicianCompanyId" type="xs:int" />
@@ -1359,7 +1568,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_Technician" msprop:Generator_TableClassName="MSrv_TechnicianDataTable" msprop:Generator_TableVarName="tableMSrv_Technician" msprop:Generator_RowChangedName="MSrv_TechnicianRowChanged" msprop:Generator_TablePropName="MSrv_Technician" msprop:Generator_RowDeletingName="MSrv_TechnicianRowDeleting" msprop:Generator_RowChangingName="MSrv_TechnicianRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TechnicianRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TechnicianRowDeleted" msprop:Generator_RowClassName="MSrv_TechnicianRow" msprop:Generator_UserTableName="MSrv_Technician" msprop:Generator_RowEvArgName="MSrv_TechnicianRowChangeEvent">
+        <xs:element name="MSrv_Technician" msprop:Generator_TableClassName="MSrv_TechnicianDataTable" msprop:Generator_TableVarName="tableMSrv_Technician" msprop:Generator_TablePropName="MSrv_Technician" msprop:Generator_RowDeletingName="MSrv_TechnicianRowDeleting" msprop:Generator_RowChangingName="MSrv_TechnicianRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TechnicianRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TechnicianRowDeleted" msprop:Generator_UserTableName="MSrv_Technician" msprop:Generator_RowChangedName="MSrv_TechnicianRowChanged" msprop:Generator_RowEvArgName="MSrv_TechnicianRowChangeEvent" msprop:Generator_RowClassName="MSrv_TechnicianRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TechnicianId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTechnicianId" msprop:Generator_ColumnPropNameInRow="TechnicianId" msprop:Generator_ColumnPropNameInTable="TechnicianIdColumn" msprop:Generator_UserColumnName="TechnicianId" type="xs:int" />
@@ -1376,7 +1585,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_TicketChat" msprop:Generator_TableClassName="MSrv_TicketChatDataTable" msprop:Generator_TableVarName="tableMSrv_TicketChat" msprop:Generator_TablePropName="MSrv_TicketChat" msprop:Generator_RowDeletingName="MSrv_TicketChatRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketChatRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketChatRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketChatRowDeleted" msprop:Generator_UserTableName="MSrv_TicketChat" msprop:Generator_RowChangedName="MSrv_TicketChatRowChanged" msprop:Generator_RowEvArgName="MSrv_TicketChatRowChangeEvent" msprop:Generator_RowClassName="MSrv_TicketChatRow">
+        <xs:element name="MSrv_TicketChat" msprop:Generator_TableClassName="MSrv_TicketChatDataTable" msprop:Generator_TableVarName="tableMSrv_TicketChat" msprop:Generator_RowChangedName="MSrv_TicketChatRowChanged" msprop:Generator_TablePropName="MSrv_TicketChat" msprop:Generator_RowDeletingName="MSrv_TicketChatRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketChatRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketChatRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketChatRowDeleted" msprop:Generator_RowClassName="MSrv_TicketChatRow" msprop:Generator_UserTableName="MSrv_TicketChat" msprop:Generator_RowEvArgName="MSrv_TicketChatRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TicketChatId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTicketChatId" msprop:Generator_ColumnPropNameInRow="TicketChatId" msprop:Generator_ColumnPropNameInTable="TicketChatIdColumn" msprop:Generator_UserColumnName="TicketChatId" type="xs:int" />
@@ -1393,7 +1602,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_Ticket" msprop:Generator_TableClassName="MSrv_TicketDataTable" msprop:Generator_TableVarName="tableMSrv_Ticket" msprop:Generator_TablePropName="MSrv_Ticket" msprop:Generator_RowDeletingName="MSrv_TicketRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketRowDeleted" msprop:Generator_UserTableName="MSrv_Ticket" msprop:Generator_RowChangedName="MSrv_TicketRowChanged" msprop:Generator_RowEvArgName="MSrv_TicketRowChangeEvent" msprop:Generator_RowClassName="MSrv_TicketRow">
+        <xs:element name="MSrv_Ticket" msprop:Generator_TableClassName="MSrv_TicketDataTable" msprop:Generator_TableVarName="tableMSrv_Ticket" msprop:Generator_RowChangedName="MSrv_TicketRowChanged" msprop:Generator_TablePropName="MSrv_Ticket" msprop:Generator_RowDeletingName="MSrv_TicketRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketRowDeleted" msprop:Generator_RowClassName="MSrv_TicketRow" msprop:Generator_UserTableName="MSrv_Ticket" msprop:Generator_RowEvArgName="MSrv_TicketRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TicketId" msprop:Generator_ColumnVarNameInTable="columnTicketId" msprop:Generator_ColumnPropNameInRow="TicketId" msprop:Generator_ColumnPropNameInTable="TicketIdColumn" msprop:Generator_UserColumnName="TicketId" type="xs:int" />
@@ -1487,7 +1696,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_Part" msprop:Generator_TableClassName="MSrv_PartDataTable" msprop:Generator_TableVarName="tableMSrv_Part" msprop:Generator_RowChangedName="MSrv_PartRowChanged" msprop:Generator_TablePropName="MSrv_Part" msprop:Generator_RowDeletingName="MSrv_PartRowDeleting" msprop:Generator_RowChangingName="MSrv_PartRowChanging" msprop:Generator_RowEvHandlerName="MSrv_PartRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_PartRowDeleted" msprop:Generator_RowClassName="MSrv_PartRow" msprop:Generator_UserTableName="MSrv_Part" msprop:Generator_RowEvArgName="MSrv_PartRowChangeEvent">
+        <xs:element name="MSrv_Part" msprop:Generator_TableClassName="MSrv_PartDataTable" msprop:Generator_TableVarName="tableMSrv_Part" msprop:Generator_TablePropName="MSrv_Part" msprop:Generator_RowDeletingName="MSrv_PartRowDeleting" msprop:Generator_RowChangingName="MSrv_PartRowChanging" msprop:Generator_RowEvHandlerName="MSrv_PartRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_PartRowDeleted" msprop:Generator_UserTableName="MSrv_Part" msprop:Generator_RowChangedName="MSrv_PartRowChanged" msprop:Generator_RowEvArgName="MSrv_PartRowChangeEvent" msprop:Generator_RowClassName="MSrv_PartRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PartId" msprop:Generator_ColumnVarNameInTable="columnPartId" msprop:Generator_ColumnPropNameInRow="PartId" msprop:Generator_ColumnPropNameInTable="PartIdColumn" msprop:Generator_UserColumnName="PartId" type="xs:int" />
@@ -1504,7 +1713,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_TicketVisitPart" msprop:Generator_TableClassName="MSrv_TicketVisitPartDataTable" msprop:Generator_TableVarName="tableMSrv_TicketVisitPart" msprop:Generator_RowChangedName="MSrv_TicketVisitPartRowChanged" msprop:Generator_TablePropName="MSrv_TicketVisitPart" msprop:Generator_RowDeletingName="MSrv_TicketVisitPartRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketVisitPartRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketVisitPartRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketVisitPartRowDeleted" msprop:Generator_RowClassName="MSrv_TicketVisitPartRow" msprop:Generator_UserTableName="MSrv_TicketVisitPart" msprop:Generator_RowEvArgName="MSrv_TicketVisitPartRowChangeEvent">
+        <xs:element name="MSrv_TicketVisitPart" msprop:Generator_TableClassName="MSrv_TicketVisitPartDataTable" msprop:Generator_TableVarName="tableMSrv_TicketVisitPart" msprop:Generator_TablePropName="MSrv_TicketVisitPart" msprop:Generator_RowDeletingName="MSrv_TicketVisitPartRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketVisitPartRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketVisitPartRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketVisitPartRowDeleted" msprop:Generator_UserTableName="MSrv_TicketVisitPart" msprop:Generator_RowChangedName="MSrv_TicketVisitPartRowChanged" msprop:Generator_RowEvArgName="MSrv_TicketVisitPartRowChangeEvent" msprop:Generator_RowClassName="MSrv_TicketVisitPartRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TicketVisitPartId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTicketVisitPartId" msprop:Generator_ColumnPropNameInRow="TicketVisitPartId" msprop:Generator_ColumnPropNameInTable="TicketVisitPartIdColumn" msprop:Generator_UserColumnName="TicketVisitPartId" type="xs:int" />
@@ -1517,7 +1726,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_TicketVisit" msprop:Generator_TableClassName="MSrv_TicketVisitDataTable" msprop:Generator_TableVarName="tableMSrv_TicketVisit" msprop:Generator_RowChangedName="MSrv_TicketVisitRowChanged" msprop:Generator_TablePropName="MSrv_TicketVisit" msprop:Generator_RowDeletingName="MSrv_TicketVisitRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketVisitRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketVisitRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketVisitRowDeleted" msprop:Generator_RowClassName="MSrv_TicketVisitRow" msprop:Generator_UserTableName="MSrv_TicketVisit" msprop:Generator_RowEvArgName="MSrv_TicketVisitRowChangeEvent">
+        <xs:element name="MSrv_TicketVisit" msprop:Generator_TableClassName="MSrv_TicketVisitDataTable" msprop:Generator_TableVarName="tableMSrv_TicketVisit" msprop:Generator_TablePropName="MSrv_TicketVisit" msprop:Generator_RowDeletingName="MSrv_TicketVisitRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketVisitRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketVisitRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketVisitRowDeleted" msprop:Generator_UserTableName="MSrv_TicketVisit" msprop:Generator_RowChangedName="MSrv_TicketVisitRowChanged" msprop:Generator_RowEvArgName="MSrv_TicketVisitRowChangeEvent" msprop:Generator_RowClassName="MSrv_TicketVisitRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TicketVisitId" msprop:Generator_ColumnVarNameInTable="columnTicketVisitId" msprop:Generator_ColumnPropNameInRow="TicketVisitId" msprop:Generator_ColumnPropNameInTable="TicketVisitIdColumn" msprop:Generator_UserColumnName="TicketVisitId" type="xs:int" />
@@ -1537,7 +1746,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_ActionType" msprop:Generator_TableClassName="MSrv_ActionTypeDataTable" msprop:Generator_TableVarName="tableMSrv_ActionType" msprop:Generator_TablePropName="MSrv_ActionType" msprop:Generator_RowDeletingName="MSrv_ActionTypeRowDeleting" msprop:Generator_RowChangingName="MSrv_ActionTypeRowChanging" msprop:Generator_RowEvHandlerName="MSrv_ActionTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_ActionTypeRowDeleted" msprop:Generator_UserTableName="MSrv_ActionType" msprop:Generator_RowChangedName="MSrv_ActionTypeRowChanged" msprop:Generator_RowEvArgName="MSrv_ActionTypeRowChangeEvent" msprop:Generator_RowClassName="MSrv_ActionTypeRow">
+        <xs:element name="MSrv_ActionType" msprop:Generator_TableClassName="MSrv_ActionTypeDataTable" msprop:Generator_TableVarName="tableMSrv_ActionType" msprop:Generator_RowChangedName="MSrv_ActionTypeRowChanged" msprop:Generator_TablePropName="MSrv_ActionType" msprop:Generator_RowDeletingName="MSrv_ActionTypeRowDeleting" msprop:Generator_RowChangingName="MSrv_ActionTypeRowChanging" msprop:Generator_RowEvHandlerName="MSrv_ActionTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_ActionTypeRowDeleted" msprop:Generator_RowClassName="MSrv_ActionTypeRow" msprop:Generator_UserTableName="MSrv_ActionType" msprop:Generator_RowEvArgName="MSrv_ActionTypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MSrv_ActionTypeId" msprop:Generator_ColumnVarNameInTable="columnMSrv_ActionTypeId" msprop:Generator_ColumnPropNameInRow="MSrv_ActionTypeId" msprop:Generator_ColumnPropNameInTable="MSrv_ActionTypeIdColumn" msprop:Generator_UserColumnName="MSrv_ActionTypeId" type="xs:int" />
@@ -1551,7 +1760,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_TicketAction" msprop:Generator_TableClassName="MSrv_TicketActionDataTable" msprop:Generator_TableVarName="tableMSrv_TicketAction" msprop:Generator_TablePropName="MSrv_TicketAction" msprop:Generator_RowDeletingName="MSrv_TicketActionRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketActionRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketActionRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketActionRowDeleted" msprop:Generator_UserTableName="MSrv_TicketAction" msprop:Generator_RowChangedName="MSrv_TicketActionRowChanged" msprop:Generator_RowEvArgName="MSrv_TicketActionRowChangeEvent" msprop:Generator_RowClassName="MSrv_TicketActionRow">
+        <xs:element name="MSrv_TicketAction" msprop:Generator_TableClassName="MSrv_TicketActionDataTable" msprop:Generator_TableVarName="tableMSrv_TicketAction" msprop:Generator_RowChangedName="MSrv_TicketActionRowChanged" msprop:Generator_TablePropName="MSrv_TicketAction" msprop:Generator_RowDeletingName="MSrv_TicketActionRowDeleting" msprop:Generator_RowChangingName="MSrv_TicketActionRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TicketActionRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TicketActionRowDeleted" msprop:Generator_RowClassName="MSrv_TicketActionRow" msprop:Generator_UserTableName="MSrv_TicketAction" msprop:Generator_RowEvArgName="MSrv_TicketActionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MSrv_TicketActionId" msprop:Generator_ColumnVarNameInTable="columnMSrv_TicketActionId" msprop:Generator_ColumnPropNameInRow="MSrv_TicketActionId" msprop:Generator_ColumnPropNameInTable="MSrv_TicketActionIdColumn" msprop:Generator_UserColumnName="MSrv_TicketActionId" type="xs:int" />
@@ -1571,7 +1780,7 @@ WHERE        (PartId = @PartId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MSrv_Type" msprop:Generator_TableClassName="MSrv_TypeDataTable" msprop:Generator_TableVarName="tableMSrv_Type" msprop:Generator_TablePropName="MSrv_Type" msprop:Generator_RowDeletingName="MSrv_TypeRowDeleting" msprop:Generator_RowChangingName="MSrv_TypeRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TypeRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TypeRowDeleted" msprop:Generator_UserTableName="MSrv_Type" msprop:Generator_RowChangedName="MSrv_TypeRowChanged" msprop:Generator_RowEvArgName="MSrv_TypeRowChangeEvent" msprop:Generator_RowClassName="MSrv_TypeRow">
+        <xs:element name="MSrv_Type" msprop:Generator_TableClassName="MSrv_TypeDataTable" msprop:Generator_TableVarName="tableMSrv_Type" msprop:Generator_RowChangedName="MSrv_TypeRowChanged" msprop:Generator_TablePropName="MSrv_Type" msprop:Generator_RowDeletingName="MSrv_TypeRowDeleting" msprop:Generator_RowChangingName="MSrv_TypeRowChanging" msprop:Generator_RowEvHandlerName="MSrv_TypeRowChangeEventHandler" msprop:Generator_RowDeletedName="MSrv_TypeRowDeleted" msprop:Generator_RowClassName="MSrv_TypeRow" msprop:Generator_UserTableName="MSrv_Type" msprop:Generator_RowEvArgName="MSrv_TypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MSrvTypeId" msprop:Generator_ColumnVarNameInTable="columnMSrvTypeId" msprop:Generator_ColumnPropNameInRow="MSrvTypeId" msprop:Generator_ColumnPropNameInTable="MSrvTypeIdColumn" msprop:Generator_UserColumnName="MSrvTypeId" type="xs:short" />
@@ -1585,6 +1794,409 @@ WHERE        (PartId = @PartId)</CommandText>
               <xs:element name="MSrv_TypeConditionId" msprop:Generator_ColumnVarNameInTable="columnMSrv_TypeConditionId" msprop:Generator_ColumnPropNameInRow="MSrv_TypeConditionId" msprop:Generator_ColumnPropNameInTable="MSrv_TypeConditionIdColumn" msprop:Generator_UserColumnName="MSrv_TypeConditionId" type="xs:int" minOccurs="0" />
               <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
               <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vMSrv_TicketVisit" msprop:Generator_TableClassName="vMSrv_TicketVisitDataTable" msprop:Generator_TableVarName="tablevMSrv_TicketVisit" msprop:Generator_TablePropName="vMSrv_TicketVisit" msprop:Generator_RowDeletingName="vMSrv_TicketVisitRowDeleting" msprop:Generator_RowChangingName="vMSrv_TicketVisitRowChanging" msprop:Generator_RowEvHandlerName="vMSrv_TicketVisitRowChangeEventHandler" msprop:Generator_RowDeletedName="vMSrv_TicketVisitRowDeleted" msprop:Generator_UserTableName="vMSrv_TicketVisit" msprop:Generator_RowChangedName="vMSrv_TicketVisitRowChanged" msprop:Generator_RowEvArgName="vMSrv_TicketVisitRowChangeEvent" msprop:Generator_RowClassName="vMSrv_TicketVisitRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TicketVisitId" msprop:Generator_ColumnVarNameInTable="columnTicketVisitId" msprop:Generator_ColumnPropNameInRow="TicketVisitId" msprop:Generator_ColumnPropNameInTable="TicketVisitIdColumn" msprop:Generator_UserColumnName="TicketVisitId" type="xs:int" />
+              <xs:element name="TicketId" msprop:Generator_ColumnVarNameInTable="columnTicketId" msprop:Generator_ColumnPropNameInRow="TicketId" msprop:Generator_ColumnPropNameInTable="TicketIdColumn" msprop:Generator_UserColumnName="TicketId" type="xs:int" minOccurs="0" />
+              <xs:element name="TechnicianId" msprop:Generator_ColumnVarNameInTable="columnTechnicianId" msprop:Generator_ColumnPropNameInRow="TechnicianId" msprop:Generator_ColumnPropNameInTable="TechnicianIdColumn" msprop:Generator_UserColumnName="TechnicianId" type="xs:int" minOccurs="0" />
+              <xs:element name="StartDate" msprop:Generator_ColumnVarNameInTable="columnStartDate" msprop:Generator_ColumnPropNameInRow="StartDate" msprop:Generator_ColumnPropNameInTable="StartDateColumn" msprop:Generator_UserColumnName="StartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EndDate" msprop:Generator_ColumnVarNameInTable="columnEndDate" msprop:Generator_ColumnPropNameInRow="EndDate" msprop:Generator_ColumnPropNameInTable="EndDateColumn" msprop:Generator_UserColumnName="EndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="VisitComment" msprop:Generator_ColumnVarNameInTable="columnVisitComment" msprop:Generator_ColumnPropNameInRow="VisitComment" msprop:Generator_ColumnPropNameInTable="VisitCommentColumn" msprop:Generator_UserColumnName="VisitComment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TechnicianName" msprop:Generator_ColumnVarNameInTable="columnTechnicianName" msprop:Generator_ColumnPropNameInRow="TechnicianName" msprop:Generator_ColumnPropNameInTable="TechnicianNameColumn" msprop:Generator_UserColumnName="TechnicianName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Parts" msprop:Generator_ColumnVarNameInTable="columnParts" msprop:Generator_ColumnPropNameInRow="Parts" msprop:Generator_ColumnPropNameInTable="PartsColumn" msprop:Generator_UserColumnName="Parts" type="xs:double" minOccurs="0" />
+              <xs:element name="ActualPrice" msprop:Generator_ColumnVarNameInTable="columnActualPrice" msprop:Generator_ColumnPropNameInRow="ActualPrice" msprop:Generator_ColumnPropNameInTable="ActualPriceColumn" msprop:Generator_UserColumnName="ActualPrice" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vMSrv_TicketChat" msprop:Generator_TableClassName="vMSrv_TicketChatDataTable" msprop:Generator_TableVarName="tablevMSrv_TicketChat" msprop:Generator_TablePropName="vMSrv_TicketChat" msprop:Generator_RowDeletingName="vMSrv_TicketChatRowDeleting" msprop:Generator_RowChangingName="vMSrv_TicketChatRowChanging" msprop:Generator_RowEvHandlerName="vMSrv_TicketChatRowChangeEventHandler" msprop:Generator_RowDeletedName="vMSrv_TicketChatRowDeleted" msprop:Generator_UserTableName="vMSrv_TicketChat" msprop:Generator_RowChangedName="vMSrv_TicketChatRowChanged" msprop:Generator_RowEvArgName="vMSrv_TicketChatRowChangeEvent" msprop:Generator_RowClassName="vMSrv_TicketChatRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TicketChatId" msprop:Generator_ColumnVarNameInTable="columnTicketChatId" msprop:Generator_ColumnPropNameInRow="TicketChatId" msprop:Generator_ColumnPropNameInTable="TicketChatIdColumn" msprop:Generator_UserColumnName="TicketChatId" type="xs:int" />
+              <xs:element name="TicketId" msprop:Generator_ColumnVarNameInTable="columnTicketId" msprop:Generator_ColumnPropNameInRow="TicketId" msprop:Generator_ColumnPropNameInTable="TicketIdColumn" msprop:Generator_UserColumnName="TicketId" type="xs:int" minOccurs="0" />
+              <xs:element name="ChatData" msprop:Generator_ColumnVarNameInTable="columnChatData" msprop:Generator_ColumnPropNameInRow="ChatData" msprop:Generator_ColumnPropNameInTable="ChatDataColumn" msprop:Generator_UserColumnName="ChatData" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vMSrv_TicketVisitPart" msprop:Generator_TableClassName="vMSrv_TicketVisitPartDataTable" msprop:Generator_TableVarName="tablevMSrv_TicketVisitPart" msprop:Generator_TablePropName="vMSrv_TicketVisitPart" msprop:Generator_RowDeletingName="vMSrv_TicketVisitPartRowDeleting" msprop:Generator_RowChangingName="vMSrv_TicketVisitPartRowChanging" msprop:Generator_RowEvHandlerName="vMSrv_TicketVisitPartRowChangeEventHandler" msprop:Generator_RowDeletedName="vMSrv_TicketVisitPartRowDeleted" msprop:Generator_UserTableName="vMSrv_TicketVisitPart" msprop:Generator_RowChangedName="vMSrv_TicketVisitPartRowChanged" msprop:Generator_RowEvArgName="vMSrv_TicketVisitPartRowChangeEvent" msprop:Generator_RowClassName="vMSrv_TicketVisitPartRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TicketVisitPartId" msprop:Generator_ColumnVarNameInTable="columnTicketVisitPartId" msprop:Generator_ColumnPropNameInRow="TicketVisitPartId" msprop:Generator_ColumnPropNameInTable="TicketVisitPartIdColumn" msprop:Generator_UserColumnName="TicketVisitPartId" type="xs:int" />
+              <xs:element name="TicketVisitId" msprop:Generator_ColumnVarNameInTable="columnTicketVisitId" msprop:Generator_ColumnPropNameInRow="TicketVisitId" msprop:Generator_ColumnPropNameInTable="TicketVisitIdColumn" msprop:Generator_UserColumnName="TicketVisitId" type="xs:int" />
+              <xs:element name="PartId" msprop:Generator_ColumnVarNameInTable="columnPartId" msprop:Generator_ColumnPropNameInRow="PartId" msprop:Generator_ColumnPropNameInTable="PartIdColumn" msprop:Generator_UserColumnName="PartId" type="xs:int" />
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:double" minOccurs="0" />
+              <xs:element name="ActualPrice" msprop:Generator_ColumnVarNameInTable="columnActualPrice" msprop:Generator_ColumnPropNameInRow="ActualPrice" msprop:Generator_ColumnPropNameInTable="ActualPriceColumn" msprop:Generator_UserColumnName="ActualPrice" type="xs:double" minOccurs="0" />
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PartName" msprop:Generator_ColumnVarNameInTable="columnPartName" msprop:Generator_ColumnPropNameInRow="PartName" msprop:Generator_ColumnPropNameInTable="PartNameColumn" msprop:Generator_UserColumnName="PartName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DefaultPrice" msprop:Generator_ColumnVarNameInTable="columnDefaultPrice" msprop:Generator_ColumnPropNameInRow="DefaultPrice" msprop:Generator_ColumnPropNameInTable="DefaultPriceColumn" msprop:Generator_UserColumnName="DefaultPrice" type="xs:double" minOccurs="0" />
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vMSrv_TicketAction" msprop:Generator_TableClassName="vMSrv_TicketActionDataTable" msprop:Generator_TableVarName="tablevMSrv_TicketAction" msprop:Generator_TablePropName="vMSrv_TicketAction" msprop:Generator_RowDeletingName="vMSrv_TicketActionRowDeleting" msprop:Generator_RowChangingName="vMSrv_TicketActionRowChanging" msprop:Generator_RowEvHandlerName="vMSrv_TicketActionRowChangeEventHandler" msprop:Generator_RowDeletedName="vMSrv_TicketActionRowDeleted" msprop:Generator_UserTableName="vMSrv_TicketAction" msprop:Generator_RowChangedName="vMSrv_TicketActionRowChanged" msprop:Generator_RowEvArgName="vMSrv_TicketActionRowChangeEvent" msprop:Generator_RowClassName="vMSrv_TicketActionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MSrv_TicketActionId" msprop:Generator_ColumnVarNameInTable="columnMSrv_TicketActionId" msprop:Generator_ColumnPropNameInRow="MSrv_TicketActionId" msprop:Generator_ColumnPropNameInTable="MSrv_TicketActionIdColumn" msprop:Generator_UserColumnName="MSrv_TicketActionId" type="xs:int" />
+              <xs:element name="MSrv_ActionTypeId" msprop:Generator_ColumnVarNameInTable="columnMSrv_ActionTypeId" msprop:Generator_ColumnPropNameInRow="MSrv_ActionTypeId" msprop:Generator_ColumnPropNameInTable="MSrv_ActionTypeIdColumn" msprop:Generator_UserColumnName="MSrv_ActionTypeId" type="xs:int" minOccurs="0" />
+              <xs:element name="TicketId" msprop:Generator_ColumnVarNameInTable="columnTicketId" msprop:Generator_ColumnPropNameInRow="TicketId" msprop:Generator_ColumnPropNameInTable="TicketIdColumn" msprop:Generator_UserColumnName="TicketId" type="xs:int" minOccurs="0" />
+              <xs:element name="ActionDate" msprop:Generator_ColumnVarNameInTable="columnActionDate" msprop:Generator_ColumnPropNameInRow="ActionDate" msprop:Generator_ColumnPropNameInTable="ActionDateColumn" msprop:Generator_UserColumnName="ActionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActionComment" msprop:Generator_ColumnVarNameInTable="columnActionComment" msprop:Generator_ColumnPropNameInRow="ActionComment" msprop:Generator_ColumnPropNameInTable="ActionCommentColumn" msprop:Generator_UserColumnName="ActionComment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="MSrvDepartmentId" msprop:Generator_ColumnVarNameInTable="columnMSrvDepartmentId" msprop:Generator_ColumnPropNameInRow="MSrvDepartmentId" msprop:Generator_ColumnPropNameInTable="MSrvDepartmentIdColumn" msprop:Generator_UserColumnName="MSrvDepartmentId" type="xs:short" minOccurs="0" />
+              <xs:element name="MSrvDepartment" msprop:Generator_ColumnVarNameInTable="columnMSrvDepartment" msprop:Generator_ColumnPropNameInRow="MSrvDepartment" msprop:Generator_ColumnPropNameInTable="MSrvDepartmentColumn" msprop:Generator_UserColumnName="MSrvDepartment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MSrv_ActionTypeName" msprop:Generator_ColumnVarNameInTable="columnMSrv_ActionTypeName" msprop:Generator_ColumnPropNameInRow="MSrv_ActionTypeName" msprop:Generator_ColumnPropNameInTable="MSrv_ActionTypeNameColumn" msprop:Generator_UserColumnName="MSrv_ActionTypeName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RealName" msprop:Generator_ColumnVarNameInTable="columnRealName" msprop:Generator_ColumnPropNameInRow="RealName" msprop:Generator_ColumnPropNameInTable="RealNameColumn" msprop:Generator_UserColumnName="RealName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vMSrv_Equipment" msprop:Generator_TableClassName="vMSrv_EquipmentDataTable" msprop:Generator_TableVarName="tablevMSrv_Equipment" msprop:Generator_TablePropName="vMSrv_Equipment" msprop:Generator_RowDeletingName="vMSrv_EquipmentRowDeleting" msprop:Generator_RowChangingName="vMSrv_EquipmentRowChanging" msprop:Generator_RowEvHandlerName="vMSrv_EquipmentRowChangeEventHandler" msprop:Generator_RowDeletedName="vMSrv_EquipmentRowDeleted" msprop:Generator_UserTableName="vMSrv_Equipment" msprop:Generator_RowChangedName="vMSrv_EquipmentRowChanged" msprop:Generator_RowEvArgName="vMSrv_EquipmentRowChangeEvent" msprop:Generator_RowClassName="vMSrv_EquipmentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Equipment" msprop:Generator_ColumnVarNameInTable="columnEquipment" msprop:Generator_ColumnPropNameInRow="Equipment" msprop:Generator_ColumnPropNameInTable="EquipmentColumn" msprop:Generator_UserColumnName="Equipment">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Serial_x0020_Number" msprop:Generator_ColumnVarNameInTable="columnSerial_Number" msprop:Generator_ColumnPropNameInRow="Serial_Number" msprop:Generator_ColumnPropNameInTable="Serial_NumberColumn" msprop:Generator_UserColumnName="Serial Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Func_x0020_Loc" msprop:Generator_ColumnVarNameInTable="columnFunc_Loc" msprop:Generator_ColumnPropNameInRow="Func_Loc" msprop:Generator_ColumnPropNameInTable="Func_LocColumn" msprop:Generator_UserColumnName="Func Loc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valid_x0020_From" msprop:Generator_ColumnVarNameInTable="columnValid_From" msprop:Generator_ColumnPropNameInRow="Valid_From" msprop:Generator_ColumnPropNameInTable="Valid_FromColumn" msprop:Generator_UserColumnName="Valid From" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Inventory_x0020_number" msprop:Generator_ColumnVarNameInTable="columnInventory_number" msprop:Generator_ColumnPropNameInRow="Inventory_number" msprop:Generator_ColumnPropNameInTable="Inventory_numberColumn" msprop:Generator_UserColumnName="Inventory number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConstructYear" msprop:Generator_ColumnVarNameInTable="columnConstructYear" msprop:Generator_ColumnPropNameInRow="ConstructYear" msprop:Generator_ColumnPropNameInTable="ConstructYearColumn" msprop:Generator_UserColumnName="ConstructYear" type="xs:short" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Material" msprop:Generator_ColumnVarNameInTable="columnMaterial" msprop:Generator_ColumnPropNameInRow="Material" msprop:Generator_ColumnPropNameInTable="MaterialColumn" msprop:Generator_UserColumnName="Material" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vMSrv_Ticket" msprop:Generator_TableClassName="vMSrv_TicketDataTable" msprop:Generator_TableVarName="tablevMSrv_Ticket" msprop:Generator_TablePropName="vMSrv_Ticket" msprop:Generator_RowDeletingName="vMSrv_TicketRowDeleting" msprop:Generator_RowChangingName="vMSrv_TicketRowChanging" msprop:Generator_RowEvHandlerName="vMSrv_TicketRowChangeEventHandler" msprop:Generator_RowDeletedName="vMSrv_TicketRowDeleted" msprop:Generator_UserTableName="vMSrv_Ticket" msprop:Generator_RowChangedName="vMSrv_TicketRowChanged" msprop:Generator_RowEvArgName="vMSrv_TicketRowChangeEvent" msprop:Generator_RowClassName="vMSrv_TicketRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TicketId" msprop:Generator_ColumnVarNameInTable="columnTicketId" msprop:Generator_ColumnPropNameInRow="TicketId" msprop:Generator_ColumnPropNameInTable="TicketIdColumn" msprop:Generator_UserColumnName="TicketId" type="xs:int" />
+              <xs:element name="CustomerId" msprop:Generator_ColumnVarNameInTable="columnCustomerId" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_UserColumnName="CustomerId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EquipmentSerial" msprop:Generator_ColumnVarNameInTable="columnEquipmentSerial" msprop:Generator_ColumnPropNameInRow="EquipmentSerial" msprop:Generator_ColumnPropNameInTable="EquipmentSerialColumn" msprop:Generator_UserColumnName="EquipmentSerial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Route" msprop:Generator_ColumnVarNameInTable="columnRoute" msprop:Generator_ColumnPropNameInRow="Route" msprop:Generator_ColumnPropNameInTable="RouteColumn" msprop:Generator_UserColumnName="Route" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpenDate" msprop:Generator_ColumnVarNameInTable="columnOpenDate" msprop:Generator_ColumnPropNameInRow="OpenDate" msprop:Generator_ColumnPropNameInTable="OpenDateColumn" msprop:Generator_UserColumnName="OpenDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OpenComment" msprop:Generator_ColumnVarNameInTable="columnOpenComment" msprop:Generator_ColumnPropNameInRow="OpenComment" msprop:Generator_ColumnPropNameInTable="OpenCommentColumn" msprop:Generator_UserColumnName="OpenComment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalesDistrict3Id" msprop:Generator_ColumnVarNameInTable="columnSalesDistrict3Id" msprop:Generator_ColumnPropNameInRow="SalesDistrict3Id" msprop:Generator_ColumnPropNameInTable="SalesDistrict3IdColumn" msprop:Generator_UserColumnName="SalesDistrict3Id" type="xs:short" minOccurs="0" />
+              <xs:element name="IssueContactPerson" msprop:Generator_ColumnVarNameInTable="columnIssueContactPerson" msprop:Generator_ColumnPropNameInRow="IssueContactPerson" msprop:Generator_ColumnPropNameInTable="IssueContactPersonColumn" msprop:Generator_UserColumnName="IssueContactPerson" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IssueAddress" msprop:Generator_ColumnVarNameInTable="columnIssueAddress" msprop:Generator_ColumnPropNameInRow="IssueAddress" msprop:Generator_ColumnPropNameInTable="IssueAddressColumn" msprop:Generator_UserColumnName="IssueAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IssueContactPhone" msprop:Generator_ColumnVarNameInTable="columnIssueContactPhone" msprop:Generator_ColumnPropNameInRow="IssueContactPhone" msprop:Generator_ColumnPropNameInTable="IssueContactPhoneColumn" msprop:Generator_UserColumnName="IssueContactPhone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IssueContactPhone2" msprop:Generator_ColumnVarNameInTable="columnIssueContactPhone2" msprop:Generator_ColumnPropNameInRow="IssueContactPhone2" msprop:Generator_ColumnPropNameInTable="IssueContactPhone2Column" msprop:Generator_UserColumnName="IssueContactPhone2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TecEquipmentSerial" msprop:Generator_ColumnVarNameInTable="columnTecEquipmentSerial" msprop:Generator_ColumnPropNameInRow="TecEquipmentSerial" msprop:Generator_ColumnPropNameInTable="TecEquipmentSerialColumn" msprop:Generator_UserColumnName="TecEquipmentSerial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CurrentDepartmentId" msprop:Generator_ColumnVarNameInTable="columnCurrentDepartmentId" msprop:Generator_ColumnPropNameInRow="CurrentDepartmentId" msprop:Generator_ColumnPropNameInTable="CurrentDepartmentIdColumn" msprop:Generator_UserColumnName="CurrentDepartmentId" type="xs:short" minOccurs="0" />
+              <xs:element name="TicketClosed" msprop:Generator_ColumnVarNameInTable="columnTicketClosed" msprop:Generator_ColumnPropNameInRow="TicketClosed" msprop:Generator_ColumnPropNameInTable="TicketClosedColumn" msprop:Generator_UserColumnName="TicketClosed" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ClosedComment" msprop:Generator_ColumnVarNameInTable="columnClosedComment" msprop:Generator_ColumnPropNameInRow="ClosedComment" msprop:Generator_ColumnPropNameInTable="ClosedCommentColumn" msprop:Generator_UserColumnName="ClosedComment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CloseMSrvTypeId" msprop:Generator_ColumnVarNameInTable="columnCloseMSrvTypeId" msprop:Generator_ColumnPropNameInRow="CloseMSrvTypeId" msprop:Generator_ColumnPropNameInTable="CloseMSrvTypeIdColumn" msprop:Generator_UserColumnName="CloseMSrvTypeId" type="xs:short" minOccurs="0" />
+              <xs:element name="CloseMSrvType" msprop:Generator_ColumnVarNameInTable="columnCloseMSrvType" msprop:Generator_ColumnPropNameInRow="CloseMSrvType" msprop:Generator_ColumnPropNameInTable="CloseMSrvTypeColumn" msprop:Generator_UserColumnName="CloseMSrvType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClosedDate" msprop:Generator_ColumnVarNameInTable="columnClosedDate" msprop:Generator_ColumnPropNameInRow="ClosedDate" msprop:Generator_ColumnPropNameInTable="ClosedDateColumn" msprop:Generator_UserColumnName="ClosedDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CloseUserIn" msprop:Generator_ColumnVarNameInTable="columnCloseUserIn" msprop:Generator_ColumnPropNameInRow="CloseUserIn" msprop:Generator_ColumnPropNameInTable="CloseUserInColumn" msprop:Generator_UserColumnName="CloseUserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="ClosedDateIn" msprop:Generator_ColumnVarNameInTable="columnClosedDateIn" msprop:Generator_ColumnPropNameInRow="ClosedDateIn" msprop:Generator_ColumnPropNameInTable="ClosedDateInColumn" msprop:Generator_UserColumnName="ClosedDateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UserIn" msprop:Generator_ColumnVarNameInTable="columnUserIn" msprop:Generator_ColumnPropNameInRow="UserIn" msprop:Generator_ColumnPropNameInTable="UserInColumn" msprop:Generator_UserColumnName="UserIn" type="xs:int" minOccurs="0" />
+              <xs:element name="DateIn" msprop:Generator_ColumnVarNameInTable="columnDateIn" msprop:Generator_ColumnPropNameInRow="DateIn" msprop:Generator_ColumnPropNameInTable="DateInColumn" msprop:Generator_UserColumnName="DateIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Sales_x0020_District_x0020_2" msprop:Generator_ColumnVarNameInTable="columnSales_District_2" msprop:Generator_ColumnPropNameInRow="Sales_District_2" msprop:Generator_ColumnPropNameInTable="Sales_District_2Column" msprop:Generator_UserColumnName="Sales District 2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plant" msprop:Generator_ColumnVarNameInTable="columnPlant" msprop:Generator_ColumnPropNameInRow="Plant" msprop:Generator_ColumnPropNameInTable="PlantColumn" msprop:Generator_UserColumnName="Plant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ticket_User" msprop:Generator_ColumnVarNameInTable="columnTicket_User" msprop:Generator_ColumnPropNameInRow="Ticket_User" msprop:Generator_ColumnPropNameInTable="Ticket_UserColumn" msprop:Generator_UserColumnName="Ticket_User" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Close_User" msprop:Generator_ColumnVarNameInTable="columnClose_User" msprop:Generator_ColumnPropNameInRow="Close_User" msprop:Generator_ColumnPropNameInTable="Close_UserColumn" msprop:Generator_UserColumnName="Close_User" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MSrvDepartment" msprop:Generator_ColumnVarNameInTable="columnMSrvDepartment" msprop:Generator_ColumnPropNameInRow="MSrvDepartment" msprop:Generator_ColumnPropNameInTable="MSrvDepartmentColumn" msprop:Generator_UserColumnName="MSrvDepartment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VisitCount" msprop:Generator_ColumnVarNameInTable="columnVisitCount" msprop:Generator_ColumnPropNameInRow="VisitCount" msprop:Generator_ColumnPropNameInTable="VisitCountColumn" msprop:Generator_UserColumnName="VisitCount" type="xs:int" minOccurs="0" />
+              <xs:element name="PartCount" msprop:Generator_ColumnVarNameInTable="columnPartCount" msprop:Generator_ColumnPropNameInRow="PartCount" msprop:Generator_ColumnPropNameInTable="PartCountColumn" msprop:Generator_UserColumnName="PartCount" type="xs:double" minOccurs="0" />
+              <xs:element name="MSrv_ActionTypeName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMSrv_ActionTypeName" msprop:Generator_ColumnPropNameInRow="MSrv_ActionTypeName" msprop:Generator_ColumnPropNameInTable="MSrv_ActionTypeNameColumn" msprop:Generator_UserColumnName="MSrv_ActionTypeName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActionComment" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnActionComment" msprop:Generator_ColumnPropNameInRow="ActionComment" msprop:Generator_ColumnPropNameInTable="ActionCommentColumn" msprop:Generator_UserColumnName="ActionComment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActionDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnActionDate" msprop:Generator_ColumnPropNameInRow="ActionDate" msprop:Generator_ColumnPropNameInTable="ActionDateColumn" msprop:Generator_UserColumnName="ActionDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vMSrv_Customer" msprop:Generator_TableClassName="vMSrv_CustomerDataTable" msprop:Generator_TableVarName="tablevMSrv_Customer" msprop:Generator_TablePropName="vMSrv_Customer" msprop:Generator_RowDeletingName="vMSrv_CustomerRowDeleting" msprop:Generator_RowChangingName="vMSrv_CustomerRowChanging" msprop:Generator_RowEvHandlerName="vMSrv_CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="vMSrv_CustomerRowDeleted" msprop:Generator_UserTableName="vMSrv_Customer" msprop:Generator_RowChangedName="vMSrv_CustomerRowChanged" msprop:Generator_RowEvArgName="vMSrv_CustomerRowChangeEvent" msprop:Generator_RowClassName="vMSrv_CustomerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DisplayName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_UserColumnName="DisplayName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="308" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Customer" msprop:Generator_ColumnVarNameInTable="columnCustomer" msprop:Generator_ColumnPropNameInRow="Customer" msprop:Generator_ColumnPropNameInTable="CustomerColumn" msprop:Generator_UserColumnName="Customer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Route" msprop:Generator_ColumnVarNameInTable="columnRoute" msprop:Generator_ColumnPropNameInRow="Route" msprop:Generator_ColumnPropNameInTable="RouteColumn" msprop:Generator_UserColumnName="Route" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Route_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnRoute_Name" msprop:Generator_ColumnPropNameInRow="Route_Name" msprop:Generator_ColumnPropNameInTable="Route_NameColumn" msprop:Generator_UserColumnName="Route Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Supervisor" msprop:Generator_ColumnVarNameInTable="columnSupervisor" msprop:Generator_ColumnPropNameInRow="Supervisor" msprop:Generator_ColumnPropNameInTable="SupervisorColumn" msprop:Generator_UserColumnName="Supervisor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sales_x0020_District_x0020_2" msprop:Generator_ColumnVarNameInTable="columnSales_District_2" msprop:Generator_ColumnPropNameInRow="Sales_District_2" msprop:Generator_ColumnPropNameInTable="Sales_District_2Column" msprop:Generator_UserColumnName="Sales District 2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalesDistrict3Id" msprop:Generator_ColumnVarNameInTable="columnSalesDistrict3Id" msprop:Generator_ColumnPropNameInRow="SalesDistrict3Id" msprop:Generator_ColumnPropNameInTable="SalesDistrict3IdColumn" msprop:Generator_UserColumnName="SalesDistrict3Id" type="xs:double" minOccurs="0" />
+              <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" type="xs:int" />
+              <xs:element name="PlantNumber" msprop:Generator_ColumnVarNameInTable="columnPlantNumber" msprop:Generator_ColumnPropNameInRow="PlantNumber" msprop:Generator_ColumnPropNameInTable="PlantNumberColumn" msprop:Generator_UserColumnName="PlantNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telephone" msprop:Generator_ColumnVarNameInTable="columnTelephone" msprop:Generator_ColumnPropNameInRow="Telephone" msprop:Generator_ColumnPropNameInTable="TelephoneColumn" msprop:Generator_UserColumnName="Telephone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Supervisor_Telephone" msprop:Generator_ColumnVarNameInTable="columnSupervisor_Telephone" msprop:Generator_ColumnPropNameInRow="Supervisor_Telephone" msprop:Generator_ColumnPropNameInTable="Supervisor_TelephoneColumn" msprop:Generator_UserColumnName="Supervisor_Telephone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1649,25 +2261,57 @@ WHERE        (PartId = @PartId)</CommandText>
       <xs:selector xpath=".//mstns:MSrv_Type" />
       <xs:field xpath="mstns:MSrvTypeId" />
     </xs:unique>
+    <xs:unique name="vMSrv_TicketVisit_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vMSrv_TicketVisit" />
+      <xs:field xpath="mstns:TicketVisitId" />
+    </xs:unique>
+    <xs:unique name="vMSrv_TicketChat_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vMSrv_TicketChat" />
+      <xs:field xpath="mstns:TicketChatId" />
+    </xs:unique>
+    <xs:unique name="vMSrv_TicketVisitPart_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vMSrv_TicketVisitPart" />
+      <xs:field xpath="mstns:TicketVisitPartId" />
+    </xs:unique>
+    <xs:unique name="vMSrv_TicketAction_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vMSrv_TicketAction" />
+      <xs:field xpath="mstns:MSrv_TicketActionId" />
+    </xs:unique>
+    <xs:unique name="vMSrv_Equipment_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vMSrv_Equipment" />
+      <xs:field xpath="mstns:Equipment" />
+    </xs:unique>
+    <xs:unique name="vMSrv_Ticket_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vMSrv_Ticket" />
+      <xs:field xpath="mstns:TicketId" />
+    </xs:unique>
+    <xs:unique name="vMSrv_Customer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vMSrv_Customer" />
+      <xs:field xpath="mstns:Customer" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_MSrv_TechnicianSalesDistrict_MSrv_Technician" msdata:parent="MSrv_Technician" msdata:child="MSrv_TechnicianSalesDistrict" msdata:parentkey="TechnicianId" msdata:childkey="TechnicianId" msprop:Generator_UserChildTable="MSrv_TechnicianSalesDistrict" msprop:Generator_ChildPropName="GetMSrv_TechnicianSalesDistrictRows" msprop:Generator_UserRelationName="FK_MSrv_TechnicianSalesDistrict_MSrv_Technician" msprop:Generator_ParentPropName="MSrv_TechnicianRow" msprop:Generator_RelationVarName="relationFK_MSrv_TechnicianSalesDistrict_MSrv_Technician" msprop:Generator_UserParentTable="MSrv_Technician" />
-      <msdata:Relationship name="FK_MSrv_Technician_MSrv_TechnicianCompany" msdata:parent="MSrv_TechnicianCompany" msdata:child="MSrv_Technician" msdata:parentkey="TechnicianCompanyId" msdata:childkey="TechnicianCompanyId" msprop:Generator_UserChildTable="MSrv_Technician" msprop:Generator_ChildPropName="GetMSrv_TechnicianRows" msprop:Generator_UserRelationName="FK_MSrv_Technician_MSrv_TechnicianCompany" msprop:Generator_RelationVarName="relationFK_MSrv_Technician_MSrv_TechnicianCompany" msprop:Generator_UserParentTable="MSrv_TechnicianCompany" msprop:Generator_ParentPropName="MSrv_TechnicianCompanyRow" />
-      <msdata:Relationship name="FK_MSrvTicketType_MSrv_Ticket" msdata:parent="MSrv_Ticket" msdata:child="MSrvTicketType" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="MSrvTicketType" msprop:Generator_ChildPropName="GetMSrvTicketTypeRows" msprop:Generator_UserRelationName="FK_MSrvTicketType_MSrv_Ticket" msprop:Generator_RelationVarName="relationFK_MSrvTicketType_MSrv_Ticket" msprop:Generator_UserParentTable="MSrv_Ticket" msprop:Generator_ParentPropName="MSrv_TicketRow" />
-      <msdata:Relationship name="FK_MSrv_TicketChat_MSrv_Ticket" msdata:parent="MSrv_Ticket" msdata:child="MSrv_TicketChat" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="MSrv_TicketChat" msprop:Generator_ChildPropName="GetMSrv_TicketChatRows" msprop:Generator_UserRelationName="FK_MSrv_TicketChat_MSrv_Ticket" msprop:Generator_RelationVarName="relationFK_MSrv_TicketChat_MSrv_Ticket" msprop:Generator_UserParentTable="MSrv_Ticket" msprop:Generator_ParentPropName="MSrv_TicketRow" />
-      <msdata:Relationship name="FK_MSrv_Ticket_MSrv_Department" msdata:parent="MSrv_Department" msdata:child="MSrv_Ticket" msdata:parentkey="MSrvDepartmentId" msdata:childkey="CurrentDepartmentId" msprop:Generator_UserChildTable="MSrv_Ticket" msprop:Generator_ChildPropName="GetMSrv_TicketRows" msprop:Generator_UserRelationName="FK_MSrv_Ticket_MSrv_Department" msprop:Generator_ParentPropName="MSrv_DepartmentRow" msprop:Generator_RelationVarName="relationFK_MSrv_Ticket_MSrv_Department" msprop:Generator_UserParentTable="MSrv_Department" />
-      <msdata:Relationship name="FK_MSrv_TicketPart_MSrv_Part" msdata:parent="MSrv_Part" msdata:child="MSrv_TicketVisitPart" msdata:parentkey="PartId" msdata:childkey="PartId" msprop:Generator_UserChildTable="MSrv_TicketVisitPart" msprop:Generator_ChildPropName="GetMSrv_TicketVisitPartRows" msprop:Generator_UserRelationName="FK_MSrv_TicketPart_MSrv_Part" msprop:Generator_RelationVarName="relationFK_MSrv_TicketPart_MSrv_Part" msprop:Generator_UserParentTable="MSrv_Part" msprop:Generator_ParentPropName="MSrv_PartRow" />
-      <msdata:Relationship name="FK_MSrv_TicketVisitType_MSrv_TicketVisit" msdata:parent="MSrv_TicketVisit" msdata:child="MSrv_TicketVisitType" msdata:parentkey="TicketVisitId" msdata:childkey="TicketVisitId" msprop:Generator_UserChildTable="MSrv_TicketVisitType" msprop:Generator_ChildPropName="GetMSrv_TicketVisitTypeRows" msprop:Generator_UserRelationName="FK_MSrv_TicketVisitType_MSrv_TicketVisit" msprop:Generator_ParentPropName="MSrv_TicketVisitRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketVisitType_MSrv_TicketVisit" msprop:Generator_UserParentTable="MSrv_TicketVisit" />
-      <msdata:Relationship name="FK_MSrv_TicketPart_MSrv_TicketVisit" msdata:parent="MSrv_TicketVisit" msdata:child="MSrv_TicketVisitPart" msdata:parentkey="TicketVisitId" msdata:childkey="TicketVisitId" msprop:Generator_UserChildTable="MSrv_TicketVisitPart" msprop:Generator_ChildPropName="GetMSrv_TicketVisitPartRows" msprop:Generator_UserRelationName="FK_MSrv_TicketPart_MSrv_TicketVisit" msprop:Generator_ParentPropName="MSrv_TicketVisitRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketPart_MSrv_TicketVisit" msprop:Generator_UserParentTable="MSrv_TicketVisit" />
-      <msdata:Relationship name="FK_MSrv_TicketVisit_MSrv_Technician" msdata:parent="MSrv_Technician" msdata:child="MSrv_TicketVisit" msdata:parentkey="TechnicianId" msdata:childkey="TechnicianId" msprop:Generator_UserChildTable="MSrv_TicketVisit" msprop:Generator_ChildPropName="GetMSrv_TicketVisitRows" msprop:Generator_UserRelationName="FK_MSrv_TicketVisit_MSrv_Technician" msprop:Generator_RelationVarName="relationFK_MSrv_TicketVisit_MSrv_Technician" msprop:Generator_UserParentTable="MSrv_Technician" msprop:Generator_ParentPropName="MSrv_TechnicianRow" />
-      <msdata:Relationship name="FK_MSrv_TicketVisit_MSrv_Ticket" msdata:parent="MSrv_Ticket" msdata:child="MSrv_TicketVisit" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="MSrv_TicketVisit" msprop:Generator_ChildPropName="GetMSrv_TicketVisitRows" msprop:Generator_UserRelationName="FK_MSrv_TicketVisit_MSrv_Ticket" msprop:Generator_RelationVarName="relationFK_MSrv_TicketVisit_MSrv_Ticket" msprop:Generator_UserParentTable="MSrv_Ticket" msprop:Generator_ParentPropName="MSrv_TicketRow" />
-      <msdata:Relationship name="FK_MSrv_TicketAction_MSrv_ActionType" msdata:parent="MSrv_ActionType" msdata:child="MSrv_TicketAction" msdata:parentkey="MSrv_ActionTypeId" msdata:childkey="MSrv_ActionTypeId" msprop:Generator_UserChildTable="MSrv_TicketAction" msprop:Generator_ChildPropName="GetMSrv_TicketActionRows" msprop:Generator_UserRelationName="FK_MSrv_TicketAction_MSrv_ActionType" msprop:Generator_ParentPropName="MSrv_ActionTypeRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketAction_MSrv_ActionType" msprop:Generator_UserParentTable="MSrv_ActionType" />
-      <msdata:Relationship name="FK_MSrv_TicketAction_MSrv_Department" msdata:parent="MSrv_Department" msdata:child="MSrv_TicketAction" msdata:parentkey="MSrvDepartmentId" msdata:childkey="MSrvDepartmentId" msprop:Generator_UserChildTable="MSrv_TicketAction" msprop:Generator_ChildPropName="GetMSrv_TicketActionRows" msprop:Generator_UserRelationName="FK_MSrv_TicketAction_MSrv_Department" msprop:Generator_ParentPropName="MSrv_DepartmentRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketAction_MSrv_Department" msprop:Generator_UserParentTable="MSrv_Department" />
-      <msdata:Relationship name="FK_MSrv_TicketAction_MSrv_Ticket" msdata:parent="MSrv_Ticket" msdata:child="MSrv_TicketAction" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="MSrv_TicketAction" msprop:Generator_ChildPropName="GetMSrv_TicketActionRows" msprop:Generator_UserRelationName="FK_MSrv_TicketAction_MSrv_Ticket" msprop:Generator_ParentPropName="MSrv_TicketRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketAction_MSrv_Ticket" msprop:Generator_UserParentTable="MSrv_Ticket" />
-      <msdata:Relationship name="FK_MSrvTicketType_MSrv_Type" msdata:parent="MSrv_Type" msdata:child="MSrvTicketType" msdata:parentkey="MSrvTypeId" msdata:childkey="MSrvTypeId" msprop:Generator_UserChildTable="MSrvTicketType" msprop:Generator_ChildPropName="GetMSrvTicketTypeRows" msprop:Generator_UserRelationName="FK_MSrvTicketType_MSrv_Type" msprop:Generator_RelationVarName="relationFK_MSrvTicketType_MSrv_Type" msprop:Generator_UserParentTable="MSrv_Type" msprop:Generator_ParentPropName="MSrv_TypeRow" />
-      <msdata:Relationship name="FK_MSrv_TicketVisitType_MSrv_Type" msdata:parent="MSrv_Type" msdata:child="MSrv_TicketVisitType" msdata:parentkey="MSrvTypeId" msdata:childkey="MSrvTypeId" msprop:Generator_UserChildTable="MSrv_TicketVisitType" msprop:Generator_ChildPropName="GetMSrv_TicketVisitTypeRows" msprop:Generator_UserRelationName="FK_MSrv_TicketVisitType_MSrv_Type" msprop:Generator_RelationVarName="relationFK_MSrv_TicketVisitType_MSrv_Type" msprop:Generator_UserParentTable="MSrv_Type" msprop:Generator_ParentPropName="MSrv_TypeRow" />
-      <msdata:Relationship name="FK_MSrv_Ticket_MSrv_Type" msdata:parent="MSrv_Type" msdata:child="MSrv_Ticket" msdata:parentkey="MSrvTypeId" msdata:childkey="CloseMSrvTypeId" msprop:Generator_UserChildTable="MSrv_Ticket" msprop:Generator_ChildPropName="GetMSrv_TicketRows" msprop:Generator_UserRelationName="FK_MSrv_Ticket_MSrv_Type" msprop:Generator_RelationVarName="relationFK_MSrv_Ticket_MSrv_Type" msprop:Generator_UserParentTable="MSrv_Type" msprop:Generator_ParentPropName="MSrv_TypeRow" />
+      <msdata:Relationship name="FK_MSrv_TechnicianSalesDistrict_MSrv_Technician" msdata:parent="MSrv_Technician" msdata:child="MSrv_TechnicianSalesDistrict" msdata:parentkey="TechnicianId" msdata:childkey="TechnicianId" msprop:Generator_UserChildTable="MSrv_TechnicianSalesDistrict" msprop:Generator_ChildPropName="GetMSrv_TechnicianSalesDistrictRows" msprop:Generator_UserRelationName="FK_MSrv_TechnicianSalesDistrict_MSrv_Technician" msprop:Generator_RelationVarName="relationFK_MSrv_TechnicianSalesDistrict_MSrv_Technician" msprop:Generator_UserParentTable="MSrv_Technician" msprop:Generator_ParentPropName="MSrv_TechnicianRow" />
+      <msdata:Relationship name="FK_MSrv_Technician_MSrv_TechnicianCompany" msdata:parent="MSrv_TechnicianCompany" msdata:child="MSrv_Technician" msdata:parentkey="TechnicianCompanyId" msdata:childkey="TechnicianCompanyId" msprop:Generator_UserChildTable="MSrv_Technician" msprop:Generator_ChildPropName="GetMSrv_TechnicianRows" msprop:Generator_UserRelationName="FK_MSrv_Technician_MSrv_TechnicianCompany" msprop:Generator_ParentPropName="MSrv_TechnicianCompanyRow" msprop:Generator_RelationVarName="relationFK_MSrv_Technician_MSrv_TechnicianCompany" msprop:Generator_UserParentTable="MSrv_TechnicianCompany" />
+      <msdata:Relationship name="FK_MSrvTicketType_MSrv_Ticket" msdata:parent="MSrv_Ticket" msdata:child="MSrvTicketType" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="MSrvTicketType" msprop:Generator_ChildPropName="GetMSrvTicketTypeRows" msprop:Generator_UserRelationName="FK_MSrvTicketType_MSrv_Ticket" msprop:Generator_ParentPropName="MSrv_TicketRow" msprop:Generator_RelationVarName="relationFK_MSrvTicketType_MSrv_Ticket" msprop:Generator_UserParentTable="MSrv_Ticket" />
+      <msdata:Relationship name="FK_MSrv_TicketChat_MSrv_Ticket" msdata:parent="MSrv_Ticket" msdata:child="MSrv_TicketChat" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="MSrv_TicketChat" msprop:Generator_ChildPropName="GetMSrv_TicketChatRows" msprop:Generator_UserRelationName="FK_MSrv_TicketChat_MSrv_Ticket" msprop:Generator_ParentPropName="MSrv_TicketRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketChat_MSrv_Ticket" msprop:Generator_UserParentTable="MSrv_Ticket" />
+      <msdata:Relationship name="FK_MSrv_Ticket_MSrv_Department" msdata:parent="MSrv_Department" msdata:child="MSrv_Ticket" msdata:parentkey="MSrvDepartmentId" msdata:childkey="CurrentDepartmentId" msprop:Generator_UserChildTable="MSrv_Ticket" msprop:Generator_ChildPropName="GetMSrv_TicketRows" msprop:Generator_UserRelationName="FK_MSrv_Ticket_MSrv_Department" msprop:Generator_RelationVarName="relationFK_MSrv_Ticket_MSrv_Department" msprop:Generator_UserParentTable="MSrv_Department" msprop:Generator_ParentPropName="MSrv_DepartmentRow" />
+      <msdata:Relationship name="FK_MSrv_TicketPart_MSrv_Part" msdata:parent="MSrv_Part" msdata:child="MSrv_TicketVisitPart" msdata:parentkey="PartId" msdata:childkey="PartId" msprop:Generator_UserChildTable="MSrv_TicketVisitPart" msprop:Generator_ChildPropName="GetMSrv_TicketVisitPartRows" msprop:Generator_UserRelationName="FK_MSrv_TicketPart_MSrv_Part" msprop:Generator_ParentPropName="MSrv_PartRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketPart_MSrv_Part" msprop:Generator_UserParentTable="MSrv_Part" />
+      <msdata:Relationship name="FK_MSrv_TicketVisitType_MSrv_TicketVisit" msdata:parent="MSrv_TicketVisit" msdata:child="MSrv_TicketVisitType" msdata:parentkey="TicketVisitId" msdata:childkey="TicketVisitId" msprop:Generator_UserChildTable="MSrv_TicketVisitType" msprop:Generator_ChildPropName="GetMSrv_TicketVisitTypeRows" msprop:Generator_UserRelationName="FK_MSrv_TicketVisitType_MSrv_TicketVisit" msprop:Generator_RelationVarName="relationFK_MSrv_TicketVisitType_MSrv_TicketVisit" msprop:Generator_UserParentTable="MSrv_TicketVisit" msprop:Generator_ParentPropName="MSrv_TicketVisitRow" />
+      <msdata:Relationship name="FK_MSrv_TicketPart_MSrv_TicketVisit" msdata:parent="MSrv_TicketVisit" msdata:child="MSrv_TicketVisitPart" msdata:parentkey="TicketVisitId" msdata:childkey="TicketVisitId" msprop:Generator_UserChildTable="MSrv_TicketVisitPart" msprop:Generator_ChildPropName="GetMSrv_TicketVisitPartRows" msprop:Generator_UserRelationName="FK_MSrv_TicketPart_MSrv_TicketVisit" msprop:Generator_RelationVarName="relationFK_MSrv_TicketPart_MSrv_TicketVisit" msprop:Generator_UserParentTable="MSrv_TicketVisit" msprop:Generator_ParentPropName="MSrv_TicketVisitRow" />
+      <msdata:Relationship name="FK_MSrv_TicketVisit_MSrv_Technician" msdata:parent="MSrv_Technician" msdata:child="MSrv_TicketVisit" msdata:parentkey="TechnicianId" msdata:childkey="TechnicianId" msprop:Generator_UserChildTable="MSrv_TicketVisit" msprop:Generator_ChildPropName="GetMSrv_TicketVisitRows" msprop:Generator_UserRelationName="FK_MSrv_TicketVisit_MSrv_Technician" msprop:Generator_ParentPropName="MSrv_TechnicianRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketVisit_MSrv_Technician" msprop:Generator_UserParentTable="MSrv_Technician" />
+      <msdata:Relationship name="FK_MSrv_TicketVisit_MSrv_Ticket" msdata:parent="MSrv_Ticket" msdata:child="MSrv_TicketVisit" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="MSrv_TicketVisit" msprop:Generator_ChildPropName="GetMSrv_TicketVisitRows" msprop:Generator_UserRelationName="FK_MSrv_TicketVisit_MSrv_Ticket" msprop:Generator_ParentPropName="MSrv_TicketRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketVisit_MSrv_Ticket" msprop:Generator_UserParentTable="MSrv_Ticket" />
+      <msdata:Relationship name="FK_MSrv_TicketAction_MSrv_ActionType" msdata:parent="MSrv_ActionType" msdata:child="MSrv_TicketAction" msdata:parentkey="MSrv_ActionTypeId" msdata:childkey="MSrv_ActionTypeId" msprop:Generator_UserChildTable="MSrv_TicketAction" msprop:Generator_ChildPropName="GetMSrv_TicketActionRows" msprop:Generator_UserRelationName="FK_MSrv_TicketAction_MSrv_ActionType" msprop:Generator_RelationVarName="relationFK_MSrv_TicketAction_MSrv_ActionType" msprop:Generator_UserParentTable="MSrv_ActionType" msprop:Generator_ParentPropName="MSrv_ActionTypeRow" />
+      <msdata:Relationship name="FK_MSrv_TicketAction_MSrv_Department" msdata:parent="MSrv_Department" msdata:child="MSrv_TicketAction" msdata:parentkey="MSrvDepartmentId" msdata:childkey="MSrvDepartmentId" msprop:Generator_UserChildTable="MSrv_TicketAction" msprop:Generator_ChildPropName="GetMSrv_TicketActionRows" msprop:Generator_UserRelationName="FK_MSrv_TicketAction_MSrv_Department" msprop:Generator_RelationVarName="relationFK_MSrv_TicketAction_MSrv_Department" msprop:Generator_UserParentTable="MSrv_Department" msprop:Generator_ParentPropName="MSrv_DepartmentRow" />
+      <msdata:Relationship name="FK_MSrv_TicketAction_MSrv_Ticket" msdata:parent="MSrv_Ticket" msdata:child="MSrv_TicketAction" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="MSrv_TicketAction" msprop:Generator_ChildPropName="GetMSrv_TicketActionRows" msprop:Generator_UserRelationName="FK_MSrv_TicketAction_MSrv_Ticket" msprop:Generator_RelationVarName="relationFK_MSrv_TicketAction_MSrv_Ticket" msprop:Generator_UserParentTable="MSrv_Ticket" msprop:Generator_ParentPropName="MSrv_TicketRow" />
+      <msdata:Relationship name="FK_MSrvTicketType_MSrv_Type" msdata:parent="MSrv_Type" msdata:child="MSrvTicketType" msdata:parentkey="MSrvTypeId" msdata:childkey="MSrvTypeId" msprop:Generator_UserChildTable="MSrvTicketType" msprop:Generator_ChildPropName="GetMSrvTicketTypeRows" msprop:Generator_UserRelationName="FK_MSrvTicketType_MSrv_Type" msprop:Generator_ParentPropName="MSrv_TypeRow" msprop:Generator_RelationVarName="relationFK_MSrvTicketType_MSrv_Type" msprop:Generator_UserParentTable="MSrv_Type" />
+      <msdata:Relationship name="FK_MSrv_TicketVisitType_MSrv_Type" msdata:parent="MSrv_Type" msdata:child="MSrv_TicketVisitType" msdata:parentkey="MSrvTypeId" msdata:childkey="MSrvTypeId" msprop:Generator_UserChildTable="MSrv_TicketVisitType" msprop:Generator_ChildPropName="GetMSrv_TicketVisitTypeRows" msprop:Generator_UserRelationName="FK_MSrv_TicketVisitType_MSrv_Type" msprop:Generator_ParentPropName="MSrv_TypeRow" msprop:Generator_RelationVarName="relationFK_MSrv_TicketVisitType_MSrv_Type" msprop:Generator_UserParentTable="MSrv_Type" />
+      <msdata:Relationship name="FK_MSrv_Ticket_MSrv_Type" msdata:parent="MSrv_Type" msdata:child="MSrv_Ticket" msdata:parentkey="MSrvTypeId" msdata:childkey="CloseMSrvTypeId" msprop:Generator_UserChildTable="MSrv_Ticket" msprop:Generator_ChildPropName="GetMSrv_TicketRows" msprop:Generator_UserRelationName="FK_MSrv_Ticket_MSrv_Type" msprop:Generator_ParentPropName="MSrv_TypeRow" msprop:Generator_RelationVarName="relationFK_MSrv_Ticket_MSrv_Type" msprop:Generator_UserParentTable="MSrv_Type" />
+      <msdata:Relationship name="Chats" msdata:parent="vMSrv_Ticket" msdata:child="vMSrv_TicketChat" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="vMSrv_TicketChat" msprop:Generator_ChildPropName="GetvMSrv_TicketChatRows" msprop:Generator_UserRelationName="Chats" msprop:Generator_ParentPropName="vMSrv_TicketRow" msprop:Generator_RelationVarName="relationChats" msprop:Generator_UserParentTable="vMSrv_Ticket" />
+      <msdata:Relationship name="Actions" msdata:parent="vMSrv_Ticket" msdata:child="vMSrv_TicketAction" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="vMSrv_TicketAction" msprop:Generator_ChildPropName="GetvMSrv_TicketActionRows" msprop:Generator_UserRelationName="Actions" msprop:Generator_ParentPropName="vMSrv_TicketRow" msprop:Generator_RelationVarName="relationActions" msprop:Generator_UserParentTable="vMSrv_Ticket" />
+      <msdata:Relationship name="Visits" msdata:parent="vMSrv_Ticket" msdata:child="vMSrv_TicketVisit" msdata:parentkey="TicketId" msdata:childkey="TicketId" msprop:Generator_UserChildTable="vMSrv_TicketVisit" msprop:Generator_ChildPropName="GetvMSrv_TicketVisitRows" msprop:Generator_UserRelationName="Visits" msprop:Generator_ParentPropName="vMSrv_TicketRow" msprop:Generator_RelationVarName="relationVisits" msprop:Generator_UserParentTable="vMSrv_Ticket" />
+      <msdata:Relationship name="Visit_x0020_Parts" msdata:parent="vMSrv_TicketVisit" msdata:child="vMSrv_TicketVisitPart" msdata:parentkey="TicketVisitId" msdata:childkey="TicketVisitId" msprop:Generator_UserChildTable="vMSrv_TicketVisitPart" msprop:Generator_ChildPropName="GetvMSrv_TicketVisitPartRows" msprop:Generator_UserRelationName="Visit Parts" msprop:Generator_RelationVarName="relationVisit_Parts" msprop:Generator_UserParentTable="vMSrv_TicketVisit" msprop:Generator_ParentPropName="vMSrv_TicketVisitRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

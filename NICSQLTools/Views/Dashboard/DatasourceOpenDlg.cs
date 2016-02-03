@@ -102,7 +102,7 @@ namespace NICSQLTools.Views.Dashboard
         private void treeListMain_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
             NICSQLTools.Data.Linq.vAppDSCategory ds = (NICSQLTools.Data.Linq.vAppDSCategory)treeListMain.GetDataRecordByNode(treeListMain.FocusedNode);
-            vAppDatasourceForUserTableAdapter.FillByUserIdAndDSCategoryId(dsQry.vAppDatasourceForUser, Classes.Managers.UserManager.defaultInstance.User.UserId, ds.DSCategoryId);
+            vAppDatasourceForUserTableAdapter.FillByUserIdAndDSCategoryId(dsQry.vAppDatasourceForUser, ds.DSCategoryId, Classes.Managers.UserManager.defaultInstance.User.UserId);
             gridViewMain.BestFitColumns();
         }
         private void repositoryItemButtonEditDSInfo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)

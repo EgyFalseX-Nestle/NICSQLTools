@@ -83,7 +83,7 @@
             this.OpenExcelWizardPage.Controls.Add(this.labelControl1);
             this.OpenExcelWizardPage.Controls.Add(this.beOpenFile);
             this.OpenExcelWizardPage.Name = "OpenExcelWizardPage";
-            this.OpenExcelWizardPage.Size = new System.Drawing.Size(624, 227);
+            this.OpenExcelWizardPage.Size = new System.Drawing.Size(624, 221);
             this.OpenExcelWizardPage.Text = "Please select excel file and press Next";
             // 
             // labelControl1
@@ -117,7 +117,7 @@
             this.ParamtersWizardPage.AllowBack = false;
             this.ParamtersWizardPage.Controls.Add(this.gridControlJobs);
             this.ParamtersWizardPage.Name = "ParamtersWizardPage";
-            this.ParamtersWizardPage.Size = new System.Drawing.Size(624, 227);
+            this.ParamtersWizardPage.Size = new System.Drawing.Size(624, 221);
             this.ParamtersWizardPage.Text = "Connection Paramters";
             // 
             // gridControlJobs
@@ -134,7 +134,7 @@
             this.gridControlJobs.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEditSelect,
             this.repositoryItemButtonEditParam});
-            this.gridControlJobs.Size = new System.Drawing.Size(624, 227);
+            this.gridControlJobs.Size = new System.Drawing.Size(624, 221);
             this.gridControlJobs.TabIndex = 0;
             this.gridControlJobs.UseEmbeddedNavigator = true;
             this.gridControlJobs.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -228,7 +228,7 @@
             // completionWizardPage
             // 
             this.completionWizardPage.Name = "completionWizardPage";
-            this.completionWizardPage.Size = new System.Drawing.Size(624, 227);
+            this.completionWizardPage.Size = new System.Drawing.Size(624, 221);
             // 
             // ofd
             // 

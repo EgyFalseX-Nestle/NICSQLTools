@@ -364,7 +364,7 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
             ((DevExpress.XtraEditors.TextEdit)ctr).Properties.NullValuePrompt = param.DisplayName;
             //Binding Control
             if (ctr.GetType() == typeof(DevExpress.XtraEditors.DateEdit))
-                ((DevExpress.XtraEditors.TextEdit)ctr).DataBindings.Add("Datetime", param, "ParamValue", true);
+                ((DevExpress.XtraEditors.TextEdit)ctr).DataBindings.Add("Text", param, "ParamValue", true);
             else
                 ((DevExpress.XtraEditors.TextEdit)ctr).DataBindings.Add("EditValue", param, "ParamValue", true);
             ((DevExpress.XtraEditors.TextEdit)ctr).Properties.MaxLength = 64000;

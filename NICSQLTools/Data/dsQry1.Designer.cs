@@ -24885,8 +24885,11 @@ EXISTS(SELECT RuleId FROM AppUserRule WHERE RuleId = AppRuleDatasource.RuleId AN
             this._commandCollection[1].CommandText = @" SELECT AppDatasourceTypeId, AppDatasourceTypeName, DSCategoryDesc, DSCategoryId, DSCategoryName, DatasourceID, DatasourceName
  , DatasourceSPName, DateIn, RealName, UserIn 
  FROM vAppDatasource_LUE 
- WHERE EXISTS(SELECT IsAdmin FROM dbo.AppUsers WHERE UserId = @UserIn And IsAdmin = 'True') 
- AND (DSCategoryId = @DSCategoryId) OR (DSCategoryId = @DSCategoryId) AND EXISTS (SELECT DatasourceID FROM AppRuleDatasource WHERE (DatasourceID = vAppDatasource_LUE.DatasourceID) AND EXISTS (SELECT RuleId FROM AppUserRule WHERE (RuleId = AppRuleDatasource.RuleID) AND (UserId = @UserIn)))
+ WHERE 
+ (EXISTS(SELECT IsAdmin FROM dbo.AppUsers WHERE UserId = @UserIn And IsAdmin = 'True') AND (DSCategoryId = @DSCategoryId))
+ OR 
+ (DSCategoryId = @DSCategoryId) AND 
+ EXISTS (SELECT DatasourceID FROM AppRuleDatasource WHERE (DatasourceID = vAppDatasource_LUE.DatasourceID) AND EXISTS (SELECT RuleId FROM AppUserRule WHERE (RuleId = AppRuleDatasource.RuleID) AND (UserId = @UserIn)))
  ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DSCategoryId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DSCategoryId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

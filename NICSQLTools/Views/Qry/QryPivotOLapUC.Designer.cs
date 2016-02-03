@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraPivotGrid.PivotGridGroup pivotGridGroup1 = new DevExpress.XtraPivotGrid.PivotGridGroup();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -46,9 +47,6 @@
             this.panelContainerMain = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanelDashboard = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.layoutControlParamter = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlGroupParamters = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlDatasource = new DevExpress.XtraLayout.LayoutControl();
             this.btnDeleteLayout = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveAsLayout = new DevExpress.XtraEditors.SimpleButton();
@@ -84,6 +82,59 @@
             this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter();
             this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceParamTableAdapter();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.fieldCustomerT1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldDate1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldDay1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldDayMonth1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldIsWorkDay1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldMonth1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldPeriod1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldPeriodH1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldWeekNCE1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldWeekNum1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldYear1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldBaseProduct1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldBaseProductSource1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldBrand1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldBrandRang1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldBrandSource1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldConsumerSegment1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldFlavor1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldGroup11 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldGroup21 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldGroup31 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldMaterialName1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldMaterialNumber1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldMaterialType1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldPricePoint1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldPricePointRang1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldASM1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldBrandRoute1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldDistributionChannel1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldPlant1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldPlantNumber1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldRegion1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldRouteName1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldRouteNumber1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSalesDistrict21 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldDistributionChannel2 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSalesDistrictName1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSalesDistrict22 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldRouteNumber2 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSalesDistrictName2 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSupervisor1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSales1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldTPP1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldCSSales1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldCSTPP1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldEASales1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldEATPP1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldVolSales1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldVolTPP1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldTRow1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldInv1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldAPOS1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldDS1 = new DevExpress.XtraPivotGrid.PivotGridField();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).BeginInit();
@@ -91,9 +142,6 @@
             this.panelContainerMain.SuspendLayout();
             this.dockPanelDashboard.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlParamter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupParamters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDatasource)).BeginInit();
             this.layoutControlDatasource.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).BeginInit();
@@ -287,43 +335,11 @@
             // 
             // dockPanel2_Container
             // 
-            this.dockPanel2_Container.Controls.Add(this.layoutControlParamter);
             this.dockPanel2_Container.Controls.Add(this.layoutControlDatasource);
             this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
             this.dockPanel2_Container.Size = new System.Drawing.Size(355, 368);
             this.dockPanel2_Container.TabIndex = 0;
-            // 
-            // layoutControlParamter
-            // 
-            this.layoutControlParamter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControlParamter.Location = new System.Drawing.Point(0, 157);
-            this.layoutControlParamter.Name = "layoutControlParamter";
-            this.layoutControlParamter.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(406, 100, 434, 493);
-            this.layoutControlParamter.Root = this.layoutControlGroup2;
-            this.layoutControlParamter.Size = new System.Drawing.Size(355, 211);
-            this.layoutControlParamter.TabIndex = 1;
-            this.layoutControlParamter.Text = "layoutControl2";
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.CustomizationFormText = "Root";
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroupParamters});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "Root";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(355, 211);
-            this.layoutControlGroup2.TextVisible = false;
-            // 
-            // layoutControlGroupParamters
-            // 
-            this.layoutControlGroupParamters.CustomizationFormText = "Paramters";
-            this.layoutControlGroupParamters.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroupParamters.Name = "layoutControlGroupParamters";
-            this.layoutControlGroupParamters.Size = new System.Drawing.Size(335, 191);
-            this.layoutControlGroupParamters.Text = "Paramters";
             // 
             // layoutControlDatasource
             // 
@@ -666,8 +682,74 @@
             this.pivotGridControlMain.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 10F);
             this.pivotGridControlMain.Appearance.FieldValue.Options.UseFont = true;
             this.pivotGridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pivotGridControlMain.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
+            this.fieldCustomerT1,
+            this.fieldDate1,
+            this.fieldDay1,
+            this.fieldDayMonth1,
+            this.fieldIsWorkDay1,
+            this.fieldMonth1,
+            this.fieldPeriod1,
+            this.fieldPeriodH1,
+            this.fieldWeekNCE1,
+            this.fieldWeekNum1,
+            this.fieldYear1,
+            this.fieldBaseProduct1,
+            this.fieldBaseProductSource1,
+            this.fieldBrand1,
+            this.fieldBrandRang1,
+            this.fieldBrandSource1,
+            this.fieldConsumerSegment1,
+            this.fieldFlavor1,
+            this.fieldGroup11,
+            this.fieldGroup21,
+            this.fieldGroup31,
+            this.fieldMaterialName1,
+            this.fieldMaterialNumber1,
+            this.fieldMaterialType1,
+            this.fieldPricePoint1,
+            this.fieldPricePointRang1,
+            this.fieldASM1,
+            this.fieldBrandRoute1,
+            this.fieldDistributionChannel1,
+            this.fieldPlant1,
+            this.fieldPlantNumber1,
+            this.fieldRegion1,
+            this.fieldRouteName1,
+            this.fieldRouteNumber1,
+            this.fieldSalesDistrict21,
+            this.fieldDistributionChannel2,
+            this.fieldSalesDistrictName1,
+            this.fieldSalesDistrict22,
+            this.fieldRouteNumber2,
+            this.fieldSalesDistrictName2,
+            this.fieldSupervisor1,
+            this.fieldSales1,
+            this.fieldTPP1,
+            this.fieldCSSales1,
+            this.fieldCSTPP1,
+            this.fieldEASales1,
+            this.fieldEATPP1,
+            this.fieldVolSales1,
+            this.fieldVolTPP1,
+            this.fieldTRow1,
+            this.fieldInv1,
+            this.fieldAPOS1,
+            this.fieldDS1});
+            pivotGridGroup1.Caption = "Sales District Level";
+            pivotGridGroup1.Fields.Add(this.fieldDistributionChannel2);
+            pivotGridGroup1.Fields.Add(this.fieldSalesDistrictName1);
+            pivotGridGroup1.Fields.Add(this.fieldSalesDistrict22);
+            pivotGridGroup1.Fields.Add(this.fieldRouteNumber2);
+            pivotGridGroup1.Hierarchy = "[Route].[Sales District Level]";
+            pivotGridGroup1.ShowNewValues = true;
+            this.pivotGridControlMain.Groups.AddRange(new DevExpress.XtraPivotGrid.PivotGridGroup[] {
+            pivotGridGroup1});
             this.pivotGridControlMain.Location = new System.Drawing.Point(363, 24);
             this.pivotGridControlMain.Name = "pivotGridControlMain";
+            this.pivotGridControlMain.OLAPConnectionString = "provider=MSOLAP.5;data source=.;initial catalog=IC_DB;cube name=\"Nestle Ice Cream" +
+    " Sales Cube\";password=123456;user id=administrator";
+            this.pivotGridControlMain.OLAPDataProvider = DevExpress.XtraPivotGrid.OLAPDataProvider.OleDb;
             this.pivotGridControlMain.OptionsData.DataFieldUnboundExpressionMode = DevExpress.XtraPivotGrid.DataFieldUnboundExpressionMode.UseSummaryValues;
             this.pivotGridControlMain.OptionsLayout.AddNewGroups = true;
             this.pivotGridControlMain.OptionsLayout.Columns.RemoveOldColumns = false;
@@ -701,7 +783,454 @@
             this.sfd.Filter = "excel workbook (*.xlsx)|*.xlsx";
             this.sfd.Title = "export to excel file (xlsx)";
             // 
-            // QryPivotUC
+            // fieldCustomerT1
+            // 
+            this.fieldCustomerT1.AreaIndex = 40;
+            this.fieldCustomerT1.Caption = "Customer T";
+            this.fieldCustomerT1.FieldName = "[Customer].[Customer T].[Customer T]";
+            this.fieldCustomerT1.Name = "fieldCustomerT1";
+            this.fieldCustomerT1.Visible = false;
+            // 
+            // fieldDate1
+            // 
+            this.fieldDate1.AreaIndex = 40;
+            this.fieldDate1.Caption = "Date";
+            this.fieldDate1.FieldName = "[Date].[Date].[Date]";
+            this.fieldDate1.Name = "fieldDate1";
+            this.fieldDate1.Visible = false;
+            // 
+            // fieldDay1
+            // 
+            this.fieldDay1.AreaIndex = 40;
+            this.fieldDay1.Caption = "Day";
+            this.fieldDay1.FieldName = "[Date].[Day].[Day]";
+            this.fieldDay1.Name = "fieldDay1";
+            this.fieldDay1.Visible = false;
+            // 
+            // fieldDayMonth1
+            // 
+            this.fieldDayMonth1.AreaIndex = 40;
+            this.fieldDayMonth1.Caption = "Day- Month";
+            this.fieldDayMonth1.FieldName = "[Date].[Day- Month].[Day- Month]";
+            this.fieldDayMonth1.Name = "fieldDayMonth1";
+            this.fieldDayMonth1.Visible = false;
+            // 
+            // fieldIsWorkDay1
+            // 
+            this.fieldIsWorkDay1.AreaIndex = 40;
+            this.fieldIsWorkDay1.Caption = "Is Work Day";
+            this.fieldIsWorkDay1.FieldName = "[Date].[Is Work Day].[Is Work Day]";
+            this.fieldIsWorkDay1.Name = "fieldIsWorkDay1";
+            this.fieldIsWorkDay1.Visible = false;
+            // 
+            // fieldMonth1
+            // 
+            this.fieldMonth1.AreaIndex = 40;
+            this.fieldMonth1.Caption = "Month";
+            this.fieldMonth1.FieldName = "[Date].[Month].[Month]";
+            this.fieldMonth1.Name = "fieldMonth1";
+            this.fieldMonth1.Visible = false;
+            // 
+            // fieldPeriod1
+            // 
+            this.fieldPeriod1.AreaIndex = 40;
+            this.fieldPeriod1.Caption = "Period";
+            this.fieldPeriod1.FieldName = "[Date].[Period].[Period]";
+            this.fieldPeriod1.Name = "fieldPeriod1";
+            this.fieldPeriod1.Visible = false;
+            // 
+            // fieldPeriodH1
+            // 
+            this.fieldPeriodH1.AreaIndex = 40;
+            this.fieldPeriodH1.Caption = "Period H";
+            this.fieldPeriodH1.FieldName = "[Date].[Period H].[Period H]";
+            this.fieldPeriodH1.Name = "fieldPeriodH1";
+            this.fieldPeriodH1.Visible = false;
+            // 
+            // fieldWeekNCE1
+            // 
+            this.fieldWeekNCE1.AreaIndex = 40;
+            this.fieldWeekNCE1.Caption = "Week NCE";
+            this.fieldWeekNCE1.FieldName = "[Date].[Week NCE].[Week NCE]";
+            this.fieldWeekNCE1.Name = "fieldWeekNCE1";
+            this.fieldWeekNCE1.Visible = false;
+            // 
+            // fieldWeekNum1
+            // 
+            this.fieldWeekNum1.AreaIndex = 40;
+            this.fieldWeekNum1.Caption = "Week Num";
+            this.fieldWeekNum1.FieldName = "[Date].[Week Num].[Week Num]";
+            this.fieldWeekNum1.Name = "fieldWeekNum1";
+            this.fieldWeekNum1.Visible = false;
+            // 
+            // fieldYear1
+            // 
+            this.fieldYear1.AreaIndex = 40;
+            this.fieldYear1.Caption = "Year";
+            this.fieldYear1.FieldName = "[Date].[Year].[Year]";
+            this.fieldYear1.Name = "fieldYear1";
+            this.fieldYear1.Visible = false;
+            // 
+            // fieldBaseProduct1
+            // 
+            this.fieldBaseProduct1.AreaIndex = 40;
+            this.fieldBaseProduct1.Caption = "Base Product";
+            this.fieldBaseProduct1.FieldName = "[Product].[Base Product].[Base Product]";
+            this.fieldBaseProduct1.Name = "fieldBaseProduct1";
+            this.fieldBaseProduct1.Visible = false;
+            // 
+            // fieldBaseProductSource1
+            // 
+            this.fieldBaseProductSource1.AreaIndex = 40;
+            this.fieldBaseProductSource1.Caption = "BaseProduct Source";
+            this.fieldBaseProductSource1.FieldName = "[Product].[BaseProduct Source].[BaseProduct Source]";
+            this.fieldBaseProductSource1.Name = "fieldBaseProductSource1";
+            this.fieldBaseProductSource1.Visible = false;
+            // 
+            // fieldBrand1
+            // 
+            this.fieldBrand1.AreaIndex = 40;
+            this.fieldBrand1.Caption = "Brand";
+            this.fieldBrand1.FieldName = "[Product].[Brand].[Brand]";
+            this.fieldBrand1.Name = "fieldBrand1";
+            this.fieldBrand1.Visible = false;
+            // 
+            // fieldBrandRang1
+            // 
+            this.fieldBrandRang1.AreaIndex = 40;
+            this.fieldBrandRang1.Caption = "Brand Rang";
+            this.fieldBrandRang1.FieldName = "[Product].[Brand Rang].[Brand Rang]";
+            this.fieldBrandRang1.Name = "fieldBrandRang1";
+            this.fieldBrandRang1.Visible = false;
+            // 
+            // fieldBrandSource1
+            // 
+            this.fieldBrandSource1.AreaIndex = 40;
+            this.fieldBrandSource1.Caption = "Brand Source";
+            this.fieldBrandSource1.FieldName = "[Product].[Brand Source].[Brand Source]";
+            this.fieldBrandSource1.Name = "fieldBrandSource1";
+            this.fieldBrandSource1.Visible = false;
+            // 
+            // fieldConsumerSegment1
+            // 
+            this.fieldConsumerSegment1.AreaIndex = 40;
+            this.fieldConsumerSegment1.Caption = "Consumer Segment";
+            this.fieldConsumerSegment1.FieldName = "[Product].[Consumer Segment].[Consumer Segment]";
+            this.fieldConsumerSegment1.Name = "fieldConsumerSegment1";
+            this.fieldConsumerSegment1.Visible = false;
+            // 
+            // fieldFlavor1
+            // 
+            this.fieldFlavor1.AreaIndex = 40;
+            this.fieldFlavor1.Caption = "Flavor";
+            this.fieldFlavor1.FieldName = "[Product].[Flavor].[Flavor]";
+            this.fieldFlavor1.Name = "fieldFlavor1";
+            this.fieldFlavor1.Visible = false;
+            // 
+            // fieldGroup11
+            // 
+            this.fieldGroup11.AreaIndex = 40;
+            this.fieldGroup11.Caption = "Group1";
+            this.fieldGroup11.FieldName = "[Product].[Group1].[Group1]";
+            this.fieldGroup11.Name = "fieldGroup11";
+            this.fieldGroup11.Visible = false;
+            // 
+            // fieldGroup21
+            // 
+            this.fieldGroup21.AreaIndex = 40;
+            this.fieldGroup21.Caption = "Group2";
+            this.fieldGroup21.FieldName = "[Product].[Group2].[Group2]";
+            this.fieldGroup21.Name = "fieldGroup21";
+            this.fieldGroup21.Visible = false;
+            // 
+            // fieldGroup31
+            // 
+            this.fieldGroup31.AreaIndex = 40;
+            this.fieldGroup31.Caption = "Group3";
+            this.fieldGroup31.FieldName = "[Product].[Group3].[Group3]";
+            this.fieldGroup31.Name = "fieldGroup31";
+            this.fieldGroup31.Visible = false;
+            // 
+            // fieldMaterialName1
+            // 
+            this.fieldMaterialName1.AreaIndex = 40;
+            this.fieldMaterialName1.Caption = "Material Name";
+            this.fieldMaterialName1.FieldName = "[Product].[Material Name].[Material Name]";
+            this.fieldMaterialName1.Name = "fieldMaterialName1";
+            this.fieldMaterialName1.Visible = false;
+            // 
+            // fieldMaterialNumber1
+            // 
+            this.fieldMaterialNumber1.AreaIndex = 40;
+            this.fieldMaterialNumber1.Caption = "Material Number";
+            this.fieldMaterialNumber1.FieldName = "[Product].[Material Number].[Material Number]";
+            this.fieldMaterialNumber1.Name = "fieldMaterialNumber1";
+            this.fieldMaterialNumber1.Visible = false;
+            // 
+            // fieldMaterialType1
+            // 
+            this.fieldMaterialType1.AreaIndex = 40;
+            this.fieldMaterialType1.Caption = "Material Type";
+            this.fieldMaterialType1.FieldName = "[Product].[Material Type].[Material Type]";
+            this.fieldMaterialType1.Name = "fieldMaterialType1";
+            this.fieldMaterialType1.Visible = false;
+            // 
+            // fieldPricePoint1
+            // 
+            this.fieldPricePoint1.AreaIndex = 40;
+            this.fieldPricePoint1.Caption = "Price Point";
+            this.fieldPricePoint1.FieldName = "[Product].[Price Point].[Price Point]";
+            this.fieldPricePoint1.Name = "fieldPricePoint1";
+            this.fieldPricePoint1.Visible = false;
+            // 
+            // fieldPricePointRang1
+            // 
+            this.fieldPricePointRang1.AreaIndex = 40;
+            this.fieldPricePointRang1.Caption = "Price Point Rang";
+            this.fieldPricePointRang1.FieldName = "[Product].[Price Point Rang].[Price Point Rang]";
+            this.fieldPricePointRang1.Name = "fieldPricePointRang1";
+            this.fieldPricePointRang1.Visible = false;
+            // 
+            // fieldASM1
+            // 
+            this.fieldASM1.AreaIndex = 40;
+            this.fieldASM1.Caption = "ASM";
+            this.fieldASM1.FieldName = "[Route].[ASM].[ASM]";
+            this.fieldASM1.Name = "fieldASM1";
+            this.fieldASM1.Visible = false;
+            // 
+            // fieldBrandRoute1
+            // 
+            this.fieldBrandRoute1.AreaIndex = 40;
+            this.fieldBrandRoute1.Caption = "Brand Route";
+            this.fieldBrandRoute1.FieldName = "[Route].[Brand Route].[Brand Route]";
+            this.fieldBrandRoute1.Name = "fieldBrandRoute1";
+            this.fieldBrandRoute1.Visible = false;
+            // 
+            // fieldDistributionChannel1
+            // 
+            this.fieldDistributionChannel1.AreaIndex = 40;
+            this.fieldDistributionChannel1.Caption = "Distribution Channel";
+            this.fieldDistributionChannel1.FieldName = "[Route].[Distribution Channel].[Distribution Channel]";
+            this.fieldDistributionChannel1.Name = "fieldDistributionChannel1";
+            this.fieldDistributionChannel1.Visible = false;
+            // 
+            // fieldPlant1
+            // 
+            this.fieldPlant1.AreaIndex = 40;
+            this.fieldPlant1.Caption = "Plant";
+            this.fieldPlant1.FieldName = "[Route].[Plant].[Plant]";
+            this.fieldPlant1.Name = "fieldPlant1";
+            this.fieldPlant1.Visible = false;
+            // 
+            // fieldPlantNumber1
+            // 
+            this.fieldPlantNumber1.AreaIndex = 40;
+            this.fieldPlantNumber1.Caption = "Plant Number";
+            this.fieldPlantNumber1.FieldName = "[Route].[Plant Number].[Plant Number]";
+            this.fieldPlantNumber1.Name = "fieldPlantNumber1";
+            this.fieldPlantNumber1.Visible = false;
+            // 
+            // fieldRegion1
+            // 
+            this.fieldRegion1.AreaIndex = 40;
+            this.fieldRegion1.Caption = "Region";
+            this.fieldRegion1.FieldName = "[Route].[Region].[Region]";
+            this.fieldRegion1.Name = "fieldRegion1";
+            this.fieldRegion1.Visible = false;
+            // 
+            // fieldRouteName1
+            // 
+            this.fieldRouteName1.AreaIndex = 40;
+            this.fieldRouteName1.Caption = "Route Name";
+            this.fieldRouteName1.FieldName = "[Route].[Route Name].[Route Name]";
+            this.fieldRouteName1.Name = "fieldRouteName1";
+            this.fieldRouteName1.Visible = false;
+            // 
+            // fieldRouteNumber1
+            // 
+            this.fieldRouteNumber1.AreaIndex = 40;
+            this.fieldRouteNumber1.Caption = "Route Number";
+            this.fieldRouteNumber1.FieldName = "[Route].[Route Number].[Route Number]";
+            this.fieldRouteNumber1.Name = "fieldRouteNumber1";
+            this.fieldRouteNumber1.Visible = false;
+            // 
+            // fieldSalesDistrict21
+            // 
+            this.fieldSalesDistrict21.AreaIndex = 40;
+            this.fieldSalesDistrict21.Caption = "Sales District 2";
+            this.fieldSalesDistrict21.FieldName = "[Route].[Sales District 2].[Sales District 2]";
+            this.fieldSalesDistrict21.Name = "fieldSalesDistrict21";
+            this.fieldSalesDistrict21.Visible = false;
+            // 
+            // fieldDistributionChannel2
+            // 
+            this.fieldDistributionChannel2.AreaIndex = 40;
+            this.fieldDistributionChannel2.Caption = "Distribution Channel";
+            this.fieldDistributionChannel2.FieldName = "[Route].[Sales District Level].[Distribution Channel]";
+            this.fieldDistributionChannel2.Name = "fieldDistributionChannel2";
+            this.fieldDistributionChannel2.Visible = false;
+            // 
+            // fieldSalesDistrictName1
+            // 
+            this.fieldSalesDistrictName1.AreaIndex = 40;
+            this.fieldSalesDistrictName1.Caption = "Sales District Name";
+            this.fieldSalesDistrictName1.FieldName = "[Route].[Sales District Level].[Sales District Name]";
+            this.fieldSalesDistrictName1.Name = "fieldSalesDistrictName1";
+            this.fieldSalesDistrictName1.Visible = false;
+            // 
+            // fieldSalesDistrict22
+            // 
+            this.fieldSalesDistrict22.AreaIndex = 40;
+            this.fieldSalesDistrict22.Caption = "Sales District 2";
+            this.fieldSalesDistrict22.FieldName = "[Route].[Sales District Level].[Sales District 2]";
+            this.fieldSalesDistrict22.Name = "fieldSalesDistrict22";
+            this.fieldSalesDistrict22.Visible = false;
+            // 
+            // fieldRouteNumber2
+            // 
+            this.fieldRouteNumber2.AreaIndex = 40;
+            this.fieldRouteNumber2.Caption = "Route Number";
+            this.fieldRouteNumber2.FieldName = "[Route].[Sales District Level].[Route Number]";
+            this.fieldRouteNumber2.Name = "fieldRouteNumber2";
+            this.fieldRouteNumber2.Visible = false;
+            // 
+            // fieldSalesDistrictName2
+            // 
+            this.fieldSalesDistrictName2.AreaIndex = 40;
+            this.fieldSalesDistrictName2.Caption = "Sales District Name";
+            this.fieldSalesDistrictName2.FieldName = "[Route].[Sales District Name].[Sales District Name]";
+            this.fieldSalesDistrictName2.Name = "fieldSalesDistrictName2";
+            this.fieldSalesDistrictName2.Visible = false;
+            // 
+            // fieldSupervisor1
+            // 
+            this.fieldSupervisor1.AreaIndex = 40;
+            this.fieldSupervisor1.Caption = "Supervisor";
+            this.fieldSupervisor1.FieldName = "[Route].[Supervisor].[Supervisor]";
+            this.fieldSupervisor1.Name = "fieldSupervisor1";
+            this.fieldSupervisor1.Visible = false;
+            // 
+            // fieldSales1
+            // 
+            this.fieldSales1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldSales1.AreaIndex = 11;
+            this.fieldSales1.Caption = "Sales";
+            this.fieldSales1.DisplayFolder = "Sales\\Sales";
+            this.fieldSales1.FieldName = "[Measures].[Sales]";
+            this.fieldSales1.Name = "fieldSales1";
+            this.fieldSales1.Visible = false;
+            // 
+            // fieldTPP1
+            // 
+            this.fieldTPP1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldTPP1.AreaIndex = 11;
+            this.fieldTPP1.Caption = "TPP";
+            this.fieldTPP1.DisplayFolder = "Sales\\TPP";
+            this.fieldTPP1.FieldName = "[Measures].[TPP]";
+            this.fieldTPP1.Name = "fieldTPP1";
+            this.fieldTPP1.Visible = false;
+            // 
+            // fieldCSSales1
+            // 
+            this.fieldCSSales1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldCSSales1.AreaIndex = 11;
+            this.fieldCSSales1.Caption = "CS Sales";
+            this.fieldCSSales1.DisplayFolder = "Sales\\Sales";
+            this.fieldCSSales1.FieldName = "[Measures].[CS Sales]";
+            this.fieldCSSales1.Name = "fieldCSSales1";
+            this.fieldCSSales1.Visible = false;
+            // 
+            // fieldCSTPP1
+            // 
+            this.fieldCSTPP1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldCSTPP1.AreaIndex = 11;
+            this.fieldCSTPP1.Caption = "CS TPP";
+            this.fieldCSTPP1.DisplayFolder = "Sales\\TPP";
+            this.fieldCSTPP1.FieldName = "[Measures].[CS TPP]";
+            this.fieldCSTPP1.Name = "fieldCSTPP1";
+            this.fieldCSTPP1.Visible = false;
+            // 
+            // fieldEASales1
+            // 
+            this.fieldEASales1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldEASales1.AreaIndex = 11;
+            this.fieldEASales1.Caption = "EA Sales";
+            this.fieldEASales1.DisplayFolder = "Sales\\Sales";
+            this.fieldEASales1.FieldName = "[Measures].[EA Sales]";
+            this.fieldEASales1.Name = "fieldEASales1";
+            this.fieldEASales1.Visible = false;
+            // 
+            // fieldEATPP1
+            // 
+            this.fieldEATPP1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldEATPP1.AreaIndex = 11;
+            this.fieldEATPP1.Caption = "EA TPP";
+            this.fieldEATPP1.DisplayFolder = "Sales\\TPP";
+            this.fieldEATPP1.FieldName = "[Measures].[EA TPP]";
+            this.fieldEATPP1.Name = "fieldEATPP1";
+            this.fieldEATPP1.Visible = false;
+            // 
+            // fieldVolSales1
+            // 
+            this.fieldVolSales1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldVolSales1.AreaIndex = 11;
+            this.fieldVolSales1.Caption = "Vol Sales";
+            this.fieldVolSales1.DisplayFolder = "Sales\\Sales";
+            this.fieldVolSales1.FieldName = "[Measures].[Vol Sales]";
+            this.fieldVolSales1.Name = "fieldVolSales1";
+            this.fieldVolSales1.Visible = false;
+            // 
+            // fieldVolTPP1
+            // 
+            this.fieldVolTPP1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldVolTPP1.AreaIndex = 11;
+            this.fieldVolTPP1.Caption = "Vol TPP";
+            this.fieldVolTPP1.DisplayFolder = "Sales\\TPP";
+            this.fieldVolTPP1.FieldName = "[Measures].[Vol TPP]";
+            this.fieldVolTPP1.Name = "fieldVolTPP1";
+            this.fieldVolTPP1.Visible = false;
+            // 
+            // fieldTRow1
+            // 
+            this.fieldTRow1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldTRow1.AreaIndex = 11;
+            this.fieldTRow1.Caption = "TRow";
+            this.fieldTRow1.DisplayFolder = "Sales";
+            this.fieldTRow1.FieldName = "[Measures].[TRow]";
+            this.fieldTRow1.Name = "fieldTRow1";
+            this.fieldTRow1.Visible = false;
+            // 
+            // fieldInv1
+            // 
+            this.fieldInv1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldInv1.AreaIndex = 11;
+            this.fieldInv1.Caption = "Inv";
+            this.fieldInv1.DisplayFolder = "Invoices";
+            this.fieldInv1.FieldName = "[Measures].[Inv]";
+            this.fieldInv1.Name = "fieldInv1";
+            this.fieldInv1.Visible = false;
+            // 
+            // fieldAPOS1
+            // 
+            this.fieldAPOS1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldAPOS1.AreaIndex = 11;
+            this.fieldAPOS1.Caption = "APOS";
+            this.fieldAPOS1.DisplayFolder = "Active point of sales";
+            this.fieldAPOS1.FieldName = "[Measures].[APOS]";
+            this.fieldAPOS1.Name = "fieldAPOS1";
+            this.fieldAPOS1.Visible = false;
+            // 
+            // fieldDS1
+            // 
+            this.fieldDS1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.fieldDS1.AreaIndex = 11;
+            this.fieldDS1.Caption = "DS";
+            this.fieldDS1.FieldName = "[Measures].[DS]";
+            this.fieldDS1.Name = "fieldDS1";
+            this.fieldDS1.Visible = false;
+            // 
+            // QryPivotOLapUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -711,7 +1240,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "QryPivotUC";
+            this.Name = "QryPivotOLapUC";
             this.Size = new System.Drawing.Size(757, 486);
             this.Load += new System.EventHandler(this.QryPivotUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
@@ -721,9 +1250,6 @@
             this.panelContainerMain.ResumeLayout(false);
             this.dockPanelDashboard.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlParamter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupParamters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDatasource)).EndInit();
             this.layoutControlDatasource.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueLayout.Properties)).EndInit();
@@ -747,6 +1273,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -759,12 +1286,9 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupDatasource;
         private DevExpress.XtraEditors.SimpleButton btnLoadDashboard;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControl layoutControlParamter;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraWaitForm.ProgressPanel ppWait;
         private DevExpress.XtraLayout.LayoutControlItem lciWait;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupParamters;
         private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControlMain;
         private NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter get_sp_PramTableAdapter;
         private DevExpress.XtraEditors.GridLookUpEdit lueLayout;
@@ -806,5 +1330,58 @@
         private DevExpress.XtraBars.Bar bar3;
         private System.Windows.Forms.SaveFileDialog sfd;
         private DevExpress.XtraBars.BarButtonItem bbiExcelDynamicUpdate;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldCustomerT1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldDate1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldDay1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldDayMonth1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldIsWorkDay1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldMonth1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldPeriod1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldPeriodH1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldWeekNCE1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldWeekNum1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldYear1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBaseProduct1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBaseProductSource1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBrand1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBrandRang1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBrandSource1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldConsumerSegment1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldFlavor1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldGroup11;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldGroup21;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldGroup31;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldMaterialName1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldMaterialNumber1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldMaterialType1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldPricePoint1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldPricePointRang1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldASM1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldBrandRoute1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldDistributionChannel1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldPlant1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldPlantNumber1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldRegion1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldRouteName1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldRouteNumber1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldSalesDistrict21;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldDistributionChannel2;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldSalesDistrictName1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldSalesDistrict22;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldRouteNumber2;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldSalesDistrictName2;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldSupervisor1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldSales1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldTPP1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldCSSales1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldCSTPP1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldEASales1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldEATPP1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldVolSales1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldVolTPP1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldTRow1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldInv1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldAPOS1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldDS1;
     }
 }

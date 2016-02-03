@@ -47,8 +47,7 @@
             this.tbEquipmentSerial = new DevExpress.XtraEditors.TextEdit();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.lueCustomerId = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSCustomerId = new DevExpress.Data.Linq.LinqServerModeSource();
+            this.tbCustomerId = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroupMain = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForAssetplaceId = new DevExpress.XtraLayout.LayoutControlItem();
@@ -63,8 +62,9 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dsMSrc = new NICSQLTools.Data.dsMSrc();
+            this.LSMSCustomerId = new DevExpress.Data.Linq.LinqServerModeSource();
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).BeginInit();
             this.dataLayoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueContactPhone2.Properties)).BeginInit();
@@ -75,8 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueContactPerson.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpenComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbEquipmentSerial.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCustomerId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCustomerId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCustomerId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAssetplaceId)).BeginInit();
@@ -91,8 +90,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSCustomerId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControlMain
@@ -107,7 +107,7 @@
             this.dataLayoutControlMain.Controls.Add(this.tbEquipmentSerial);
             this.dataLayoutControlMain.Controls.Add(this.btnSave);
             this.dataLayoutControlMain.Controls.Add(this.btnCancel);
-            this.dataLayoutControlMain.Controls.Add(this.lueCustomerId);
+            this.dataLayoutControlMain.Controls.Add(this.tbCustomerId);
             this.dataLayoutControlMain.DataMember = "TblAssets";
             this.dataLayoutControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControlMain.Location = new System.Drawing.Point(0, 0);
@@ -121,11 +121,15 @@
             // 
             // tbIssueContactPhone2
             // 
+            this.tbIssueContactPhone2.EnterMoveNextControl = true;
             this.tbIssueContactPhone2.Location = new System.Drawing.Point(316, 118);
             this.tbIssueContactPhone2.Name = "tbIssueContactPhone2";
             this.tbIssueContactPhone2.Size = new System.Drawing.Size(144, 20);
             this.tbIssueContactPhone2.StyleController = this.dataLayoutControlMain;
             this.tbIssueContactPhone2.TabIndex = 29;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProviderMain.SetValidationRule(this.tbIssueContactPhone2, conditionValidationRule1);
             // 
             // clbcReason
             // 
@@ -154,10 +158,10 @@
             this.tbIssueAddress.Size = new System.Drawing.Size(354, 20);
             this.tbIssueAddress.StyleController = this.dataLayoutControlMain;
             this.tbIssueAddress.TabIndex = 27;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProviderMain.SetValidationRule(this.tbIssueAddress, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProviderMain.SetValidationRule(this.tbIssueAddress, conditionValidationRule2);
             // 
             // tbIssueContactPhone
             // 
@@ -167,10 +171,10 @@
             this.tbIssueContactPhone.Size = new System.Drawing.Size(124, 20);
             this.tbIssueContactPhone.StyleController = this.dataLayoutControlMain;
             this.tbIssueContactPhone.TabIndex = 26;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProviderMain.SetValidationRule(this.tbIssueContactPhone, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProviderMain.SetValidationRule(this.tbIssueContactPhone, conditionValidationRule3);
             // 
             // tbIssueContactPerson
             // 
@@ -180,10 +184,10 @@
             this.tbIssueContactPerson.Size = new System.Drawing.Size(354, 20);
             this.tbIssueContactPerson.StyleController = this.dataLayoutControlMain;
             this.tbIssueContactPerson.TabIndex = 25;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProviderMain.SetValidationRule(this.tbIssueContactPerson, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProviderMain.SetValidationRule(this.tbIssueContactPerson, conditionValidationRule4);
             // 
             // tbOpenComment
             // 
@@ -215,9 +219,9 @@
             this.tbEquipmentSerial.Size = new System.Drawing.Size(312, 22);
             this.tbEquipmentSerial.StyleController = this.dataLayoutControlMain;
             this.tbEquipmentSerial.TabIndex = 18;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.tbEquipmentSerial, conditionValidationRule4);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.dxValidationProviderMain.SetValidationRule(this.tbEquipmentSerial, conditionValidationRule5);
             // 
             // btnSave
             // 
@@ -245,43 +249,21 @@
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             // 
-            // lueCustomerId
+            // tbCustomerId
             // 
-            this.lueCustomerId.EnterMoveNextControl = true;
-            this.lueCustomerId.Location = new System.Drawing.Point(94, 12);
-            this.lueCustomerId.Name = "lueCustomerId";
-            this.lueCustomerId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lueCustomerId.Properties.Appearance.Options.UseFont = true;
-            this.lueCustomerId.Properties.Appearance.Options.UseTextOptions = true;
-            this.lueCustomerId.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.lueCustomerId.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            this.lueCustomerId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueCustomerId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Customer", "Customer", 65, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayName", "Customer Name"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Route", "Route", 56, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Route_Name", "Route_Name", 83, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Supervisor", "Supervisor", 71, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueCustomerId.Properties.DataSource = this.LSMSCustomerId;
-            this.lueCustomerId.Properties.DisplayMember = "DisplayName";
-            this.lueCustomerId.Properties.DropDownRows = 10;
-            this.lueCustomerId.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            this.lueCustomerId.Properties.NullText = "";
-            this.lueCustomerId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueCustomerId.Properties.ValueMember = "Customer";
-            this.lueCustomerId.Size = new System.Drawing.Size(378, 22);
-            this.lueCustomerId.StyleController = this.dataLayoutControlMain;
-            this.lueCustomerId.TabIndex = 11;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.lueCustomerId, conditionValidationRule5);
-            this.lueCustomerId.EditValueChanged += new System.EventHandler(this.lueCustomerId_EditValueChanged);
-            // 
-            // LSMSCustomerId
-            // 
-            this.LSMSCustomerId.ElementType = typeof(NICSQLTools.Data.Linq.vMSrv_Customer);
-            this.LSMSCustomerId.KeyExpression = "[Customer]";
+            this.tbCustomerId.EnterMoveNextControl = true;
+            this.tbCustomerId.Location = new System.Drawing.Point(94, 12);
+            this.tbCustomerId.Name = "tbCustomerId";
+            this.tbCustomerId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tbCustomerId.Properties.Appearance.Options.UseFont = true;
+            this.tbCustomerId.Properties.Appearance.Options.UseTextOptions = true;
+            this.tbCustomerId.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.tbCustomerId.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.tbCustomerId.Properties.Validating += new System.ComponentModel.CancelEventHandler(this.tbCustomerId_Properties_Validating);
+            this.tbCustomerId.Size = new System.Drawing.Size(378, 22);
+            this.tbCustomerId.StyleController = this.dataLayoutControlMain;
+            this.tbCustomerId.TabIndex = 11;
+            this.tbCustomerId.EditValueChanged += new System.EventHandler(this.tbCustomerId_EditValueChanged);
             // 
             // layoutControlGroupMain
             // 
@@ -313,7 +295,7 @@
             // 
             // ItemForAssetplaceId
             // 
-            this.ItemForAssetplaceId.Control = this.lueCustomerId;
+            this.ItemForAssetplaceId.Control = this.tbCustomerId;
             this.ItemForAssetplaceId.Location = new System.Drawing.Point(0, 0);
             this.ItemForAssetplaceId.Name = "ItemForAssetplaceId";
             this.ItemForAssetplaceId.Size = new System.Drawing.Size(464, 26);
@@ -431,6 +413,11 @@
             this.layoutControlItem4.Text = "Ticket Reason";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(79, 13);
             // 
+            // LSMSCustomerId
+            // 
+            this.LSMSCustomerId.ElementType = typeof(NICSQLTools.Data.Linq.vMSrv_Customer);
+            this.LSMSCustomerId.KeyExpression = "[Customer]";
+            // 
             // dsMSrc
             // 
             this.dsMSrc.DataSetName = "dsMSrc";
@@ -438,7 +425,6 @@
             // 
             // MSrv_TicketAddDlg
             // 
-            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
@@ -459,8 +445,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbIssueContactPerson.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpenComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbEquipmentSerial.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lueCustomerId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCustomerId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCustomerId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAssetplaceId)).EndInit();
@@ -475,8 +460,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSCustomerId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,7 +477,6 @@
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.LookUpEdit lueCustomerId;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSCustomerId;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProviderMain;
         private DevExpress.XtraEditors.TextEdit tbEquipmentSerial;
@@ -513,5 +498,6 @@
         private DevExpress.XtraEditors.TextEdit tbIssueContactPhone2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSMSrvTypeId;
+        private DevExpress.XtraEditors.TextEdit tbCustomerId;
     }
 }

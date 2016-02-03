@@ -208,6 +208,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Qry.ExcelDynamicUpdateUC(RuleElemet);
             }
+            else if (e.Document == docQryPivotOLap)
+            {
+                e.Control = new Views.Qry.QryPivotOLapUC(RuleElemet);
+            }
 
             else if (e.Document == docDashboardDesigner)//--------------------  Dashboard
             {
@@ -349,6 +353,10 @@ namespace NICSQLTools.Views.Main
             else if (e.Document == docEditorsMSrv_TechnicianCompanyEditor)
             {
                 e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TechnicianCompanyEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsMSrv_01)
+            {
+                e.Control = new NICSQLTools.Views.Qry.MSrv.MSrv_01();
             }
 
             else if (e.Document == docReportsReportViewer)

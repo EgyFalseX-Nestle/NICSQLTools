@@ -1089,6 +1089,10 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\MSrv_Part128.png" />
+    <None Include="Resources\MSrv_Part64.png" />
+    <None Include="Resources\MSrv_Part32.png" />
+    <None Include="Resources\MSrv_Part16.png" />
     <None Include="Resources\OLap128.png" />
     <None Include="Resources\OLap64.png" />
     <None Include="Resources\OLap32.png" />

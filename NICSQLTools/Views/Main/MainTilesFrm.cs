@@ -354,6 +354,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TechnicianCompanyEditorUC(RuleElemet);
             }
+            else if (e.Document == docEditorsMSrv_PartEditor)
+            {
+                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_PartEditorUC(RuleElemet);
+            }
             else if (e.Document == docEditorsMSrv_01)
             {
                 e.Control = new NICSQLTools.Views.Qry.MSrv.MSrv_01();

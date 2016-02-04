@@ -9,15 +9,19 @@ namespace NICSQLTools.Views.Data.MSrv
 {
     public partial class MSrv_PartEditorUC : XtraUserControl
     {
+
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(NICSQLTools.Views.Data.MSrv.MSrv_PartEditorUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+        NICSQLTools.Data.dsMSrcTableAdapters.MSrv_PartTableAdapter adpPart = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_PartTableAdapter();
+        int _parts;
         #endregion
         #region - Fun -
         public MSrv_PartEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             _elementRule = RuleElement;
+            _parts = (int)adpPart.NewId();
         }
         void LoadData()
         {
@@ -91,10 +95,15 @@ namespace NICSQLTools.Views.Data.MSrv
         {
             DevExpress.Xpo.Helpers.ObjectSet Rows = (DevExpress.Xpo.Helpers.ObjectSet)e.Session.GetObjectsToSave();
             DateTime DateIn = NICSQLTools.Classes.Managers.DataManager.defaultInstance.ServerDateTime;
+            int parts = (int)adpPart.NewId();
+            
             foreach (DevExpress.Xpo.Metadata.XPDataTableObject item in Rows)
             {
+                if (item.GetMemberValue("PartId") == null)
+                    item.SetMemberValue("PartId", parts);
                 item.SetMemberValue("UserIn", NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId);
                 item.SetMemberValue("DateIn", DateIn);
+                parts++;
             }
         }
         private void bbiExport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

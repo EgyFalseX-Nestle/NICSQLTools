@@ -633,6 +633,46 @@ namespace NICSQLTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Part128 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Part128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Part16 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Part16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Part32 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Part32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Part64 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Part64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MSrv_Technician128 {
             get {
                 object obj = ResourceManager.GetObject("MSrv_Technician128", resourceCulture);

@@ -294,6 +294,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Import.ImportStock_MaterialUC(RuleElemet);
             }
+            else if (e.Document == docEditorsImportStock_Data)
+            {
+                e.Control = new Views.Import.ImportStock_DataUC(RuleElemet);
+            }
             else if (e.Document == docEditorsImportDst_Master)
             {
                 e.Control = new Views.Import.ImportDst_MasterUC(RuleElemet);

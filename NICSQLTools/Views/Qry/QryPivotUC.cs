@@ -367,7 +367,12 @@ namespace NICSQLTools.Views.Qry
             //Creating Excel Updatable Sheet
             Dictionary<string, object> Paramters = new Dictionary<string, object>();
             foreach (KeyValuePair<string, Control> ctrItem in DataSourceList.Controls)
-                Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).Text);
+            {
+                if (ctrItem.Value.GetType() == typeof(DevExpress.XtraEditors.CheckedComboBoxEdit))
+                    Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
+                else
+                    Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).Text);
+            }
 
             DataSourceList.EDUButton.Enabled = false;
             DataSourceList.EDUCancelButton.Enabled = true;
@@ -404,7 +409,12 @@ namespace NICSQLTools.Views.Qry
             //Executing SP
             Dictionary<string, object> Paramters = new Dictionary<string, object>();
             foreach (KeyValuePair<string, Control> ctrItem in DataSourceList.Controls)
-                Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).Text);
+            {
+                if (ctrItem.Value.GetType() == typeof(DevExpress.XtraEditors.CheckedComboBoxEdit))
+                    Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
+                else
+                    Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).Text);
+            }
 
             DataSourceList.EDUButton.Enabled = false;
             DataSourceList.ExeButton.Enabled = false;

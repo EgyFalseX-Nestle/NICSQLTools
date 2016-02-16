@@ -246,7 +246,8 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 Excel.PivotCache pivotCach = xlWorkbook_Dyn.PivotCaches().Create(Excel.XlPivotTableSourceType.xlExternal, _xlDynCon);// Create Pivot Cach
                 GetWindowThreadProcessId(xlApp_Dyn.Hwnd, out app_ProcessId_Dyn);
                 CreateDyn_Notify.OnItemChanged += CreateDyn_Notify_OnItemChanged;
-                pivotCach.CreatePivotTable(xlWorkSheet.get_Range("A1", misvalue), ds.DatasourceName + " Table");
+                Excel.PivotTable pivot = pivotCach.CreatePivotTable(xlWorkSheet.get_Range("A1", misvalue), ds.DatasourceName + " Table");
+                
                 if (_xlDynCon != null)
                     _xlDynCon.OLEDBConnection.SavePassword = false;
                 if (xlApp_Dyn != null)

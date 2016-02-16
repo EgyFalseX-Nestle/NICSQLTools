@@ -197,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Authentication.cs" />
+    <Compile Include="Classes\Stock_Data.cs" />
     <Compile Include="Classes\MSrv.cs" />
     <Compile Include="Classes\STI_2Actv_Bill_Agree.cs" />
     <Compile Include="Classes\MSrvType.cs" />
@@ -230,7 +231,6 @@
     <Compile Include="Classes\CustomerRoute.cs" />
     <Compile Include="Data\dsData.cs">
       <DependentUpon>dsData.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Data\dsData1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -259,7 +259,6 @@
     </Compile>
     <Compile Include="Data\dsQry.cs">
       <DependentUpon>dsQry.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Data\Linq\dsLinqData1.designer.cs">
       <AutoGen>True</AutoGen>
@@ -469,6 +468,12 @@
     </Compile>
     <Compile Include="Views\Import\ImportDst_MasterUC.Designer.cs">
       <DependentUpon>ImportDst_MasterUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportStock_DataUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportStock_DataUC.Designer.cs">
+      <DependentUpon>ImportStock_DataUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportStock_MaterialUC.cs">
       <SubType>UserControl</SubType>
@@ -847,6 +852,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportDst_MasterUC.resx">
       <DependentUpon>ImportDst_MasterUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportStock_DataUC.resx">
+      <DependentUpon>ImportStock_DataUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportStock_MaterialUC.resx">
       <DependentUpon>ImportStock_MaterialUC.cs</DependentUpon>

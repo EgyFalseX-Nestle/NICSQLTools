@@ -379,7 +379,12 @@ namespace NICSQLTools.Views.Dashboard
             //Executing SP
             Dictionary<string, object> Paramters = new Dictionary<string, object>();
             foreach (KeyValuePair<string, Control> ctrItem in DataSourceList[inx].Controls)
-                Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
+            {
+                if (ctrItem.Value.GetType() == typeof(DevExpress.XtraEditors.CheckedComboBoxEdit))
+                    Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).EditValue);
+                else
+                    Paramters.Add(ctrItem.Key, ((TextEdit)ctrItem.Value).Text);
+            }
 
             DataSourceList[inx].ExeButton.Enabled = false;
             DataSourceList[inx].CancelButton.Enabled = true;

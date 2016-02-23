@@ -58,7 +58,6 @@ namespace NICSQLTools.Views.Main
                     MsgDlg.Show("Application is too old to perform an update, please ask for new version ...", MsgDlg.MessageType.Error);
                     System.Diagnostics.Process.GetCurrentProcess().Kill();
                 }
-                DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());// Perform Update Client If Exists
                 if (UserManager.defaultInstance.User.UserId == 1)
                 {
                     Dictionary<string, int> UploadFiles = DataManager.GetUploadDependanceies();
@@ -68,6 +67,7 @@ namespace NICSQLTools.Views.Main
                             DataManager.PerformUpdaterUpload(UploadFiles);// Perform Update Server If Exists
                     }
                 }
+                DataManager.PerformUpdaterDownload(DataManager.GetDownloadDependanceies());// Perform Update Client If Exists
                 SplashScreenManager.CloseForm(false);
 
                 //string xx = FXFW.License.LicenseKeyGeneratorFrm.XXX();

@@ -214,13 +214,19 @@ _______________________________________________
                 if (dsData.CostCostcenter.FindByCostCenter(row[Cost._colCostcenter].ToString()) == null)
                 {
                     adpCostCenter.InsertNewCostCenter(row[Cost._colCostcenter].ToString(), "Auto Generate Cost Center");
+                    NICSQLTools.Data.dsData.CostCostcenterRow NewCC = dsData.CostCostcenter.NewCostCostcenterRow();
+                    NewCC.CostCenter = row[Cost._colCostcenter].ToString(); dsData.CostCostcenter.AddCostCostcenterRow(NewCC);
+
                     AddLogDF("New Cost Center Found : " + row[Cost._colCostcenter], true);
                 }
                 //check if new Account Nature
                 if (dsData.CostAccountNature.FindByGLAccount(row[Cost._colGLAccount].ToString()) == null)
                 {
                     adpAccountNature.InsertNewAccountNature(row[Cost._colGLAccount].ToString(), "Auto Generate Account Nature");
-                    AddLogDF("New Account Nature Found : " + row[Cost._colGLAccount], true);
+                    NICSQLTools.Data.dsData.CostAccountNatureRow NewGL = dsData.CostAccountNature.NewCostAccountNatureRow();
+                    NewGL.GLAccount = row[Cost._colGLAccount].ToString(); dsData.CostAccountNature.AddCostAccountNatureRow(NewGL);
+
+                     AddLogDF("New Account Nature Found : " + row[Cost._colGLAccount], true);
                 }
 
                 dsData.CostDynamicForecast.AddCostDynamicForecastRow(SqlRow);

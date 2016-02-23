@@ -1,0 +1,28 @@
+*-MSrv--------------------------------------
+Ticket
+Add: Eq Model
+* Multi Equipemt Issue
+--------when customer ask for issue
+____________________
+Service Disk
+______________________
+GPS
+for Time In and Out
+________
+
+Queries
+
+1- Serial number Diff
+2- Usage Parts per tec
+3- Visits anaysis on period count of reasons
+3- Ticket Tracking 
+	Id, OpenIn, CloseIn, Time, Parts, Visits, 
+_______________________________________________________
+Work Order:
+Same as ticket but with new condition to filter on it,
+
+Returned
+Dead
+
+we should notify the sales about frz condition
+*-------------------------------------------

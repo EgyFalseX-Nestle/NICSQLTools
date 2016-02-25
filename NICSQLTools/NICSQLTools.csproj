@@ -35,7 +35,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\Releases\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
@@ -252,6 +252,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsQry.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\dsRDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRDM.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\dsTask1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -402,6 +407,30 @@
     </Compile>
     <Compile Include="Views\Data\AddDatasourceWiz.Designer.cs">
       <DependentUpon>AddDatasourceWiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\RDM\RDM_ReceiptEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Data\RDM\RDM_ReceiptEditDlg.designer.cs">
+      <DependentUpon>RDM_ReceiptEditDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\RDM\RDM_ReceiptAddDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Data\RDM\RDM_ReceiptAddDlg.designer.cs">
+      <DependentUpon>RDM_ReceiptAddDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\RDM\RDM_Promo_TypeEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\RDM\RDM_Promo_TypeEditorUC.Designer.cs">
+      <DependentUpon>RDM_Promo_TypeEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\RDM\RDM_ReceiptEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\RDM\RDM_ReceiptEditorUC.Designer.cs">
+      <DependentUpon>RDM_ReceiptEditorUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\TaskManager\EmpTaskActualEditorUC.cs">
       <SubType>UserControl</SubType>
@@ -820,6 +849,18 @@
     <EmbeddedResource Include="Views\Data\AddDatasourceWiz.resx">
       <DependentUpon>AddDatasourceWiz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\RDM\RDM_ReceiptEditDlg.resx">
+      <DependentUpon>RDM_ReceiptEditDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\RDM\RDM_ReceiptAddDlg.resx">
+      <DependentUpon>RDM_ReceiptAddDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\RDM\RDM_Promo_TypeEditorUC.resx">
+      <DependentUpon>RDM_Promo_TypeEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\RDM\RDM_ReceiptEditorUC.resx">
+      <DependentUpon>RDM_ReceiptEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\TaskManager\EmpTaskActualEditorUC.resx">
       <DependentUpon>EmpTaskActualEditorUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -989,6 +1030,17 @@
     <None Include="Data\dsMSrc.xss">
       <DependentUpon>dsMSrc.xsd</DependentUpon>
     </None>
+    <None Include="Data\dsRDM.xsc">
+      <DependentUpon>dsRDM.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsRDM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRDM.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\dsRDM.xss">
+      <DependentUpon>dsRDM.xsd</DependentUpon>
+    </None>
     <None Include="Data\dsTask.xsc">
       <DependentUpon>dsTask.xsd</DependentUpon>
     </None>
@@ -1097,6 +1149,12 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\RDM128.png" />
+    <None Include="Resources\RDM_Promo_Type32.png" />
+    <None Include="Resources\RDM64.png" />
+    <None Include="Resources\RDM32.png" />
+    <None Include="Resources\RDM_Receipt32.png" />
+    <None Include="Resources\clear_16x16.png" />
     <None Include="Resources\MSrv_Part128.png" />
     <None Include="Resources\MSrv_Part64.png" />
     <None Include="Resources\MSrv_Part32.png" />

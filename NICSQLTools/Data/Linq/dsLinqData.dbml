@@ -550,4 +550,84 @@
       <Column Name="Supervisor_Telephone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.vRDM_Route_ByUser" Member="vRDM_Route_ByUsers">
+    <Type Name="vRDM_Route_ByUser">
+      <Column Name="[Route Number]" Member="Route_Number" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ASM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Brand Route]" Member="Brand_Route" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RDM_Promo_Type" Member="RDM_Promo_Types">
+    <Type Name="RDM_Promo_Type">
+      <Column Name="RDM_Promo_Type_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RDM_Promo_Type" Member="RDM_Promo_Type1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YearNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vRDM_Receipt" Member="vRDM_Receipts">
+    <Type Name="vRDM_Receipt">
+      <Column Name="RDM_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ReceiptNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RDM_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RouteNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BaseProductId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RDM_Promo_Type_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qun" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RDM_Promo_Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YearNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BaseProduct" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BaseGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Group1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Group2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Group3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Plant" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ASM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Brand Route]" Member="Brand_Route" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RDM_Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vRDM_Receipt_ByUser" Member="vRDM_Receipt_ByUsers">
+    <Type Name="vRDM_Receipt_ByUser">
+      <Column Name="RDM_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ReceiptNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RDM_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RouteNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BaseProductId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RDM_Promo_Type_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Qun" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RDM_Promo_Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YearNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BaseProduct" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BaseGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Group1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Group2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Group3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Plant" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ASM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Brand Route]" Member="Brand_Route" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisibleToUserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RDM_Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

@@ -366,6 +366,14 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new NICSQLTools.Views.Qry.MSrv.MSrv_01();
             }
+            else if (e.Document == docEditorsRDMEditorRDM_Promo_Type)// RDM
+            {
+                e.Control = new NICSQLTools.Views.Data.RDM.RDM_Promo_TypeEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsRDMEditorRDM_Receipt)
+            {
+                e.Control = new NICSQLTools.Views.Data.RDM.RDM_ReceiptEditorUC(RuleElemet);
+            }
 
             else if (e.Document == docReportsReportViewer)
             {

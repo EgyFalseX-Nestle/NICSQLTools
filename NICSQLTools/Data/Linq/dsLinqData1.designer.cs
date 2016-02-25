@@ -135,6 +135,18 @@ namespace NICSQLTools.Data.Linq
     partial void InsertvMSrv_Customer(vMSrv_Customer instance);
     partial void UpdatevMSrv_Customer(vMSrv_Customer instance);
     partial void DeletevMSrv_Customer(vMSrv_Customer instance);
+    partial void InsertvRDM_Route_ByUser(vRDM_Route_ByUser instance);
+    partial void UpdatevRDM_Route_ByUser(vRDM_Route_ByUser instance);
+    partial void DeletevRDM_Route_ByUser(vRDM_Route_ByUser instance);
+    partial void InsertRDM_Promo_Type(RDM_Promo_Type instance);
+    partial void UpdateRDM_Promo_Type(RDM_Promo_Type instance);
+    partial void DeleteRDM_Promo_Type(RDM_Promo_Type instance);
+    partial void InsertvRDM_Receipt(vRDM_Receipt instance);
+    partial void UpdatevRDM_Receipt(vRDM_Receipt instance);
+    partial void DeletevRDM_Receipt(vRDM_Receipt instance);
+    partial void InsertvRDM_Receipt_ByUser(vRDM_Receipt_ByUser instance);
+    partial void UpdatevRDM_Receipt_ByUser(vRDM_Receipt_ByUser instance);
+    partial void DeletevRDM_Receipt_ByUser(vRDM_Receipt_ByUser instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -476,6 +488,38 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<vMSrv_Customer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vRDM_Route_ByUser> vRDM_Route_ByUsers
+		{
+			get
+			{
+				return this.GetTable<vRDM_Route_ByUser>();
+			}
+		}
+		
+		public System.Data.Linq.Table<RDM_Promo_Type> RDM_Promo_Types
+		{
+			get
+			{
+				return this.GetTable<RDM_Promo_Type>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vRDM_Receipt> vRDM_Receipts
+		{
+			get
+			{
+				return this.GetTable<vRDM_Receipt>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vRDM_Receipt_ByUser> vRDM_Receipt_ByUsers
+		{
+			get
+			{
+				return this.GetTable<vRDM_Receipt_ByUser>();
 			}
 		}
 	}
@@ -10485,6 +10529,1694 @@ namespace NICSQLTools.Data.Linq
 					this._Supervisor_Telephone = value;
 					this.SendPropertyChanged("Supervisor_Telephone");
 					this.OnSupervisor_TelephoneChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vRDM_Route_ByUser")]
+	public partial class vRDM_Route_ByUser : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Route_Number;
+		
+		private string _Route_Name;
+		
+		private string _ASM;
+		
+		private string _Supervisor;
+		
+		private string _Brand_Route;
+		
+		private string _Sales_District_2;
+		
+		private string _Sales_District_Name;
+		
+		private int _UserId;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRoute_NumberChanging(string value);
+    partial void OnRoute_NumberChanged();
+    partial void OnRoute_NameChanging(string value);
+    partial void OnRoute_NameChanged();
+    partial void OnASMChanging(string value);
+    partial void OnASMChanged();
+    partial void OnSupervisorChanging(string value);
+    partial void OnSupervisorChanged();
+    partial void OnBrand_RouteChanging(string value);
+    partial void OnBrand_RouteChanged();
+    partial void OnSales_District_2Changing(string value);
+    partial void OnSales_District_2Changed();
+    partial void OnSales_District_NameChanging(string value);
+    partial void OnSales_District_NameChanged();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    #endregion
+		
+		public vRDM_Route_ByUser()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Number]", Storage="_Route_Number", DbType="NVarChar(255) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Route_Number
+		{
+			get
+			{
+				return this._Route_Number;
+			}
+			set
+			{
+				if ((this._Route_Number != value))
+				{
+					this.OnRoute_NumberChanging(value);
+					this.SendPropertyChanging();
+					this._Route_Number = value;
+					this.SendPropertyChanged("Route_Number");
+					this.OnRoute_NumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Name]", Storage="_Route_Name", DbType="NVarChar(255)")]
+		public string Route_Name
+		{
+			get
+			{
+				return this._Route_Name;
+			}
+			set
+			{
+				if ((this._Route_Name != value))
+				{
+					this.OnRoute_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Route_Name = value;
+					this.SendPropertyChanged("Route_Name");
+					this.OnRoute_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ASM", DbType="NVarChar(255)")]
+		public string ASM
+		{
+			get
+			{
+				return this._ASM;
+			}
+			set
+			{
+				if ((this._ASM != value))
+				{
+					this.OnASMChanging(value);
+					this.SendPropertyChanging();
+					this._ASM = value;
+					this.SendPropertyChanged("ASM");
+					this.OnASMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor", DbType="NVarChar(255)")]
+		public string Supervisor
+		{
+			get
+			{
+				return this._Supervisor;
+			}
+			set
+			{
+				if ((this._Supervisor != value))
+				{
+					this.OnSupervisorChanging(value);
+					this.SendPropertyChanging();
+					this._Supervisor = value;
+					this.SendPropertyChanged("Supervisor");
+					this.OnSupervisorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Brand Route]", Storage="_Brand_Route", DbType="NVarChar(255)")]
+		public string Brand_Route
+		{
+			get
+			{
+				return this._Brand_Route;
+			}
+			set
+			{
+				if ((this._Brand_Route != value))
+				{
+					this.OnBrand_RouteChanging(value);
+					this.SendPropertyChanging();
+					this._Brand_Route = value;
+					this.SendPropertyChanged("Brand_Route");
+					this.OnBrand_RouteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(50)")]
+		public string Sales_District_2
+		{
+			get
+			{
+				return this._Sales_District_2;
+			}
+			set
+			{
+				if ((this._Sales_District_2 != value))
+				{
+					this.OnSales_District_2Changing(value);
+					this.SendPropertyChanging();
+					this._Sales_District_2 = value;
+					this.SendPropertyChanged("Sales_District_2");
+					this.OnSales_District_2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District Name]", Storage="_Sales_District_Name", DbType="NVarChar(50)")]
+		public string Sales_District_Name
+		{
+			get
+			{
+				return this._Sales_District_Name;
+			}
+			set
+			{
+				if ((this._Sales_District_Name != value))
+				{
+					this.OnSales_District_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Sales_District_Name = value;
+					this.SendPropertyChanged("Sales_District_Name");
+					this.OnSales_District_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RDM_Promo_Type")]
+	public partial class RDM_Promo_Type : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RDM_Promo_Type_Id;
+		
+		private string _RDM_Promo_Type1;
+		
+		private System.Nullable<int> _YearNum;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRDM_Promo_Type_IdChanging(int value);
+    partial void OnRDM_Promo_Type_IdChanged();
+    partial void OnRDM_Promo_Type1Changing(string value);
+    partial void OnRDM_Promo_Type1Changed();
+    partial void OnYearNumChanging(System.Nullable<int> value);
+    partial void OnYearNumChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    #endregion
+		
+		public RDM_Promo_Type()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_Promo_Type_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int RDM_Promo_Type_Id
+		{
+			get
+			{
+				return this._RDM_Promo_Type_Id;
+			}
+			set
+			{
+				if ((this._RDM_Promo_Type_Id != value))
+				{
+					this.OnRDM_Promo_Type_IdChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_Promo_Type_Id = value;
+					this.SendPropertyChanged("RDM_Promo_Type_Id");
+					this.OnRDM_Promo_Type_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="RDM_Promo_Type", Storage="_RDM_Promo_Type1", DbType="NVarChar(50)")]
+		public string RDM_Promo_Type1
+		{
+			get
+			{
+				return this._RDM_Promo_Type1;
+			}
+			set
+			{
+				if ((this._RDM_Promo_Type1 != value))
+				{
+					this.OnRDM_Promo_Type1Changing(value);
+					this.SendPropertyChanging();
+					this._RDM_Promo_Type1 = value;
+					this.SendPropertyChanged("RDM_Promo_Type1");
+					this.OnRDM_Promo_Type1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNum", DbType="Int")]
+		public System.Nullable<int> YearNum
+		{
+			get
+			{
+				return this._YearNum;
+			}
+			set
+			{
+				if ((this._YearNum != value))
+				{
+					this.OnYearNumChanging(value);
+					this.SendPropertyChanging();
+					this._YearNum = value;
+					this.SendPropertyChanged("YearNum");
+					this.OnYearNumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vRDM_Receipt")]
+	public partial class vRDM_Receipt : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RDM_ID;
+		
+		private string _ReceiptNo;
+		
+		private System.Nullable<System.DateTime> _RDM_Date;
+		
+		private string _RouteNumber;
+		
+		private System.Nullable<short> _BaseProductId;
+		
+		private System.Nullable<int> _RDM_Promo_Type_Id;
+		
+		private System.Nullable<double> _Qun;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private string _RDM_Promo_Type;
+		
+		private System.Nullable<int> _YearNum;
+		
+		private string _BaseProduct;
+		
+		private string _BaseGroup;
+		
+		private string _Group1;
+		
+		private string _Group2;
+		
+		private string _Group3;
+		
+		private string _Route_Name;
+		
+		private string _Plant;
+		
+		private string _ASM;
+		
+		private string _Supervisor;
+		
+		private string _Brand_Route;
+		
+		private string _Sales_District_2;
+		
+		private string _Sales_District_Name;
+		
+		private string _RealName;
+		
+		private string _RDM_Description;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRDM_IDChanging(int value);
+    partial void OnRDM_IDChanged();
+    partial void OnReceiptNoChanging(string value);
+    partial void OnReceiptNoChanged();
+    partial void OnRDM_DateChanging(System.Nullable<System.DateTime> value);
+    partial void OnRDM_DateChanged();
+    partial void OnRouteNumberChanging(string value);
+    partial void OnRouteNumberChanged();
+    partial void OnBaseProductIdChanging(System.Nullable<short> value);
+    partial void OnBaseProductIdChanged();
+    partial void OnRDM_Promo_Type_IdChanging(System.Nullable<int> value);
+    partial void OnRDM_Promo_Type_IdChanged();
+    partial void OnQunChanging(System.Nullable<double> value);
+    partial void OnQunChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    partial void OnRDM_Promo_TypeChanging(string value);
+    partial void OnRDM_Promo_TypeChanged();
+    partial void OnYearNumChanging(System.Nullable<int> value);
+    partial void OnYearNumChanged();
+    partial void OnBaseProductChanging(string value);
+    partial void OnBaseProductChanged();
+    partial void OnBaseGroupChanging(string value);
+    partial void OnBaseGroupChanged();
+    partial void OnGroup1Changing(string value);
+    partial void OnGroup1Changed();
+    partial void OnGroup2Changing(string value);
+    partial void OnGroup2Changed();
+    partial void OnGroup3Changing(string value);
+    partial void OnGroup3Changed();
+    partial void OnRoute_NameChanging(string value);
+    partial void OnRoute_NameChanged();
+    partial void OnPlantChanging(string value);
+    partial void OnPlantChanged();
+    partial void OnASMChanging(string value);
+    partial void OnASMChanged();
+    partial void OnSupervisorChanging(string value);
+    partial void OnSupervisorChanged();
+    partial void OnBrand_RouteChanging(string value);
+    partial void OnBrand_RouteChanged();
+    partial void OnSales_District_2Changing(string value);
+    partial void OnSales_District_2Changed();
+    partial void OnSales_District_NameChanging(string value);
+    partial void OnSales_District_NameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnRDM_DescriptionChanging(string value);
+    partial void OnRDM_DescriptionChanged();
+    #endregion
+		
+		public vRDM_Receipt()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int RDM_ID
+		{
+			get
+			{
+				return this._RDM_ID;
+			}
+			set
+			{
+				if ((this._RDM_ID != value))
+				{
+					this.OnRDM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_ID = value;
+					this.SendPropertyChanged("RDM_ID");
+					this.OnRDM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptNo", DbType="NVarChar(50)")]
+		public string ReceiptNo
+		{
+			get
+			{
+				return this._ReceiptNo;
+			}
+			set
+			{
+				if ((this._ReceiptNo != value))
+				{
+					this.OnReceiptNoChanging(value);
+					this.SendPropertyChanging();
+					this._ReceiptNo = value;
+					this.SendPropertyChanged("ReceiptNo");
+					this.OnReceiptNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> RDM_Date
+		{
+			get
+			{
+				return this._RDM_Date;
+			}
+			set
+			{
+				if ((this._RDM_Date != value))
+				{
+					this.OnRDM_DateChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_Date = value;
+					this.SendPropertyChanged("RDM_Date");
+					this.OnRDM_DateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteNumber", DbType="NVarChar(255)")]
+		public string RouteNumber
+		{
+			get
+			{
+				return this._RouteNumber;
+			}
+			set
+			{
+				if ((this._RouteNumber != value))
+				{
+					this.OnRouteNumberChanging(value);
+					this.SendPropertyChanging();
+					this._RouteNumber = value;
+					this.SendPropertyChanged("RouteNumber");
+					this.OnRouteNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseProductId", DbType="SmallInt")]
+		public System.Nullable<short> BaseProductId
+		{
+			get
+			{
+				return this._BaseProductId;
+			}
+			set
+			{
+				if ((this._BaseProductId != value))
+				{
+					this.OnBaseProductIdChanging(value);
+					this.SendPropertyChanging();
+					this._BaseProductId = value;
+					this.SendPropertyChanged("BaseProductId");
+					this.OnBaseProductIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_Promo_Type_Id", DbType="Int")]
+		public System.Nullable<int> RDM_Promo_Type_Id
+		{
+			get
+			{
+				return this._RDM_Promo_Type_Id;
+			}
+			set
+			{
+				if ((this._RDM_Promo_Type_Id != value))
+				{
+					this.OnRDM_Promo_Type_IdChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_Promo_Type_Id = value;
+					this.SendPropertyChanged("RDM_Promo_Type_Id");
+					this.OnRDM_Promo_Type_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qun", DbType="Float")]
+		public System.Nullable<double> Qun
+		{
+			get
+			{
+				return this._Qun;
+			}
+			set
+			{
+				if ((this._Qun != value))
+				{
+					this.OnQunChanging(value);
+					this.SendPropertyChanging();
+					this._Qun = value;
+					this.SendPropertyChanged("Qun");
+					this.OnQunChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_Promo_Type", DbType="NVarChar(50)")]
+		public string RDM_Promo_Type
+		{
+			get
+			{
+				return this._RDM_Promo_Type;
+			}
+			set
+			{
+				if ((this._RDM_Promo_Type != value))
+				{
+					this.OnRDM_Promo_TypeChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_Promo_Type = value;
+					this.SendPropertyChanged("RDM_Promo_Type");
+					this.OnRDM_Promo_TypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNum", DbType="Int")]
+		public System.Nullable<int> YearNum
+		{
+			get
+			{
+				return this._YearNum;
+			}
+			set
+			{
+				if ((this._YearNum != value))
+				{
+					this.OnYearNumChanging(value);
+					this.SendPropertyChanging();
+					this._YearNum = value;
+					this.SendPropertyChanged("YearNum");
+					this.OnYearNumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseProduct", DbType="NVarChar(50)")]
+		public string BaseProduct
+		{
+			get
+			{
+				return this._BaseProduct;
+			}
+			set
+			{
+				if ((this._BaseProduct != value))
+				{
+					this.OnBaseProductChanging(value);
+					this.SendPropertyChanging();
+					this._BaseProduct = value;
+					this.SendPropertyChanged("BaseProduct");
+					this.OnBaseProductChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseGroup", DbType="NVarChar(50)")]
+		public string BaseGroup
+		{
+			get
+			{
+				return this._BaseGroup;
+			}
+			set
+			{
+				if ((this._BaseGroup != value))
+				{
+					this.OnBaseGroupChanging(value);
+					this.SendPropertyChanging();
+					this._BaseGroup = value;
+					this.SendPropertyChanged("BaseGroup");
+					this.OnBaseGroupChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group1", DbType="NVarChar(50)")]
+		public string Group1
+		{
+			get
+			{
+				return this._Group1;
+			}
+			set
+			{
+				if ((this._Group1 != value))
+				{
+					this.OnGroup1Changing(value);
+					this.SendPropertyChanging();
+					this._Group1 = value;
+					this.SendPropertyChanged("Group1");
+					this.OnGroup1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group2", DbType="NVarChar(50)")]
+		public string Group2
+		{
+			get
+			{
+				return this._Group2;
+			}
+			set
+			{
+				if ((this._Group2 != value))
+				{
+					this.OnGroup2Changing(value);
+					this.SendPropertyChanging();
+					this._Group2 = value;
+					this.SendPropertyChanged("Group2");
+					this.OnGroup2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group3", DbType="NVarChar(50)")]
+		public string Group3
+		{
+			get
+			{
+				return this._Group3;
+			}
+			set
+			{
+				if ((this._Group3 != value))
+				{
+					this.OnGroup3Changing(value);
+					this.SendPropertyChanging();
+					this._Group3 = value;
+					this.SendPropertyChanged("Group3");
+					this.OnGroup3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Name]", Storage="_Route_Name", DbType="NVarChar(255)")]
+		public string Route_Name
+		{
+			get
+			{
+				return this._Route_Name;
+			}
+			set
+			{
+				if ((this._Route_Name != value))
+				{
+					this.OnRoute_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Route_Name = value;
+					this.SendPropertyChanged("Route_Name");
+					this.OnRoute_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Plant", DbType="NVarChar(50)")]
+		public string Plant
+		{
+			get
+			{
+				return this._Plant;
+			}
+			set
+			{
+				if ((this._Plant != value))
+				{
+					this.OnPlantChanging(value);
+					this.SendPropertyChanging();
+					this._Plant = value;
+					this.SendPropertyChanged("Plant");
+					this.OnPlantChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ASM", DbType="NVarChar(255)")]
+		public string ASM
+		{
+			get
+			{
+				return this._ASM;
+			}
+			set
+			{
+				if ((this._ASM != value))
+				{
+					this.OnASMChanging(value);
+					this.SendPropertyChanging();
+					this._ASM = value;
+					this.SendPropertyChanged("ASM");
+					this.OnASMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor", DbType="NVarChar(255)")]
+		public string Supervisor
+		{
+			get
+			{
+				return this._Supervisor;
+			}
+			set
+			{
+				if ((this._Supervisor != value))
+				{
+					this.OnSupervisorChanging(value);
+					this.SendPropertyChanging();
+					this._Supervisor = value;
+					this.SendPropertyChanged("Supervisor");
+					this.OnSupervisorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Brand Route]", Storage="_Brand_Route", DbType="NVarChar(255)")]
+		public string Brand_Route
+		{
+			get
+			{
+				return this._Brand_Route;
+			}
+			set
+			{
+				if ((this._Brand_Route != value))
+				{
+					this.OnBrand_RouteChanging(value);
+					this.SendPropertyChanging();
+					this._Brand_Route = value;
+					this.SendPropertyChanged("Brand_Route");
+					this.OnBrand_RouteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(50)")]
+		public string Sales_District_2
+		{
+			get
+			{
+				return this._Sales_District_2;
+			}
+			set
+			{
+				if ((this._Sales_District_2 != value))
+				{
+					this.OnSales_District_2Changing(value);
+					this.SendPropertyChanging();
+					this._Sales_District_2 = value;
+					this.SendPropertyChanged("Sales_District_2");
+					this.OnSales_District_2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District Name]", Storage="_Sales_District_Name", DbType="NVarChar(50)")]
+		public string Sales_District_Name
+		{
+			get
+			{
+				return this._Sales_District_Name;
+			}
+			set
+			{
+				if ((this._Sales_District_Name != value))
+				{
+					this.OnSales_District_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Sales_District_Name = value;
+					this.SendPropertyChanged("Sales_District_Name");
+					this.OnSales_District_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_Description", DbType="NVarChar(255)")]
+		public string RDM_Description
+		{
+			get
+			{
+				return this._RDM_Description;
+			}
+			set
+			{
+				if ((this._RDM_Description != value))
+				{
+					this.OnRDM_DescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_Description = value;
+					this.SendPropertyChanged("RDM_Description");
+					this.OnRDM_DescriptionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vRDM_Receipt_ByUser")]
+	public partial class vRDM_Receipt_ByUser : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RDM_ID;
+		
+		private string _ReceiptNo;
+		
+		private System.Nullable<System.DateTime> _RDM_Date;
+		
+		private string _RouteNumber;
+		
+		private System.Nullable<short> _BaseProductId;
+		
+		private System.Nullable<int> _RDM_Promo_Type_Id;
+		
+		private System.Nullable<double> _Qun;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+		private string _RDM_Promo_Type;
+		
+		private System.Nullable<int> _YearNum;
+		
+		private string _BaseProduct;
+		
+		private string _BaseGroup;
+		
+		private string _Group1;
+		
+		private string _Group2;
+		
+		private string _Group3;
+		
+		private string _Route_Name;
+		
+		private string _Plant;
+		
+		private string _ASM;
+		
+		private string _Supervisor;
+		
+		private string _Brand_Route;
+		
+		private string _Sales_District_2;
+		
+		private string _Sales_District_Name;
+		
+		private string _RealName;
+		
+		private int _VisibleToUserId;
+		
+		private string _RDM_Description;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRDM_IDChanging(int value);
+    partial void OnRDM_IDChanged();
+    partial void OnReceiptNoChanging(string value);
+    partial void OnReceiptNoChanged();
+    partial void OnRDM_DateChanging(System.Nullable<System.DateTime> value);
+    partial void OnRDM_DateChanged();
+    partial void OnRouteNumberChanging(string value);
+    partial void OnRouteNumberChanged();
+    partial void OnBaseProductIdChanging(System.Nullable<short> value);
+    partial void OnBaseProductIdChanged();
+    partial void OnRDM_Promo_Type_IdChanging(System.Nullable<int> value);
+    partial void OnRDM_Promo_Type_IdChanged();
+    partial void OnQunChanging(System.Nullable<double> value);
+    partial void OnQunChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    partial void OnRDM_Promo_TypeChanging(string value);
+    partial void OnRDM_Promo_TypeChanged();
+    partial void OnYearNumChanging(System.Nullable<int> value);
+    partial void OnYearNumChanged();
+    partial void OnBaseProductChanging(string value);
+    partial void OnBaseProductChanged();
+    partial void OnBaseGroupChanging(string value);
+    partial void OnBaseGroupChanged();
+    partial void OnGroup1Changing(string value);
+    partial void OnGroup1Changed();
+    partial void OnGroup2Changing(string value);
+    partial void OnGroup2Changed();
+    partial void OnGroup3Changing(string value);
+    partial void OnGroup3Changed();
+    partial void OnRoute_NameChanging(string value);
+    partial void OnRoute_NameChanged();
+    partial void OnPlantChanging(string value);
+    partial void OnPlantChanged();
+    partial void OnASMChanging(string value);
+    partial void OnASMChanged();
+    partial void OnSupervisorChanging(string value);
+    partial void OnSupervisorChanged();
+    partial void OnBrand_RouteChanging(string value);
+    partial void OnBrand_RouteChanged();
+    partial void OnSales_District_2Changing(string value);
+    partial void OnSales_District_2Changed();
+    partial void OnSales_District_NameChanging(string value);
+    partial void OnSales_District_NameChanged();
+    partial void OnRealNameChanging(string value);
+    partial void OnRealNameChanged();
+    partial void OnVisibleToUserIdChanging(int value);
+    partial void OnVisibleToUserIdChanged();
+    partial void OnRDM_DescriptionChanging(string value);
+    partial void OnRDM_DescriptionChanged();
+    #endregion
+		
+		public vRDM_Receipt_ByUser()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int RDM_ID
+		{
+			get
+			{
+				return this._RDM_ID;
+			}
+			set
+			{
+				if ((this._RDM_ID != value))
+				{
+					this.OnRDM_IDChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_ID = value;
+					this.SendPropertyChanged("RDM_ID");
+					this.OnRDM_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReceiptNo", DbType="NVarChar(50)")]
+		public string ReceiptNo
+		{
+			get
+			{
+				return this._ReceiptNo;
+			}
+			set
+			{
+				if ((this._ReceiptNo != value))
+				{
+					this.OnReceiptNoChanging(value);
+					this.SendPropertyChanging();
+					this._ReceiptNo = value;
+					this.SendPropertyChanged("ReceiptNo");
+					this.OnReceiptNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> RDM_Date
+		{
+			get
+			{
+				return this._RDM_Date;
+			}
+			set
+			{
+				if ((this._RDM_Date != value))
+				{
+					this.OnRDM_DateChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_Date = value;
+					this.SendPropertyChanged("RDM_Date");
+					this.OnRDM_DateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteNumber", DbType="NVarChar(255)")]
+		public string RouteNumber
+		{
+			get
+			{
+				return this._RouteNumber;
+			}
+			set
+			{
+				if ((this._RouteNumber != value))
+				{
+					this.OnRouteNumberChanging(value);
+					this.SendPropertyChanging();
+					this._RouteNumber = value;
+					this.SendPropertyChanged("RouteNumber");
+					this.OnRouteNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseProductId", DbType="SmallInt")]
+		public System.Nullable<short> BaseProductId
+		{
+			get
+			{
+				return this._BaseProductId;
+			}
+			set
+			{
+				if ((this._BaseProductId != value))
+				{
+					this.OnBaseProductIdChanging(value);
+					this.SendPropertyChanging();
+					this._BaseProductId = value;
+					this.SendPropertyChanged("BaseProductId");
+					this.OnBaseProductIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_Promo_Type_Id", DbType="Int")]
+		public System.Nullable<int> RDM_Promo_Type_Id
+		{
+			get
+			{
+				return this._RDM_Promo_Type_Id;
+			}
+			set
+			{
+				if ((this._RDM_Promo_Type_Id != value))
+				{
+					this.OnRDM_Promo_Type_IdChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_Promo_Type_Id = value;
+					this.SendPropertyChanged("RDM_Promo_Type_Id");
+					this.OnRDM_Promo_Type_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qun", DbType="Float")]
+		public System.Nullable<double> Qun
+		{
+			get
+			{
+				return this._Qun;
+			}
+			set
+			{
+				if ((this._Qun != value))
+				{
+					this.OnQunChanging(value);
+					this.SendPropertyChanging();
+					this._Qun = value;
+					this.SendPropertyChanged("Qun");
+					this.OnQunChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_Promo_Type", DbType="NVarChar(50)")]
+		public string RDM_Promo_Type
+		{
+			get
+			{
+				return this._RDM_Promo_Type;
+			}
+			set
+			{
+				if ((this._RDM_Promo_Type != value))
+				{
+					this.OnRDM_Promo_TypeChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_Promo_Type = value;
+					this.SendPropertyChanged("RDM_Promo_Type");
+					this.OnRDM_Promo_TypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNum", DbType="Int")]
+		public System.Nullable<int> YearNum
+		{
+			get
+			{
+				return this._YearNum;
+			}
+			set
+			{
+				if ((this._YearNum != value))
+				{
+					this.OnYearNumChanging(value);
+					this.SendPropertyChanging();
+					this._YearNum = value;
+					this.SendPropertyChanged("YearNum");
+					this.OnYearNumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseProduct", DbType="NVarChar(50)")]
+		public string BaseProduct
+		{
+			get
+			{
+				return this._BaseProduct;
+			}
+			set
+			{
+				if ((this._BaseProduct != value))
+				{
+					this.OnBaseProductChanging(value);
+					this.SendPropertyChanging();
+					this._BaseProduct = value;
+					this.SendPropertyChanged("BaseProduct");
+					this.OnBaseProductChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BaseGroup", DbType="NVarChar(50)")]
+		public string BaseGroup
+		{
+			get
+			{
+				return this._BaseGroup;
+			}
+			set
+			{
+				if ((this._BaseGroup != value))
+				{
+					this.OnBaseGroupChanging(value);
+					this.SendPropertyChanging();
+					this._BaseGroup = value;
+					this.SendPropertyChanged("BaseGroup");
+					this.OnBaseGroupChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group1", DbType="NVarChar(50)")]
+		public string Group1
+		{
+			get
+			{
+				return this._Group1;
+			}
+			set
+			{
+				if ((this._Group1 != value))
+				{
+					this.OnGroup1Changing(value);
+					this.SendPropertyChanging();
+					this._Group1 = value;
+					this.SendPropertyChanged("Group1");
+					this.OnGroup1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group2", DbType="NVarChar(50)")]
+		public string Group2
+		{
+			get
+			{
+				return this._Group2;
+			}
+			set
+			{
+				if ((this._Group2 != value))
+				{
+					this.OnGroup2Changing(value);
+					this.SendPropertyChanging();
+					this._Group2 = value;
+					this.SendPropertyChanged("Group2");
+					this.OnGroup2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Group3", DbType="NVarChar(50)")]
+		public string Group3
+		{
+			get
+			{
+				return this._Group3;
+			}
+			set
+			{
+				if ((this._Group3 != value))
+				{
+					this.OnGroup3Changing(value);
+					this.SendPropertyChanging();
+					this._Group3 = value;
+					this.SendPropertyChanged("Group3");
+					this.OnGroup3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Name]", Storage="_Route_Name", DbType="NVarChar(255)")]
+		public string Route_Name
+		{
+			get
+			{
+				return this._Route_Name;
+			}
+			set
+			{
+				if ((this._Route_Name != value))
+				{
+					this.OnRoute_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Route_Name = value;
+					this.SendPropertyChanged("Route_Name");
+					this.OnRoute_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Plant", DbType="NVarChar(50)")]
+		public string Plant
+		{
+			get
+			{
+				return this._Plant;
+			}
+			set
+			{
+				if ((this._Plant != value))
+				{
+					this.OnPlantChanging(value);
+					this.SendPropertyChanging();
+					this._Plant = value;
+					this.SendPropertyChanged("Plant");
+					this.OnPlantChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ASM", DbType="NVarChar(255)")]
+		public string ASM
+		{
+			get
+			{
+				return this._ASM;
+			}
+			set
+			{
+				if ((this._ASM != value))
+				{
+					this.OnASMChanging(value);
+					this.SendPropertyChanging();
+					this._ASM = value;
+					this.SendPropertyChanged("ASM");
+					this.OnASMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor", DbType="NVarChar(255)")]
+		public string Supervisor
+		{
+			get
+			{
+				return this._Supervisor;
+			}
+			set
+			{
+				if ((this._Supervisor != value))
+				{
+					this.OnSupervisorChanging(value);
+					this.SendPropertyChanging();
+					this._Supervisor = value;
+					this.SendPropertyChanged("Supervisor");
+					this.OnSupervisorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Brand Route]", Storage="_Brand_Route", DbType="NVarChar(255)")]
+		public string Brand_Route
+		{
+			get
+			{
+				return this._Brand_Route;
+			}
+			set
+			{
+				if ((this._Brand_Route != value))
+				{
+					this.OnBrand_RouteChanging(value);
+					this.SendPropertyChanging();
+					this._Brand_Route = value;
+					this.SendPropertyChanged("Brand_Route");
+					this.OnBrand_RouteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(50)")]
+		public string Sales_District_2
+		{
+			get
+			{
+				return this._Sales_District_2;
+			}
+			set
+			{
+				if ((this._Sales_District_2 != value))
+				{
+					this.OnSales_District_2Changing(value);
+					this.SendPropertyChanging();
+					this._Sales_District_2 = value;
+					this.SendPropertyChanged("Sales_District_2");
+					this.OnSales_District_2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District Name]", Storage="_Sales_District_Name", DbType="NVarChar(50)")]
+		public string Sales_District_Name
+		{
+			get
+			{
+				return this._Sales_District_Name;
+			}
+			set
+			{
+				if ((this._Sales_District_Name != value))
+				{
+					this.OnSales_District_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Sales_District_Name = value;
+					this.SendPropertyChanged("Sales_District_Name");
+					this.OnSales_District_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RealName", DbType="NVarChar(50)")]
+		public string RealName
+		{
+			get
+			{
+				return this._RealName;
+			}
+			set
+			{
+				if ((this._RealName != value))
+				{
+					this.OnRealNameChanging(value);
+					this.SendPropertyChanging();
+					this._RealName = value;
+					this.SendPropertyChanged("RealName");
+					this.OnRealNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisibleToUserId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int VisibleToUserId
+		{
+			get
+			{
+				return this._VisibleToUserId;
+			}
+			set
+			{
+				if ((this._VisibleToUserId != value))
+				{
+					this.OnVisibleToUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._VisibleToUserId = value;
+					this.SendPropertyChanged("VisibleToUserId");
+					this.OnVisibleToUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RDM_Description", DbType="NVarChar(255)")]
+		public string RDM_Description
+		{
+			get
+			{
+				return this._RDM_Description;
+			}
+			set
+			{
+				if ((this._RDM_Description != value))
+				{
+					this.OnRDM_DescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._RDM_Description = value;
+					this.SendPropertyChanged("RDM_Description");
+					this.OnRDM_DescriptionChanged();
 				}
 			}
 		}

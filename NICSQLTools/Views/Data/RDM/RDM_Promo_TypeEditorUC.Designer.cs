@@ -1,0 +1,294 @@
+﻿namespace NICSQLTools.Views.Data.RDM
+{
+    partial class RDM_Promo_TypeEditorUC
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RDM_Promo_TypeEditorUC));
+            this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
+            this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiExport = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
+            this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colRDM_Promo_Type = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYearNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.LSMSUsers = new DevExpress.Data.Linq.LinqServerModeSource();
+            ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // UOW
+            // 
+            this.UOW.IsObjectModifiedOnNonPersistentPropertyChange = null;
+            this.UOW.TrackPropertiesModifications = false;
+            this.UOW.BeforeCommitTransaction += new DevExpress.Xpo.SessionManipulationEventHandler(this.UOW_BeforeCommitTransaction);
+            // 
+            // popupMenuMain
+            // 
+            this.popupMenuMain.Manager = this.barManagerMain;
+            this.popupMenuMain.Name = "popupMenuMain";
+            // 
+            // barManagerMain
+            // 
+            this.barManagerMain.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar1});
+            this.barManagerMain.DockControls.Add(this.barDockControlTop);
+            this.barManagerMain.DockControls.Add(this.barDockControlBottom);
+            this.barManagerMain.DockControls.Add(this.barDockControlLeft);
+            this.barManagerMain.DockControls.Add(this.barDockControlRight);
+            this.barManagerMain.Form = this;
+            this.barManagerMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.bbiSave,
+            this.bbiExport,
+            this.bbiRefresh});
+            this.barManagerMain.MaxItemId = 3;
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Main";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiSave),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiExport)});
+            this.bar1.Text = "Custom 2";
+            // 
+            // bbiSave
+            // 
+            this.bbiSave.Caption = "Save";
+            this.bbiSave.Glyph = global::NICSQLTools.Properties.Resources.saveall_16x16;
+            this.bbiSave.Id = 0;
+            this.bbiSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
+            this.bbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.LargeGlyph")));
+            this.bbiSave.Name = "bbiSave";
+            this.bbiSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
+            // 
+            // bbiRefresh
+            // 
+            this.bbiRefresh.Caption = "Refresh";
+            this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
+            this.bbiRefresh.Id = 2;
+            this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
+            // 
+            // bbiExport
+            // 
+            this.bbiExport.Caption = "Export";
+            this.bbiExport.Glyph = global::NICSQLTools.Properties.Resources.Export;
+            this.bbiExport.Id = 1;
+            this.bbiExport.Name = "bbiExport";
+            this.bbiExport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bbiExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExport_ItemClick);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(936, 31);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 408);
+            this.barDockControlBottom.Size = new System.Drawing.Size(936, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 377);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(936, 31);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 377);
+            // 
+            // gridControlMain
+            // 
+            this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlMain.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlMain_EmbeddedNavigator_ButtonClick);
+            this.gridControlMain.Location = new System.Drawing.Point(0, 31);
+            this.gridControlMain.MainView = this.gridViewMain;
+            this.gridControlMain.MenuManager = this.barManagerMain;
+            this.gridControlMain.Name = "gridControlMain";
+            this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEditn2});
+            this.gridControlMain.Size = new System.Drawing.Size(936, 377);
+            this.gridControlMain.TabIndex = 5;
+            this.gridControlMain.UseEmbeddedNavigator = true;
+            this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewMain});
+            // 
+            // XPSCS
+            // 
+            this.XPSCS.AllowEdit = true;
+            this.XPSCS.AllowNew = true;
+            this.XPSCS.AllowRemove = true;
+            this.XPSCS.DeleteObjectOnRemove = true;
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsRDM.RDM_Promo_TypeDataTable);
+            this.XPSCS.Session = this.UOW;
+            // 
+            // gridViewMain
+            // 
+            this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colRDM_Promo_Type,
+            this.colYearNum});
+            this.gridViewMain.GridControl = this.gridControlMain;
+            this.gridViewMain.Name = "gridViewMain";
+            this.gridViewMain.NewItemRowText = "Click here to add a new";
+            this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
+            this.gridViewMain.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.SegmentedFade;
+            this.gridViewMain.OptionsImageLoad.AsyncLoad = true;
+            this.gridViewMain.OptionsNavigation.AutoFocusNewRow = true;
+            this.gridViewMain.OptionsSelection.InvertSelection = true;
+            this.gridViewMain.OptionsSelection.MultiSelect = true;
+            this.gridViewMain.OptionsView.ColumnAutoWidth = false;
+            this.gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewMain.OptionsView.ShowDetailButtons = false;
+            this.gridViewMain.OptionsView.ShowFooter = true;
+            this.gridViewMain.OptionsView.ShowGroupPanel = false;
+            this.gridViewMain.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
+            this.gridViewMain.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridViewMain_InitNewRow);
+            // 
+            // colRDM_Promo_Type
+            // 
+            this.colRDM_Promo_Type.AppearanceCell.Options.UseTextOptions = true;
+            this.colRDM_Promo_Type.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRDM_Promo_Type.AppearanceHeader.Options.UseTextOptions = true;
+            this.colRDM_Promo_Type.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colRDM_Promo_Type.Caption = "Promotion Type";
+            this.colRDM_Promo_Type.FieldName = "RDM_Promo_Type";
+            this.colRDM_Promo_Type.Name = "colRDM_Promo_Type";
+            this.colRDM_Promo_Type.Visible = true;
+            this.colRDM_Promo_Type.VisibleIndex = 0;
+            this.colRDM_Promo_Type.Width = 223;
+            // 
+            // colYearNum
+            // 
+            this.colYearNum.AppearanceCell.Options.UseTextOptions = true;
+            this.colYearNum.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colYearNum.AppearanceHeader.Options.UseTextOptions = true;
+            this.colYearNum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colYearNum.Caption = "Year";
+            this.colYearNum.ColumnEdit = this.repositoryItemTextEditn2;
+            this.colYearNum.FieldName = "YearNum";
+            this.colYearNum.Name = "colYearNum";
+            this.colYearNum.Visible = true;
+            this.colYearNum.VisibleIndex = 1;
+            // 
+            // repositoryItemTextEditn2
+            // 
+            this.repositoryItemTextEditn2.AutoHeight = false;
+            this.repositoryItemTextEditn2.DisplayFormat.FormatString = "d";
+            this.repositoryItemTextEditn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEditn2.EditFormat.FormatString = "d";
+            this.repositoryItemTextEditn2.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEditn2.Mask.EditMask = "d";
+            this.repositoryItemTextEditn2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEditn2.MaxLength = 4;
+            this.repositoryItemTextEditn2.Name = "repositoryItemTextEditn2";
+            // 
+            // LSMSUsers
+            // 
+            this.LSMSUsers.ElementType = typeof(NICSQLTools.Data.Linq.AppUser);
+            this.LSMSUsers.KeyExpression = "[UserID]";
+            // 
+            // RDM_Promo_TypeEditorUC
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gridControlMain);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.Name = "RDM_Promo_TypeEditorUC";
+            this.Size = new System.Drawing.Size(936, 408);
+            this.Load += new System.EventHandler(this.RouteEditorUC_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSUsers)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private DevExpress.Xpo.UnitOfWork UOW;
+        private DevExpress.XtraBars.PopupMenu popupMenuMain;
+        private DevExpress.XtraBars.BarManager barManagerMain;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.BarButtonItem bbiSave;
+        private DevExpress.XtraBars.BarButtonItem bbiExport;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraGrid.GridControl gridControlMain;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
+        private DevExpress.Xpo.XPServerCollectionSource XPSCS;
+        private DevExpress.XtraBars.BarButtonItem bbiRefresh;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSUsers;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEditn2;
+        private DevExpress.XtraGrid.Columns.GridColumn colRDM_Promo_Type;
+        private DevExpress.XtraGrid.Columns.GridColumn colYearNum;
+    }
+}

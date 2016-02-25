@@ -21,7 +21,7 @@ namespace NICSQLTools.Views.Qry
         //Classes.QueryLayout.DatasourceStrc DataSourceList = new Classes.QueryLayout.DatasourceStrc();
         //List<Control> LayoutControlList = new List<Control>();
         List<string> ProgressList = new List<string>();
-        NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+        //NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         
         //NICSQLTools.Data.dsQry.vAppDatasourceForUserRow _selectedDatasource = null;
         //NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceTableAdapter();

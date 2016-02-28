@@ -145,7 +145,7 @@ _______________________________________________
                 NICSQLTools.Data.dsData.STI_2Actv_Bill_AgreeRow SqlRow = dsData.STI_2Actv_Bill_Agree.NewSTI_2Actv_Bill_AgreeRow();
 
                 SqlRow.BillNo = row["Billing Document"].ToString();
-                SqlRow.Agree = row["Agreement (various c"].ToString();
+                SqlRow.Agree = Convert.ToInt64(row["Agreement (various c"]).ToString();
                 SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
                 SqlRow.DateIn = UserIn;
 

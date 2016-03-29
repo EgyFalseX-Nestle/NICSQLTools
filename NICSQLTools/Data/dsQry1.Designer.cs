@@ -90,7 +90,7 @@ namespace NICSQLTools.Data {
         
         private LastEditEquipmentAllDataTable tableLastEditEquipmentAll;
         
-        private QryBillDocSTI_1Actv_Actual_OTRDataTable tableQryBillDocSTI_1Actv_Actual_OTR;
+        private QryBillDocEST_actual_R3DataTable tableQryBillDocEST_actual_R3;
         
         private LastEditSTI_1Actv_Actual_OTRDataTable tableLastEditSTI_1Actv_Actual_OTR;
         
@@ -227,8 +227,8 @@ namespace NICSQLTools.Data {
                 if ((ds.Tables["LastEditEquipmentAll"] != null)) {
                     base.Tables.Add(new LastEditEquipmentAllDataTable(ds.Tables["LastEditEquipmentAll"]));
                 }
-                if ((ds.Tables["QryBillDocSTI_1Actv_Actual_OTR"] != null)) {
-                    base.Tables.Add(new QryBillDocSTI_1Actv_Actual_OTRDataTable(ds.Tables["QryBillDocSTI_1Actv_Actual_OTR"]));
+                if ((ds.Tables["QryBillDocEST_actual_R3"] != null)) {
+                    base.Tables.Add(new QryBillDocEST_actual_R3DataTable(ds.Tables["QryBillDocEST_actual_R3"]));
                 }
                 if ((ds.Tables["LastEditSTI_1Actv_Actual_OTR"] != null)) {
                     base.Tables.Add(new LastEditSTI_1Actv_Actual_OTRDataTable(ds.Tables["LastEditSTI_1Actv_Actual_OTR"]));
@@ -594,9 +594,9 @@ namespace NICSQLTools.Data {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public QryBillDocSTI_1Actv_Actual_OTRDataTable QryBillDocSTI_1Actv_Actual_OTR {
+        public QryBillDocEST_actual_R3DataTable QryBillDocEST_actual_R3 {
             get {
-                return this.tableQryBillDocSTI_1Actv_Actual_OTR;
+                return this.tableQryBillDocEST_actual_R3;
             }
         }
         
@@ -806,8 +806,8 @@ namespace NICSQLTools.Data {
                 if ((ds.Tables["LastEditEquipmentAll"] != null)) {
                     base.Tables.Add(new LastEditEquipmentAllDataTable(ds.Tables["LastEditEquipmentAll"]));
                 }
-                if ((ds.Tables["QryBillDocSTI_1Actv_Actual_OTR"] != null)) {
-                    base.Tables.Add(new QryBillDocSTI_1Actv_Actual_OTRDataTable(ds.Tables["QryBillDocSTI_1Actv_Actual_OTR"]));
+                if ((ds.Tables["QryBillDocEST_actual_R3"] != null)) {
+                    base.Tables.Add(new QryBillDocEST_actual_R3DataTable(ds.Tables["QryBillDocEST_actual_R3"]));
                 }
                 if ((ds.Tables["LastEditSTI_1Actv_Actual_OTR"] != null)) {
                     base.Tables.Add(new LastEditSTI_1Actv_Actual_OTRDataTable(ds.Tables["LastEditSTI_1Actv_Actual_OTR"]));
@@ -1052,10 +1052,10 @@ namespace NICSQLTools.Data {
                     this.tableLastEditEquipmentAll.InitVars();
                 }
             }
-            this.tableQryBillDocSTI_1Actv_Actual_OTR = ((QryBillDocSTI_1Actv_Actual_OTRDataTable)(base.Tables["QryBillDocSTI_1Actv_Actual_OTR"]));
+            this.tableQryBillDocEST_actual_R3 = ((QryBillDocEST_actual_R3DataTable)(base.Tables["QryBillDocEST_actual_R3"]));
             if ((initTable == true)) {
-                if ((this.tableQryBillDocSTI_1Actv_Actual_OTR != null)) {
-                    this.tableQryBillDocSTI_1Actv_Actual_OTR.InitVars();
+                if ((this.tableQryBillDocEST_actual_R3 != null)) {
+                    this.tableQryBillDocEST_actual_R3.InitVars();
                 }
             }
             this.tableLastEditSTI_1Actv_Actual_OTR = ((LastEditSTI_1Actv_Actual_OTRDataTable)(base.Tables["LastEditSTI_1Actv_Actual_OTR"]));
@@ -1158,8 +1158,8 @@ namespace NICSQLTools.Data {
             base.Tables.Add(this.tableLastEditDstMaster);
             this.tableLastEditEquipmentAll = new LastEditEquipmentAllDataTable();
             base.Tables.Add(this.tableLastEditEquipmentAll);
-            this.tableQryBillDocSTI_1Actv_Actual_OTR = new QryBillDocSTI_1Actv_Actual_OTRDataTable();
-            base.Tables.Add(this.tableQryBillDocSTI_1Actv_Actual_OTR);
+            this.tableQryBillDocEST_actual_R3 = new QryBillDocEST_actual_R3DataTable();
+            base.Tables.Add(this.tableQryBillDocEST_actual_R3);
             this.tableLastEditSTI_1Actv_Actual_OTR = new LastEditSTI_1Actv_Actual_OTRDataTable();
             base.Tables.Add(this.tableLastEditSTI_1Actv_Actual_OTR);
             this.tableQryBillDocSTI_2Actv_Bill_Agree = new QryBillDocSTI_2Actv_Bill_AgreeDataTable();
@@ -1370,7 +1370,7 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeQryBillDocSTI_1Actv_Actual_OTR() {
+        private bool ShouldSerializeQryBillDocEST_actual_R3() {
             return false;
         }
         
@@ -1553,7 +1553,7 @@ namespace NICSQLTools.Data {
         public delegate void LastEditEquipmentAllRowChangeEventHandler(object sender, LastEditEquipmentAllRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void QryBillDocSTI_1Actv_Actual_OTRRowChangeEventHandler(object sender, QryBillDocSTI_1Actv_Actual_OTRRowChangeEvent e);
+        public delegate void QryBillDocEST_actual_R3RowChangeEventHandler(object sender, QryBillDocEST_actual_R3RowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void LastEditSTI_1Actv_Actual_OTRRowChangeEventHandler(object sender, LastEditSTI_1Actv_Actual_OTRRowChangeEvent e);
@@ -8977,8 +8977,8 @@ namespace NICSQLTools.Data {
                                 this.columnDatasourceID}, true));
                 this.columnDatasourceID.AllowDBNull = false;
                 this.columnDatasourceID.Unique = true;
-                this.columnDatasourceName.MaxLength = 50;
-                this.columnDatasourceSPName.MaxLength = 50;
+                this.columnDatasourceName.MaxLength = 100;
+                this.columnDatasourceSPName.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12372,14 +12372,14 @@ namespace NICSQLTools.Data {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class QryBillDocSTI_1Actv_Actual_OTRDataTable : global::System.Data.TypedTableBase<QryBillDocSTI_1Actv_Actual_OTRRow> {
+        public partial class QryBillDocEST_actual_R3DataTable : global::System.Data.TypedTableBase<QryBillDocEST_actual_R3Row> {
             
-            private global::System.Data.DataColumn columnBillingDocNo;
+            private global::System.Data.DataColumn columnBilling_Document;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QryBillDocSTI_1Actv_Actual_OTRDataTable() {
-                this.TableName = "QryBillDocSTI_1Actv_Actual_OTR";
+            public QryBillDocEST_actual_R3DataTable() {
+                this.TableName = "QryBillDocEST_actual_R3";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -12387,7 +12387,7 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal QryBillDocSTI_1Actv_Actual_OTRDataTable(global::System.Data.DataTable table) {
+            internal QryBillDocEST_actual_R3DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -12404,16 +12404,16 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected QryBillDocSTI_1Actv_Actual_OTRDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected QryBillDocEST_actual_R3DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BillingDocNoColumn {
+            public global::System.Data.DataColumn Billing_DocumentColumn {
                 get {
-                    return this.columnBillingDocNo;
+                    return this.columnBilling_Document;
                 }
             }
             
@@ -12428,52 +12428,52 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QryBillDocSTI_1Actv_Actual_OTRRow this[int index] {
+            public QryBillDocEST_actual_R3Row this[int index] {
                 get {
-                    return ((QryBillDocSTI_1Actv_Actual_OTRRow)(this.Rows[index]));
+                    return ((QryBillDocEST_actual_R3Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event QryBillDocSTI_1Actv_Actual_OTRRowChangeEventHandler QryBillDocSTI_1Actv_Actual_OTRRowChanging;
+            public event QryBillDocEST_actual_R3RowChangeEventHandler QryBillDocEST_actual_R3RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event QryBillDocSTI_1Actv_Actual_OTRRowChangeEventHandler QryBillDocSTI_1Actv_Actual_OTRRowChanged;
+            public event QryBillDocEST_actual_R3RowChangeEventHandler QryBillDocEST_actual_R3RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event QryBillDocSTI_1Actv_Actual_OTRRowChangeEventHandler QryBillDocSTI_1Actv_Actual_OTRRowDeleting;
+            public event QryBillDocEST_actual_R3RowChangeEventHandler QryBillDocEST_actual_R3RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event QryBillDocSTI_1Actv_Actual_OTRRowChangeEventHandler QryBillDocSTI_1Actv_Actual_OTRRowDeleted;
+            public event QryBillDocEST_actual_R3RowChangeEventHandler QryBillDocEST_actual_R3RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddQryBillDocSTI_1Actv_Actual_OTRRow(QryBillDocSTI_1Actv_Actual_OTRRow row) {
+            public void AddQryBillDocEST_actual_R3Row(QryBillDocEST_actual_R3Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QryBillDocSTI_1Actv_Actual_OTRRow AddQryBillDocSTI_1Actv_Actual_OTRRow(string BillingDocNo) {
-                QryBillDocSTI_1Actv_Actual_OTRRow rowQryBillDocSTI_1Actv_Actual_OTRRow = ((QryBillDocSTI_1Actv_Actual_OTRRow)(this.NewRow()));
+            public QryBillDocEST_actual_R3Row AddQryBillDocEST_actual_R3Row(string Billing_Document) {
+                QryBillDocEST_actual_R3Row rowQryBillDocEST_actual_R3Row = ((QryBillDocEST_actual_R3Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BillingDocNo};
-                rowQryBillDocSTI_1Actv_Actual_OTRRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowQryBillDocSTI_1Actv_Actual_OTRRow);
-                return rowQryBillDocSTI_1Actv_Actual_OTRRow;
+                        Billing_Document};
+                rowQryBillDocEST_actual_R3Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowQryBillDocEST_actual_R3Row);
+                return rowQryBillDocEST_actual_R3Row;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QryBillDocSTI_1Actv_Actual_OTRRow FindByBillingDocNo(string BillingDocNo) {
-                return ((QryBillDocSTI_1Actv_Actual_OTRRow)(this.Rows.Find(new object[] {
-                            BillingDocNo})));
+            public QryBillDocEST_actual_R3Row FindByBilling_Document(string Billing_Document) {
+                return ((QryBillDocEST_actual_R3Row)(this.Rows.Find(new object[] {
+                            Billing_Document})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                QryBillDocSTI_1Actv_Actual_OTRDataTable cln = ((QryBillDocSTI_1Actv_Actual_OTRDataTable)(base.Clone()));
+                QryBillDocEST_actual_R3DataTable cln = ((QryBillDocEST_actual_R3DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -12481,51 +12481,51 @@ namespace NICSQLTools.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new QryBillDocSTI_1Actv_Actual_OTRDataTable();
+                return new QryBillDocEST_actual_R3DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnBillingDocNo = base.Columns["BillingDocNo"];
+                this.columnBilling_Document = base.Columns["Billing Document"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnBillingDocNo = new global::System.Data.DataColumn("BillingDocNo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBillingDocNo);
+                this.columnBilling_Document = new global::System.Data.DataColumn("Billing Document", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBilling_Document);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnBillingDocNo}, true));
-                this.columnBillingDocNo.AllowDBNull = false;
-                this.columnBillingDocNo.Unique = true;
-                this.columnBillingDocNo.MaxLength = 50;
+                                this.columnBilling_Document}, true));
+                this.columnBilling_Document.AllowDBNull = false;
+                this.columnBilling_Document.Unique = true;
+                this.columnBilling_Document.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QryBillDocSTI_1Actv_Actual_OTRRow NewQryBillDocSTI_1Actv_Actual_OTRRow() {
-                return ((QryBillDocSTI_1Actv_Actual_OTRRow)(this.NewRow()));
+            public QryBillDocEST_actual_R3Row NewQryBillDocEST_actual_R3Row() {
+                return ((QryBillDocEST_actual_R3Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new QryBillDocSTI_1Actv_Actual_OTRRow(builder);
+                return new QryBillDocEST_actual_R3Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(QryBillDocSTI_1Actv_Actual_OTRRow);
+                return typeof(QryBillDocEST_actual_R3Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.QryBillDocSTI_1Actv_Actual_OTRRowChanged != null)) {
-                    this.QryBillDocSTI_1Actv_Actual_OTRRowChanged(this, new QryBillDocSTI_1Actv_Actual_OTRRowChangeEvent(((QryBillDocSTI_1Actv_Actual_OTRRow)(e.Row)), e.Action));
+                if ((this.QryBillDocEST_actual_R3RowChanged != null)) {
+                    this.QryBillDocEST_actual_R3RowChanged(this, new QryBillDocEST_actual_R3RowChangeEvent(((QryBillDocEST_actual_R3Row)(e.Row)), e.Action));
                 }
             }
             
@@ -12533,8 +12533,8 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.QryBillDocSTI_1Actv_Actual_OTRRowChanging != null)) {
-                    this.QryBillDocSTI_1Actv_Actual_OTRRowChanging(this, new QryBillDocSTI_1Actv_Actual_OTRRowChangeEvent(((QryBillDocSTI_1Actv_Actual_OTRRow)(e.Row)), e.Action));
+                if ((this.QryBillDocEST_actual_R3RowChanging != null)) {
+                    this.QryBillDocEST_actual_R3RowChanging(this, new QryBillDocEST_actual_R3RowChangeEvent(((QryBillDocEST_actual_R3Row)(e.Row)), e.Action));
                 }
             }
             
@@ -12542,8 +12542,8 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.QryBillDocSTI_1Actv_Actual_OTRRowDeleted != null)) {
-                    this.QryBillDocSTI_1Actv_Actual_OTRRowDeleted(this, new QryBillDocSTI_1Actv_Actual_OTRRowChangeEvent(((QryBillDocSTI_1Actv_Actual_OTRRow)(e.Row)), e.Action));
+                if ((this.QryBillDocEST_actual_R3RowDeleted != null)) {
+                    this.QryBillDocEST_actual_R3RowDeleted(this, new QryBillDocEST_actual_R3RowChangeEvent(((QryBillDocEST_actual_R3Row)(e.Row)), e.Action));
                 }
             }
             
@@ -12551,14 +12551,14 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.QryBillDocSTI_1Actv_Actual_OTRRowDeleting != null)) {
-                    this.QryBillDocSTI_1Actv_Actual_OTRRowDeleting(this, new QryBillDocSTI_1Actv_Actual_OTRRowChangeEvent(((QryBillDocSTI_1Actv_Actual_OTRRow)(e.Row)), e.Action));
+                if ((this.QryBillDocEST_actual_R3RowDeleting != null)) {
+                    this.QryBillDocEST_actual_R3RowDeleting(this, new QryBillDocEST_actual_R3RowChangeEvent(((QryBillDocEST_actual_R3Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveQryBillDocSTI_1Actv_Actual_OTRRow(QryBillDocSTI_1Actv_Actual_OTRRow row) {
+            public void RemoveQryBillDocEST_actual_R3Row(QryBillDocEST_actual_R3Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -12585,7 +12585,7 @@ namespace NICSQLTools.Data {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "QryBillDocSTI_1Actv_Actual_OTRDataTable";
+                attribute2.FixedValue = "QryBillDocEST_actual_R3DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -19154,25 +19154,25 @@ namespace NICSQLTools.Data {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class QryBillDocSTI_1Actv_Actual_OTRRow : global::System.Data.DataRow {
+        public partial class QryBillDocEST_actual_R3Row : global::System.Data.DataRow {
             
-            private QryBillDocSTI_1Actv_Actual_OTRDataTable tableQryBillDocSTI_1Actv_Actual_OTR;
+            private QryBillDocEST_actual_R3DataTable tableQryBillDocEST_actual_R3;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal QryBillDocSTI_1Actv_Actual_OTRRow(global::System.Data.DataRowBuilder rb) : 
+            internal QryBillDocEST_actual_R3Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableQryBillDocSTI_1Actv_Actual_OTR = ((QryBillDocSTI_1Actv_Actual_OTRDataTable)(this.Table));
+                this.tableQryBillDocEST_actual_R3 = ((QryBillDocEST_actual_R3DataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BillingDocNo {
+            public string Billing_Document {
                 get {
-                    return ((string)(this[this.tableQryBillDocSTI_1Actv_Actual_OTR.BillingDocNoColumn]));
+                    return ((string)(this[this.tableQryBillDocEST_actual_R3.Billing_DocumentColumn]));
                 }
                 set {
-                    this[this.tableQryBillDocSTI_1Actv_Actual_OTR.BillingDocNoColumn] = value;
+                    this[this.tableQryBillDocEST_actual_R3.Billing_DocumentColumn] = value;
                 }
             }
         }
@@ -20734,22 +20734,22 @@ namespace NICSQLTools.Data {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class QryBillDocSTI_1Actv_Actual_OTRRowChangeEvent : global::System.EventArgs {
+        public class QryBillDocEST_actual_R3RowChangeEvent : global::System.EventArgs {
             
-            private QryBillDocSTI_1Actv_Actual_OTRRow eventRow;
+            private QryBillDocEST_actual_R3Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QryBillDocSTI_1Actv_Actual_OTRRowChangeEvent(QryBillDocSTI_1Actv_Actual_OTRRow row, global::System.Data.DataRowAction action) {
+            public QryBillDocEST_actual_R3RowChangeEvent(QryBillDocEST_actual_R3Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public QryBillDocSTI_1Actv_Actual_OTRRow Row {
+            public QryBillDocEST_actual_R3Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -27195,7 +27195,7 @@ GROUP BY AppRuleLookupValue.ValueName";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class QryBillDocSTI_1Actv_Actual_OTRTableAdapter : global::System.ComponentModel.Component {
+    public partial class QryBillDocEST_actual_R3TableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -27209,7 +27209,7 @@ GROUP BY AppRuleLookupValue.ValueName";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public QryBillDocSTI_1Actv_Actual_OTRTableAdapter() {
+        public QryBillDocEST_actual_R3TableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -27306,8 +27306,8 @@ GROUP BY AppRuleLookupValue.ValueName";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "QryBillDocSTI_1Actv_Actual_OTR";
-            tableMapping.ColumnMappings.Add("BillingDocNo", "BillingDocNo");
+            tableMapping.DataSetTable = "QryBillDocEST_actual_R3";
+            tableMapping.ColumnMappings.Add("Billing Document", "Billing Document");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -27324,18 +27324,19 @@ GROUP BY AppRuleLookupValue.ValueName";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        BillingDocNo\r\nFROM            STI_1Actv_Actual_OTR\r\nWHERE        (D" +
-                "ocumentDate BETWEEN @DateStart AND @DateEnd)\r\nGROUP BY BillingDocNo";
+            this._commandCollection[0].CommandText = "SELECT        [Billing Document]\r\nFROM            EST_actual_R3\r\nWHERE        [Bi" +
+                "lling date for bil] BETWEEN @DateStart AND @DateEnd\r\nGROUP BY [Billing Document]" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateStart", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateStart", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Billing date for bil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Billing date for bil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsQry.QryBillDocSTI_1Actv_Actual_OTRDataTable dataTable, global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd) {
+        public virtual int Fill(dsQry.QryBillDocEST_actual_R3DataTable dataTable, global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((DateStart.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DateStart.Value));
@@ -27360,7 +27361,7 @@ GROUP BY AppRuleLookupValue.ValueName";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsQry.QryBillDocSTI_1Actv_Actual_OTRDataTable GetData(global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd) {
+        public virtual dsQry.QryBillDocEST_actual_R3DataTable GetData(global::System.Nullable<global::System.DateTime> DateStart, global::System.Nullable<global::System.DateTime> DateEnd) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((DateStart.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DateStart.Value));
@@ -27374,7 +27375,7 @@ GROUP BY AppRuleLookupValue.ValueName";
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            dsQry.QryBillDocSTI_1Actv_Actual_OTRDataTable dataTable = new dsQry.QryBillDocSTI_1Actv_Actual_OTRDataTable();
+            dsQry.QryBillDocEST_actual_R3DataTable dataTable = new dsQry.QryBillDocEST_actual_R3DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

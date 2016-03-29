@@ -1,6 +1,6 @@
 ﻿namespace NICSQLTools.Views.Import
 {
-    partial class ImportActual_OTRUC
+    partial class ImportEst_Actual_R3UC
     {
         /// <summary> 
         /// Required designer variable.

@@ -302,9 +302,9 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Import.ImportDst_MasterUC(RuleElemet);
             }
-            else if (e.Document == docEditorsImportActual_OTRUC)
+            else if (e.Document == docEditorsImportEst_Actual_R3UC)
             {
-                e.Control = new Views.Import.ImportActual_OTRUC(RuleElemet);
+                e.Control = new Views.Import.ImportEst_Actual_R3UC(RuleElemet);
             }
             else if (e.Document == docEditorsImportActualBillArg)
             {

@@ -349,7 +349,7 @@
             this.docEditorsImportStock_Material = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportStock_Data = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportDst_Master = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.docEditorsImportActual_OTRUC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportEst_Actual_R3UC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportActualBillArg = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportFromExcel = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentTileDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
@@ -385,7 +385,7 @@
             this.documentTileEditorsActivities_Actual = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsImportDst_Master = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsImportEquipmentAll = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
-            this.documentTileEditorsImportActual_OTRUC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportEst_Actual_R3UC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsMSrv_TypeEditor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsMSrv_TechnicianEditor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsMSrv_TicketEditor = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
@@ -488,7 +488,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportStock_Material)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportStock_Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportActual_OTRUC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEst_Actual_R3UC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportActualBillArg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportFromExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileDashboard)).BeginInit();
@@ -524,7 +524,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsActivities_Actual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportDst_Master)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportEquipmentAll)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportActual_OTRUC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportEst_Actual_R3UC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsMSrv_TypeEditor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsMSrv_TechnicianEditor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsMSrv_TicketEditor)).BeginInit();
@@ -615,7 +615,7 @@
             this.docEditorsActivities_Actual,
             this.docEditorsImportDst_Master,
             this.docEditorsImportEquipmentAll,
-            this.docEditorsImportActual_OTRUC,
+            this.docEditorsImportEst_Actual_R3UC,
             this.docEditorsMSrv_TypeEditor,
             this.docEditorsMSrv_TechnicianEditor,
             this.docEditorsMSrv,
@@ -689,7 +689,7 @@
             this.documentTileEditorsActivities_Actual,
             this.documentTileEditorsImportDst_Master,
             this.documentTileEditorsImportEquipmentAll,
-            this.documentTileEditorsImportActual_OTRUC,
+            this.documentTileEditorsImportEst_Actual_R3UC,
             this.documentTileEditorsMSrv_TypeEditor,
             this.documentTileEditorsMSrv_TechnicianEditor,
             this.documentTileEditorsMSrv,
@@ -1827,7 +1827,7 @@
             this.docEditorsImportStock_Material,
             this.docEditorsImportStock_Data,
             this.docEditorsImportDst_Master,
-            this.docEditorsImportActual_OTRUC,
+            this.docEditorsImportEst_Actual_R3UC,
             this.docEditorsImportActualBillArg});
             this.tabbedGroupImport.Name = "tabbedGroupImport";
             this.tabbedGroupImport.Parent = this.tileContainerEditors;
@@ -1910,11 +1910,11 @@
             this.docEditorsImportDst_Master.ControlName = "docEditorsImportDst_Master";
             this.docEditorsImportDst_Master.Image = global::NICSQLTools.Properties.Resources.Excel16;
             // 
-            // docEditorsImportActual_OTRUC
+            // docEditorsImportEst_Actual_R3UC
             // 
-            this.docEditorsImportActual_OTRUC.Caption = "Import Actual OTR";
-            this.docEditorsImportActual_OTRUC.ControlName = "docEditorsImportActual_OTRUC";
-            this.docEditorsImportActual_OTRUC.Image = global::NICSQLTools.Properties.Resources.Excel16;
+            this.docEditorsImportEst_Actual_R3UC.Caption = "Import Est-Actual R3";
+            this.docEditorsImportEst_Actual_R3UC.ControlName = "docEditorsImportEst_Actual_R3UC";
+            this.docEditorsImportEst_Actual_R3UC.Image = global::NICSQLTools.Properties.Resources.Excel16;
             // 
             // docEditorsImportActualBillArg
             // 
@@ -2476,10 +2476,10 @@
             this.documentTileEditorsImportEquipmentAll.Frames.Add(tileItemFrame88);
             this.documentTileEditorsImportEquipmentAll.Name = "documentTileEditorsImportEquipmentAll";
             // 
-            // documentTileEditorsImportActual_OTRUC
+            // documentTileEditorsImportEst_Actual_R3UC
             // 
-            this.documentTileEditorsImportActual_OTRUC.Document = this.docEditorsImportActual_OTRUC;
-            this.documentTileEditorsImportActual_OTRUC.Name = "documentTileEditorsImportActual_OTRUC";
+            this.documentTileEditorsImportEst_Actual_R3UC.Document = this.docEditorsImportEst_Actual_R3UC;
+            this.documentTileEditorsImportEst_Actual_R3UC.Name = "documentTileEditorsImportEst_Actual_R3UC";
             // 
             // documentTileEditorsMSrv_TypeEditor
             // 
@@ -2658,7 +2658,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportStock_Material)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportStock_Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportActual_OTRUC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEst_Actual_R3UC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportActualBillArg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportFromExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileDashboard)).EndInit();
@@ -2694,7 +2694,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsActivities_Actual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportDst_Master)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportEquipmentAll)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportActual_OTRUC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportEst_Actual_R3UC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsMSrv_TypeEditor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsMSrv_TechnicianEditor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsMSrv_TicketEditor)).EndInit();
@@ -2819,8 +2819,8 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportDst_Master;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsImportEquipmentAll;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportEquipmentAll;
-        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsImportActual_OTRUC;
-        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportActual_OTRUC;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsImportEst_Actual_R3UC;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportEst_Actual_R3UC;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup tabbedGroupMSrv;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsMSrv;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsMSrv;

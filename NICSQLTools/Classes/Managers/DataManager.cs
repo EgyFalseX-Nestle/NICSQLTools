@@ -441,7 +441,8 @@ namespace NICSQLTools.Classes.Managers
                     DataRow row = dt.NewRow();
                     for (cCnt = 1; cCnt <= colCount; cCnt++)
                     {
-                        if (objectArray[rCnt, cCnt].GetType() == dt.Columns[cCnt - 1].DataType)
+                        
+                        if (objectArray[rCnt, cCnt] != null && objectArray[rCnt, cCnt].GetType() == dt.Columns[cCnt - 1].DataType)
                             row[cCnt - 1] = objectArray[rCnt, cCnt];
                     }
                     dt.Rows.Add(row);

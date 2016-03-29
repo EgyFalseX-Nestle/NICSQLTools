@@ -201,7 +201,7 @@
     <Compile Include="Classes\MSrv.cs" />
     <Compile Include="Classes\STI_2Actv_Bill_Agree.cs" />
     <Compile Include="Classes\MSrvType.cs" />
-    <Compile Include="Classes\STI_1Actv_Actual_OTR.cs" />
+    <Compile Include="Classes\EST_actual_R3.cs" />
     <Compile Include="Classes\EquipmentAll.cs" />
     <Compile Include="Classes\Core.cs" />
     <Compile Include="Classes\Cost.cs" />
@@ -480,11 +480,11 @@
     <Compile Include="Views\Import\ImportActualBillArgUC.Designer.cs">
       <DependentUpon>ImportActualBillArgUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Import\ImportActual_OTRUC.cs">
+    <Compile Include="Views\Import\ImportEst_Actual_R3UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Import\ImportActual_OTRUC.Designer.cs">
-      <DependentUpon>ImportActual_OTRUC.cs</DependentUpon>
+    <Compile Include="Views\Import\ImportEst_Actual_R3UC.Designer.cs">
+      <DependentUpon>ImportEst_Actual_R3UC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportEquipmentAllUC.cs">
       <SubType>UserControl</SubType>
@@ -885,8 +885,8 @@
     <EmbeddedResource Include="Views\Import\ImportActualBillArgUC.resx">
       <DependentUpon>ImportActualBillArgUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Import\ImportActual_OTRUC.resx">
-      <DependentUpon>ImportActual_OTRUC.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Import\ImportEst_Actual_R3UC.resx">
+      <DependentUpon>ImportEst_Actual_R3UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportEquipmentAllUC.resx">
       <DependentUpon>ImportEquipmentAllUC.cs</DependentUpon>

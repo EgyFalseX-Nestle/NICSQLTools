@@ -124,7 +124,7 @@ namespace NICSQLTools.Data {
         
         private EquipmentAllDataTable tableEquipmentAll;
         
-        private STI_1Actv_Actual_OTRDataTable tableSTI_1Actv_Actual_OTR;
+        private EST_actual_R3DataTable tableEST_actual_R3;
         
         private STI_2Actv_Bill_AgreeDataTable tableSTI_2Actv_Bill_Agree;
         
@@ -318,8 +318,8 @@ namespace NICSQLTools.Data {
                 if ((ds.Tables["EquipmentAll"] != null)) {
                     base.Tables.Add(new EquipmentAllDataTable(ds.Tables["EquipmentAll"]));
                 }
-                if ((ds.Tables["STI_1Actv_Actual_OTR"] != null)) {
-                    base.Tables.Add(new STI_1Actv_Actual_OTRDataTable(ds.Tables["STI_1Actv_Actual_OTR"]));
+                if ((ds.Tables["EST_actual_R3"] != null)) {
+                    base.Tables.Add(new EST_actual_R3DataTable(ds.Tables["EST_actual_R3"]));
                 }
                 if ((ds.Tables["STI_2Actv_Bill_Agree"] != null)) {
                     base.Tables.Add(new STI_2Actv_Bill_AgreeDataTable(ds.Tables["STI_2Actv_Bill_Agree"]));
@@ -849,9 +849,9 @@ namespace NICSQLTools.Data {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public STI_1Actv_Actual_OTRDataTable STI_1Actv_Actual_OTR {
+        public EST_actual_R3DataTable EST_actual_R3 {
             get {
-                return this.tableSTI_1Actv_Actual_OTR;
+                return this.tableEST_actual_R3;
             }
         }
         
@@ -1092,8 +1092,8 @@ namespace NICSQLTools.Data {
                 if ((ds.Tables["EquipmentAll"] != null)) {
                     base.Tables.Add(new EquipmentAllDataTable(ds.Tables["EquipmentAll"]));
                 }
-                if ((ds.Tables["STI_1Actv_Actual_OTR"] != null)) {
-                    base.Tables.Add(new STI_1Actv_Actual_OTRDataTable(ds.Tables["STI_1Actv_Actual_OTR"]));
+                if ((ds.Tables["EST_actual_R3"] != null)) {
+                    base.Tables.Add(new EST_actual_R3DataTable(ds.Tables["EST_actual_R3"]));
                 }
                 if ((ds.Tables["STI_2Actv_Bill_Agree"] != null)) {
                     base.Tables.Add(new STI_2Actv_Bill_AgreeDataTable(ds.Tables["STI_2Actv_Bill_Agree"]));
@@ -1434,10 +1434,10 @@ namespace NICSQLTools.Data {
                     this.tableEquipmentAll.InitVars();
                 }
             }
-            this.tableSTI_1Actv_Actual_OTR = ((STI_1Actv_Actual_OTRDataTable)(base.Tables["STI_1Actv_Actual_OTR"]));
+            this.tableEST_actual_R3 = ((EST_actual_R3DataTable)(base.Tables["EST_actual_R3"]));
             if ((initTable == true)) {
-                if ((this.tableSTI_1Actv_Actual_OTR != null)) {
-                    this.tableSTI_1Actv_Actual_OTR.InitVars();
+                if ((this.tableEST_actual_R3 != null)) {
+                    this.tableEST_actual_R3.InitVars();
                 }
             }
             this.tableSTI_2Actv_Bill_Agree = ((STI_2Actv_Bill_AgreeDataTable)(base.Tables["STI_2Actv_Bill_Agree"]));
@@ -1567,8 +1567,8 @@ namespace NICSQLTools.Data {
             base.Tables.Add(this.tableQryDst_MasterDocNumber);
             this.tableEquipmentAll = new EquipmentAllDataTable();
             base.Tables.Add(this.tableEquipmentAll);
-            this.tableSTI_1Actv_Actual_OTR = new STI_1Actv_Actual_OTRDataTable();
-            base.Tables.Add(this.tableSTI_1Actv_Actual_OTR);
+            this.tableEST_actual_R3 = new EST_actual_R3DataTable();
+            base.Tables.Add(this.tableEST_actual_R3);
             this.tableSTI_2Actv_Bill_Agree = new STI_2Actv_Bill_AgreeDataTable();
             base.Tables.Add(this.tableSTI_2Actv_Bill_Agree);
             this.tableStock_Data = new Stock_DataDataTable();
@@ -1897,7 +1897,7 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeSTI_1Actv_Actual_OTR() {
+        private bool ShouldSerializeEST_actual_R3() {
             return false;
         }
         
@@ -2119,7 +2119,7 @@ namespace NICSQLTools.Data {
         public delegate void EquipmentAllRowChangeEventHandler(object sender, EquipmentAllRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void STI_1Actv_Actual_OTRRowChangeEventHandler(object sender, STI_1Actv_Actual_OTRRowChangeEvent e);
+        public delegate void EST_actual_R3RowChangeEventHandler(object sender, EST_actual_R3RowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void STI_2Actv_Bill_AgreeRowChangeEventHandler(object sender, STI_2Actv_Bill_AgreeRowChangeEvent e);
@@ -20843,42 +20843,34 @@ namespace NICSQLTools.Data {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class STI_1Actv_Actual_OTRDataTable : global::System.Data.TypedTableBase<STI_1Actv_Actual_OTRRow> {
-            
-            private global::System.Data.DataColumn columnBillingDocNo;
-            
-            private global::System.Data.DataColumn columnSalesDocument;
-            
-            private global::System.Data.DataColumn columnOrderType;
-            
-            private global::System.Data.DataColumn columnPONumber;
-            
-            private global::System.Data.DataColumn columnBillingStatus;
+        public partial class EST_actual_R3DataTable : global::System.Data.TypedTableBase<EST_actual_R3Row> {
             
             private global::System.Data.DataColumn columnPayer;
             
-            private global::System.Data.DataColumn columnCreatedBy;
+            private global::System.Data.DataColumn columnBilling_Document;
             
-            private global::System.Data.DataColumn columnDocumentDate;
+            private global::System.Data.DataColumn _columnAgreement__various_c;
             
-            private global::System.Data.DataColumn columnOrderNetValue;
+            private global::System.Data.DataColumn columnDistribution_Channel;
             
-            private global::System.Data.DataColumn columnShipTo;
+            private global::System.Data.DataColumn columnBilling_Type;
             
-            private global::System.Data.DataColumn columnSoldToParty;
+            private global::System.Data.DataColumn _columnSold_to_party;
             
-            private global::System.Data.DataColumn columnActivityNumber;
+            private global::System.Data.DataColumn columnName_of_Person_who_C;
             
-            private global::System.Data.DataColumn columnShippingCondition;
+            private global::System.Data.DataColumn columnAssignment_number;
             
-            private global::System.Data.DataColumn columnUserIn;
+            private global::System.Data.DataColumn columnReference_Document_N;
             
-            private global::System.Data.DataColumn columnDateIn;
+            private global::System.Data.DataColumn columnBilling_date_for_bil;
+            
+            private global::System.Data.DataColumn columnNet_Value_in_Documen;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STI_1Actv_Actual_OTRDataTable() {
-                this.TableName = "STI_1Actv_Actual_OTR";
+            public EST_actual_R3DataTable() {
+                this.TableName = "EST_actual_R3";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -20886,7 +20878,7 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal STI_1Actv_Actual_OTRDataTable(global::System.Data.DataTable table) {
+            internal EST_actual_R3DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -20903,49 +20895,9 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected STI_1Actv_Actual_OTRDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected EST_actual_R3DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BillingDocNoColumn {
-                get {
-                    return this.columnBillingDocNo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SalesDocumentColumn {
-                get {
-                    return this.columnSalesDocument;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrderTypeColumn {
-                get {
-                    return this.columnOrderType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PONumberColumn {
-                get {
-                    return this.columnPONumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BillingStatusColumn {
-                get {
-                    return this.columnBillingStatus;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20958,73 +20910,81 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CreatedByColumn {
+            public global::System.Data.DataColumn Billing_DocumentColumn {
                 get {
-                    return this.columnCreatedBy;
+                    return this.columnBilling_Document;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DocumentDateColumn {
+            public global::System.Data.DataColumn _Agreement__various_cColumn {
                 get {
-                    return this.columnDocumentDate;
+                    return this._columnAgreement__various_c;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrderNetValueColumn {
+            public global::System.Data.DataColumn Distribution_ChannelColumn {
                 get {
-                    return this.columnOrderNetValue;
+                    return this.columnDistribution_Channel;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ShipToColumn {
+            public global::System.Data.DataColumn Billing_TypeColumn {
                 get {
-                    return this.columnShipTo;
+                    return this.columnBilling_Type;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SoldToPartyColumn {
+            public global::System.Data.DataColumn _Sold_to_partyColumn {
                 get {
-                    return this.columnSoldToParty;
+                    return this._columnSold_to_party;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ActivityNumberColumn {
+            public global::System.Data.DataColumn Name_of_Person_who_CColumn {
                 get {
-                    return this.columnActivityNumber;
+                    return this.columnName_of_Person_who_C;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ShippingConditionColumn {
+            public global::System.Data.DataColumn Assignment_numberColumn {
                 get {
-                    return this.columnShippingCondition;
+                    return this.columnAssignment_number;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UserInColumn {
+            public global::System.Data.DataColumn Reference_Document_NColumn {
                 get {
-                    return this.columnUserIn;
+                    return this.columnReference_Document_N;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateInColumn {
+            public global::System.Data.DataColumn Billing_date_for_bilColumn {
                 get {
-                    return this.columnDateIn;
+                    return this.columnBilling_date_for_bil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Net_Value_in_DocumenColumn {
+                get {
+                    return this.columnNet_Value_in_Documen;
                 }
             }
             
@@ -21039,66 +20999,62 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STI_1Actv_Actual_OTRRow this[int index] {
+            public EST_actual_R3Row this[int index] {
                 get {
-                    return ((STI_1Actv_Actual_OTRRow)(this.Rows[index]));
+                    return ((EST_actual_R3Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STI_1Actv_Actual_OTRRowChangeEventHandler STI_1Actv_Actual_OTRRowChanging;
+            public event EST_actual_R3RowChangeEventHandler EST_actual_R3RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STI_1Actv_Actual_OTRRowChangeEventHandler STI_1Actv_Actual_OTRRowChanged;
+            public event EST_actual_R3RowChangeEventHandler EST_actual_R3RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STI_1Actv_Actual_OTRRowChangeEventHandler STI_1Actv_Actual_OTRRowDeleting;
+            public event EST_actual_R3RowChangeEventHandler EST_actual_R3RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event STI_1Actv_Actual_OTRRowChangeEventHandler STI_1Actv_Actual_OTRRowDeleted;
+            public event EST_actual_R3RowChangeEventHandler EST_actual_R3RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddSTI_1Actv_Actual_OTRRow(STI_1Actv_Actual_OTRRow row) {
+            public void AddEST_actual_R3Row(EST_actual_R3Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STI_1Actv_Actual_OTRRow AddSTI_1Actv_Actual_OTRRow(string BillingDocNo, string SalesDocument, string OrderType, string PONumber, string BillingStatus, string Payer, string CreatedBy, System.DateTime DocumentDate, double OrderNetValue, string ShipTo, string SoldToParty, string ActivityNumber, string ShippingCondition, int UserIn, System.DateTime DateIn) {
-                STI_1Actv_Actual_OTRRow rowSTI_1Actv_Actual_OTRRow = ((STI_1Actv_Actual_OTRRow)(this.NewRow()));
+            public EST_actual_R3Row AddEST_actual_R3Row(string Payer, string Billing_Document, string _Agreement__various_c, string Distribution_Channel, string Billing_Type, string _Sold_to_party, string Name_of_Person_who_C, string Assignment_number, string Reference_Document_N, System.DateTime Billing_date_for_bil, double Net_Value_in_Documen) {
+                EST_actual_R3Row rowEST_actual_R3Row = ((EST_actual_R3Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        BillingDocNo,
-                        SalesDocument,
-                        OrderType,
-                        PONumber,
-                        BillingStatus,
                         Payer,
-                        CreatedBy,
-                        DocumentDate,
-                        OrderNetValue,
-                        ShipTo,
-                        SoldToParty,
-                        ActivityNumber,
-                        ShippingCondition,
-                        UserIn,
-                        DateIn};
-                rowSTI_1Actv_Actual_OTRRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSTI_1Actv_Actual_OTRRow);
-                return rowSTI_1Actv_Actual_OTRRow;
+                        Billing_Document,
+                        _Agreement__various_c,
+                        Distribution_Channel,
+                        Billing_Type,
+                        _Sold_to_party,
+                        Name_of_Person_who_C,
+                        Assignment_number,
+                        Reference_Document_N,
+                        Billing_date_for_bil,
+                        Net_Value_in_Documen};
+                rowEST_actual_R3Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEST_actual_R3Row);
+                return rowEST_actual_R3Row;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STI_1Actv_Actual_OTRRow FindByBillingDocNo(string BillingDocNo) {
-                return ((STI_1Actv_Actual_OTRRow)(this.Rows.Find(new object[] {
-                            BillingDocNo})));
+            public EST_actual_R3Row FindByBilling_Document(string Billing_Document) {
+                return ((EST_actual_R3Row)(this.Rows.Find(new object[] {
+                            Billing_Document})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                STI_1Actv_Actual_OTRDataTable cln = ((STI_1Actv_Actual_OTRDataTable)(base.Clone()));
+                EST_actual_R3DataTable cln = ((EST_actual_R3DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -21106,103 +21062,93 @@ namespace NICSQLTools.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new STI_1Actv_Actual_OTRDataTable();
+                return new EST_actual_R3DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnBillingDocNo = base.Columns["BillingDocNo"];
-                this.columnSalesDocument = base.Columns["SalesDocument"];
-                this.columnOrderType = base.Columns["OrderType"];
-                this.columnPONumber = base.Columns["PONumber"];
-                this.columnBillingStatus = base.Columns["BillingStatus"];
                 this.columnPayer = base.Columns["Payer"];
-                this.columnCreatedBy = base.Columns["CreatedBy"];
-                this.columnDocumentDate = base.Columns["DocumentDate"];
-                this.columnOrderNetValue = base.Columns["OrderNetValue"];
-                this.columnShipTo = base.Columns["ShipTo"];
-                this.columnSoldToParty = base.Columns["SoldToParty"];
-                this.columnActivityNumber = base.Columns["ActivityNumber"];
-                this.columnShippingCondition = base.Columns["ShippingCondition"];
-                this.columnUserIn = base.Columns["UserIn"];
-                this.columnDateIn = base.Columns["DateIn"];
+                this.columnBilling_Document = base.Columns["Billing Document"];
+                this._columnAgreement__various_c = base.Columns["Agreement (various c"];
+                this.columnDistribution_Channel = base.Columns["Distribution Channel"];
+                this.columnBilling_Type = base.Columns["Billing Type"];
+                this._columnSold_to_party = base.Columns["Sold-to party"];
+                this.columnName_of_Person_who_C = base.Columns["Name of Person who C"];
+                this.columnAssignment_number = base.Columns["Assignment number"];
+                this.columnReference_Document_N = base.Columns["Reference Document N"];
+                this.columnBilling_date_for_bil = base.Columns["Billing date for bil"];
+                this.columnNet_Value_in_Documen = base.Columns["Net Value in Documen"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnBillingDocNo = new global::System.Data.DataColumn("BillingDocNo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBillingDocNo);
-                this.columnSalesDocument = new global::System.Data.DataColumn("SalesDocument", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalesDocument);
-                this.columnOrderType = new global::System.Data.DataColumn("OrderType", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrderType);
-                this.columnPONumber = new global::System.Data.DataColumn("PONumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPONumber);
-                this.columnBillingStatus = new global::System.Data.DataColumn("BillingStatus", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBillingStatus);
                 this.columnPayer = new global::System.Data.DataColumn("Payer", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPayer);
-                this.columnCreatedBy = new global::System.Data.DataColumn("CreatedBy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCreatedBy);
-                this.columnDocumentDate = new global::System.Data.DataColumn("DocumentDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDocumentDate);
-                this.columnOrderNetValue = new global::System.Data.DataColumn("OrderNetValue", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrderNetValue);
-                this.columnShipTo = new global::System.Data.DataColumn("ShipTo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShipTo);
-                this.columnSoldToParty = new global::System.Data.DataColumn("SoldToParty", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSoldToParty);
-                this.columnActivityNumber = new global::System.Data.DataColumn("ActivityNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnActivityNumber);
-                this.columnShippingCondition = new global::System.Data.DataColumn("ShippingCondition", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShippingCondition);
-                this.columnUserIn = new global::System.Data.DataColumn("UserIn", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUserIn);
-                this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDateIn);
+                this.columnBilling_Document = new global::System.Data.DataColumn("Billing Document", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBilling_Document);
+                this._columnAgreement__various_c = new global::System.Data.DataColumn("Agreement (various c", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnAgreement__various_c.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnAgreement__various_c");
+                this._columnAgreement__various_c.ExtendedProperties.Add("Generator_UserColumnName", "Agreement (various c");
+                base.Columns.Add(this._columnAgreement__various_c);
+                this.columnDistribution_Channel = new global::System.Data.DataColumn("Distribution Channel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDistribution_Channel);
+                this.columnBilling_Type = new global::System.Data.DataColumn("Billing Type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBilling_Type);
+                this._columnSold_to_party = new global::System.Data.DataColumn("Sold-to party", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnSold_to_party.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnSold_to_party");
+                this._columnSold_to_party.ExtendedProperties.Add("Generator_UserColumnName", "Sold-to party");
+                base.Columns.Add(this._columnSold_to_party);
+                this.columnName_of_Person_who_C = new global::System.Data.DataColumn("Name of Person who C", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName_of_Person_who_C);
+                this.columnAssignment_number = new global::System.Data.DataColumn("Assignment number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAssignment_number);
+                this.columnReference_Document_N = new global::System.Data.DataColumn("Reference Document N", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReference_Document_N);
+                this.columnBilling_date_for_bil = new global::System.Data.DataColumn("Billing date for bil", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBilling_date_for_bil);
+                this.columnNet_Value_in_Documen = new global::System.Data.DataColumn("Net Value in Documen", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNet_Value_in_Documen);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnBillingDocNo}, true));
-                this.columnBillingDocNo.AllowDBNull = false;
-                this.columnBillingDocNo.Unique = true;
-                this.columnBillingDocNo.MaxLength = 50;
-                this.columnSalesDocument.MaxLength = 50;
-                this.columnOrderType.MaxLength = 50;
-                this.columnPONumber.MaxLength = 50;
-                this.columnBillingStatus.MaxLength = 50;
+                                this.columnBilling_Document}, true));
                 this.columnPayer.MaxLength = 50;
-                this.columnCreatedBy.MaxLength = 50;
-                this.columnShipTo.MaxLength = 50;
-                this.columnSoldToParty.MaxLength = 50;
-                this.columnActivityNumber.MaxLength = 50;
-                this.columnShippingCondition.MaxLength = 50;
+                this.columnBilling_Document.AllowDBNull = false;
+                this.columnBilling_Document.Unique = true;
+                this.columnBilling_Document.MaxLength = 100;
+                this._columnAgreement__various_c.MaxLength = 100;
+                this.columnDistribution_Channel.MaxLength = 100;
+                this.columnBilling_Type.MaxLength = 100;
+                this._columnSold_to_party.MaxLength = 100;
+                this.columnName_of_Person_who_C.MaxLength = 100;
+                this.columnAssignment_number.MaxLength = 100;
+                this.columnReference_Document_N.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STI_1Actv_Actual_OTRRow NewSTI_1Actv_Actual_OTRRow() {
-                return ((STI_1Actv_Actual_OTRRow)(this.NewRow()));
+            public EST_actual_R3Row NewEST_actual_R3Row() {
+                return ((EST_actual_R3Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new STI_1Actv_Actual_OTRRow(builder);
+                return new EST_actual_R3Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(STI_1Actv_Actual_OTRRow);
+                return typeof(EST_actual_R3Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.STI_1Actv_Actual_OTRRowChanged != null)) {
-                    this.STI_1Actv_Actual_OTRRowChanged(this, new STI_1Actv_Actual_OTRRowChangeEvent(((STI_1Actv_Actual_OTRRow)(e.Row)), e.Action));
+                if ((this.EST_actual_R3RowChanged != null)) {
+                    this.EST_actual_R3RowChanged(this, new EST_actual_R3RowChangeEvent(((EST_actual_R3Row)(e.Row)), e.Action));
                 }
             }
             
@@ -21210,8 +21156,8 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.STI_1Actv_Actual_OTRRowChanging != null)) {
-                    this.STI_1Actv_Actual_OTRRowChanging(this, new STI_1Actv_Actual_OTRRowChangeEvent(((STI_1Actv_Actual_OTRRow)(e.Row)), e.Action));
+                if ((this.EST_actual_R3RowChanging != null)) {
+                    this.EST_actual_R3RowChanging(this, new EST_actual_R3RowChangeEvent(((EST_actual_R3Row)(e.Row)), e.Action));
                 }
             }
             
@@ -21219,8 +21165,8 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.STI_1Actv_Actual_OTRRowDeleted != null)) {
-                    this.STI_1Actv_Actual_OTRRowDeleted(this, new STI_1Actv_Actual_OTRRowChangeEvent(((STI_1Actv_Actual_OTRRow)(e.Row)), e.Action));
+                if ((this.EST_actual_R3RowDeleted != null)) {
+                    this.EST_actual_R3RowDeleted(this, new EST_actual_R3RowChangeEvent(((EST_actual_R3Row)(e.Row)), e.Action));
                 }
             }
             
@@ -21228,14 +21174,14 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.STI_1Actv_Actual_OTRRowDeleting != null)) {
-                    this.STI_1Actv_Actual_OTRRowDeleting(this, new STI_1Actv_Actual_OTRRowChangeEvent(((STI_1Actv_Actual_OTRRow)(e.Row)), e.Action));
+                if ((this.EST_actual_R3RowDeleting != null)) {
+                    this.EST_actual_R3RowDeleting(this, new EST_actual_R3RowChangeEvent(((EST_actual_R3Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveSTI_1Actv_Actual_OTRRow(STI_1Actv_Actual_OTRRow row) {
+            public void RemoveEST_actual_R3Row(EST_actual_R3Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -21262,7 +21208,7 @@ namespace NICSQLTools.Data {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "STI_1Actv_Actual_OTRDataTable";
+                attribute2.FixedValue = "EST_actual_R3DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -33345,90 +33291,15 @@ namespace NICSQLTools.Data {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class STI_1Actv_Actual_OTRRow : global::System.Data.DataRow {
+        public partial class EST_actual_R3Row : global::System.Data.DataRow {
             
-            private STI_1Actv_Actual_OTRDataTable tableSTI_1Actv_Actual_OTR;
+            private EST_actual_R3DataTable tableEST_actual_R3;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal STI_1Actv_Actual_OTRRow(global::System.Data.DataRowBuilder rb) : 
+            internal EST_actual_R3Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSTI_1Actv_Actual_OTR = ((STI_1Actv_Actual_OTRDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BillingDocNo {
-                get {
-                    return ((string)(this[this.tableSTI_1Actv_Actual_OTR.BillingDocNoColumn]));
-                }
-                set {
-                    this[this.tableSTI_1Actv_Actual_OTR.BillingDocNoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SalesDocument {
-                get {
-                    try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.SalesDocumentColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SalesDocument\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSTI_1Actv_Actual_OTR.SalesDocumentColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OrderType {
-                get {
-                    try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.OrderTypeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OrderType\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSTI_1Actv_Actual_OTR.OrderTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PONumber {
-                get {
-                    try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.PONumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PONumber\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSTI_1Actv_Actual_OTR.PONumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BillingStatus {
-                get {
-                    try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.BillingStatusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BillingStatus\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSTI_1Actv_Actual_OTR.BillingStatusColumn] = value;
-                }
+                this.tableEST_actual_R3 = ((EST_actual_R3DataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -33436,328 +33307,290 @@ namespace NICSQLTools.Data {
             public string Payer {
                 get {
                     try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.PayerColumn]));
+                        return ((string)(this[this.tableEST_actual_R3.PayerColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Payer\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Payer\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.PayerColumn] = value;
+                    this[this.tableEST_actual_R3.PayerColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CreatedBy {
+            public string Billing_Document {
+                get {
+                    return ((string)(this[this.tableEST_actual_R3.Billing_DocumentColumn]));
+                }
+                set {
+                    this[this.tableEST_actual_R3.Billing_DocumentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _Agreement__various_c {
                 get {
                     try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.CreatedByColumn]));
+                        return ((string)(this[this.tableEST_actual_R3._Agreement__various_cColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedBy\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Agreement (various c\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.CreatedByColumn] = value;
+                    this[this.tableEST_actual_R3._Agreement__various_cColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DocumentDate {
+            public string Distribution_Channel {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableSTI_1Actv_Actual_OTR.DocumentDateColumn]));
+                        return ((string)(this[this.tableEST_actual_R3.Distribution_ChannelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DocumentDate\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Distribution Channel\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.DocumentDateColumn] = value;
+                    this[this.tableEST_actual_R3.Distribution_ChannelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double OrderNetValue {
+            public string Billing_Type {
                 get {
                     try {
-                        return ((double)(this[this.tableSTI_1Actv_Actual_OTR.OrderNetValueColumn]));
+                        return ((string)(this[this.tableEST_actual_R3.Billing_TypeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OrderNetValue\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Billing Type\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.OrderNetValueColumn] = value;
+                    this[this.tableEST_actual_R3.Billing_TypeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ShipTo {
+            public string _Sold_to_party {
                 get {
                     try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.ShipToColumn]));
+                        return ((string)(this[this.tableEST_actual_R3._Sold_to_partyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ShipTo\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sold-to party\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.ShipToColumn] = value;
+                    this[this.tableEST_actual_R3._Sold_to_partyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SoldToParty {
+            public string Name_of_Person_who_C {
                 get {
                     try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.SoldToPartyColumn]));
+                        return ((string)(this[this.tableEST_actual_R3.Name_of_Person_who_CColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SoldToParty\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name of Person who C\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.SoldToPartyColumn] = value;
+                    this[this.tableEST_actual_R3.Name_of_Person_who_CColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ActivityNumber {
+            public string Assignment_number {
                 get {
                     try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.ActivityNumberColumn]));
+                        return ((string)(this[this.tableEST_actual_R3.Assignment_numberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ActivityNumber\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Assignment number\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.ActivityNumberColumn] = value;
+                    this[this.tableEST_actual_R3.Assignment_numberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ShippingCondition {
+            public string Reference_Document_N {
                 get {
                     try {
-                        return ((string)(this[this.tableSTI_1Actv_Actual_OTR.ShippingConditionColumn]));
+                        return ((string)(this[this.tableEST_actual_R3.Reference_Document_NColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ShippingCondition\' in table \'STI_1Actv_Actual_OTR\' is DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Reference Document N\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.ShippingConditionColumn] = value;
+                    this[this.tableEST_actual_R3.Reference_Document_NColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int UserIn {
+            public System.DateTime Billing_date_for_bil {
                 get {
                     try {
-                        return ((int)(this[this.tableSTI_1Actv_Actual_OTR.UserInColumn]));
+                        return ((global::System.DateTime)(this[this.tableEST_actual_R3.Billing_date_for_bilColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UserIn\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Billing date for bil\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.UserInColumn] = value;
+                    this[this.tableEST_actual_R3.Billing_date_for_bilColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DateIn {
+            public double Net_Value_in_Documen {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableSTI_1Actv_Actual_OTR.DateInColumn]));
+                        return ((double)(this[this.tableEST_actual_R3.Net_Value_in_DocumenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DateIn\' in table \'STI_1Actv_Actual_OTR\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Net Value in Documen\' in table \'EST_actual_R3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSTI_1Actv_Actual_OTR.DateInColumn] = value;
+                    this[this.tableEST_actual_R3.Net_Value_in_DocumenColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSalesDocumentNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.SalesDocumentColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSalesDocumentNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.SalesDocumentColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrderTypeNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.OrderTypeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrderTypeNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.OrderTypeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPONumberNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.PONumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPONumberNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.PONumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBillingStatusNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.BillingStatusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBillingStatusNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.BillingStatusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPayerNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.PayerColumn);
+                return this.IsNull(this.tableEST_actual_R3.PayerColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPayerNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.PayerColumn] = global::System.Convert.DBNull;
+                this[this.tableEST_actual_R3.PayerColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCreatedByNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.CreatedByColumn);
+            public bool Is_Agreement__various_cNull() {
+                return this.IsNull(this.tableEST_actual_R3._Agreement__various_cColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCreatedByNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.CreatedByColumn] = global::System.Convert.DBNull;
+            public void Set_Agreement__various_cNull() {
+                this[this.tableEST_actual_R3._Agreement__various_cColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDocumentDateNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.DocumentDateColumn);
+            public bool IsDistribution_ChannelNull() {
+                return this.IsNull(this.tableEST_actual_R3.Distribution_ChannelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDocumentDateNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.DocumentDateColumn] = global::System.Convert.DBNull;
+            public void SetDistribution_ChannelNull() {
+                this[this.tableEST_actual_R3.Distribution_ChannelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrderNetValueNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.OrderNetValueColumn);
+            public bool IsBilling_TypeNull() {
+                return this.IsNull(this.tableEST_actual_R3.Billing_TypeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrderNetValueNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.OrderNetValueColumn] = global::System.Convert.DBNull;
+            public void SetBilling_TypeNull() {
+                this[this.tableEST_actual_R3.Billing_TypeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsShipToNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.ShipToColumn);
+            public bool Is_Sold_to_partyNull() {
+                return this.IsNull(this.tableEST_actual_R3._Sold_to_partyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetShipToNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.ShipToColumn] = global::System.Convert.DBNull;
+            public void Set_Sold_to_partyNull() {
+                this[this.tableEST_actual_R3._Sold_to_partyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSoldToPartyNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.SoldToPartyColumn);
+            public bool IsName_of_Person_who_CNull() {
+                return this.IsNull(this.tableEST_actual_R3.Name_of_Person_who_CColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSoldToPartyNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.SoldToPartyColumn] = global::System.Convert.DBNull;
+            public void SetName_of_Person_who_CNull() {
+                this[this.tableEST_actual_R3.Name_of_Person_who_CColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsActivityNumberNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.ActivityNumberColumn);
+            public bool IsAssignment_numberNull() {
+                return this.IsNull(this.tableEST_actual_R3.Assignment_numberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetActivityNumberNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.ActivityNumberColumn] = global::System.Convert.DBNull;
+            public void SetAssignment_numberNull() {
+                this[this.tableEST_actual_R3.Assignment_numberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsShippingConditionNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.ShippingConditionColumn);
+            public bool IsReference_Document_NNull() {
+                return this.IsNull(this.tableEST_actual_R3.Reference_Document_NColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetShippingConditionNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.ShippingConditionColumn] = global::System.Convert.DBNull;
+            public void SetReference_Document_NNull() {
+                this[this.tableEST_actual_R3.Reference_Document_NColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUserInNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.UserInColumn);
+            public bool IsBilling_date_for_bilNull() {
+                return this.IsNull(this.tableEST_actual_R3.Billing_date_for_bilColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUserInNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.UserInColumn] = global::System.Convert.DBNull;
+            public void SetBilling_date_for_bilNull() {
+                this[this.tableEST_actual_R3.Billing_date_for_bilColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDateInNull() {
-                return this.IsNull(this.tableSTI_1Actv_Actual_OTR.DateInColumn);
+            public bool IsNet_Value_in_DocumenNull() {
+                return this.IsNull(this.tableEST_actual_R3.Net_Value_in_DocumenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDateInNull() {
-                this[this.tableSTI_1Actv_Actual_OTR.DateInColumn] = global::System.Convert.DBNull;
+            public void SetNet_Value_in_DocumenNull() {
+                this[this.tableEST_actual_R3.Net_Value_in_DocumenColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -35729,22 +35562,22 @@ namespace NICSQLTools.Data {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class STI_1Actv_Actual_OTRRowChangeEvent : global::System.EventArgs {
+        public class EST_actual_R3RowChangeEvent : global::System.EventArgs {
             
-            private STI_1Actv_Actual_OTRRow eventRow;
+            private EST_actual_R3Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STI_1Actv_Actual_OTRRowChangeEvent(STI_1Actv_Actual_OTRRow row, global::System.Data.DataRowAction action) {
+            public EST_actual_R3RowChangeEvent(EST_actual_R3Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public STI_1Actv_Actual_OTRRow Row {
+            public EST_actual_R3Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -54646,7 +54479,7 @@ SELECT Asset, CapDate, AcquisVal, AccumDep, BookVal, CostCtr, AcqYear, InventNo,
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class STI_1Actv_Actual_OTRTableAdapter : global::System.ComponentModel.Component {
+    public partial class EST_actual_R3TableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -54660,7 +54493,7 @@ SELECT Asset, CapDate, AcquisVal, AccumDep, BookVal, CostCtr, AcqYear, InventNo,
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public STI_1Actv_Actual_OTRTableAdapter() {
+        public EST_actual_R3TableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -54757,70 +54590,58 @@ SELECT Asset, CapDate, AcquisVal, AccumDep, BookVal, CostCtr, AcqYear, InventNo,
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "STI_1Actv_Actual_OTR";
-            tableMapping.ColumnMappings.Add("BillingDocNo", "BillingDocNo");
-            tableMapping.ColumnMappings.Add("SalesDocument", "SalesDocument");
-            tableMapping.ColumnMappings.Add("OrderType", "OrderType");
-            tableMapping.ColumnMappings.Add("PONumber", "PONumber");
-            tableMapping.ColumnMappings.Add("BillingStatus", "BillingStatus");
+            tableMapping.DataSetTable = "EST_actual_R3";
             tableMapping.ColumnMappings.Add("Payer", "Payer");
-            tableMapping.ColumnMappings.Add("CreatedBy", "CreatedBy");
-            tableMapping.ColumnMappings.Add("DocumentDate", "DocumentDate");
-            tableMapping.ColumnMappings.Add("OrderNetValue", "OrderNetValue");
-            tableMapping.ColumnMappings.Add("ShipTo", "ShipTo");
-            tableMapping.ColumnMappings.Add("SoldToParty", "SoldToParty");
-            tableMapping.ColumnMappings.Add("ActivityNumber", "ActivityNumber");
-            tableMapping.ColumnMappings.Add("ShippingCondition", "ShippingCondition");
-            tableMapping.ColumnMappings.Add("UserIn", "UserIn");
-            tableMapping.ColumnMappings.Add("DateIn", "DateIn");
+            tableMapping.ColumnMappings.Add("Billing Document", "Billing Document");
+            tableMapping.ColumnMappings.Add("Agreement (various c", "Agreement (various c");
+            tableMapping.ColumnMappings.Add("Distribution Channel", "Distribution Channel");
+            tableMapping.ColumnMappings.Add("Billing Type", "Billing Type");
+            tableMapping.ColumnMappings.Add("Sold-to party", "Sold-to party");
+            tableMapping.ColumnMappings.Add("Name of Person who C", "Name of Person who C");
+            tableMapping.ColumnMappings.Add("Assignment number", "Assignment number");
+            tableMapping.ColumnMappings.Add("Reference Document N", "Reference Document N");
+            tableMapping.ColumnMappings.Add("Billing date for bil", "Billing date for bil");
+            tableMapping.ColumnMappings.Add("Net Value in Documen", "Net Value in Documen");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [STI_1Actv_Actual_OTR] WHERE (([BillingDocNo] = @Original_BillingDocN" +
-                "o))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [EST_actual_R3] WHERE (([Billing Document] = @Original_Billing_Docume" +
+                "nt))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillingDocNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillingDocNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Billing_Document", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Billing Document", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [STI_1Actv_Actual_OTR] ([BillingDocNo], [SalesDocument], [OrderType], [PONumber], [BillingStatus], [Payer], [CreatedBy], [DocumentDate], [OrderNetValue], [ShipTo], [SoldToParty], [ActivityNumber], [ShippingCondition], [UserIn], [DateIn]) VALUES (@BillingDocNo, @SalesDocument, @OrderType, @PONumber, @BillingStatus, @Payer, @CreatedBy, @DocumentDate, @OrderNetValue, @ShipTo, @SoldToParty, @ActivityNumber, @ShippingCondition, @UserIn, @DateIn);
-SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, CreatedBy, DocumentDate, OrderNetValue, ShipTo, SoldToParty, ActivityNumber, ShippingCondition, UserIn, DateIn FROM STI_1Actv_Actual_OTR WHERE (BillingDocNo = @BillingDocNo)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [EST_actual_R3] ([Payer], [Billing Document], [Agreement (various c], [Distribution Channel], [Billing Type], [Sold-to party], [Name of Person who C], [Assignment number], [Reference Document N], [Billing date for bil], [Net Value in Documen]) VALUES (@Payer, @Billing_Document, @p1, @Distribution_Channel, @Billing_Type, @p4, @Name_of_Person_who_C, @Assignment_number, @Reference_Document_N, @Billing_date_for_bil, @Net_Value_in_Documen);
+SELECT Payer, [Billing Document], [Agreement (various c], [Distribution Channel], [Billing Type], [Sold-to party], [Name of Person who C], [Assignment number], [Reference Document N], [Billing date for bil], [Net Value in Documen] FROM EST_actual_R3 WHERE ([Billing Document] = @Billing_Document)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillingDocNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillingDocNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDocument", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDocument", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderType", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillingStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillingStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Payer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Payer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreatedBy", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocumentDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderNetValue", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderNetValue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShipTo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShipTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoldToParty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoldToParty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShippingCondition", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShippingCondition", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateIn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Billing_Document", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Billing Document", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Agreement (various c", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Billing_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Billing Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sold-to party", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_of_Person_who_C", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name of Person who C", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assignment_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Assignment number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reference_Document_N", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reference Document N", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Billing_date_for_bil", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Billing date for bil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Net_Value_in_Documen", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Net Value in Documen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [STI_1Actv_Actual_OTR] SET [BillingDocNo] = @BillingDocNo, [SalesDocument] = @SalesDocument, [OrderType] = @OrderType, [PONumber] = @PONumber, [BillingStatus] = @BillingStatus, [Payer] = @Payer, [CreatedBy] = @CreatedBy, [DocumentDate] = @DocumentDate, [OrderNetValue] = @OrderNetValue, [ShipTo] = @ShipTo, [SoldToParty] = @SoldToParty, [ActivityNumber] = @ActivityNumber, [ShippingCondition] = @ShippingCondition, [UserIn] = @UserIn, [DateIn] = @DateIn WHERE (([BillingDocNo] = @Original_BillingDocNo));
-SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, CreatedBy, DocumentDate, OrderNetValue, ShipTo, SoldToParty, ActivityNumber, ShippingCondition, UserIn, DateIn FROM STI_1Actv_Actual_OTR WHERE (BillingDocNo = @BillingDocNo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [EST_actual_R3] SET [Payer] = @Payer, [Billing Document] = @Billing_Document, [Agreement (various c] = @p1, [Distribution Channel] = @Distribution_Channel, [Billing Type] = @Billing_Type, [Sold-to party] = @p4, [Name of Person who C] = @Name_of_Person_who_C, [Assignment number] = @Assignment_number, [Reference Document N] = @Reference_Document_N, [Billing date for bil] = @Billing_date_for_bil, [Net Value in Documen] = @Net_Value_in_Documen WHERE (([Billing Document] = @Original_Billing_Document));
+SELECT Payer, [Billing Document], [Agreement (various c], [Distribution Channel], [Billing Type], [Sold-to party], [Name of Person who C], [Assignment number], [Reference Document N], [Billing date for bil], [Net Value in Documen] FROM EST_actual_R3 WHERE ([Billing Document] = @Billing_Document)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillingDocNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillingDocNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDocument", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDocument", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderType", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PONumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PONumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BillingStatus", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillingStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Payer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Payer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreatedBy", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreatedBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DocumentDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DocumentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderNetValue", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderNetValue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShipTo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShipTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SoldToParty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SoldToParty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActivityNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActivityNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShippingCondition", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShippingCondition", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateIn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillingDocNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillingDocNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Billing_Document", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Billing Document", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Agreement (various c", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Billing_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Billing Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sold-to party", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_of_Person_who_C", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name of Person who C", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Assignment_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Assignment number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Reference_Document_N", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Reference Document N", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Billing_date_for_bil", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Billing date for bil", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Net_Value_in_Documen", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Net Value in Documen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Billing_Document", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Billing Document", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -54836,9 +54657,9 @@ SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, C
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Pa" +
-                "yer, CreatedBy, DocumentDate, OrderNetValue, ShipTo, SoldToParty, ActivityNumber" +
-                ", ShippingCondition, UserIn, DateIn\r\nFROM            STI_1Actv_Actual_OTR";
+            this._commandCollection[0].CommandText = @"SELECT        Payer, [Billing Document], [Agreement (various c], [Distribution Channel], [Billing Type], [Sold-to party], [Name of Person who C], [Assignment number], [Reference Document N], [Billing date for bil], 
+                         [Net Value in Documen]
+FROM            EST_actual_R3";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -54846,7 +54667,7 @@ SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsData.STI_1Actv_Actual_OTRDataTable dataTable) {
+        public virtual int Fill(dsData.EST_actual_R3DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -54859,9 +54680,9 @@ SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsData.STI_1Actv_Actual_OTRDataTable GetData() {
+        public virtual dsData.EST_actual_R3DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsData.STI_1Actv_Actual_OTRDataTable dataTable = new dsData.STI_1Actv_Actual_OTRDataTable();
+            dsData.EST_actual_R3DataTable dataTable = new dsData.EST_actual_R3DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -54869,7 +54690,7 @@ SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, C
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsData.STI_1Actv_Actual_OTRDataTable dataTable) {
+        public virtual int Update(dsData.EST_actual_R3DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -54877,7 +54698,7 @@ SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(dsData dataSet) {
-            return this.Adapter.Update(dataSet, "STI_1Actv_Actual_OTR");
+            return this.Adapter.Update(dataSet, "EST_actual_R3");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -54899,12 +54720,12 @@ SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_BillingDocNo) {
-            if ((Original_BillingDocNo == null)) {
-                throw new global::System.ArgumentNullException("Original_BillingDocNo");
+        public virtual int Delete(string Original_Billing_Document) {
+            if ((Original_Billing_Document == null)) {
+                throw new global::System.ArgumentNullException("Original_Billing_Document");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_BillingDocNo));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Billing_Document));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -54926,96 +54747,72 @@ SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string BillingDocNo, string SalesDocument, string OrderType, string PONumber, string BillingStatus, string Payer, string CreatedBy, global::System.Nullable<global::System.DateTime> DocumentDate, global::System.Nullable<double> OrderNetValue, string ShipTo, string SoldToParty, string ActivityNumber, string ShippingCondition, global::System.Nullable<int> UserIn, global::System.Nullable<global::System.DateTime> DateIn) {
-            if ((BillingDocNo == null)) {
-                throw new global::System.ArgumentNullException("BillingDocNo");
+        public virtual int Insert(string Payer, string Billing_Document, string p1, string Distribution_Channel, string Billing_Type, string p4, string Name_of_Person_who_C, string Assignment_number, string Reference_Document_N, global::System.Nullable<global::System.DateTime> Billing_date_for_bil, global::System.Nullable<double> Net_Value_in_Documen) {
+            if ((Payer == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(BillingDocNo));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Payer));
             }
-            if ((SalesDocument == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((Billing_Document == null)) {
+                throw new global::System.ArgumentNullException("Billing_Document");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(SalesDocument));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Billing_Document));
             }
-            if ((OrderType == null)) {
+            if ((p1 == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(OrderType));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p1));
             }
-            if ((PONumber == null)) {
+            if ((Distribution_Channel == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PONumber));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Distribution_Channel));
             }
-            if ((BillingStatus == null)) {
+            if ((Billing_Type == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(BillingStatus));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Billing_Type));
             }
-            if ((Payer == null)) {
+            if ((p4 == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Payer));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p4));
             }
-            if ((CreatedBy == null)) {
+            if ((Name_of_Person_who_C == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(CreatedBy));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Name_of_Person_who_C));
             }
-            if ((DocumentDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(DocumentDate.Value));
-            }
-            else {
+            if ((Assignment_number == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((OrderNetValue.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(OrderNetValue.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Assignment_number));
+            }
+            if ((Reference_Document_N == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((ShipTo == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Reference_Document_N));
+            }
+            if ((Billing_date_for_bil.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Billing_date_for_bil.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(ShipTo));
+            if ((Net_Value_in_Documen.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((double)(Net_Value_in_Documen.Value));
             }
-            if ((SoldToParty == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(SoldToParty));
-            }
-            if ((ActivityNumber == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(ActivityNumber));
-            }
-            if ((ShippingCondition == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(ShippingCondition));
-            }
-            if ((UserIn.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(UserIn.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((DateIn.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((System.DateTime)(DateIn.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -55037,118 +54834,78 @@ SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string BillingDocNo, 
-                    string SalesDocument, 
-                    string OrderType, 
-                    string PONumber, 
-                    string BillingStatus, 
-                    string Payer, 
-                    string CreatedBy, 
-                    global::System.Nullable<global::System.DateTime> DocumentDate, 
-                    global::System.Nullable<double> OrderNetValue, 
-                    string ShipTo, 
-                    string SoldToParty, 
-                    string ActivityNumber, 
-                    string ShippingCondition, 
-                    global::System.Nullable<int> UserIn, 
-                    global::System.Nullable<global::System.DateTime> DateIn, 
-                    string Original_BillingDocNo) {
-            if ((BillingDocNo == null)) {
-                throw new global::System.ArgumentNullException("BillingDocNo");
+        public virtual int Update(string Payer, string Billing_Document, string p1, string Distribution_Channel, string Billing_Type, string p4, string Name_of_Person_who_C, string Assignment_number, string Reference_Document_N, global::System.Nullable<global::System.DateTime> Billing_date_for_bil, global::System.Nullable<double> Net_Value_in_Documen, string Original_Billing_Document) {
+            if ((Payer == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(BillingDocNo));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Payer));
             }
-            if ((SalesDocument == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            if ((Billing_Document == null)) {
+                throw new global::System.ArgumentNullException("Billing_Document");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(SalesDocument));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Billing_Document));
             }
-            if ((OrderType == null)) {
+            if ((p1 == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(OrderType));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p1));
             }
-            if ((PONumber == null)) {
+            if ((Distribution_Channel == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PONumber));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Distribution_Channel));
             }
-            if ((BillingStatus == null)) {
+            if ((Billing_Type == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(BillingStatus));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Billing_Type));
             }
-            if ((Payer == null)) {
+            if ((p4 == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Payer));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p4));
             }
-            if ((CreatedBy == null)) {
+            if ((Name_of_Person_who_C == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(CreatedBy));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Name_of_Person_who_C));
             }
-            if ((DocumentDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(DocumentDate.Value));
-            }
-            else {
+            if ((Assignment_number == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((OrderNetValue.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(OrderNetValue.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Assignment_number));
+            }
+            if ((Reference_Document_N == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((ShipTo == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Reference_Document_N));
+            }
+            if ((Billing_date_for_bil.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Billing_date_for_bil.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(ShipTo));
+            if ((Net_Value_in_Documen.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Net_Value_in_Documen.Value));
             }
-            if ((SoldToParty == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(SoldToParty));
-            }
-            if ((ActivityNumber == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((Original_Billing_Document == null)) {
+                throw new global::System.ArgumentNullException("Original_Billing_Document");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(ActivityNumber));
-            }
-            if ((ShippingCondition == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(ShippingCondition));
-            }
-            if ((UserIn.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(UserIn.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((DateIn.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(DateIn.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_BillingDocNo == null)) {
-                throw new global::System.ArgumentNullException("Original_BillingDocNo");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_BillingDocNo));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Billing_Document));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -55170,8 +54927,8 @@ SELECT BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, C
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string SalesDocument, string OrderType, string PONumber, string BillingStatus, string Payer, string CreatedBy, global::System.Nullable<global::System.DateTime> DocumentDate, global::System.Nullable<double> OrderNetValue, string ShipTo, string SoldToParty, string ActivityNumber, string ShippingCondition, global::System.Nullable<int> UserIn, global::System.Nullable<global::System.DateTime> DateIn, string Original_BillingDocNo) {
-            return this.Update(Original_BillingDocNo, SalesDocument, OrderType, PONumber, BillingStatus, Payer, CreatedBy, DocumentDate, OrderNetValue, ShipTo, SoldToParty, ActivityNumber, ShippingCondition, UserIn, DateIn, Original_BillingDocNo);
+        public virtual int Update(string Payer, string p1, string Distribution_Channel, string Billing_Type, string p4, string Name_of_Person_who_C, string Assignment_number, string Reference_Document_N, global::System.Nullable<global::System.DateTime> Billing_date_for_bil, global::System.Nullable<double> Net_Value_in_Documen, string Original_Billing_Document) {
+            return this.Update(Payer, Original_Billing_Document, p1, Distribution_Channel, Billing_Type, p4, Name_of_Person_who_C, Assignment_number, Reference_Document_N, Billing_date_for_bil, Net_Value_in_Documen, Original_Billing_Document);
         }
     }
     
@@ -56595,7 +56352,7 @@ GROUP BY Customer";
         
         private EquipmentAllTableAdapter _equipmentAllTableAdapter;
         
-        private STI_1Actv_Actual_OTRTableAdapter _sTI_1Actv_Actual_OTRTableAdapter;
+        private EST_actual_R3TableAdapter _eST_actual_R3TableAdapter;
         
         private STI_2Actv_Bill_AgreeTableAdapter _sTI_2Actv_Bill_AgreeTableAdapter;
         
@@ -57167,12 +56924,12 @@ GROUP BY Customer";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public STI_1Actv_Actual_OTRTableAdapter STI_1Actv_Actual_OTRTableAdapter {
+        public EST_actual_R3TableAdapter EST_actual_R3TableAdapter {
             get {
-                return this._sTI_1Actv_Actual_OTRTableAdapter;
+                return this._eST_actual_R3TableAdapter;
             }
             set {
-                this._sTI_1Actv_Actual_OTRTableAdapter = value;
+                this._eST_actual_R3TableAdapter = value;
             }
         }
         
@@ -57379,9 +57136,9 @@ GROUP BY Customer";
                             && (this._equipmentAllTableAdapter.Connection != null))) {
                     return this._equipmentAllTableAdapter.Connection;
                 }
-                if (((this._sTI_1Actv_Actual_OTRTableAdapter != null) 
-                            && (this._sTI_1Actv_Actual_OTRTableAdapter.Connection != null))) {
-                    return this._sTI_1Actv_Actual_OTRTableAdapter.Connection;
+                if (((this._eST_actual_R3TableAdapter != null) 
+                            && (this._eST_actual_R3TableAdapter.Connection != null))) {
+                    return this._eST_actual_R3TableAdapter.Connection;
                 }
                 if (((this._sTI_2Actv_Bill_AgreeTableAdapter != null) 
                             && (this._sTI_2Actv_Bill_AgreeTableAdapter.Connection != null))) {
@@ -57521,7 +57278,7 @@ GROUP BY Customer";
                 if ((this._equipmentAllTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._sTI_1Actv_Actual_OTRTableAdapter != null)) {
+                if ((this._eST_actual_R3TableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._sTI_2Actv_Bill_AgreeTableAdapter != null)) {
@@ -57712,12 +57469,12 @@ GROUP BY Customer";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._sTI_1Actv_Actual_OTRTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.STI_1Actv_Actual_OTR.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eST_actual_R3TableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EST_actual_R3.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._sTI_1Actv_Actual_OTRTableAdapter.Update(updatedRows));
+                    result = (result + this._eST_actual_R3TableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -58081,11 +57838,11 @@ GROUP BY Customer";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sTI_1Actv_Actual_OTRTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.STI_1Actv_Actual_OTR.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eST_actual_R3TableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EST_actual_R3.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._sTI_1Actv_Actual_OTRTableAdapter.Update(addedRows));
+                    result = (result + this._eST_actual_R3TableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -58451,11 +58208,11 @@ GROUP BY Customer";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._sTI_1Actv_Actual_OTRTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.STI_1Actv_Actual_OTR.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eST_actual_R3TableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EST_actual_R3.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._sTI_1Actv_Actual_OTRTableAdapter.Update(deletedRows));
+                    result = (result + this._eST_actual_R3TableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -58845,8 +58602,8 @@ GROUP BY Customer";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._sTI_1Actv_Actual_OTRTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._sTI_1Actv_Actual_OTRTableAdapter.Connection) == false))) {
+            if (((this._eST_actual_R3TableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eST_actual_R3TableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -59243,13 +59000,13 @@ GROUP BY Customer";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._equipmentAllTableAdapter.Adapter);
                     }
                 }
-                if ((this._sTI_1Actv_Actual_OTRTableAdapter != null)) {
-                    revertConnections.Add(this._sTI_1Actv_Actual_OTRTableAdapter, this._sTI_1Actv_Actual_OTRTableAdapter.Connection);
-                    this._sTI_1Actv_Actual_OTRTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._sTI_1Actv_Actual_OTRTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._sTI_1Actv_Actual_OTRTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._sTI_1Actv_Actual_OTRTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._sTI_1Actv_Actual_OTRTableAdapter.Adapter);
+                if ((this._eST_actual_R3TableAdapter != null)) {
+                    revertConnections.Add(this._eST_actual_R3TableAdapter, this._eST_actual_R3TableAdapter.Connection);
+                    this._eST_actual_R3TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._eST_actual_R3TableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._eST_actual_R3TableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eST_actual_R3TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eST_actual_R3TableAdapter.Adapter);
                     }
                 }
                 if ((this._sTI_2Actv_Bill_AgreeTableAdapter != null)) {
@@ -59484,9 +59241,9 @@ GROUP BY Customer";
                     this._equipmentAllTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._equipmentAllTableAdapter]));
                     this._equipmentAllTableAdapter.Transaction = null;
                 }
-                if ((this._sTI_1Actv_Actual_OTRTableAdapter != null)) {
-                    this._sTI_1Actv_Actual_OTRTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sTI_1Actv_Actual_OTRTableAdapter]));
-                    this._sTI_1Actv_Actual_OTRTableAdapter.Transaction = null;
+                if ((this._eST_actual_R3TableAdapter != null)) {
+                    this._eST_actual_R3TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._eST_actual_R3TableAdapter]));
+                    this._eST_actual_R3TableAdapter.Transaction = null;
                 }
                 if ((this._sTI_2Actv_Bill_AgreeTableAdapter != null)) {
                     this._sTI_2Actv_Bill_AgreeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._sTI_2Actv_Bill_AgreeTableAdapter]));

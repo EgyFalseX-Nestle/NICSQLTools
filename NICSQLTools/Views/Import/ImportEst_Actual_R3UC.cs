@@ -15,29 +15,33 @@ using NICSQLTools.Classes.Managers;
 
 namespace NICSQLTools.Views.Import
 {
-    public partial class ImportActual_OTRUC : DevExpress.XtraEditors.XtraUserControl
+    public partial class ImportEst_Actual_R3UC : DevExpress.XtraEditors.XtraUserControl
     {
 
         #region -   Variables   -
-        private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportActual_OTRUC));
+        private static readonly ILog Logger = log4net.LogManager.GetLogger(typeof(ImportEst_Actual_R3UC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
-        NICSQLTools.Data.dsQryTableAdapters.QryBillDocSTI_1Actv_Actual_OTRTableAdapter _adpBillDoc = new NICSQLTools.Data.dsQryTableAdapters.QryBillDocSTI_1Actv_Actual_OTRTableAdapter();
+        NICSQLTools.Data.dsQryTableAdapters.QryBillDocEST_actual_R3TableAdapter _adpBillDoc = new NICSQLTools.Data.dsQryTableAdapters.QryBillDocEST_actual_R3TableAdapter();
         private string RequiredField
         {
             get
             {
                 return string.Format(@"Required field for import{0}
-Sales Document
-Order Type
-Billing status
-Billing Doc no
 Payer
-Created By
-Document date
-Order Net Value
-Ship to
+Billing Document
+Agreement (various c
+Sales Organization
+Distribution Channel
+Billing Type
 Sold-to party
-Shipping condition
+Name of Person who C
+Sales district
+Assignment number
+Accounting Document
+Cancelled billing do
+Reference Document N
+Billing date for bil
+Net Value in Documen
 _______________________________________________
 ", Environment.NewLine);
             }
@@ -45,7 +49,7 @@ _______________________________________________
      
         #endregion
         #region -   Functions   -
-        public ImportActual_OTRUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
+        public ImportEst_Actual_R3UC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             tbLog.Text = RequiredField;
@@ -117,12 +121,12 @@ _______________________________________________
             DateTime UserIn = DataManager.defaultInstance.ServerDateTime;
 
             //Load All Bill Docs
-            NICSQLTools.Data.dsQry.QryBillDocSTI_1Actv_Actual_OTRDataTable TblMaster = new NICSQLTools.Data.dsQry.QryBillDocSTI_1Actv_Actual_OTRDataTable();
+            NICSQLTools.Data.dsQry.QryBillDocEST_actual_R3DataTable TblMaster = new NICSQLTools.Data.dsQry.QryBillDocEST_actual_R3DataTable();
 
             //deleting data before saving new 1
             var result = from q in dtExcel.AsEnumerable()
-                         orderby q["Document date"]
-                         group q by q["Document date"] into grp
+                         orderby q["Billing date for bil"]
+                         group q by q["Billing date for bil"] into grp
                          select new { BillingDate = grp.Key };
             DateTime BillStartDate = (DateTime)result.ElementAt(0).BillingDate;
             DateTime BillEndDate = (DateTime)result.ElementAt(result.Count() - 1).BillingDate;
@@ -145,26 +149,26 @@ _______________________________________________
                     }));
                 }
 
-                if (TblMaster.FindByBillingDocNo(row["Billing Doc no"].ToString()) != null)
+                if (TblMaster.FindByBilling_Document(row["Billing Document"].ToString()) != null)// Already in DB
+                    continue;
+                if (dsData.EST_actual_R3.FindByBilling_Document(row["Billing Document"].ToString()) != null)// Already Added
                     continue;
 
-                NICSQLTools.Data.dsData.STI_1Actv_Actual_OTRRow SqlRow = dsData.STI_1Actv_Actual_OTR.NewSTI_1Actv_Actual_OTRRow();
+                NICSQLTools.Data.dsData.EST_actual_R3Row SqlRow = dsData.EST_actual_R3.NewEST_actual_R3Row();
 
-                SqlRow.BillingDocNo = row["Billing Doc no"].ToString();
-                SqlRow.SalesDocument = row["Sales Document"].ToString();
-                SqlRow.OrderType = row["Order Type"].ToString();
-                SqlRow.BillingStatus = row["Billing status"].ToString();
                 SqlRow.Payer = row["Payer"].ToString();
-                SqlRow.CreatedBy = row["Created By"].ToString();
-                SqlRow.DocumentDate = Convert.ToDateTime(row["Document date"]);
-                SqlRow.OrderNetValue = Convert.ToDouble(row["Order Net Value"]);
-                SqlRow.ShipTo = row["Ship To"].ToString();
-                SqlRow.SoldToParty = row["Sold-to party"].ToString();
-                SqlRow.ShippingCondition = row["Shipping condition"].ToString();
-                SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
-                SqlRow.DateIn = UserIn;
+                SqlRow.Billing_Document = row["Billing Document"].ToString();
+                SqlRow._Agreement__various_c = row["Agreement (various c"].ToString();
+                SqlRow.Distribution_Channel = row["Distribution Channel"].ToString();
+                SqlRow.Billing_Type = row["Billing Type"].ToString();
+                SqlRow._Sold_to_party = Convert.ToInt32(row["Sold-to party"]).ToString();
+                SqlRow.Name_of_Person_who_C = row["Name of Person who C"].ToString();
+                SqlRow.Assignment_number = row["Assignment number"].ToString();
+                SqlRow.Reference_Document_N = row["Reference Document N"].ToString();
+                SqlRow.Billing_date_for_bil = Convert.ToDateTime(row["Billing date for bil"]);
+                SqlRow.Net_Value_in_Documen = Convert.ToDouble(row["Net Value in Documen"]);
 
-                dsData.STI_1Actv_Actual_OTR.AddSTI_1Actv_Actual_OTRRow(SqlRow);
+                dsData.EST_actual_R3.AddEST_actual_R3Row(SqlRow);
                 SqlRow.EndEdit();
             }
             Invoke(new MethodInvoker(() =>//100 %
@@ -175,19 +179,19 @@ _______________________________________________
 
                 Application.DoEvents();
             }));
-            ShowHideProgress(true); ChangeProgressCaption("Updating STI_1Actv_Actual_OTR ...");
+            ShowHideProgress(true); ChangeProgressCaption("Updating EST_actual_R3 ...");
 
-            if (!STI_1Actv_Actual_OTR.UpdateBulkActual_OTR(cmd, dsData.STI_1Actv_Actual_OTR))
-                MsgDlg.Show("Update STI_1Actv_Actual_OTR Failed", MsgDlg.MessageType.Error);
+            if (!EST_actual_R3.UpdateBulkEST_actual_R3(cmd, dsData.EST_actual_R3))
+                MsgDlg.Show("Update EST_actual_R3 Failed", MsgDlg.MessageType.Error);
             else
             {
-                AddLog("New STI_1Actv_Actual_OTR Saved " + dsData.STI_1Actv_Actual_OTR.Count);
+                AddLog("New EST_actual_R3 Saved " + dsData.EST_actual_R3.Count);
                 output = true;
             }
-            dsData.STI_1Actv_Actual_OTR.AcceptChanges();
+            dsData.EST_actual_R3.AcceptChanges();
             ShowHideProgress(false);
             dtExcel.Rows.Clear(); dtExcel.Dispose(); dtExcel = null;
-            dsData.STI_1Actv_Actual_OTR.Clear(); dsData.STI_1Actv_Actual_OTR.Dispose();
+            dsData.EST_actual_R3.Clear(); dsData.EST_actual_R3.Dispose();
             cmd.Dispose(); cmd = null; con.Close(); con.Dispose(); con = null;
             GC.Collect(); GC.WaitForPendingFinalizers();
 

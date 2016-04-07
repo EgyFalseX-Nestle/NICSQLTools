@@ -310,6 +310,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Views.Import.ImportActualBillArgUC(RuleElemet);
             }
+            else if (e.Document == docEditorsImportGPS_Data)
+            {
+                e.Control = new Views.Import.ImportGPS_DataUC(RuleElemet);
+            }
             else if (e.Document == docEditorsCostControl)
             {
                 e.Control = new Views.Data.CostControlEditorUC(RuleElemet);

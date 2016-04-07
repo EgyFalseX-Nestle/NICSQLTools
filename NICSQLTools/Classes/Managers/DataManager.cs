@@ -441,8 +441,13 @@ namespace NICSQLTools.Classes.Managers
                     DataRow row = dt.NewRow();
                     for (cCnt = 1; cCnt <= colCount; cCnt++)
                     {
-                        
-                        if (objectArray[rCnt, cCnt] != null && objectArray[rCnt, cCnt].GetType() == dt.Columns[cCnt - 1].DataType)
+                        string type1;
+                        if (objectArray[rCnt, cCnt] != null)
+                        {
+                            type1 = objectArray[rCnt, cCnt].GetType().ToString();
+                        }
+                        string type2 = dt.Columns[cCnt - 1].DataType.ToString();
+                        if (objectArray[rCnt, cCnt] != null && (objectArray[rCnt, cCnt].GetType() == dt.Columns[cCnt - 1].DataType || dt.Columns[cCnt - 1].DataType == typeof(string)))
                             row[cCnt - 1] = objectArray[rCnt, cCnt];
                     }
                     dt.Rows.Add(row);

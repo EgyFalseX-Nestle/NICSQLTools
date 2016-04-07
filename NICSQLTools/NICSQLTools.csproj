@@ -197,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Authentication.cs" />
+    <Compile Include="Classes\GPS_Data.cs" />
     <Compile Include="Classes\Stock_Data.cs" />
     <Compile Include="Classes\MSrv.cs" />
     <Compile Include="Classes\STI_2Actv_Bill_Agree.cs" />
@@ -479,6 +480,12 @@
     </Compile>
     <Compile Include="Views\Import\ImportActualBillArgUC.Designer.cs">
       <DependentUpon>ImportActualBillArgUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportGPS_DataUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Import\ImportGPS_DataUC.Designer.cs">
+      <DependentUpon>ImportGPS_DataUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportEst_Actual_R3UC.cs">
       <SubType>UserControl</SubType>
@@ -884,6 +891,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportActualBillArgUC.resx">
       <DependentUpon>ImportActualBillArgUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Import\ImportGPS_DataUC.resx">
+      <DependentUpon>ImportGPS_DataUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportEst_Actual_R3UC.resx">
       <DependentUpon>ImportEst_Actual_R3UC.cs</DependentUpon>

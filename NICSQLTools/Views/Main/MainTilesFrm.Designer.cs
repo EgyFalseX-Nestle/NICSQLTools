@@ -351,6 +351,7 @@
             this.docEditorsImportDst_Master = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportEst_Actual_R3UC = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportActualBillArg = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docEditorsImportGPS_Data = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docEditorsImportFromExcel = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.documentTileDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.tileContainerDashboard = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TileContainer(this.components);
@@ -397,6 +398,7 @@
             this.documentTileEditorsImportStock_Data = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsRDMEditorRDM_Promo_Type = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             this.documentTileEditorsRDMEditorRDM_Receipt = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
+            this.documentTileEditorsImportGPS_Data = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerLogin)).BeginInit();
@@ -490,6 +492,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEst_Actual_R3UC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportActualBillArg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportGPS_Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportFromExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileDashboard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerDashboard)).BeginInit();
@@ -536,6 +539,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsRDMEditorRDM_Promo_Type)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsRDMEditorRDM_Receipt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportGPS_Data)).BeginInit();
             this.SuspendLayout();
             // 
             // documentManagerMain
@@ -629,7 +633,8 @@
             this.docEditorsImportStock_Data,
             this.docEditorsRDMEditor,
             this.docEditorsRDMEditorRDM_Promo_Type,
-            this.docEditorsRDMEditorRDM_Receipt});
+            this.docEditorsRDMEditorRDM_Receipt,
+            this.docEditorsImportGPS_Data});
             this.windowsUIView.OptionsLayout.LayoutVersion = "2";
             this.windowsUIView.OptionsLayout.PropertiesRestoreMode = DevExpress.XtraBars.Docking2010.Views.PropertiesRestoreMode.All;
             this.windowsUIView.SearchPanelProperties.Enabled = false;
@@ -703,7 +708,8 @@
             this.documentTileEditorsImportStock_Data,
             this.documentTileEditorsRDMEditor,
             this.documentTileEditorsRDMEditorRDM_Promo_Type,
-            this.documentTileEditorsRDMEditorRDM_Receipt});
+            this.documentTileEditorsRDMEditorRDM_Receipt,
+            this.documentTileEditorsImportGPS_Data});
             this.windowsUIView.QueryControl += new DevExpress.XtraBars.Docking2010.Views.QueryControlEventHandler(this.windowsUIView_QueryControl);
             // 
             // tileContainerLogin
@@ -1828,7 +1834,8 @@
             this.docEditorsImportStock_Data,
             this.docEditorsImportDst_Master,
             this.docEditorsImportEst_Actual_R3UC,
-            this.docEditorsImportActualBillArg});
+            this.docEditorsImportActualBillArg,
+            this.docEditorsImportGPS_Data});
             this.tabbedGroupImport.Name = "tabbedGroupImport";
             this.tabbedGroupImport.Parent = this.tileContainerEditors;
             // 
@@ -1921,6 +1928,12 @@
             this.docEditorsImportActualBillArg.Caption = "Import Actual Bill Agreement";
             this.docEditorsImportActualBillArg.ControlName = "docEditorsImportActualBillArg";
             this.docEditorsImportActualBillArg.Image = global::NICSQLTools.Properties.Resources.Excel16;
+            // 
+            // docEditorsImportGPS_Data
+            // 
+            this.docEditorsImportGPS_Data.Caption = "Import GPS Data";
+            this.docEditorsImportGPS_Data.ControlName = "docEditorsImportGPS_Data";
+            this.docEditorsImportGPS_Data.Image = global::NICSQLTools.Properties.Resources.Excel16;
             // 
             // docEditorsImportFromExcel
             // 
@@ -2555,6 +2568,11 @@
             this.documentTileEditorsRDMEditorRDM_Receipt.Document = this.docEditorsRDMEditorRDM_Receipt;
             this.documentTileEditorsRDMEditorRDM_Receipt.Name = "documentTileEditorsRDMEditorRDM_Receipt";
             // 
+            // documentTileEditorsImportGPS_Data
+            // 
+            this.documentTileEditorsImportGPS_Data.Document = this.docEditorsImportGPS_Data;
+            this.documentTileEditorsImportGPS_Data.Name = "documentTileEditorsImportGPS_Data";
+            // 
             // MainTilesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2660,6 +2678,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportDst_Master)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportEst_Actual_R3UC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportActualBillArg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportGPS_Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docEditorsImportFromExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileDashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileContainerDashboard)).EndInit();
@@ -2706,6 +2725,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportStock_Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsRDMEditorRDM_Promo_Type)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsRDMEditorRDM_Receipt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentTileEditorsImportGPS_Data)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2851,6 +2871,8 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsRDMEditorRDM_Promo_Type;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsRDMEditorRDM_Receipt;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsRDMEditorRDM_Receipt;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docEditorsImportGPS_Data;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Tile documentTileEditorsImportGPS_Data;
     }
 }
 

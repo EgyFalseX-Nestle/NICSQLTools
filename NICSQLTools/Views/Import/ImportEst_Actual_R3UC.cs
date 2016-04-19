@@ -158,7 +158,8 @@ _______________________________________________
 
                 SqlRow.Payer = row["Payer"].ToString();
                 SqlRow.Billing_Document = row["Billing Document"].ToString();
-                SqlRow._Agreement__various_c = row["Agreement (various c"].ToString();
+                if (row["Agreement (various c"].ToString() != string.Empty)
+                    SqlRow._Agreement__various_c = Convert.ToInt64(row["Agreement (various c"]).ToString();
                 SqlRow.Distribution_Channel = row["Distribution Channel"].ToString();
                 SqlRow.Billing_Type = row["Billing Type"].ToString();
                 SqlRow._Sold_to_party = Convert.ToInt32(row["Sold-to party"]).ToString();

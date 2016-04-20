@@ -50,7 +50,6 @@ _______________________________________________
             
             _elementRule = RuleElement;
         }
-       
         private void LoadCustomerCodes(ref NICSQLTools.Data.dsData ds)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
@@ -83,8 +82,7 @@ _______________________________________________
             dr.Close();
             cmd.Dispose();
             con.Close(); con.Dispose();
-        }
-        private void LoadRouteCodes(ref NICSQLTools.Data.dsData ds)
+        }private void LoadRouteCodes(ref NICSQLTools.Data.dsData ds)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT [Route Number] FROM [0-3  Route Details]", con);
@@ -118,11 +116,7 @@ _______________________________________________
             //return false;
             bool output = false;
 
-            int NewCustomerFounded = 0;
-            int NewRouteFounded = 0;
-            int NewProductFounded = 0;
-            AddLog("Start importing ...", false);
-            DataTable dtExcel = new DataTable();
+            AddLog("Start importing ...", false);DataTable dtExcel = new DataTable();
 
             ShowHideProgress(true);
             this.Invoke(new MethodInvoker(() =>
@@ -152,11 +146,10 @@ _______________________________________________
             }
 
             DateTime dtStart = DateTime.Now;
-            DateTime UserIn = DataManager.defaultInstance.ServerDateTime;
+            DateTime userIn = DataManager.defaultInstance.ServerDateTime;
 
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
-            SqlCommand cmd = new SqlCommand("", con);
-            cmd.CommandTimeout = 0;
+            SqlCommand cmd = new SqlCommand("", con) {CommandTimeout = 0};
 
             con.Open();
 
@@ -182,7 +175,6 @@ _______________________________________________
 
             //Load All Bill Docs
             NICSQLTools.Data.dsQry.QryBillDocHH_DataDataTable TblMaster = new NICSQLTools.Data.dsQry.QryBillDocHH_DataDataTable();
-
             
             //deleting data before saving new 1
             var result = from row in dtExcel.AsEnumerable()
@@ -190,7 +182,6 @@ _______________________________________________
                          orderby row[7]
                          group row by row[7] into grp
                          select new { BillingDate = grp.Key };
-
             
             DateTime BillStartDate = Convert.ToDateTime(result.ElementAt(0).BillingDate);
             DateTime BillEndDate = Convert.ToDateTime(result.ElementAt(result.Count() - 1).BillingDate).AddDays(1);
@@ -199,8 +190,9 @@ _______________________________________________
 
             ShowHideProgress(false);
 
-
             string RouteNumber = string.Empty;
+            DateTime billdate = DateTime.Now;
+
             foreach (DataRow row in dtExcel.Rows)
             {
                 //Update UI
@@ -217,22 +209,24 @@ _______________________________________________
                         Application.DoEvents();
                     }));
                 }
-
                 if (row[1] != null && row[1].ToString().Contains("Route"))// Get RowNumber
                     RouteNumber = row[2].ToString().Substring(0, row[2].ToString().IndexOf(" -"));
+                if (row[7] != null && row[7].ToString() != String.Empty)// Get Date
+                    billdate = Convert.ToDateTime(row[7]);
 
                 if (row[2] == null || row[2].ToString().Trim() == string.Empty || row[2].ToString().StartsWith("CS") == false)// Row is empty or a header
                     continue;
 
                 if (TblMaster.FindByInvoiceNo(row[2].ToString()) != null)// Check Bill Doc Exists
                     continue;
+                
 
                 NICSQLTools.Data.dsData.HH_DataRow SqlRow = dsData.HH_Data.NewHH_DataRow();
                 SqlRow.InvoiceNo = row[2].ToString();
 
                 //Get Date and Time
                 string[] time = row[5].ToString().Split(':');
-                SqlRow.BillDate = new DateTime(BillStartDate.Year, BillStartDate.Month, BillStartDate.Day, Convert.ToInt32(time[0]), Convert.ToInt32(time[1]), Convert.ToInt32(time[2]));
+                SqlRow.BillDate = new DateTime(billdate.Year, billdate.Month, billdate.Day, Convert.ToInt32(time[0]), Convert.ToInt32(time[1]), Convert.ToInt32(time[2]));
 
                 SqlRow.Customer = Convert.ToInt32(row[3].ToString().Substring(0, row[3].ToString().IndexOf(" -"))).ToString();
                 SqlRow.RouteNumber = RouteNumber;
@@ -241,7 +235,7 @@ _______________________________________________
                 SqlRow.Code = row[1].ToString();
 
                 SqlRow.UserIn = UserManager.defaultInstance.User.UserId;
-                SqlRow.DateIn = UserIn;
+                SqlRow.DateIn = userIn;
 
                 dsData.HH_Data.AddHH_DataRow(SqlRow);
                 SqlRow.EndEdit();

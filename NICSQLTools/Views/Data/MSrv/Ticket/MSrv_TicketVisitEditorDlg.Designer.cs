@@ -1,4 +1,4 @@
-﻿namespace NICSQLTools.Views.Data.MSrv
+﻿namespace NICSQLTools.Views.Data.MSrv.Ticket
 {
     partial class MSrv_TicketVisitEditorDlg
     {

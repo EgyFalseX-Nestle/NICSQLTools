@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
-namespace NICSQLTools.Views.Data
+namespace NICSQLTools.Views.Data.MSrv.Ticket
 {
     public partial class MSrv_TicketCloseDlg : DevExpress.XtraEditors.XtraForm
     {
@@ -32,6 +26,8 @@ namespace NICSQLTools.Views.Data
         }
         public void ActivateRules()
         {
+            if (_elementRule == null)
+                return;
             btnSave.Visible = btnSave.Enabled = _elementRule.Deleting;
         }
         #endregion

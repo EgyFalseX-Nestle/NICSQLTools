@@ -203,7 +203,7 @@ namespace NICSQLTools.Classes.Managers
             Asm.Add("DevExpress.XtraVerticalGrid.v15.2.dll", 152200000);
             Asm.Add("DevExpress.XtraWizard.v15.2.dll", 152200000);
 
-            Asm.Add("FXFW.dll", 1004);
+            Asm.Add("FXFW.dll", 1005);
             //Asm.Add("Interop.DAO.dll", 5000);
             Asm.Add("Ionic.Zip.dll", 1918);
             Asm.Add("log4net.dll", 12110);

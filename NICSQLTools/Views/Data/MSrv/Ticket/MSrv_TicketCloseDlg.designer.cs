@@ -1,4 +1,4 @@
-﻿namespace NICSQLTools.Views.Data
+﻿namespace NICSQLTools.Views.Data.MSrv.Ticket
 {
     partial class MSrv_TicketCloseDlg
     {

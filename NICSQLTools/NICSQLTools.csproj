@@ -244,7 +244,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDataSource.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\dsMSrc1.Designer.cs">
+    <Compile Include="Data\dsMSrc.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMSrc.xsd</DependentUpon>
@@ -1044,8 +1044,8 @@
     </None>
     <None Include="Data\dsMSrc.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsMSrc1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>dsMSrc.Designer.cs</LastGenOutput>
     </None>
     <None Include="Data\dsMSrc.xss">
       <DependentUpon>dsMSrc.xsd</DependentUpon>

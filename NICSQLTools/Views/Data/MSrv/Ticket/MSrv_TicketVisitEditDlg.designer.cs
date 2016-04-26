@@ -1,4 +1,4 @@
-﻿namespace NICSQLTools.Views.Data
+﻿namespace NICSQLTools.Views.Data.MSrv.Ticket
 {
     partial class MSrv_TicketVisitEditDlg
     {
@@ -33,7 +33,6 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrv_TicketVisitEditDlg));
             this.dataLayoutControlMain = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.clbcReason = new DevExpress.XtraEditors.CheckedListBoxControl();
@@ -308,9 +307,6 @@
             this.tbVisitComment.Size = new System.Drawing.Size(545, 41);
             this.tbVisitComment.StyleController = this.dataLayoutControlMain;
             this.tbVisitComment.TabIndex = 5;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.tbVisitComment, conditionValidationRule3);
             // 
             // btnSave
             // 
@@ -366,9 +362,9 @@
             this.lueTicket.Size = new System.Drawing.Size(574, 22);
             this.lueTicket.StyleController = this.dataLayoutControlMain;
             this.lueTicket.TabIndex = 0;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.lueTicket, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProviderMain.SetValidationRule(this.lueTicket, conditionValidationRule3);
             // 
             // LSMSTicket
             // 
@@ -400,9 +396,9 @@
             this.lueTechnicianId.Size = new System.Drawing.Size(545, 22);
             this.lueTechnicianId.StyleController = this.dataLayoutControlMain;
             this.lueTechnicianId.TabIndex = 2;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.lueTechnicianId, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxValidationProviderMain.SetValidationRule(this.lueTechnicianId, conditionValidationRule4);
             // 
             // LSMSTechnicianId
             // 

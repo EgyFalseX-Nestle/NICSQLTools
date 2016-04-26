@@ -5,6 +5,7 @@ using DevExpress.XtraBars.Docking2010.Views;
 using System.Drawing;
 using System.Linq;
 using System;
+using NICSQLTools.Views.Data.MSrv.Ticket;
 
 namespace NICSQLTools.Views.Main
 {
@@ -356,7 +357,7 @@ namespace NICSQLTools.Views.Main
             }
             else if (e.Document == docEditorsMSrv_TicketEditor)
             {
-                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TicketEditorUC(RuleElemet);
+                e.Control = new MSrv_TicketEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsMSrv_TechnicianSalesDistrictEditor)
             {

@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
-namespace NICSQLTools.Views.Data.MSrv
+namespace NICSQLTools.Views.Data.MSrv.Ticket
 {
     public partial class MSrv_TicketVisitEditorDlg : DevExpress.XtraEditors.XtraForm
     {
         #region - Var -
-        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(NICSQLTools.Views.Data.MSrv.MSrv_TicketVisitEditorDlg));
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(MSrv_TicketVisitEditorDlg));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext() { ObjectTrackingEnabled = false };
         NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser _ticket;
@@ -54,7 +47,7 @@ namespace NICSQLTools.Views.Data.MSrv
                     MsgDlg.Show("Controled by another department", MsgDlg.MessageType.Info);
                     return;
                 }
-                MSrv_TicketVisitAddDlg dlg = new MSrv_TicketVisitAddDlg(_elementRule, _ticket.TicketId);
+                MSrvTicketVisitAddDlg dlg = new MSrvTicketVisitAddDlg(_elementRule, _ticket.TicketId);
                 dlg.ShowDialog();
                 ReloadGrid();
             }

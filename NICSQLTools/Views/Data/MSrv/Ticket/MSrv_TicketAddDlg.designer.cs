@@ -1,6 +1,6 @@
-﻿namespace NICSQLTools.Views.Data
+﻿namespace NICSQLTools.Views.Data.MSrv.Ticket
 {
-    partial class MSrv_TicketAddDlg
+    partial class MSrvTicketAddDlg
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrv_TicketAddDlg));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrvTicketAddDlg));
             this.dataLayoutControlMain = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.tbIssueContactPhone2 = new DevExpress.XtraEditors.TextEdit();
             this.clbcReason = new DevExpress.XtraEditors.CheckedListBoxControl();
@@ -122,7 +122,7 @@
             // tbIssueContactPhone2
             // 
             this.tbIssueContactPhone2.EnterMoveNextControl = true;
-            this.tbIssueContactPhone2.Location = new System.Drawing.Point(316, 118);
+            this.tbIssueContactPhone2.Location = new System.Drawing.Point(316, 116);
             this.tbIssueContactPhone2.Name = "tbIssueContactPhone2";
             this.tbIssueContactPhone2.Size = new System.Drawing.Size(144, 20);
             this.tbIssueContactPhone2.StyleController = this.dataLayoutControlMain;
@@ -136,10 +136,10 @@
             this.clbcReason.DataSource = this.LSMSMSrvTypeId;
             this.clbcReason.DisplayMember = "MSrvType";
             this.clbcReason.HorizontalScrollbar = true;
-            this.clbcReason.Location = new System.Drawing.Point(94, 265);
+            this.clbcReason.Location = new System.Drawing.Point(94, 263);
             this.clbcReason.Name = "clbcReason";
             this.clbcReason.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.clbcReason.Size = new System.Drawing.Size(378, 257);
+            this.clbcReason.Size = new System.Drawing.Size(378, 259);
             this.clbcReason.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.clbcReason.StyleController = this.dataLayoutControlMain;
             this.clbcReason.TabIndex = 28;
@@ -153,7 +153,7 @@
             // tbIssueAddress
             // 
             this.tbIssueAddress.EnterMoveNextControl = true;
-            this.tbIssueAddress.Location = new System.Drawing.Point(106, 142);
+            this.tbIssueAddress.Location = new System.Drawing.Point(106, 140);
             this.tbIssueAddress.Name = "tbIssueAddress";
             this.tbIssueAddress.Size = new System.Drawing.Size(354, 20);
             this.tbIssueAddress.StyleController = this.dataLayoutControlMain;
@@ -166,7 +166,7 @@
             // tbIssueContactPhone
             // 
             this.tbIssueContactPhone.EnterMoveNextControl = true;
-            this.tbIssueContactPhone.Location = new System.Drawing.Point(106, 118);
+            this.tbIssueContactPhone.Location = new System.Drawing.Point(106, 116);
             this.tbIssueContactPhone.Name = "tbIssueContactPhone";
             this.tbIssueContactPhone.Size = new System.Drawing.Size(124, 20);
             this.tbIssueContactPhone.StyleController = this.dataLayoutControlMain;
@@ -179,7 +179,7 @@
             // tbIssueContactPerson
             // 
             this.tbIssueContactPerson.EnterMoveNextControl = true;
-            this.tbIssueContactPerson.Location = new System.Drawing.Point(106, 94);
+            this.tbIssueContactPerson.Location = new System.Drawing.Point(106, 92);
             this.tbIssueContactPerson.Name = "tbIssueContactPerson";
             this.tbIssueContactPerson.Size = new System.Drawing.Size(354, 20);
             this.tbIssueContactPerson.StyleController = this.dataLayoutControlMain;
@@ -191,7 +191,7 @@
             // 
             // tbOpenComment
             // 
-            this.tbOpenComment.Location = new System.Drawing.Point(94, 178);
+            this.tbOpenComment.Location = new System.Drawing.Point(94, 176);
             this.tbOpenComment.Name = "tbOpenComment";
             this.tbOpenComment.Properties.MaxLength = 255;
             this.tbOpenComment.Size = new System.Drawing.Size(378, 83);
@@ -201,7 +201,7 @@
             // btnSearchSerial
             // 
             this.btnSearchSerial.Image = global::NICSQLTools.Properties.Resources.find_16x16;
-            this.btnSearchSerial.Location = new System.Drawing.Point(410, 38);
+            this.btnSearchSerial.Location = new System.Drawing.Point(410, 36);
             this.btnSearchSerial.Name = "btnSearchSerial";
             this.btnSearchSerial.Size = new System.Drawing.Size(62, 22);
             this.btnSearchSerial.StyleController = this.dataLayoutControlMain;
@@ -212,7 +212,7 @@
             // tbEquipmentSerial
             // 
             this.tbEquipmentSerial.EnterMoveNextControl = true;
-            this.tbEquipmentSerial.Location = new System.Drawing.Point(94, 38);
+            this.tbEquipmentSerial.Location = new System.Drawing.Point(94, 36);
             this.tbEquipmentSerial.Name = "tbEquipmentSerial";
             this.tbEquipmentSerial.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.tbEquipmentSerial.Properties.Appearance.Options.UseFont = true;
@@ -298,7 +298,7 @@
             this.ItemForAssetplaceId.Control = this.tbCustomerId;
             this.ItemForAssetplaceId.Location = new System.Drawing.Point(0, 0);
             this.ItemForAssetplaceId.Name = "ItemForAssetplaceId";
-            this.ItemForAssetplaceId.Size = new System.Drawing.Size(464, 26);
+            this.ItemForAssetplaceId.Size = new System.Drawing.Size(464, 24);
             this.ItemForAssetplaceId.Text = "Customer";
             this.ItemForAssetplaceId.TextSize = new System.Drawing.Size(79, 13);
             // 
@@ -327,7 +327,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.tbEquipmentSerial;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(398, 26);
             this.layoutControlItem3.Text = "Serial";
@@ -336,7 +336,7 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnSearchSerial;
-            this.layoutControlItem7.Location = new System.Drawing.Point(398, 26);
+            this.layoutControlItem7.Location = new System.Drawing.Point(398, 24);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(66, 26);
             this.layoutControlItem7.Text = "Find Serial";
@@ -348,7 +348,7 @@
             this.layoutControlItem9.AppearanceItemCaption.Options.UseTextOptions = true;
             this.layoutControlItem9.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.layoutControlItem9.Control = this.tbOpenComment;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 166);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 164);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(464, 87);
             this.layoutControlItem9.Text = "Comment";
@@ -361,7 +361,7 @@
             this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem5});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 52);
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 50);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(464, 114);
             this.layoutControlGroup1.Text = "Contact Information";
@@ -407,9 +407,9 @@
             this.layoutControlItem4.AppearanceItemCaption.Options.UseTextOptions = true;
             this.layoutControlItem4.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.layoutControlItem4.Control = this.clbcReason;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 253);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 251);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(464, 261);
+            this.layoutControlItem4.Size = new System.Drawing.Size(464, 263);
             this.layoutControlItem4.Text = "Ticket Reason";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(79, 13);
             // 
@@ -423,7 +423,7 @@
             this.dsMSrc.DataSetName = "dsMSrc";
             this.dsMSrc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // MSrv_TicketAddDlg
+            // MSrvTicketAddDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -431,7 +431,7 @@
             this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.dataLayoutControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MSrv_TicketAddDlg";
+            this.Name = "MSrvTicketAddDlg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editor";
             this.Load += new System.EventHandler(this.Dlg_Load);

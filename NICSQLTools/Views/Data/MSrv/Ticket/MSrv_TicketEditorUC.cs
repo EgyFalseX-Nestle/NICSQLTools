@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DevExpress.XtraSplashScreen;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraSplashScreen;
 
-namespace NICSQLTools.Views.Data.MSrv
+namespace NICSQLTools.Views.Data.MSrv.Ticket
 {
     public partial class MSrv_TicketEditorUC : XtraUserControl
     {
         #region - Var -
-        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(NICSQLTools.Views.Data.MSrv.MSrv_TicketEditorUC));
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(MSrv_TicketEditorUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
         NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext() { ObjectTrackingEnabled = false };
         #endregion
@@ -100,7 +99,7 @@ namespace NICSQLTools.Views.Data.MSrv
 
             //SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");
             //UOW.CommitTransactionAsync(CommitCallBack);
-            MSrv_TicketAddDlg dlg = new MSrv_TicketAddDlg();
+            MSrvTicketAddDlg dlg = new MSrvTicketAddDlg();
             dlg.RequestRefresh += () => { ReloadGrid(); };
             dlg.ShowDialog();
         }
@@ -108,7 +107,7 @@ namespace NICSQLTools.Views.Data.MSrv
         {
             try
             {
-                MSrv_TicketVisitAddDlg dlg = new MSrv_TicketVisitAddDlg(_elementRule);
+                MSrvTicketVisitAddDlg dlg = new MSrvTicketVisitAddDlg(_elementRule);
                 dlg.ShowDialog();
                 ReloadGrid();
             }
@@ -173,7 +172,7 @@ namespace NICSQLTools.Views.Data.MSrv
             try
             {
                 NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket = (NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser)gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
-                MSrv_EquestActionDlg dlg = new MSrv_EquestActionDlg(ticket);
+                MSrvEquestActionDlg dlg = new MSrvEquestActionDlg(ticket);
                 if (dlg.ShowDialog() == DialogResult.OK)
                     ReloadGrid();
             }

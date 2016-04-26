@@ -72,9 +72,13 @@ namespace NICSQLTools.Views.Data.MSrv
             }
             DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(e.RowHandle));
             if (_newid == 0)
-                row.SetMemberValue("MSrvTypeId", adpType.NewId());
+            {
+                _newid = (int)adpType.NewId();
+                row.SetMemberValue("MSrvTypeId", _newid);
+            }
             else
                 row.SetMemberValue("MSrvTypeId", _newid + 1);
+
             _newid++;
             row.SetMemberValue("UserIn", Classes.Managers.UserManager.defaultInstance.User.UserId);
             row.SetMemberValue("DateIn", Classes.Managers.DataManager.defaultInstance.ServerDateTime);

@@ -1,6 +1,6 @@
-﻿namespace NICSQLTools.Views.Data
+﻿namespace NICSQLTools.Views.Data.MSrv.Ticket
 {
-    partial class MSrv_TicketVisitAddDlg
+    partial class MSrvTicketVisitAddDlg
     {
         /// <summary>
         /// Required designer variable.
@@ -33,13 +33,13 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrv_TicketVisitAddDlg));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrvTicketVisitAddDlg));
             this.dataLayoutControlMain = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.clbcReason = new DevExpress.XtraEditors.CheckedListBoxControl();
+            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridControlPart = new DevExpress.XtraGrid.GridControl();
             this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridViewPart = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPartId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditPartId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -74,14 +74,14 @@
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.mSrv_TicketVisitPartTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitPartTableAdapter();
-            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mSrv_TypeTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).BeginInit();
             this.dataLayoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clbcReason)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mSrvTicketVisitPartBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPartId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSPartId)).BeginInit();
@@ -112,7 +112,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControlMain
@@ -151,6 +150,16 @@
             this.clbcReason.TabIndex = 1;
             this.clbcReason.ValueMember = "MSrvTypeId";
             // 
+            // mSrvTypeBindingSource
+            // 
+            this.mSrvTypeBindingSource.DataMember = "MSrv_Type";
+            this.mSrvTypeBindingSource.DataSource = this.dsMSrc;
+            // 
+            // dsMSrc
+            // 
+            this.dsMSrc.DataSetName = "dsMSrc";
+            this.dsMSrc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridControlPart
             // 
             this.gridControlPart.DataSource = this.mSrvTicketVisitPartBindingSource;
@@ -169,11 +178,6 @@
             // 
             this.mSrvTicketVisitPartBindingSource.DataMember = "MSrv_TicketVisitPart";
             this.mSrvTicketVisitPartBindingSource.DataSource = this.dsMSrc;
-            // 
-            // dsMSrc
-            // 
-            this.dsMSrc.DataSetName = "dsMSrc";
-            this.dsMSrc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridViewPart
             // 
@@ -303,9 +307,6 @@
             this.tbOpenComment.Size = new System.Drawing.Size(545, 56);
             this.tbOpenComment.StyleController = this.dataLayoutControlMain;
             this.tbOpenComment.TabIndex = 5;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.tbOpenComment, conditionValidationRule3);
             // 
             // btnSave
             // 
@@ -361,9 +362,9 @@
             this.lueTicket.Size = new System.Drawing.Size(574, 22);
             this.lueTicket.StyleController = this.dataLayoutControlMain;
             this.lueTicket.TabIndex = 0;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.lueTicket, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProviderMain.SetValidationRule(this.lueTicket, conditionValidationRule3);
             this.lueTicket.EditValueChanged += new System.EventHandler(this.lueTicket_EditValueChanged);
             // 
             // LSMSTicket
@@ -396,9 +397,9 @@
             this.lueTechnicianId.Size = new System.Drawing.Size(545, 22);
             this.lueTechnicianId.StyleController = this.dataLayoutControlMain;
             this.lueTechnicianId.TabIndex = 2;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.lueTechnicianId, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxValidationProviderMain.SetValidationRule(this.lueTechnicianId, conditionValidationRule4);
             // 
             // LSMSTechnicianId
             // 
@@ -577,16 +578,11 @@
             // 
             this.mSrv_TicketVisitPartTableAdapter.ClearBeforeFill = true;
             // 
-            // mSrvTypeBindingSource
-            // 
-            this.mSrvTypeBindingSource.DataMember = "MSrv_Type";
-            this.mSrvTypeBindingSource.DataSource = this.dsMSrc;
-            // 
             // mSrv_TypeTableAdapter
             // 
             this.mSrv_TypeTableAdapter.ClearBeforeFill = true;
             // 
-            // MSrv_TicketVisitAddDlg
+            // MSrvTicketVisitAddDlg
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,16 +591,17 @@
             this.ClientSize = new System.Drawing.Size(622, 475);
             this.Controls.Add(this.dataLayoutControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MSrv_TicketVisitAddDlg";
+            this.Name = "MSrvTicketVisitAddDlg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editor";
             this.Load += new System.EventHandler(this.Dlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).EndInit();
             this.dataLayoutControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clbcReason)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mSrvTicketVisitPartBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPartId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSPartId)).EndInit();
@@ -635,7 +632,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

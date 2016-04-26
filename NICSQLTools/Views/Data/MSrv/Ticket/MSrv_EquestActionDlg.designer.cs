@@ -1,6 +1,6 @@
-﻿namespace NICSQLTools.Views.Data
+﻿namespace NICSQLTools.Views.Data.MSrv.Ticket
 {
-    partial class MSrv_EquestActionDlg
+    partial class MSrvEquestActionDlg
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,10 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrv_EquestActionDlg));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrvEquestActionDlg));
             this.dataLayoutControlMain = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.lueRequestActionReason = new DevExpress.XtraEditors.LookUpEdit();
             this.lueMSrvDepartmentId = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSMSrvDepartmentId = new DevExpress.Data.Linq.LinqServerModeSource();
             this.tbComment = new DevExpress.XtraEditors.MemoEdit();
@@ -44,9 +46,12 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.LSMSRequestActionReason = new DevExpress.Data.Linq.LinqServerModeSource();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).BeginInit();
             this.dataLayoutControlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueRequestActionReason.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMSrvDepartmentId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSMSrvDepartmentId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbComment.Properties)).BeginInit();
@@ -56,11 +61,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSRequestActionReason)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControlMain
             // 
+            this.dataLayoutControlMain.Controls.Add(this.lueRequestActionReason);
             this.dataLayoutControlMain.Controls.Add(this.lueMSrvDepartmentId);
             this.dataLayoutControlMain.Controls.Add(this.tbComment);
             this.dataLayoutControlMain.Controls.Add(this.btnSave);
@@ -69,16 +77,37 @@
             this.dataLayoutControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControlMain.Location = new System.Drawing.Point(0, 0);
             this.dataLayoutControlMain.Name = "dataLayoutControlMain";
-            this.dataLayoutControlMain.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(737, 146, 330, 510);
+            this.dataLayoutControlMain.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(589, 114, 330, 510);
             this.dataLayoutControlMain.OptionsView.RightToLeftMirroringApplied = true;
             this.dataLayoutControlMain.Root = this.layoutControlGroupMain;
             this.dataLayoutControlMain.Size = new System.Drawing.Size(484, 208);
             this.dataLayoutControlMain.TabIndex = 0;
             this.dataLayoutControlMain.Text = "dataLayoutControl1";
             // 
+            // lueRequestActionReason
+            // 
+            this.lueRequestActionReason.Location = new System.Drawing.Point(94, 36);
+            this.lueRequestActionReason.Name = "lueRequestActionReason";
+            this.lueRequestActionReason.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueRequestActionReason.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MSrvType", "Reason", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lueRequestActionReason.Properties.DataSource = this.LSMSRequestActionReason;
+            this.lueRequestActionReason.Properties.DisplayMember = "MSrvType";
+            this.lueRequestActionReason.Properties.DropDownRows = 10;
+            this.lueRequestActionReason.Properties.NullText = "";
+            this.lueRequestActionReason.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueRequestActionReason.Properties.ValueMember = "MSrvTypeId";
+            this.lueRequestActionReason.Size = new System.Drawing.Size(378, 20);
+            this.lueRequestActionReason.StyleController = this.dataLayoutControlMain;
+            this.lueRequestActionReason.TabIndex = 26;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProviderMain.SetValidationRule(this.lueRequestActionReason, conditionValidationRule1);
+            // 
             // lueMSrvDepartmentId
             // 
-            this.lueMSrvDepartmentId.Location = new System.Drawing.Point(89, 12);
+            this.lueMSrvDepartmentId.Location = new System.Drawing.Point(94, 12);
             this.lueMSrvDepartmentId.Name = "lueMSrvDepartmentId";
             this.lueMSrvDepartmentId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -90,29 +119,29 @@
             this.lueMSrvDepartmentId.Properties.NullText = "";
             this.lueMSrvDepartmentId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueMSrvDepartmentId.Properties.ValueMember = "MSrvDepartmentId";
-            this.lueMSrvDepartmentId.Size = new System.Drawing.Size(383, 20);
+            this.lueMSrvDepartmentId.Size = new System.Drawing.Size(378, 20);
             this.lueMSrvDepartmentId.StyleController = this.dataLayoutControlMain;
             this.lueMSrvDepartmentId.TabIndex = 25;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.lueMSrvDepartmentId, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProviderMain.SetValidationRule(this.lueMSrvDepartmentId, conditionValidationRule2);
             // 
             // LSMSMSrvDepartmentId
             // 
             this.LSMSMSrvDepartmentId.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Department);
             this.LSMSMSrvDepartmentId.KeyExpression = "[MSrvDepartmentId]";
             // 
-            // tbOpenComment
+            // tbComment
             // 
-            this.tbComment.Location = new System.Drawing.Point(89, 36);
-            this.tbComment.Name = "tbOpenComment";
+            this.tbComment.Location = new System.Drawing.Point(94, 60);
+            this.tbComment.Name = "tbComment";
             this.tbComment.Properties.MaxLength = 255;
-            this.tbComment.Size = new System.Drawing.Size(383, 133);
+            this.tbComment.Size = new System.Drawing.Size(378, 109);
             this.tbComment.StyleController = this.dataLayoutControlMain;
             this.tbComment.TabIndex = 24;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProviderMain.SetValidationRule(this.tbComment, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProviderMain.SetValidationRule(this.tbComment, conditionValidationRule3);
             // 
             // btnSave
             // 
@@ -159,7 +188,8 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem9,
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem3});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
             this.layoutControlGroup2.Size = new System.Drawing.Size(464, 188);
@@ -191,11 +221,11 @@
             this.layoutControlItem9.AppearanceItemCaption.Options.UseTextOptions = true;
             this.layoutControlItem9.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.layoutControlItem9.Control = this.tbComment;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(464, 137);
+            this.layoutControlItem9.Size = new System.Drawing.Size(464, 113);
             this.layoutControlItem9.Text = "Request details";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(74, 13);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(79, 13);
             // 
             // layoutControlItem4
             // 
@@ -204,9 +234,23 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(464, 24);
             this.layoutControlItem4.Text = "Request from";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(74, 13);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(79, 13);
             // 
-            // MSrv_EquestActionDlg
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.lueRequestActionReason;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(464, 24);
+            this.layoutControlItem3.Text = "Request Reason";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(79, 13);
+            // 
+            // LSMSRequestActionReason
+            // 
+            this.LSMSRequestActionReason.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Type);
+            this.LSMSRequestActionReason.KeyExpression = "[MSrvTypeId]";
+            // 
+            // MSrvEquestActionDlg
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,12 +259,13 @@
             this.ClientSize = new System.Drawing.Size(484, 208);
             this.Controls.Add(this.dataLayoutControlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MSrv_EquestActionDlg";
+            this.Name = "MSrvEquestActionDlg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editor";
             this.Load += new System.EventHandler(this.Dlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).EndInit();
             this.dataLayoutControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lueRequestActionReason.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueMSrvDepartmentId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LSMSMSrvDepartmentId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbComment.Properties)).EndInit();
@@ -230,7 +275,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSRequestActionReason)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,5 +297,8 @@
         private DevExpress.XtraEditors.LookUpEdit lueMSrvDepartmentId;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSMSrvDepartmentId;
+        private DevExpress.XtraEditors.LookUpEdit lueRequestActionReason;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSRequestActionReason;
     }
 }

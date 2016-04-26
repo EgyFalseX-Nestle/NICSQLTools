@@ -26,6 +26,7 @@ namespace NICSQLTools.Classes
         {
             Open_Ticket = 1,
             Close_Ticket = 2,
+            RequestAction = 3,
         }
     }
 }

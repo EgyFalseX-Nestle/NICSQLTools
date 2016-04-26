@@ -260,18 +260,6 @@
         <classShapeMoniker Id="3bb12804-b1d9-4147-84da-472af61bd60d" />
       </nodes>
     </associationConnector>
-    <classShape Id="4fd8b2e3-1ec4-4ec7-a693-b24d276bc5c1" absoluteBounds="0.875, 35.625, 2, 6.9630354817708326">
-      <DataClassMoniker Name="/dsLinqDataDataContext/vMSrv_Ticket" />
-      <nestedChildShapes>
-        <elementListCompartment Id="25fe58f2-5e4b-4e24-99ba-26fa857dc5ae" absoluteBounds="0.89000000000000012, 36.085, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="55154955-5b94-4d62-a4af-86d953f0ba7e" absoluteBounds="0.875, 42.75, 2, 7.1553369140625">
-      <DataClassMoniker Name="/dsLinqDataDataContext/vMSrv_Ticket_ByUser" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a2c86080-1cb4-4130-85d9-7ab48396465a" absoluteBounds="0.89000000000000012, 43.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="ca4f7892-584f-466d-b849-b0ad61e28f76" absoluteBounds="1, 30.125, 2, 3.1170068359375">
       <DataClassMoniker Name="/dsLinqDataDataContext/vMSrv_Customer" />
       <nestedChildShapes>
@@ -300,6 +288,18 @@
       <DataClassMoniker Name="/dsLinqDataDataContext/vRDM_Receipt_ByUser" />
       <nestedChildShapes>
         <elementListCompartment Id="9c044f4a-63e6-4bb5-b2c2-c94c7ca48f37" absoluteBounds="3.14, 50.71, 1.9700000000000002, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc609f33-60e8-4448-8d1a-f4d2e34aba02" absoluteBounds="1, 35.375, 2, 7.3476383463541657">
+      <DataClassMoniker Name="/dsLinqDataDataContext/vMSrv_Ticket" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d7dc66d-0aed-4bb8-923c-d19ca03d41ac" absoluteBounds="1.0150000000000001, 35.835, 1.9700000000000002, 6.7876383463541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f76d2501-6b41-4a48-b178-4eb86c162e98" absoluteBounds="0.875, 43, 2, 7.5399397786458326">
+      <DataClassMoniker Name="/dsLinqDataDataContext/vMSrv_Ticket_ByUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19e11334-73ff-4f2a-aac6-c56a8ffc63eb" absoluteBounds="0.89000000000000012, 43.46, 1.9700000000000002, 6.979939778645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

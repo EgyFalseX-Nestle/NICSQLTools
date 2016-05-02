@@ -3811,6 +3811,10 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnSalesDistrict3Id;
             
+            private global::System.Data.DataColumn columnSalesDistrict3Id1;
+            
+            private global::System.Data.DataColumn columnPlate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public _0_3__Route_DetailsDataTable() {
@@ -3942,6 +3946,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SalesDistrict3Id1Column {
+                get {
+                    return this.columnSalesDistrict3Id1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PlateColumn {
+                get {
+                    return this.columnPlate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3977,7 +3997,7 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _0_3__Route_DetailsRow Add_0_3__Route_DetailsRow(string Distribution_Channel, string Route_Number, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, short SalesDistrict3Id) {
+            public _0_3__Route_DetailsRow Add_0_3__Route_DetailsRow(string Distribution_Channel, string Route_Number, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, short SalesDistrict3Id, double SalesDistrict3Id1, string Plate) {
                 _0_3__Route_DetailsRow row_0_3__Route_DetailsRow = ((_0_3__Route_DetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Distribution_Channel,
@@ -3991,7 +4011,9 @@ namespace NICSQLTools.Data {
                         Supervisor,
                         Brand_Route,
                         Warehouse,
-                        SalesDistrict3Id};
+                        SalesDistrict3Id,
+                        SalesDistrict3Id1,
+                        Plate};
                 row_0_3__Route_DetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_0_3__Route_DetailsRow);
                 return row_0_3__Route_DetailsRow;
@@ -4033,6 +4055,8 @@ namespace NICSQLTools.Data {
                 this.columnBrand_Route = base.Columns["Brand Route"];
                 this.columnWarehouse = base.Columns["Warehouse"];
                 this.columnSalesDistrict3Id = base.Columns["SalesDistrict3Id"];
+                this.columnSalesDistrict3Id1 = base.Columns["SalesDistrict3Id1"];
+                this.columnPlate = base.Columns["Plate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4062,6 +4086,10 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnWarehouse);
                 this.columnSalesDistrict3Id = new global::System.Data.DataColumn("SalesDistrict3Id", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalesDistrict3Id);
+                this.columnSalesDistrict3Id1 = new global::System.Data.DataColumn("SalesDistrict3Id1", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSalesDistrict3Id1);
+                this.columnPlate = new global::System.Data.DataColumn("Plate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnRoute_Number}, true));
                 this.columnDistribution_Channel.MaxLength = 255;
@@ -4077,6 +4105,8 @@ namespace NICSQLTools.Data {
                 this.columnSupervisor.MaxLength = 255;
                 this.columnBrand_Route.MaxLength = 255;
                 this.columnWarehouse.MaxLength = 255;
+                this.columnSalesDistrict3Id1.Caption = "SalesDistrict3Id";
+                this.columnPlate.MaxLength = 50;
                 this.ExtendedProperties.Add("Generator_TableVarName", "_table0_3__Route_Details");
                 this.ExtendedProperties.Add("Generator_UserTableName", "0-3  Route Details");
             }
@@ -24375,6 +24405,39 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SalesDistrict3Id1 {
+                get {
+                    try {
+                        return ((double)(this[this._table0_3__Route_Details.SalesDistrict3Id1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SalesDistrict3Id1\' in table \'0-3  Route Details\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this._table0_3__Route_Details.SalesDistrict3Id1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Plate {
+                get {
+                    try {
+                        return ((string)(this[this._table0_3__Route_Details.PlateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Plate\' in table \'0-3  Route Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this._table0_3__Route_Details.PlateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDistribution_ChannelNull() {
                 return this.IsNull(this._table0_3__Route_Details.Distribution_ChannelColumn);
             }
@@ -24503,6 +24566,30 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSalesDistrict3IdNull() {
                 this[this._table0_3__Route_Details.SalesDistrict3IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSalesDistrict3Id1Null() {
+                return this.IsNull(this._table0_3__Route_Details.SalesDistrict3Id1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSalesDistrict3Id1Null() {
+                this[this._table0_3__Route_Details.SalesDistrict3Id1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPlateNull() {
+                return this.IsNull(this._table0_3__Route_Details.PlateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPlateNull() {
+                this[this._table0_3__Route_Details.PlateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -38395,7 +38482,8 @@ FROM            [0-6 Customer HN]";
             tableMapping.ColumnMappings.Add("Supervisor", "Supervisor");
             tableMapping.ColumnMappings.Add("Brand Route", "Brand Route");
             tableMapping.ColumnMappings.Add("Warehouse", "Warehouse");
-            tableMapping.ColumnMappings.Add("SalesDistrict3Id", "SalesDistrict3Id");
+            tableMapping.ColumnMappings.Add("SalesDistrict3Id", "SalesDistrict3Id1");
+            tableMapping.ColumnMappings.Add("Plate", "Plate");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -38405,8 +38493,8 @@ FROM            [0-6 Customer HN]";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [0-3  Route Details] ([Distribution Channel], [Route Number], [Route Number  system], [Route Name], [Region], [Plant], [RSM], [ASM], [Supervisor], [Brand Route], [Warehouse], [SalesDistrict3Id]) VALUES (@Distribution_Channel, @Route_Number, @Route_Number__system, @Route_Name, @Region, @Plant, @RSM, @ASM, @Supervisor, @Brand_Route, @Warehouse, @SalesDistrict3Id);
-SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Name], Region, Plant, RSM, ASM, Supervisor, [Brand Route], Warehouse, SalesDistrict3Id FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [0-3  Route Details] ([Distribution Channel], [Route Number], [Route Number  system], [Route Name], [Region], [Plant], [RSM], [ASM], [Supervisor], [Brand Route], [Warehouse], [SalesDistrict3Id], [Plate]) VALUES (@Distribution_Channel, @Route_Number, @Route_Number__system, @Route_Name, @Region, @Plant, @RSM, @ASM, @Supervisor, @Brand_Route, @Warehouse, @SalesDistrict3Id, @Plate);
+SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Name], Region, Plant, RSM, ASM, Supervisor, [Brand Route], Warehouse, SalesDistrict3Id, Plate FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -38419,11 +38507,12 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Na
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Supervisor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Supervisor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Route", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Warehouse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Warehouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDistrict3Id", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDistrict3Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDistrict3Id", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDistrict3Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [0-3  Route Details] SET [Distribution Channel] = @Distribution_Channel, [Route Number] = @Route_Number, [Route Number  system] = @Route_Number__system, [Route Name] = @Route_Name, [Region] = @Region, [Plant] = @Plant, [RSM] = @RSM, [ASM] = @ASM, [Supervisor] = @Supervisor, [Brand Route] = @Brand_Route, [Warehouse] = @Warehouse, [SalesDistrict3Id] = @SalesDistrict3Id WHERE (([Route Number] = @Original_Route_Number));
-SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Name], Region, Plant, RSM, ASM, Supervisor, [Brand Route], Warehouse, SalesDistrict3Id FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [0-3  Route Details] SET [Distribution Channel] = @Distribution_Channel, [Route Number] = @Route_Number, [Route Number  system] = @Route_Number__system, [Route Name] = @Route_Name, [Region] = @Region, [Plant] = @Plant, [RSM] = @RSM, [ASM] = @ASM, [Supervisor] = @Supervisor, [Brand Route] = @Brand_Route, [Warehouse] = @Warehouse, [SalesDistrict3Id] = @SalesDistrict3Id, [Plate] = @Plate WHERE (([Route Number] = @Original_Route_Number));
+SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Name], Region, Plant, RSM, ASM, Supervisor, [Brand Route], Warehouse, SalesDistrict3Id, Plate FROM [0-3  Route Details] WHERE ([Route Number] = @Route_Number)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Distribution_Channel", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Distribution Channel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -38436,7 +38525,8 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Na
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Supervisor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Supervisor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Brand_Route", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Brand Route", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Warehouse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Warehouse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDistrict3Id", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDistrict3Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDistrict3Id", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDistrict3Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Plate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Plate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Route_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Route Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -38455,7 +38545,7 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Na
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        [Distribution Channel], [Route Number], [Route Number  system], [Ro" +
                 "ute Name], Region, Plant, RSM, ASM, Supervisor, [Brand Route], Warehouse, SalesD" +
-                "istrict3Id\r\nFROM            [0-3  Route Details]";
+                "istrict3Id, Plate\r\nFROM            [0-3  Route Details]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -38543,7 +38633,7 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Na
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Distribution_Channel, string Route_Number, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, global::System.Nullable<short> SalesDistrict3Id) {
+        public virtual int Insert(string Distribution_Channel, string Route_Number, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, global::System.Nullable<double> SalesDistrict3Id, string Plate) {
             if ((Distribution_Channel == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -38611,10 +38701,16 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Na
                 this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Warehouse));
             }
             if ((SalesDistrict3Id.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((short)(SalesDistrict3Id.Value));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((double)(SalesDistrict3Id.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Plate == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Plate));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -38636,7 +38732,7 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Na
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Distribution_Channel, string Route_Number, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, global::System.Nullable<short> SalesDistrict3Id, string Original_Route_Number) {
+        public virtual int Update(string Distribution_Channel, string Route_Number, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, global::System.Nullable<double> SalesDistrict3Id, string Plate, string Original_Route_Number) {
             if ((Distribution_Channel == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -38704,16 +38800,22 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Na
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Warehouse));
             }
             if ((SalesDistrict3Id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((short)(SalesDistrict3Id.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(SalesDistrict3Id.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Plate == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Plate));
             }
             if ((Original_Route_Number == null)) {
                 throw new global::System.ArgumentNullException("Original_Route_Number");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Route_Number));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Route_Number));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -38735,8 +38837,8 @@ SELECT [Distribution Channel], [Route Number], [Route Number  system], [Route Na
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Distribution_Channel, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, global::System.Nullable<short> SalesDistrict3Id, string Original_Route_Number) {
-            return this.Update(Distribution_Channel, Original_Route_Number, Route_Number__system, Route_Name, Region, Plant, RSM, ASM, Supervisor, Brand_Route, Warehouse, SalesDistrict3Id, Original_Route_Number);
+        public virtual int Update(string Distribution_Channel, string Route_Number__system, string Route_Name, string Region, string Plant, string RSM, string ASM, string Supervisor, string Brand_Route, string Warehouse, global::System.Nullable<double> SalesDistrict3Id, string Plate, string Original_Route_Number) {
+            return this.Update(Distribution_Channel, Original_Route_Number, Route_Number__system, Route_Name, Region, Plant, RSM, ASM, Supervisor, Brand_Route, Warehouse, SalesDistrict3Id, Plate, Original_Route_Number);
         }
     }
     

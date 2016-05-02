@@ -883,6 +883,16 @@ namespace NICSQLTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MSrv_Type16 {
+            get {
+                object obj = ResourceManager.GetObject("MSrv_Type16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MSrv_Type32 {
             get {
                 object obj = ResourceManager.GetObject("MSrv_Type32", resourceCulture);
@@ -1066,6 +1076,36 @@ namespace NICSQLTools.Properties {
         internal static System.Drawing.Bitmap pivot_16x16 {
             get {
                 object obj = ResourceManager.GetObject("pivot_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plate16 {
+            get {
+                object obj = ResourceManager.GetObject("Plate16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plate32 {
+            get {
+                object obj = ResourceManager.GetObject("Plate32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plate64 {
+            get {
+                object obj = ResourceManager.GetObject("Plate64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1316,6 +1356,36 @@ namespace NICSQLTools.Properties {
         internal static System.Drawing.Bitmap Roles64 {
             get {
                 object obj = ResourceManager.GetObject("Roles64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RoutePlate16 {
+            get {
+                object obj = ResourceManager.GetObject("RoutePlate16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RoutePlate32 {
+            get {
+                object obj = ResourceManager.GetObject("RoutePlate32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RoutePlate64 {
+            get {
+                object obj = ResourceManager.GetObject("RoutePlate64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

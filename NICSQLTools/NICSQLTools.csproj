@@ -244,6 +244,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDataSource.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\dsGPS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsGPS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsMSrc.cs">
+      <DependentUpon>dsMSrc.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\dsMSrc.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -320,11 +328,23 @@
     <Compile Include="Views\Data\AppDatasourceLookupEditorUC.Designer.cs">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Data\GPS\PlateEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\GPS\PlateEditorUC.Designer.cs">
+      <DependentUpon>PlateEditorUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Data\MSrv\Ticket\MSrv_EquestActionDlg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Data\MSrv\Ticket\MSrv_EquestActionDlg.designer.cs">
       <DependentUpon>MSrv_EquestActionDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketTypeDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketTypeDlg.Designer.cs">
+      <DependentUpon>MSrv_TicketTypeDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitEditDlg.cs">
       <SubType>Form</SubType>
@@ -433,6 +453,12 @@
     </Compile>
     <Compile Include="Views\Data\RDM\RDM_ReceiptEditorUC.Designer.cs">
       <DependentUpon>RDM_ReceiptEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\GPS\RoutePlateEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\GPS\RoutePlateEditorUC.Designer.cs">
+      <DependentUpon>RoutePlateEditorUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\TaskManager\EmpTaskActualEditorUC.cs">
       <SubType>UserControl</SubType>
@@ -818,8 +844,14 @@
     <EmbeddedResource Include="Views\Data\AppDatasourceLookupEditorUC.resx">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\GPS\PlateEditorUC.resx">
+      <DependentUpon>PlateEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_EquestActionDlg.resx">
       <DependentUpon>MSrv_EquestActionDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_TicketTypeDlg.resx">
+      <DependentUpon>MSrv_TicketTypeDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_TicketVisitEditDlg.resx">
       <DependentUpon>MSrv_TicketVisitEditDlg.cs</DependentUpon>
@@ -874,6 +906,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\RDM\RDM_ReceiptEditorUC.resx">
       <DependentUpon>RDM_ReceiptEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\GPS\RoutePlateEditorUC.resx">
+      <DependentUpon>RoutePlateEditorUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\TaskManager\EmpTaskActualEditorUC.resx">
       <DependentUpon>EmpTaskActualEditorUC.cs</DependentUpon>
@@ -1039,6 +1074,17 @@
     <None Include="Data\dsDataSource.xss">
       <DependentUpon>dsDataSource.xsd</DependentUpon>
     </None>
+    <None Include="Data\dsGPS.xsc">
+      <DependentUpon>dsGPS.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsGPS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGPS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\dsGPS.xss">
+      <DependentUpon>dsGPS.xsd</DependentUpon>
+    </None>
     <None Include="Data\dsMSrc.xsc">
       <DependentUpon>dsMSrc.xsd</DependentUpon>
     </None>
@@ -1169,6 +1215,13 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\RoutePlate64.png" />
+    <None Include="Resources\RoutePlate32.png" />
+    <None Include="Resources\RoutePlate16.png" />
+    <None Include="Resources\Plate64.png" />
+    <None Include="Resources\Plate32.png" />
+    <None Include="Resources\Plate16.png" />
+    <None Include="Resources\MSrv_Type16.png" />
     <None Include="Resources\RDM128.png" />
     <None Include="Resources\RDM_Promo_Type32.png" />
     <None Include="Resources\RDM64.png" />

@@ -27,7 +27,7 @@ namespace NICSQLTools.Views.Main
             btnMinimize.Caption = "Minimize";
             btnMinimize.Behavior = ActionBehavior.Default;
             btnMinimize.Edge = ActionEdge.Default;
-            btnMinimize.Image = NICSQLTools.Properties.Resources.next_32x32;
+            btnMinimize.Image = Properties.Resources.next_32x32;
             windowsUIView.ContentContainerActions.Add(btnMinimize);
         }
         public void AddPrivateButtions()
@@ -41,7 +41,7 @@ namespace NICSQLTools.Views.Main
             btnUserSettings.Caption = "User Settings";
             btnUserSettings.Behavior = ActionBehavior.HideBarOnClick;
             btnUserSettings.Edge = ActionEdge.Left;
-            btnUserSettings.Image = NICSQLTools.Properties.Resources.ide_32x32;
+            btnUserSettings.Image = Properties.Resources.ide_32x32;
             windowsUIView.ContentContainerActions.Add(btnUserSettings);
 
         }
@@ -178,182 +178,190 @@ namespace NICSQLTools.Views.Main
 
             else if (e.Document == docRuleUser)//----------------------- Rules
             {
-                e.Control = new Views.Permission.UserUC(RuleElemet);
+                e.Control = new Permission.UserUC(RuleElemet);
             }
             else if (e.Document == docRuleRule)
             {
-                e.Control = new Views.Permission.RuleUC(RuleElemet);
+                e.Control = new Permission.RuleUC(RuleElemet);
             }
             else if (e.Document == docRuleUserRule)
             {
-                e.Control = new Views.Permission.UserRuleUC(RuleElemet);
+                e.Control = new Permission.UserRuleUC(RuleElemet);
             }
             else if (e.Document == docRuleRuleDetails)
             {
-                e.Control = new Views.Permission.RuleDetailsUC(RuleElemet);
+                e.Control = new Permission.RuleDetailsUC(RuleElemet);
             }
             else if (e.Document == docRuleRuleSalesDisitrct3)
             {
-                e.Control = new Views.Permission.RuleSalesDisitrct3UC(RuleElemet);
+                e.Control = new Permission.RuleSalesDisitrct3UC(RuleElemet);
             }
 
             else if (e.Document == docQueriesQryPivot)//----------------------- Queries
             {
-                e.Control = new Views.Qry.QryPivotUC(RuleElemet);
+                e.Control = new Qry.QryPivotUC(RuleElemet);
             }
             else if (e.Document == docQueriesQryCustomerInfo)
             {
-                e.Control = new Views.Qry.QryCustomerInfoUC(RuleElemet);
+                e.Control = new Qry.QryCustomerInfoUC(RuleElemet);
             }
             else if (e.Document == docQueriesExcelDynamicUpdate)
             {
-                e.Control = new Views.Qry.ExcelDynamicUpdateUC(RuleElemet);
+                e.Control = new Qry.ExcelDynamicUpdateUC(RuleElemet);
             }
             else if (e.Document == docQryPivotOLap)
             {
-                e.Control = new Views.Qry.QryPivotOLapUC(RuleElemet);
+                e.Control = new Qry.QryPivotOLapUC(RuleElemet);
             }
 
             else if (e.Document == docDashboardDesigner)//--------------------  Dashboard
             {
-                e.Control = new Views.Dashboard.DashboardDesignerUC(RuleElemet);
+                e.Control = new Dashboard.DashboardDesignerUC(RuleElemet);
             }
             else if (e.Document == docDashboardViewer)
             {
-                e.Control = new Views.Dashboard.DashboardViewerUC();
+                e.Control = new Dashboard.DashboardViewerUC();
             }
 
             else if (e.Document == docEditorsRoutes)//------------------------  Editors
             {
-                e.Control = new Views.Data.RouteEditorUC(RuleElemet);
+                e.Control = new Data.RouteEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsProducts)
             {
-                e.Control = new Views.Data.ProductEditorUC(RuleElemet);
+                e.Control = new Data.ProductEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsCustomers)
             {
-                e.Control = new Views.Data.CustomerEditorUC(RuleElemet);
+                e.Control = new Data.CustomerEditorUC(RuleElemet);
             }
             else if (e.Document == docAppDatasourceEditor)
             {
-                e.Control = new Views.Data.AppDatasourceEditorUC(RuleElemet);
+                e.Control = new Data.AppDatasourceEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsAppDatasourceLookup)
             {
-                e.Control = new Views.Data.AppDatasourceLookupEditorUC(RuleElemet);
+                e.Control = new Data.AppDatasourceLookupEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsTargetKPI)
             {
-                e.Control = new Views.Data.TargetKPIEditorUC(RuleElemet);
+                e.Control = new Data.TargetKPIEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsTargetNCE)
             {
-                e.Control = new Views.Data.TargetNCEEditorUC(RuleElemet);
+                e.Control = new Data.TargetNCEEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsRoutesPlate)
+            {
+                e.Control = new Data.GPS.RoutePlateEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsPlate)
+            {
+                e.Control = new Data.GPS.PlateEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportDays)
             {
-                e.Control = new Views.Import.ImportDaysUC(RuleElemet);
+                e.Control = new Import.ImportDaysUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportCustomerRoute)
             {
-                e.Control = new Views.Import.ImportCustomerRouteUC(RuleElemet);
+                e.Control = new Import.ImportCustomerRouteUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportCustomerInfo)
             {
-                e.Control = new Views.Import.ImportCustomerInfoUC(RuleElemet);
+                e.Control = new Import.ImportCustomerInfoUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportCustomerSSInfo)
             {
-                e.Control = new Views.Import.ImportCustomerSSInfoUC(RuleElemet);
+                e.Control = new Import.ImportCustomerSSInfoUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportUMD)
             {
-                e.Control = new Views.Import.ImportUMDUC(RuleElemet);
+                e.Control = new Import.ImportUMDUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportDamageMaster)
             {
-                e.Control = new Views.Import.ImportDMG_MasterUC(RuleElemet);
+                e.Control = new Import.ImportDMG_MasterUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportEquipment)
             {
-                e.Control = new Views.Import.ImportEquipmentUC(RuleElemet);
+                e.Control = new Import.ImportEquipmentUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportEquipmentAll)
             {
-                e.Control = new Views.Import.ImportEquipmentAllUC(RuleElemet);
+                e.Control = new Import.ImportEquipmentAllUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportUpdateProductDetails)
             {
-                e.Control = new Views.Import.ImportUpdateProductDetailsUC(RuleElemet);
+                e.Control = new Import.ImportUpdateProductDetailsUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportStock_List)
             {
-                e.Control = new Views.Import.ImportStock_ListUC(RuleElemet);
+                e.Control = new Import.ImportStock_ListUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportStock_Material)
             {
-                e.Control = new Views.Import.ImportStock_MaterialUC(RuleElemet);
+                e.Control = new Import.ImportStock_MaterialUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportStock_Data)
             {
-                e.Control = new Views.Import.ImportStock_DataUC(RuleElemet);
+                e.Control = new Import.ImportStock_DataUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportDst_Master)
             {
-                e.Control = new Views.Import.ImportDst_MasterUC(RuleElemet);
+                e.Control = new Import.ImportDst_MasterUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportEst_Actual_R3UC)
             {
-                e.Control = new Views.Import.ImportEst_Actual_R3UC(RuleElemet);
+                e.Control = new Import.ImportEst_Actual_R3UC(RuleElemet);
             }
             else if (e.Document == docEditorsImportActualBillArg)
             {
-                e.Control = new Views.Import.ImportActualBillArgUC(RuleElemet);
+                e.Control = new Import.ImportActualBillArgUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportGPS_Data)
             {
-                e.Control = new Views.Import.ImportGPS_DataUC(RuleElemet);
+                e.Control = new Import.ImportGPS_DataUC(RuleElemet);
             }
             else if (e.Document == docEditorsImportHH_Data)
             {
-                e.Control = new Views.Import.ImportHH_DataUC(RuleElemet);
+                e.Control = new Import.ImportHH_DataUC(RuleElemet);
             }
             else if (e.Document == docEditorsCostControl)
             {
-                e.Control = new Views.Data.CostControlEditorUC(RuleElemet);
+                e.Control = new Data.CostControlEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsTaskManagerTask)// Tasks
             {
-                e.Control = new NICSQLTools.Views.Data.TaskManager.TaskEditorUC(RuleElemet);
+                e.Control = new Data.TaskManager.TaskEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsTaskManagerEmp)
             {
-                e.Control = new NICSQLTools.Views.Data.TaskManager.EmpEditorUC(RuleElemet);
+                e.Control = new Data.TaskManager.EmpEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsTaskManagerEmpTask)
             {
-                e.Control = new NICSQLTools.Views.Data.TaskManager.EmpTaskEditorUC(RuleElemet);
+                e.Control = new Data.TaskManager.EmpTaskEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsTaskManagerFactor)
             {
-                e.Control = new NICSQLTools.Views.Data.TaskManager.FactorEditorUC(RuleElemet);
+                e.Control = new Data.TaskManager.FactorEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsTaskManagerEmpTaskActual)
             {
-                e.Control = new NICSQLTools.Views.Data.TaskManager.EmpTaskActualEditorUC(RuleElemet);
+                e.Control = new Data.TaskManager.EmpTaskActualEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsActivities_Actual)// Activities
             {
-                e.Control = new NICSQLTools.Views.Data.Activities.ImportSTI_Actv_ActualUC(RuleElemet);
+                e.Control = new Data.Activities.ImportSTI_Actv_ActualUC(RuleElemet);
             }
             else if (e.Document == docEditorsMSrv_TypeEditor)// MSrv
             {
-                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TypeEditorUC(RuleElemet);
+                e.Control = new Data.MSrv.MSrv_TypeEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsMSrv_TechnicianEditor)
             {
-                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TechnicianEditorUC(RuleElemet);
+                e.Control = new Data.MSrv.MSrv_TechnicianEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsMSrv_TicketEditor)
             {
@@ -361,27 +369,27 @@ namespace NICSQLTools.Views.Main
             }
             else if (e.Document == docEditorsMSrv_TechnicianSalesDistrictEditor)
             {
-                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TechnicianSalesDistrictUC(RuleElemet);
+                e.Control = new Data.MSrv.MSrv_TechnicianSalesDistrictUC(RuleElemet);
             }
             else if (e.Document == docEditorsMSrv_TechnicianCompanyEditor)
             {
-                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_TechnicianCompanyEditorUC(RuleElemet);
+                e.Control = new Data.MSrv.MSrv_TechnicianCompanyEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsMSrv_PartEditor)
             {
-                e.Control = new NICSQLTools.Views.Data.MSrv.MSrv_PartEditorUC(RuleElemet);
+                e.Control = new Data.MSrv.MSrv_PartEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsMSrv_01)
             {
-                e.Control = new NICSQLTools.Views.Qry.MSrv.MSrv_01();
+                e.Control = new Qry.MSrv.MSrv_01();
             }
             else if (e.Document == docEditorsRDMEditorRDM_Promo_Type)// RDM
             {
-                e.Control = new NICSQLTools.Views.Data.RDM.RDM_Promo_TypeEditorUC(RuleElemet);
+                e.Control = new Data.RDM.RDM_Promo_TypeEditorUC(RuleElemet);
             }
             else if (e.Document == docEditorsRDMEditorRDM_Receipt)
             {
-                e.Control = new NICSQLTools.Views.Data.RDM.RDM_ReceiptEditorUC(RuleElemet);
+                e.Control = new Data.RDM.RDM_ReceiptEditorUC(RuleElemet);
             }
 
             else if (e.Document == docReportsReportViewer)

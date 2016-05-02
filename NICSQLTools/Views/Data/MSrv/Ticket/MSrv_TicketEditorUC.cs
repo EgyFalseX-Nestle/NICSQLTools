@@ -131,8 +131,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ReloadGrid();   
-        }
-        private void repositoryItemButtonEditAddVisit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        }private void repositoryItemButtonEditAddVisit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             try
             {
@@ -242,7 +241,15 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                     break;
             }
         }
+        private void repositoryItemButtonEditReasons_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket =
+                (NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser) gridViewMain.GetRow(gridViewMain.FocusedRowHandle);
+
+            MSrv_TicketTypeDlg dlg = new MSrv_TicketTypeDlg(ticket.TicketId);
+            dlg.ShowDialog();}
         #endregion
-        
+
+
     }
 }

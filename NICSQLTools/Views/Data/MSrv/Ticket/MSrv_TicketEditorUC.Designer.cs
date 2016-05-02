@@ -33,6 +33,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -81,8 +82,10 @@
             this.colMSrv_ActionTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActionComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActionDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.colRequestActionReasonName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcReasons = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditReasons = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemTextEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
@@ -95,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditBigText)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditRequestAction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditReasons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,7 +223,8 @@
             this.repositoryItemButtonEditChat,
             this.repositoryItemButtonEditCloseTicket,
             this.repositoryItemButtonEditRequestAction,
-            this.repositoryItemDateEditYMD});
+            this.repositoryItemDateEditYMD,
+            this.repositoryItemButtonEditReasons});
             this.gridControlMain.Size = new System.Drawing.Size(936, 377);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -266,7 +271,8 @@
             this.colMSrv_ActionTypeName,
             this.colActionComment,
             this.colActionDate,
-            this.colRequestActionReasonName});
+            this.colRequestActionReasonName,
+            this.gcReasons});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.GroupCount = 1;
             this.gridViewMain.Name = "gridViewMain";
@@ -297,7 +303,7 @@
             this.gcChat.ColumnEdit = this.repositoryItemButtonEditChat;
             this.gcChat.Name = "gcChat";
             this.gcChat.Visible = true;
-            this.gcChat.VisibleIndex = 1;
+            this.gcChat.VisibleIndex = 2;
             this.gcChat.Width = 43;
             // 
             // repositoryItemButtonEditChat
@@ -319,7 +325,7 @@
             this.gcAddVisit.ColumnEdit = this.repositoryItemButtonEditAddVisit;
             this.gcAddVisit.Name = "gcAddVisit";
             this.gcAddVisit.Visible = true;
-            this.gcAddVisit.VisibleIndex = 0;
+            this.gcAddVisit.VisibleIndex = 1;
             this.gcAddVisit.Width = 46;
             // 
             // repositoryItemButtonEditAddVisit
@@ -341,7 +347,7 @@
             this.gcClose.ColumnEdit = this.repositoryItemButtonEditCloseTicket;
             this.gcClose.Name = "gcClose";
             this.gcClose.Visible = true;
-            this.gcClose.VisibleIndex = 3;
+            this.gcClose.VisibleIndex = 4;
             this.gcClose.Width = 77;
             // 
             // repositoryItemButtonEditCloseTicket
@@ -361,7 +367,7 @@
             this.colTicketId.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "TicketId", "{0}")});
             this.colTicketId.Visible = true;
-            this.colTicketId.VisibleIndex = 4;
+            this.colTicketId.VisibleIndex = 5;
             // 
             // colCustomerId
             // 
@@ -369,7 +375,7 @@
             this.colCustomerId.FieldName = "CustomerId";
             this.colCustomerId.Name = "colCustomerId";
             this.colCustomerId.Visible = true;
-            this.colCustomerId.VisibleIndex = 5;
+            this.colCustomerId.VisibleIndex = 6;
             this.colCustomerId.Width = 79;
             // 
             // colEquipmentSerial
@@ -393,7 +399,7 @@
             this.colOpenDate.FieldName = "OpenDate";
             this.colOpenDate.Name = "colOpenDate";
             this.colOpenDate.Visible = true;
-            this.colOpenDate.VisibleIndex = 6;
+            this.colOpenDate.VisibleIndex = 7;
             // 
             // repositoryItemDateEditYMD
             // 
@@ -457,7 +463,7 @@
             this.colTicketClosed.FieldName = "TicketClosed";
             this.colTicketClosed.Name = "colTicketClosed";
             this.colTicketClosed.Visible = true;
-            this.colTicketClosed.VisibleIndex = 7;
+            this.colTicketClosed.VisibleIndex = 8;
             this.colTicketClosed.Width = 83;
             // 
             // colCloseMSrvType
@@ -466,7 +472,7 @@
             this.colCloseMSrvType.FieldName = "CloseMSrvType";
             this.colCloseMSrvType.Name = "colCloseMSrvType";
             this.colCloseMSrvType.Visible = true;
-            this.colCloseMSrvType.VisibleIndex = 9;
+            this.colCloseMSrvType.VisibleIndex = 10;
             this.colCloseMSrvType.Width = 85;
             // 
             // colClosedComment
@@ -483,7 +489,7 @@
             this.colClosedDate.FieldName = "ClosedDate";
             this.colClosedDate.Name = "colClosedDate";
             this.colClosedDate.Visible = true;
-            this.colClosedDate.VisibleIndex = 8;
+            this.colClosedDate.VisibleIndex = 9;
             this.colClosedDate.Width = 78;
             // 
             // colRoute
@@ -547,7 +553,7 @@
             this.gcRequestAction.ColumnEdit = this.repositoryItemButtonEditRequestAction;
             this.gcRequestAction.Name = "gcRequestAction";
             this.gcRequestAction.Visible = true;
-            this.gcRequestAction.VisibleIndex = 2;
+            this.gcRequestAction.VisibleIndex = 3;
             this.gcRequestAction.Width = 93;
             // 
             // repositoryItemButtonEditRequestAction
@@ -565,7 +571,7 @@
             this.colMSrv_ActionTypeName.FieldName = "MSrv_ActionTypeName";
             this.colMSrv_ActionTypeName.Name = "colMSrv_ActionTypeName";
             this.colMSrv_ActionTypeName.Visible = true;
-            this.colMSrv_ActionTypeName.VisibleIndex = 10;
+            this.colMSrv_ActionTypeName.VisibleIndex = 11;
             // 
             // colActionComment
             // 
@@ -574,7 +580,7 @@
             this.colActionComment.FieldName = "ActionComment";
             this.colActionComment.Name = "colActionComment";
             this.colActionComment.Visible = true;
-            this.colActionComment.VisibleIndex = 11;
+            this.colActionComment.VisibleIndex = 12;
             this.colActionComment.Width = 121;
             // 
             // colActionDate
@@ -587,6 +593,36 @@
             this.colActionDate.VisibleIndex = 10;
             this.colActionDate.Width = 112;
             // 
+            // colRequestActionReasonName
+            // 
+            this.colRequestActionReasonName.Caption = "Request Action Reason";
+            this.colRequestActionReasonName.FieldName = "RequestActionReasonName";
+            this.colRequestActionReasonName.Name = "colRequestActionReasonName";
+            this.colRequestActionReasonName.Visible = true;
+            this.colRequestActionReasonName.VisibleIndex = 13;
+            this.colRequestActionReasonName.Width = 132;
+            // 
+            // gcReasons
+            // 
+            this.gcReasons.AppearanceCell.Options.UseTextOptions = true;
+            this.gcReasons.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcReasons.AppearanceHeader.Options.UseTextOptions = true;
+            this.gcReasons.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gcReasons.Caption = "Reasons";
+            this.gcReasons.ColumnEdit = this.repositoryItemButtonEditReasons;
+            this.gcReasons.Name = "gcReasons";
+            this.gcReasons.Visible = true;
+            this.gcReasons.VisibleIndex = 0;
+            // 
+            // repositoryItemButtonEditReasons
+            // 
+            this.repositoryItemButtonEditReasons.AutoHeight = false;
+            this.repositoryItemButtonEditReasons.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.MSrv_Type16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
+            this.repositoryItemButtonEditReasons.Name = "repositoryItemButtonEditReasons";
+            this.repositoryItemButtonEditReasons.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditReasons.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditReasons_ButtonClick);
+            // 
             // repositoryItemTextEditn2
             // 
             this.repositoryItemTextEditn2.AutoHeight = false;
@@ -597,15 +633,6 @@
             this.repositoryItemTextEditn2.Mask.EditMask = "n2";
             this.repositoryItemTextEditn2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEditn2.Name = "repositoryItemTextEditn2";
-            // 
-            // colRequestActionReasonName
-            // 
-            this.colRequestActionReasonName.Caption = "Request Action Reason";
-            this.colRequestActionReasonName.FieldName = "RequestActionReasonName";
-            this.colRequestActionReasonName.Name = "colRequestActionReasonName";
-            this.colRequestActionReasonName.Visible = true;
-            this.colRequestActionReasonName.VisibleIndex = 12;
-            this.colRequestActionReasonName.Width = 132;
             // 
             // MSrv_TicketEditorUC
             // 
@@ -631,6 +658,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditBigText)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditRequestAction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditReasons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEditn2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -689,5 +717,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colActionDate;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditYMD;
         private DevExpress.XtraGrid.Columns.GridColumn colRequestActionReasonName;
+        private DevExpress.XtraGrid.Columns.GridColumn gcReasons;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditReasons;
     }
 }

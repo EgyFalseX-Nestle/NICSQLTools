@@ -161,10 +161,29 @@ _______________________________________________
                     {
                         if (Customer > 0)
                         {
-                            SqlRow.Customer = Customer.ToString();
+                            switch (Customer.ToString())
+                            {
+                                case "898":
+                                    SqlRow.Customer = "0898";
+                                    break;
+                                case "899":
+                                    SqlRow.Customer = "0899";
+                                    break;
+                                case "902":
+                                    SqlRow.Customer = "0902";
+                                    break;
+                                default:
+                                    SqlRow.Customer = Customer.ToString();
+                                    break;
+                            }
+                            
                             break;
                         }
-                            
+                    }
+                    else if(item == "1020M" || item == "1020S" || item == "0898N")
+                    {
+                        SqlRow.Customer = Customer.ToString();
+                        break;
                     }
                 }
                 dsData.GPS_Data.AddGPS_DataRow(SqlRow);

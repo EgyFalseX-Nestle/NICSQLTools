@@ -334,6 +334,12 @@
     <Compile Include="Views\Data\GPS\PlateEditorUC.Designer.cs">
       <DependentUpon>PlateEditorUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Data\MSrv\Code\MSrv_Dmg_ReasonEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\MSrv\Code\MSrv_Dmg_ReasonEditorUC.Designer.cs">
+      <DependentUpon>MSrv_Dmg_ReasonEditorUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Data\MSrv\Ticket\MSrv_EquestActionDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -579,6 +585,12 @@
     </Compile>
     <Compile Include="Views\Permission\LookupValuesDetailsDlg.Designer.cs">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\MSrv\MSrv_02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\MSrv\MSrv_02.Designer.cs">
+      <DependentUpon>MSrv_02.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Qry\MSrv\MSrv_01.cs">
       <SubType>UserControl</SubType>
@@ -847,6 +859,9 @@
     <EmbeddedResource Include="Views\Data\GPS\PlateEditorUC.resx">
       <DependentUpon>PlateEditorUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\MSrv\Code\MSrv_Dmg_ReasonEditorUC.resx">
+      <DependentUpon>MSrv_Dmg_ReasonEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\MSrv\Ticket\MSrv_EquestActionDlg.resx">
       <DependentUpon>MSrv_EquestActionDlg.cs</DependentUpon>
     </EmbeddedResource>
@@ -969,6 +984,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Permission\LookupValuesDetailsDlg.resx">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\MSrv\MSrv_02.resx">
+      <DependentUpon>MSrv_02.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\MSrv\MSrv_01.resx">
       <DependentUpon>MSrv_01.cs</DependentUpon>

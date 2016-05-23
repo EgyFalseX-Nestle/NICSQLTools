@@ -86,6 +86,8 @@
             this.gcReasons = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditReasons = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemTextEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.colRoute_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSupervisor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
@@ -272,7 +274,9 @@
             this.colActionComment,
             this.colActionDate,
             this.colRequestActionReasonName,
-            this.gcReasons});
+            this.gcReasons,
+            this.colRoute_Name,
+            this.colSupervisor});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.GroupCount = 1;
             this.gridViewMain.Name = "gridViewMain";
@@ -435,6 +439,8 @@
             this.colIssueContactPerson.Caption = "Contact Person";
             this.colIssueContactPerson.FieldName = "IssueContactPerson";
             this.colIssueContactPerson.Name = "colIssueContactPerson";
+            this.colIssueContactPerson.Visible = true;
+            this.colIssueContactPerson.VisibleIndex = 18;
             this.colIssueContactPerson.Width = 94;
             // 
             // colIssueContactPhone2
@@ -442,6 +448,8 @@
             this.colIssueContactPhone2.Caption = "Nestle Contact Phone";
             this.colIssueContactPhone2.FieldName = "IssueContactPhone2";
             this.colIssueContactPhone2.Name = "colIssueContactPhone2";
+            this.colIssueContactPhone2.Visible = true;
+            this.colIssueContactPhone2.VisibleIndex = 19;
             this.colIssueContactPhone2.Width = 124;
             // 
             // colIssueAddress
@@ -449,12 +457,16 @@
             this.colIssueAddress.Caption = "Address";
             this.colIssueAddress.FieldName = "IssueAddress";
             this.colIssueAddress.Name = "colIssueAddress";
+            this.colIssueAddress.Visible = true;
+            this.colIssueAddress.VisibleIndex = 14;
             // 
             // colIssueContactPhone
             // 
             this.colIssueContactPhone.Caption = "Contact Phone";
             this.colIssueContactPhone.FieldName = "IssueContactPhone";
             this.colIssueContactPhone.Name = "colIssueContactPhone";
+            this.colIssueContactPhone.Visible = true;
+            this.colIssueContactPhone.VisibleIndex = 20;
             this.colIssueContactPhone.Width = 91;
             // 
             // colTicketClosed
@@ -501,6 +513,8 @@
             this.colRoute.Caption = "Route";
             this.colRoute.FieldName = "Route";
             this.colRoute.Name = "colRoute";
+            this.colRoute.Visible = true;
+            this.colRoute.VisibleIndex = 15;
             // 
             // colSales_District_2
             // 
@@ -634,6 +648,22 @@
             this.repositoryItemTextEditn2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEditn2.Name = "repositoryItemTextEditn2";
             // 
+            // colRoute_Name
+            // 
+            this.colRoute_Name.Caption = "Route Name";
+            this.colRoute_Name.FieldName = "Route_Name";
+            this.colRoute_Name.Name = "colRoute_Name";
+            this.colRoute_Name.Visible = true;
+            this.colRoute_Name.VisibleIndex = 16;
+            // 
+            // colSupervisor
+            // 
+            this.colSupervisor.Caption = "Supervisor";
+            this.colSupervisor.FieldName = "Supervisor";
+            this.colSupervisor.Name = "colSupervisor";
+            this.colSupervisor.Visible = true;
+            this.colSupervisor.VisibleIndex = 17;
+            // 
             // MSrv_TicketEditorUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,5 +749,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRequestActionReasonName;
         private DevExpress.XtraGrid.Columns.GridColumn gcReasons;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditReasons;
+        private DevExpress.XtraGrid.Columns.GridColumn colRoute_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn colSupervisor;
     }
 }

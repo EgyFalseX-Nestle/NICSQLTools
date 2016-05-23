@@ -68,6 +68,10 @@ namespace NICSQLTools.Data {
         
         private TicketTypeInfoDataTable tableTicketTypeInfo;
         
+        private MSrv_Dmg_ReasonDataTable tableMSrv_Dmg_Reason;
+        
+        private vMSrvTicketType_DetailsDataTable tablevMSrvTicketType_Details;
+        
         private global::System.Data.DataRelation relationFK_MSrv_TechnicianSalesDistrict_MSrv_Technician;
         
         private global::System.Data.DataRelation relationFK_MSrv_Technician_MSrv_TechnicianCompany;
@@ -203,6 +207,12 @@ namespace NICSQLTools.Data {
                 }
                 if ((ds.Tables["TicketTypeInfo"] != null)) {
                     base.Tables.Add(new TicketTypeInfoDataTable(ds.Tables["TicketTypeInfo"]));
+                }
+                if ((ds.Tables["MSrv_Dmg_Reason"] != null)) {
+                    base.Tables.Add(new MSrv_Dmg_ReasonDataTable(ds.Tables["MSrv_Dmg_Reason"]));
+                }
+                if ((ds.Tables["vMSrvTicketType_Details"] != null)) {
+                    base.Tables.Add(new vMSrvTicketType_DetailsDataTable(ds.Tables["vMSrvTicketType_Details"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -444,6 +454,26 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public MSrv_Dmg_ReasonDataTable MSrv_Dmg_Reason {
+            get {
+                return this.tableMSrv_Dmg_Reason;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public vMSrvTicketType_DetailsDataTable vMSrvTicketType_Details {
+            get {
+                return this.tablevMSrvTicketType_Details;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -574,6 +604,12 @@ namespace NICSQLTools.Data {
                 }
                 if ((ds.Tables["TicketTypeInfo"] != null)) {
                     base.Tables.Add(new TicketTypeInfoDataTable(ds.Tables["TicketTypeInfo"]));
+                }
+                if ((ds.Tables["MSrv_Dmg_Reason"] != null)) {
+                    base.Tables.Add(new MSrv_Dmg_ReasonDataTable(ds.Tables["MSrv_Dmg_Reason"]));
+                }
+                if ((ds.Tables["vMSrvTicketType_Details"] != null)) {
+                    base.Tables.Add(new vMSrvTicketType_DetailsDataTable(ds.Tables["vMSrvTicketType_Details"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -740,6 +776,18 @@ namespace NICSQLTools.Data {
                     this.tableTicketTypeInfo.InitVars();
                 }
             }
+            this.tableMSrv_Dmg_Reason = ((MSrv_Dmg_ReasonDataTable)(base.Tables["MSrv_Dmg_Reason"]));
+            if ((initTable == true)) {
+                if ((this.tableMSrv_Dmg_Reason != null)) {
+                    this.tableMSrv_Dmg_Reason.InitVars();
+                }
+            }
+            this.tablevMSrvTicketType_Details = ((vMSrvTicketType_DetailsDataTable)(base.Tables["vMSrvTicketType_Details"]));
+            if ((initTable == true)) {
+                if ((this.tablevMSrvTicketType_Details != null)) {
+                    this.tablevMSrvTicketType_Details.InitVars();
+                }
+            }
             this.relationFK_MSrv_TechnicianSalesDistrict_MSrv_Technician = this.Relations["FK_MSrv_TechnicianSalesDistrict_MSrv_Technician"];
             this.relationFK_MSrv_Technician_MSrv_TechnicianCompany = this.Relations["FK_MSrv_Technician_MSrv_TechnicianCompany"];
             this.relationFK_MSrvTicketType_MSrv_Ticket = this.Relations["FK_MSrvTicketType_MSrv_Ticket"];
@@ -815,6 +863,10 @@ namespace NICSQLTools.Data {
             base.Tables.Add(this.tablevMSrv_Customer);
             this.tableTicketTypeInfo = new TicketTypeInfoDataTable();
             base.Tables.Add(this.tableTicketTypeInfo);
+            this.tableMSrv_Dmg_Reason = new MSrv_Dmg_ReasonDataTable();
+            base.Tables.Add(this.tableMSrv_Dmg_Reason);
+            this.tablevMSrvTicketType_Details = new vMSrvTicketType_DetailsDataTable();
+            base.Tables.Add(this.tablevMSrvTicketType_Details);
             this.relationFK_MSrv_TechnicianSalesDistrict_MSrv_Technician = new global::System.Data.DataRelation("FK_MSrv_TechnicianSalesDistrict_MSrv_Technician", new global::System.Data.DataColumn[] {
                         this.tableMSrv_Technician.TechnicianIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableMSrv_TechnicianSalesDistrict.TechnicianIdColumn}, false);
@@ -1035,6 +1087,18 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeMSrv_Dmg_Reason() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializevMSrvTicketType_Details() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1153,6 +1217,12 @@ namespace NICSQLTools.Data {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TicketTypeInfoRowChangeEventHandler(object sender, TicketTypeInfoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void MSrv_Dmg_ReasonRowChangeEventHandler(object sender, MSrv_Dmg_ReasonRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void vMSrvTicketType_DetailsRowChangeEventHandler(object sender, vMSrvTicketType_DetailsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4618,6 +4688,8 @@ namespace NICSQLTools.Data {
             
             private global::System.Data.DataColumn columnDateIn;
             
+            private global::System.Data.DataColumn columnmsrv_dmg_reason_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MSrv_TicketVisitDataTable() {
@@ -4717,6 +4789,14 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn msrv_dmg_reason_idColumn {
+                get {
+                    return this.columnmsrv_dmg_reason_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4752,7 +4832,7 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrv_TicketVisitRow AddMSrv_TicketVisitRow(int TicketVisitId, MSrv_TicketRow parentMSrv_TicketRowByFK_MSrv_TicketVisit_MSrv_Ticket, MSrv_TechnicianRow parentMSrv_TechnicianRowByFK_MSrv_TicketVisit_MSrv_Technician, System.DateTime StartDate, System.DateTime EndDate, string VisitComment, int UserIn, System.DateTime DateIn) {
+            public MSrv_TicketVisitRow AddMSrv_TicketVisitRow(int TicketVisitId, MSrv_TicketRow parentMSrv_TicketRowByFK_MSrv_TicketVisit_MSrv_Ticket, MSrv_TechnicianRow parentMSrv_TechnicianRowByFK_MSrv_TicketVisit_MSrv_Technician, System.DateTime StartDate, System.DateTime EndDate, string VisitComment, int UserIn, System.DateTime DateIn, int msrv_dmg_reason_id) {
                 MSrv_TicketVisitRow rowMSrv_TicketVisitRow = ((MSrv_TicketVisitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TicketVisitId,
@@ -4762,7 +4842,8 @@ namespace NICSQLTools.Data {
                         EndDate,
                         VisitComment,
                         UserIn,
-                        DateIn};
+                        DateIn,
+                        msrv_dmg_reason_id};
                 if ((parentMSrv_TicketRowByFK_MSrv_TicketVisit_MSrv_Ticket != null)) {
                     columnValuesArray[1] = parentMSrv_TicketRowByFK_MSrv_TicketVisit_MSrv_Ticket[0];
                 }
@@ -4806,6 +4887,7 @@ namespace NICSQLTools.Data {
                 this.columnVisitComment = base.Columns["VisitComment"];
                 this.columnUserIn = base.Columns["UserIn"];
                 this.columnDateIn = base.Columns["DateIn"];
+                this.columnmsrv_dmg_reason_id = base.Columns["msrv_dmg_reason_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4827,6 +4909,8 @@ namespace NICSQLTools.Data {
                 base.Columns.Add(this.columnUserIn);
                 this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDateIn);
+                this.columnmsrv_dmg_reason_id = new global::System.Data.DataColumn("msrv_dmg_reason_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmsrv_dmg_reason_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTicketVisitId}, true));
                 this.columnTicketVisitId.AllowDBNull = false;
@@ -9267,6 +9351,1152 @@ namespace NICSQLTools.Data {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class MSrv_Dmg_ReasonDataTable : global::System.Data.TypedTableBase<MSrv_Dmg_ReasonRow> {
+            
+            private global::System.Data.DataColumn columnmsrv_dmg_reason_id;
+            
+            private global::System.Data.DataColumn columnmsrv_dmg_reason_name;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MSrv_Dmg_ReasonDataTable() {
+                this.TableName = "MSrv_Dmg_Reason";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MSrv_Dmg_ReasonDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected MSrv_Dmg_ReasonDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn msrv_dmg_reason_idColumn {
+                get {
+                    return this.columnmsrv_dmg_reason_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn msrv_dmg_reason_nameColumn {
+                get {
+                    return this.columnmsrv_dmg_reason_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MSrv_Dmg_ReasonRow this[int index] {
+                get {
+                    return ((MSrv_Dmg_ReasonRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MSrv_Dmg_ReasonRowChangeEventHandler MSrv_Dmg_ReasonRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MSrv_Dmg_ReasonRowChangeEventHandler MSrv_Dmg_ReasonRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MSrv_Dmg_ReasonRowChangeEventHandler MSrv_Dmg_ReasonRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MSrv_Dmg_ReasonRowChangeEventHandler MSrv_Dmg_ReasonRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddMSrv_Dmg_ReasonRow(MSrv_Dmg_ReasonRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MSrv_Dmg_ReasonRow AddMSrv_Dmg_ReasonRow(int msrv_dmg_reason_id, string msrv_dmg_reason_name) {
+                MSrv_Dmg_ReasonRow rowMSrv_Dmg_ReasonRow = ((MSrv_Dmg_ReasonRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        msrv_dmg_reason_id,
+                        msrv_dmg_reason_name};
+                rowMSrv_Dmg_ReasonRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMSrv_Dmg_ReasonRow);
+                return rowMSrv_Dmg_ReasonRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MSrv_Dmg_ReasonRow FindBymsrv_dmg_reason_id(int msrv_dmg_reason_id) {
+                return ((MSrv_Dmg_ReasonRow)(this.Rows.Find(new object[] {
+                            msrv_dmg_reason_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                MSrv_Dmg_ReasonDataTable cln = ((MSrv_Dmg_ReasonDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new MSrv_Dmg_ReasonDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnmsrv_dmg_reason_id = base.Columns["msrv_dmg_reason_id"];
+                this.columnmsrv_dmg_reason_name = base.Columns["msrv_dmg_reason_name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnmsrv_dmg_reason_id = new global::System.Data.DataColumn("msrv_dmg_reason_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmsrv_dmg_reason_id);
+                this.columnmsrv_dmg_reason_name = new global::System.Data.DataColumn("msrv_dmg_reason_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmsrv_dmg_reason_name);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnmsrv_dmg_reason_id}, true));
+                this.columnmsrv_dmg_reason_id.AllowDBNull = false;
+                this.columnmsrv_dmg_reason_id.Unique = true;
+                this.columnmsrv_dmg_reason_name.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MSrv_Dmg_ReasonRow NewMSrv_Dmg_ReasonRow() {
+                return ((MSrv_Dmg_ReasonRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new MSrv_Dmg_ReasonRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(MSrv_Dmg_ReasonRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.MSrv_Dmg_ReasonRowChanged != null)) {
+                    this.MSrv_Dmg_ReasonRowChanged(this, new MSrv_Dmg_ReasonRowChangeEvent(((MSrv_Dmg_ReasonRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.MSrv_Dmg_ReasonRowChanging != null)) {
+                    this.MSrv_Dmg_ReasonRowChanging(this, new MSrv_Dmg_ReasonRowChangeEvent(((MSrv_Dmg_ReasonRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.MSrv_Dmg_ReasonRowDeleted != null)) {
+                    this.MSrv_Dmg_ReasonRowDeleted(this, new MSrv_Dmg_ReasonRowChangeEvent(((MSrv_Dmg_ReasonRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.MSrv_Dmg_ReasonRowDeleting != null)) {
+                    this.MSrv_Dmg_ReasonRowDeleting(this, new MSrv_Dmg_ReasonRowChangeEvent(((MSrv_Dmg_ReasonRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveMSrv_Dmg_ReasonRow(MSrv_Dmg_ReasonRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMSrc ds = new dsMSrc();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "MSrv_Dmg_ReasonDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class vMSrvTicketType_DetailsDataTable : global::System.Data.TypedTableBase<vMSrvTicketType_DetailsRow> {
+            
+            private global::System.Data.DataColumn columnTicketId;
+            
+            private global::System.Data.DataColumn columnCustomerId;
+            
+            private global::System.Data.DataColumn columnEquipmentSerial;
+            
+            private global::System.Data.DataColumn columnRoute;
+            
+            private global::System.Data.DataColumn columnOpenDate;
+            
+            private global::System.Data.DataColumn columnOpenComment;
+            
+            private global::System.Data.DataColumn columnSalesDistrict3Id;
+            
+            private global::System.Data.DataColumn columnIssueContactPerson;
+            
+            private global::System.Data.DataColumn columnIssueAddress;
+            
+            private global::System.Data.DataColumn columnIssueContactPhone;
+            
+            private global::System.Data.DataColumn columnIssueContactPhone2;
+            
+            private global::System.Data.DataColumn columnTecEquipmentSerial;
+            
+            private global::System.Data.DataColumn columnCurrentDepartmentId;
+            
+            private global::System.Data.DataColumn columnTicketClosed;
+            
+            private global::System.Data.DataColumn columnClosedComment;
+            
+            private global::System.Data.DataColumn columnCloseMSrvTypeId;
+            
+            private global::System.Data.DataColumn columnCloseMSrvType;
+            
+            private global::System.Data.DataColumn columnClosedDate;
+            
+            private global::System.Data.DataColumn columnCloseUserIn;
+            
+            private global::System.Data.DataColumn columnClosedDateIn;
+            
+            private global::System.Data.DataColumn columnUserIn;
+            
+            private global::System.Data.DataColumn columnDateIn;
+            
+            private global::System.Data.DataColumn columnSales_District_2;
+            
+            private global::System.Data.DataColumn columnPlant;
+            
+            private global::System.Data.DataColumn columnTicket_User;
+            
+            private global::System.Data.DataColumn columnClose_User;
+            
+            private global::System.Data.DataColumn columnMSrvDepartment;
+            
+            private global::System.Data.DataColumn columnVisitCount;
+            
+            private global::System.Data.DataColumn columnPartCount;
+            
+            private global::System.Data.DataColumn columnVisibleToUserId;
+            
+            private global::System.Data.DataColumn columnMSrv_ActionTypeName;
+            
+            private global::System.Data.DataColumn columnActionComment;
+            
+            private global::System.Data.DataColumn columnActionDate;
+            
+            private global::System.Data.DataColumn columnRequestActionReason;
+            
+            private global::System.Data.DataColumn columnRequestActionReasonName;
+            
+            private global::System.Data.DataColumn columnRoute_Name;
+            
+            private global::System.Data.DataColumn columnSupervisor;
+            
+            private global::System.Data.DataColumn columnMSrvTypeId;
+            
+            private global::System.Data.DataColumn columnMSrvType;
+            
+            private global::System.Data.DataColumn columnTec;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vMSrvTicketType_DetailsDataTable() {
+                this.TableName = "vMSrvTicketType_Details";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vMSrvTicketType_DetailsDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected vMSrvTicketType_DetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TicketIdColumn {
+                get {
+                    return this.columnTicketId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CustomerIdColumn {
+                get {
+                    return this.columnCustomerId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EquipmentSerialColumn {
+                get {
+                    return this.columnEquipmentSerial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RouteColumn {
+                get {
+                    return this.columnRoute;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OpenDateColumn {
+                get {
+                    return this.columnOpenDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OpenCommentColumn {
+                get {
+                    return this.columnOpenComment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SalesDistrict3IdColumn {
+                get {
+                    return this.columnSalesDistrict3Id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IssueContactPersonColumn {
+                get {
+                    return this.columnIssueContactPerson;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IssueAddressColumn {
+                get {
+                    return this.columnIssueAddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IssueContactPhoneColumn {
+                get {
+                    return this.columnIssueContactPhone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IssueContactPhone2Column {
+                get {
+                    return this.columnIssueContactPhone2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TecEquipmentSerialColumn {
+                get {
+                    return this.columnTecEquipmentSerial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CurrentDepartmentIdColumn {
+                get {
+                    return this.columnCurrentDepartmentId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TicketClosedColumn {
+                get {
+                    return this.columnTicketClosed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClosedCommentColumn {
+                get {
+                    return this.columnClosedComment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CloseMSrvTypeIdColumn {
+                get {
+                    return this.columnCloseMSrvTypeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CloseMSrvTypeColumn {
+                get {
+                    return this.columnCloseMSrvType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClosedDateColumn {
+                get {
+                    return this.columnClosedDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CloseUserInColumn {
+                get {
+                    return this.columnCloseUserIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClosedDateInColumn {
+                get {
+                    return this.columnClosedDateIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UserInColumn {
+                get {
+                    return this.columnUserIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DateInColumn {
+                get {
+                    return this.columnDateIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Sales_District_2Column {
+                get {
+                    return this.columnSales_District_2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PlantColumn {
+                get {
+                    return this.columnPlant;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Ticket_UserColumn {
+                get {
+                    return this.columnTicket_User;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Close_UserColumn {
+                get {
+                    return this.columnClose_User;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MSrvDepartmentColumn {
+                get {
+                    return this.columnMSrvDepartment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VisitCountColumn {
+                get {
+                    return this.columnVisitCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PartCountColumn {
+                get {
+                    return this.columnPartCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VisibleToUserIdColumn {
+                get {
+                    return this.columnVisibleToUserId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MSrv_ActionTypeNameColumn {
+                get {
+                    return this.columnMSrv_ActionTypeName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActionCommentColumn {
+                get {
+                    return this.columnActionComment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActionDateColumn {
+                get {
+                    return this.columnActionDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RequestActionReasonColumn {
+                get {
+                    return this.columnRequestActionReason;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RequestActionReasonNameColumn {
+                get {
+                    return this.columnRequestActionReasonName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Route_NameColumn {
+                get {
+                    return this.columnRoute_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SupervisorColumn {
+                get {
+                    return this.columnSupervisor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MSrvTypeIdColumn {
+                get {
+                    return this.columnMSrvTypeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MSrvTypeColumn {
+                get {
+                    return this.columnMSrvType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TecColumn {
+                get {
+                    return this.columnTec;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vMSrvTicketType_DetailsRow this[int index] {
+                get {
+                    return ((vMSrvTicketType_DetailsRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vMSrvTicketType_DetailsRowChangeEventHandler vMSrvTicketType_DetailsRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vMSrvTicketType_DetailsRowChangeEventHandler vMSrvTicketType_DetailsRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vMSrvTicketType_DetailsRowChangeEventHandler vMSrvTicketType_DetailsRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event vMSrvTicketType_DetailsRowChangeEventHandler vMSrvTicketType_DetailsRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddvMSrvTicketType_DetailsRow(vMSrvTicketType_DetailsRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vMSrvTicketType_DetailsRow AddvMSrvTicketType_DetailsRow(
+                        int TicketId, 
+                        string CustomerId, 
+                        string EquipmentSerial, 
+                        string Route, 
+                        System.DateTime OpenDate, 
+                        string OpenComment, 
+                        short SalesDistrict3Id, 
+                        string IssueContactPerson, 
+                        string IssueAddress, 
+                        string IssueContactPhone, 
+                        string IssueContactPhone2, 
+                        string TecEquipmentSerial, 
+                        short CurrentDepartmentId, 
+                        bool TicketClosed, 
+                        string ClosedComment, 
+                        short CloseMSrvTypeId, 
+                        string CloseMSrvType, 
+                        System.DateTime ClosedDate, 
+                        int CloseUserIn, 
+                        System.DateTime ClosedDateIn, 
+                        int UserIn, 
+                        System.DateTime DateIn, 
+                        string Sales_District_2, 
+                        string Plant, 
+                        string Ticket_User, 
+                        string Close_User, 
+                        string MSrvDepartment, 
+                        int VisitCount, 
+                        double PartCount, 
+                        int VisibleToUserId, 
+                        string MSrv_ActionTypeName, 
+                        string ActionComment, 
+                        System.DateTime ActionDate, 
+                        short RequestActionReason, 
+                        string RequestActionReasonName, 
+                        string Route_Name, 
+                        string Supervisor, 
+                        short MSrvTypeId, 
+                        string MSrvType, 
+                        string Tec) {
+                vMSrvTicketType_DetailsRow rowvMSrvTicketType_DetailsRow = ((vMSrvTicketType_DetailsRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        TicketId,
+                        CustomerId,
+                        EquipmentSerial,
+                        Route,
+                        OpenDate,
+                        OpenComment,
+                        SalesDistrict3Id,
+                        IssueContactPerson,
+                        IssueAddress,
+                        IssueContactPhone,
+                        IssueContactPhone2,
+                        TecEquipmentSerial,
+                        CurrentDepartmentId,
+                        TicketClosed,
+                        ClosedComment,
+                        CloseMSrvTypeId,
+                        CloseMSrvType,
+                        ClosedDate,
+                        CloseUserIn,
+                        ClosedDateIn,
+                        UserIn,
+                        DateIn,
+                        Sales_District_2,
+                        Plant,
+                        Ticket_User,
+                        Close_User,
+                        MSrvDepartment,
+                        VisitCount,
+                        PartCount,
+                        VisibleToUserId,
+                        MSrv_ActionTypeName,
+                        ActionComment,
+                        ActionDate,
+                        RequestActionReason,
+                        RequestActionReasonName,
+                        Route_Name,
+                        Supervisor,
+                        MSrvTypeId,
+                        MSrvType,
+                        Tec};
+                rowvMSrvTicketType_DetailsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowvMSrvTicketType_DetailsRow);
+                return rowvMSrvTicketType_DetailsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vMSrvTicketType_DetailsRow FindByTicketIdMSrvTypeId(int TicketId, short MSrvTypeId) {
+                return ((vMSrvTicketType_DetailsRow)(this.Rows.Find(new object[] {
+                            TicketId,
+                            MSrvTypeId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                vMSrvTicketType_DetailsDataTable cln = ((vMSrvTicketType_DetailsDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new vMSrvTicketType_DetailsDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnTicketId = base.Columns["TicketId"];
+                this.columnCustomerId = base.Columns["CustomerId"];
+                this.columnEquipmentSerial = base.Columns["EquipmentSerial"];
+                this.columnRoute = base.Columns["Route"];
+                this.columnOpenDate = base.Columns["OpenDate"];
+                this.columnOpenComment = base.Columns["OpenComment"];
+                this.columnSalesDistrict3Id = base.Columns["SalesDistrict3Id"];
+                this.columnIssueContactPerson = base.Columns["IssueContactPerson"];
+                this.columnIssueAddress = base.Columns["IssueAddress"];
+                this.columnIssueContactPhone = base.Columns["IssueContactPhone"];
+                this.columnIssueContactPhone2 = base.Columns["IssueContactPhone2"];
+                this.columnTecEquipmentSerial = base.Columns["TecEquipmentSerial"];
+                this.columnCurrentDepartmentId = base.Columns["CurrentDepartmentId"];
+                this.columnTicketClosed = base.Columns["TicketClosed"];
+                this.columnClosedComment = base.Columns["ClosedComment"];
+                this.columnCloseMSrvTypeId = base.Columns["CloseMSrvTypeId"];
+                this.columnCloseMSrvType = base.Columns["CloseMSrvType"];
+                this.columnClosedDate = base.Columns["ClosedDate"];
+                this.columnCloseUserIn = base.Columns["CloseUserIn"];
+                this.columnClosedDateIn = base.Columns["ClosedDateIn"];
+                this.columnUserIn = base.Columns["UserIn"];
+                this.columnDateIn = base.Columns["DateIn"];
+                this.columnSales_District_2 = base.Columns["Sales District 2"];
+                this.columnPlant = base.Columns["Plant"];
+                this.columnTicket_User = base.Columns["Ticket_User"];
+                this.columnClose_User = base.Columns["Close_User"];
+                this.columnMSrvDepartment = base.Columns["MSrvDepartment"];
+                this.columnVisitCount = base.Columns["VisitCount"];
+                this.columnPartCount = base.Columns["PartCount"];
+                this.columnVisibleToUserId = base.Columns["VisibleToUserId"];
+                this.columnMSrv_ActionTypeName = base.Columns["MSrv_ActionTypeName"];
+                this.columnActionComment = base.Columns["ActionComment"];
+                this.columnActionDate = base.Columns["ActionDate"];
+                this.columnRequestActionReason = base.Columns["RequestActionReason"];
+                this.columnRequestActionReasonName = base.Columns["RequestActionReasonName"];
+                this.columnRoute_Name = base.Columns["Route Name"];
+                this.columnSupervisor = base.Columns["Supervisor"];
+                this.columnMSrvTypeId = base.Columns["MSrvTypeId"];
+                this.columnMSrvType = base.Columns["MSrvType"];
+                this.columnTec = base.Columns["Tec"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnTicketId = new global::System.Data.DataColumn("TicketId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTicketId);
+                this.columnCustomerId = new global::System.Data.DataColumn("CustomerId", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCustomerId);
+                this.columnEquipmentSerial = new global::System.Data.DataColumn("EquipmentSerial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEquipmentSerial);
+                this.columnRoute = new global::System.Data.DataColumn("Route", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoute);
+                this.columnOpenDate = new global::System.Data.DataColumn("OpenDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenDate);
+                this.columnOpenComment = new global::System.Data.DataColumn("OpenComment", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenComment);
+                this.columnSalesDistrict3Id = new global::System.Data.DataColumn("SalesDistrict3Id", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSalesDistrict3Id);
+                this.columnIssueContactPerson = new global::System.Data.DataColumn("IssueContactPerson", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIssueContactPerson);
+                this.columnIssueAddress = new global::System.Data.DataColumn("IssueAddress", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIssueAddress);
+                this.columnIssueContactPhone = new global::System.Data.DataColumn("IssueContactPhone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIssueContactPhone);
+                this.columnIssueContactPhone2 = new global::System.Data.DataColumn("IssueContactPhone2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIssueContactPhone2);
+                this.columnTecEquipmentSerial = new global::System.Data.DataColumn("TecEquipmentSerial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTecEquipmentSerial);
+                this.columnCurrentDepartmentId = new global::System.Data.DataColumn("CurrentDepartmentId", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCurrentDepartmentId);
+                this.columnTicketClosed = new global::System.Data.DataColumn("TicketClosed", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTicketClosed);
+                this.columnClosedComment = new global::System.Data.DataColumn("ClosedComment", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedComment);
+                this.columnCloseMSrvTypeId = new global::System.Data.DataColumn("CloseMSrvTypeId", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCloseMSrvTypeId);
+                this.columnCloseMSrvType = new global::System.Data.DataColumn("CloseMSrvType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCloseMSrvType);
+                this.columnClosedDate = new global::System.Data.DataColumn("ClosedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedDate);
+                this.columnCloseUserIn = new global::System.Data.DataColumn("CloseUserIn", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCloseUserIn);
+                this.columnClosedDateIn = new global::System.Data.DataColumn("ClosedDateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedDateIn);
+                this.columnUserIn = new global::System.Data.DataColumn("UserIn", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserIn);
+                this.columnDateIn = new global::System.Data.DataColumn("DateIn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateIn);
+                this.columnSales_District_2 = new global::System.Data.DataColumn("Sales District 2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSales_District_2);
+                this.columnPlant = new global::System.Data.DataColumn("Plant", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlant);
+                this.columnTicket_User = new global::System.Data.DataColumn("Ticket_User", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTicket_User);
+                this.columnClose_User = new global::System.Data.DataColumn("Close_User", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClose_User);
+                this.columnMSrvDepartment = new global::System.Data.DataColumn("MSrvDepartment", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMSrvDepartment);
+                this.columnVisitCount = new global::System.Data.DataColumn("VisitCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVisitCount);
+                this.columnPartCount = new global::System.Data.DataColumn("PartCount", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartCount);
+                this.columnVisibleToUserId = new global::System.Data.DataColumn("VisibleToUserId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVisibleToUserId);
+                this.columnMSrv_ActionTypeName = new global::System.Data.DataColumn("MSrv_ActionTypeName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMSrv_ActionTypeName);
+                this.columnActionComment = new global::System.Data.DataColumn("ActionComment", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActionComment);
+                this.columnActionDate = new global::System.Data.DataColumn("ActionDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActionDate);
+                this.columnRequestActionReason = new global::System.Data.DataColumn("RequestActionReason", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRequestActionReason);
+                this.columnRequestActionReasonName = new global::System.Data.DataColumn("RequestActionReasonName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRequestActionReasonName);
+                this.columnRoute_Name = new global::System.Data.DataColumn("Route Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoute_Name);
+                this.columnSupervisor = new global::System.Data.DataColumn("Supervisor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSupervisor);
+                this.columnMSrvTypeId = new global::System.Data.DataColumn("MSrvTypeId", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMSrvTypeId);
+                this.columnMSrvType = new global::System.Data.DataColumn("MSrvType", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMSrvType);
+                this.columnTec = new global::System.Data.DataColumn("Tec", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTec);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnTicketId,
+                                this.columnMSrvTypeId}, true));
+                this.columnTicketId.AllowDBNull = false;
+                this.columnCustomerId.MaxLength = 255;
+                this.columnEquipmentSerial.MaxLength = 50;
+                this.columnRoute.MaxLength = 50;
+                this.columnOpenComment.MaxLength = 255;
+                this.columnIssueContactPerson.MaxLength = 50;
+                this.columnIssueAddress.MaxLength = 100;
+                this.columnIssueContactPhone.MaxLength = 50;
+                this.columnIssueContactPhone2.MaxLength = 50;
+                this.columnTecEquipmentSerial.MaxLength = 50;
+                this.columnClosedComment.MaxLength = 255;
+                this.columnCloseMSrvType.MaxLength = 100;
+                this.columnSales_District_2.MaxLength = 50;
+                this.columnPlant.MaxLength = 50;
+                this.columnTicket_User.MaxLength = 50;
+                this.columnClose_User.MaxLength = 50;
+                this.columnMSrvDepartment.MaxLength = 50;
+                this.columnVisibleToUserId.AllowDBNull = false;
+                this.columnMSrv_ActionTypeName.ReadOnly = true;
+                this.columnMSrv_ActionTypeName.MaxLength = 50;
+                this.columnActionComment.ReadOnly = true;
+                this.columnActionComment.MaxLength = 255;
+                this.columnActionDate.ReadOnly = true;
+                this.columnRequestActionReasonName.MaxLength = 100;
+                this.columnRoute_Name.MaxLength = 255;
+                this.columnSupervisor.MaxLength = 255;
+                this.columnMSrvTypeId.AllowDBNull = false;
+                this.columnMSrvType.MaxLength = 100;
+                this.columnTec.MaxLength = 1;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vMSrvTicketType_DetailsRow NewvMSrvTicketType_DetailsRow() {
+                return ((vMSrvTicketType_DetailsRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new vMSrvTicketType_DetailsRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(vMSrvTicketType_DetailsRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.vMSrvTicketType_DetailsRowChanged != null)) {
+                    this.vMSrvTicketType_DetailsRowChanged(this, new vMSrvTicketType_DetailsRowChangeEvent(((vMSrvTicketType_DetailsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.vMSrvTicketType_DetailsRowChanging != null)) {
+                    this.vMSrvTicketType_DetailsRowChanging(this, new vMSrvTicketType_DetailsRowChangeEvent(((vMSrvTicketType_DetailsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.vMSrvTicketType_DetailsRowDeleted != null)) {
+                    this.vMSrvTicketType_DetailsRowDeleted(this, new vMSrvTicketType_DetailsRowChangeEvent(((vMSrvTicketType_DetailsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.vMSrvTicketType_DetailsRowDeleting != null)) {
+                    this.vMSrvTicketType_DetailsRowDeleting(this, new vMSrvTicketType_DetailsRowChangeEvent(((vMSrvTicketType_DetailsRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovevMSrvTicketType_DetailsRow(vMSrvTicketType_DetailsRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMSrc ds = new dsMSrc();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "vMSrvTicketType_DetailsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class MSrv_DepartmentRow : global::System.Data.DataRow {
@@ -11290,6 +12520,22 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int msrv_dmg_reason_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableMSrv_TicketVisit.msrv_dmg_reason_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'msrv_dmg_reason_id\' in table \'MSrv_TicketVisit\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMSrv_TicketVisit.msrv_dmg_reason_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MSrv_TechnicianRow MSrv_TechnicianRow {
                 get {
                     return ((MSrv_TechnicianRow)(this.GetParentRow(this.Table.ParentRelations["FK_MSrv_TicketVisit_MSrv_Technician"])));
@@ -11392,6 +12638,18 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDateInNull() {
                 this[this.tableMSrv_TicketVisit.DateInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismsrv_dmg_reason_idNull() {
+                return this.IsNull(this.tableMSrv_TicketVisit.msrv_dmg_reason_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmsrv_dmg_reason_idNull() {
+                this[this.tableMSrv_TicketVisit.msrv_dmg_reason_idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14558,6 +15816,1164 @@ namespace NICSQLTools.Data {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class MSrv_Dmg_ReasonRow : global::System.Data.DataRow {
+            
+            private MSrv_Dmg_ReasonDataTable tableMSrv_Dmg_Reason;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MSrv_Dmg_ReasonRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableMSrv_Dmg_Reason = ((MSrv_Dmg_ReasonDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int msrv_dmg_reason_id {
+                get {
+                    return ((int)(this[this.tableMSrv_Dmg_Reason.msrv_dmg_reason_idColumn]));
+                }
+                set {
+                    this[this.tableMSrv_Dmg_Reason.msrv_dmg_reason_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string msrv_dmg_reason_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableMSrv_Dmg_Reason.msrv_dmg_reason_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'msrv_dmg_reason_name\' in table \'MSrv_Dmg_Reason\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableMSrv_Dmg_Reason.msrv_dmg_reason_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismsrv_dmg_reason_nameNull() {
+                return this.IsNull(this.tableMSrv_Dmg_Reason.msrv_dmg_reason_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmsrv_dmg_reason_nameNull() {
+                this[this.tableMSrv_Dmg_Reason.msrv_dmg_reason_nameColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class vMSrvTicketType_DetailsRow : global::System.Data.DataRow {
+            
+            private vMSrvTicketType_DetailsDataTable tablevMSrvTicketType_Details;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal vMSrvTicketType_DetailsRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablevMSrvTicketType_Details = ((vMSrvTicketType_DetailsDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int TicketId {
+                get {
+                    return ((int)(this[this.tablevMSrvTicketType_Details.TicketIdColumn]));
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.TicketIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CustomerId {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.CustomerIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CustomerId\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.CustomerIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EquipmentSerial {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.EquipmentSerialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EquipmentSerial\' in table \'vMSrvTicketType_Details\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.EquipmentSerialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Route {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.RouteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Route\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.RouteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime OpenDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevMSrvTicketType_Details.OpenDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenDate\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.OpenDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OpenComment {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.OpenCommentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenComment\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.OpenCommentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short SalesDistrict3Id {
+                get {
+                    try {
+                        return ((short)(this[this.tablevMSrvTicketType_Details.SalesDistrict3IdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SalesDistrict3Id\' in table \'vMSrvTicketType_Details\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.SalesDistrict3IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string IssueContactPerson {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.IssueContactPersonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IssueContactPerson\' in table \'vMSrvTicketType_Details\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.IssueContactPersonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string IssueAddress {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.IssueAddressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IssueAddress\' in table \'vMSrvTicketType_Details\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.IssueAddressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string IssueContactPhone {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.IssueContactPhoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IssueContactPhone\' in table \'vMSrvTicketType_Details\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.IssueContactPhoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string IssueContactPhone2 {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.IssueContactPhone2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IssueContactPhone2\' in table \'vMSrvTicketType_Details\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.IssueContactPhone2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TecEquipmentSerial {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.TecEquipmentSerialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TecEquipmentSerial\' in table \'vMSrvTicketType_Details\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.TecEquipmentSerialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short CurrentDepartmentId {
+                get {
+                    try {
+                        return ((short)(this[this.tablevMSrvTicketType_Details.CurrentDepartmentIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CurrentDepartmentId\' in table \'vMSrvTicketType_Details\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.CurrentDepartmentIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool TicketClosed {
+                get {
+                    try {
+                        return ((bool)(this[this.tablevMSrvTicketType_Details.TicketClosedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TicketClosed\' in table \'vMSrvTicketType_Details\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.TicketClosedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ClosedComment {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.ClosedCommentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedComment\' in table \'vMSrvTicketType_Details\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.ClosedCommentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short CloseMSrvTypeId {
+                get {
+                    try {
+                        return ((short)(this[this.tablevMSrvTicketType_Details.CloseMSrvTypeIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CloseMSrvTypeId\' in table \'vMSrvTicketType_Details\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.CloseMSrvTypeIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CloseMSrvType {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.CloseMSrvTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CloseMSrvType\' in table \'vMSrvTicketType_Details\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.CloseMSrvTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime ClosedDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevMSrvTicketType_Details.ClosedDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedDate\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.ClosedDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CloseUserIn {
+                get {
+                    try {
+                        return ((int)(this[this.tablevMSrvTicketType_Details.CloseUserInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CloseUserIn\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.CloseUserInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime ClosedDateIn {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevMSrvTicketType_Details.ClosedDateInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedDateIn\' in table \'vMSrvTicketType_Details\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.ClosedDateInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int UserIn {
+                get {
+                    try {
+                        return ((int)(this[this.tablevMSrvTicketType_Details.UserInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserIn\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.UserInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DateIn {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevMSrvTicketType_Details.DateInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateIn\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.DateInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Sales_District_2 {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.Sales_District_2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Sales District 2\' in table \'vMSrvTicketType_Details\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.Sales_District_2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Plant {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.PlantColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Plant\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.PlantColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Ticket_User {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.Ticket_UserColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ticket_User\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.Ticket_UserColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Close_User {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.Close_UserColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Close_User\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.Close_UserColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MSrvDepartment {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.MSrvDepartmentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MSrvDepartment\' in table \'vMSrvTicketType_Details\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.MSrvDepartmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int VisitCount {
+                get {
+                    try {
+                        return ((int)(this[this.tablevMSrvTicketType_Details.VisitCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VisitCount\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.VisitCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double PartCount {
+                get {
+                    try {
+                        return ((double)(this[this.tablevMSrvTicketType_Details.PartCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PartCount\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.PartCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int VisibleToUserId {
+                get {
+                    return ((int)(this[this.tablevMSrvTicketType_Details.VisibleToUserIdColumn]));
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.VisibleToUserIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MSrv_ActionTypeName {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.MSrv_ActionTypeNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MSrv_ActionTypeName\' in table \'vMSrvTicketType_Details\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.MSrv_ActionTypeNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ActionComment {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.ActionCommentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActionComment\' in table \'vMSrvTicketType_Details\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.ActionCommentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime ActionDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablevMSrvTicketType_Details.ActionDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActionDate\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.ActionDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short RequestActionReason {
+                get {
+                    try {
+                        return ((short)(this[this.tablevMSrvTicketType_Details.RequestActionReasonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RequestActionReason\' in table \'vMSrvTicketType_Details\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.RequestActionReasonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string RequestActionReasonName {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.RequestActionReasonNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RequestActionReasonName\' in table \'vMSrvTicketType_Details\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.RequestActionReasonNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Route_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.Route_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Route Name\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.Route_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Supervisor {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.SupervisorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Supervisor\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.SupervisorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short MSrvTypeId {
+                get {
+                    return ((short)(this[this.tablevMSrvTicketType_Details.MSrvTypeIdColumn]));
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.MSrvTypeIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MSrvType {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.MSrvTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MSrvType\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.MSrvTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Tec {
+                get {
+                    try {
+                        return ((string)(this[this.tablevMSrvTicketType_Details.TecColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tec\' in table \'vMSrvTicketType_Details\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevMSrvTicketType_Details.TecColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCustomerIdNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.CustomerIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCustomerIdNull() {
+                this[this.tablevMSrvTicketType_Details.CustomerIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEquipmentSerialNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.EquipmentSerialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEquipmentSerialNull() {
+                this[this.tablevMSrvTicketType_Details.EquipmentSerialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRouteNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.RouteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRouteNull() {
+                this[this.tablevMSrvTicketType_Details.RouteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOpenDateNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.OpenDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOpenDateNull() {
+                this[this.tablevMSrvTicketType_Details.OpenDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOpenCommentNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.OpenCommentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOpenCommentNull() {
+                this[this.tablevMSrvTicketType_Details.OpenCommentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSalesDistrict3IdNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.SalesDistrict3IdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSalesDistrict3IdNull() {
+                this[this.tablevMSrvTicketType_Details.SalesDistrict3IdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIssueContactPersonNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.IssueContactPersonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIssueContactPersonNull() {
+                this[this.tablevMSrvTicketType_Details.IssueContactPersonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIssueAddressNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.IssueAddressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIssueAddressNull() {
+                this[this.tablevMSrvTicketType_Details.IssueAddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIssueContactPhoneNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.IssueContactPhoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIssueContactPhoneNull() {
+                this[this.tablevMSrvTicketType_Details.IssueContactPhoneColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIssueContactPhone2Null() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.IssueContactPhone2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIssueContactPhone2Null() {
+                this[this.tablevMSrvTicketType_Details.IssueContactPhone2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTecEquipmentSerialNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.TecEquipmentSerialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTecEquipmentSerialNull() {
+                this[this.tablevMSrvTicketType_Details.TecEquipmentSerialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCurrentDepartmentIdNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.CurrentDepartmentIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCurrentDepartmentIdNull() {
+                this[this.tablevMSrvTicketType_Details.CurrentDepartmentIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTicketClosedNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.TicketClosedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTicketClosedNull() {
+                this[this.tablevMSrvTicketType_Details.TicketClosedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClosedCommentNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.ClosedCommentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClosedCommentNull() {
+                this[this.tablevMSrvTicketType_Details.ClosedCommentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCloseMSrvTypeIdNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.CloseMSrvTypeIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCloseMSrvTypeIdNull() {
+                this[this.tablevMSrvTicketType_Details.CloseMSrvTypeIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCloseMSrvTypeNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.CloseMSrvTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCloseMSrvTypeNull() {
+                this[this.tablevMSrvTicketType_Details.CloseMSrvTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClosedDateNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.ClosedDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClosedDateNull() {
+                this[this.tablevMSrvTicketType_Details.ClosedDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCloseUserInNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.CloseUserInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCloseUserInNull() {
+                this[this.tablevMSrvTicketType_Details.CloseUserInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClosedDateInNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.ClosedDateInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClosedDateInNull() {
+                this[this.tablevMSrvTicketType_Details.ClosedDateInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUserInNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.UserInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUserInNull() {
+                this[this.tablevMSrvTicketType_Details.UserInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateInNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.DateInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateInNull() {
+                this[this.tablevMSrvTicketType_Details.DateInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSales_District_2Null() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.Sales_District_2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSales_District_2Null() {
+                this[this.tablevMSrvTicketType_Details.Sales_District_2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPlantNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.PlantColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPlantNull() {
+                this[this.tablevMSrvTicketType_Details.PlantColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTicket_UserNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.Ticket_UserColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTicket_UserNull() {
+                this[this.tablevMSrvTicketType_Details.Ticket_UserColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClose_UserNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.Close_UserColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClose_UserNull() {
+                this[this.tablevMSrvTicketType_Details.Close_UserColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMSrvDepartmentNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.MSrvDepartmentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMSrvDepartmentNull() {
+                this[this.tablevMSrvTicketType_Details.MSrvDepartmentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVisitCountNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.VisitCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVisitCountNull() {
+                this[this.tablevMSrvTicketType_Details.VisitCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPartCountNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.PartCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPartCountNull() {
+                this[this.tablevMSrvTicketType_Details.PartCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMSrv_ActionTypeNameNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.MSrv_ActionTypeNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMSrv_ActionTypeNameNull() {
+                this[this.tablevMSrvTicketType_Details.MSrv_ActionTypeNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActionCommentNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.ActionCommentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActionCommentNull() {
+                this[this.tablevMSrvTicketType_Details.ActionCommentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActionDateNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.ActionDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActionDateNull() {
+                this[this.tablevMSrvTicketType_Details.ActionDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRequestActionReasonNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.RequestActionReasonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRequestActionReasonNull() {
+                this[this.tablevMSrvTicketType_Details.RequestActionReasonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRequestActionReasonNameNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.RequestActionReasonNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRequestActionReasonNameNull() {
+                this[this.tablevMSrvTicketType_Details.RequestActionReasonNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRoute_NameNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.Route_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRoute_NameNull() {
+                this[this.tablevMSrvTicketType_Details.Route_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSupervisorNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.SupervisorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSupervisorNull() {
+                this[this.tablevMSrvTicketType_Details.SupervisorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMSrvTypeNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.MSrvTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMSrvTypeNull() {
+                this[this.tablevMSrvTicketType_Details.MSrvTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTecNull() {
+                return this.IsNull(this.tablevMSrvTicketType_Details.TecColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTecNull() {
+                this[this.tablevMSrvTicketType_Details.TecColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -15291,6 +17707,74 @@ namespace NICSQLTools.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TicketTypeInfoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class MSrv_Dmg_ReasonRowChangeEvent : global::System.EventArgs {
+            
+            private MSrv_Dmg_ReasonRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MSrv_Dmg_ReasonRowChangeEvent(MSrv_Dmg_ReasonRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MSrv_Dmg_ReasonRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class vMSrvTicketType_DetailsRowChangeEvent : global::System.EventArgs {
+            
+            private vMSrvTicketType_DetailsRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vMSrvTicketType_DetailsRowChangeEvent(vMSrvTicketType_DetailsRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public vMSrvTicketType_DetailsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -20431,10 +22915,11 @@ SELECT TicketVisitPartId, TicketVisitId, PartId, Quantity, ActualPrice, UserIn, 
             tableMapping.ColumnMappings.Add("VisitComment", "VisitComment");
             tableMapping.ColumnMappings.Add("UserIn", "UserIn");
             tableMapping.ColumnMappings.Add("DateIn", "DateIn");
+            tableMapping.ColumnMappings.Add("msrv_dmg_reason_id", "msrv_dmg_reason_id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[MSrv_TicketVisit] WHERE (([TicketVisitId] = @Original_TicketVisitId) AND ((@IsNull_TicketId = 1 AND [TicketId] IS NULL) OR ([TicketId] = @Original_TicketId)) AND ((@IsNull_TechnicianId = 1 AND [TechnicianId] IS NULL) OR ([TechnicianId] = @Original_TechnicianId)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_VisitComment = 1 AND [VisitComment] IS NULL) OR ([VisitComment] = @Original_VisitComment)) AND ((@IsNull_UserIn = 1 AND [UserIn] IS NULL) OR ([UserIn] = @Original_UserIn)) AND ((@IsNull_DateIn = 1 AND [DateIn] IS NULL) OR ([DateIn] = @Original_DateIn)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [MSrv_TicketVisit] WHERE (([TicketVisitId] = @Original_TicketVisitId) AND ((@IsNull_TicketId = 1 AND [TicketId] IS NULL) OR ([TicketId] = @Original_TicketId)) AND ((@IsNull_TechnicianId = 1 AND [TechnicianId] IS NULL) OR ([TechnicianId] = @Original_TechnicianId)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_VisitComment = 1 AND [VisitComment] IS NULL) OR ([VisitComment] = @Original_VisitComment)) AND ((@IsNull_UserIn = 1 AND [UserIn] IS NULL) OR ([UserIn] = @Original_UserIn)) AND ((@IsNull_DateIn = 1 AND [DateIn] IS NULL) OR ([DateIn] = @Original_DateIn)) AND ((@IsNull_msrv_dmg_reason_id = 1 AND [msrv_dmg_reason_id] IS NULL) OR ([msrv_dmg_reason_id] = @Original_msrv_dmg_reason_id)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TicketVisitId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketVisitId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TicketId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -20451,10 +22936,12 @@ SELECT TicketVisitPartId, TicketVisitId, PartId, Quantity, ActualPrice, UserIn, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserIn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserIn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateIn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateIn", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateIn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateIn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[MSrv_TicketVisit] ([TicketVisitId], [TicketId], [TechnicianId], [StartDate], [EndDate], [VisitComment], [UserIn], [DateIn]) VALUES (@TicketVisitId, @TicketId, @TechnicianId, @StartDate, @EndDate, @VisitComment, @UserIn, @DateIn);
-SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, UserIn, DateIn FROM MSrv_TicketVisit WHERE (TicketVisitId = @TicketVisitId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [MSrv_TicketVisit] ([TicketVisitId], [TicketId], [TechnicianId], [StartDate], [EndDate], [VisitComment], [UserIn], [DateIn], [msrv_dmg_reason_id]) VALUES (@TicketVisitId, @TicketId, @TechnicianId, @StartDate, @EndDate, @VisitComment, @UserIn, @DateIn, @msrv_dmg_reason_id);
+SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, UserIn, DateIn, msrv_dmg_reason_id FROM MSrv_TicketVisit WHERE (TicketVisitId = @TicketVisitId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketVisitId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketVisitId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20464,10 +22951,11 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VisitComment", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VisitComment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateIn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MSrv_TicketVisit] SET [TicketVisitId] = @TicketVisitId, [TicketId] = @TicketId, [TechnicianId] = @TechnicianId, [StartDate] = @StartDate, [EndDate] = @EndDate, [VisitComment] = @VisitComment, [UserIn] = @UserIn, [DateIn] = @DateIn WHERE (([TicketVisitId] = @Original_TicketVisitId) AND ((@IsNull_TicketId = 1 AND [TicketId] IS NULL) OR ([TicketId] = @Original_TicketId)) AND ((@IsNull_TechnicianId = 1 AND [TechnicianId] IS NULL) OR ([TechnicianId] = @Original_TechnicianId)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_VisitComment = 1 AND [VisitComment] IS NULL) OR ([VisitComment] = @Original_VisitComment)) AND ((@IsNull_UserIn = 1 AND [UserIn] IS NULL) OR ([UserIn] = @Original_UserIn)) AND ((@IsNull_DateIn = 1 AND [DateIn] IS NULL) OR ([DateIn] = @Original_DateIn)));
-SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, UserIn, DateIn FROM MSrv_TicketVisit WHERE (TicketVisitId = @TicketVisitId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [MSrv_TicketVisit] SET [TicketVisitId] = @TicketVisitId, [TicketId] = @TicketId, [TechnicianId] = @TechnicianId, [StartDate] = @StartDate, [EndDate] = @EndDate, [VisitComment] = @VisitComment, [UserIn] = @UserIn, [DateIn] = @DateIn, [msrv_dmg_reason_id] = @msrv_dmg_reason_id WHERE (([TicketVisitId] = @Original_TicketVisitId) AND ((@IsNull_TicketId = 1 AND [TicketId] IS NULL) OR ([TicketId] = @Original_TicketId)) AND ((@IsNull_TechnicianId = 1 AND [TechnicianId] IS NULL) OR ([TechnicianId] = @Original_TechnicianId)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_VisitComment = 1 AND [VisitComment] IS NULL) OR ([VisitComment] = @Original_VisitComment)) AND ((@IsNull_UserIn = 1 AND [UserIn] IS NULL) OR ([UserIn] = @Original_UserIn)) AND ((@IsNull_DateIn = 1 AND [DateIn] IS NULL) OR ([DateIn] = @Original_DateIn)) AND ((@IsNull_msrv_dmg_reason_id = 1 AND [msrv_dmg_reason_id] IS NULL) OR ([msrv_dmg_reason_id] = @Original_msrv_dmg_reason_id)));
+SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, UserIn, DateIn, msrv_dmg_reason_id FROM MSrv_TicketVisit WHERE (TicketVisitId = @TicketVisitId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketVisitId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketVisitId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20477,6 +22965,7 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VisitComment", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VisitComment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserIn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateIn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateIn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TicketVisitId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketVisitId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TicketId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TicketId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20492,6 +22981,8 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserIn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserIn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DateIn", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateIn", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateIn", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateIn", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20507,13 +22998,14 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, U" +
-                "serIn, DateIn FROM dbo.MSrv_TicketVisit";
+            this._commandCollection[0].CommandText = "SELECT        TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitCom" +
+                "ment, UserIn, DateIn, msrv_dmg_reason_id\r\nFROM            MSrv_TicketVisit";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, U" +
-                "serIn, DateIn FROM dbo.MSrv_TicketVisit\r\nWHERE TicketVisitId = @TicketVisitId";
+            this._commandCollection[1].CommandText = "SELECT DateIn, EndDate, StartDate, TechnicianId, TicketId, TicketVisitId, UserIn," +
+                " VisitComment, msrv_dmg_reason_id FROM MSrv_TicketVisit WHERE (TicketVisitId = @" +
+                "TicketVisitId)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketVisitId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TicketVisitId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
@@ -20605,7 +23097,7 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_TicketVisitId, global::System.Nullable<int> Original_TicketId, global::System.Nullable<int> Original_TechnicianId, global::System.Nullable<global::System.DateTime> Original_StartDate, global::System.Nullable<global::System.DateTime> Original_EndDate, string Original_VisitComment, global::System.Nullable<int> Original_UserIn, global::System.Nullable<global::System.DateTime> Original_DateIn) {
+        public virtual int Delete(int Original_TicketVisitId, global::System.Nullable<int> Original_TicketId, global::System.Nullable<int> Original_TechnicianId, global::System.Nullable<global::System.DateTime> Original_StartDate, global::System.Nullable<global::System.DateTime> Original_EndDate, string Original_VisitComment, global::System.Nullable<int> Original_UserIn, global::System.Nullable<global::System.DateTime> Original_DateIn, global::System.Nullable<int> Original_msrv_dmg_reason_id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_TicketVisitId));
             if ((Original_TicketId.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -20663,6 +23155,14 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
+            if ((Original_msrv_dmg_reason_id.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_msrv_dmg_reason_id.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20683,7 +23183,7 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int TicketVisitId, global::System.Nullable<int> TicketId, global::System.Nullable<int> TechnicianId, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate, string VisitComment, global::System.Nullable<int> UserIn, global::System.Nullable<global::System.DateTime> DateIn) {
+        public virtual int Insert(int TicketVisitId, global::System.Nullable<int> TicketId, global::System.Nullable<int> TechnicianId, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate, string VisitComment, global::System.Nullable<int> UserIn, global::System.Nullable<global::System.DateTime> DateIn, global::System.Nullable<int> msrv_dmg_reason_id) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(TicketVisitId));
             if ((TicketId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TicketId.Value));
@@ -20727,6 +23227,12 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
+            if ((msrv_dmg_reason_id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(msrv_dmg_reason_id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20756,6 +23262,7 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
                     string VisitComment, 
                     global::System.Nullable<int> UserIn, 
                     global::System.Nullable<global::System.DateTime> DateIn, 
+                    global::System.Nullable<int> msrv_dmg_reason_id, 
                     int Original_TicketVisitId, 
                     global::System.Nullable<int> Original_TicketId, 
                     global::System.Nullable<int> Original_TechnicianId, 
@@ -20763,7 +23270,8 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
                     global::System.Nullable<global::System.DateTime> Original_EndDate, 
                     string Original_VisitComment, 
                     global::System.Nullable<int> Original_UserIn, 
-                    global::System.Nullable<global::System.DateTime> Original_DateIn) {
+                    global::System.Nullable<global::System.DateTime> Original_DateIn, 
+                    global::System.Nullable<int> Original_msrv_dmg_reason_id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(TicketVisitId));
             if ((TicketId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TicketId.Value));
@@ -20807,62 +23315,76 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_TicketVisitId));
-            if ((Original_TicketId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_TicketId.Value));
+            if ((msrv_dmg_reason_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(msrv_dmg_reason_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_TicketVisitId));
+            if ((Original_TicketId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_TicketId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_TechnicianId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_TechnicianId.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_TechnicianId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_StartDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_StartDate.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_StartDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_EndDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_EndDate.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_EndDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             if ((Original_VisitComment == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_VisitComment));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_VisitComment));
             }
             if ((Original_UserIn.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_UserIn.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_UserIn.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((Original_DateIn.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_DateIn.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_DateIn.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((Original_msrv_dmg_reason_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_msrv_dmg_reason_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -20884,8 +23406,25 @@ SELECT TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> TicketId, global::System.Nullable<int> TechnicianId, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate, string VisitComment, global::System.Nullable<int> UserIn, global::System.Nullable<global::System.DateTime> DateIn, int Original_TicketVisitId, global::System.Nullable<int> Original_TicketId, global::System.Nullable<int> Original_TechnicianId, global::System.Nullable<global::System.DateTime> Original_StartDate, global::System.Nullable<global::System.DateTime> Original_EndDate, string Original_VisitComment, global::System.Nullable<int> Original_UserIn, global::System.Nullable<global::System.DateTime> Original_DateIn) {
-            return this.Update(Original_TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, UserIn, DateIn, Original_TicketVisitId, Original_TicketId, Original_TechnicianId, Original_StartDate, Original_EndDate, Original_VisitComment, Original_UserIn, Original_DateIn);
+        public virtual int Update(
+                    global::System.Nullable<int> TicketId, 
+                    global::System.Nullable<int> TechnicianId, 
+                    global::System.Nullable<global::System.DateTime> StartDate, 
+                    global::System.Nullable<global::System.DateTime> EndDate, 
+                    string VisitComment, 
+                    global::System.Nullable<int> UserIn, 
+                    global::System.Nullable<global::System.DateTime> DateIn, 
+                    global::System.Nullable<int> msrv_dmg_reason_id, 
+                    int Original_TicketVisitId, 
+                    global::System.Nullable<int> Original_TicketId, 
+                    global::System.Nullable<int> Original_TechnicianId, 
+                    global::System.Nullable<global::System.DateTime> Original_StartDate, 
+                    global::System.Nullable<global::System.DateTime> Original_EndDate, 
+                    string Original_VisitComment, 
+                    global::System.Nullable<int> Original_UserIn, 
+                    global::System.Nullable<global::System.DateTime> Original_DateIn, 
+                    global::System.Nullable<int> Original_msrv_dmg_reason_id) {
+            return this.Update(Original_TicketVisitId, TicketId, TechnicianId, StartDate, EndDate, VisitComment, UserIn, DateIn, msrv_dmg_reason_id, Original_TicketVisitId, Original_TicketId, Original_TechnicianId, Original_StartDate, Original_EndDate, Original_VisitComment, Original_UserIn, Original_DateIn, Original_msrv_dmg_reason_id);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23823,6 +26362,572 @@ SELECT MSrvTypeId, MSrvType, MSrv_TypeConditionId, UserIn, DateIn FROM MSrv_Type
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class MSrv_Dmg_ReasonTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public MSrv_Dmg_ReasonTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "MSrv_Dmg_Reason";
+            tableMapping.ColumnMappings.Add("msrv_dmg_reason_id", "msrv_dmg_reason_id");
+            tableMapping.ColumnMappings.Add("msrv_dmg_reason_name", "msrv_dmg_reason_name");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[MSrv_Dmg_Reason] WHERE (([msrv_dmg_reason_id] = @Original_msrv" +
+                "_dmg_reason_id))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[MSrv_Dmg_Reason] ([msrv_dmg_reason_id], [msrv_dmg_reason_name]" +
+                ") VALUES (@msrv_dmg_reason_id, @msrv_dmg_reason_name);\r\nSELECT msrv_dmg_reason_i" +
+                "d, msrv_dmg_reason_name FROM MSrv_Dmg_Reason WHERE (msrv_dmg_reason_id = @msrv_d" +
+                "mg_reason_id)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@msrv_dmg_reason_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MSrv_Dmg_Reason] SET [msrv_dmg_reason_id] = @msrv_dmg_reason_id, [msrv_dmg_reason_name] = @msrv_dmg_reason_name WHERE (([msrv_dmg_reason_id] = @Original_msrv_dmg_reason_id));
+SELECT msrv_dmg_reason_id, msrv_dmg_reason_name FROM MSrv_Dmg_Reason WHERE (msrv_dmg_reason_id = @msrv_dmg_reason_id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@msrv_dmg_reason_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_msrv_dmg_reason_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "msrv_dmg_reason_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT msrv_dmg_reason_id, msrv_dmg_reason_name FROM dbo.MSrv_Dmg_Reason";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ISNULL(MAX(msrv_dmg_reason_id) + 1 , 1)\r\nFROM MSrv_Dmg_Reason";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsMSrc.MSrv_Dmg_ReasonDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsMSrc.MSrv_Dmg_ReasonDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsMSrc.MSrv_Dmg_ReasonDataTable dataTable = new dsMSrc.MSrv_Dmg_ReasonDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsMSrc.MSrv_Dmg_ReasonDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsMSrc dataSet) {
+            return this.Adapter.Update(dataSet, "MSrv_Dmg_Reason");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_msrv_dmg_reason_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_msrv_dmg_reason_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int msrv_dmg_reason_id, string msrv_dmg_reason_name) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(msrv_dmg_reason_id));
+            if ((msrv_dmg_reason_name == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(msrv_dmg_reason_name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int msrv_dmg_reason_id, string msrv_dmg_reason_name, int Original_msrv_dmg_reason_id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(msrv_dmg_reason_id));
+            if ((msrv_dmg_reason_name == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(msrv_dmg_reason_name));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_msrv_dmg_reason_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string msrv_dmg_reason_name, int Original_msrv_dmg_reason_id) {
+            return this.Update(Original_msrv_dmg_reason_id, msrv_dmg_reason_name, Original_msrv_dmg_reason_id);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> NewId() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class vMSrvTicketType_DetailsTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public vMSrvTicketType_DetailsTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "vMSrvTicketType_Details";
+            tableMapping.ColumnMappings.Add("TicketId", "TicketId");
+            tableMapping.ColumnMappings.Add("CustomerId", "CustomerId");
+            tableMapping.ColumnMappings.Add("EquipmentSerial", "EquipmentSerial");
+            tableMapping.ColumnMappings.Add("Route", "Route");
+            tableMapping.ColumnMappings.Add("OpenDate", "OpenDate");
+            tableMapping.ColumnMappings.Add("OpenComment", "OpenComment");
+            tableMapping.ColumnMappings.Add("SalesDistrict3Id", "SalesDistrict3Id");
+            tableMapping.ColumnMappings.Add("IssueContactPerson", "IssueContactPerson");
+            tableMapping.ColumnMappings.Add("IssueAddress", "IssueAddress");
+            tableMapping.ColumnMappings.Add("IssueContactPhone", "IssueContactPhone");
+            tableMapping.ColumnMappings.Add("IssueContactPhone2", "IssueContactPhone2");
+            tableMapping.ColumnMappings.Add("TecEquipmentSerial", "TecEquipmentSerial");
+            tableMapping.ColumnMappings.Add("CurrentDepartmentId", "CurrentDepartmentId");
+            tableMapping.ColumnMappings.Add("TicketClosed", "TicketClosed");
+            tableMapping.ColumnMappings.Add("ClosedComment", "ClosedComment");
+            tableMapping.ColumnMappings.Add("CloseMSrvTypeId", "CloseMSrvTypeId");
+            tableMapping.ColumnMappings.Add("CloseMSrvType", "CloseMSrvType");
+            tableMapping.ColumnMappings.Add("ClosedDate", "ClosedDate");
+            tableMapping.ColumnMappings.Add("CloseUserIn", "CloseUserIn");
+            tableMapping.ColumnMappings.Add("ClosedDateIn", "ClosedDateIn");
+            tableMapping.ColumnMappings.Add("UserIn", "UserIn");
+            tableMapping.ColumnMappings.Add("DateIn", "DateIn");
+            tableMapping.ColumnMappings.Add("Sales District 2", "Sales District 2");
+            tableMapping.ColumnMappings.Add("Plant", "Plant");
+            tableMapping.ColumnMappings.Add("Ticket_User", "Ticket_User");
+            tableMapping.ColumnMappings.Add("Close_User", "Close_User");
+            tableMapping.ColumnMappings.Add("MSrvDepartment", "MSrvDepartment");
+            tableMapping.ColumnMappings.Add("VisitCount", "VisitCount");
+            tableMapping.ColumnMappings.Add("PartCount", "PartCount");
+            tableMapping.ColumnMappings.Add("VisibleToUserId", "VisibleToUserId");
+            tableMapping.ColumnMappings.Add("MSrv_ActionTypeName", "MSrv_ActionTypeName");
+            tableMapping.ColumnMappings.Add("ActionComment", "ActionComment");
+            tableMapping.ColumnMappings.Add("ActionDate", "ActionDate");
+            tableMapping.ColumnMappings.Add("RequestActionReason", "RequestActionReason");
+            tableMapping.ColumnMappings.Add("RequestActionReasonName", "RequestActionReasonName");
+            tableMapping.ColumnMappings.Add("Route Name", "Route Name");
+            tableMapping.ColumnMappings.Add("Supervisor", "Supervisor");
+            tableMapping.ColumnMappings.Add("MSrvTypeId", "MSrvTypeId");
+            tableMapping.ColumnMappings.Add("MSrvType", "MSrvType");
+            tableMapping.ColumnMappings.Add("Tec", "Tec");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT       '' AS Tec, TicketId, CustomerId, EquipmentSerial, Route, OpenDate, OpenComment, SalesDistrict3Id, IssueContactPerson, IssueAddress, IssueContactPhone, IssueContactPhone2, TecEquipmentSerial, 
+                         CurrentDepartmentId, TicketClosed, ClosedComment, CloseMSrvTypeId, CloseMSrvType, ClosedDate, CloseUserIn, ClosedDateIn, UserIn, DateIn, [Sales District 2], Plant, Ticket_User, Close_User, 
+                         MSrvDepartment, VisitCount, PartCount, VisibleToUserId, MSrv_ActionTypeName, ActionComment, ActionDate, RequestActionReason, RequestActionReasonName, [Route Name], Supervisor, MSrvTypeId, 
+                         MSrvType
+FROM            vMSrvTicketType_Details
+WHERE        (TicketClosed = 0) AND (VisibleToUserId = @UserId) AND (CurrentDepartmentId = @DepartmentId)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VisibleToUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentId", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CurrentDepartmentId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsMSrc.vMSrvTicketType_DetailsDataTable dataTable, int UserId, global::System.Nullable<short> DepartmentId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            if ((DepartmentId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((short)(DepartmentId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsMSrc.vMSrvTicketType_DetailsDataTable GetData(int UserId, global::System.Nullable<short> DepartmentId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            if ((DepartmentId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((short)(DepartmentId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            dsMSrc.vMSrvTicketType_DetailsDataTable dataTable = new dsMSrc.vMSrvTicketType_DetailsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.IDbCommand[] _commandCollection;
@@ -24147,6 +27252,8 @@ WHERE        (TicketId = @TicketId)";
         
         private MSrv_TypeTableAdapter _mSrv_TypeTableAdapter;
         
+        private MSrv_Dmg_ReasonTableAdapter _mSrv_Dmg_ReasonTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -24360,6 +27467,20 @@ WHERE        (TicketId = @TicketId)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public MSrv_Dmg_ReasonTableAdapter MSrv_Dmg_ReasonTableAdapter {
+            get {
+                return this._mSrv_Dmg_ReasonTableAdapter;
+            }
+            set {
+                this._mSrv_Dmg_ReasonTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -24433,6 +27554,10 @@ WHERE        (TicketId = @TicketId)";
                             && (this._mSrv_TypeTableAdapter.Connection != null))) {
                     return this._mSrv_TypeTableAdapter.Connection;
                 }
+                if (((this._mSrv_Dmg_ReasonTableAdapter != null) 
+                            && (this._mSrv_Dmg_ReasonTableAdapter.Connection != null))) {
+                    return this._mSrv_Dmg_ReasonTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -24486,6 +27611,9 @@ WHERE        (TicketId = @TicketId)";
                     count = (count + 1);
                 }
                 if ((this._mSrv_TypeTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._mSrv_Dmg_ReasonTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -24544,21 +27672,21 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mSrv_ActionTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._mSrv_TicketVisitTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.MSrv_TicketVisit.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._mSrv_TicketVisitTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._mSrv_ActionTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -24586,6 +27714,15 @@ WHERE        (TicketId = @TicketId)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._mSrv_TicketChatTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._mSrv_Dmg_ReasonTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_Dmg_Reason.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._mSrv_Dmg_ReasonTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -24675,19 +27812,19 @@ WHERE        (TicketId = @TicketId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mSrv_ActionTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._mSrv_TicketVisitTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.MSrv_TicketVisit.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._mSrv_TicketVisitTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._mSrv_ActionTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -24712,6 +27849,14 @@ WHERE        (TicketId = @TicketId)";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._mSrv_TicketChatTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._mSrv_Dmg_ReasonTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MSrv_Dmg_Reason.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._mSrv_Dmg_ReasonTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -24789,6 +27934,14 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._mSrv_Dmg_ReasonTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_Dmg_Reason.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._mSrv_Dmg_ReasonTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._mSrv_TicketChatTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.MSrv_TicketChat.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -24813,19 +27966,19 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._mSrv_TicketVisitTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_TicketVisit.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._mSrv_TicketVisitTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._mSrv_ActionTypeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._mSrv_ActionTypeTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._mSrv_TicketVisitTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_TicketVisit.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._mSrv_TicketVisitTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -24975,6 +28128,11 @@ WHERE        (TicketId = @TicketId)";
             }
             if (((this._mSrv_TypeTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._mSrv_TypeTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._mSrv_Dmg_ReasonTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._mSrv_Dmg_ReasonTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -25136,6 +28294,15 @@ WHERE        (TicketId = @TicketId)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._mSrv_TypeTableAdapter.Adapter);
                     }
                 }
+                if ((this._mSrv_Dmg_ReasonTableAdapter != null)) {
+                    revertConnections.Add(this._mSrv_Dmg_ReasonTableAdapter, this._mSrv_Dmg_ReasonTableAdapter.Connection);
+                    this._mSrv_Dmg_ReasonTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._mSrv_Dmg_ReasonTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._mSrv_Dmg_ReasonTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._mSrv_Dmg_ReasonTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._mSrv_Dmg_ReasonTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -25249,6 +28416,10 @@ WHERE        (TicketId = @TicketId)";
                 if ((this._mSrv_TypeTableAdapter != null)) {
                     this._mSrv_TypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._mSrv_TypeTableAdapter]));
                     this._mSrv_TypeTableAdapter.Transaction = null;
+                }
+                if ((this._mSrv_Dmg_ReasonTableAdapter != null)) {
+                    this._mSrv_Dmg_ReasonTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._mSrv_Dmg_ReasonTableAdapter]));
+                    this._mSrv_Dmg_ReasonTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

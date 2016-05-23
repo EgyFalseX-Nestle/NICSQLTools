@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrv_TicketVisitEditDlg));
             this.dataLayoutControlMain = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.lueDamage = new DevExpress.XtraEditors.LookUpEdit();
+            this.LSMSDmg = new DevExpress.Data.Linq.LinqServerModeSource();
             this.clbcReason = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource();
             this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridControlPart = new DevExpress.XtraGrid.GridControl();
-            this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource();
             this.gridViewPart = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPartId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditPartId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -72,11 +73,14 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
-            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             this.mSrv_TicketVisitPartTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitPartTableAdapter();
             this.mSrv_TypeTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).BeginInit();
             this.dataLayoutControlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDamage.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDmg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clbcReason)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).BeginInit();
@@ -111,11 +115,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControlMain
             // 
+            this.dataLayoutControlMain.Controls.Add(this.lueDamage);
             this.dataLayoutControlMain.Controls.Add(this.clbcReason);
             this.dataLayoutControlMain.Controls.Add(this.gridControlPart);
             this.dataLayoutControlMain.Controls.Add(this.deEndDate);
@@ -136,15 +142,37 @@
             this.dataLayoutControlMain.TabIndex = 0;
             this.dataLayoutControlMain.Text = "dataLayoutControl1";
             // 
+            // lueDamage
+            // 
+            this.lueDamage.Location = new System.Drawing.Point(87, 156);
+            this.lueDamage.Name = "lueDamage";
+            this.lueDamage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueDamage.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("msrv_dmg_reason_name", "name", 130, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lueDamage.Properties.DataSource = this.LSMSDmg;
+            this.lueDamage.Properties.DisplayMember = "msrv_dmg_reason_name";
+            this.lueDamage.Properties.NullText = "";
+            this.lueDamage.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lueDamage.Properties.ValueMember = "msrv_dmg_reason_id";
+            this.lueDamage.Size = new System.Drawing.Size(523, 20);
+            this.lueDamage.StyleController = this.dataLayoutControlMain;
+            this.lueDamage.TabIndex = 10;
+            // 
+            // LSMSDmg
+            // 
+            this.LSMSDmg.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Dmg_Reason);
+            this.LSMSDmg.KeyExpression = "msrv_dmg_reason_id";
+            // 
             // clbcReason
             // 
             this.clbcReason.DataSource = this.mSrvTypeBindingSource;
             this.clbcReason.DisplayMember = "MSrvType";
             this.clbcReason.HorizontalScrollbar = true;
-            this.clbcReason.Location = new System.Drawing.Point(24, 240);
+            this.clbcReason.Location = new System.Drawing.Point(24, 260);
             this.clbcReason.Name = "clbcReason";
             this.clbcReason.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.clbcReason.Size = new System.Drawing.Size(574, 184);
+            this.clbcReason.Size = new System.Drawing.Size(574, 164);
             this.clbcReason.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.clbcReason.StyleController = this.dataLayoutControlMain;
             this.clbcReason.TabIndex = 1;
@@ -163,13 +191,13 @@
             // gridControlPart
             // 
             this.gridControlPart.DataSource = this.mSrvTicketVisitPartBindingSource;
-            this.gridControlPart.Location = new System.Drawing.Point(24, 240);
+            this.gridControlPart.Location = new System.Drawing.Point(24, 260);
             this.gridControlPart.MainView = this.gridViewPart;
             this.gridControlPart.Name = "gridControlPart";
             this.gridControlPart.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCalcEditn2,
             this.repositoryItemLookUpEditPartId});
-            this.gridControlPart.Size = new System.Drawing.Size(574, 184);
+            this.gridControlPart.Size = new System.Drawing.Size(574, 164);
             this.gridControlPart.TabIndex = 7;
             this.gridControlPart.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewPart});
@@ -260,7 +288,7 @@
             // deEndDate
             // 
             this.deEndDate.EditValue = null;
-            this.deEndDate.Location = new System.Drawing.Point(365, 132);
+            this.deEndDate.Location = new System.Drawing.Point(387, 132);
             this.deEndDate.Name = "deEndDate";
             this.deEndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -271,7 +299,7 @@
             this.deEndDate.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm";
             this.deEndDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.deEndDate.Properties.Mask.EditMask = "yyyy-MM-dd HH:mm";
-            this.deEndDate.Size = new System.Drawing.Size(245, 20);
+            this.deEndDate.Size = new System.Drawing.Size(223, 20);
             this.deEndDate.StyleController = this.dataLayoutControlMain;
             this.deEndDate.TabIndex = 4;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -281,7 +309,7 @@
             // deStartDate
             // 
             this.deStartDate.EditValue = null;
-            this.deStartDate.Location = new System.Drawing.Point(65, 132);
+            this.deStartDate.Location = new System.Drawing.Point(87, 132);
             this.deStartDate.Name = "deStartDate";
             this.deStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -292,7 +320,7 @@
             this.deStartDate.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm";
             this.deStartDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.deStartDate.Properties.Mask.EditMask = "yyyy-MM-dd HH:mm";
-            this.deStartDate.Size = new System.Drawing.Size(243, 20);
+            this.deStartDate.Size = new System.Drawing.Size(221, 20);
             this.deStartDate.StyleController = this.dataLayoutControlMain;
             this.deStartDate.TabIndex = 3;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -301,10 +329,10 @@
             // 
             // tbVisitComment
             // 
-            this.tbVisitComment.Location = new System.Drawing.Point(65, 156);
+            this.tbVisitComment.Location = new System.Drawing.Point(87, 180);
             this.tbVisitComment.Name = "tbVisitComment";
             this.tbVisitComment.Properties.MaxLength = 255;
-            this.tbVisitComment.Size = new System.Drawing.Size(545, 41);
+            this.tbVisitComment.Size = new System.Drawing.Size(523, 37);
             this.tbVisitComment.StyleController = this.dataLayoutControlMain;
             this.tbVisitComment.TabIndex = 5;
             // 
@@ -374,7 +402,7 @@
             // lueTechnicianId
             // 
             this.lueTechnicianId.EnterMoveNextControl = true;
-            this.lueTechnicianId.Location = new System.Drawing.Point(65, 106);
+            this.lueTechnicianId.Location = new System.Drawing.Point(87, 106);
             this.lueTechnicianId.Name = "lueTechnicianId";
             this.lueTechnicianId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lueTechnicianId.Properties.Appearance.Options.UseFont = true;
@@ -393,7 +421,7 @@
             this.lueTechnicianId.Properties.NullText = "";
             this.lueTechnicianId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lueTechnicianId.Properties.ValueMember = "TechnicianId";
-            this.lueTechnicianId.Size = new System.Drawing.Size(545, 22);
+            this.lueTechnicianId.Size = new System.Drawing.Size(523, 22);
             this.lueTechnicianId.StyleController = this.dataLayoutControlMain;
             this.lueTechnicianId.TabIndex = 2;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -419,7 +447,8 @@
             this.tabbedControlGroupDetails,
             this.layoutControlGroupTicket,
             this.emptySpaceItem1,
-            this.splitterItem1});
+            this.splitterItem1,
+            this.layoutControlItem7});
             this.layoutControlGroupMain.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroupMain.Name = "Root";
             this.layoutControlGroupMain.Size = new System.Drawing.Size(622, 475);
@@ -432,7 +461,7 @@
             this.ItemForAssetplaceId.Name = "ItemForAssetplaceId";
             this.ItemForAssetplaceId.Size = new System.Drawing.Size(602, 26);
             this.ItemForAssetplaceId.Text = "Technician";
-            this.ItemForAssetplaceId.TextSize = new System.Drawing.Size(50, 13);
+            this.ItemForAssetplaceId.TextSize = new System.Drawing.Size(72, 13);
             // 
             // layoutControlItem1
             // 
@@ -461,11 +490,11 @@
             this.layoutControlItem9.AppearanceItemCaption.Options.UseTextOptions = true;
             this.layoutControlItem9.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.layoutControlItem9.Control = this.tbVisitComment;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(602, 45);
+            this.layoutControlItem9.Size = new System.Drawing.Size(602, 41);
             this.layoutControlItem9.Text = "Comment";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(50, 13);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(72, 13);
             // 
             // layoutControlItem6
             // 
@@ -474,7 +503,7 @@
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem6.Text = "From";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(50, 13);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 13);
             // 
             // layoutControlItem8
             // 
@@ -483,15 +512,15 @@
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(302, 24);
             this.layoutControlItem8.Text = "To";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(50, 13);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(72, 13);
             // 
             // tabbedControlGroupDetails
             // 
-            this.tabbedControlGroupDetails.Location = new System.Drawing.Point(0, 194);
+            this.tabbedControlGroupDetails.Location = new System.Drawing.Point(0, 214);
             this.tabbedControlGroupDetails.Name = "tabbedControlGroupDetails";
             this.tabbedControlGroupDetails.SelectedTabPage = this.layoutControlGroup3;
             this.tabbedControlGroupDetails.SelectedTabPageIndex = 0;
-            this.tabbedControlGroupDetails.Size = new System.Drawing.Size(602, 234);
+            this.tabbedControlGroupDetails.Size = new System.Drawing.Size(602, 214);
             this.tabbedControlGroupDetails.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup3,
             this.layoutControlGroup1});
@@ -503,7 +532,7 @@
             this.layoutControlItem4});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(578, 188);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(578, 168);
             this.layoutControlGroup3.Text = "Reasons";
             // 
             // layoutControlItem4
@@ -511,7 +540,7 @@
             this.layoutControlItem4.Control = this.clbcReason;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(578, 188);
+            this.layoutControlItem4.Size = new System.Drawing.Size(578, 168);
             this.layoutControlItem4.Text = "Reasons List";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -522,7 +551,7 @@
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(578, 188);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(578, 168);
             this.layoutControlGroup1.Text = "Parts Usage";
             // 
             // layoutControlItem3
@@ -530,7 +559,7 @@
             this.layoutControlItem3.Control = this.gridControlPart;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(578, 188);
+            this.layoutControlItem3.Size = new System.Drawing.Size(578, 168);
             this.layoutControlItem3.Text = "Parts";
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -569,9 +598,18 @@
             // splitterItem1
             // 
             this.splitterItem1.AllowHotTrack = true;
-            this.splitterItem1.Location = new System.Drawing.Point(0, 189);
+            this.splitterItem1.Location = new System.Drawing.Point(0, 209);
             this.splitterItem1.Name = "splitterItem1";
             this.splitterItem1.Size = new System.Drawing.Size(602, 5);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.lueDamage;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(602, 24);
+            this.layoutControlItem7.Text = "Damage Found";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(72, 13);
             // 
             // mSrv_TicketVisitPartTableAdapter
             // 
@@ -596,6 +634,8 @@
             this.Load += new System.EventHandler(this.Dlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).EndInit();
             this.dataLayoutControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lueDamage.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LSMSDmg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clbcReason)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).EndInit();
@@ -630,6 +670,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderMain)).EndInit();
             this.ResumeLayout(false);
 
@@ -678,5 +719,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private System.Windows.Forms.BindingSource mSrvTypeBindingSource;
         private NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter mSrv_TypeTableAdapter;
+        private DevExpress.XtraEditors.LookUpEdit lueDamage;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.Data.Linq.LinqServerModeSource LSMSDmg;
     }
 }

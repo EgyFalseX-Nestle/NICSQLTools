@@ -24,9 +24,9 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
             _elementRule = RuleElement;
             LSMSTechnicianId.QueryableSource = from q in dsLinq.vMSrv_Technician_ByUsers where q.UserId == Classes.Managers.UserManager.defaultInstance.User.UserId select q;
             LSMSPartId.QueryableSource = from q in dsLinq.MSrv_Parts select q;
-
+            LSMSDmg.QueryableSource = from q in dsLinq.MSrv_Dmg_Reasons select q;
             _visit = Visit;
-            lueTicket.EditValue = Visit.TicketId; lueTicket.Enabled = false;
+            lueTicket.EditValue = Visit.TicketId; lueTicket.Enabled = false; 
             layoutControlGroupTicket.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             mSrv_TypeTableAdapter.FillByMSrv_TypeConditionId(dsMSrc.MSrv_Type, (int)Classes.MSrvType.TypeCondition.Open_Ticket);
             adp.FillByID(dsMSrc.MSrv_TicketVisit, _visit.TicketVisitId);//Load Visit
@@ -47,7 +47,9 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
             if (row.IsVisitCommentNull())
                 row.VisitComment = string.Empty;
             tbVisitComment.DataBindings.Add("EditValue", row, "VisitComment");
-            
+            if (!row.Ismsrv_dmg_reason_idNull())
+                lueDamage.EditValue = row.msrv_dmg_reason_id;
+
             //Fill Types
             foreach (NICSQLTools.Data.dsMSrc.MSrv_TicketVisitTypeRow type in dsMSrc.MSrv_TicketVisitType)
             {
@@ -60,9 +62,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                 }
                 //foreach (DevExpress.XtraEditors.Controls.CheckedListBoxItem item in clbcReason.Items)
                 //{
-                //    if ((short)item.Value == type.MSrvTypeId)
-                //    {
-                //        item.CheckState = CheckState.Checked;
+                //    if ((short)item.Value == type.MSrvTypeId)//    {//        item.CheckState = CheckState.Checked;
                 //        break;
                 //    }
                 //}
@@ -117,6 +117,8 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                 DateTime serverDatetime = NICSQLTools.Classes.Managers.DataManager.defaultInstance.ServerDateTime;
 
                 NICSQLTools.Data.dsMSrc.MSrv_TicketVisitRow row = dsMSrc.MSrv_TicketVisit[0];
+                if (lueDamage.EditValue != null)
+                    row.msrv_dmg_reason_id = (int)lueDamage.EditValue;
                 row.DateIn = serverDatetime;
                 row.UserIn = NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId;
                 dsMSrc.MSrv_TicketVisit[0].EndEdit();

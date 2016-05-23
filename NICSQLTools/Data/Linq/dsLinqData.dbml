@@ -407,22 +407,6 @@
       <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vMSrv_TicketVisit" Member="vMSrv_TicketVisits">
-    <Type Name="vMSrv_TicketVisit">
-      <Column Name="TicketVisitId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TicketId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TechnicianId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="VisitComment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="TechnicianName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Parts" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="ActualPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.MSrv_ActionType" Member="MSrv_ActionTypes">
     <Type Name="MSrv_ActionType">
       <Column Name="MSrv_ActionTypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -593,6 +577,8 @@
       <Column Name="ActionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="RequestActionReasonName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="RequestActionReason" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.vMSrv_Ticket_ByUser" Member="vMSrv_Ticket_ByUsers">
@@ -632,6 +618,85 @@
       <Column Name="ActionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="RequestActionReason" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="RequestActionReasonName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MSrv_Dmg_Reason" Member="MSrv_Dmg_Reasons">
+    <Type Name="MSrv_Dmg_Reason">
+      <Column Name="msrv_dmg_reason_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="msrv_dmg_reason_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vMSrv_TicketVisit" Member="vMSrv_TicketVisits">
+    <Type Name="vMSrv_TicketVisit">
+      <Column Name="TicketVisitId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TicketId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TechnicianId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VisitComment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TechnicianName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Parts" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ActualPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="msrv_dmg_reason_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="msrv_dmg_reason_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vMSrvTicketType" Member="vMSrvTicketTypes">
+    <Type Name="vMSrvTicketType">
+      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MSrvTypeId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MSrvType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RealName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vMSrvTicketType_Details" Member="vMSrvTicketType_Details">
+    <Type Name="vMSrvTicketType_Detail">
+      <Column Name="TicketId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EquipmentSerial" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Route" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OpenDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OpenComment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SalesDistrict3Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IssueContactPerson" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IssueAddress" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IssueContactPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IssueContactPhone2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TecEquipmentSerial" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CurrentDepartmentId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TicketClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ClosedComment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CloseMSrvTypeId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CloseMSrvType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ClosedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CloseUserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClosedDateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Plant" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ticket_User" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Close_User" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MSrvDepartment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PartCount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VisibleToUserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MSrv_ActionTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActionComment" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ActionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RequestActionReason" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="RequestActionReasonName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MSrvTypeId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MSrvType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

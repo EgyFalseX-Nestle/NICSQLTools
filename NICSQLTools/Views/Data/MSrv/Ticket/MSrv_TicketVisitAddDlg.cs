@@ -13,6 +13,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         readonly NICSQLTools.Data.Linq.dsLinqDataDataContext _dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         readonly NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitTableAdapter _adp = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitTableAdapter();
         readonly NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitTypeTableAdapter _adpTicketVisitType = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitTypeTableAdapter();
+        
         public delegate void RequestRefreshEventhandler(); public event RequestRefreshEventhandler RequestRefresh;
         private bool _closeAfterSave;
         #endregion
@@ -42,6 +43,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                                          select q;
             LSMSTechnicianId.QueryableSource = from q in _dsLinq.vMSrv_Technician_ByUsers where q.UserId == Classes.Managers.UserManager.defaultInstance.User.UserId select q;
             LSMSPartId.QueryableSource = from q in _dsLinq.MSrv_Parts select q;
+            LSMSDmg.QueryableSource = from q in _dsLinq.MSrv_Dmg_Reasons select q;
         }
         public void ActivateRules()
         {
@@ -74,6 +76,12 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                 return;
             NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket = (NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser)obj;
             deStartDate.EditValue = deEndDate.EditValue = ticket.OpenDate;
+            lblContactPerson.Text = ticket.IssueContactPerson;
+        }
+        private void deDate_EditValueChanged(object sender, EventArgs e)
+        {
+            deStartDate.EditValue = deDate.DateTime.Add(deStartDate.DateTime.TimeOfDay);
+            deEndDate.EditValue = deDate.DateTime.Add(deEndDate.DateTime.TimeOfDay);
         }
         private void gridViewPart_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
@@ -116,7 +124,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                 DateTime serverDatetime = Classes.Managers.DataManager.defaultInstance.ServerDateTime;
                 // Insert Visit
                 int effected = _adp.Insert(ticketVisitId, ticketId, technicianId, deStartDate.DateTime, deEndDate.DateTime, comment
-                    , Classes.Managers.UserManager.defaultInstance.User.UserId, serverDatetime);
+                    , Classes.Managers.UserManager.defaultInstance.User.UserId, serverDatetime, (int?)lueDamage.EditValue);
                 if (effected <= 0)
                 {
                     MsgDlg.Show("No Data Saved", MsgDlg.MessageType.Error);
@@ -138,7 +146,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                 MsgDlg.ShowAlert("Data Saved ..", MsgDlg.MessageType.Success, this);
                 ResetDlg();
                 RequestRefresh?.Invoke();
-                if (MsgDlg.Show("Do you what to close ticket ?", MsgDlg.MessageType.Question) == DialogResult.Yes)
+                if (MsgDlg.Show("Do you want to close ticket ?", MsgDlg.MessageType.Question) == DialogResult.Yes)
                 {
                     NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket = (from q in _dsLinq.vMSrv_Ticket_ByUsers where q.TicketId == ticketId select q).ToArray()[0];
                     MSrv_TicketCloseDlg dlg = new MSrv_TicketCloseDlg(null, ticket);
@@ -156,5 +164,6 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         }
         #endregion
 
+        
     }
 }

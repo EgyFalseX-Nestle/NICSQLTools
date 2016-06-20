@@ -164,7 +164,7 @@ namespace NICSQLTools.Classes.Managers
             //Asm.Add(System.Windows.Forms.Application.ProductName + ".exe", Convert.ToInt32(System.Windows.Forms.Application.ProductVersion.Replace(".", "")));
             Asm.Add("DevExpress.BonusSkins.v15.2.dll", 152900000);
             Asm.Add("DevExpress.Charts.v15.2.Core.dll", 152900000);
-            Asm.Add("DevExpress.CodeParser.v15.2.dll", 152900000);
+            Asm.Add("DevExpress.CodeParser.v15.2.dll", 152900000);//
             Asm.Add("DevExpress.Dashboard.v15.2.Core.dll", 152900000);
             Asm.Add("DevExpress.Dashboard.v15.2.Win.dll", 152900000);
             Asm.Add("DevExpress.Data.v15.2.dll", 152900000);
@@ -172,8 +172,8 @@ namespace NICSQLTools.Classes.Managers
             Asm.Add("DevExpress.DataAccess.v15.2.UI.dll", 152900000);
             Asm.Add("DevExpress.Map.v15.2.Core.dll", 152900000);
             Asm.Add("DevExpress.Office.v15.2.Core.dll", 152900000);
-            Asm.Add("DevExpress.Pdf.v15.2.Core.dll", 152900000);
-            Asm.Add("DevExpress.Pdf.v15.2.Drawing.dll", 152900000);
+            Asm.Add("DevExpress.Pdf.v15.2.Core.dll", 152900000);//
+            Asm.Add("DevExpress.Pdf.v15.2.Drawing.dll", 152900000);//
             Asm.Add("DevExpress.PivotGrid.v15.2.Core.dll", 152900000);
             Asm.Add("DevExpress.Printing.v15.2.Core.dll", 152900000);
             Asm.Add("DevExpress.RichEdit.v15.2.Core.dll", 152900000);
@@ -188,7 +188,7 @@ namespace NICSQLTools.Classes.Managers
             Asm.Add("DevExpress.XtraCharts.v15.2.Wizard.dll", 152900000);
             Asm.Add("DevExpress.XtraEditors.v15.2.dll", 152900000);
             Asm.Add("DevExpress.XtraGauges.v15.2.Core.dll", 152900000);
-            Asm.Add("DevExpress.XtraGauges.v15.2.Presets.dll", 152900000);
+            Asm.Add("DevExpress.XtraGauges.v15.2.Presets.dll", 152900000);//
             Asm.Add("DevExpress.XtraGauges.v15.2.Win.dll", 152900000);
             Asm.Add("DevExpress.XtraGrid.v15.2.dll", 152900000);
             Asm.Add("DevExpress.XtraLayout.v15.2.dll", 152900000);
@@ -197,6 +197,7 @@ namespace NICSQLTools.Classes.Managers
             Asm.Add("DevExpress.XtraPivotGrid.v15.2.dll", 152900000);
             Asm.Add("DevExpress.XtraPrinting.v15.2.dll", 152900000);
             Asm.Add("DevExpress.XtraReports.v15.2.dll", 152900000);
+            Asm.Add("DevExpress.XtraReports.v15.2.Extensions.dll", 152900000);
             Asm.Add("DevExpress.XtraRichEdit.v15.2.dll", 152900000);
             Asm.Add("DevExpress.XtraRichEdit.v15.2.Extensions.dll", 152900000);
             Asm.Add("DevExpress.XtraTreeList.v15.2.dll", 152900000);

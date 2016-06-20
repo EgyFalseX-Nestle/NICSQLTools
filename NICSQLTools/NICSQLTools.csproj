@@ -150,6 +150,8 @@
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -580,11 +582,23 @@
     <Compile Include="Views\Main\rtfTextEditorFrm.Designer.cs">
       <DependentUpon>rtfTextEditorFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Main\XRepViewerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Main\XRepViewerUC.Designer.cs">
+      <DependentUpon>XRepViewerUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Permission\LookupValuesDetailsDlg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Permission\LookupValuesDetailsDlg.Designer.cs">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\MSrv\MSrv_03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\MSrv\MSrv_03.Designer.cs">
+      <DependentUpon>MSrv_03.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Qry\MSrv\MSrv_02.cs">
       <SubType>UserControl</SubType>
@@ -837,6 +851,12 @@
     <Compile Include="Views\Qry\QryPivotUC.Designer.cs">
       <DependentUpon>QryPivotUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\XRep\MSrv\XRep01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\XRep\MSrv\XRep01.Designer.cs">
+      <DependentUpon>XRep01.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\MultiLineStringFrm.resx">
       <DependentUpon>MultiLineStringFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -982,8 +1002,14 @@
     <EmbeddedResource Include="Views\Main\rtfTextEditorFrm.resx">
       <DependentUpon>rtfTextEditorFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Main\XRepViewerUC.resx">
+      <DependentUpon>XRepViewerUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Permission\LookupValuesDetailsDlg.resx">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\MSrv\MSrv_03.resx">
+      <DependentUpon>MSrv_03.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\MSrv\MSrv_02.resx">
       <DependentUpon>MSrv_02.cs</DependentUpon>
@@ -1080,6 +1106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\QryPivotUC.resx">
       <DependentUpon>QryPivotUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\XRep\MSrv\XRep01.resx">
+      <DependentUpon>XRep01.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\dsDataSource.xsc">
       <DependentUpon>dsDataSource.xsd</DependentUpon>
@@ -1233,6 +1262,8 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\report_32x32.png" />
+    <None Include="Resources\zoom_32x32.png" />
     <None Include="Resources\RoutePlate64.png" />
     <None Include="Resources\RoutePlate32.png" />
     <None Include="Resources\RoutePlate16.png" />

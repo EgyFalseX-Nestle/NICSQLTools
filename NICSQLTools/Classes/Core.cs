@@ -27,5 +27,14 @@ namespace NICSQLTools.Classes
             Logger.Error(Ex.Message, Ex);
 
         }
+        public static void ShowPrintPreview(DevExpress.XtraReports.IReport report, bool dlg = false)
+        {
+            // Create a Print Tool and show the Print Preview form. 
+            DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(report);
+            if (dlg)
+                printTool.ShowRibbonPreviewDialog();
+            else
+                printTool.ShowRibbonPreview();
+        }
     }
 }

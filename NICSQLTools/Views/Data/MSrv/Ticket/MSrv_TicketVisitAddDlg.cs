@@ -145,7 +145,8 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                 mSrv_TicketVisitPartTableAdapter.Update(dsMSrc.MSrv_TicketVisitPart);
                 MsgDlg.ShowAlert("Data Saved ..", MsgDlg.MessageType.Success, this);
                 ResetDlg();
-                RequestRefresh?.Invoke();
+                if (RequestRefresh != null)
+                    RequestRefresh();
                 if (MsgDlg.Show("Do you want to close ticket ?", MsgDlg.MessageType.Question) == DialogResult.Yes)
                 {
                     NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket = (from q in _dsLinq.vMSrv_Ticket_ByUsers where q.TicketId == ticketId select q).ToArray()[0];

@@ -385,6 +385,15 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Qry.MSrv.MSrv_02();
             }
+            else if (e.Document == docEditorsMSrv_03)
+            {
+                e.Control = new Qry.MSrv.MSrv_03();
+            }
+            else if (e.Document == docEditorsXRep01)
+            {
+                XRep.MSrv.XRep01 rep = new XRep.MSrv.XRep01();
+                e.Control = new Main.XRepViewerUC(rep);
+            }
             else if (e.Document == docEditorsMSrv_Dmg_ReasonEditor){
                 e.Control = new Data.MSrv.MSrv_Dmg_ReasonEditorUC(RuleElemet);
             }

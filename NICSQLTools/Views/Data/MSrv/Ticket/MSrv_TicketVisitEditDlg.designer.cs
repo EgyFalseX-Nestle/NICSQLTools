@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -37,10 +38,10 @@
             this.lueDamage = new DevExpress.XtraEditors.LookUpEdit();
             this.LSMSDmg = new DevExpress.Data.Linq.LinqServerModeSource();
             this.clbcReason = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource();
+            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridControlPart = new DevExpress.XtraGrid.GridControl();
-            this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource();
+            this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewPart = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPartId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditPartId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -74,7 +75,7 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.mSrv_TicketVisitPartTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitPartTableAdapter();
             this.mSrv_TypeTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).BeginInit();
@@ -502,7 +503,7 @@
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(300, 24);
-            this.layoutControlItem6.Text = "From";
+            this.layoutControlItem6.Text = "From time";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 13);
             // 
             // layoutControlItem8
@@ -511,7 +512,7 @@
             this.layoutControlItem8.Location = new System.Drawing.Point(300, 120);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(302, 24);
-            this.layoutControlItem8.Text = "To";
+            this.layoutControlItem8.Text = "To time";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(72, 13);
             // 
             // tabbedControlGroupDetails

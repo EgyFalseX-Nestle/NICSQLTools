@@ -124,17 +124,23 @@
   <data name="UserRule64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UserRule64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Editor64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Editor64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DashboardDesigner128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DashboardDesigner128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="save_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MSrv_TicketVisit32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MSrv_TicketVisit32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoginLogo256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginLogo256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RDM64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RDM64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="print_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,14 +163,11 @@
   <data name="publicfix_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\publicfix_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MSrv_TicketVisit32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MSrv_TicketVisit32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ide_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ide_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TargetNCE64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TargetNCE64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MSrv_Type64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MSrv_Type64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AppDSCategory128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AppDSCategory128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,6 +196,9 @@
   <data name="Editor128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Editor128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="zoom_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zoom_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MSrv_Part32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSrv_Part32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,8 +211,8 @@
   <data name="MSrv_Ticket64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSrv_Ticket64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MSrv_Ticket128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MSrv_Ticket128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RoutePlate16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoutePlate16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TargetKPI64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TargetKPI64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -216,6 +222,9 @@
   </data>
   <data name="MSrv_Ticket16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSrv_Ticket16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TargetNCE64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TargetNCE64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Reports64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reports64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -234,6 +243,9 @@
   </data>
   <data name="Roles128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Roles128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roles64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Roles64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Activities64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Activities64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,8 +268,8 @@
   <data name="MSG_Error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSG_Error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Roles64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Roles64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MSrv_Ticket128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MSrv_Ticket128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Start" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -270,9 +282,6 @@
   </data>
   <data name="MSrv_Technician32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSrv_Technician32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Users64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Users64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Excel128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Excel128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -291,9 +300,6 @@
   </data>
   <data name="MSrv_Technician64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSrv_Technician64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MSrv_Type64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MSrv_Type64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SalesDistrict128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SalesDistrict128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -327,6 +333,9 @@
   </data>
   <data name="pictureshapefillcolor_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pictureshapefillcolor_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoutePlate64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoutePlate64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MSrv_TicketChat32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSrv_TicketChat32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -424,6 +433,9 @@
   <data name="MSrv_TicketChat16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSrv_TicketChat16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="done" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RequestAction16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RequestAction16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -499,14 +511,11 @@
   <data name="MSrv_Type16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSrv_Type16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MSrv_TicketVisit128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MSrv_TicketVisit128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DashboardViewer64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DashboardViewer64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NestleBanner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NestleBanner.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DashboardViewer64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DashboardViewer64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dashboard64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -532,17 +541,20 @@
   <data name="loadfrom_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loadfrom_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Editor64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Editor64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Users64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Users64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Queries2_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Queries2_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rule64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rule64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MSrv_TicketVisit128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MSrv_TicketVisit128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MSrv_Technician128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MSrv_Technician128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RoutePlate32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RoutePlate32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="grid_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grid_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -550,8 +562,8 @@
   <data name="pagesetup_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pagesetup_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="done" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Rule64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rule64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Qry16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Qry16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -595,13 +607,7 @@
   <data name="new_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RoutePlate16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RoutePlate16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RoutePlate32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RoutePlate32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RoutePlate64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RoutePlate64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="report_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\report_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

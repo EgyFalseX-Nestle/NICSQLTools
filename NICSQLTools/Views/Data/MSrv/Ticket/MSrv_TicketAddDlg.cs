@@ -124,7 +124,8 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                     // Add ActionClasses.MSrv.CreateAction(Classes.MSrvType.ActionType.Ticket_Created, TicketId, "Ticket Created #: " + TicketId + " request action from " + Classes.MSrvType.MSrvDepartment.Logistics.ToString()  + " department");
                     MsgDlg.ShowAlert("Data Saved ..", MsgDlg.MessageType.Success, this);
                     ResetDlg();
-                    RequestRefresh?.Invoke();
+                    if (RequestRefresh != null)
+                        RequestRefresh();
                     //DialogResult = System.Windows.Forms.DialogResult.OK;
                     //Close();
                 }

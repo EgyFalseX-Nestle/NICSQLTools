@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -39,10 +40,10 @@
             this.deDate = new DevExpress.XtraEditors.DateEdit();
             this.lblContactPerson = new DevExpress.XtraEditors.LabelControl();
             this.clbcReason = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource();
+            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridControlPart = new DevExpress.XtraGrid.GridControl();
-            this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource();
+            this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewPart = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPartId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditPartId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -79,7 +80,7 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.mSrv_TicketVisitPartTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitPartTableAdapter();
             this.mSrv_TypeTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).BeginInit();
@@ -334,6 +335,7 @@
             this.deEndDate.Name = "deEndDate";
             this.deEndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deEndDate.Properties.CalendarDateEditing = false;
             this.deEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deEndDate.Properties.DisplayFormat.FormatString = "t";
@@ -355,6 +357,7 @@
             this.deStartDate.Name = "deStartDate";
             this.deStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.deStartDate.Properties.CalendarDateEditing = false;
             this.deStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.deStartDate.Properties.DisplayFormat.FormatString = "t";
@@ -650,7 +653,7 @@
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 137);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(602, 90);
-            this.layoutControlGroup4.Text = "Date";
+            this.layoutControlGroup4.Text = "Date of visit";
             // 
             // layoutControlItem10
             // 
@@ -658,7 +661,7 @@
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(578, 24);
-            this.layoutControlItem10.Text = "Date";
+            this.layoutControlItem10.Text = "Date of visit";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(72, 13);
             // 
             // layoutControlItem6
@@ -667,7 +670,7 @@
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(288, 24);
-            this.layoutControlItem6.Text = "From";
+            this.layoutControlItem6.Text = "From time";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 13);
             // 
             // layoutControlItem8
@@ -676,7 +679,7 @@
             this.layoutControlItem8.Location = new System.Drawing.Point(288, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(290, 24);
-            this.layoutControlItem8.Text = "To";
+            this.layoutControlItem8.Text = "To time";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(72, 13);
             // 
             // layoutControlItem11

@@ -213,6 +213,26 @@ namespace NICSQLTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap colorizermap_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("colorizermap_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap colorizermap_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("colorizermap_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CostControl128 {
             get {
                 object obj = ResourceManager.GetObject("CostControl128", resourceCulture);
@@ -226,6 +246,36 @@ namespace NICSQLTools.Properties {
         internal static System.Drawing.Bitmap CostControl64 {
             get {
                 object obj = ResourceManager.GetObject("CostControl64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CustomerMap16 {
+            get {
+                object obj = ResourceManager.GetObject("CustomerMap16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CustomerMap32 {
+            get {
+                object obj = ResourceManager.GetObject("CustomerMap32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CustomerMap64 {
+            get {
+                object obj = ResourceManager.GetObject("CustomerMap64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,6 +486,26 @@ namespace NICSQLTools.Properties {
         internal static System.Drawing.Bitmap find_16x16 {
             get {
                 object obj = ResourceManager.GetObject("find_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap geopointmap_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("geopointmap_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap geopointmap_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("geopointmap_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

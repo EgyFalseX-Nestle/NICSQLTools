@@ -594,6 +594,18 @@
     <Compile Include="Views\Permission\LookupValuesDetailsDlg.Designer.cs">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Qry\CustomerMapUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\CustomerMapUC.Designer.cs">
+      <DependentUpon>CustomerMapUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Qry\MSrv\MSrv_04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Qry\MSrv\MSrv_04.Designer.cs">
+      <DependentUpon>MSrv_04.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Qry\MSrv\MSrv_03.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1008,6 +1020,12 @@
     <EmbeddedResource Include="Views\Permission\LookupValuesDetailsDlg.resx">
       <DependentUpon>LookupValuesDetailsDlg.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\CustomerMapUC.resx">
+      <DependentUpon>CustomerMapUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Qry\MSrv\MSrv_04.resx">
+      <DependentUpon>MSrv_04.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Qry\MSrv\MSrv_03.resx">
       <DependentUpon>MSrv_03.cs</DependentUpon>
     </EmbeddedResource>
@@ -1262,6 +1280,13 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\colorizermap_32x32.png" />
+    <None Include="Resources\colorizermap_16x16.png" />
+    <None Include="Resources\CustomerMap64.png" />
+    <None Include="Resources\CustomerMap32.png" />
+    <None Include="Resources\CustomerMap16.png" />
+    <None Include="Resources\geopointmap_32x32.png" />
+    <None Include="Resources\geopointmap_16x16.png" />
     <None Include="Resources\report_32x32.png" />
     <None Include="Resources\zoom_32x32.png" />
     <None Include="Resources\RoutePlate64.png" />

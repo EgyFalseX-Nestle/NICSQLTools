@@ -238,31 +238,6 @@
       <Column Name="BaseGroup" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vRouteDetails" Member="vRouteDetails">
-    <Type Name="vRouteDetail">
-      <Column Name="[Distribution Channel]" Member="Distribution_Channel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Route Number]" Member="Route_Number" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="[Route Number  system]" Member="Route_Number__system" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Type" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Sales District #]" Member="Sales_District__" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Plant" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="RSM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="ASM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Brand Route]" Member="Brand_Route" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="[Brand Route Old]" Member="Brand_Route_Old" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Warehouse" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="SalesDistrict3Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="SalesDistrict2Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="SalesDistrict1Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Sales District]" Member="Sales_District" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Regions Group]" Member="Regions_Group" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CostCostcenter" Member="CostCostcenters">
     <Type Name="CostCostcenter">
       <Column Name="CostCenter" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -697,6 +672,40 @@
       <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="MSrvTypeId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MSrvType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vRouteDetails" Member="vRouteDetails">
+    <Type Name="vRouteDetail">
+      <Column Name="[Distribution Channel]" Member="Distribution_Channel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Route Number]" Member="Route_Number" Type="System.String" DbType="NVarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Route Number  system]" Member="Route_Number__system" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Route Name]" Member="Route_Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Sales District #]" Member="Sales_District__" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Plant" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RSM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ASM" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Brand Route]" Member="Brand_Route" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Brand Route Old]" Member="Brand_Route_Old" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Warehouse" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SalesDistrict3Id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SalesDistrict2Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="SalesDistrict1Id" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="[Sales District 2]" Member="Sales_District_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Sales District]" Member="Sales_District" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Sales District Name]" Member="Sales_District_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Regions Group]" Member="Regions_Group" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PlantNumber" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Route To Market ]" Member="Route_To_Market_" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BrandRoute_2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Route to Market*]" Member="Route_to_Market_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Sales District*]" Member="Sales_District_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Brand Route*]" Member="Brand_Route_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Government" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Supervisor_Telephone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

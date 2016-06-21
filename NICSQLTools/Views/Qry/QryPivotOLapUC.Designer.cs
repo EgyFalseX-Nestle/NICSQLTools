@@ -30,7 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraPivotGrid.PivotGridGroup pivotGridGroup1 = new DevExpress.XtraPivotGrid.PivotGridGroup();
+            this.fieldDistributionChannel2 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSalesDistrictName1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldSalesDistrict22 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldRouteNumber2 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.dockManagerMain = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -77,11 +84,6 @@
             this.layoutControlItemPropertiesControl = new DevExpress.XtraLayout.LayoutControlItem();
             this.LSMSDatasource = new DevExpress.Data.Linq.LinqServerModeSource();
             this.pivotGridControlMain = new DevExpress.XtraPivotGrid.PivotGridControl();
-            this.get_sp_PramTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
-            this.appDatasourceLayoutTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceLayoutTableAdapter();
-            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter();
-            this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceParamTableAdapter();
-            this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.fieldCustomerT1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldDate1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldDay1 = new DevExpress.XtraPivotGrid.PivotGridField();
@@ -117,10 +119,6 @@
             this.fieldRouteName1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldRouteNumber1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldSalesDistrict21 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldDistributionChannel2 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldSalesDistrictName1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldSalesDistrict22 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.fieldRouteNumber2 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldSalesDistrictName2 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldSupervisor1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldSales1 = new DevExpress.XtraPivotGrid.PivotGridField();
@@ -135,6 +133,11 @@
             this.fieldInv1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldAPOS1 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldDS1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.get_sp_PramTableAdapter = new NICSQLTools.Data.dsQryTableAdapters.Get_sp_PramTableAdapter();
+            this.appDatasourceLayoutTableAdapter = new NICSQLTools.Data.dsDataTableAdapters.AppDatasourceLayoutTableAdapter();
+            this.appDashboardDSTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceTableAdapter();
+            this.appDashboardDSPramTableAdapter = new NICSQLTools.Data.dsDataSourceTableAdapters.AppDatasourceParamTableAdapter();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManagerMain)).BeginInit();
@@ -165,6 +168,38 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSDatasource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControlMain)).BeginInit();
             this.SuspendLayout();
+            // 
+            // fieldDistributionChannel2
+            // 
+            this.fieldDistributionChannel2.AreaIndex = 40;
+            this.fieldDistributionChannel2.Caption = "Distribution Channel";
+            this.fieldDistributionChannel2.FieldName = "[Route].[Sales District Level].[Distribution Channel]";
+            this.fieldDistributionChannel2.Name = "fieldDistributionChannel2";
+            this.fieldDistributionChannel2.Visible = false;
+            // 
+            // fieldSalesDistrictName1
+            // 
+            this.fieldSalesDistrictName1.AreaIndex = 40;
+            this.fieldSalesDistrictName1.Caption = "Sales District Name";
+            this.fieldSalesDistrictName1.FieldName = "[Route].[Sales District Level].[Sales District Name]";
+            this.fieldSalesDistrictName1.Name = "fieldSalesDistrictName1";
+            this.fieldSalesDistrictName1.Visible = false;
+            // 
+            // fieldSalesDistrict22
+            // 
+            this.fieldSalesDistrict22.AreaIndex = 40;
+            this.fieldSalesDistrict22.Caption = "Sales District 2";
+            this.fieldSalesDistrict22.FieldName = "[Route].[Sales District Level].[Sales District 2]";
+            this.fieldSalesDistrict22.Name = "fieldSalesDistrict22";
+            this.fieldSalesDistrict22.Visible = false;
+            // 
+            // fieldRouteNumber2
+            // 
+            this.fieldRouteNumber2.AreaIndex = 40;
+            this.fieldRouteNumber2.Caption = "Route Number";
+            this.fieldRouteNumber2.FieldName = "[Route].[Sales District Level].[Route Number]";
+            this.fieldRouteNumber2.Name = "fieldRouteNumber2";
+            this.fieldRouteNumber2.Visible = false;
             // 
             // repositoryItemDateEdit1
             // 
@@ -411,7 +446,7 @@
             this.lueLayout.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lueLayout.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.refresh_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
             this.lueLayout.Properties.DataSource = this.LSMSLayout;
             this.lueLayout.Properties.DisplayMember = "DatasourceLayoutName";
             this.lueLayout.Properties.NullText = "";
@@ -762,27 +797,6 @@
             this.pivotGridControlMain.TabIndex = 2;
             this.pivotGridControlMain.PopupMenuShowing += new DevExpress.XtraPivotGrid.PopupMenuShowingEventHandler(this.pivotGridControlMain_PopupMenuShowing);
             // 
-            // get_sp_PramTableAdapter
-            // 
-            this.get_sp_PramTableAdapter.ClearBeforeFill = true;
-            // 
-            // appDatasourceLayoutTableAdapter
-            // 
-            this.appDatasourceLayoutTableAdapter.ClearBeforeFill = true;
-            // 
-            // appDashboardDSTableAdapter
-            // 
-            this.appDashboardDSTableAdapter.ClearBeforeFill = true;
-            // 
-            // appDashboardDSPramTableAdapter
-            // 
-            this.appDashboardDSPramTableAdapter.ClearBeforeFill = true;
-            // 
-            // sfd
-            // 
-            this.sfd.Filter = "excel workbook (*.xlsx)|*.xlsx";
-            this.sfd.Title = "export to excel file (xlsx)";
-            // 
             // fieldCustomerT1
             // 
             this.fieldCustomerT1.AreaIndex = 40;
@@ -1063,38 +1077,6 @@
             this.fieldSalesDistrict21.Name = "fieldSalesDistrict21";
             this.fieldSalesDistrict21.Visible = false;
             // 
-            // fieldDistributionChannel2
-            // 
-            this.fieldDistributionChannel2.AreaIndex = 40;
-            this.fieldDistributionChannel2.Caption = "Distribution Channel";
-            this.fieldDistributionChannel2.FieldName = "[Route].[Sales District Level].[Distribution Channel]";
-            this.fieldDistributionChannel2.Name = "fieldDistributionChannel2";
-            this.fieldDistributionChannel2.Visible = false;
-            // 
-            // fieldSalesDistrictName1
-            // 
-            this.fieldSalesDistrictName1.AreaIndex = 40;
-            this.fieldSalesDistrictName1.Caption = "Sales District Name";
-            this.fieldSalesDistrictName1.FieldName = "[Route].[Sales District Level].[Sales District Name]";
-            this.fieldSalesDistrictName1.Name = "fieldSalesDistrictName1";
-            this.fieldSalesDistrictName1.Visible = false;
-            // 
-            // fieldSalesDistrict22
-            // 
-            this.fieldSalesDistrict22.AreaIndex = 40;
-            this.fieldSalesDistrict22.Caption = "Sales District 2";
-            this.fieldSalesDistrict22.FieldName = "[Route].[Sales District Level].[Sales District 2]";
-            this.fieldSalesDistrict22.Name = "fieldSalesDistrict22";
-            this.fieldSalesDistrict22.Visible = false;
-            // 
-            // fieldRouteNumber2
-            // 
-            this.fieldRouteNumber2.AreaIndex = 40;
-            this.fieldRouteNumber2.Caption = "Route Number";
-            this.fieldRouteNumber2.FieldName = "[Route].[Sales District Level].[Route Number]";
-            this.fieldRouteNumber2.Name = "fieldRouteNumber2";
-            this.fieldRouteNumber2.Visible = false;
-            // 
             // fieldSalesDistrictName2
             // 
             this.fieldSalesDistrictName2.AreaIndex = 40;
@@ -1229,6 +1211,27 @@
             this.fieldDS1.FieldName = "[Measures].[DS]";
             this.fieldDS1.Name = "fieldDS1";
             this.fieldDS1.Visible = false;
+            // 
+            // get_sp_PramTableAdapter
+            // 
+            this.get_sp_PramTableAdapter.ClearBeforeFill = true;
+            // 
+            // appDatasourceLayoutTableAdapter
+            // 
+            this.appDatasourceLayoutTableAdapter.ClearBeforeFill = true;
+            // 
+            // appDashboardDSTableAdapter
+            // 
+            this.appDashboardDSTableAdapter.ClearBeforeFill = true;
+            // 
+            // appDashboardDSPramTableAdapter
+            // 
+            this.appDashboardDSPramTableAdapter.ClearBeforeFill = true;
+            // 
+            // sfd
+            // 
+            this.sfd.Filter = "excel workbook (*.xlsx)|*.xlsx";
+            this.sfd.Title = "export to excel file (xlsx)";
             // 
             // QryPivotOLapUC
             // 

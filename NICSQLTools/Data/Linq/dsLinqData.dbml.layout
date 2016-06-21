@@ -32,14 +32,14 @@
         <elementListCompartment Id="fd874ef0-66e9-4354-aca8-de6e41b6e534" absoluteBounds="0.89000000000000012, 3.2100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.9375 : 6.0112939453125); (1.9375 : 6.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.9375 : 6.0112939453125); (1.9375 : 6.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsLinqDataDataContext/SalesDistrict2/SalesDistrict2_SalesDistrict3" />
       <nodes>
         <classShapeMoniker Id="60bc8e24-5ce0-4223-9ceb-0ba990a6d4d6" />
         <classShapeMoniker Id="bbad3ede-7876-42b2-a64a-c10da5797c2e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.875 : 3.94399251302083); (1.875 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.875 : 3.94399251302083); (1.875 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsLinqDataDataContext/SalesDistrict1/SalesDistrict1_SalesDistrict2" />
       <nodes>
         <classShapeMoniker Id="f93eb5ea-ddbe-46ec-8938-34cd2faeb0d5" />
@@ -92,12 +92,6 @@
       <DataClassMoniker Name="/dsLinqDataDataContext/vAppProductDetail" />
       <nestedChildShapes>
         <elementListCompartment Id="323e6eed-edb3-4113-86ae-d3415c25cbb5" absoluteBounds="6.14, 9.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="593ad1f7-62ef-46b1-9ed3-269cacd5c763" absoluteBounds="6.125, 11.25, 2, 4.8477197265625023">
-      <DataClassMoniker Name="/dsLinqDataDataContext/vRouteDetail" />
-      <nestedChildShapes>
-        <elementListCompartment Id="051f4e85-dbc4-4f8d-b10f-17593201be6d" absoluteBounds="6.14, 11.71, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="81c4de1b-0ec8-460f-a46a-17749b3999d6" absoluteBounds="0.875, 24.875, 2, 2.1554996744791666">
@@ -172,7 +166,7 @@
         <elementListCompartment Id="de95e26e-31d2-4e74-b5fe-9d724451335f" absoluteBounds="3.8899999999999997, 36.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(1.75 : 2.2612939453125); (1.75 : 2.6875); (3.3125 : 2.6875); (3.3125 : 36.7219962565104); (3.875 : 36.7219962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 2.2612939453125); (1.75 : 2.6875); (3.3125 : 2.6875); (3.3125 : 36.7219962565104); (3.875 : 36.7219962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dsLinqDataDataContext/AppUser/AppUser_AppUserRule" />
       <nodes>
         <classShapeMoniker Id="212f7983-8a89-4fd0-b999-96effdc6d6e3" />
@@ -318,6 +312,12 @@
       <DataClassMoniker Name="/dsLinqDataDataContext/vMSrvTicketType_Detail" />
       <nestedChildShapes>
         <elementListCompartment Id="f4167b2e-228e-4b2e-85ce-48aeba656e85" absoluteBounds="1.1400000000000001, 54.085, 1.9700000000000002, 7.7491455078125009" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e061ec5-1593-49c3-90f6-3eab07dc0324" absoluteBounds="6.625, 11.625, 2, 6.5784326171875">
+      <DataClassMoniker Name="/dsLinqDataDataContext/vRouteDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d4bec29-d1e7-4694-b95f-34a7b4f2c6af" absoluteBounds="6.64, 12.085, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

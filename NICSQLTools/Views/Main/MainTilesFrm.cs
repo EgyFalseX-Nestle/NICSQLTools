@@ -213,6 +213,10 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Qry.QryPivotOLapUC(RuleElemet);
             }
+            else if (e.Document == docQueriesCustomerMap)
+            {
+                e.Control = new NICSQLTools.Views.Qry.CustomerMapUC(RuleElemet);
+            }
 
             else if (e.Document == docDashboardDesigner)//--------------------  Dashboard
             {
@@ -388,6 +392,10 @@ namespace NICSQLTools.Views.Main
             else if (e.Document == docEditorsMSrv_03)
             {
                 e.Control = new Qry.MSrv.MSrv_03();
+            }
+            else if (e.Document == docEditorsMSrv_04)
+            {
+                e.Control = new Qry.MSrv.MSrv_04();
             }
             else if (e.Document == docEditorsXRep01)
             {

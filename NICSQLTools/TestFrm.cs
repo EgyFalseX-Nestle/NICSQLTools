@@ -21,7 +21,7 @@ namespace NICSQLTools
 
         private void TestFrm_Load(object sender, EventArgs e)
         {
-          
+          LSMSRoute.QueryableSource = new Data.Linq.dsLinqDataDataContext().vRouteDetails;
         }
 
     }

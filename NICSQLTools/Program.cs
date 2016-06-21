@@ -28,8 +28,9 @@ namespace NICSQLTools
         [STAThread]
         static void Main()
         {
+            //TestFrm frm = new TestFrm();
+            //frm.ShowDialog();return;
             
-
 
             //UserLookAndFeel.Default.SkinName = "DevExpress Dark Style";
             Application.EnableVisualStyles();

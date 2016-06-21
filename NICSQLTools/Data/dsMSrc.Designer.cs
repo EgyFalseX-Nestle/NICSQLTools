@@ -78,6 +78,8 @@ namespace NICSQLTools.Data {
         
         private XRep01DataTable tableXRep01;
         
+        private Qry04DataTable tableQry04;
+        
         private global::System.Data.DataRelation relationFK_MSrv_TechnicianSalesDistrict_MSrv_Technician;
         
         private global::System.Data.DataRelation relationFK_MSrv_Technician_MSrv_TechnicianCompany;
@@ -119,6 +121,8 @@ namespace NICSQLTools.Data {
         private global::System.Data.DataRelation relationVisit_Parts;
         
         private global::System.Data.DataRelation relationFK_MSrvTicketType_MSrv_Type1;
+        
+        private global::System.Data.DataRelation relationFK_MSrv_TicketPart_MSrv_Part1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -228,6 +232,9 @@ namespace NICSQLTools.Data {
                 }
                 if ((ds.Tables["XRep01"] != null)) {
                     base.Tables.Add(new XRep01DataTable(ds.Tables["XRep01"]));
+                }
+                if ((ds.Tables["Qry04"] != null)) {
+                    base.Tables.Add(new Qry04DataTable(ds.Tables["Qry04"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -519,6 +526,16 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Qry04DataTable Qry04 {
+            get {
+                return this.tableQry04;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -664,6 +681,9 @@ namespace NICSQLTools.Data {
                 }
                 if ((ds.Tables["XRep01"] != null)) {
                     base.Tables.Add(new XRep01DataTable(ds.Tables["XRep01"]));
+                }
+                if ((ds.Tables["Qry04"] != null)) {
+                    base.Tables.Add(new Qry04DataTable(ds.Tables["Qry04"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -860,6 +880,12 @@ namespace NICSQLTools.Data {
                     this.tableXRep01.InitVars();
                 }
             }
+            this.tableQry04 = ((Qry04DataTable)(base.Tables["Qry04"]));
+            if ((initTable == true)) {
+                if ((this.tableQry04 != null)) {
+                    this.tableQry04.InitVars();
+                }
+            }
             this.relationFK_MSrv_TechnicianSalesDistrict_MSrv_Technician = this.Relations["FK_MSrv_TechnicianSalesDistrict_MSrv_Technician"];
             this.relationFK_MSrv_Technician_MSrv_TechnicianCompany = this.Relations["FK_MSrv_Technician_MSrv_TechnicianCompany"];
             this.relationFK_MSrvTicketType_MSrv_Ticket = this.Relations["FK_MSrvTicketType_MSrv_Ticket"];
@@ -881,6 +907,7 @@ namespace NICSQLTools.Data {
             this.relationVisits = this.Relations["Visits"];
             this.relationVisit_Parts = this.Relations["Visit Parts"];
             this.relationFK_MSrvTicketType_MSrv_Type1 = this.Relations["FK_MSrvTicketType_MSrv_Type1"];
+            this.relationFK_MSrv_TicketPart_MSrv_Part1 = this.Relations["FK_MSrv_TicketPart_MSrv_Part1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -945,6 +972,8 @@ namespace NICSQLTools.Data {
             base.Tables.Add(this.tableXRep01_A);
             this.tableXRep01 = new XRep01DataTable();
             base.Tables.Add(this.tableXRep01);
+            this.tableQry04 = new Qry04DataTable();
+            base.Tables.Add(this.tableQry04);
             this.relationFK_MSrv_TechnicianSalesDistrict_MSrv_Technician = new global::System.Data.DataRelation("FK_MSrv_TechnicianSalesDistrict_MSrv_Technician", new global::System.Data.DataColumn[] {
                         this.tableMSrv_Technician.TechnicianIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableMSrv_TechnicianSalesDistrict.TechnicianIdColumn}, false);
@@ -1029,6 +1058,10 @@ namespace NICSQLTools.Data {
                         this.tableMSrv_Type.MSrvTypeIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableTicketTypeInfo.MSrvTypeIdColumn}, false);
             this.Relations.Add(this.relationFK_MSrvTicketType_MSrv_Type1);
+            this.relationFK_MSrv_TicketPart_MSrv_Part1 = new global::System.Data.DataRelation("FK_MSrv_TicketPart_MSrv_Part1", new global::System.Data.DataColumn[] {
+                        this.tableQry04.PartIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableMSrv_TicketVisitPart.PartIdColumn}, false);
+            this.Relations.Add(this.relationFK_MSrv_TicketPart_MSrv_Part1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1195,6 +1228,12 @@ namespace NICSQLTools.Data {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeQry04() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1328,6 +1367,9 @@ namespace NICSQLTools.Data {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void XRep01RowChangeEventHandler(object sender, XRep01RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Qry04RowChangeEventHandler(object sender, Qry04RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -12134,6 +12176,353 @@ namespace NICSQLTools.Data {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Qry04DataTable : global::System.Data.TypedTableBase<Qry04Row> {
+            
+            private global::System.Data.DataColumn columnTechnicianId;
+            
+            private global::System.Data.DataColumn columnTechnicianName;
+            
+            private global::System.Data.DataColumn columnTechnicianCompany;
+            
+            private global::System.Data.DataColumn columnPartId;
+            
+            private global::System.Data.DataColumn columnPartName;
+            
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnActualPrice;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Qry04DataTable() {
+                this.TableName = "Qry04";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Qry04DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Qry04DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TechnicianIdColumn {
+                get {
+                    return this.columnTechnicianId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TechnicianNameColumn {
+                get {
+                    return this.columnTechnicianName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TechnicianCompanyColumn {
+                get {
+                    return this.columnTechnicianCompany;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PartIdColumn {
+                get {
+                    return this.columnPartId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PartNameColumn {
+                get {
+                    return this.columnPartName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ActualPriceColumn {
+                get {
+                    return this.columnActualPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Qry04Row this[int index] {
+                get {
+                    return ((Qry04Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Qry04RowChangeEventHandler Qry04RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Qry04RowChangeEventHandler Qry04RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Qry04RowChangeEventHandler Qry04RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Qry04RowChangeEventHandler Qry04RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddQry04Row(Qry04Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Qry04Row AddQry04Row(int TechnicianId, string TechnicianName, string TechnicianCompany, int PartId, string PartName, double Quantity, double ActualPrice) {
+                Qry04Row rowQry04Row = ((Qry04Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        TechnicianId,
+                        TechnicianName,
+                        TechnicianCompany,
+                        PartId,
+                        PartName,
+                        Quantity,
+                        ActualPrice};
+                rowQry04Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowQry04Row);
+                return rowQry04Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Qry04Row FindByTechnicianIdPartId(int TechnicianId, int PartId) {
+                return ((Qry04Row)(this.Rows.Find(new object[] {
+                            TechnicianId,
+                            PartId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Qry04DataTable cln = ((Qry04DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Qry04DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnTechnicianId = base.Columns["TechnicianId"];
+                this.columnTechnicianName = base.Columns["TechnicianName"];
+                this.columnTechnicianCompany = base.Columns["TechnicianCompany"];
+                this.columnPartId = base.Columns["PartId"];
+                this.columnPartName = base.Columns["PartName"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnActualPrice = base.Columns["ActualPrice"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnTechnicianId = new global::System.Data.DataColumn("TechnicianId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTechnicianId);
+                this.columnTechnicianName = new global::System.Data.DataColumn("TechnicianName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTechnicianName);
+                this.columnTechnicianCompany = new global::System.Data.DataColumn("TechnicianCompany", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTechnicianCompany);
+                this.columnPartId = new global::System.Data.DataColumn("PartId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartId);
+                this.columnPartName = new global::System.Data.DataColumn("PartName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartName);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnActualPrice = new global::System.Data.DataColumn("ActualPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActualPrice);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnTechnicianId,
+                                this.columnPartId}, true));
+                this.columnTechnicianId.AllowDBNull = false;
+                this.columnTechnicianName.MaxLength = 100;
+                this.columnTechnicianCompany.MaxLength = 50;
+                this.columnPartId.AllowDBNull = false;
+                this.columnPartName.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Qry04Row NewQry04Row() {
+                return ((Qry04Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Qry04Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Qry04Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Qry04RowChanged != null)) {
+                    this.Qry04RowChanged(this, new Qry04RowChangeEvent(((Qry04Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Qry04RowChanging != null)) {
+                    this.Qry04RowChanging(this, new Qry04RowChangeEvent(((Qry04Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Qry04RowDeleted != null)) {
+                    this.Qry04RowDeleted(this, new Qry04RowChangeEvent(((Qry04Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Qry04RowDeleting != null)) {
+                    this.Qry04RowDeleting(this, new Qry04RowChangeEvent(((Qry04Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveQry04Row(Qry04Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsMSrc ds = new dsMSrc();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Qry04DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class MSrv_DepartmentRow : global::System.Data.DataRow {
@@ -13966,6 +14355,17 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_MSrv_TicketPart_MSrv_TicketVisit"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Qry04Row Qry04Row {
+                get {
+                    return ((Qry04Row)(this.GetParentRow(this.Table.ParentRelations["FK_MSrv_TicketPart_MSrv_Part1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_MSrv_TicketPart_MSrv_Part1"]);
                 }
             }
             
@@ -19993,6 +20393,194 @@ namespace NICSQLTools.Data {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Qry04Row : global::System.Data.DataRow {
+            
+            private Qry04DataTable tableQry04;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Qry04Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableQry04 = ((Qry04DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int TechnicianId {
+                get {
+                    return ((int)(this[this.tableQry04.TechnicianIdColumn]));
+                }
+                set {
+                    this[this.tableQry04.TechnicianIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TechnicianName {
+                get {
+                    try {
+                        return ((string)(this[this.tableQry04.TechnicianNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TechnicianName\' in table \'Qry04\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQry04.TechnicianNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TechnicianCompany {
+                get {
+                    try {
+                        return ((string)(this[this.tableQry04.TechnicianCompanyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TechnicianCompany\' in table \'Qry04\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQry04.TechnicianCompanyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PartId {
+                get {
+                    return ((int)(this[this.tableQry04.PartIdColumn]));
+                }
+                set {
+                    this[this.tableQry04.PartIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PartName {
+                get {
+                    try {
+                        return ((string)(this[this.tableQry04.PartNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PartName\' in table \'Qry04\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQry04.PartNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Quantity {
+                get {
+                    try {
+                        return ((double)(this[this.tableQry04.QuantityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'Qry04\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQry04.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double ActualPrice {
+                get {
+                    try {
+                        return ((double)(this[this.tableQry04.ActualPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActualPrice\' in table \'Qry04\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableQry04.ActualPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTechnicianNameNull() {
+                return this.IsNull(this.tableQry04.TechnicianNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTechnicianNameNull() {
+                this[this.tableQry04.TechnicianNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTechnicianCompanyNull() {
+                return this.IsNull(this.tableQry04.TechnicianCompanyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTechnicianCompanyNull() {
+                this[this.tableQry04.TechnicianCompanyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPartNameNull() {
+                return this.IsNull(this.tableQry04.PartNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPartNameNull() {
+                this[this.tableQry04.PartNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQuantityNull() {
+                return this.IsNull(this.tableQry04.QuantityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQuantityNull() {
+                this[this.tableQry04.QuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsActualPriceNull() {
+                return this.IsNull(this.tableQry04.ActualPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetActualPriceNull() {
+                this[this.tableQry04.ActualPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MSrv_TicketVisitPartRow[] GetMSrv_TicketVisitPartRows() {
+                if ((this.Table.ChildRelations["FK_MSrv_TicketPart_MSrv_Part1"] == null)) {
+                    return new MSrv_TicketVisitPartRow[0];
+                }
+                else {
+                    return ((MSrv_TicketVisitPartRow[])(base.GetChildRows(this.Table.ChildRelations["FK_MSrv_TicketPart_MSrv_Part1"])));
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -20896,6 +21484,40 @@ namespace NICSQLTools.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public XRep01Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Qry04RowChangeEvent : global::System.EventArgs {
+            
+            private Qry04Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Qry04RowChangeEvent(Qry04Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Qry04Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -30752,6 +31374,217 @@ GROUP BY vRouteDetails.Supervisor";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Qry04TableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Qry04TableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Qry04";
+            tableMapping.ColumnMappings.Add("TechnicianId", "TechnicianId");
+            tableMapping.ColumnMappings.Add("TechnicianName", "TechnicianName");
+            tableMapping.ColumnMappings.Add("TechnicianCompany", "TechnicianCompany");
+            tableMapping.ColumnMappings.Add("PartId", "PartId");
+            tableMapping.ColumnMappings.Add("PartName", "PartName");
+            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
+            tableMapping.ColumnMappings.Add("ActualPrice", "ActualPrice");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        MSrv_TicketVisit.TechnicianId, MSrv_Technician.TechnicianName, MSrv_TechnicianCompany.TechnicianCompany, MSrv_TicketVisitPart.PartId, MSrv_Part.PartName, SUM(MSrv_TicketVisitPart.Quantity) 
+                         AS Quantity, SUM(MSrv_TicketVisitPart.ActualPrice) AS ActualPrice
+FROM            MSrv_TicketVisit INNER JOIN
+                         vMSrv_Ticket_ByUser ON MSrv_TicketVisit.TicketId = vMSrv_Ticket_ByUser.TicketId INNER JOIN
+                         MSrv_Technician ON MSrv_TicketVisit.TechnicianId = MSrv_Technician.TechnicianId INNER JOIN
+                         MSrv_TechnicianCompany ON MSrv_Technician.TechnicianCompanyId = MSrv_TechnicianCompany.TechnicianCompanyId INNER JOIN
+                         MSrv_TicketVisitPart ON MSrv_TicketVisit.TicketVisitId = MSrv_TicketVisitPart.TicketVisitId INNER JOIN
+                         MSrv_Part ON MSrv_TicketVisitPart.PartId = MSrv_Part.PartId
+WHERE        (MSrv_TicketVisit.StartDate >= @StartDate) AND (MSrv_TicketVisit.EndDate <= @EndDate + 0.99) AND (vMSrv_Ticket_ByUser.VisibleToUserId = @VisibleToUserId)
+GROUP BY MSrv_TicketVisit.TechnicianId, MSrv_Technician.TechnicianName, MSrv_TechnicianCompany.TechnicianCompany, MSrv_TicketVisitPart.PartId, MSrv_Part.PartName";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EndDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "EndDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VisibleToUserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VisibleToUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsMSrc.Qry04DataTable dataTable, global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate, int VisibleToUserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((StartDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(StartDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((EndDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(EndDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(VisibleToUserId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsMSrc.Qry04DataTable GetData(global::System.Nullable<global::System.DateTime> StartDate, global::System.Nullable<global::System.DateTime> EndDate, int VisibleToUserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((StartDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(StartDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((EndDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(EndDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(VisibleToUserId));
+            dsMSrc.Qry04DataTable dataTable = new dsMSrc.Qry04DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.IDbCommand[] _commandCollection;
@@ -31532,15 +32365,6 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._mSrv_TicketVisitTypeTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.MSrv_TicketVisitType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -31583,6 +32407,15 @@ WHERE        (TicketId = @TicketId)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._mSrvTicketTypeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -31668,14 +32501,6 @@ WHERE        (TicketId = @TicketId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._mSrv_TicketVisitTypeTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.MSrv_TicketVisitType.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -31716,6 +32541,14 @@ WHERE        (TicketId = @TicketId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -31726,6 +32559,14 @@ WHERE        (TicketId = @TicketId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(dsMSrc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._mSrvTicketTypeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.MSrvTicketType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -31763,14 +32604,6 @@ WHERE        (TicketId = @TicketId)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._mSrv_TicketVisitTypeTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

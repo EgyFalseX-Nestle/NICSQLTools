@@ -33,8 +33,7 @@ namespace NICSQLTools.Views.Qry.MSrv
                     //gridControlMain.DataSource = XPSCSMain;
                     LSMSTechnicianId.Reload();
                     vMSrvTicketType_DetailsTableAdapter.Fill(dsMSrc.vMSrvTicketType_Details,
-                        UserManager.defaultInstance.User.UserId,
-                        (short) UserManager.defaultInstance.User.MSrvDepartmentId);
+                        UserManager.defaultInstance.User.UserId);
                     gridControlMain.DataSource = dsMSrc.vMSrvTicketType_Details;
                     gridViewMain.BestFitColumns();
                 }));

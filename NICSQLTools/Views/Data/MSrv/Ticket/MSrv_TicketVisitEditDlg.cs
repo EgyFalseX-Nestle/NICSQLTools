@@ -32,8 +32,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
             adp.FillByID(dsMSrc.MSrv_TicketVisit, _visit.TicketVisitId);//Load Visit
             mSrv_TicketVisitPartTableAdapter.FillByTicketVisitId(dsMSrc.MSrv_TicketVisitPart, _visit.TicketVisitId);// Load Parts
             adpTicketVisitType.FillByTicketVisitId(dsMSrc.MSrv_TicketVisitType, _visit.TicketVisitId);// Load Types
-            
-        }
+            }
         public void ActivateRules()
         {
             btnSave.Visible = btnSave.Enabled = _elementRule.Updateing;
@@ -82,7 +81,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
             
             row.UserIn = NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId;
             row.DateIn = NICSQLTools.Classes.Managers.DataManager.defaultInstance.ServerDateTime;
-            row.TicketVisitId = (int)_visit.TicketId;
+            row.TicketVisitId = (int)_visit.TicketVisitId;
             row.Quantity = 1;
             row.ActualPrice = 0;
         }
@@ -138,10 +137,9 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                     adpTicketVisitType.Insert(_visit.TicketVisitId, TicketType.MSrvTypeId, NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId, serverDatetime);
                 }
                 // Insert Parts
-                mSrv_TicketVisitPartTableAdapter.Update(dsMSrc.MSrv_TicketVisitPart);
+                int result = mSrv_TicketVisitPartTableAdapter.Update(dsMSrc.MSrv_TicketVisitPart);
                 MsgDlg.ShowAlert("Data Saved ..", MsgDlg.MessageType.Success, this);
-                if (RequestRefresh != null)
-                    RequestRefresh();
+                if (RequestRefresh != null)RequestRefresh();
                 DialogResult = System.Windows.Forms.DialogResult.OK;
                 Close();
             }

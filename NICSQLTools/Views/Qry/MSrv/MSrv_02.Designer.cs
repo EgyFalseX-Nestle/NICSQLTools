@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridViewVisit = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colTicketVisitId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStartDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.components = new System.ComponentModel.Container();
             this.repositoryItemDateEditYMD = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.colEndDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colVisitComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoExEditMemo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
-            this.colDateIn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTechnicianName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRealName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colParts = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
-            this.colActualPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmsrv_dmg_reason_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.vMSrvTicketTypeDetailsBindingSource = new System.Windows.Forms.BindingSource();
+            this.vMSrvTicketTypeDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colEdit = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -77,31 +67,16 @@
             this.colMSrv_ActionTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActionComment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colActionDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMSrvType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRouteName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSupervisor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEditMemo2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.gridViewChat = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colChatData = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDateIn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRealName2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridViewAction = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colActionDate1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colActionComment1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDateIn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMSrvDepartment1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMSrv_ActionTypeName1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRealName3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridViewVisitPart = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colActualPrice1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDateIn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPartName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDefaultPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRealName1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.XPSCSMain = new DevExpress.Xpo.XPServerCollectionSource();
-            this.sessionMain = new DevExpress.Xpo.Session();
+            this.XPSCSMain = new DevExpress.Xpo.XPServerCollectionSource(this.components);
+            this.sessionMain = new DevExpress.Xpo.Session(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.barManagerMain = new DevExpress.XtraBars.BarManager();
+            this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExport = new DevExpress.XtraBars.BarButtonItem();
@@ -110,10 +85,6 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.vMSrvTicketType_DetailsTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.vMSrvTicketType_DetailsTableAdapter();
-            this.colMSrvType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRouteName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSupervisor = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewVisit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).BeginInit();
@@ -126,9 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTechnicianId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEditn0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEditMemo2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewChat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewAction)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewVisitPart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -137,52 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridViewVisit
-            // 
-            this.gridViewVisit.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.gridViewVisit.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridViewVisit.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colTicketVisitId,
-            this.colStartDate,
-            this.colEndDate,
-            this.colVisitComment,
-            this.colDateIn1,
-            this.colTechnicianName,
-            this.colRealName,
-            this.colParts,
-            this.colActualPrice,
-            this.colmsrv_dmg_reason_name});
-            this.gridViewVisit.GridControl = this.gridControlMain;
-            this.gridViewVisit.Name = "gridViewVisit";
-            this.gridViewVisit.OptionsBehavior.ReadOnly = true;
-            this.gridViewVisit.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
-            this.gridViewVisit.OptionsDetail.SmartDetailHeight = true;
-            this.gridViewVisit.OptionsView.ColumnAutoWidth = false;
-            this.gridViewVisit.OptionsView.ShowAutoFilterRow = true;
-            this.gridViewVisit.OptionsView.ShowFooter = true;
-            this.gridViewVisit.OptionsView.ShowGroupPanel = false;
-            // 
-            // colTicketVisitId
-            // 
-            this.colTicketVisitId.Caption = "Visit Id";
-            this.colTicketVisitId.FieldName = "TicketVisitId";
-            this.colTicketVisitId.Name = "colTicketVisitId";
-            this.colTicketVisitId.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "TicketVisitId", "{0}")});
-            this.colTicketVisitId.Visible = true;
-            this.colTicketVisitId.VisibleIndex = 0;
-            this.colTicketVisitId.Width = 51;
-            // 
-            // colStartDate
-            // 
-            this.colStartDate.Caption = "From";
-            this.colStartDate.ColumnEdit = this.repositoryItemDateEditYMD;
-            this.colStartDate.FieldName = "StartDate";
-            this.colStartDate.Name = "colStartDate";
-            this.colStartDate.Visible = true;
-            this.colStartDate.VisibleIndex = 2;
-            this.colStartDate.Width = 100;
             // 
             // repositoryItemDateEditYMD
             // 
@@ -198,68 +120,12 @@
             this.repositoryItemDateEditYMD.Mask.EditMask = "yyyy-MM-dd HH:mm";
             this.repositoryItemDateEditYMD.Name = "repositoryItemDateEditYMD";
             // 
-            // colEndDate
-            // 
-            this.colEndDate.Caption = "To";
-            this.colEndDate.ColumnEdit = this.repositoryItemDateEditYMD;
-            this.colEndDate.FieldName = "EndDate";
-            this.colEndDate.Name = "colEndDate";
-            this.colEndDate.Visible = true;
-            this.colEndDate.VisibleIndex = 3;
-            this.colEndDate.Width = 106;
-            // 
-            // colVisitComment
-            // 
-            this.colVisitComment.Caption = "Comment";
-            this.colVisitComment.ColumnEdit = this.repositoryItemMemoExEditMemo;
-            this.colVisitComment.FieldName = "VisitComment";
-            this.colVisitComment.Name = "colVisitComment";
-            this.colVisitComment.Visible = true;
-            this.colVisitComment.VisibleIndex = 4;
-            // 
             // repositoryItemMemoExEditMemo
             // 
             this.repositoryItemMemoExEditMemo.AutoHeight = false;
             this.repositoryItemMemoExEditMemo.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemMemoExEditMemo.Name = "repositoryItemMemoExEditMemo";
-            // 
-            // colDateIn1
-            // 
-            this.colDateIn1.Caption = "Entry Date";
-            this.colDateIn1.ColumnEdit = this.repositoryItemDateEditYMD;
-            this.colDateIn1.FieldName = "DateIn";
-            this.colDateIn1.Name = "colDateIn1";
-            this.colDateIn1.Visible = true;
-            this.colDateIn1.VisibleIndex = 8;
-            this.colDateIn1.Width = 121;
-            // 
-            // colTechnicianName
-            // 
-            this.colTechnicianName.Caption = "Technician";
-            this.colTechnicianName.FieldName = "TechnicianName";
-            this.colTechnicianName.Name = "colTechnicianName";
-            this.colTechnicianName.Visible = true;
-            this.colTechnicianName.VisibleIndex = 1;
-            this.colTechnicianName.Width = 132;
-            // 
-            // colRealName
-            // 
-            this.colRealName.Caption = "Entry By";
-            this.colRealName.FieldName = "RealName";
-            this.colRealName.Name = "colRealName";
-            this.colRealName.Visible = true;
-            this.colRealName.VisibleIndex = 9;
-            this.colRealName.Width = 119;
-            // 
-            // colParts
-            // 
-            this.colParts.Caption = "Quantity";
-            this.colParts.ColumnEdit = this.repositoryItemCalcEditn2;
-            this.colParts.FieldName = "Parts";
-            this.colParts.Name = "colParts";
-            this.colParts.Visible = true;
-            this.colParts.VisibleIndex = 5;
             // 
             // repositoryItemCalcEditn2
             // 
@@ -272,23 +138,6 @@
             this.repositoryItemCalcEditn2.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemCalcEditn2.Mask.EditMask = "n2";
             this.repositoryItemCalcEditn2.Name = "repositoryItemCalcEditn2";
-            // 
-            // colActualPrice
-            // 
-            this.colActualPrice.Caption = "Actual Price";
-            this.colActualPrice.FieldName = "ActualPrice";
-            this.colActualPrice.Name = "colActualPrice";
-            this.colActualPrice.Visible = true;
-            this.colActualPrice.VisibleIndex = 6;
-            // 
-            // colmsrv_dmg_reason_name
-            // 
-            this.colmsrv_dmg_reason_name.Caption = "Damage Reason";
-            this.colmsrv_dmg_reason_name.FieldName = "msrv_dmg_reason_name";
-            this.colmsrv_dmg_reason_name.Name = "colmsrv_dmg_reason_name";
-            this.colmsrv_dmg_reason_name.Visible = true;
-            this.colmsrv_dmg_reason_name.VisibleIndex = 7;
-            this.colmsrv_dmg_reason_name.Width = 88;
             // 
             // gridControlMain
             // 
@@ -304,14 +153,10 @@
             this.repositoryItemMemoEditMemo2,
             this.repositoryItemLookUpEditTec});
             this.gridControlMain.ShowOnlyPredefinedDetails = true;
-            this.gridControlMain.Size = new System.Drawing.Size(876, 380);
+            this.gridControlMain.Size = new System.Drawing.Size(876, 385);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewMain,
-            this.gridViewChat,
-            this.gridViewAction,
-            this.gridViewVisitPart,
-            this.gridViewVisit});
+            this.gridViewMain});
             // 
             // vMSrvTicketTypeDetailsBindingSource
             // 
@@ -651,222 +496,34 @@
             this.colActionDate.OptionsColumn.ReadOnly = true;
             this.colActionDate.Width = 99;
             // 
+            // colMSrvType
+            // 
+            this.colMSrvType.Caption = "Reason";
+            this.colMSrvType.FieldName = "MSrvType";
+            this.colMSrvType.Name = "colMSrvType";
+            this.colMSrvType.Visible = true;
+            this.colMSrvType.VisibleIndex = 3;
+            // 
+            // colRouteName
+            // 
+            this.colRouteName.Caption = "Route Name";
+            this.colRouteName.FieldName = "Route Name";
+            this.colRouteName.Name = "colRouteName";
+            this.colRouteName.Visible = true;
+            this.colRouteName.VisibleIndex = 4;
+            this.colRouteName.Width = 79;
+            // 
+            // colSupervisor
+            // 
+            this.colSupervisor.Caption = "Supervisor";
+            this.colSupervisor.FieldName = "Supervisor";
+            this.colSupervisor.Name = "colSupervisor";
+            this.colSupervisor.Visible = true;
+            this.colSupervisor.VisibleIndex = 5;
+            // 
             // repositoryItemMemoEditMemo2
             // 
             this.repositoryItemMemoEditMemo2.Name = "repositoryItemMemoEditMemo2";
-            // 
-            // gridViewChat
-            // 
-            this.gridViewChat.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.gridViewChat.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridViewChat.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colChatData,
-            this.colDateIn3,
-            this.colRealName2});
-            this.gridViewChat.GridControl = this.gridControlMain;
-            this.gridViewChat.Name = "gridViewChat";
-            this.gridViewChat.OptionsBehavior.ReadOnly = true;
-            this.gridViewChat.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
-            this.gridViewChat.OptionsDetail.EnableMasterViewMode = false;
-            this.gridViewChat.OptionsDetail.SmartDetailHeight = true;
-            this.gridViewChat.OptionsView.ColumnAutoWidth = false;
-            this.gridViewChat.OptionsView.RowAutoHeight = true;
-            this.gridViewChat.OptionsView.ShowAutoFilterRow = true;
-            this.gridViewChat.OptionsView.ShowDetailButtons = false;
-            this.gridViewChat.OptionsView.ShowFooter = true;
-            this.gridViewChat.OptionsView.ShowGroupPanel = false;
-            // 
-            // colChatData
-            // 
-            this.colChatData.Caption = "Chat";
-            this.colChatData.ColumnEdit = this.repositoryItemMemoEditMemo2;
-            this.colChatData.FieldName = "ChatData";
-            this.colChatData.Name = "colChatData";
-            this.colChatData.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "ChatData", "{0}")});
-            this.colChatData.Visible = true;
-            this.colChatData.VisibleIndex = 0;
-            this.colChatData.Width = 339;
-            // 
-            // colDateIn3
-            // 
-            this.colDateIn3.Caption = "Entry Date";
-            this.colDateIn3.ColumnEdit = this.repositoryItemDateEditYMD;
-            this.colDateIn3.FieldName = "DateIn";
-            this.colDateIn3.Name = "colDateIn3";
-            this.colDateIn3.Visible = true;
-            this.colDateIn3.VisibleIndex = 1;
-            this.colDateIn3.Width = 164;
-            // 
-            // colRealName2
-            // 
-            this.colRealName2.Caption = "Entry By";
-            this.colRealName2.FieldName = "RealName";
-            this.colRealName2.Name = "colRealName2";
-            this.colRealName2.Visible = true;
-            this.colRealName2.VisibleIndex = 2;
-            this.colRealName2.Width = 133;
-            // 
-            // gridViewAction
-            // 
-            this.gridViewAction.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.gridViewAction.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridViewAction.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colActionDate1,
-            this.colActionComment1,
-            this.colDateIn4,
-            this.colMSrvDepartment1,
-            this.colMSrv_ActionTypeName1,
-            this.colRealName3});
-            this.gridViewAction.GridControl = this.gridControlMain;
-            this.gridViewAction.Name = "gridViewAction";
-            this.gridViewAction.OptionsBehavior.ReadOnly = true;
-            this.gridViewAction.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
-            this.gridViewAction.OptionsDetail.EnableMasterViewMode = false;
-            this.gridViewAction.OptionsDetail.SmartDetailHeight = true;
-            this.gridViewAction.OptionsView.ColumnAutoWidth = false;
-            this.gridViewAction.OptionsView.ShowAutoFilterRow = true;
-            this.gridViewAction.OptionsView.ShowDetailButtons = false;
-            this.gridViewAction.OptionsView.ShowFooter = true;
-            this.gridViewAction.OptionsView.ShowGroupPanel = false;
-            // 
-            // colActionDate1
-            // 
-            this.colActionDate1.Caption = "Action Date";
-            this.colActionDate1.ColumnEdit = this.repositoryItemDateEditYMD;
-            this.colActionDate1.FieldName = "ActionDate";
-            this.colActionDate1.Name = "colActionDate1";
-            this.colActionDate1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "ActionDate", "{0}")});
-            this.colActionDate1.Visible = true;
-            this.colActionDate1.VisibleIndex = 0;
-            this.colActionDate1.Width = 131;
-            // 
-            // colActionComment1
-            // 
-            this.colActionComment1.FieldName = "ActionComment";
-            this.colActionComment1.Name = "colActionComment1";
-            this.colActionComment1.Visible = true;
-            this.colActionComment1.VisibleIndex = 3;
-            this.colActionComment1.Width = 228;
-            // 
-            // colDateIn4
-            // 
-            this.colDateIn4.Caption = "Entry Date";
-            this.colDateIn4.ColumnEdit = this.repositoryItemDateEditYMD;
-            this.colDateIn4.FieldName = "DateIn";
-            this.colDateIn4.Name = "colDateIn4";
-            this.colDateIn4.Visible = true;
-            this.colDateIn4.VisibleIndex = 4;
-            this.colDateIn4.Width = 155;
-            // 
-            // colMSrvDepartment1
-            // 
-            this.colMSrvDepartment1.Caption = "Department";
-            this.colMSrvDepartment1.FieldName = "MSrvDepartment";
-            this.colMSrvDepartment1.Name = "colMSrvDepartment1";
-            this.colMSrvDepartment1.Visible = true;
-            this.colMSrvDepartment1.VisibleIndex = 2;
-            this.colMSrvDepartment1.Width = 108;
-            // 
-            // colMSrv_ActionTypeName1
-            // 
-            this.colMSrv_ActionTypeName1.Caption = "Action Type";
-            this.colMSrv_ActionTypeName1.FieldName = "MSrv_ActionTypeName";
-            this.colMSrv_ActionTypeName1.Name = "colMSrv_ActionTypeName1";
-            this.colMSrv_ActionTypeName1.Visible = true;
-            this.colMSrv_ActionTypeName1.VisibleIndex = 1;
-            this.colMSrv_ActionTypeName1.Width = 124;
-            // 
-            // colRealName3
-            // 
-            this.colRealName3.Caption = "Entry by";
-            this.colRealName3.FieldName = "RealName";
-            this.colRealName3.Name = "colRealName3";
-            this.colRealName3.Visible = true;
-            this.colRealName3.VisibleIndex = 5;
-            this.colRealName3.Width = 107;
-            // 
-            // gridViewVisitPart
-            // 
-            this.gridViewVisitPart.Appearance.FocusedRow.Font = new System.Drawing.Font("Tahoma", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.gridViewVisitPart.Appearance.FocusedRow.Options.UseFont = true;
-            this.gridViewVisitPart.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colQuantity,
-            this.colActualPrice1,
-            this.colDateIn2,
-            this.colPartName,
-            this.colDefaultPrice,
-            this.colRealName1});
-            this.gridViewVisitPart.GridControl = this.gridControlMain;
-            this.gridViewVisitPart.Name = "gridViewVisitPart";
-            this.gridViewVisitPart.OptionsBehavior.ReadOnly = true;
-            this.gridViewVisitPart.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
-            this.gridViewVisitPart.OptionsDetail.EnableMasterViewMode = false;
-            this.gridViewVisitPart.OptionsDetail.SmartDetailHeight = true;
-            this.gridViewVisitPart.OptionsView.ColumnAutoWidth = false;
-            this.gridViewVisitPart.OptionsView.ShowAutoFilterRow = true;
-            this.gridViewVisitPart.OptionsView.ShowDetailButtons = false;
-            this.gridViewVisitPart.OptionsView.ShowFooter = true;
-            this.gridViewVisitPart.OptionsView.ShowGroupPanel = false;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.Caption = "Quantity";
-            this.colQuantity.FieldName = "Quantity";
-            this.colQuantity.Name = "colQuantity";
-            this.colQuantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "{0:0.##}")});
-            this.colQuantity.Visible = true;
-            this.colQuantity.VisibleIndex = 1;
-            // 
-            // colActualPrice1
-            // 
-            this.colActualPrice1.Caption = "Actual Price";
-            this.colActualPrice1.FieldName = "ActualPrice";
-            this.colActualPrice1.Name = "colActualPrice1";
-            this.colActualPrice1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ActualPrice", "{0:0.##}")});
-            this.colActualPrice1.Visible = true;
-            this.colActualPrice1.VisibleIndex = 2;
-            // 
-            // colDateIn2
-            // 
-            this.colDateIn2.Caption = "Entry Date";
-            this.colDateIn2.ColumnEdit = this.repositoryItemDateEditYMD;
-            this.colDateIn2.FieldName = "DateIn";
-            this.colDateIn2.Name = "colDateIn2";
-            this.colDateIn2.Visible = true;
-            this.colDateIn2.VisibleIndex = 4;
-            this.colDateIn2.Width = 132;
-            // 
-            // colPartName
-            // 
-            this.colPartName.Caption = "Part";
-            this.colPartName.FieldName = "PartName";
-            this.colPartName.Name = "colPartName";
-            this.colPartName.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "PartName", "{0}")});
-            this.colPartName.Visible = true;
-            this.colPartName.VisibleIndex = 0;
-            this.colPartName.Width = 144;
-            // 
-            // colDefaultPrice
-            // 
-            this.colDefaultPrice.Caption = "Default Price";
-            this.colDefaultPrice.FieldName = "DefaultPrice";
-            this.colDefaultPrice.Name = "colDefaultPrice";
-            this.colDefaultPrice.Visible = true;
-            this.colDefaultPrice.VisibleIndex = 3;
-            // 
-            // colRealName1
-            // 
-            this.colRealName1.Caption = "Entry by";
-            this.colRealName1.FieldName = "RealName";
-            this.colRealName1.Name = "colRealName1";
-            this.colRealName1.Visible = true;
-            this.colRealName1.VisibleIndex = 5;
-            this.colRealName1.Width = 110;
             // 
             // XPSCSMain
             // 
@@ -882,10 +539,10 @@
             // 
             this.layoutControl1.Controls.Add(this.gridControlMain);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 31);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 26);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(900, 404);
+            this.layoutControl1.Size = new System.Drawing.Size(900, 409);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -897,7 +554,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(900, 404);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(900, 409);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -905,7 +562,7 @@
             this.layoutControlItem1.Control = this.gridControlMain;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(880, 384);
+            this.layoutControlItem1.Size = new System.Drawing.Size(880, 389);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -958,7 +615,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(900, 31);
+            this.barDockControlTop.Size = new System.Drawing.Size(900, 26);
             // 
             // barDockControlBottom
             // 
@@ -971,44 +628,19 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 404);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 409);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(900, 31);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 404);
+            this.barDockControlRight.Location = new System.Drawing.Point(900, 26);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 409);
             // 
             // vMSrvTicketType_DetailsTableAdapter
             // 
             this.vMSrvTicketType_DetailsTableAdapter.ClearBeforeFill = true;
-            // 
-            // colMSrvType
-            // 
-            this.colMSrvType.Caption = "Reason";
-            this.colMSrvType.FieldName = "MSrvType";
-            this.colMSrvType.Name = "colMSrvType";
-            this.colMSrvType.Visible = true;
-            this.colMSrvType.VisibleIndex = 3;
-            // 
-            // colRouteName
-            // 
-            this.colRouteName.Caption = "Route Name";
-            this.colRouteName.FieldName = "Route Name";
-            this.colRouteName.Name = "colRouteName";
-            this.colRouteName.Visible = true;
-            this.colRouteName.VisibleIndex = 4;
-            this.colRouteName.Width = 79;
-            // 
-            // colSupervisor
-            // 
-            this.colSupervisor.Caption = "Supervisor";
-            this.colSupervisor.FieldName = "Supervisor";
-            this.colSupervisor.Name = "colSupervisor";
-            this.colSupervisor.Visible = true;
-            this.colSupervisor.VisibleIndex = 5;
             // 
             // MSrv_02
             // 
@@ -1022,7 +654,6 @@
             this.Name = "MSrv_02";
             this.Size = new System.Drawing.Size(900, 435);
             this.Load += new System.EventHandler(this.MSrv_01_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewVisit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditYMD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEditMemo)).EndInit();
@@ -1035,9 +666,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.LSMSTechnicianId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEditn0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEditMemo2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewChat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewAction)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewVisitPart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCSMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sessionMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -1089,36 +717,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditYMD;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit repositoryItemMemoExEditMemo;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEditn0;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewVisit;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewVisitPart;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewChat;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewAction;
-        private DevExpress.XtraGrid.Columns.GridColumn colTicketVisitId;
-        private DevExpress.XtraGrid.Columns.GridColumn colStartDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colEndDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colVisitComment;
-        private DevExpress.XtraGrid.Columns.GridColumn colDateIn1;
-        private DevExpress.XtraGrid.Columns.GridColumn colTechnicianName;
-        private DevExpress.XtraGrid.Columns.GridColumn colRealName;
-        private DevExpress.XtraGrid.Columns.GridColumn colParts;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEditn2;
-        private DevExpress.XtraGrid.Columns.GridColumn colActualPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
-        private DevExpress.XtraGrid.Columns.GridColumn colActualPrice1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDateIn2;
-        private DevExpress.XtraGrid.Columns.GridColumn colPartName;
-        private DevExpress.XtraGrid.Columns.GridColumn colDefaultPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn colRealName1;
-        private DevExpress.XtraGrid.Columns.GridColumn colChatData;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEditMemo2;
-        private DevExpress.XtraGrid.Columns.GridColumn colDateIn3;
-        private DevExpress.XtraGrid.Columns.GridColumn colRealName2;
-        private DevExpress.XtraGrid.Columns.GridColumn colActionDate1;
-        private DevExpress.XtraGrid.Columns.GridColumn colActionComment1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDateIn4;
-        private DevExpress.XtraGrid.Columns.GridColumn colMSrvDepartment1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMSrv_ActionTypeName1;
-        private DevExpress.XtraGrid.Columns.GridColumn colRealName3;
         private DevExpress.XtraBars.BarManager barManagerMain;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
@@ -1127,7 +727,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraGrid.Columns.GridColumn colmsrv_dmg_reason_name;
         private System.Windows.Forms.BindingSource vMSrvTicketTypeDetailsBindingSource;
         private NICSQLTools.Data.dsMSrc dsMSrc;
         private NICSQLTools.Data.dsMSrcTableAdapters.vMSrvTicketType_DetailsTableAdapter vMSrvTicketType_DetailsTableAdapter;

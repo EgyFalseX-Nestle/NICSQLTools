@@ -106,12 +106,6 @@ namespace NICSQLTools.Data {
         
         private global::System.Data.DataRelation relationFK_MSrv_TicketAction_MSrv_Ticket;
         
-        private global::System.Data.DataRelation relationFK_MSrvTicketType_MSrv_Type;
-        
-        private global::System.Data.DataRelation relationFK_MSrv_TicketVisitType_MSrv_Type;
-        
-        private global::System.Data.DataRelation relationFK_MSrv_Ticket_MSrv_Type;
-        
         private global::System.Data.DataRelation relationChats;
         
         private global::System.Data.DataRelation relationActions;
@@ -119,8 +113,6 @@ namespace NICSQLTools.Data {
         private global::System.Data.DataRelation relationVisits;
         
         private global::System.Data.DataRelation relationVisit_Parts;
-        
-        private global::System.Data.DataRelation relationFK_MSrvTicketType_MSrv_Type1;
         
         private global::System.Data.DataRelation relationFK_MSrv_TicketPart_MSrv_Part1;
         
@@ -899,14 +891,10 @@ namespace NICSQLTools.Data {
             this.relationFK_MSrv_TicketAction_MSrv_ActionType = this.Relations["FK_MSrv_TicketAction_MSrv_ActionType"];
             this.relationFK_MSrv_TicketAction_MSrv_Department = this.Relations["FK_MSrv_TicketAction_MSrv_Department"];
             this.relationFK_MSrv_TicketAction_MSrv_Ticket = this.Relations["FK_MSrv_TicketAction_MSrv_Ticket"];
-            this.relationFK_MSrvTicketType_MSrv_Type = this.Relations["FK_MSrvTicketType_MSrv_Type"];
-            this.relationFK_MSrv_TicketVisitType_MSrv_Type = this.Relations["FK_MSrv_TicketVisitType_MSrv_Type"];
-            this.relationFK_MSrv_Ticket_MSrv_Type = this.Relations["FK_MSrv_Ticket_MSrv_Type"];
             this.relationChats = this.Relations["Chats"];
             this.relationActions = this.Relations["Actions"];
             this.relationVisits = this.Relations["Visits"];
             this.relationVisit_Parts = this.Relations["Visit Parts"];
-            this.relationFK_MSrvTicketType_MSrv_Type1 = this.Relations["FK_MSrvTicketType_MSrv_Type1"];
             this.relationFK_MSrv_TicketPart_MSrv_Part1 = this.Relations["FK_MSrv_TicketPart_MSrv_Part1"];
         }
         
@@ -1026,18 +1014,6 @@ namespace NICSQLTools.Data {
                         this.tableMSrv_Ticket.TicketIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableMSrv_TicketAction.TicketIdColumn}, false);
             this.Relations.Add(this.relationFK_MSrv_TicketAction_MSrv_Ticket);
-            this.relationFK_MSrvTicketType_MSrv_Type = new global::System.Data.DataRelation("FK_MSrvTicketType_MSrv_Type", new global::System.Data.DataColumn[] {
-                        this.tableMSrv_Type.MSrvTypeIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableMSrvTicketType.MSrvTypeIdColumn}, false);
-            this.Relations.Add(this.relationFK_MSrvTicketType_MSrv_Type);
-            this.relationFK_MSrv_TicketVisitType_MSrv_Type = new global::System.Data.DataRelation("FK_MSrv_TicketVisitType_MSrv_Type", new global::System.Data.DataColumn[] {
-                        this.tableMSrv_Type.MSrvTypeIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableMSrv_TicketVisitType.MSrvTypeIdColumn}, false);
-            this.Relations.Add(this.relationFK_MSrv_TicketVisitType_MSrv_Type);
-            this.relationFK_MSrv_Ticket_MSrv_Type = new global::System.Data.DataRelation("FK_MSrv_Ticket_MSrv_Type", new global::System.Data.DataColumn[] {
-                        this.tableMSrv_Type.MSrvTypeIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableMSrv_Ticket.CloseMSrvTypeIdColumn}, false);
-            this.Relations.Add(this.relationFK_MSrv_Ticket_MSrv_Type);
             this.relationChats = new global::System.Data.DataRelation("Chats", new global::System.Data.DataColumn[] {
                         this.tablevMSrv_Ticket.TicketIdColumn}, new global::System.Data.DataColumn[] {
                         this.tablevMSrv_TicketChat.TicketIdColumn}, false);
@@ -1054,10 +1030,6 @@ namespace NICSQLTools.Data {
                         this.tablevMSrv_TicketVisit.TicketVisitIdColumn}, new global::System.Data.DataColumn[] {
                         this.tablevMSrv_TicketVisitPart.TicketVisitIdColumn}, false);
             this.Relations.Add(this.relationVisit_Parts);
-            this.relationFK_MSrvTicketType_MSrv_Type1 = new global::System.Data.DataRelation("FK_MSrvTicketType_MSrv_Type1", new global::System.Data.DataColumn[] {
-                        this.tableMSrv_Type.MSrvTypeIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableTicketTypeInfo.MSrvTypeIdColumn}, false);
-            this.Relations.Add(this.relationFK_MSrvTicketType_MSrv_Type1);
             this.relationFK_MSrv_TicketPart_MSrv_Part1 = new global::System.Data.DataRelation("FK_MSrv_TicketPart_MSrv_Part1", new global::System.Data.DataColumn[] {
                         this.tableQry04.PartIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableMSrv_TicketVisitPart.PartIdColumn}, false);
@@ -1789,18 +1761,15 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrvTicketTypeRow AddMSrvTicketTypeRow(MSrv_TicketRow parentMSrv_TicketRowByFK_MSrvTicketType_MSrv_Ticket, MSrv_TypeRow parentMSrv_TypeRowByFK_MSrvTicketType_MSrv_Type, int UserIn, System.DateTime DateIn) {
+            public MSrvTicketTypeRow AddMSrvTicketTypeRow(MSrv_TicketRow parentMSrv_TicketRowByFK_MSrvTicketType_MSrv_Ticket, short MSrvTypeId, int UserIn, System.DateTime DateIn) {
                 MSrvTicketTypeRow rowMSrvTicketTypeRow = ((MSrvTicketTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null,
+                        MSrvTypeId,
                         UserIn,
                         DateIn};
                 if ((parentMSrv_TicketRowByFK_MSrvTicketType_MSrv_Ticket != null)) {
                     columnValuesArray[0] = parentMSrv_TicketRowByFK_MSrvTicketType_MSrv_Ticket[0];
-                }
-                if ((parentMSrv_TypeRowByFK_MSrvTicketType_MSrv_Type != null)) {
-                    columnValuesArray[1] = parentMSrv_TypeRowByFK_MSrvTicketType_MSrv_Type[0];
                 }
                 rowMSrvTicketTypeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMSrvTicketTypeRow);
@@ -2422,19 +2391,16 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrv_TicketVisitTypeRow AddMSrv_TicketVisitTypeRow(MSrv_TicketVisitRow parentMSrv_TicketVisitRowByFK_MSrv_TicketVisitType_MSrv_TicketVisit, MSrv_TypeRow parentMSrv_TypeRowByFK_MSrv_TicketVisitType_MSrv_Type, int UserIn, System.DateTime DateIn) {
+            public MSrv_TicketVisitTypeRow AddMSrv_TicketVisitTypeRow(MSrv_TicketVisitRow parentMSrv_TicketVisitRowByFK_MSrv_TicketVisitType_MSrv_TicketVisit, short MSrvTypeId, int UserIn, System.DateTime DateIn) {
                 MSrv_TicketVisitTypeRow rowMSrv_TicketVisitTypeRow = ((MSrv_TicketVisitTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        null,
+                        MSrvTypeId,
                         UserIn,
                         DateIn};
                 if ((parentMSrv_TicketVisitRowByFK_MSrv_TicketVisitType_MSrv_TicketVisit != null)) {
                     columnValuesArray[1] = parentMSrv_TicketVisitRowByFK_MSrv_TicketVisitType_MSrv_TicketVisit[0];
-                }
-                if ((parentMSrv_TypeRowByFK_MSrv_TicketVisitType_MSrv_Type != null)) {
-                    columnValuesArray[2] = parentMSrv_TypeRowByFK_MSrv_TicketVisitType_MSrv_Type[0];
                 }
                 rowMSrv_TicketVisitTypeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMSrv_TicketVisitTypeRow);
@@ -4181,7 +4147,7 @@ namespace NICSQLTools.Data {
                         MSrv_DepartmentRow parentMSrv_DepartmentRowByFK_MSrv_Ticket_MSrv_Department, 
                         bool TicketClosed, 
                         string ClosedComment, 
-                        MSrv_TypeRow parentMSrv_TypeRowByFK_MSrv_Ticket_MSrv_Type, 
+                        short CloseMSrvTypeId, 
                         int CloseUserIn, 
                         System.DateTime ClosedDate, 
                         System.DateTime ClosedDateIn, 
@@ -4205,7 +4171,7 @@ namespace NICSQLTools.Data {
                         null,
                         TicketClosed,
                         ClosedComment,
-                        null,
+                        CloseMSrvTypeId,
                         CloseUserIn,
                         ClosedDate,
                         ClosedDateIn,
@@ -4213,9 +4179,6 @@ namespace NICSQLTools.Data {
                         DateIn};
                 if ((parentMSrv_DepartmentRowByFK_MSrv_Ticket_MSrv_Department != null)) {
                     columnValuesArray[13] = parentMSrv_DepartmentRowByFK_MSrv_Ticket_MSrv_Department[0];
-                }
-                if ((parentMSrv_TypeRowByFK_MSrv_Ticket_MSrv_Type != null)) {
-                    columnValuesArray[16] = parentMSrv_TypeRowByFK_MSrv_Ticket_MSrv_Type[0];
                 }
                 rowMSrv_TicketRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMSrv_TicketRow);
@@ -9318,14 +9281,11 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TicketTypeInfoRow AddTicketTypeInfoRow(MSrv_TypeRow parentMSrv_TypeRowByFK_MSrvTicketType_MSrv_Type1, string MSrvType) {
+            public TicketTypeInfoRow AddTicketTypeInfoRow(short MSrvTypeId, string MSrvType) {
                 TicketTypeInfoRow rowTicketTypeInfoRow = ((TicketTypeInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        MSrvTypeId,
                         MSrvType};
-                if ((parentMSrv_TypeRowByFK_MSrvTicketType_MSrv_Type1 != null)) {
-                    columnValuesArray[0] = parentMSrv_TypeRowByFK_MSrvTicketType_MSrv_Type1[0];
-                }
                 rowTicketTypeInfoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTicketTypeInfoRow);
                 return rowTicketTypeInfoRow;
@@ -10516,7 +10476,7 @@ namespace NICSQLTools.Data {
                 this.columnSupervisor.MaxLength = 255;
                 this.columnMSrvTypeId.AllowDBNull = false;
                 this.columnMSrvType.MaxLength = 100;
-                this.columnTec.MaxLength = 1;
+                this.columnTec.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12735,17 +12695,6 @@ namespace NICSQLTools.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrv_TypeRow MSrv_TypeRow {
-                get {
-                    return ((MSrv_TypeRow)(this.GetParentRow(this.Table.ParentRelations["FK_MSrvTicketType_MSrv_Type"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_MSrvTicketType_MSrv_Type"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsUserInNull() {
                 return this.IsNull(this.tableMSrvTicketType.UserInColumn);
             }
@@ -13005,17 +12954,6 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_MSrv_TicketVisitType_MSrv_TicketVisit"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrv_TypeRow MSrv_TypeRow {
-                get {
-                    return ((MSrv_TypeRow)(this.GetParentRow(this.Table.ParentRelations["FK_MSrv_TicketVisitType_MSrv_Type"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_MSrv_TicketVisitType_MSrv_Type"]);
                 }
             }
             
@@ -13914,17 +13852,6 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_MSrv_Ticket_MSrv_Department"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrv_TypeRow MSrv_TypeRow {
-                get {
-                    return ((MSrv_TypeRow)(this.GetParentRow(this.Table.ParentRelations["FK_MSrv_Ticket_MSrv_Type"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_MSrv_Ticket_MSrv_Type"]);
                 }
             }
             
@@ -15167,50 +15094,6 @@ namespace NICSQLTools.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDateInNull() {
                 this[this.tableMSrv_Type.DateInColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrvTicketTypeRow[] GetMSrvTicketTypeRows() {
-                if ((this.Table.ChildRelations["FK_MSrvTicketType_MSrv_Type"] == null)) {
-                    return new MSrvTicketTypeRow[0];
-                }
-                else {
-                    return ((MSrvTicketTypeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_MSrvTicketType_MSrv_Type"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrv_TicketVisitTypeRow[] GetMSrv_TicketVisitTypeRows() {
-                if ((this.Table.ChildRelations["FK_MSrv_TicketVisitType_MSrv_Type"] == null)) {
-                    return new MSrv_TicketVisitTypeRow[0];
-                }
-                else {
-                    return ((MSrv_TicketVisitTypeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_MSrv_TicketVisitType_MSrv_Type"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrv_TicketRow[] GetMSrv_TicketRows() {
-                if ((this.Table.ChildRelations["FK_MSrv_Ticket_MSrv_Type"] == null)) {
-                    return new MSrv_TicketRow[0];
-                }
-                else {
-                    return ((MSrv_TicketRow[])(base.GetChildRows(this.Table.ChildRelations["FK_MSrv_Ticket_MSrv_Type"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TicketTypeInfoRow[] GetTicketTypeInfoRows() {
-                if ((this.Table.ChildRelations["FK_MSrvTicketType_MSrv_Type1"] == null)) {
-                    return new TicketTypeInfoRow[0];
-                }
-                else {
-                    return ((TicketTypeInfoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_MSrvTicketType_MSrv_Type1"])));
-                }
             }
         }
         
@@ -17825,17 +17708,6 @@ namespace NICSQLTools.Data {
                 }
                 set {
                     this[this.tableTicketTypeInfo.MSrvTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MSrv_TypeRow MSrv_TypeRow {
-                get {
-                    return ((MSrv_TypeRow)(this.GetParentRow(this.Table.ParentRelations["FK_MSrvTicketType_MSrv_Type1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_MSrvTicketType_MSrv_Type1"]);
                 }
             }
             
@@ -30617,25 +30489,18 @@ SELECT msrv_dmg_reason_id, msrv_dmg_reason_name FROM MSrv_Dmg_Reason WHERE (msrv
                          MSrvDepartment, VisitCount, PartCount, VisibleToUserId, MSrv_ActionTypeName, ActionComment, ActionDate, RequestActionReason, RequestActionReasonName, [Route Name], Supervisor, MSrvTypeId, 
                          MSrvType
 FROM            vMSrvTicketType_Details
-WHERE        (TicketClosed = 0) AND (VisibleToUserId = @UserId) AND (CurrentDepartmentId = @DepartmentId)";
+WHERE        (TicketClosed = 0) AND (VisibleToUserId = @UserId) ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VisibleToUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DepartmentId", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CurrentDepartmentId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsMSrc.vMSrvTicketType_DetailsDataTable dataTable, int UserId, global::System.Nullable<short> DepartmentId) {
+        public virtual int Fill(dsMSrc.vMSrvTicketType_DetailsDataTable dataTable, int UserId) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
-            if ((DepartmentId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((short)(DepartmentId.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -30647,15 +30512,9 @@ WHERE        (TicketClosed = 0) AND (VisibleToUserId = @UserId) AND (CurrentDepa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsMSrc.vMSrvTicketType_DetailsDataTable GetData(int UserId, global::System.Nullable<short> DepartmentId) {
+        public virtual dsMSrc.vMSrvTicketType_DetailsDataTable GetData(int UserId) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
-            if ((DepartmentId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((short)(DepartmentId.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
             dsMSrc.vMSrvTicketType_DetailsDataTable dataTable = new dsMSrc.vMSrvTicketType_DetailsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -32302,15 +32161,6 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mSrv_TypeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_Type.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._mSrv_TypeTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._mSrv_TechnicianTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.MSrv_Technician.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -32329,12 +32179,12 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mSrv_PartTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_Part.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._mSrv_ActionTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._mSrv_PartTableAdapter.Update(updatedRows));
+                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -32347,12 +32197,21 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mSrv_ActionTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._mSrv_PartTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_Part.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(updatedRows));
+                    result = (result + this._mSrv_PartTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._mSrv_TicketVisitPartTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_TicketVisitPart.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._mSrv_TicketVisitPartTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -32362,6 +32221,15 @@ WHERE        (TicketId = @TicketId)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._mSrv_Dmg_ReasonTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._mSrvTicketTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MSrvTicketType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._mSrvTicketTypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -32383,12 +32251,12 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mSrv_TicketVisitPartTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_TicketVisitPart.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._mSrv_TicketVisitPartTableAdapter.Update(updatedRows));
+                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -32401,21 +32269,12 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mSrvTicketTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MSrvTicketType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._mSrv_TypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_Type.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._mSrvTicketTypeTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(updatedRows));
+                    result = (result + this._mSrv_TypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -32445,14 +32304,6 @@ WHERE        (TicketId = @TicketId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mSrv_TypeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MSrv_Type.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._mSrv_TypeTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._mSrv_TechnicianTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.MSrv_Technician.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -32469,11 +32320,11 @@ WHERE        (TicketId = @TicketId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mSrv_PartTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MSrv_Part.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._mSrv_ActionTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._mSrv_PartTableAdapter.Update(addedRows));
+                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -32485,11 +32336,19 @@ WHERE        (TicketId = @TicketId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mSrv_ActionTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._mSrv_PartTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MSrv_Part.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(addedRows));
+                    result = (result + this._mSrv_PartTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._mSrv_TicketVisitPartTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MSrv_TicketVisitPart.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._mSrv_TicketVisitPartTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -32498,6 +32357,14 @@ WHERE        (TicketId = @TicketId)";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._mSrv_Dmg_ReasonTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._mSrvTicketTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MSrvTicketType.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._mSrvTicketTypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -32517,11 +32384,11 @@ WHERE        (TicketId = @TicketId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mSrv_TicketVisitPartTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MSrv_TicketVisitPart.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._mSrv_TicketVisitPartTableAdapter.Update(addedRows));
+                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -32533,19 +32400,11 @@ WHERE        (TicketId = @TicketId)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mSrvTicketTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MSrvTicketType.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._mSrv_TypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MSrv_Type.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._mSrvTicketTypeTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(addedRows));
+                    result = (result + this._mSrv_TypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -32559,19 +32418,11 @@ WHERE        (TicketId = @TicketId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(dsMSrc dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._mSrv_TypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_Type.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._mSrvTicketTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MSrvTicketType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._mSrvTicketTypeTableAdapter.Update(deletedRows));
+                    result = (result + this._mSrv_TypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -32583,11 +32434,11 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._mSrv_TicketVisitPartTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_TicketVisitPart.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._mSrv_TechnicianSalesDistrictTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_TechnicianSalesDistrict.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._mSrv_TicketVisitPartTableAdapter.Update(deletedRows));
+                    result = (result + this._mSrv_TechnicianSalesDistrictTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -32607,6 +32458,14 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._mSrvTicketTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MSrvTicketType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._mSrvTicketTypeTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._mSrv_Dmg_ReasonTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.MSrv_Dmg_Reason.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -32615,11 +32474,19 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._mSrv_ActionTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._mSrv_TicketVisitPartTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_TicketVisitPart.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(deletedRows));
+                    result = (result + this._mSrv_TicketVisitPartTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._mSrv_PartTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_Part.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._mSrv_PartTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -32631,11 +32498,11 @@ WHERE        (TicketId = @TicketId)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._mSrv_PartTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_Part.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._mSrv_ActionTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_ActionType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._mSrv_PartTableAdapter.Update(deletedRows));
+                    result = (result + this._mSrv_ActionTypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -32652,14 +32519,6 @@ WHERE        (TicketId = @TicketId)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._mSrv_TechnicianTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._mSrv_TypeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MSrv_Type.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._mSrv_TypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

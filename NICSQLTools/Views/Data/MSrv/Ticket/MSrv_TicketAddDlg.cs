@@ -68,7 +68,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                 e.Cancel = true;
                 return;
             }
-            tbIssueContactPerson.EditValue = tbl[0].DisplayName;
+            tbIssueContactPerson.EditValue = tbl[0].IsDisplayNameNull() ? null : tbl[0].DisplayName;
             tbIssueAddress.EditValue = tbl[0].IsAddressNull() ? null : tbl[0].Address;
             tbIssueContactPhone.EditValue = tbl[0].IsTelephoneNull() ? null: tbl[0].Telephone;
             tbIssueContactPhone2.EditValue = tbl[0].IsSupervisor_TelephoneNull() ? null : tbl[0].Supervisor_Telephone;

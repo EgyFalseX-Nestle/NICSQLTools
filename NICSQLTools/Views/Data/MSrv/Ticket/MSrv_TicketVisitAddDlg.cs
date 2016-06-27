@@ -142,6 +142,10 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
                 //Add Action
                 Classes.MSrv.CreateAction(Classes.MSrvType.ActionType.Visit_Added, ticketId, "Visit Added with reasons (" + reasonMsg + ") At " + deEndDate.DateTime);
                 // Insert Parts
+                foreach (var item in dsMSrc.MSrv_TicketVisitPart)
+                {
+                    item.TicketVisitId = ticketVisitId;
+                    item.EndEdit();}      
                 mSrv_TicketVisitPartTableAdapter.Update(dsMSrc.MSrv_TicketVisitPart);
                 MsgDlg.ShowAlert("Data Saved ..", MsgDlg.MessageType.Success, this);
                 ResetDlg();

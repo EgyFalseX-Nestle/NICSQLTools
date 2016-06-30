@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.repositoryItemDateEditYMD = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemMemoExEditMemo = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
             this.repositoryItemCalcEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.vMSrvTicketTypeDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vMSrvTicketTypeDetailsBindingSource = new System.Windows.Forms.BindingSource();
             this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colEdit = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,12 +70,12 @@
             this.colRouteName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSupervisor = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEditMemo2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.XPSCSMain = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.sessionMain = new DevExpress.Xpo.Session(this.components);
+            this.XPSCSMain = new DevExpress.Xpo.XPServerCollectionSource();
+            this.sessionMain = new DevExpress.Xpo.Session();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManagerMain = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.bbiExport = new DevExpress.XtraBars.BarButtonItem();
@@ -153,7 +152,7 @@
             this.repositoryItemMemoEditMemo2,
             this.repositoryItemLookUpEditTec});
             this.gridControlMain.ShowOnlyPredefinedDetails = true;
-            this.gridControlMain.Size = new System.Drawing.Size(876, 385);
+            this.gridControlMain.Size = new System.Drawing.Size(876, 380);
             this.gridControlMain.TabIndex = 0;
             this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMain});
@@ -253,7 +252,7 @@
             this.colTicketId.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "TicketId", "{0}")});
             this.colTicketId.Visible = true;
-            this.colTicketId.VisibleIndex = 1;
+            this.colTicketId.VisibleIndex = 6;
             // 
             // colCustomerId
             // 
@@ -261,6 +260,8 @@
             this.colCustomerId.FieldName = "CustomerId";
             this.colCustomerId.Name = "colCustomerId";
             this.colCustomerId.OptionsColumn.ReadOnly = true;
+            this.colCustomerId.Visible = true;
+            this.colCustomerId.VisibleIndex = 5;
             // 
             // colEquipmentSerial
             // 
@@ -268,8 +269,6 @@
             this.colEquipmentSerial.FieldName = "EquipmentSerial";
             this.colEquipmentSerial.Name = "colEquipmentSerial";
             this.colEquipmentSerial.OptionsColumn.ReadOnly = true;
-            this.colEquipmentSerial.Visible = true;
-            this.colEquipmentSerial.VisibleIndex = 10;
             this.colEquipmentSerial.Width = 89;
             // 
             // colRoute
@@ -287,7 +286,7 @@
             this.colOpenDate.Name = "colOpenDate";
             this.colOpenDate.OptionsColumn.ReadOnly = true;
             this.colOpenDate.Visible = true;
-            this.colOpenDate.VisibleIndex = 2;
+            this.colOpenDate.VisibleIndex = 1;
             // 
             // colOpenComment
             // 
@@ -297,7 +296,7 @@
             this.colOpenComment.Name = "colOpenComment";
             this.colOpenComment.OptionsColumn.ReadOnly = true;
             this.colOpenComment.Visible = true;
-            this.colOpenComment.VisibleIndex = 11;
+            this.colOpenComment.VisibleIndex = 12;
             this.colOpenComment.Width = 94;
             // 
             // colIssueContactPerson
@@ -307,7 +306,7 @@
             this.colIssueContactPerson.Name = "colIssueContactPerson";
             this.colIssueContactPerson.OptionsColumn.ReadOnly = true;
             this.colIssueContactPerson.Visible = true;
-            this.colIssueContactPerson.VisibleIndex = 6;
+            this.colIssueContactPerson.VisibleIndex = 7;
             this.colIssueContactPerson.Width = 113;
             // 
             // colIssueAddress
@@ -318,7 +317,7 @@
             this.colIssueAddress.Name = "colIssueAddress";
             this.colIssueAddress.OptionsColumn.ReadOnly = true;
             this.colIssueAddress.Visible = true;
-            this.colIssueAddress.VisibleIndex = 9;
+            this.colIssueAddress.VisibleIndex = 8;
             this.colIssueAddress.Width = 78;
             // 
             // colIssueContactPhone
@@ -328,7 +327,7 @@
             this.colIssueContactPhone.Name = "colIssueContactPhone";
             this.colIssueContactPhone.OptionsColumn.ReadOnly = true;
             this.colIssueContactPhone.Visible = true;
-            this.colIssueContactPhone.VisibleIndex = 7;
+            this.colIssueContactPhone.VisibleIndex = 9;
             this.colIssueContactPhone.Width = 110;
             // 
             // colIssueContactPhone2
@@ -338,7 +337,7 @@
             this.colIssueContactPhone2.Name = "colIssueContactPhone2";
             this.colIssueContactPhone2.OptionsColumn.ReadOnly = true;
             this.colIssueContactPhone2.Visible = true;
-            this.colIssueContactPhone2.VisibleIndex = 8;
+            this.colIssueContactPhone2.VisibleIndex = 10;
             this.colIssueContactPhone2.Width = 116;
             // 
             // colTecEquipmentSerial
@@ -406,7 +405,7 @@
             this.colSalesDistrict2.Name = "colSalesDistrict2";
             this.colSalesDistrict2.OptionsColumn.ReadOnly = true;
             this.colSalesDistrict2.Visible = true;
-            this.colSalesDistrict2.VisibleIndex = 12;
+            this.colSalesDistrict2.VisibleIndex = 2;
             this.colSalesDistrict2.Width = 90;
             // 
             // colPlant
@@ -502,7 +501,7 @@
             this.colMSrvType.FieldName = "MSrvType";
             this.colMSrvType.Name = "colMSrvType";
             this.colMSrvType.Visible = true;
-            this.colMSrvType.VisibleIndex = 3;
+            this.colMSrvType.VisibleIndex = 11;
             // 
             // colRouteName
             // 
@@ -510,7 +509,7 @@
             this.colRouteName.FieldName = "Route Name";
             this.colRouteName.Name = "colRouteName";
             this.colRouteName.Visible = true;
-            this.colRouteName.VisibleIndex = 4;
+            this.colRouteName.VisibleIndex = 3;
             this.colRouteName.Width = 79;
             // 
             // colSupervisor
@@ -519,7 +518,7 @@
             this.colSupervisor.FieldName = "Supervisor";
             this.colSupervisor.Name = "colSupervisor";
             this.colSupervisor.Visible = true;
-            this.colSupervisor.VisibleIndex = 5;
+            this.colSupervisor.VisibleIndex = 4;
             // 
             // repositoryItemMemoEditMemo2
             // 
@@ -539,10 +538,10 @@
             // 
             this.layoutControl1.Controls.Add(this.gridControlMain);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 26);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 31);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(900, 409);
+            this.layoutControl1.Size = new System.Drawing.Size(900, 404);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -554,7 +553,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(900, 409);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(900, 404);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -562,7 +561,7 @@
             this.layoutControlItem1.Control = this.gridControlMain;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(880, 389);
+            this.layoutControlItem1.Size = new System.Drawing.Size(880, 384);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -615,7 +614,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(900, 26);
+            this.barDockControlTop.Size = new System.Drawing.Size(900, 31);
             // 
             // barDockControlBottom
             // 
@@ -628,15 +627,15 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 409);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 404);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(900, 26);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 409);
+            this.barDockControlRight.Location = new System.Drawing.Point(900, 31);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 404);
             // 
             // vMSrvTicketType_DetailsTableAdapter
             // 

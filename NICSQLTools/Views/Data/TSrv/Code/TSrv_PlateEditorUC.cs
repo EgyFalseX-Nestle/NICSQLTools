@@ -5,18 +5,19 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 using System.Data;
+using NICSQLTools.Data.Linq;
 
-namespace NICSQLTools.Views.Data.GPS
+namespace NICSQLTools.Views.Data.TSrv.Code
 {
-    public partial class PlateEditorUC : XtraUserControl
+    public partial class TSrv_PlateEditorUC : XtraUserControl
     {
         #region - Var -
         private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(AppDatasourceParamUC));
-        public Uti.Types.AppDatasourceTypeIdEnum DatasourceType = Uti.Types.AppDatasourceTypeIdEnum.SPQry;
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+        dsLinqDataDataContext dsLinq = new dsLinqDataDataContext();
         #endregion
         #region - Fun -
-        public PlateEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
+        public TSrv_PlateEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             _elementRule = RuleElement;
@@ -26,7 +27,11 @@ namespace NICSQLTools.Views.Data.GPS
             SplashScreenManager.ShowForm(typeof(WaitWindowFrm));
             System.Threading.ThreadPool.QueueUserWorkItem((o) => 
             {
-                Invoke(new MethodInvoker(() => {
+                Invoke(new MethodInvoker(() =>
+                {
+                    LSMSSalesDistrict3Id.QueryableSource = dsLinq.SalesDistrict3s;
+                    LSMSUserIn.QueryableSource = dsLinq.AppUsers;
+                    LSMSRouteTypeId.QueryableSource = dsLinq.TSrv_RouteTypes;
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                     gridControlMain.DataSource = XPSCS;
                     gridViewMain.BestFitColumns();
@@ -60,11 +65,26 @@ namespace NICSQLTools.Views.Data.GPS
             LoadData();
             ActivateRules();
         }
+        private void gridViewMain_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(e.RowHandle));
+            row.SetMemberValue("UserIn", Classes.Managers.UserManager.defaultInstance.User.UserId);
+            row.SetMemberValue("DateIn", Classes.Managers.DataManager.defaultInstance.ServerDateTime);
+        }
+        private void UOW_BeforeCommitTransaction(object sender, DevExpress.Xpo.SessionManipulationEventArgs e)
+        {
+            DevExpress.Xpo.Helpers.ObjectSet Rows = (DevExpress.Xpo.Helpers.ObjectSet)e.Session.GetObjectsToSave();
+            DateTime DateIn = NICSQLTools.Classes.Managers.DataManager.defaultInstance.ServerDateTime;
+
+            foreach (DevExpress.Xpo.Metadata.XPDataTableObject item in Rows)
+            {
+                item.SetMemberValue("UserIn", NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId);
+                item.SetMemberValue("DateIn", DateIn);
+            }}
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
-
             DevExpress.Xpo.AsyncCommitCallback CommitCallBack = (o) =>
             {
                 SplashScreenManager.CloseForm();
@@ -72,8 +92,7 @@ namespace NICSQLTools.Views.Data.GPS
                     MsgDlg.ShowAlert("Data Saved ...", MsgDlg.MessageType.Success, (Form)Parent.Parent.Parent);
                 else
                     MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
-            };
-            SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");
+            };SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");
             UOW.CommitTransactionAsync(CommitCallBack);
         }
         private void bbiExport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -91,6 +110,9 @@ namespace NICSQLTools.Views.Data.GPS
         {
             if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
                 return;
+            LSMSSalesDistrict3Id.Reload();
+            LSMSUserIn.Reload();
+            LSMSRouteTypeId.Reload();
             UOW.DropIdentityMap();
             UOW.DropChanges();
             XPSCS.Reload();
@@ -98,5 +120,6 @@ namespace NICSQLTools.Views.Data.GPS
         }
         #endregion
 
+       
     }
 }

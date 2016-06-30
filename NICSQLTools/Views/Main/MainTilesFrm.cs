@@ -255,14 +255,14 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Data.TargetNCEEditorUC(RuleElemet);
             }
-            else if (e.Document == docEditorsRoutesPlate)
-            {
-                e.Control = new Data.GPS.RoutePlateEditorUC(RuleElemet);
-            }
-            else if (e.Document == docEditorsPlate)
-            {
-                e.Control = new Data.GPS.PlateEditorUC(RuleElemet);
-            }
+            //else if (e.Document == docEditorsRoutesPlate)
+            //{
+            //    e.Control = new Data.GPS.TSrv_RoutePlateEditorUC(RuleElemet);
+            //}
+            //else if (e.Document == docEditorsPlate)
+            //{
+            //    e.Control = new Data.GPS.TSrv_PlateEditorUC(RuleElemet);
+            //}
             else if (e.Document == docEditorsImportDays)
             {
                 e.Control = new Import.ImportDaysUC(RuleElemet);
@@ -397,6 +397,31 @@ namespace NICSQLTools.Views.Main
             {
                 e.Control = new Qry.MSrv.MSrv_04();
             }
+            else if (e.Document == docEditorsTSrv_TruckServiceEditor)//TSrv
+            {
+                e.Control = new Data.TSrv.Data.TSrv_TruckServiceEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsTSrv_DriverEditor)
+            {
+                e.Control = new Data.TSrv.Code.TSrv_DriverEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsTSrv_PlateEditor)
+            {
+                e.Control = new Data.TSrv.Code.TSrv_PlateEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsTSrv_RoutePlateEditor)
+            {
+                e.Control = new Data.TSrv.Code.TSrv_RoutePlateEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsTSrv_RouteTypeEditor)
+            {
+                e.Control = new Data.TSrv.Code.TSrv_RouteTypeEditorUC(RuleElemet);
+            }
+            else if (e.Document == docEditorsTSrv_StatusEditor)
+            {
+                e.Control = new Data.TSrv.Code.TSrv_StatusEditorUC(RuleElemet);
+            }
+
             else if (e.Document == docEditorsXRep01)
             {
                 XRep.MSrv.XRep01 rep = new XRep.MSrv.XRep01();

@@ -180,12 +180,21 @@ _______________________________________________
                             break;
                         }
                     }
-                    else if(item == "1020M" || item == "1020S" || item == "0898N")
+                    else if (item.Contains("1020M"))
                     {
-                        SqlRow.Customer = Customer.ToString();
+                        SqlRow.Customer = "1020M";
                         break;
                     }
-                }
+                    else if (item.Contains("1020S"))
+                    {
+                        SqlRow.Customer = "1020S";
+                        break;
+                    }
+                    else if (item.Contains("0898N"))
+                    {
+                        SqlRow.Customer = "0898N";
+                        break;
+                    }}
                 dsData.GPS_Data.AddGPS_DataRow(SqlRow);
                 SqlRow.EndEdit();
             }

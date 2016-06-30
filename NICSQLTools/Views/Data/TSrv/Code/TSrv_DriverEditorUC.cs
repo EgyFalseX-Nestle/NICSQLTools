@@ -5,16 +5,18 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSplashScreen;
 
-namespace NICSQLTools.Views.Data.GPS{
-    public partial class RoutePlateEditorUC : XtraUserControl
+namespace NICSQLTools.Views.Data.TSrv.Code
+{
+    public partial class TSrv_DriverEditorUC : XtraUserControl
     {
 
         #region - Var -
-        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(RouteEditorUC));
+        private static readonly log4net.ILog Logger = log4net.LogManager.GetLogger(typeof(TSrv_DriverEditorUC));
         NICSQLTools.Data.dsData.AppRuleDetailRow _elementRule = null;
+        NICSQLTools.Data.Linq.dsLinqDataDataContext dsLinq = new NICSQLTools.Data.Linq.dsLinqDataDataContext();
         #endregion
         #region - Fun -
-        public RoutePlateEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
+        public TSrv_DriverEditorUC(NICSQLTools.Data.dsData.AppRuleDetailRow RuleElement)
         {
             InitializeComponent();
             _elementRule = RuleElement;
@@ -26,7 +28,7 @@ namespace NICSQLTools.Views.Data.GPS{
             {
                 Invoke(new MethodInvoker(() =>
                 {
-                    plateTableAdapter.Fill(dsGPS.Plate);
+                    LSMSUsers.QueryableSource = dsLinq.AppUsers;
                     XPSCS.Session.ConnectionString = Properties.Settings.Default.IC_DBConnectionString;
                     gridControlMain.DataSource = XPSCS;
                     gridViewMain.BestFitColumns();
@@ -36,21 +38,21 @@ namespace NICSQLTools.Views.Data.GPS{
         }
         public void ActivateRules()
         {
-            //XPSCS.AllowNew = _elementRule.Inserting;
-            //XPSCS.AllowRemove = _elementRule.Deleting;
+            XPSCS.AllowNew = _elementRule.Inserting;
+            XPSCS.AllowRemove = _elementRule.Deleting;
             XPSCS.AllowEdit = _elementRule.Updateing;
 
             if (!_elementRule.Updateing)
                 bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
 
-            //if (!_elementRule.Inserting)
-            //{
-            //    gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.None;
-            //    gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
-            //}
+            if (!_elementRule.Inserting)
+            {
+                gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.None;
+                gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
+            }
 
-            //if (!_elementRule.Deleting)
-            //    gridControlMain.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            if (!_elementRule.Deleting)
+                gridControlMain.EmbeddedNavigator.Buttons.Remove.Visible = false;
             
         }
         #endregion
@@ -59,6 +61,12 @@ namespace NICSQLTools.Views.Data.GPS{
         {
             LoadData();
             ActivateRules();
+        }
+        private void gridViewMain_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            DevExpress.Xpo.Metadata.XPDataTableObject row = ((DevExpress.Xpo.Metadata.XPDataTableObject)gridViewMain.GetRow(e.RowHandle));
+            row.SetMemberValue("UserIn", Classes.Managers.UserManager.defaultInstance.User.UserId);
+            row.SetMemberValue("DateIn", Classes.Managers.DataManager.defaultInstance.ServerDateTime);
         }
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -75,13 +83,24 @@ namespace NICSQLTools.Views.Data.GPS{
                 }
                 else
                 {
-                    MsgDlg.ShowAlert(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, (Form)Parent.Parent.Parent);
+                    MsgDlg.Show(String.Format("Saving Failed ...{0}{1}", Environment.NewLine, o.Message), MsgDlg.MessageType.Error, o);
                     Classes.Core.LogException(Logger, o.InnerException, Classes.Core.ExceptionLevelEnum.General, Classes.Managers.UserManager.defaultInstance.User.UserId);
                 }
             };
 
             SplashScreenManager.ShowForm(typeof(WaitWindowFrm)); SplashScreenManager.Default.SetWaitFormDescription("Saving ...");
             UOW.CommitTransactionAsync(CommitCallBack);
+        }
+        private void UOW_BeforeCommitTransaction(object sender, DevExpress.Xpo.SessionManipulationEventArgs e)
+        {
+            DevExpress.Xpo.Helpers.ObjectSet Rows = (DevExpress.Xpo.Helpers.ObjectSet)e.Session.GetObjectsToSave();
+            DateTime DateIn = NICSQLTools.Classes.Managers.DataManager.defaultInstance.ServerDateTime;
+            
+            foreach (DevExpress.Xpo.Metadata.XPDataTableObject item in Rows)
+            {
+                item.SetMemberValue("UserIn", NICSQLTools.Classes.Managers.UserManager.defaultInstance.User.UserId);
+                item.SetMemberValue("DateIn", DateIn);
+            }
         }
         private void bbiExport_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -96,19 +115,13 @@ namespace NICSQLTools.Views.Data.GPS{
         }
         private void bbiRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
-                return;
-            plateTableAdapter.Fill(dsGPS.Plate);
+            //if (MsgDlg.Show("Are You Sure ?", MsgDlg.MessageType.Question) == DialogResult.No)
+            //    return;
+            LSMSUsers.Reload();
             UOW.DropIdentityMap();
             UOW.DropChanges();
             XPSCS.Reload();
             gridViewMain.RefreshData();
-        }
-        private void repositoryItemButtonEditDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            if (MsgDlg.Show("Do you want to delete selected row ?", MsgDlg.MessageType.Question) == DialogResult.No)
-                return;
-            gridViewMain.DeleteRow(gridViewMain.FocusedRowHandle);
         }
         private void gridControlMain_EmbeddedNavigator_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
         {

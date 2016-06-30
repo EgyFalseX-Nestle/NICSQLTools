@@ -1,6 +1,6 @@
-﻿namespace NICSQLTools.Views.Data.GPS
+﻿namespace NICSQLTools.Views.Data.TSrv.Code
 {
-    partial class PlateEditorUC
+    partial class TSrv_StatusEditorUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlateEditorUC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TSrv_StatusEditorUC));
             this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colPlate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControlMain = new DevExpress.XtraGrid.GridControl();
-            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
+            this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
@@ -44,70 +41,28 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.gridControlMain = new DevExpress.XtraGrid.GridControl();
+            this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colStatusName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
             this.SuspendLayout();
             // 
             // UOW
             // 
             this.UOW.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.UOW.TrackPropertiesModifications = false;
+            this.UOW.BeforeCommitTransaction += new DevExpress.Xpo.SessionManipulationEventHandler(this.UOW_BeforeCommitTransaction);
             // 
-            // gridViewMain
+            // popupMenuMain
             // 
-            this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPlate});
-            this.gridViewMain.GridControl = this.gridControlMain;
-            this.gridViewMain.Name = "gridViewMain";
-            this.gridViewMain.NewItemRowText = "Click here to add a new";
-            this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
-            this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
-            this.gridViewMain.OptionsSelection.InvertSelection = true;
-            this.gridViewMain.OptionsSelection.MultiSelect = true;
-            this.gridViewMain.OptionsView.ColumnAutoWidth = false;
-            this.gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
-            this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
-            this.gridViewMain.OptionsView.ShowDetailButtons = false;
-            this.gridViewMain.OptionsView.ShowFooter = true;
-            this.gridViewMain.OptionsView.ShowGroupPanel = false;
-            // 
-            // colPlate
-            // 
-            this.colPlate.Caption = "Plate";
-            this.colPlate.FieldName = "Plate";
-            this.colPlate.Name = "colPlate";
-            this.colPlate.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.colPlate.Visible = true;
-            this.colPlate.VisibleIndex = 0;
-            this.colPlate.Width = 152;
-            // 
-            // gridControlMain
-            // 
-            this.gridControlMain.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlMain.Location = new System.Drawing.Point(0, 31);
-            this.gridControlMain.MainView = this.gridViewMain;
-            this.gridControlMain.MenuManager = this.barManagerMain;
-            this.gridControlMain.Name = "gridControlMain";
-            this.gridControlMain.Size = new System.Drawing.Size(679, 360);
-            this.gridControlMain.TabIndex = 5;
-            this.gridControlMain.UseEmbeddedNavigator = true;
-            this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewMain});
-            // 
-            // XPSCS
-            // 
-            this.XPSCS.AllowEdit = true;
-            this.XPSCS.AllowNew = true;
-            this.XPSCS.AllowRemove = true;
-            this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsGPS.PlateDataTable);
-            this.XPSCS.Session = this.UOW;
+            this.popupMenuMain.Manager = this.barManagerMain;
+            this.popupMenuMain.Name = "popupMenuMain";
             // 
             // barManagerMain
             // 
@@ -144,6 +99,7 @@
             this.bbiSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.bbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.LargeGlyph")));
             this.bbiSave.Name = "bbiSave";
+            this.bbiSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // bbiRefresh
@@ -152,6 +108,7 @@
             this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
             this.bbiRefresh.Id = 2;
             this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // bbiExport
@@ -160,6 +117,7 @@
             this.bbiExport.Glyph = global::NICSQLTools.Properties.Resources.Export;
             this.bbiExport.Id = 1;
             this.bbiExport.Name = "bbiExport";
+            this.bbiExport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bbiExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExport_ItemClick);
             // 
             // barDockControlTop
@@ -167,35 +125,85 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(679, 31);
+            this.barDockControlTop.Size = new System.Drawing.Size(936, 31);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 391);
-            this.barDockControlBottom.Size = new System.Drawing.Size(679, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 408);
+            this.barDockControlBottom.Size = new System.Drawing.Size(936, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 31);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 360);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 377);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(679, 31);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 360);
+            this.barDockControlRight.Location = new System.Drawing.Point(936, 31);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 377);
             // 
-            // popupMenuMain
+            // gridControlMain
             // 
-            this.popupMenuMain.Manager = this.barManagerMain;
-            this.popupMenuMain.Name = "popupMenuMain";
+            this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlMain.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlMain_EmbeddedNavigator_ButtonClick);
+            this.gridControlMain.Location = new System.Drawing.Point(0, 31);
+            this.gridControlMain.MainView = this.gridViewMain;
+            this.gridControlMain.MenuManager = this.barManagerMain;
+            this.gridControlMain.Name = "gridControlMain";
+            this.gridControlMain.Size = new System.Drawing.Size(936, 377);
+            this.gridControlMain.TabIndex = 5;
+            this.gridControlMain.UseEmbeddedNavigator = true;
+            this.gridControlMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewMain});
             // 
-            // PlateEditorUC
+            // gridViewMain
+            // 
+            this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colStatusName});
+            this.gridViewMain.GridControl = this.gridControlMain;
+            this.gridViewMain.Name = "gridViewMain";
+            this.gridViewMain.NewItemRowText = "Click here to add a new";
+            this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
+            this.gridViewMain.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.SegmentedFade;
+            this.gridViewMain.OptionsImageLoad.AsyncLoad = true;
+            this.gridViewMain.OptionsNavigation.AutoFocusNewRow = true;
+            this.gridViewMain.OptionsSelection.InvertSelection = true;
+            this.gridViewMain.OptionsSelection.MultiSelect = true;
+            this.gridViewMain.OptionsView.ColumnAutoWidth = false;
+            this.gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewMain.OptionsView.ShowDetailButtons = false;
+            this.gridViewMain.OptionsView.ShowFooter = true;
+            this.gridViewMain.OptionsView.ShowGroupPanel = false;
+            this.gridViewMain.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
+            this.gridViewMain.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridViewMain_InitNewRow);
+            // 
+            // colStatusName
+            // 
+            this.colStatusName.Caption = "Status Name";
+            this.colStatusName.FieldName = "StatusName";
+            this.colStatusName.Name = "colStatusName";
+            this.colStatusName.Visible = true;
+            this.colStatusName.VisibleIndex = 0;
+            this.colStatusName.Width = 208;
+            // 
+            // XPSCS
+            // 
+            this.XPSCS.AllowEdit = true;
+            this.XPSCS.AllowNew = true;
+            this.XPSCS.AllowRemove = true;
+            this.XPSCS.DeleteObjectOnRemove = true;
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsTSrv.TSrv_StatusDataTable);
+            this.XPSCS.Session = this.UOW;
+            // 
+            // TSrv_StatusEditorUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -204,15 +212,15 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "PlateEditorUC";
-            this.Size = new System.Drawing.Size(679, 391);
-            this.Load += new System.EventHandler(this.ProductEditorUC_Load);
+            this.Name = "TSrv_StatusEditorUC";
+            this.Size = new System.Drawing.Size(936, 408);
+            this.Load += new System.EventHandler(this.RouteEditorUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,8 +229,7 @@
         #endregion
 
         private DevExpress.Xpo.UnitOfWork UOW;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
-        private DevExpress.XtraGrid.GridControl gridControlMain;
+        private DevExpress.XtraBars.PopupMenu popupMenuMain;
         private DevExpress.XtraBars.BarManager barManagerMain;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarButtonItem bbiSave;
@@ -231,9 +238,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.PopupMenu popupMenuMain;
+        private DevExpress.XtraGrid.GridControl gridControlMain;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
         private DevExpress.Xpo.XPServerCollectionSource XPSCS;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
-        private DevExpress.XtraGrid.Columns.GridColumn colPlate;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatusName;
     }
 }

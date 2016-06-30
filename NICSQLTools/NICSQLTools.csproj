@@ -277,6 +277,11 @@
     <Compile Include="Data\dsQry.cs">
       <DependentUpon>dsQry.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\dsTSrv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTSrv.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\Linq\dsLinqData1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -294,10 +299,16 @@
     </Compile>
     <Compile Include="Data\xpoSPCode\StoredProcHelper.cs" />
     <Compile Include="Data\xpo\CostDynamicForecast.cs" />
-    <Compile Include="Forms\MultiLineStringFrm.cs">
+    <Compile Include="Views\Data\TSrv\Data\TSrv_AddDayDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MultiLineStringFrm.Designer.cs">
+    <Compile Include="Views\Data\TSrv\Data\TSrv_AddDayDlg.Designer.cs">
+      <DependentUpon>TSrv_AddDayDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Main\MultiLineStringFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Main\MultiLineStringFrm.Designer.cs">
       <DependentUpon>MultiLineStringFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="TestFrm.cs">
@@ -330,11 +341,23 @@
     <Compile Include="Views\Data\AppDatasourceLookupEditorUC.Designer.cs">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\GPS\PlateEditorUC.cs">
+    <Compile Include="Views\Data\TSrv\Code\TSrv_RouteTypeEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\GPS\PlateEditorUC.Designer.cs">
-      <DependentUpon>PlateEditorUC.cs</DependentUpon>
+    <Compile Include="Views\Data\TSrv\Code\TSrv_RouteTypeEditorUC.Designer.cs">
+      <DependentUpon>TSrv_RouteTypeEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TSrv\Code\TSrv_StatusEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TSrv\Code\TSrv_StatusEditorUC.Designer.cs">
+      <DependentUpon>TSrv_StatusEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TSrv\Code\TSrv_PlateEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TSrv\Code\TSrv_PlateEditorUC.Designer.cs">
+      <DependentUpon>TSrv_PlateEditorUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\MSrv\Code\MSrv_Dmg_ReasonEditorUC.cs">
       <SubType>UserControl</SubType>
@@ -462,11 +485,11 @@
     <Compile Include="Views\Data\RDM\RDM_ReceiptEditorUC.Designer.cs">
       <DependentUpon>RDM_ReceiptEditorUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Data\GPS\RoutePlateEditorUC.cs">
+    <Compile Include="Views\Data\TSrv\Code\TSrv_RoutePlateEditorUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Data\GPS\RoutePlateEditorUC.Designer.cs">
-      <DependentUpon>RoutePlateEditorUC.cs</DependentUpon>
+    <Compile Include="Views\Data\TSrv\Code\TSrv_RoutePlateEditorUC.Designer.cs">
+      <DependentUpon>TSrv_RoutePlateEditorUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Data\TaskManager\EmpTaskActualEditorUC.cs">
       <SubType>UserControl</SubType>
@@ -509,6 +532,18 @@
     </Compile>
     <Compile Include="Views\Data\Activities\ImportSTI_Actv_ActualUC.Designer.cs">
       <DependentUpon>ImportSTI_Actv_ActualUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TSrv\Code\TSrv_DriverEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TSrv\Code\TSrv_DriverEditorUC.Designer.cs">
+      <DependentUpon>TSrv_DriverEditorUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Data\TSrv\Data\TSrv_TruckServiceEditorUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Data\TSrv\Data\TSrv_TruckServiceEditorUC.Designer.cs">
+      <DependentUpon>TSrv_TruckServiceEditorUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Import\ImportActualBillArgUC.cs">
       <SubType>UserControl</SubType>
@@ -797,10 +832,10 @@
     <Compile Include="Views\Main\MainTilesFrm.Designer.cs">
       <DependentUpon>MainTilesFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MsgDlg.cs">
+    <Compile Include="Views\Main\MsgDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MsgDlg.designer.cs">
+    <Compile Include="Views\Main\MsgDlg.designer.cs">
       <DependentUpon>MsgDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Product.cs" />
@@ -809,10 +844,10 @@
     <Compile Include="Uti\Types.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\WaitWindowFrm.cs">
+    <Compile Include="Views\Main\WaitWindowFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WaitWindowFrm.designer.cs">
+    <Compile Include="Views\Main\WaitWindowFrm.designer.cs">
       <DependentUpon>WaitWindowFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Main\UserSettingsUC.cs">
@@ -869,7 +904,10 @@
     <Compile Include="Views\XRep\MSrv\XRep01.Designer.cs">
       <DependentUpon>XRep01.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\MultiLineStringFrm.resx">
+    <EmbeddedResource Include="Views\Data\TSrv\Data\TSrv_AddDayDlg.resx">
+      <DependentUpon>TSrv_AddDayDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Main\MultiLineStringFrm.resx">
       <DependentUpon>MultiLineStringFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -888,8 +926,14 @@
     <EmbeddedResource Include="Views\Data\AppDatasourceLookupEditorUC.resx">
       <DependentUpon>AppDatasourceLookupEditorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\GPS\PlateEditorUC.resx">
-      <DependentUpon>PlateEditorUC.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Data\TSrv\Code\TSrv_RouteTypeEditorUC.resx">
+      <DependentUpon>TSrv_RouteTypeEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TSrv\Code\TSrv_StatusEditorUC.resx">
+      <DependentUpon>TSrv_StatusEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TSrv\Code\TSrv_PlateEditorUC.resx">
+      <DependentUpon>TSrv_PlateEditorUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\MSrv\Code\MSrv_Dmg_ReasonEditorUC.resx">
       <DependentUpon>MSrv_Dmg_ReasonEditorUC.cs</DependentUpon>
@@ -954,8 +998,8 @@
     <EmbeddedResource Include="Views\Data\RDM\RDM_ReceiptEditorUC.resx">
       <DependentUpon>RDM_ReceiptEditorUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Data\GPS\RoutePlateEditorUC.resx">
-      <DependentUpon>RoutePlateEditorUC.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Data\TSrv\Code\TSrv_RoutePlateEditorUC.resx">
+      <DependentUpon>TSrv_RoutePlateEditorUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\TaskManager\EmpTaskActualEditorUC.resx">
       <DependentUpon>EmpTaskActualEditorUC.cs</DependentUpon>
@@ -977,6 +1021,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Data\Activities\ImportSTI_Actv_ActualUC.resx">
       <DependentUpon>ImportSTI_Actv_ActualUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TSrv\Code\TSrv_DriverEditorUC.resx">
+      <DependentUpon>TSrv_DriverEditorUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Data\TSrv\Data\TSrv_TruckServiceEditorUC.resx">
+      <DependentUpon>TSrv_TruckServiceEditorUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Import\ImportActualBillArgUC.resx">
       <DependentUpon>ImportActualBillArgUC.cs</DependentUpon>
@@ -1183,6 +1233,17 @@
     <None Include="Data\dsTask.xss">
       <DependentUpon>dsTask.xsd</DependentUpon>
     </None>
+    <None Include="Data\dsTSrv.xsc">
+      <DependentUpon>dsTSrv.xsd</DependentUpon>
+    </None>
+    <None Include="Data\dsTSrv.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTSrv.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\dsTSrv.xss">
+      <DependentUpon>dsTSrv.xsd</DependentUpon>
+    </None>
     <None Include="Data\Linq\dsLinqData.dbml.layout">
       <DependentUpon>dsLinqData.dbml</DependentUpon>
     </None>
@@ -1204,7 +1265,7 @@
     <EmbeddedResource Include="Views\Main\MainTilesFrm.resx">
       <DependentUpon>MainTilesFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MsgDlg.resx">
+    <EmbeddedResource Include="Views\Main\MsgDlg.resx">
       <DependentUpon>MsgDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -1217,7 +1278,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Forms\WaitWindowFrm.resx">
+    <EmbeddedResource Include="Views\Main\WaitWindowFrm.resx">
       <DependentUpon>WaitWindowFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
@@ -1280,6 +1341,10 @@
   <ItemGroup>
     <Content Include="L4N\L4N.txt" />
     <Content Include="NICSQLTools.ico" />
+    <None Include="Resources\TSrv64.png" />
+    <None Include="Resources\TSrv32.png" />
+    <None Include="Resources\TSrv16.png" />
+    <None Include="Resources\TSrv_Driver32.png" />
     <None Include="Resources\colorizermap_32x32.png" />
     <None Include="Resources\colorizermap_16x16.png" />
     <None Include="Resources\CustomerMap64.png" />
@@ -1471,7 +1536,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Data\GPS\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

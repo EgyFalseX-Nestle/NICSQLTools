@@ -1,6 +1,6 @@
-﻿namespace NICSQLTools.Views.Data.GPS
+﻿namespace NICSQLTools.Views.Data.TSrv.Code
 {
-    partial class RoutePlateEditorUC
+    partial class TSrv_RouteTypeEditorUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoutePlateEditorUC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TSrv_RouteTypeEditorUC));
             this.UOW = new DevExpress.Xpo.UnitOfWork(this.components);
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
@@ -43,29 +43,21 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControlMain = new DevExpress.XtraGrid.GridControl();
             this.gridViewMain = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colRouteNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRouteName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPlate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.XPSCS = new DevExpress.Xpo.XPServerCollectionSource(this.components);
-            this.repositoryItemLookUpEditPlate = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.dsGPS = new NICSQLTools.Data.dsGPS();
-            this.plateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.plateTableAdapter = new NICSQLTools.Data.dsGPSTableAdapters.PlateTableAdapter();
+            this.colRouteTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPlate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGPS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // UOW
             // 
             this.UOW.IsObjectModifiedOnNonPersistentPropertyChange = null;
             this.UOW.TrackPropertiesModifications = false;
+            this.UOW.BeforeCommitTransaction += new DevExpress.Xpo.SessionManipulationEventHandler(this.UOW_BeforeCommitTransaction);
             // 
             // popupMenuMain
             // 
@@ -107,6 +99,7 @@
             this.bbiSave.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.bbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiSave.LargeGlyph")));
             this.bbiSave.Name = "bbiSave";
+            this.bbiSave.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // bbiRefresh
@@ -115,6 +108,7 @@
             this.bbiRefresh.Glyph = global::NICSQLTools.Properties.Resources.refresh2_16x16;
             this.bbiRefresh.Id = 2;
             this.bbiRefresh.Name = "bbiRefresh";
+            this.bbiRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bbiRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiRefresh_ItemClick);
             // 
             // bbiExport
@@ -123,6 +117,7 @@
             this.bbiExport.Glyph = global::NICSQLTools.Properties.Resources.Export;
             this.bbiExport.Id = 1;
             this.bbiExport.Name = "bbiExport";
+            this.bbiExport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bbiExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExport_ItemClick);
             // 
             // barDockControlTop
@@ -156,15 +151,11 @@
             // gridControlMain
             // 
             this.gridControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlMain.EmbeddedNavigator.Buttons.Append.Visible = false;
-            this.gridControlMain.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridControlMain.EmbeddedNavigator.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.gridControlMain_EmbeddedNavigator_ButtonClick);
             this.gridControlMain.Location = new System.Drawing.Point(0, 31);
             this.gridControlMain.MainView = this.gridViewMain;
             this.gridControlMain.MenuManager = this.barManagerMain;
             this.gridControlMain.Name = "gridControlMain";
-            this.gridControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemLookUpEditPlate});
             this.gridControlMain.Size = new System.Drawing.Size(936, 377);
             this.gridControlMain.TabIndex = 5;
             this.gridControlMain.UseEmbeddedNavigator = true;
@@ -174,11 +165,10 @@
             // gridViewMain
             // 
             this.gridViewMain.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colRouteNumber,
-            this.colRouteName,
-            this.colPlate});
+            this.colRouteTypeName});
             this.gridViewMain.GridControl = this.gridControlMain;
             this.gridViewMain.Name = "gridViewMain";
+            this.gridViewMain.NewItemRowText = "Click here to add a new";
             this.gridViewMain.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridViewMain.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewMain.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.SegmentedFade;
@@ -187,90 +177,33 @@
             this.gridViewMain.OptionsSelection.InvertSelection = true;
             this.gridViewMain.OptionsSelection.MultiSelect = true;
             this.gridViewMain.OptionsView.ColumnAutoWidth = false;
+            this.gridViewMain.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridViewMain.OptionsView.ShowAutoFilterRow = true;
             this.gridViewMain.OptionsView.ShowDetailButtons = false;
             this.gridViewMain.OptionsView.ShowFooter = true;
+            this.gridViewMain.OptionsView.ShowGroupPanel = false;
             this.gridViewMain.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Panel;
-            // 
-            // colRouteNumber
-            // 
-            this.colRouteNumber.AppearanceCell.Options.UseTextOptions = true;
-            this.colRouteNumber.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRouteNumber.AppearanceHeader.Options.UseTextOptions = true;
-            this.colRouteNumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRouteNumber.FieldName = "Route Number";
-            this.colRouteNumber.Name = "colRouteNumber";
-            this.colRouteNumber.OptionsColumn.ReadOnly = true;
-            this.colRouteNumber.Visible = true;
-            this.colRouteNumber.VisibleIndex = 0;
-            this.colRouteNumber.Width = 98;
-            // 
-            // colRouteName
-            // 
-            this.colRouteName.AppearanceCell.Options.UseTextOptions = true;
-            this.colRouteName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRouteName.AppearanceHeader.Options.UseTextOptions = true;
-            this.colRouteName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colRouteName.FieldName = "Route Name";
-            this.colRouteName.Name = "colRouteName";
-            this.colRouteName.OptionsColumn.ReadOnly = true;
-            this.colRouteName.Visible = true;
-            this.colRouteName.VisibleIndex = 1;
-            this.colRouteName.Width = 164;
-            // 
-            // colPlate
-            // 
-            this.colPlate.AppearanceCell.Options.UseTextOptions = true;
-            this.colPlate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPlate.AppearanceHeader.Options.UseTextOptions = true;
-            this.colPlate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colPlate.Caption = "Plate";
-            this.colPlate.ColumnEdit = this.repositoryItemLookUpEditPlate;
-            this.colPlate.FieldName = "Plate";
-            this.colPlate.Name = "colPlate";
-            this.colPlate.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.colPlate.Visible = true;
-            this.colPlate.VisibleIndex = 2;
+            this.gridViewMain.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridViewMain_InitNewRow);
             // 
             // XPSCS
             // 
             this.XPSCS.AllowEdit = true;
+            this.XPSCS.AllowNew = true;
+            this.XPSCS.AllowRemove = true;
             this.XPSCS.DeleteObjectOnRemove = true;
-            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsData._0_3__Route_DetailsDataTable);
+            this.XPSCS.ObjectType = typeof(NICSQLTools.Data.dsTSrv.TSrv_RouteTypeDataTable);
             this.XPSCS.Session = this.UOW;
             // 
-            // repositoryItemLookUpEditPlate
+            // colRouteTypeName
             // 
-            this.repositoryItemLookUpEditPlate.AutoHeight = false;
-            this.repositoryItemLookUpEditPlate.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            this.repositoryItemLookUpEditPlate.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEditPlate.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Plate", "Plate", 5, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.repositoryItemLookUpEditPlate.DataSource = this.plateBindingSource;
-            this.repositoryItemLookUpEditPlate.DisplayMember = "Plate";
-            this.repositoryItemLookUpEditPlate.DropDownRows = 10;
-            this.repositoryItemLookUpEditPlate.Name = "repositoryItemLookUpEditPlate";
-            this.repositoryItemLookUpEditPlate.NullText = "";
-            this.repositoryItemLookUpEditPlate.ShowHeader = false;
-            this.repositoryItemLookUpEditPlate.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditPlate.ValueMember = "Plate";
+            this.colRouteTypeName.Caption = "Route Type";
+            this.colRouteTypeName.FieldName = "RouteTypeName";
+            this.colRouteTypeName.Name = "colRouteTypeName";
+            this.colRouteTypeName.Visible = true;
+            this.colRouteTypeName.VisibleIndex = 0;
+            this.colRouteTypeName.Width = 162;
             // 
-            // dsGPS
-            // 
-            this.dsGPS.DataSetName = "dsGPS";
-            this.dsGPS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // plateBindingSource
-            // 
-            this.plateBindingSource.DataMember = "Plate";
-            this.plateBindingSource.DataSource = this.dsGPS;
-            // 
-            // plateTableAdapter
-            // 
-            this.plateTableAdapter.ClearBeforeFill = true;
-            // 
-            // RoutePlateEditorUC
+            // TSrv_RouteTypeEditorUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -279,7 +212,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "RoutePlateEditorUC";
+            this.Name = "TSrv_RouteTypeEditorUC";
             this.Size = new System.Drawing.Size(936, 408);
             this.Load += new System.EventHandler(this.RouteEditorUC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UOW)).EndInit();
@@ -288,9 +221,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.XPSCS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPlate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGPS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plateBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,14 +240,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraGrid.GridControl gridControlMain;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewMain;
-        private DevExpress.XtraGrid.Columns.GridColumn colRouteNumber;
-        private DevExpress.XtraGrid.Columns.GridColumn colRouteName;
-        private DevExpress.XtraGrid.Columns.GridColumn colPlate;
         private DevExpress.Xpo.XPServerCollectionSource XPSCS;
         private DevExpress.XtraBars.BarButtonItem bbiRefresh;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditPlate;
-        private System.Windows.Forms.BindingSource plateBindingSource;
-        private NICSQLTools.Data.dsGPS dsGPS;
-        private NICSQLTools.Data.dsGPSTableAdapters.PlateTableAdapter plateTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colRouteTypeName;
     }
 }

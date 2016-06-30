@@ -159,6 +159,18 @@ namespace NICSQLTools.Data.Linq
     partial void InsertvRouteDetail(vRouteDetail instance);
     partial void UpdatevRouteDetail(vRouteDetail instance);
     partial void DeletevRouteDetail(vRouteDetail instance);
+    partial void InsertvTSrv_TruckService(vTSrv_TruckService instance);
+    partial void UpdatevTSrv_TruckService(vTSrv_TruckService instance);
+    partial void DeletevTSrv_TruckService(vTSrv_TruckService instance);
+    partial void InsertTSrv_RouteType(TSrv_RouteType instance);
+    partial void UpdateTSrv_RouteType(TSrv_RouteType instance);
+    partial void DeleteTSrv_RouteType(TSrv_RouteType instance);
+    partial void InsertTSrv_Status(TSrv_Status instance);
+    partial void UpdateTSrv_Status(TSrv_Status instance);
+    partial void DeleteTSrv_Status(TSrv_Status instance);
+    partial void InsertTSrv_Driver(TSrv_Driver instance);
+    partial void UpdateTSrv_Driver(TSrv_Driver instance);
+    partial void DeleteTSrv_Driver(TSrv_Driver instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -556,6 +568,38 @@ namespace NICSQLTools.Data.Linq
 			get
 			{
 				return this.GetTable<vRouteDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vTSrv_TruckService> vTSrv_TruckServices
+		{
+			get
+			{
+				return this.GetTable<vTSrv_TruckService>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TSrv_RouteType> TSrv_RouteTypes
+		{
+			get
+			{
+				return this.GetTable<TSrv_RouteType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TSrv_Status> TSrv_Status
+		{
+			get
+			{
+				return this.GetTable<TSrv_Status>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TSrv_Driver> TSrv_Drivers
+		{
+			get
+			{
+				return this.GetTable<TSrv_Driver>();
 			}
 		}
 	}
@@ -14106,6 +14150,1046 @@ namespace NICSQLTools.Data.Linq
 					this._Supervisor_Telephone = value;
 					this.SendPropertyChanged("Supervisor_Telephone");
 					this.OnSupervisor_TelephoneChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTSrv_TruckService")]
+	public partial class vTSrv_TruckService : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _AutoId;
+		
+		private string _Plate;
+		
+		private System.Nullable<System.DateTime> _Checkout;
+		
+		private System.Nullable<System.DateTime> _CheckIn;
+		
+		private System.Nullable<double> _TempOut;
+		
+		private System.Nullable<double> _TempIn;
+		
+		private string _DriverId;
+		
+		private string _RouteNumber;
+		
+		private System.Nullable<int> _StatudId;
+		
+		private string _StatusName;
+		
+		private System.Nullable<System.DateTime> _ExLicenseDate;
+		
+		private string _Model;
+		
+		private System.Nullable<int> _ConstructYear;
+		
+		private System.Nullable<int> _RouteTypeId;
+		
+		private System.Nullable<short> _SalesDistrict3Id;
+		
+		private string _RouteTypeName;
+		
+		private string _Sales_District_2;
+		
+		private string _Route_Name;
+		
+		private string _Supervisor;
+		
+		private string _ASM;
+		
+		private string _DriverName;
+		
+		private System.Nullable<System.DateTime> _Expr1;
+		
+		private System.Nullable<bool> _SafeDrivingTraining;
+		
+		private System.Nullable<System.DateTime> _SafeDrivingTrainingDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAutoIdChanging(long value);
+    partial void OnAutoIdChanged();
+    partial void OnPlateChanging(string value);
+    partial void OnPlateChanged();
+    partial void OnCheckoutChanging(System.Nullable<System.DateTime> value);
+    partial void OnCheckoutChanged();
+    partial void OnCheckInChanging(System.Nullable<System.DateTime> value);
+    partial void OnCheckInChanged();
+    partial void OnTempOutChanging(System.Nullable<double> value);
+    partial void OnTempOutChanged();
+    partial void OnTempInChanging(System.Nullable<double> value);
+    partial void OnTempInChanged();
+    partial void OnDriverIdChanging(string value);
+    partial void OnDriverIdChanged();
+    partial void OnRouteNumberChanging(string value);
+    partial void OnRouteNumberChanged();
+    partial void OnStatudIdChanging(System.Nullable<int> value);
+    partial void OnStatudIdChanged();
+    partial void OnStatusNameChanging(string value);
+    partial void OnStatusNameChanged();
+    partial void OnExLicenseDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnExLicenseDateChanged();
+    partial void OnModelChanging(string value);
+    partial void OnModelChanged();
+    partial void OnConstructYearChanging(System.Nullable<int> value);
+    partial void OnConstructYearChanged();
+    partial void OnRouteTypeIdChanging(System.Nullable<int> value);
+    partial void OnRouteTypeIdChanged();
+    partial void OnSalesDistrict3IdChanging(System.Nullable<short> value);
+    partial void OnSalesDistrict3IdChanged();
+    partial void OnRouteTypeNameChanging(string value);
+    partial void OnRouteTypeNameChanged();
+    partial void OnSales_District_2Changing(string value);
+    partial void OnSales_District_2Changed();
+    partial void OnRoute_NameChanging(string value);
+    partial void OnRoute_NameChanged();
+    partial void OnSupervisorChanging(string value);
+    partial void OnSupervisorChanged();
+    partial void OnASMChanging(string value);
+    partial void OnASMChanged();
+    partial void OnDriverNameChanging(string value);
+    partial void OnDriverNameChanged();
+    partial void OnExpr1Changing(System.Nullable<System.DateTime> value);
+    partial void OnExpr1Changed();
+    partial void OnSafeDrivingTrainingChanging(System.Nullable<bool> value);
+    partial void OnSafeDrivingTrainingChanged();
+    partial void OnSafeDrivingTrainingDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnSafeDrivingTrainingDateChanged();
+    #endregion
+		
+		public vTSrv_TruckService()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AutoId", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
+		public long AutoId
+		{
+			get
+			{
+				return this._AutoId;
+			}
+			set
+			{
+				if ((this._AutoId != value))
+				{
+					this.OnAutoIdChanging(value);
+					this.SendPropertyChanging();
+					this._AutoId = value;
+					this.SendPropertyChanged("AutoId");
+					this.OnAutoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Plate", DbType="NVarChar(50)")]
+		public string Plate
+		{
+			get
+			{
+				return this._Plate;
+			}
+			set
+			{
+				if ((this._Plate != value))
+				{
+					this.OnPlateChanging(value);
+					this.SendPropertyChanging();
+					this._Plate = value;
+					this.SendPropertyChanged("Plate");
+					this.OnPlateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Checkout", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Checkout
+		{
+			get
+			{
+				return this._Checkout;
+			}
+			set
+			{
+				if ((this._Checkout != value))
+				{
+					this.OnCheckoutChanging(value);
+					this.SendPropertyChanging();
+					this._Checkout = value;
+					this.SendPropertyChanged("Checkout");
+					this.OnCheckoutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CheckIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CheckIn
+		{
+			get
+			{
+				return this._CheckIn;
+			}
+			set
+			{
+				if ((this._CheckIn != value))
+				{
+					this.OnCheckInChanging(value);
+					this.SendPropertyChanging();
+					this._CheckIn = value;
+					this.SendPropertyChanged("CheckIn");
+					this.OnCheckInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TempOut", DbType="Float")]
+		public System.Nullable<double> TempOut
+		{
+			get
+			{
+				return this._TempOut;
+			}
+			set
+			{
+				if ((this._TempOut != value))
+				{
+					this.OnTempOutChanging(value);
+					this.SendPropertyChanging();
+					this._TempOut = value;
+					this.SendPropertyChanged("TempOut");
+					this.OnTempOutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TempIn", DbType="Float")]
+		public System.Nullable<double> TempIn
+		{
+			get
+			{
+				return this._TempIn;
+			}
+			set
+			{
+				if ((this._TempIn != value))
+				{
+					this.OnTempInChanging(value);
+					this.SendPropertyChanging();
+					this._TempIn = value;
+					this.SendPropertyChanged("TempIn");
+					this.OnTempInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DriverId", DbType="NVarChar(50)")]
+		public string DriverId
+		{
+			get
+			{
+				return this._DriverId;
+			}
+			set
+			{
+				if ((this._DriverId != value))
+				{
+					this.OnDriverIdChanging(value);
+					this.SendPropertyChanging();
+					this._DriverId = value;
+					this.SendPropertyChanged("DriverId");
+					this.OnDriverIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteNumber", DbType="NVarChar(255)")]
+		public string RouteNumber
+		{
+			get
+			{
+				return this._RouteNumber;
+			}
+			set
+			{
+				if ((this._RouteNumber != value))
+				{
+					this.OnRouteNumberChanging(value);
+					this.SendPropertyChanging();
+					this._RouteNumber = value;
+					this.SendPropertyChanged("RouteNumber");
+					this.OnRouteNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatudId", DbType="Int")]
+		public System.Nullable<int> StatudId
+		{
+			get
+			{
+				return this._StatudId;
+			}
+			set
+			{
+				if ((this._StatudId != value))
+				{
+					this.OnStatudIdChanging(value);
+					this.SendPropertyChanging();
+					this._StatudId = value;
+					this.SendPropertyChanged("StatudId");
+					this.OnStatudIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusName", DbType="NVarChar(100)")]
+		public string StatusName
+		{
+			get
+			{
+				return this._StatusName;
+			}
+			set
+			{
+				if ((this._StatusName != value))
+				{
+					this.OnStatusNameChanging(value);
+					this.SendPropertyChanging();
+					this._StatusName = value;
+					this.SendPropertyChanged("StatusName");
+					this.OnStatusNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExLicenseDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExLicenseDate
+		{
+			get
+			{
+				return this._ExLicenseDate;
+			}
+			set
+			{
+				if ((this._ExLicenseDate != value))
+				{
+					this.OnExLicenseDateChanging(value);
+					this.SendPropertyChanging();
+					this._ExLicenseDate = value;
+					this.SendPropertyChanged("ExLicenseDate");
+					this.OnExLicenseDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Model", DbType="NVarChar(50)")]
+		public string Model
+		{
+			get
+			{
+				return this._Model;
+			}
+			set
+			{
+				if ((this._Model != value))
+				{
+					this.OnModelChanging(value);
+					this.SendPropertyChanging();
+					this._Model = value;
+					this.SendPropertyChanged("Model");
+					this.OnModelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ConstructYear", DbType="Int")]
+		public System.Nullable<int> ConstructYear
+		{
+			get
+			{
+				return this._ConstructYear;
+			}
+			set
+			{
+				if ((this._ConstructYear != value))
+				{
+					this.OnConstructYearChanging(value);
+					this.SendPropertyChanging();
+					this._ConstructYear = value;
+					this.SendPropertyChanged("ConstructYear");
+					this.OnConstructYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteTypeId", DbType="Int")]
+		public System.Nullable<int> RouteTypeId
+		{
+			get
+			{
+				return this._RouteTypeId;
+			}
+			set
+			{
+				if ((this._RouteTypeId != value))
+				{
+					this.OnRouteTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._RouteTypeId = value;
+					this.SendPropertyChanged("RouteTypeId");
+					this.OnRouteTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalesDistrict3Id", DbType="SmallInt")]
+		public System.Nullable<short> SalesDistrict3Id
+		{
+			get
+			{
+				return this._SalesDistrict3Id;
+			}
+			set
+			{
+				if ((this._SalesDistrict3Id != value))
+				{
+					this.OnSalesDistrict3IdChanging(value);
+					this.SendPropertyChanging();
+					this._SalesDistrict3Id = value;
+					this.SendPropertyChanged("SalesDistrict3Id");
+					this.OnSalesDistrict3IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteTypeName", DbType="NVarChar(100)")]
+		public string RouteTypeName
+		{
+			get
+			{
+				return this._RouteTypeName;
+			}
+			set
+			{
+				if ((this._RouteTypeName != value))
+				{
+					this.OnRouteTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._RouteTypeName = value;
+					this.SendPropertyChanged("RouteTypeName");
+					this.OnRouteTypeNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Sales District 2]", Storage="_Sales_District_2", DbType="NVarChar(50)")]
+		public string Sales_District_2
+		{
+			get
+			{
+				return this._Sales_District_2;
+			}
+			set
+			{
+				if ((this._Sales_District_2 != value))
+				{
+					this.OnSales_District_2Changing(value);
+					this.SendPropertyChanging();
+					this._Sales_District_2 = value;
+					this.SendPropertyChanged("Sales_District_2");
+					this.OnSales_District_2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Route Name]", Storage="_Route_Name", DbType="NVarChar(255)")]
+		public string Route_Name
+		{
+			get
+			{
+				return this._Route_Name;
+			}
+			set
+			{
+				if ((this._Route_Name != value))
+				{
+					this.OnRoute_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Route_Name = value;
+					this.SendPropertyChanged("Route_Name");
+					this.OnRoute_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supervisor", DbType="NVarChar(255)")]
+		public string Supervisor
+		{
+			get
+			{
+				return this._Supervisor;
+			}
+			set
+			{
+				if ((this._Supervisor != value))
+				{
+					this.OnSupervisorChanging(value);
+					this.SendPropertyChanging();
+					this._Supervisor = value;
+					this.SendPropertyChanged("Supervisor");
+					this.OnSupervisorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ASM", DbType="NVarChar(255)")]
+		public string ASM
+		{
+			get
+			{
+				return this._ASM;
+			}
+			set
+			{
+				if ((this._ASM != value))
+				{
+					this.OnASMChanging(value);
+					this.SendPropertyChanging();
+					this._ASM = value;
+					this.SendPropertyChanged("ASM");
+					this.OnASMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DriverName", DbType="NVarChar(100)")]
+		public string DriverName
+		{
+			get
+			{
+				return this._DriverName;
+			}
+			set
+			{
+				if ((this._DriverName != value))
+				{
+					this.OnDriverNameChanging(value);
+					this.SendPropertyChanging();
+					this._DriverName = value;
+					this.SendPropertyChanged("DriverName");
+					this.OnDriverNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Expr1", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Expr1
+		{
+			get
+			{
+				return this._Expr1;
+			}
+			set
+			{
+				if ((this._Expr1 != value))
+				{
+					this.OnExpr1Changing(value);
+					this.SendPropertyChanging();
+					this._Expr1 = value;
+					this.SendPropertyChanged("Expr1");
+					this.OnExpr1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeDrivingTraining", DbType="Bit")]
+		public System.Nullable<bool> SafeDrivingTraining
+		{
+			get
+			{
+				return this._SafeDrivingTraining;
+			}
+			set
+			{
+				if ((this._SafeDrivingTraining != value))
+				{
+					this.OnSafeDrivingTrainingChanging(value);
+					this.SendPropertyChanging();
+					this._SafeDrivingTraining = value;
+					this.SendPropertyChanged("SafeDrivingTraining");
+					this.OnSafeDrivingTrainingChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeDrivingTrainingDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SafeDrivingTrainingDate
+		{
+			get
+			{
+				return this._SafeDrivingTrainingDate;
+			}
+			set
+			{
+				if ((this._SafeDrivingTrainingDate != value))
+				{
+					this.OnSafeDrivingTrainingDateChanging(value);
+					this.SendPropertyChanging();
+					this._SafeDrivingTrainingDate = value;
+					this.SendPropertyChanged("SafeDrivingTrainingDate");
+					this.OnSafeDrivingTrainingDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TSrv_RouteType")]
+	public partial class TSrv_RouteType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RouteTypeId;
+		
+		private string _RouteTypeName;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRouteTypeIdChanging(int value);
+    partial void OnRouteTypeIdChanged();
+    partial void OnRouteTypeNameChanging(string value);
+    partial void OnRouteTypeNameChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    #endregion
+		
+		public TSrv_RouteType()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteTypeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int RouteTypeId
+		{
+			get
+			{
+				return this._RouteTypeId;
+			}
+			set
+			{
+				if ((this._RouteTypeId != value))
+				{
+					this.OnRouteTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._RouteTypeId = value;
+					this.SendPropertyChanged("RouteTypeId");
+					this.OnRouteTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RouteTypeName", DbType="NVarChar(100)")]
+		public string RouteTypeName
+		{
+			get
+			{
+				return this._RouteTypeName;
+			}
+			set
+			{
+				if ((this._RouteTypeName != value))
+				{
+					this.OnRouteTypeNameChanging(value);
+					this.SendPropertyChanging();
+					this._RouteTypeName = value;
+					this.SendPropertyChanged("RouteTypeName");
+					this.OnRouteTypeNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TSrv_Status")]
+	public partial class TSrv_Status : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _StatudId;
+		
+		private string _StatusName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnStatudIdChanging(int value);
+    partial void OnStatudIdChanged();
+    partial void OnStatusNameChanging(string value);
+    partial void OnStatusNameChanged();
+    #endregion
+		
+		public TSrv_Status()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatudId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int StatudId
+		{
+			get
+			{
+				return this._StatudId;
+			}
+			set
+			{
+				if ((this._StatudId != value))
+				{
+					this.OnStatudIdChanging(value);
+					this.SendPropertyChanging();
+					this._StatudId = value;
+					this.SendPropertyChanged("StatudId");
+					this.OnStatudIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusName", DbType="NVarChar(100)")]
+		public string StatusName
+		{
+			get
+			{
+				return this._StatusName;
+			}
+			set
+			{
+				if ((this._StatusName != value))
+				{
+					this.OnStatusNameChanging(value);
+					this.SendPropertyChanging();
+					this._StatusName = value;
+					this.SendPropertyChanged("StatusName");
+					this.OnStatusNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TSrv_Driver")]
+	public partial class TSrv_Driver : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _DriverId;
+		
+		private string _DriverName;
+		
+		private System.Nullable<System.DateTime> _ExLicenseDate;
+		
+		private System.Nullable<bool> _SafeDrivingTraining;
+		
+		private System.Nullable<System.DateTime> _SafeDrivingTrainingDate;
+		
+		private System.Nullable<int> _UserIn;
+		
+		private System.Nullable<System.DateTime> _DateIn;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnDriverIdChanging(string value);
+    partial void OnDriverIdChanged();
+    partial void OnDriverNameChanging(string value);
+    partial void OnDriverNameChanged();
+    partial void OnExLicenseDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnExLicenseDateChanged();
+    partial void OnSafeDrivingTrainingChanging(System.Nullable<bool> value);
+    partial void OnSafeDrivingTrainingChanged();
+    partial void OnSafeDrivingTrainingDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnSafeDrivingTrainingDateChanged();
+    partial void OnUserInChanging(System.Nullable<int> value);
+    partial void OnUserInChanged();
+    partial void OnDateInChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateInChanged();
+    #endregion
+		
+		public TSrv_Driver()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DriverId", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string DriverId
+		{
+			get
+			{
+				return this._DriverId;
+			}
+			set
+			{
+				if ((this._DriverId != value))
+				{
+					this.OnDriverIdChanging(value);
+					this.SendPropertyChanging();
+					this._DriverId = value;
+					this.SendPropertyChanged("DriverId");
+					this.OnDriverIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DriverName", DbType="NVarChar(100)")]
+		public string DriverName
+		{
+			get
+			{
+				return this._DriverName;
+			}
+			set
+			{
+				if ((this._DriverName != value))
+				{
+					this.OnDriverNameChanging(value);
+					this.SendPropertyChanging();
+					this._DriverName = value;
+					this.SendPropertyChanged("DriverName");
+					this.OnDriverNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExLicenseDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExLicenseDate
+		{
+			get
+			{
+				return this._ExLicenseDate;
+			}
+			set
+			{
+				if ((this._ExLicenseDate != value))
+				{
+					this.OnExLicenseDateChanging(value);
+					this.SendPropertyChanging();
+					this._ExLicenseDate = value;
+					this.SendPropertyChanged("ExLicenseDate");
+					this.OnExLicenseDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeDrivingTraining", DbType="Bit")]
+		public System.Nullable<bool> SafeDrivingTraining
+		{
+			get
+			{
+				return this._SafeDrivingTraining;
+			}
+			set
+			{
+				if ((this._SafeDrivingTraining != value))
+				{
+					this.OnSafeDrivingTrainingChanging(value);
+					this.SendPropertyChanging();
+					this._SafeDrivingTraining = value;
+					this.SendPropertyChanged("SafeDrivingTraining");
+					this.OnSafeDrivingTrainingChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeDrivingTrainingDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SafeDrivingTrainingDate
+		{
+			get
+			{
+				return this._SafeDrivingTrainingDate;
+			}
+			set
+			{
+				if ((this._SafeDrivingTrainingDate != value))
+				{
+					this.OnSafeDrivingTrainingDateChanging(value);
+					this.SendPropertyChanging();
+					this._SafeDrivingTrainingDate = value;
+					this.SendPropertyChanged("SafeDrivingTrainingDate");
+					this.OnSafeDrivingTrainingDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserIn", DbType="Int")]
+		public System.Nullable<int> UserIn
+		{
+			get
+			{
+				return this._UserIn;
+			}
+			set
+			{
+				if ((this._UserIn != value))
+				{
+					this.OnUserInChanging(value);
+					this.SendPropertyChanging();
+					this._UserIn = value;
+					this.SendPropertyChanged("UserIn");
+					this.OnUserInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateIn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateIn
+		{
+			get
+			{
+				return this._DateIn;
+			}
+			set
+			{
+				if ((this._DateIn != value))
+				{
+					this.OnDateInChanging(value);
+					this.SendPropertyChanging();
+					this._DateIn = value;
+					this.SendPropertyChanged("DateIn");
+					this.OnDateInChanged();
 				}
 			}
 		}

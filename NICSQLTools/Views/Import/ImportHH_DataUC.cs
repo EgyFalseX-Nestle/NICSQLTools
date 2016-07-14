@@ -82,7 +82,8 @@ _______________________________________________
             dr.Close();
             cmd.Dispose();
             con.Close(); con.Dispose();
-        }private void LoadRouteCodes(ref NICSQLTools.Data.dsData ds)
+        }
+        private void LoadRouteCodes(ref NICSQLTools.Data.dsData ds)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT [Route Number] FROM [0-3  Route Details]", con);
@@ -183,8 +184,8 @@ _______________________________________________
                          group row by row[7] into grp
                          select new { BillingDate = grp.Key };
             
-            DateTime BillStartDate = Convert.ToDateTime(result.ElementAt(0).BillingDate);
-            DateTime BillEndDate = Convert.ToDateTime(result.ElementAt(result.Count() - 1).BillingDate).AddDays(1);
+            DateTime BillStartDate = Convert.ToDateTime(result.ElementAt(0).BillingDate).AddDays(-1);
+            DateTime BillEndDate = Convert.ToDateTime(result.ElementAt(result.Count() - 1).BillingDate).AddDays(2);
             
             qryBillDocHH_DataTableAdapter.Fill(TblMaster, BillStartDate, BillEndDate);
 

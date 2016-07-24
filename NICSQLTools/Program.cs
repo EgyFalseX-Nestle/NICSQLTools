@@ -44,8 +44,8 @@ namespace NICSQLTools
                 DataManager.PerformChangeExe();
                 if (FXFW.SqlDB.LoadSqlDBPath("IC_DB"))
                 {
-                    Properties.Settings.Default["IC_DBConnectionString"] = FXFW.SqlDB.SqlConStr;
-                    DevExpress.Xpo.XpoDefault.ConnectionString = FXFW.SqlDB.SqlConStr;
+                    Properties.Settings.Default["IC_DBConnectionString"] = FXFW.SqlDB.SqlConStr + ";Connection Timeout=60";
+                    DevExpress.Xpo.XpoDefault.ConnectionString = FXFW.SqlDB.SqlConStr + ";Connection Timeout=60";
                     Init();
                     //Application.Run(new TestFrm());
                     Application.Run(new NICSQLTools.Views.Main.MainTilesFrm());

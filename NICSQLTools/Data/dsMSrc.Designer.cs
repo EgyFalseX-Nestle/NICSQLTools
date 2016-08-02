@@ -31472,7 +31472,8 @@ GROUP BY MSrv_TicketVisit.TechnicianId, MSrv_Technician.TechnicianName, MSrv_Tec
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::NICSQLTools.Properties.Settings.Default.IC_DBConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandText = "SELECT CASE WHEN EXISTS(SELECT TicketId FROM MSrv_Ticket WHERE CustomerId = @Cust" +
-                "omerId) THEN CAST(1 AS bit) ELSE CAST(0 AS bit) END AS CustomerOpen";
+                "omerId AND TicketClosed = 0) THEN CAST(1 AS bit) ELSE CAST(0 AS bit) END AS Cust" +
+                "omerOpen";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.Text;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerId", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();

@@ -21,7 +21,6 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         public MSrvTicketVisitAddDlg(NICSQLTools.Data.dsData.AppRuleDetailRow ruleElement)
         {
             InitializeComponent();
-            LoadDefaultData();
             _elementRule = ruleElement;
         }
         public MSrvTicketVisitAddDlg(NICSQLTools.Data.dsData.AppRuleDetailRow ruleElement, int ticketId)
@@ -35,15 +34,26 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         }
         private void LoadDefaultData()
         {
-            mSrv_TypeTableAdapter.FillByMSrv_TypeConditionId(dsMSrc.MSrv_Type, (int)Classes.MSrvType.TypeCondition.Open_Ticket);
-            LSMSTicket.QueryableSource = from q in _dsLinq.vMSrv_Ticket_ByUsers
-                                         where q.VisibleToUserId == Classes.Managers.UserManager.defaultInstance.User.UserId
-                                         && q.TicketClosed == false
-                                         && q.CurrentDepartmentId == (short)Classes.Managers.UserManager.defaultInstance.User.MSrvDepartmentId
-                                         select q;
-            LSMSTechnicianId.QueryableSource = from q in _dsLinq.vMSrv_Technician_ByUsers where q.UserId == Classes.Managers.UserManager.defaultInstance.User.UserId select q;
-            LSMSPartId.QueryableSource = from q in _dsLinq.MSrv_Parts select q;
-            LSMSDmg.QueryableSource = from q in _dsLinq.MSrv_Dmg_Reasons select q;
+            lueTicket.Properties.DisplayMember = "TicketId";
+            lueTicket.Properties.ValueMember = "TicketId";
+            lueTicket.Properties.DataSource = Classes.MSrvOfflineData.DsMSrv.vMSrv_Ticket_ByUser;
+            
+            lueTechnicianId.Properties.DisplayMember = "TechnicianName";
+            lueTechnicianId.Properties.ValueMember = "TechnicianId";
+            lueTechnicianId.Properties.DataSource = Classes.MSrvOfflineData.DsMSrv.vMSrv_Technician_ByUser;
+
+            lueDamage.Properties.DisplayMember = "msrv_dmg_reason_name";
+            lueDamage.Properties.ValueMember = "msrv_dmg_reason_id";
+            lueDamage.Properties.DataSource = Classes.MSrvOfflineData.DsMSrv.MSrv_Dmg_Reason;
+
+            clbcReason.DisplayMember = "MSrvType";
+            clbcReason.ValueMember = "MSrvTypeId";
+            clbcReason.DataSource = Classes.MSrvOfflineData.DsMSrv.MSrv_Type;
+
+            repositoryItemLookUpEditPartId.DisplayMember = "PartName";
+            repositoryItemLookUpEditPartId.ValueMember = "PartId";
+            repositoryItemLookUpEditPartId.DataSource = Classes.MSrvOfflineData.DsMSrv.MSrv_Part;
+            
         }
         public void ActivateRules()
         {
@@ -66,6 +76,9 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         private void Dlg_Load(object sender, EventArgs e)
         {
             ActivateRules();
+            MSrvOfflineModeDlg dlg = new MSrvOfflineModeDlg();
+            dlg.ShowDialog();
+            LoadDefaultData();
         }
         private void lueTicket_EditValueChanged(object sender, EventArgs e)
         {
@@ -74,7 +87,8 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
             object obj = lueTicket.GetSelectedDataRow();
             if (obj == null)
                 return;
-            NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser ticket = (NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser)obj;
+
+            NICSQLTools.Data.dsMSrc.vMSrv_Ticket_ByUserRow ticket = (NICSQLTools.Data.dsMSrc.vMSrv_Ticket_ByUserRow)((DataRowView)obj).Row;
             deStartDate.EditValue = deEndDate.EditValue = ticket.OpenDate;
             lblContactPerson.Text = ticket.IssueContactPerson;
         }
@@ -101,7 +115,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         private void repositoryItemLookUpEditPartId_EditValueChanged(object sender, EventArgs e)
         {
             LookUpEdit lue = (LookUpEdit)sender;
-            NICSQLTools.Data.Linq.MSrv_Part part = (NICSQLTools.Data.Linq.MSrv_Part)lue.GetSelectedDataRow();
+            NICSQLTools.Data.dsMSrc.MSrv_PartRow part = (NICSQLTools.Data.dsMSrc.MSrv_PartRow)((DataRowView)lue.GetSelectedDataRow()).Row;
             NICSQLTools.Data.dsMSrc.MSrv_TicketVisitPartRow gridrow = (NICSQLTools.Data.dsMSrc.MSrv_TicketVisitPartRow)((DataRowView)gridViewPart.GetRow(gridViewPart.FocusedRowHandle)).Row;
             if (part.PartPrice != null) gridrow.ActualPrice = (double)part.PartPrice * gridrow.Quantity;
         }
@@ -169,6 +183,5 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         }
         #endregion
 
-        
     }
 }

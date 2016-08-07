@@ -20,7 +20,6 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         {
             InitializeComponent();
             _elementRule = RuleElement;
-            LSMSCloseMSrvTypeId.QueryableSource = from q in dsLinq.MSrv_Types where q.MSrv_TypeConditionId == (int)Classes.MSrvType.TypeCondition.Close_Ticket select q;
             _ticket = Ticket;
             tbTecEquipmentSerial.EditValue = _ticket.EquipmentSerial;
         }
@@ -35,6 +34,11 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
         private void Dlg_Load(object sender, EventArgs e)
         {
             ActivateRules();
+            MSrvOfflineModeDlg dlg = new MSrvOfflineModeDlg();
+            dlg.ShowDialog();
+            lueCloseMSrvTypeId.Properties.DisplayMember = "MSrvType";
+            lueCloseMSrvTypeId.Properties.ValueMember = "MSrvTypeId";
+            lueCloseMSrvTypeId.Properties.DataSource = Classes.MSrvOfflineData.MSrvTypeClosing;
         }
         private void btnSearchSerial_Click(object sender, EventArgs e)
         {

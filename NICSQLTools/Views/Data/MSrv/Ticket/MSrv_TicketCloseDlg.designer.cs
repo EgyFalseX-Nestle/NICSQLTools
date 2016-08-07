@@ -36,7 +36,6 @@
             this.dataLayoutControlMain = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.deClosedDate = new DevExpress.XtraEditors.DateEdit();
             this.lueCloseMSrvTypeId = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSCloseMSrvTypeId = new DevExpress.Data.Linq.LinqServerModeSource();
             this.tbOpenComment = new DevExpress.XtraEditors.MemoEdit();
             this.btnSearchSerial = new DevExpress.XtraEditors.SimpleButton();
             this.tbTecEquipmentSerial = new DevExpress.XtraEditors.TextEdit();
@@ -57,7 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.deClosedDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deClosedDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCloseMSrvTypeId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCloseMSrvTypeId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpenComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTecEquipmentSerial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupMain)).BeginInit();
@@ -121,7 +119,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueCloseMSrvTypeId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("MSrvType", "Reason", 61, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueCloseMSrvTypeId.Properties.DataSource = this.LSMSCloseMSrvTypeId;
             this.lueCloseMSrvTypeId.Properties.DisplayMember = "MSrvType";
             this.lueCloseMSrvTypeId.Properties.DropDownRows = 10;
             this.lueCloseMSrvTypeId.Properties.NullText = "";
@@ -133,11 +130,6 @@
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "This value is not valid";
             this.dxValidationProviderMain.SetValidationRule(this.lueCloseMSrvTypeId, conditionValidationRule2);
-            // 
-            // LSMSCloseMSrvTypeId
-            // 
-            this.LSMSCloseMSrvTypeId.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Type);
-            this.LSMSCloseMSrvTypeId.KeyExpression = "[MSrvTypeId]";
             // 
             // tbOpenComment
             // 
@@ -314,7 +306,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.deClosedDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deClosedDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueCloseMSrvTypeId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSCloseMSrvTypeId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpenComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbTecEquipmentSerial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupMain)).EndInit();
@@ -351,6 +342,5 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.DateEdit deClosedDate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSCloseMSrvTypeId;
     }
 }

@@ -36,18 +36,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSrvTicketVisitAddDlg));
             this.dataLayoutControlMain = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.lueDamage = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSDmg = new DevExpress.Data.Linq.LinqServerModeSource();
             this.deDate = new DevExpress.XtraEditors.DateEdit();
             this.lblContactPerson = new DevExpress.XtraEditors.LabelControl();
             this.clbcReason = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.mSrvTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridControlPart = new DevExpress.XtraGrid.GridControl();
             this.mSrvTicketVisitPartBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsMSrc = new NICSQLTools.Data.dsMSrc();
             this.gridViewPart = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colPartId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEditPartId = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.LSMSPartId = new DevExpress.Data.Linq.LinqServerModeSource();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.colActualPrice = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,9 +54,7 @@
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.lueTicket = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSTicket = new DevExpress.Data.Linq.LinqServerModeSource();
             this.lueTechnicianId = new DevExpress.XtraEditors.LookUpEdit();
-            this.LSMSTechnicianId = new DevExpress.Data.Linq.LinqServerModeSource();
             this.layoutControlGroupMain = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForAssetplaceId = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -82,21 +77,17 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProviderMain = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.mSrv_TicketVisitPartTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitPartTableAdapter();
-            this.mSrv_TypeTableAdapter = new NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).BeginInit();
             this.dataLayoutControlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueDamage.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDmg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clbcReason)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mSrvTicketVisitPartBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPartId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSPartId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEditn2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties)).BeginInit();
@@ -104,9 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.deStartDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpenComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueTicket.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTicket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueTechnicianId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTechnicianId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAssetplaceId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -163,19 +152,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueDamage.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("msrv_dmg_reason_name", "name", 130, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueDamage.Properties.DataSource = this.LSMSDmg;
-            this.lueDamage.Properties.DisplayMember = "msrv_dmg_reason_name";
             this.lueDamage.Properties.NullText = "";
             this.lueDamage.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueDamage.Properties.ValueMember = "msrv_dmg_reason_id";
             this.lueDamage.Size = new System.Drawing.Size(523, 20);
             this.lueDamage.StyleController = this.dataLayoutControlMain;
             this.lueDamage.TabIndex = 12;
-            // 
-            // LSMSDmg
-            // 
-            this.LSMSDmg.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Dmg_Reason);
-            this.LSMSDmg.KeyExpression = "msrv_dmg_reason_id";
             // 
             // deDate
             // 
@@ -209,8 +190,6 @@
             // 
             // clbcReason
             // 
-            this.clbcReason.DataSource = this.mSrvTypeBindingSource;
-            this.clbcReason.DisplayMember = "MSrvType";
             this.clbcReason.HorizontalScrollbar = true;
             this.clbcReason.Location = new System.Drawing.Point(24, 366);
             this.clbcReason.Name = "clbcReason";
@@ -219,17 +198,6 @@
             this.clbcReason.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.clbcReason.StyleController = this.dataLayoutControlMain;
             this.clbcReason.TabIndex = 1;
-            this.clbcReason.ValueMember = "MSrvTypeId";
-            // 
-            // mSrvTypeBindingSource
-            // 
-            this.mSrvTypeBindingSource.DataMember = "MSrv_Type";
-            this.mSrvTypeBindingSource.DataSource = this.dsMSrc;
-            // 
-            // dsMSrc
-            // 
-            this.dsMSrc.DataSetName = "dsMSrc";
-            this.dsMSrc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridControlPart
             // 
@@ -249,6 +217,11 @@
             // 
             this.mSrvTicketVisitPartBindingSource.DataMember = "MSrv_TicketVisitPart";
             this.mSrvTicketVisitPartBindingSource.DataSource = this.dsMSrc;
+            // 
+            // dsMSrc
+            // 
+            this.dsMSrc.DataSetName = "dsMSrc";
+            this.dsMSrc.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridViewPart
             // 
@@ -284,18 +257,10 @@
             this.repositoryItemLookUpEditPartId.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PartName", "Part Name", 60, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PartPrice", "Part Price", 56, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far)});
-            this.repositoryItemLookUpEditPartId.DataSource = this.LSMSPartId;
-            this.repositoryItemLookUpEditPartId.DisplayMember = "PartName";
             this.repositoryItemLookUpEditPartId.Name = "repositoryItemLookUpEditPartId";
             this.repositoryItemLookUpEditPartId.NullText = "";
             this.repositoryItemLookUpEditPartId.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.repositoryItemLookUpEditPartId.ValueMember = "PartId";
             this.repositoryItemLookUpEditPartId.EditValueChanged += new System.EventHandler(this.repositoryItemLookUpEditPartId_EditValueChanged);
-            // 
-            // LSMSPartId
-            // 
-            this.LSMSPartId.ElementType = typeof(NICSQLTools.Data.Linq.MSrv_Part);
-            this.LSMSPartId.KeyExpression = "PartId";
             // 
             // colQuantity
             // 
@@ -426,13 +391,10 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("EquipmentSerial", "Equipment Serial", 107, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Route", "Route", 43, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("OpenDate", "Open Date", 70, DevExpress.Utils.FormatType.DateTime, "yyyy-MM-dd HH:mm", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueTicket.Properties.DataSource = this.LSMSTicket;
-            this.lueTicket.Properties.DisplayMember = "TicketId";
             this.lueTicket.Properties.DropDownRows = 10;
             this.lueTicket.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.lueTicket.Properties.NullText = "";
             this.lueTicket.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueTicket.Properties.ValueMember = "TicketId";
             this.lueTicket.Size = new System.Drawing.Size(574, 22);
             this.lueTicket.StyleController = this.dataLayoutControlMain;
             this.lueTicket.TabIndex = 0;
@@ -440,11 +402,6 @@
             conditionValidationRule3.ErrorText = "This value is not valid";
             this.dxValidationProviderMain.SetValidationRule(this.lueTicket, conditionValidationRule3);
             this.lueTicket.EditValueChanged += new System.EventHandler(this.lueTicket_EditValueChanged);
-            // 
-            // LSMSTicket
-            // 
-            this.LSMSTicket.ElementType = typeof(NICSQLTools.Data.Linq.vMSrv_Ticket_ByUser);
-            this.LSMSTicket.KeyExpression = "TicketId, VisibleToUserId";
             // 
             // lueTechnicianId
             // 
@@ -459,26 +416,19 @@
             this.lueTechnicianId.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueTechnicianId.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TechnicianId", "Technician Id", 99, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TechnicianName", "Technician Name", 108, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TechnicianCompany", "Technician Company", 128, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
-            this.lueTechnicianId.Properties.DataSource = this.LSMSTechnicianId;
-            this.lueTechnicianId.Properties.DisplayMember = "TechnicianName";
             this.lueTechnicianId.Properties.DropDownRows = 10;
             this.lueTechnicianId.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.lueTechnicianId.Properties.NullText = "";
             this.lueTechnicianId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lueTechnicianId.Properties.ValueMember = "TechnicianId";
             this.lueTechnicianId.Size = new System.Drawing.Size(523, 22);
             this.lueTechnicianId.StyleController = this.dataLayoutControlMain;
             this.lueTechnicianId.TabIndex = 2;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "This value is not valid";
             this.dxValidationProviderMain.SetValidationRule(this.lueTechnicianId, conditionValidationRule4);
-            // 
-            // LSMSTechnicianId
-            // 
-            this.LSMSTechnicianId.ElementType = typeof(NICSQLTools.Data.Linq.vMSrv_Technician_ByUser);
-            this.LSMSTechnicianId.KeyExpression = "[TechnicianId], [UserId]";
             // 
             // layoutControlGroupMain
             // 
@@ -695,10 +645,6 @@
             // 
             this.mSrv_TicketVisitPartTableAdapter.ClearBeforeFill = true;
             // 
-            // mSrv_TypeTableAdapter
-            // 
-            this.mSrv_TypeTableAdapter.ClearBeforeFill = true;
-            // 
             // MSrvTicketVisitAddDlg
             // 
             this.AcceptButton = this.btnSave;
@@ -715,17 +661,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControlMain)).EndInit();
             this.dataLayoutControlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lueDamage.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSDmg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clbcReason)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mSrvTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mSrvTicketVisitPartBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsMSrc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditPartId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSPartId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEditn2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deEndDate.Properties)).EndInit();
@@ -733,9 +676,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.deStartDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbOpenComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueTicket.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTicket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueTechnicianId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LSMSTechnicianId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForAssetplaceId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -768,7 +709,6 @@
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.LookUpEdit lueTechnicianId;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSTechnicianId;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProviderMain;
         private DevExpress.XtraEditors.MemoEdit tbOpenComment;
         private NICSQLTools.Data.dsMSrc dsMSrc;
@@ -792,24 +732,19 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSTicket;
         private DevExpress.XtraLayout.SplitterItem splitterItem1;
         private System.Windows.Forms.BindingSource mSrvTicketVisitPartBindingSource;
         private NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TicketVisitPartTableAdapter mSrv_TicketVisitPartTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colPartId;
         private DevExpress.XtraGrid.Columns.GridColumn colActualPrice;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEditn2;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSPartId;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditPartId;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
-        private System.Windows.Forms.BindingSource mSrvTypeBindingSource;
-        private NICSQLTools.Data.dsMSrcTableAdapters.MSrv_TypeTableAdapter mSrv_TypeTableAdapter;
         private DevExpress.XtraEditors.LabelControl lblContactPerson;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.DateEdit deDate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
-        private DevExpress.Data.Linq.LinqServerModeSource LSMSDmg;
         private DevExpress.XtraEditors.LookUpEdit lueDamage;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }

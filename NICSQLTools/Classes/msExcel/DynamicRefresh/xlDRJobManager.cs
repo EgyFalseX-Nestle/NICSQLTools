@@ -71,6 +71,7 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
         {
             // Create an instance of Excel.
             excelApplication = new Microsoft.Office.Interop.Excel.Application();
+            
             //Create a workbook and add a worksheet.
             Microsoft.Office.Interop.Excel.Workbook excelWorkBook = excelApplication.Workbooks.Open(_xlfilename);//excelApplication.Workbooks.Open("csharp.net-informations.xls", 0, false, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             try
@@ -86,6 +87,7 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                     if (job == null)
                         continue;
                     Jobs.Add((xlDRJob)job);
+                    releaseObject(obj);
                 }
             }
             catch (Exception ex)
@@ -93,17 +95,19 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, Managers.UserManager.defaultInstance.User.UserId);
                 System.Windows.Forms.MsgDlg.Show(ex.Message, System.Windows.Forms.MsgDlg.MessageType.Error, ex);
             }
+            int processId;
+            GetWindowThreadProcessId(excelApplication.Hwnd, out processId);
+            Process pro = Process.GetProcessById(processId);
+            
 
             //Release Object
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelWorkBook);
-            excelWorkBook = null;
-            excelApplication.Quit();
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApplication);
-            excelApplication = null;
+            excelWorkBook.Close(); Marshal.ReleaseComObject(excelWorkBook); excelWorkBook = null;
+            excelApplication.Quit(); Marshal.ReleaseComObject(excelApplication); excelApplication = null;
+            if (!pro.HasExited) pro.Kill();
             GC.Collect();
-
         }
-        private static void releaseObject_Deleted(object obj)
+
+        private static void releaseObject(object obj)
         {
             try
             {
@@ -147,22 +151,30 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
                 //excelApplication.DisplayAlerts = true;
                 //excelApplication.AlertBeforeOverwriting = false;
             }
-            
+            int processId;
+            excelApplication = new Excel.Application();
+            GetWindowThreadProcessId(excelApplication.Hwnd, out processId);
+            Process pro = Process.GetProcessById(processId);
             try
             {
                 _runningJob = QueJobs.Dequeue();
-                notify.SetValue(2, "Open Workbook " + _runningJob.FilePath); 
-                Microsoft.Office.Interop.Excel.Workbook excelWorkBook = GetWorkbook(_runningJob);// Get Workbook to execute
-                notify.SetValue(2, string.Format("Execute Datasource {0} On Connection {1}", _runningJob.Datasource.Name, _runningJob.ConName)); 
+                notify.SetValue(2, "Open Workbook " + _runningJob.FilePath);
+                Excel.Workbook excelWorkBook = GetWorkbook(_runningJob);// Get Workbook to execute
+                notify.SetValue(2, $"Execute Datasource {_runningJob.Datasource.Name} On Connection {_runningJob.ConName}"); 
                 await _runningJob.ExecuteJob(excelWorkBook);// Execute
-                notify.SetValue(2, "Execution " + _runningJob.ExResult.ToString()); 
+                notify.SetValue(2, "Execution " + _runningJob.ExResult); 
                 _runningJob.SaveToDatabase();// Save Execution result
-                notify.SetValue(2, "Execution Information Saved ..."); 
+                notify.SetValue(2, "Execution Information Saved ...");
+                excelWorkBook.Close(); Marshal.ReleaseComObject(excelWorkBook); excelWorkBook = null;
+                
             }
             catch (Exception ex)
             {
                 Core.LogException(Logger, ex, Core.ExceptionLevelEnum.General, Managers.UserManager.defaultInstance.User.UserId);
             }
+            excelApplication.Quit(); Marshal.ReleaseComObject(excelApplication); excelApplication = null;
+            if (!pro.HasExited) pro.Kill();
+
             notify.SetValue(1, (int)notify.GetValue(1) + 1);
             notify.SetValue(3, "Update Grid");
             if (QueJobs == null || QueJobs.Count == 0)
@@ -196,11 +208,11 @@ namespace NICSQLTools.Classes.msExcel.DynamicRefresh
             //    excelApplication.Workbooks[i].Close(false, Type.Missing, Type.Missing);
             //    releaseObject(excelApplication.Workbooks[i]);
             //}
-            excelApplication.Workbooks.Close();
-            excelApplication.Quit();
+            //excelApplication.Workbooks.Close();
+            //excelApplication.Quit();
             
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApplication);
-            excelApplication = null;
+            //System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApplication);
+            //excelApplication = null;
             GC.Collect();
         }
         public void CancelExecution()

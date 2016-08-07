@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Reflection;
 using NICSQLTools.Classes.Managers;
+using NICSQLTools.Views.Data.MSrv;
 
 namespace NICSQLTools
 {
@@ -48,7 +49,7 @@ namespace NICSQLTools
                     DevExpress.Xpo.XpoDefault.ConnectionString = FXFW.SqlDB.SqlConStr + ";Connection Timeout=60";
                     Init();
                     //Application.Run(new TestFrm());
-                    Application.Run(new NICSQLTools.Views.Main.MainTilesFrm());
+                    Application.Run(new Views.Main.MainTilesFrm());
                 }
             }
             catch (Exception ex)

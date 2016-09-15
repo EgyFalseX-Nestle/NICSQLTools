@@ -84,13 +84,16 @@ ______________________________________________
         private void LoadCustomerCodes(ref NICSQLTools.Data.dsData ds)
         {
             SqlConnection con = new SqlConnection(Properties.Settings.Default.IC_DBConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT Customer FROM dbo.[Dst_Customer]", con);
+            SqlCommand cmd = new SqlCommand(@"SELECT [Customer]
+            , (SELECT TOP 1[Route] FROM dbo.Dst_Master WHERE Customer = Dst_Customer.Customer AND[Route] <> '' ORDER BY[BillingDate] DESC)  AS[Route]
+            FROM[dbo].[Dst_Customer]", con);
             con.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 NICSQLTools.Data.dsData.Dst_CustomerRow row = ds.Dst_Customer.NewDst_CustomerRow();
                 row.Customer = Convert.ToInt64(dr.GetValue(0));
+                row.CustomerName = dr.GetValue(1).ToString();
                 ds.Dst_Customer.AddDst_CustomerRow(row);
             }
             dr.Close();
@@ -280,10 +283,14 @@ ______________________________________________
                 if (SqlRow.Route == string.Empty)
                 {
                     //try to get it from last route for this "Sold to-party"
-                    cmd.CommandText = string.Format("SELECT top 1 Route FROM [Dst_Master] WHERE [Customer] = {0} AND [Dst_Master].[Route] <> '' order by [BillingDate] DESC", SqlRow.Customer);
-                    object obj = cmd.ExecuteScalar();
-                    if (obj != null)
-                        SqlRow.Route = obj.ToString();
+                    NICSQLTools.Data.dsData.Dst_CustomerRow cusRow = dsData.Dst_Customer.FindByCustomer(SqlRow.Customer);
+                    if (cusRow != null && cusRow.CustomerName != string.Empty)
+                        SqlRow.Route = cusRow.CustomerName;
+                    
+                    //cmd.CommandText = string.Format("SELECT top 1 Route FROM [Dst_Master] WHERE [Customer] = {0} AND [Dst_Master].[Route] <> '' order by [BillingDate] DESC", SqlRow.Customer);
+                    //object obj = cmd.ExecuteScalar();
+                    //if (obj != null)
+                    //    SqlRow.Route = obj.ToString();
                 }
                 //Customer Update
                 NICSQLTools.Data.dsData.Dst_CustomerRow CustomerRow = Dst_Customer.GetCustomerRow(SqlRow.Customer, dsData.Dst_Customer);

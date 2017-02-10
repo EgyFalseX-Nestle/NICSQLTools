@@ -195,8 +195,11 @@ _______________________________________________
                         SqlRow.Customer = "0898N";
                         break;
                     }}
-                dsData.GPS_Data.AddGPS_DataRow(SqlRow);
-                SqlRow.EndEdit();
+                if (dsData.GPS_Data.FindByStartTimeEndTimePlate(SqlRow.StartTime, SqlRow.EndTime, SqlRow.Plate) == null)
+                {
+                    dsData.GPS_Data.AddGPS_DataRow(SqlRow);
+                    SqlRow.EndEdit();
+                }
             }
             Invoke(new MethodInvoker(() =>//100 %
             {

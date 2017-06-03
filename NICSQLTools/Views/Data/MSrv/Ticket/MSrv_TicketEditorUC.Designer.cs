@@ -34,6 +34,21 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             this.popupMenuMain = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barManagerMain = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -85,9 +100,9 @@
             this.colRequestActionReasonName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcReasons = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditReasons = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryItemTextEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.colRoute_Name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSupervisor = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEditn2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenuMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMain)).BeginInit();
@@ -314,7 +329,7 @@
             // 
             this.repositoryItemButtonEditChat.AutoHeight = false;
             this.repositoryItemButtonEditChat.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.MSrv_TicketChat16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.MSrv_TicketChat16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
             this.repositoryItemButtonEditChat.Name = "repositoryItemButtonEditChat";
             this.repositoryItemButtonEditChat.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditChat.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditChat_ButtonClick);
@@ -336,7 +351,7 @@
             // 
             this.repositoryItemButtonEditAddVisit.AutoHeight = false;
             this.repositoryItemButtonEditAddVisit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.MSrv_TicketVisit16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.MSrv_TicketVisit16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, true)});
             this.repositoryItemButtonEditAddVisit.Name = "repositoryItemButtonEditAddVisit";
             this.repositoryItemButtonEditAddVisit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditAddVisit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditAddVisit_ButtonClick);
@@ -358,7 +373,7 @@
             // 
             this.repositoryItemButtonEditCloseTicket.AutoHeight = false;
             this.repositoryItemButtonEditCloseTicket.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.MSrv_TicketClose16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.MSrv_TicketClose16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, true)});
             this.repositoryItemButtonEditCloseTicket.Name = "repositoryItemButtonEditCloseTicket";
             this.repositoryItemButtonEditCloseTicket.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditCloseTicket.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditCloseTicket_ButtonClick);
@@ -425,6 +440,8 @@
             this.colOpenComment.ColumnEdit = this.repositoryItemMemoExEditBigText;
             this.colOpenComment.FieldName = "OpenComment";
             this.colOpenComment.Name = "colOpenComment";
+            this.colOpenComment.Visible = true;
+            this.colOpenComment.VisibleIndex = 15;
             this.colOpenComment.Width = 94;
             // 
             // repositoryItemMemoExEditBigText
@@ -440,7 +457,7 @@
             this.colIssueContactPerson.FieldName = "IssueContactPerson";
             this.colIssueContactPerson.Name = "colIssueContactPerson";
             this.colIssueContactPerson.Visible = true;
-            this.colIssueContactPerson.VisibleIndex = 18;
+            this.colIssueContactPerson.VisibleIndex = 19;
             this.colIssueContactPerson.Width = 94;
             // 
             // colIssueContactPhone2
@@ -449,7 +466,7 @@
             this.colIssueContactPhone2.FieldName = "IssueContactPhone2";
             this.colIssueContactPhone2.Name = "colIssueContactPhone2";
             this.colIssueContactPhone2.Visible = true;
-            this.colIssueContactPhone2.VisibleIndex = 19;
+            this.colIssueContactPhone2.VisibleIndex = 20;
             this.colIssueContactPhone2.Width = 124;
             // 
             // colIssueAddress
@@ -466,7 +483,7 @@
             this.colIssueContactPhone.FieldName = "IssueContactPhone";
             this.colIssueContactPhone.Name = "colIssueContactPhone";
             this.colIssueContactPhone.Visible = true;
-            this.colIssueContactPhone.VisibleIndex = 20;
+            this.colIssueContactPhone.VisibleIndex = 21;
             this.colIssueContactPhone.Width = 91;
             // 
             // colTicketClosed
@@ -514,7 +531,7 @@
             this.colRoute.FieldName = "Route";
             this.colRoute.Name = "colRoute";
             this.colRoute.Visible = true;
-            this.colRoute.VisibleIndex = 15;
+            this.colRoute.VisibleIndex = 16;
             // 
             // colSales_District_2
             // 
@@ -574,7 +591,7 @@
             // 
             this.repositoryItemButtonEditRequestAction.AutoHeight = false;
             this.repositoryItemButtonEditRequestAction.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.RequestAction16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.RequestAction16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, true)});
             this.repositoryItemButtonEditRequestAction.Name = "repositoryItemButtonEditRequestAction";
             this.repositoryItemButtonEditRequestAction.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditRequestAction.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditRequestAction_ButtonClick);
@@ -627,15 +644,32 @@
             this.gcReasons.Name = "gcReasons";
             this.gcReasons.Visible = true;
             this.gcReasons.VisibleIndex = 0;
+            this.gcReasons.Width = 61;
             // 
             // repositoryItemButtonEditReasons
             // 
             this.repositoryItemButtonEditReasons.AutoHeight = false;
             this.repositoryItemButtonEditReasons.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.MSrv_Type16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.MSrv_Type16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, true)});
             this.repositoryItemButtonEditReasons.Name = "repositoryItemButtonEditReasons";
             this.repositoryItemButtonEditReasons.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditReasons.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditReasons_ButtonClick);
+            // 
+            // colRoute_Name
+            // 
+            this.colRoute_Name.Caption = "Route Name";
+            this.colRoute_Name.FieldName = "Route_Name";
+            this.colRoute_Name.Name = "colRoute_Name";
+            this.colRoute_Name.Visible = true;
+            this.colRoute_Name.VisibleIndex = 17;
+            // 
+            // colSupervisor
+            // 
+            this.colSupervisor.Caption = "Supervisor";
+            this.colSupervisor.FieldName = "Supervisor";
+            this.colSupervisor.Name = "colSupervisor";
+            this.colSupervisor.Visible = true;
+            this.colSupervisor.VisibleIndex = 18;
             // 
             // repositoryItemTextEditn2
             // 
@@ -647,22 +681,6 @@
             this.repositoryItemTextEditn2.Mask.EditMask = "n2";
             this.repositoryItemTextEditn2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEditn2.Name = "repositoryItemTextEditn2";
-            // 
-            // colRoute_Name
-            // 
-            this.colRoute_Name.Caption = "Route Name";
-            this.colRoute_Name.FieldName = "Route_Name";
-            this.colRoute_Name.Name = "colRoute_Name";
-            this.colRoute_Name.Visible = true;
-            this.colRoute_Name.VisibleIndex = 16;
-            // 
-            // colSupervisor
-            // 
-            this.colSupervisor.Caption = "Supervisor";
-            this.colSupervisor.FieldName = "Supervisor";
-            this.colSupervisor.Name = "colSupervisor";
-            this.colSupervisor.Visible = true;
-            this.colSupervisor.VisibleIndex = 17;
             // 
             // MSrv_TicketEditorUC
             // 

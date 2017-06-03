@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OpenXlDlg));
             this.wizardControlMain = new DevExpress.XtraWizard.WizardControl();
@@ -91,9 +94,9 @@
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl1.Location = new System.Drawing.Point(73, 86);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(111, 19);
+            this.labelControl1.Size = new System.Drawing.Size(130, 19);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Select Excel File";
+            this.labelControl1.Text = "Select Excel File(s)";
             // 
             // beOpenFile
             // 
@@ -102,7 +105,7 @@
             this.beOpenFile.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.beOpenFile.Properties.Appearance.Options.UseFont = true;
             this.beOpenFile.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.up_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::NICSQLTools.Properties.Resources.up_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
             this.beOpenFile.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.beOpenFile.Size = new System.Drawing.Size(478, 30);
             this.beOpenFile.TabIndex = 0;
@@ -233,6 +236,7 @@
             // ofd
             // 
             this.ofd.Filter = "Excel workbook *.xlsx|*.xlsx|All Files *.*|*.*";
+            this.ofd.Multiselect = true;
             this.ofd.Title = "choose excel file to add";
             // 
             // OpenXlDlg

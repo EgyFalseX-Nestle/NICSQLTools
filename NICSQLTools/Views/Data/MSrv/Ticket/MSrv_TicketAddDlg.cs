@@ -94,8 +94,7 @@ namespace NICSQLTools.Views.Data.MSrv.Ticket
             }
             if ((bool)Classes.Managers.DataManager.adpMSrvQry.CustomerOpen(tbCustomerId.EditValue.ToString()))
             {
-                if (MsgDlg.Show("Customer already have opened Ticket" + Environment.NewLine + "Continue to save ?" , MsgDlg.MessageType.Question) != DialogResult.Yes)
-                    return;
+                MsgDlg.Show("Customer already have opened Ticket", MsgDlg.MessageType.Info);return;
             }
             try
             {
